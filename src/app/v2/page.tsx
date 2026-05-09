@@ -1,6 +1,14 @@
 // @ts-nocheck
 "use client";
 import React, { useState } from "react";
+import { Badge } from "@/components/v2/Badge";
+import { GroupHeader } from "@/components/v2/GroupHeader";
+import { HighlightedExample } from "@/components/v2/HighlightedExample";
+import { PageHeader } from "@/components/v2/PageHeader";
+import { PhoneShell } from "@/components/v2/PhoneShell";
+import { Progress } from "@/components/v2/Progress";
+import { SectionTitle } from "@/components/v2/SectionTitle";
+import { Surface } from "@/components/v2/Surface";
 
 const tabs = [
   { key: "home", label: "首页", icon: "⌂" },
@@ -138,101 +146,6 @@ const aiScenes = ["日常通用", "校园学习", "生活出行", "求职面试"
 const voices = ["女声", "男声"];
 const speeds = ["慢速", "标准", "快速"];
 const accents = ["美音", "英音"];
-
-function Surface({ children, className = "" }) {
-  return (
-    <div className={`rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] shadow-[0_4px_16px_rgba(58,42,26,0.06)] ${className}`}>
-      {children}
-    </div>
-  );
-}
-
-function Badge({ children }) {
-  return <span className="rounded-full bg-[#FBF2DA] px-3 py-1 text-[12px] font-bold text-[#8A6324]">{children}</span>;
-}
-
-function Progress({ value }) {
-  return (
-    <div className="h-2 overflow-hidden rounded-full bg-[#F1E4CB]">
-      <div className="h-full rounded-full bg-gradient-to-r from-[#D8B65E] to-[#B8872E]" style={{ width: `${Math.max(0, Math.min(100, value))}%` }} />
-    </div>
-  );
-}
-
-function PageHeader({ title, desc, back, onBack }) {
-  return (
-    <div className="mb-5 flex items-start gap-3">
-      {back ? (
-        <button onClick={onBack} className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#3A2A1A] text-white active:scale-95">‹</button>
-      ) : null}
-      <div className="min-w-0">
-        <h1 className="text-[24px] font-bold leading-[1.25] text-[#231A12]">{title}</h1>
-        <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">{desc}</p>
-      </div>
-    </div>
-  );
-}
-
-function SectionTitle({ title }) {
-  return <div className="mb-3 text-[14px] font-bold text-[#7A6B57]">{title}</div>;
-}
-
-function GroupHeader({ title, count, open, onClick }) {
-  return (
-    <button onClick={onClick} className="mb-3 flex w-full items-center justify-between rounded-[14px] px-1 py-1 text-left active:scale-[0.99]">
-      <div>
-        <div className="text-[14px] font-bold text-[#7A6B57]">{title}</div>
-        <div className="mt-0.5 text-[11px] text-[#998B78]">{count} 个词库</div>
-      </div>
-      <div className="rounded-full bg-[#FFF8EA] px-3 py-1 text-[12px] font-bold text-[#8A6324]">{open ? "收起" : "展开"}</div>
-    </button>
-  );
-}
-
-function HighlightedExample({ sentence, word }) {
-  const parts = sentence.split(new RegExp(`(${word})`, "gi"));
-  return (
-    <>
-      {parts.map((part, index) =>
-        part.toLowerCase() === word.toLowerCase() ? (
-          <span key={index} className="font-bold text-[#8A6324] underline decoration-[#D8B65E] underline-offset-4">
-            {part}
-          </span>
-        ) : (
-          <span key={index}>{part}</span>
-        )
-      )}
-    </>
-  );
-}
-
-function PhoneShell({ children, activeTab, onTab }) {
-  return (
-    <div className="min-h-screen bg-[#EEDDC7] text-[#2B2118]">
-      <div className="pointer-events-none fixed inset-0 opacity-80" style={{ background: "radial-gradient(circle at 16% 4%, rgba(216,182,94,0.18), transparent 30%), linear-gradient(180deg, rgba(255,248,235,0.72), transparent 42%)" }} />
-      <div className="relative mx-auto min-h-screen w-full max-w-[520px] bg-[#F1E3CF] shadow-[0_0_60px_rgba(58,42,26,0.16)] md:my-6 md:min-h-[920px] md:overflow-hidden md:rounded-[36px] md:border md:border-[#E6D8BF]">
-        <header className="sticky top-0 z-30 border-b border-[#E6D8BF] bg-[#FFF8EA]/95 px-5 py-4 backdrop-blur">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[18px] font-bold text-white">词</div>
-            <div>
-              <div className="text-[18px] font-bold text-[#1a1a1a]">词境</div>
-              <div className="text-[12px] text-[#766652]">从词汇到表达，从输入到开口</div>
-            </div>
-          </div>
-        </header>
-        <main className="px-5 pb-[96px] pt-5">{children}</main>
-        <nav className="fixed bottom-0 left-1/2 z-40 grid w-full max-w-[520px] -translate-x-1/2 grid-cols-5 border-t border-[#E6D8BF] bg-[#FFF8EA]/96 px-2 py-2 backdrop-blur md:bottom-6 md:rounded-b-[36px]">
-          {tabs.map((tab) => (
-            <button key={tab.key} onClick={() => onTab(tab.key)} className={`rounded-[16px] px-1 py-2 text-center transition active:scale-95 ${activeTab === tab.key ? "bg-[#3A2A1A] text-white" : "text-[#6B5B49]"}`}>
-              <div className="text-[16px] font-bold leading-none">{tab.icon}</div>
-              <div className="mt-1 text-[11px] font-bold">{tab.label}</div>
-            </button>
-          ))}
-        </nav>
-      </div>
-    </div>
-  );
-}
 
 export default function WordRealmCleanPreview() {
   const [activeTab, setActiveTab] = useState("home");
@@ -1312,7 +1225,7 @@ export default function WordRealmCleanPreview() {
   };
 
   return (
-    <PhoneShell activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
+    <PhoneShell tabs={tabs} activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
       {renderActive()}
       {toast ? <div className="fixed bottom-[92px] left-1/2 z-50 -translate-x-1/2 rounded-full bg-[#3A2A1A] px-5 py-3 text-[13px] font-bold text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">{toast}</div> : null}
     </PhoneShell>
