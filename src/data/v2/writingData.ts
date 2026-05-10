@@ -1,5 +1,7 @@
-export const writingTypes = ["万能框架", "高分句型", "话题素材", "原创范文拆解"];
-export const writingStages = ["四级", "六级", "考研", "专升本", "雅思"];
+import type { WritingMap, WritingStage, WritingType } from "@/types/v2";
+
+export const writingTypes = ["万能框架", "高分句型", "话题素材", "原创范文拆解"] as const satisfies readonly WritingType[];
+export const writingStages = ["四级", "六级", "考研", "专升本", "雅思"] as const satisfies readonly WritingStage[];
 
 export const writingMap = {
   "万能框架": {
@@ -46,4 +48,4 @@ export const writingMap = {
       ["检查", "主题句 + 连接词 + 结尾句", "写完后检查结构是否完整。"],
     ],
   },
-};
+} satisfies WritingMap;

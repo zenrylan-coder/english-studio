@@ -1,3 +1,5 @@
+import type { ParsedWordTuple, SceneScriptLine } from "@/types/v2";
+
 export const sceneScript = [
   ["AI", "Good morning. May I see your passport and ticket, please?"],
   ["你", "Sure. Here is my passport and ticket."],
@@ -5,7 +7,7 @@ export const sceneScript = [
   ["你", "Yes. I have one suitcase to check in."],
   ["AI", "Your boarding gate is B12. Boarding starts at 9:40."],
   ["你", "Thank you. Could you tell me where I should drop off my luggage?"],
-];
+] satisfies SceneScriptLine[];
 
 export const shadowLines = [
   "May I check in for this flight?",
@@ -13,7 +15,7 @@ export const shadowLines = [
   "Could you tell me which gate I should go to?",
   "Do I need to show my passport again?",
   "What time does boarding start?",
-];
+] satisfies string[];
 
 export const usefulExpressions = [
   "May I see your passport?",
@@ -21,7 +23,7 @@ export const usefulExpressions = [
   "Could you tell me where the boarding gate is?",
   "What time does boarding start?",
   "Where should I drop off my luggage?",
-];
+] satisfies string[];
 
 export const parsedWords = [
   ["patience", "n. 耐心"],
@@ -32,7 +34,7 @@ export const parsedWords = [
   ["passage", "n. 段落；文章节选"],
   ["require", "v. 需要；要求"],
   ["useful", "adj. 有用的"],
-];
+] satisfies ParsedWordTuple[];
 
 export const parsedPhrases = [
   "regular practice",
@@ -42,11 +44,11 @@ export const parsedPhrases = [
   "short passages",
   "language learning",
   "requires patience",
-];
+] satisfies string[];
 
 export const parsedSentences = [
   "Students should review new words, read short passages, and use useful expressions in real conversations.",
   "Learning a language requires patience and regular practice.",
   "Regular practice helps students build confidence when using a new language.",
   "Useful expressions can make real conversations easier and more natural.",
-];
+] satisfies string[];

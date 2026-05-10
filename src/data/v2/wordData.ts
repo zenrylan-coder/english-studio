@@ -1,3 +1,5 @@
+import type { Accent, WordGroup, WordItem, WordPack } from "@/types/v2";
+
 export const wordGroups = [
   {
     title: "升学备考组",
@@ -17,7 +19,7 @@ export const wordGroups = [
       { id: "primary", name: "小学英语", total: 800, learned: 0, current: false, last: "" },
     ],
   },
-];
+] satisfies WordGroup[];
 
 export const sampleWords = [
   {
@@ -47,7 +49,7 @@ export const sampleWords = [
     exampleCn: "做决定前，我们应该先分析这个问题。",
     review: false,
   },
-];
+] satisfies WordItem[];
 
 export const personalPackWords = [
   {
@@ -95,7 +97,7 @@ export const personalPackWords = [
     exampleCn: "阅读短篇段落能提升你的理解能力。",
     review: false,
   },
-];
+] satisfies WordItem[];
 
 export const personalPackMeta = {
   id: "personal-language-parse",
@@ -104,6 +106,6 @@ export const personalPackMeta = {
   learned: 0,
   current: false,
   last: "由文本解析生成",
-};
+} satisfies WordPack;
 
-export const accents = ["美音", "英音"];
+export const accents = ["美音", "英音"] as const satisfies readonly Accent[];
