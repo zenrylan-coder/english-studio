@@ -9,143 +9,13 @@ import { PhoneShell } from "@/components/v2/PhoneShell";
 import { Progress } from "@/components/v2/Progress";
 import { SectionTitle } from "@/components/v2/SectionTitle";
 import { Surface } from "@/components/v2/Surface";
-
-const tabs = [
-  { key: "home", label: "首页", icon: "⌂" },
-  { key: "words", label: "单词库", icon: "Aa" },
-  { key: "training", label: "训练中心", icon: "◎" },
-  { key: "workbench", label: "工作台", icon: "✦" },
-  { key: "mine", label: "我的", icon: "◌" },
-];
-
-const wordGroups = [
-  {
-    title: "升学备考组",
-    items: [
-      { id: "cet4", name: "大学英语四级", total: 4500, learned: 18, current: true, last: "继续：第18词 adapt" },
-      { id: "cet6", name: "大学英语六级", total: 5500, learned: 0, current: false, last: "" },
-      { id: "kaoyan", name: "考研英语", total: 5500, learned: 12, current: false, last: "" },
-      { id: "zsb", name: "专升本英语", total: 3800, learned: 6, current: false, last: "" },
-      { id: "ielts", name: "雅思英语", total: 4000, learned: 9, current: false, last: "" },
-    ],
-  },
-  {
-    title: "基础学段组",
-    items: [
-      { id: "high", name: "高中英语", total: 3500, learned: 22, current: false, last: "" },
-      { id: "middle", name: "初中英语", total: 1600, learned: 0, current: false, last: "" },
-      { id: "primary", name: "小学英语", total: 800, learned: 0, current: false, last: "" },
-    ],
-  },
-];
-
-const sampleWords = [
-  {
-    word: "adapt",
-    phonetic: "/əˈdæpt/",
-    pos: "v.",
-    cn: "适应；改编",
-    example: "Students need time to adapt to a new learning environment.",
-    exampleCn: "学生需要时间适应新的学习环境。",
-    review: true,
-  },
-  {
-    word: "adequate",
-    phonetic: "/ˈædɪkwət/",
-    pos: "adj.",
-    cn: "足够的；合格的",
-    example: "Adequate preparation can improve your performance in the test.",
-    exampleCn: "充分准备可以提升你在考试中的表现。",
-    review: true,
-  },
-  {
-    word: "analyze",
-    phonetic: "/ˈænəlaɪz/",
-    pos: "v.",
-    cn: "分析；研究",
-    example: "We should analyze the problem before making a decision.",
-    exampleCn: "做决定前，我们应该先分析这个问题。",
-    review: false,
-  },
-];
-
-const personalPackWords = [
-  {
-    word: "patience",
-    phonetic: "/ˈpeɪʃns/",
-    pos: "n.",
-    cn: "耐心",
-    example: "Learning a language requires patience and regular practice.",
-    exampleCn: "学习一门语言需要耐心和规律练习。",
-    review: false,
-  },
-  {
-    word: "regular",
-    phonetic: "/ˈreɡjələr/",
-    pos: "adj.",
-    cn: "规律的；定期的",
-    example: "Regular practice helps students build confidence.",
-    exampleCn: "规律练习能帮助学生建立信心。",
-    review: false,
-  },
-  {
-    word: "conversation",
-    phonetic: "/ˌkɑːnvərˈseɪʃn/",
-    pos: "n.",
-    cn: "对话；交谈",
-    example: "Useful expressions can make real conversations easier.",
-    exampleCn: "实用表达能让真实对话更轻松。",
-    review: false,
-  },
-  {
-    word: "review",
-    phonetic: "/rɪˈvjuː/",
-    pos: "v.",
-    cn: "复习；回顾",
-    example: "Students should review new words after class.",
-    exampleCn: "学生应该在课后复习新词。",
-    review: false,
-  },
-  {
-    word: "passage",
-    phonetic: "/ˈpæsɪdʒ/",
-    pos: "n.",
-    cn: "段落；文章节选",
-    example: "Read short passages to improve your understanding.",
-    exampleCn: "阅读短篇段落能提升你的理解能力。",
-    review: false,
-  },
-];
-
-const personalPackMeta = {
-  id: "personal-language-parse",
-  name: "语言学习短文解析",
-  total: 5,
-  learned: 0,
-  current: false,
-  last: "由文本解析生成",
-};
-
-const todayTasks = [
-  { title: "复习 8 个待复习词", desc: "四级核心词 · 预计 6 分钟", target: "words", done: true },
-  { title: "跟读 5 句高频短句", desc: "口语跟读训练 · 预计 4 分钟", target: "shadow", done: false },
-  { title: "完成 1 轮 AI 语音对话", desc: "生活出行场景 · 预计 5 分钟", target: "aiVoice", done: false },
-];
-
-const trainingCards = [
-  { key: "aiVoice", title: "AI语音对话", desc: "开口练真实场景" },
-  { key: "shadow", title: "口语跟读训练", desc: "练准短句发音" },
-  { key: "writing", title: "写作表达训练", desc: "套用高分表达" },
-];
-
-const shadowStages = ["四级", "六级", "考研", "专升本", "雅思", "高中", "初中", "小学"];
-const shadowTypes = ["学段短句", "高频短语", "长难句", "易错词"];
-const writingTypes = ["万能框架", "高分句型", "话题素材", "原创范文拆解"];
-const writingStages = ["四级", "六级", "考研", "专升本", "雅思"];
-const aiScenes = ["日常通用", "校园学习", "生活出行", "求职面试", "考试口语", "自定义角色"];
-const voices = ["女声", "男声"];
-const speeds = ["慢速", "标准", "快速"];
-const accents = ["美音", "英音"];
+import { tabs } from "@/data/v2/tabs";
+import { todayTasks } from "@/data/v2/homeData";
+import { aiScenes, shadowStages, shadowTypes, speeds, trainingCards, voices } from "@/data/v2/trainingData";
+import { accents, personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
+import { mistakeWords, mineGroups, studyRecords } from "@/data/v2/mineData";
+import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
+import { writingMap, writingStages, writingTypes } from "@/data/v2/writingData";
 
 export default function WordRealmCleanPreview() {
   const [activeTab, setActiveTab] = useState("home");
@@ -592,53 +462,6 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderWriting() {
-    const writingMap = {
-      "万能框架": {
-        desc: "按学段套用写作结构。",
-        items: [
-          ["观点引入", "It is widely believed that ...", "用于开头引出观点，四级/专升本都能直接改写。"],
-          ["原因展开", "There are two main reasons for this.", "用于正文第一句，帮你自然展开论证。"],
-          ["举例说明", "A typical example is that ...", "用于补充例子，避免正文只有空泛观点。"],
-          ["对比转折", "However, this does not mean that ...", "用于让论证更自然，不显得单薄。"],
-          ["结果影响", "As a result, ...", "用于说明某个现象带来的结果。"],
-          ["总结收束", "In conclusion, ... plays an important role in ...", "用于结尾，简洁收束全文。"],
-        ],
-      },
-      "高分句型": {
-        desc: "把普通表达换成更自然的句子。",
-        items: [
-          ["普通", "I think it is important.", "高分替换：I attach great importance to it."],
-          ["普通", "More people use AI tools.", "高分替换：An increasing number of people are turning to AI tools."],
-          ["普通", "We should study hard.", "高分替换：It is necessary for us to keep learning consistently."],
-          ["普通", "This problem is serious.", "高分替换：This issue deserves more attention."],
-          ["普通", "It has many benefits.", "高分替换：It brings a wide range of benefits."],
-          ["普通", "People should take action.", "高分替换：Effective measures should be taken."],
-        ],
-      },
-      "话题素材": {
-        desc: "按高频主题积累可用语料。",
-        items: [
-          ["教育", "lifelong learning", "终身学习；可用于学习、就业、社会发展类作文。"],
-          ["科技", "the rapid development of technology", "科技快速发展；适合AI、互联网、效率类话题。"],
-          ["社会", "a sense of responsibility", "责任感；适合青年、职业、社会参与类话题。"],
-          ["环境", "environmental awareness", "环保意识；适合环保、城市、社会责任类话题。"],
-          ["就业", "career development", "职业发展；适合职业规划、技能提升类作文。"],
-          ["生活", "a balanced lifestyle", "平衡生活方式；适合健康、学习压力类话题。"],
-        ],
-      },
-      "原创范文拆解": {
-        desc: "看结构，不背整篇。",
-        items: [
-          ["开头", "引出话题 + 表明态度", "第一段只解决“我要谈什么、我的态度是什么”。"],
-          ["正文", "原因1 + 原因2 + 简短例子", "正文不要堆句子，围绕两个理由展开。"],
-          ["转折", "承认另一面 + 回到主观点", "让文章更自然，不像背模板。"],
-          ["例子", "生活例子 + 简短解释", "例子只服务观点，不要展开太长。"],
-          ["结尾", "重申观点 + 给出建议", "结尾保持短，不要强行升华。"],
-          ["检查", "主题句 + 连接词 + 结尾句", "写完后检查结构是否完整。"],
-        ],
-      },
-    };
-
     if (writingPage !== "overview") {
       const data = writingMap[writingPage];
       const isSaved = (index) => index === 0 || index === 2;
@@ -740,59 +563,6 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderWorkbench() {
-    const sceneScript = [
-      ["AI", "Good morning. May I see your passport and ticket, please?"],
-      ["你", "Sure. Here is my passport and ticket."],
-      ["AI", "Do you have any checked luggage today?"],
-      ["你", "Yes. I have one suitcase to check in."],
-      ["AI", "Your boarding gate is B12. Boarding starts at 9:40."],
-      ["你", "Thank you. Could you tell me where I should drop off my luggage?"],
-    ];
-
-    const shadowLines = [
-      "May I check in for this flight?",
-      "Where should I drop off my luggage?",
-      "Could you tell me which gate I should go to?",
-      "Do I need to show my passport again?",
-      "What time does boarding start?",
-    ];
-
-    const usefulExpressions = [
-      "May I see your passport?",
-      "I have one suitcase to check in.",
-      "Could you tell me where the boarding gate is?",
-      "What time does boarding start?",
-      "Where should I drop off my luggage?",
-    ];
-
-    const parsedWords = [
-      ["patience", "n. 耐心"],
-      ["regular", "adj. 规律的"],
-      ["expression", "n. 表达；措辞"],
-      ["conversation", "n. 对话；交谈"],
-      ["review", "v. 复习；回顾"],
-      ["passage", "n. 段落；文章节选"],
-      ["require", "v. 需要；要求"],
-      ["useful", "adj. 有用的"],
-    ];
-
-    const parsedPhrases = [
-      "regular practice",
-      "review new words",
-      "use useful expressions",
-      "real conversations",
-      "short passages",
-      "language learning",
-      "requires patience",
-    ];
-
-    const parsedSentences = [
-      "Students should review new words, read short passages, and use useful expressions in real conversations.",
-      "Learning a language requires patience and regular practice.",
-      "Regular practice helps students build confidence when using a new language.",
-      "Useful expressions can make real conversations easier and more natural.",
-    ];
-
     if (workbenchPage === "sceneForm") {
       return (
         <>
@@ -986,32 +756,6 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderMine() {
-    const mistakeWords = {
-      "发音易错": [
-        ["checkout", "尾音容易拖长", "加入跟读"],
-        ["later", "/t/ 发音可更轻", "加入跟读"],
-        ["adequate", "重音位置易错", "加入跟读"],
-      ],
-      "理解易错": [
-        ["adapt", "常和 adopt 混淆", "加入复习"],
-        ["regular", "易只记成“普通的”", "加入复习"],
-        ["require", "易漏掉“要求”含义", "加入复习"],
-      ],
-      "拼写易错": [
-        ["environment", "容易漏 n", "加入复习"],
-        ["conversation", "容易漏 sation", "加入复习"],
-        ["expression", "容易写成 expresion", "加入复习"],
-      ],
-    };
-
-    const studyRecords = [
-      { type: "单词", title: "四级核心词 18 → 26", desc: "完成8词复习", date: "今天" },
-      { type: "跟读", title: "高频短句 5句", desc: "练习生活出行表达", date: "今天" },
-      { type: "AI对话", title: "生活出行 1轮", desc: "已生成表达优化1条", date: "今天" },
-      { type: "写作", title: "万能框架 3条", desc: "收录观点引入框架", date: "昨天" },
-      { type: "单词", title: "雅思词汇 9 → 12", desc: "切换英音学习", date: "昨天" },
-    ];
-
     if (minePage === "stats") {
       return (
         <>
@@ -1171,13 +915,6 @@ export default function WordRealmCleanPreview() {
       );
     }
 
-    const groups = [
-      { title: "学习概览", items: [["学习数据", "已学128词 · 连续6天 · 待复习8个"]] },
-      { title: "复习管理", items: [["易错词库", "发音、理解、拼写易错词统一复盘"], ["学习记录", "查看每次单词、跟读、AI对话和写作记录"]] },
-      { title: "数据安全", items: [["备份与恢复", "导出备份文件、导入恢复、清理缓存"]] },
-      { title: "设置", items: [["学习设置", "目标偏好、每日学习量、音色语速偏好"]] },
-    ];
-
     return (
       <>
         <PageHeader title="我的" desc="学习记录、易错词、备份与设置。" />
@@ -1190,7 +927,7 @@ export default function WordRealmCleanPreview() {
           <div className="text-[12px] font-bold text-[#8A6324]">登录</div>
         </button>
         <div className="space-y-6">
-          {groups.map((group) => (
+          {mineGroups.map((group) => (
             <section key={group.title}>
               <SectionTitle title={group.title} />
               <div className="space-y-3">
