@@ -1,5 +1,10 @@
 import type { Accent, WordGroup, WordItem, WordPack } from "@/types/v2";
 
+/**
+ * wordGroups 各 pack 的 `total`：数据结构占位字段，页面不展示该数字。
+ * 词包卡片上的「词」数量在页面中按词表计算：共用 `sampleWords.length`，个人词包用 `personalPackWords.length`。
+ * `learned` 用于进度条相对当前词表规模的示例进度（与 `total` 无耦合）。
+ */
 export const wordGroups = [
   {
     title: "升学备考组",

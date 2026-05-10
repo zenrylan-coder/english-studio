@@ -131,6 +131,13 @@ export default function WordRealmCleanPreview() {
     else setAccent("美音");
   };
 
+  /** 当前词包在 App 内可学的词条数（个人词包用 personalPackWords，其余词包复用 sampleWords） */
+  const wordCountForPack = (pack) => {
+    if (!pack) return 0;
+    if (pack.id === "personal-language-parse") return personalPackWords.length;
+    return sampleWords.length;
+  };
+
   function renderWords() {
     const wordSource = selectedPack.id === "personal-language-parse" ? personalPackWords : sampleWords;
     const activeWords = reviewOnly ? wordSource.filter((w) => w.review) : wordSource;
@@ -168,7 +175,10 @@ export default function WordRealmCleanPreview() {
             </Surface>
           </div>
           <Surface className="p-5">
-            <div className="flex justify-between"><Badge>{selectedPack.total}词</Badge><Badge>{safeIndex + 1}/{activeWords.length}</Badge></div>
+            <div className="flex justify-between gap-2">
+              <Badge>{`${wordCountForPack(selectedPack)} 词`}</Badge>
+              <Badge>{safeIndex + 1}/{activeWords.length}</Badge>
+            </div>
             <div className="mt-8 text-center">
               <div className="text-[42px] font-bold text-[#2C241C]">{w.word}</div>
               <div className="mt-2 text-[15px] text-[#8A6324]">{w.phonetic}</div>
@@ -224,7 +234,10 @@ export default function WordRealmCleanPreview() {
                   <h3 className="text-[18px] font-bold text-[#2C241C]">{personalPackMeta.name}</h3>
                   <p className="mt-1 text-[12px] text-[#8A6324]">由文本解析生成 · 可继续扩充</p>
                 </div>
-                <div className="text-right"><div className="text-[20px] font-bold text-[#2C241C]">{personalPackMeta.total}</div><div className="text-[12px] text-[#998B78]">词</div></div>
+                <div className="text-right shrink-0">
+                  <div className="text-[20px] font-bold text-[#2C241C]">{wordCountForPack(personalPackMeta)}</div>
+                  <div className="text-[12px] text-[#998B78]">词</div>
+                </div>
               </div>
               <div className="mt-4"><Progress value={0} /></div>
             </button>
@@ -239,18 +252,25 @@ export default function WordRealmCleanPreview() {
                 <GroupHeader title={group.title} count={group.items.length} open={open} onClick={() => setOpenWordGroups((prev) => ({ ...prev, [group.title]: !prev[group.title] }))} />
                 {open ? (
                   <div className="space-y-3">
-                    {visibleItems.map((pack) => (
+                    {visibleItems.map((pack) => {
+                      const n = wordCountForPack(pack);
+                      const progressValue = n > 0 && pack.learned > 0 ? Math.min(100, Math.max(3, (pack.learned / n) * 100)) : 0;
+                      return (
                       <button key={pack.id} onClick={() => openPack(pack)} className="w-full rounded-[20px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] active:scale-[0.98]">
                         <div className="flex items-start justify-between gap-4">
                           <div>
                             <h3 className="text-[18px] font-bold text-[#2C241C]">{pack.name}</h3>
                             {pack.current ? <p className="mt-1 text-[12px] text-[#8A6324]">{pack.last}</p> : null}
                           </div>
-                          <div className="text-right"><div className="text-[20px] font-bold text-[#2C241C]">{pack.total}</div><div className="text-[12px] text-[#998B78]">词</div></div>
+                          <div className="text-right shrink-0">
+                            <div className="text-[20px] font-bold text-[#2C241C]">{n}</div>
+                            <div className="text-[12px] text-[#998B78]">词</div>
+                          </div>
                         </div>
-                        <div className="mt-4"><Progress value={pack.learned > 0 ? Math.max(3, (pack.learned / pack.total) * 100) : 0} /></div>
+                        <div className="mt-4"><Progress value={progressValue} /></div>
                       </button>
-                    ))}
+                    );
+                    })}
                   </div>
                 ) : null}
               </section>
