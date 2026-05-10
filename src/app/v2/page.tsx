@@ -11,7 +11,7 @@ import { SectionTitle } from "@/components/v2/SectionTitle";
 import { Surface } from "@/components/v2/Surface";
 import { tabs } from "@/data/v2/tabs";
 import { todayTasks } from "@/data/v2/homeData";
-import { aiScenes, shadowStages, shadowTypes, speeds, trainingCards, voices } from "@/data/v2/trainingData";
+import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainingCards, voices } from "@/data/v2/trainingData";
 import { accents, personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
 import { mistakeWords, mineGroups, studyRecords } from "@/data/v2/mineData";
 import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
@@ -281,28 +281,7 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderShadow() {
-    const shadowData = {
-      "学段短句": [
-        { en: "Could you help me with this problem?", cn: "你能帮我看看这个问题吗？", tip: "注意 could you 的连读，语气要轻。" },
-        { en: "I need more time to prepare.", cn: "我需要更多时间准备。", tip: "more time 可以连起来读。" },
-        { en: "This method is useful for beginners.", cn: "这个方法对初学者很有用。", tip: "method 的 th 不要读成 s。" },
-      ],
-      "高频短语": [
-        { en: "make progress", cn: "取得进步", tip: "progress 作名词时重音在前。" },
-        { en: "take action", cn: "采取行动", tip: "take action 中 k 和 a 可自然连读。" },
-        { en: "pay attention to", cn: "注意；关注", tip: "attention 重音在第二音节。" },
-      ],
-      "长难句": [
-        { en: "Students who practice regularly are more likely to improve their speaking skills.", cn: "经常练习的学生更有可能提升口语能力。", tip: "先按 who practice regularly 断句。" },
-        { en: "Although the task is difficult, it can help learners build confidence.", cn: "虽然任务很难，但它能帮助学习者建立信心。", tip: "Although 后稍作停顿。" },
-        { en: "The more you use new words, the easier it becomes to remember them.", cn: "你越常使用新词，就越容易记住它们。", tip: "the more / the easier 是固定节奏。" },
-      ],
-      "易错词": [
-        { en: "environment", cn: "环境", tip: "注意中间的 n，不要吞音。" },
-        { en: "conversation", cn: "对话；交谈", tip: "conversation 重音在第三音节。" },
-        { en: "adequate", cn: "足够的；合格的", tip: "adequate 结尾不要读成 ate。" },
-      ],
-    };
+    const shadowData = shadowDrillByType;
 
     if (shadowPage === "practice") {
       const list = shadowData[shadowType];

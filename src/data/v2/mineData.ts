@@ -1,29 +1,29 @@
 import type { MineGroup, MistakeWordsMap, StudyRecord } from "@/types/v2";
 
 export const mistakeWords = {
-  "发音易错": [
-    ["checkout", "尾音容易拖长", "加入跟读"],
-    ["later", "/t/ 发音可更轻", "加入跟读"],
-    ["adequate", "重音位置易错", "加入跟读"],
+  发音易错: [
+    ["communicate", "第二音节重读别省弱", "加入跟读"],
+    ["environment", "中间 /n/ 别吞掉", "加入跟读"],
+    ["usually", "/ʒ/ 与 /uː/ 要读清楚", "加入跟读"],
   ],
-  "理解易错": [
-    ["adapt", "常和 adopt 混淆", "加入复习"],
-    ["regular", "易只记成“普通的”", "加入复习"],
-    ["require", "易漏掉“要求”含义", "加入复习"],
+  理解易错: [
+    ["approach", "作名词「方法」与动词「处理」易混", "加入复习"],
+    ["major", "「专业」与「主要的」词性易混", "加入复习"],
+    ["practice", "不可数表「练习」时别乱加 a", "加入复习"],
   ],
-  "拼写易错": [
-    ["environment", "容易漏 n", "加入复习"],
-    ["conversation", "容易漏 sation", "加入复习"],
-    ["expression", "容易写成 expresion", "加入复习"],
+  拼写易错: [
+    ["accommodate", "双写 m 或漏字母易错", "加入复习"],
+    ["definitely", "易写成 definetely", "加入复习"],
+    ["separate", "易与 seperate 混淆", "加入复习"],
   ],
 } satisfies MistakeWordsMap;
 
 export const studyRecords = [
-  { type: "单词", title: "四级核心词 18 → 26", desc: "完成8词复习", date: "今天" },
-  { type: "跟读", title: "高频短句 5句", desc: "练习生活出行表达", date: "今天" },
-  { type: "AI对话", title: "生活出行 1轮", desc: "已生成表达优化1条", date: "今天" },
-  { type: "写作", title: "万能框架 3条", desc: "收录观点引入框架", date: "昨天" },
-  { type: "单词", title: "雅思词汇 9 → 12", desc: "切换英音学习", date: "昨天" },
+  { type: "单词", title: "四级词表进度 18 → 25", desc: "巩固 adapt 及前后共 8 词", date: "今天" },
+  { type: "跟读", title: "校园/求职场景 12 句", desc: "分学段短句与长句各练一轮", date: "今天" },
+  { type: "AI对话", title: "校园学习 1 轮", desc: "练自我介绍与学习计划表达", date: "今天" },
+  { type: "写作", title: "观点与建议句型 5 条", desc: "摘抄替换练习用手机备忘录", date: "昨天" },
+  { type: "单词", title: "个人短文解析词包", desc: "从工作台生成 · 6 词", date: "昨天" },
 ] satisfies StudyRecord[];
 
 export const mineGroups = [

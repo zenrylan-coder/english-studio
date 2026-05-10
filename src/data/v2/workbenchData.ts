@@ -1,54 +1,45 @@
 import type { ParsedWordTuple, SceneScriptLine } from "@/types/v2";
 
 export const sceneScript = [
-  ["AI", "Good morning. May I see your passport and ticket, please?"],
-  ["你", "Sure. Here is my passport and ticket."],
-  ["AI", "Do you have any checked luggage today?"],
-  ["你", "Yes. I have one suitcase to check in."],
-  ["AI", "Your boarding gate is B12. Boarding starts at 9:40."],
-  ["你", "Thank you. Could you tell me where I should drop off my luggage?"],
+  ["室友", "Do you want to review the upgrade exam vocabulary list tonight?"],
+  ["你", "Yes. Can we use the quiet zone on the second floor?"],
+  ["室友", "Sure. I also want to practice answering interview questions out loud."],
+  ["你", "Great. Let's do ten minutes of shadowing after we finish the list."],
+  ["室友", "Sounds good. I will bring my notebook for new collocations."],
 ] satisfies SceneScriptLine[];
 
 export const shadowLines = [
-  "May I check in for this flight?",
-  "Where should I drop off my luggage?",
-  "Could you tell me which gate I should go to?",
-  "Do I need to show my passport again?",
-  "What time does boarding start?",
+  "I'm preparing for the upgrade exam this semester.",
+  "Could we go over the word list after today's lecture?",
+  "I need more speaking practice before the mock interview.",
+  "I would like to introduce myself in one minute.",
+  "Joining a study group helped me stay on track.",
 ] satisfies string[];
 
 export const usefulExpressions = [
-  "May I see your passport?",
-  "I have one suitcase to check in.",
-  "Could you tell me where the boarding gate is?",
-  "What time does boarding start?",
-  "Where should I drop off my luggage?",
+  "prepare for the upgrade exam",
+  "review new words after class",
+  "in short conversations with classmates",
+  "speaking practice before the interview",
+  "join a study group",
 ] satisfies string[];
 
 export const parsedWords = [
-  ["patience", "n. 耐心"],
-  ["regular", "adj. 规律的"],
-  ["expression", "n. 表达；措辞"],
+  ["prepare", "v. 准备"],
+  ["upgrade", "n. 升级；此处指升本考试语境下的提升"],
+  ["review", "v. 复习"],
   ["conversation", "n. 对话；交谈"],
-  ["review", "v. 复习；回顾"],
-  ["passage", "n. 段落；文章节选"],
-  ["require", "v. 需要；要求"],
-  ["useful", "adj. 有用的"],
+  ["practice", "n./v. 练习"],
 ] satisfies ParsedWordTuple[];
 
 export const parsedPhrases = [
-  "regular practice",
+  "prepare for",
   "review new words",
-  "use useful expressions",
-  "real conversations",
-  "short passages",
-  "language learning",
-  "requires patience",
+  "after class",
+  "study group",
 ] satisfies string[];
 
 export const parsedSentences = [
-  "Students should review new words, read short passages, and use useful expressions in real conversations.",
-  "Learning a language requires patience and regular practice.",
-  "Regular practice helps students build confidence when using a new language.",
-  "Useful expressions can make real conversations easier and more natural.",
+  "I'm Li Hua, a third-year student preparing for the upgrade exam.",
+  "I usually review new words in the library after class and try to use them in short conversations with classmates.",
 ] satisfies string[];

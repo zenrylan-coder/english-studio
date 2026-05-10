@@ -53,6 +53,14 @@ export type ShadowStage = "四级" | "六级" | "考研" | "专升本" | "雅思
 
 export type ShadowType = "学段短句" | "高频短语" | "长难句" | "易错词";
 
+export type ShadowDrillLine = {
+  en: string;
+  cn: string;
+  tip: string;
+};
+
+export type ShadowDrillByType = Record<ShadowType, ShadowDrillLine[]>;
+
 export type AiScene = "日常通用" | "校园学习" | "生活出行" | "求职面试" | "考试口语" | "自定义角色";
 
 export type VoiceOption = "女声" | "男声";
