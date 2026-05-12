@@ -12,7 +12,7 @@ import { Surface } from "@/components/v2/Surface";
 import { tabs } from "@/data/v2/tabs";
 import { todayTasks } from "@/data/v2/homeData";
 import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainingCards } from "@/data/v2/trainingData";
-import { accents, personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
+import { personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
 import {
   BANK_LABELS,
   LABEL_TO_BANK_ID,
@@ -23,6 +23,7 @@ import {
   type WordBankManifest,
   type WordBankEntry,
 } from "@/lib/v2/wordBankLoader";
+import { speakV2English, warmUpWebSpeechVoices, V2_SPEECH_GENDERS, type V2SpeechGender } from "@/lib/v2/webSpeech";
 import { mineGroups, studyRecords } from "@/data/v2/mineData";
 import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
 import { writingMap, writingStages, writingTypes } from "@/data/v2/writingData";
@@ -667,7 +668,7 @@ export default function WordRealmCleanPreview() {
   const [selectedPack, setSelectedPack] = useState(wordGroups[0].items[0]);
   const [wordIndex, setWordIndex] = useState(0);
   const [reviewOnly, setReviewOnly] = useState(false);
-  const [accent, setAccent] = useState("美音");
+  const [learnSpeechGender, setLearnSpeechGender] = useState<V2SpeechGender>("女声");
   /** 单词学习页顺序：正序 / 乱序 / 核心优先（仅前端重排，不写回 JSON） */
   const [learnOrderMode, setLearnOrderMode] = useState("sequential");
   /** 乱序稳定种子（与词条数共同决定置换；持久化到 word-learning） */
@@ -953,23 +954,24 @@ export default function WordRealmCleanPreview() {
         if (savedPack && savedPack.id === pos.pack.id) {
           setWordPage(wl.wordPage === "learn" || wl.wordPage === "list" ? wl.wordPage : "list");
           setReviewOnly(!!wl.reviewOnly);
-          if (savedPack.name.includes("雅思")) setAccent("英音");
-          else setAccent("美音");
         } else {
           setWordPage("list");
           setReviewOnly(false);
-          if (pos.pack.name.includes("雅思")) setAccent("英音");
-          else setAccent("美音");
         }
-      } else {
-        if (pos.pack.name.includes("雅思")) setAccent("英音");
-        else setAccent("美音");
       }
     } catch {
       /* 本地数据异常时保持默认状态 */
     }
     setV2Hydrated(true);
   }, [findPackById, pickWordResume]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    warmUpWebSpeechVoices();
+    const onVoices = () => warmUpWebSpeechVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", onVoices);
+    return () => window.speechSynthesis.removeEventListener("voiceschanged", onVoices);
+  }, []);
 
   useEffect(() => {
     if (!v2Hydrated) return;
@@ -1322,8 +1324,6 @@ export default function WordRealmCleanPreview() {
       const pos = pickWordResume();
       setSelectedPack(pos.pack);
       setWordIndex(pos.idx);
-      if (pos.pack.name.includes("雅思")) setAccent("英音");
-      else setAccent("美音");
       addRecent({ id: "entry-words", kind: "training", label: "单词学习", trainingTarget: "words" });
     }
     if (target === "shadow") {
@@ -1345,8 +1345,6 @@ export default function WordRealmCleanPreview() {
     const pos = pickWordResume();
     setSelectedPack(pos.pack);
     setWordIndex(pos.idx);
-    if (pos.pack.name.includes("雅思")) setAccent("英音");
-    else setAccent("美音");
     addRecent({ id: "entry-words", kind: "training", label: "单词学习", trainingTarget: "words" });
   };
 
@@ -1405,8 +1403,6 @@ export default function WordRealmCleanPreview() {
     setSelectedPack(pack);
     setWordPage("learn");
     setWordIndex(0);
-    if (pack.name.includes("雅思")) setAccent("英音");
-    else setAccent("美音");
     // 如果是真实词库，异步加载
     const bid = LABEL_TO_BANK_ID[pack.name];
     if (bid && !bankData[bid]) {
@@ -1573,12 +1569,12 @@ export default function WordRealmCleanPreview() {
           </button>
 
           <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-            {accents.map((item) => (
+            {V2_SPEECH_GENDERS.map((item) => (
               <button
                 key={item}
                 type="button"
-                onClick={() => setAccent(item)}
-                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${accent === item ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+                onClick={() => setLearnSpeechGender(item)}
+                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${learnSpeechGender === item ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
               >
                 {item}
               </button>
@@ -1639,7 +1635,9 @@ export default function WordRealmCleanPreview() {
             <div className="mt-4 grid shrink-0 grid-cols-3 gap-2">
               <button
                 type="button"
-                onClick={() => showToast(`播放${accent}发音`)}
+                onClick={() => {
+                  if (!speakV2English(w.word, learnSpeechGender)) showToast("当前环境不支持朗读");
+                }}
                 className="rounded-full bg-white py-2.5 text-[11px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95 sm:text-[12px]"
               >
                 🔊 播放
@@ -1736,7 +1734,9 @@ export default function WordRealmCleanPreview() {
                     {w.example?.trim() ? (
                       <button
                         type="button"
-                        onClick={() => showToast("播放例句发音")}
+                        onClick={() => {
+                          if (!speakV2English(w.example, learnSpeechGender)) showToast("当前环境不支持朗读");
+                        }}
                         className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95"
                       >
                         🔊
@@ -3064,7 +3064,7 @@ export default function WordRealmCleanPreview() {
             </Surface>
             <Surface className="p-4">
               <div className="text-[13px] font-bold text-[#2C241C]">默认语音偏好</div>
-              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">美音 · 女声 · 标准语速</p>
+              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">朗读：女声或男声 · 浏览器语音（en-US）</p>
             </Surface>
             <Surface className="p-4">
               <div className="text-[13px] font-bold text-[#2C241C]">每日学习量</div>
