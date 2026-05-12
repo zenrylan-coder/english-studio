@@ -1,6 +1,6 @@
 // @ts-nocheck
 "use client";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Badge } from "@/components/v2/Badge";
 import { GroupHeader } from "@/components/v2/GroupHeader";
 import { HighlightedExample } from "@/components/v2/HighlightedExample";
@@ -11,11 +11,655 @@ import { SectionTitle } from "@/components/v2/SectionTitle";
 import { Surface } from "@/components/v2/Surface";
 import { tabs } from "@/data/v2/tabs";
 import { todayTasks } from "@/data/v2/homeData";
-import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainingCards, voices } from "@/data/v2/trainingData";
+import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainingCards } from "@/data/v2/trainingData";
 import { accents, personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
-import { mistakeWords, mineGroups, studyRecords } from "@/data/v2/mineData";
+import {
+  BANK_LABELS,
+  LABEL_TO_BANK_ID,
+  bankEntryToWordItem,
+  clearWordBankCache,
+  loadWordBank,
+  loadWordBankManifest,
+  type WordBankManifest,
+  type WordBankEntry,
+} from "@/lib/v2/wordBankLoader";
+import { mineGroups, studyRecords } from "@/data/v2/mineData";
 import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
 import { writingMap, writingStages, writingTypes } from "@/data/v2/writingData";
+import {
+  defaultFavorites,
+  defaultMistakes,
+  loadFavorites,
+  loadMistakes,
+  loadRecentLearning,
+  loadUiFlags,
+  loadMistakeWordLearning,
+  loadFavoriteWordLearning,
+  loadWordLearning,
+  makeWordId,
+  makeWordKey,
+  makeWorkbenchFavoriteId,
+  makeWritingFavoriteId,
+  parseWorkbenchFavoriteId,
+  parseWritingFavoriteId,
+  pushRecentLearning,
+  saveMistakeWordLearning,
+  saveFavoriteWordLearning,
+  saveFavorites,
+  saveUiFlags,
+  saveWordLearning,
+} from "@/lib/v2/storage";
+
+/** 收藏复习专用虚拟词包 id，不与 wordGroups 混用 */
+const V2_FAVORITE_LEARN_PACK_ID = "__v2_favorite_words__";
+const FAVORITE_VIRTUAL_PACK = { id: V2_FAVORITE_LEARN_PACK_ID, name: "我的收藏单词", total: 0, learned: 0, current: false, last: "" };
+
+function isFavoriteLearnPack(pack) {
+  return pack?.id === V2_FAVORITE_LEARN_PACK_ID;
+}
+
+const V2_MISTAKE_LEARN_PACK_ID = "__v2_mistake_words__";
+const MISTAKE_VIRTUAL_PACK = { id: V2_MISTAKE_LEARN_PACK_ID, name: "错题库", total: 0, learned: 0, current: false, last: "" };
+
+function isMistakeLearnPack(pack) {
+  return pack?.id === V2_MISTAKE_LEARN_PACK_ID;
+}
+
+/** A-Z，大小写/重音不敏感，数字友好 */
+function compareLearnLemmaAZ(a, b) {
+  const wa = (a?.word ?? "").toLowerCase();
+  const wb = (b?.word ?? "").toLowerCase();
+  return wa.localeCompare(wb, "en", { sensitivity: "base", numeric: true });
+}
+
+/** 词条「核心」度：与清洗后 alsoIn（来自 belongsTo）条目数量一致 */
+function learnCoreTagCount(w) {
+  const arr = w?.alsoIn;
+  return Array.isArray(arr) ? arr.length : 0;
+}
+
+/** 前端正序/乱序/核心优先；shufflePerm 为索引置换（乱序） */
+function orderWordItemsForLearn(items, mode, shufflePerm) {
+  const n = items?.length ?? 0;
+  if (n === 0) return [];
+  if (mode === "shuffle") {
+    if (!shufflePerm || shufflePerm.length !== n) return items.slice();
+    return shufflePerm.map((i) => items[i]);
+  }
+  const idx = Array.from({ length: n }, (_, i) => i);
+  if (mode === "coreFirst") {
+    idx.sort((i, j) => {
+      const c = learnCoreTagCount(items[j]) - learnCoreTagCount(items[i]);
+      if (c !== 0) return c;
+      return compareLearnLemmaAZ(items[i], items[j]);
+    });
+  } else {
+    idx.sort((i, j) => compareLearnLemmaAZ(items[i], items[j]));
+  }
+  return idx.map((i) => items[i]);
+}
+
+/** 与 shuffleSeed 一起用于稳定乱序（刷新后仍可复现同一轮） */
+function seededShufflePermutation(n, seed) {
+  let s = (Number(seed) >>> 0) || 1;
+  const rand = () => {
+    s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+    return s / 4294967296;
+  };
+  const a = Array.from({ length: n }, (_, i) => i);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    const t = a[i];
+    a[i] = a[j];
+    a[j] = t;
+  }
+  return a;
+}
+
+/** 词包 id + 词条数参与乱序种子，换包或词表条数变化时自动换序 */
+function learnOrderSaltPackId(packId) {
+  let h = 2166136261;
+  const s = String(packId ?? "");
+  for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619) >>> 0;
+  return h >>> 0;
+}
+
+/** 构建当前学习用的「原始词条列表」（顺序由另一层 useMemo 处理） */
+function buildLearnBaseWordSource(selectedPack, bankData, favoriteLearnWordItems, mistakeLearnWordItems) {
+  if (isFavoriteLearnPack(selectedPack)) return favoriteLearnWordItems;
+  if (isMistakeLearnPack(selectedPack)) return mistakeLearnWordItems;
+  if (selectedPack.id === "personal-language-parse") return personalPackWords;
+  const bid = LABEL_TO_BANK_ID[selectedPack.name];
+  if (bid && bankData[bid]) return bankData[bid].map((e) => bankEntryToWordItem(e));
+  return sampleWords;
+}
+
+/**
+ * 出错类别：仅使用词条 `mistakeSources`（取 pack）；去重并保持录入顺序。
+ * 兼容旧数据：`mistakeSources` 可为 string[]。
+ */
+function mistakeSourceNames(item) {
+  if (!item || typeof item !== "object") return [];
+  const raw = item.mistakeSources;
+  if (!Array.isArray(raw) || raw.length === 0) return [];
+  const seen = new Set();
+  const out = [];
+  for (const s of raw) {
+    let p = "";
+    if (typeof s === "string") p = s.trim();
+    else if (s && typeof s === "object" && typeof s.pack === "string") p = s.pack.trim();
+    if (!p || seen.has(p)) continue;
+    seen.add(p);
+    out.push(p);
+  }
+  return out;
+}
+
+/** 「也属于」仅用词条 alsoIn；剔除与出错类别重复的包名 */
+function alsoInDisplayNames(item, mistakePacks) {
+  const raw = item?.alsoIn;
+  if (!Array.isArray(raw)) return [];
+  const ex = new Set(mistakePacks || []);
+  const seen = new Set();
+  const out = [];
+  for (const x of raw) {
+    if (typeof x !== "string") continue;
+    const p = x.trim();
+    if (!p || ex.has(p) || seen.has(p)) continue;
+    seen.add(p);
+    out.push(p);
+  }
+  return out;
+}
+
+/**
+ * 用本地 mistakes（来自 localStorage）→ 可展示词条行。
+ * 没有本地数据时返回空数组：不注入任何 demo 错题。
+ * 词条详情优先用 mistakes 项本身字段，未补全时回查词表 seed（fallback）。
+ */
+function buildMistakeRows(mistakeItems) {
+  const list = Array.isArray(mistakeItems) ? mistakeItems : [];
+  const rows = [];
+  for (const entry of list) {
+    if (!entry || !entry.word) continue;
+    const lemma = makeWordId(entry.wordId || entry.word);
+    const seedItem = resolveWordItemByLemma(lemma);
+    const explicitPacks = Array.isArray(entry.packs) ? entry.packs.filter((p) => typeof p === "string" && p.trim()) : [];
+    const mistakeSourcePacks = explicitPacks.length ? explicitPacks : seedItem ? mistakeSourceNames(seedItem) : [];
+    const item = seedItem ?? {
+      word: entry.word,
+      phonetic: "",
+      pos: "",
+      cn: "",
+      example: "",
+      exampleCn: "",
+      review: false,
+      mistakeSources: explicitPacks.map((p) => ({ pack: p })),
+      alsoIn: [],
+    };
+    rows.push({
+      wordId: lemma,
+      item,
+      category: entry.category || "",
+      reason: entry.reason || "",
+      action: entry.action || "",
+      mistakeSourcePacks,
+    });
+  }
+  return rows;
+}
+
+function getMistakeLibPillOptionsFromRows(rows) {
+  const packSet = new Set();
+  let hasEmpty = false;
+  for (const r of rows) {
+    if (!r.mistakeSourcePacks?.length) hasEmpty = true;
+    else for (const p of r.mistakeSourcePacks) packSet.add(p);
+  }
+  const sorted = [...packSet].sort((a, b) => a.localeCompare(b, "zh-Hans-CN"));
+  const opts = [{ value: "all", label: "全部错题" }, ...sorted.map((p) => ({ value: p, label: p }))];
+  if (hasEmpty) opts.push({ value: "__none__", label: "未记录来源" });
+  return opts;
+}
+
+function filterMistakeRows(rows, filterKey, queryRaw) {
+  const q = queryRaw.trim().toLowerCase();
+  return rows.filter((r) => {
+    const packs = r.mistakeSourcePacks || [];
+    let hit = filterKey === "all";
+    if (!hit) {
+      if (filterKey === "__none__") hit = packs.length === 0;
+      else hit = packs.includes(filterKey);
+    }
+    const sourcesStr = packs.join(" ");
+    const alsoStr = alsoInDisplayNames(r.item, packs).join(" ");
+    const hay = [r.item.word, r.item.cn, r.item.phonetic, r.item.pos, r.reason, r.category, r.action, sourcesStr, alsoStr].join(" ").toLowerCase();
+    return hit && (!q || hay.includes(q));
+  });
+}
+
+function mistakeOccurrenceCountFromItems(items, lemmaLower) {
+  if (!Array.isArray(items)) return 0;
+  let n = 0;
+  for (const it of items) {
+    if (!it) continue;
+    const key = (it.wordId || makeWordId(it.word || "")).toLowerCase();
+    if (key === lemmaLower) n++;
+  }
+  return n;
+}
+
+function getFavoriteSourceLineForLemma(wordFavorites, findPackById, lemmaLower) {
+  const rows = buildAllFavoriteRows(wordFavorites, findPackById);
+  const row = rows.find((r) => r.wordId === lemmaLower);
+  return row?.displaySource ?? "未记录来源";
+}
+function getFavoriteLearnWordItems(wordFavorites, findPackById, packFilter, search) {
+  const allFavRows = buildAllFavoriteRows(wordFavorites, findPackById);
+  const filteredByPack = filterFavoriteRowsByPack(allFavRows, packFilter);
+  const favRows = filterFavoriteRowsBySearch(filteredByPack, search);
+  return favRows.map((r) => r.item);
+}
+
+/** 与服务端首帧一致：不读 localStorage，仅默认 seed（与 pickWordResume 兜底相同） */
+function getSeedWordResume() {
+  const defaultPack = wordGroups[0].items[0];
+  const idx = Math.min(17, Math.max(0, sampleWords.length - 1));
+  return { pack: defaultPack, idx, src: sampleWords, resumeLemma: sampleWords[idx]?.word ?? "" };
+}
+
+/** 当前词包所属分组与词包对象（含个人词包） */
+function findPackContext(packId) {
+  if (!packId) return null;
+  for (const g of wordGroups) {
+    const p = g.items.find((x) => x.id === packId);
+    if (p) return { savedFromGroupId: g.title, savedFromGroupName: g.title, pack: p };
+  }
+  if (packId === personalPackMeta.id) {
+    return { savedFromGroupId: "personal", savedFromGroupName: "个人词包", pack: personalPackMeta };
+  }
+  return null;
+}
+
+function resolveWordItemByLemma(lemmaLower) {
+  const s = sampleWords.find((w) => w.word.toLowerCase() === lemmaLower);
+  if (s) return s;
+  return personalPackWords.find((w) => w.word.toLowerCase() === lemmaLower) ?? null;
+}
+
+/** 所有在现行词表逻辑下「可出现该词」的词包名（未知来源时用于「也属于」全集） */
+function allPackNamesContainingLemma(lemmaLower) {
+  const inSample = sampleWords.some((w) => w.word.toLowerCase() === lemmaLower);
+  const inPersonal = personalPackWords.some((w) => w.word.toLowerCase() === lemmaLower);
+  if (!inSample && !inPersonal) return [];
+  const names = [];
+  if (inSample) {
+    for (const g of wordGroups) {
+      for (const p of g.items) {
+        names.push(p.name);
+      }
+    }
+  }
+  if (inPersonal) {
+    names.push(personalPackMeta.name);
+  }
+  return [...new Set(names)].filter(Boolean);
+}
+
+/** 共享词表时，其它包含该词（同一套 data）的词包名 */
+function alsoPackNamesForLemma(lemmaLower, excludePackId) {
+  const all = allPackNamesContainingLemma(lemmaLower);
+  if (!excludePackId) return all;
+  const ex = excludePackId;
+  return all.filter((n) => {
+    const p = allPacksByName().get(n);
+    return p && p.id !== ex;
+  });
+}
+
+/** name -> pack 映射（重名取第一个） */
+function allPacksByName() {
+  const m = new Map();
+  for (const g of wordGroups) {
+    for (const p of g.items) {
+      if (!m.has(p.name)) m.set(p.name, p);
+    }
+  }
+  if (!m.has(personalPackMeta.name)) m.set(personalPackMeta.name, personalPackMeta);
+  return m;
+}
+
+/**
+ * 展示用来源：优先 savedFromPackName；否则用 savedFromPackId 反查；
+ * 仅当词只出现在个人词包、且无名无 id 时兜底个人词包；共享词表多词包不猜测。
+ */
+function resolvePackMetaForFavoriteEntry(entry, findPackById) {
+  const nameTrim = entry.savedFromPackName?.trim();
+  if (nameTrim) return { packId: entry.savedFromPackId, packName: nameTrim, unknown: false };
+  const id = entry.savedFromPackId;
+  if (id) {
+    const pack = findPackById(id) || (id === personalPackMeta.id ? personalPackMeta : null);
+    if (pack?.name) return { packId: pack.id, packName: pack.name, unknown: false };
+  }
+  const lemma = (entry.wordId || makeWordId(entry.word || "")).toLowerCase();
+  const inSample = sampleWords.some((w) => w.word.toLowerCase() === lemma);
+  const inPersonal = personalPackWords.some((w) => w.word.toLowerCase() === lemma);
+  if (inPersonal && !inSample) {
+    return { packId: personalPackMeta.id, packName: personalPackMeta.name, unknown: false };
+  }
+  return { packId: id || "", packName: "", unknown: true };
+}
+
+/** hydrate 后把仅有 packId、缺 packName 的旧条目补全并写回 */
+function patchWordFavoritesFromPackIds(favoritesState, findPackById) {
+  const list = favoritesState.wordFavorites || [];
+  let changed = false;
+  const next = list.map((e) => {
+    if (e.savedFromPackName?.trim()) return e;
+    const id = e.savedFromPackId;
+    if (!id) return e;
+    const pack = findPackById(id) || (id === personalPackMeta.id ? personalPackMeta : null);
+    if (!pack?.name) return e;
+    const ctx = findPackContext(id);
+    changed = true;
+    return {
+      ...e,
+      savedFromPackName: pack.name,
+      savedFromGroupId: ctx?.savedFromGroupId ?? e.savedFromGroupId ?? "",
+      savedFromGroupName: ctx?.savedFromGroupName ?? e.savedFromGroupName ?? "",
+    };
+  });
+  if (!changed) return favoritesState;
+  return { ...favoritesState, wordFavorites: next };
+}
+
+function getFavoriteSourcePillOptions() {
+  const opts = [{ value: "all", label: "全部收藏" }];
+  for (const g of wordGroups) {
+    for (const p of g.items) {
+      opts.push({ value: p.name, label: p.name });
+    }
+  }
+  opts.push({ value: personalPackMeta.name, label: personalPackMeta.name });
+  opts.push({ value: "__unknown__", label: "未记录来源" });
+  return opts;
+}
+
+function buildAllFavoriteRows(wordFavorites, findPackById) {
+  const by = new Map();
+  for (const e of wordFavorites || []) {
+    if (!e.wordId) continue;
+    const wid = e.wordId.toLowerCase();
+    if (!by.has(wid)) by.set(wid, []);
+    by.get(wid).push(e);
+  }
+  const rows = [];
+  for (const [wid, ents] of by.entries()) {
+    const sorted = [...ents].sort((a, b) => (b.savedAt || 0) - (a.savedAt || 0));
+    const primary = sorted[0];
+    const resolved = resolvePackMetaForFavoriteEntry(primary, findPackById);
+    const sourceUnknown = resolved.unknown;
+    const displaySource = sourceUnknown ? "未记录来源" : resolved.packName;
+    const item = resolveWordItemByLemma(wid);
+    if (!item) continue;
+    const also = sourceUnknown ? allPackNamesContainingLemma(wid) : alsoPackNamesForLemma(wid, resolved.packId);
+    const maxAt = Math.max(...ents.map((x) => x.savedAt || 0), 0);
+    rows.push({
+      wordId: wid,
+      item,
+      primary,
+      also,
+      maxAt,
+      resolvedPackId: resolved.packId,
+      displaySource,
+      sourceUnknown,
+    });
+  }
+  rows.sort((a, b) => b.maxAt - a.maxAt);
+  return rows;
+}
+
+function filterFavoriteRowsByPack(rows, filterKey) {
+  if (filterKey === "all") return rows;
+  if (filterKey === "__unknown__") return rows.filter((r) => r.sourceUnknown);
+  return rows.filter((r) => r.displaySource === filterKey || r.also.includes(filterKey));
+}
+
+function filterFavoriteRowsBySearch(rows, queryRaw) {
+  const q = queryRaw.trim().toLowerCase();
+  if (!q) return rows;
+  return rows.filter((r) => {
+    const alsoStr = r.also.join(" ").toLowerCase();
+    const blob = [
+      r.item.word,
+      r.item.cn,
+      r.item.phonetic,
+      r.item.example,
+      r.item.exampleCn,
+      r.displaySource,
+      ...r.also,
+    ]
+      .join(" ")
+      .toLowerCase();
+    return blob.includes(q) || alsoStr.includes(q);
+  });
+}
+
+function isWordFavoritedFromPack(wordFavorites, packId, lemmaDisplay) {
+  const wid = makeWordId(lemmaDisplay);
+  return (wordFavorites || []).some((e) => e.savedFromPackId === packId && e.wordId === wid);
+}
+
+function uniqueWordIdCount(wordFavorites) {
+  const s = new Set();
+  for (const e of wordFavorites || []) {
+    if (e.wordId) s.add(e.wordId.toLowerCase());
+  }
+  return s.size;
+}
+
+/** 收藏时间展示（与预览稿风格一致；savedAt≤0 时返回空） */
+function formatFavoriteSavedAt(savedAt) {
+  if (typeof savedAt !== "number" || savedAt <= 0) return "";
+  try {
+    const d = new Date(savedAt);
+    const now = new Date();
+    const startToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    const startThat = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+    const diffDays = Math.round((startToday - startThat) / 86400000);
+    const hm = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+    if (diffDays === 0) return `今天 ${hm}`;
+    if (diffDays === 1) return `昨天 ${hm}`;
+    return `${d.getMonth() + 1}月${d.getDate()}日`;
+  } catch {
+    return "";
+  }
+}
+
+const freeChatModes = ["消息模式", "电话模式"];
+/** AI 对话页音色文案仅「女声 / 男声」；对内映射 TTS 角色名（当前不接 API） */
+const freeChatVoiceLabels = ["女声", "男声"];
+const FREE_CHAT_VOICE_MODEL = { 女声: "Stella", 男声: "Ethan" };
+function getFreeChatVoiceModel(uiLabel) {
+  return FREE_CHAT_VOICE_MODEL[uiLabel] ?? "Stella";
+}
+const freeChatScenes = ["自由聊天", ...aiScenes];
+const freeChatWordTips = {
+  practice: { word: "practice", pos: "v. / n.", cn: "练习；训练", note: "常见搭配：practice speaking English" },
+  speaking: { word: "speaking", pos: "n.", cn: "口语；说话", note: "spoken English 常指英语口语能力" },
+  favorite: { word: "favorite", pos: "adj. / n.", cn: "最喜欢的；特别喜欢的人或物", note: "另一常见拼写为 favourite（多一个字母 u）" },
+  tired: { word: "tired", pos: "adj.", cn: "疲惫的；累的", note: "I feel tired today. 表示今天有点累" },
+  relax: { word: "relax", pos: "v.", cn: "放松", note: "relax a little 表示先放松一下" },
+};
+const freeChatWordPattern = new RegExp(`(${Object.keys(freeChatWordTips).join("|")})`, "gi");
+const freeChatInitialMessages = [
+  {
+    id: 1,
+    role: "ai",
+    text: "Hi, I am here for free English chat. What would you like to talk about today?",
+    cn: "我在这里陪你自由聊英语。今天你想聊点什么？",
+    time: "18:40",
+  },
+  {
+    id: 2,
+    role: "user",
+    text: "I want to practice speaking English, but I feel a little tired today.",
+    cn: "我想练英语口语，但今天有一点累。",
+    time: "18:41",
+  },
+  {
+    id: 3,
+    role: "ai",
+    text: "That is totally fine. We can relax and start with one small thing from your day.",
+    cn: "这完全没问题。我们可以放轻松，从你今天的一件小事开始聊。",
+    time: "18:41",
+  },
+];
+
+function cx(...items) {
+  return items.filter(Boolean).join(" ");
+}
+
+function FreeChatSheet({ open, onClose, title, subtitle, children }) {
+  if (!open) return null;
+  return (
+    <div className="absolute inset-0 z-50 flex items-end bg-black/30 p-0 backdrop-blur-[2px]">
+      <div className="w-full rounded-t-[28px] bg-[#FFF8EA] p-4 shadow-[0_-20px_50px_rgba(0,0,0,0.18)] ring-1 ring-[#E6D8BF]">
+        <div className="mx-auto mb-3 h-1.5 w-12 rounded-full bg-[#D8C7AE]" />
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <div className="text-[18px] font-bold text-[#2C241C]">{title}</div>
+            <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">{subtitle}</p>
+          </div>
+          <button type="button" onClick={onClose} className="rounded-full bg-[#F5E8D4] px-4 py-2 text-[12px] font-bold text-[#6B5B49] active:scale-95">
+            完成
+          </button>
+        </div>
+        <div className="mt-4">{children}</div>
+      </div>
+    </div>
+  );
+}
+
+function FreeChatPill({ active, children, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cx(
+        "shrink-0 rounded-full px-4 py-2 text-[12px] font-bold transition active:scale-95",
+        active ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49] ring-1 ring-[#E6D8BF]",
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+
+function BubbleText({ text, onWordClick }) {
+  const parts = text.split(freeChatWordPattern);
+  return (
+    <span>
+      {parts.map((part, index) => {
+        const tip = freeChatWordTips[part?.toLowerCase?.()];
+        if (!tip) return <span key={`${part}-${index}`}>{part}</span>;
+        return (
+          <button
+            key={`${part}-${index}`}
+            type="button"
+            onClick={() => onWordClick(tip)}
+            className="rounded-md underline decoration-dotted underline-offset-4"
+          >
+            {part}
+          </button>
+        );
+      })}
+    </span>
+  );
+}
+
+function WordHintCard({ tip, onClose }) {
+  if (!tip) return null;
+  return (
+    <div className="absolute inset-x-4 bottom-[92px] z-40 rounded-[24px] bg-[#FFF8EA] p-4 shadow-[0_18px_40px_rgba(58,42,26,0.18)] ring-1 ring-[#E6D8BF]">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <div className="text-[22px] font-bold text-[#2C241C]">{tip.word}</div>
+            <span className="rounded-full bg-[#F5E8D4] px-3 py-1 text-[11px] font-bold text-[#8A6324]">{tip.pos}</span>
+          </div>
+          <p className="mt-2 text-[14px] font-bold text-[#2C241C]">{tip.cn}</p>
+          <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">{tip.note}</p>
+        </div>
+        <button type="button" onClick={onClose} className="rounded-full bg-[#F5E8D4] px-3 py-2 text-[11px] font-bold text-[#6B5B49] active:scale-95">
+          关闭
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function PhoneCallOverlay({
+  open,
+  onClose,
+  scene,
+  voice,
+  voiceModel,
+  speed,
+  subtitlesOn,
+  onToggleSubtitles,
+  paused,
+  onTogglePaused,
+  latestMessage,
+}) {
+  if (!open) return null;
+  const statusText = paused ? "已暂停收音" : latestMessage?.role === "ai" ? "AI 正在说" : "正在聆听";
+  return (
+    <div className="absolute inset-0 z-[60] flex flex-col bg-[#231A12] text-white" data-voice-model={voiceModel}>
+      <div className="flex items-center justify-between px-5 py-4">
+        <button type="button" onClick={onClose} className="rounded-full bg-white/10 px-4 py-2 text-[12px] font-bold text-[#F4D58B] active:scale-95">
+          返回聊天
+        </button>
+        <div className="text-center">
+          <div className="text-[15px] font-bold">AI 英语自由闲聊</div>
+          <div className="mt-1 text-[11px] text-white/60">{scene} · {voice} · {speed}</div>
+        </div>
+        <div className="w-[76px]" />
+      </div>
+
+      <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+        <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-[#D8B65E]/15">
+          {!paused ? <div className="absolute h-40 w-40 animate-ping rounded-full bg-[#D8B65E]/10" /> : null}
+          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#D8B65E] text-[28px] font-bold text-[#2B2118] shadow-[0_18px_40px_rgba(0,0,0,0.28)]">AI</div>
+        </div>
+        <div className="mt-6 text-[28px] font-bold">正在通话</div>
+        <div className="mt-2 text-[13px] text-white/65">{statusText}</div>
+
+        <div className="mt-8 w-full max-w-md rounded-[28px] bg-white/10 p-4 text-left ring-1 ring-white/10">
+          <div className="text-[11px] font-bold text-[#F4D58B]">实时字幕</div>
+          <div className="mt-2 text-[18px] font-bold leading-8">
+            {latestMessage?.text || "Tell me anything in English, and I will keep the conversation going."}
+          </div>
+          {subtitlesOn && latestMessage?.cn ? (
+            <p className="mt-2 text-[12px] leading-6 text-white/68">{latestMessage.cn}</p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-3 px-5 pb-8">
+        <button type="button" onClick={onToggleSubtitles} className={cx("rounded-[22px] py-4 text-[13px] font-bold active:scale-95", subtitlesOn ? "bg-[#F4D58B] text-[#2B2118]" : "bg-white/10 text-[#F4D58B]")}>
+          {subtitlesOn ? "字幕开" : "字幕关"}
+        </button>
+        <button type="button" onClick={onTogglePaused} className="rounded-[22px] bg-white py-4 text-[13px] font-bold text-[#2B2118] active:scale-95">
+          {paused ? "继续收音" : "暂停收音"}
+        </button>
+        <button type="button" onClick={onClose} className="rounded-[22px] bg-[#A7372A] py-4 text-[13px] font-bold text-white active:scale-95">
+          挂断
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function WordRealmCleanPreview() {
   const [activeTab, setActiveTab] = useState("home");
@@ -24,6 +668,10 @@ export default function WordRealmCleanPreview() {
   const [wordIndex, setWordIndex] = useState(0);
   const [reviewOnly, setReviewOnly] = useState(false);
   const [accent, setAccent] = useState("美音");
+  /** 单词学习页顺序：正序 / 乱序 / 核心优先（仅前端重排，不写回 JSON） */
+  const [learnOrderMode, setLearnOrderMode] = useState("sequential");
+  /** 乱序稳定种子（与词条数共同决定置换；持久化到 word-learning） */
+  const [shuffleSeed, setShuffleSeed] = useState(1);
   const [loopPlay, setLoopPlay] = useState(false);
   const [trainingPage, setTrainingPage] = useState("overview");
   const [writingPage, setWritingPage] = useState("overview");
@@ -34,12 +682,17 @@ export default function WordRealmCleanPreview() {
   const [shadowIndex, setShadowIndex] = useState(0);
   const [voice, setVoice] = useState("女声");
   const [speed, setSpeed] = useState("标准");
-  const [scene, setScene] = useState("生活出行");
+  const [scene, setScene] = useState("自由聊天");
   const [recording, setRecording] = useState(false);
-  const [textFallback, setTextFallback] = useState(false);
-  const [customText, setCustomText] = useState("我想练习在机场询问登机口。");
-  const [aiFeedback, setAiFeedback] = useState(false);
-  const [aiStatusDemo, setAiStatusDemo] = useState("normal");
+  const [customText, setCustomText] = useState("");
+  const [chatMode, setChatMode] = useState("消息模式");
+  const [subtitlesOn, setSubtitlesOn] = useState(true);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [callOpen, setCallOpen] = useState(false);
+  const [callMicPaused, setCallMicPaused] = useState(false);
+  const [chatMessages, setChatMessages] = useState(() => freeChatInitialMessages);
+  const [selectedWordTip, setSelectedWordTip] = useState(null);
   const [toast, setToast] = useState("");
   const [minePage, setMinePage] = useState("overview");
   const [mistakeFilter, setMistakeFilter] = useState("发音易错");
@@ -56,26 +709,645 @@ export default function WordRealmCleanPreview() {
   const [showAllWritingItems, setShowAllWritingItems] = useState(false);
   const [writingSearch, setWritingSearch] = useState("");
   const [writingFilter, setWritingFilter] = useState("全部");
+  const [favoriteWordPackFilter, setFavoriteWordPackFilter] = useState("all");
+  const [favoriteWordSearch, setFavoriteWordSearch] = useState("");
+  const [mistakeLibPackFilter, setMistakeLibPackFilter] = useState("all");
+  const [mistakeWordSearch, setMistakeWordSearch] = useState("");
+  const [wordLearnDetailOpen, setWordLearnDetailOpen] = useState(false);
+  const [v2Hydrated, setV2Hydrated] = useState(false);
+  const [bankManifest, setBankManifest] = useState<WordBankManifest | null>(null);
+  const [bankData, setBankData] = useState<Record<string, WordBankEntry[]>>({});
+  const [bankLoading, setBankLoading] = useState(false);
+  const [bankError, setBankError] = useState("");
+  const [masteredWordKeys, setMasteredWordKeys] = useState([]);
+  const [favorites, setFavorites] = useState(() => defaultFavorites());
+  const [mistakesState, setMistakesState] = useState(() => defaultMistakes());
+  const [recentLearning, setRecentLearning] = useState([]);
+
+  // 加载 manifest
+  useEffect(() => {
+    loadWordBankManifest().then((state) => {
+      if (state.status === "loaded") {
+        setBankManifest(state.data);
+      }
+    });
+  }, []);
+
+  const findPackById = useCallback((id) => {
+    if (!id) return null;
+    for (const g of wordGroups) {
+      const p = g.items.find((x) => x.id === id);
+      if (p) return p;
+    }
+    return null;
+  }, []);
+
+  const favoriteLearnWordItems = useMemo(
+    () => getFavoriteLearnWordItems(favorites.wordFavorites, findPackById, favoriteWordPackFilter, favoriteWordSearch),
+    [favorites.wordFavorites, findPackById, favoriteWordPackFilter, favoriteWordSearch],
+  );
+
+  const lastRealPackBeforeFavoriteRef = useRef(wordGroups[0].items[0]);
+
+  const allMistakeRows = useMemo(() => buildMistakeRows(mistakesState.items), [mistakesState.items]);
+  const mistakeLibPillOptions = useMemo(() => getMistakeLibPillOptionsFromRows(allMistakeRows), [allMistakeRows]);
+  const mistakeLibOptionsKey = useMemo(
+    () => mistakeLibPillOptions.map((o) => `${o.value}\t${o.label}`).join("|"),
+    [mistakeLibPillOptions],
+  );
+  const mistakeLearnRows = useMemo(
+    () => filterMistakeRows(allMistakeRows, mistakeLibPackFilter, mistakeWordSearch),
+    [allMistakeRows, mistakeLibPackFilter, mistakeWordSearch],
+  );
+  const mistakeLearnWordItems = useMemo(() => mistakeLearnRows.map((r) => r.item), [mistakeLearnRows]);
+  const mistakeLibTotalCount = allMistakeRows.length;
+
+  const bankDataKeysSig = useMemo(
+    () =>
+      Object.keys(bankData)
+        .sort()
+        .map((id) => `${id}:${bankData[id]?.length ?? 0}`)
+        .join(","),
+    [bankData],
+  );
+
+  const favoriteWordIdsSig = useMemo(
+    () =>
+      !favorites.wordFavorites?.length
+        ? ""
+        : favorites.wordFavorites
+            .map((e) => String(e.wordId ?? "").toLowerCase())
+            .sort()
+            .join(","),
+    [favorites.wordFavorites],
+  );
+
+  const learnBaseDepsKey = useMemo(
+    () =>
+      [
+        selectedPack.id,
+        selectedPack.name,
+        LABEL_TO_BANK_ID[selectedPack.name] ?? "",
+        bankDataKeysSig,
+        favoriteWordIdsSig,
+        favoriteWordPackFilter,
+        favoriteWordSearch,
+        mistakeLibPackFilter,
+        mistakeWordSearch,
+        mistakeLearnWordItems.length,
+        mistakeLearnWordItems[0]?.word ?? "",
+        String(mistakeLibTotalCount),
+      ].join("\u001f"),
+    [
+      selectedPack.id,
+      selectedPack.name,
+      bankDataKeysSig,
+      favoriteWordIdsSig,
+      favoriteWordPackFilter,
+      favoriteWordSearch,
+      mistakeLibPackFilter,
+      mistakeWordSearch,
+      mistakeLearnWordItems.length,
+      mistakeLearnWordItems[0]?.word,
+      mistakeLibTotalCount,
+    ],
+  );
+
+  const learnBaseWordSource = useMemo(
+    () => buildLearnBaseWordSource(selectedPack, bankData, favoriteLearnWordItems, mistakeLearnWordItems),
+    [learnBaseDepsKey],
+  );
+
+  const learnDisplayWords = useMemo(() => {
+    const base = buildLearnBaseWordSource(selectedPack, bankData, favoriteLearnWordItems, mistakeLearnWordItems);
+    const perm =
+      learnOrderMode === "shuffle"
+        ? seededShufflePermutation(
+            base.length,
+            (((shuffleSeed >>> 0) ^ learnOrderSaltPackId(selectedPack.id) ^ (base.length * 0x85ebca6b)) >>> 0) || 1,
+          )
+        : null;
+    const ordered = orderWordItemsForLearn(base, learnOrderMode, perm);
+    if (!reviewOnly) return ordered;
+    return ordered.filter((w) => w.review);
+  }, [learnBaseDepsKey, learnOrderMode, shuffleSeed, selectedPack.id, reviewOnly]);
+
+  const learnDisplayWordsRef = useRef(learnDisplayWords);
+  learnDisplayWordsRef.current = learnDisplayWords;
+
+  const masteredWordKeysRef = useRef(masteredWordKeys);
+  masteredWordKeysRef.current = masteredWordKeys;
+
+  const masteredKeysSig = useMemo(() => [...masteredWordKeys].sort().join("|"), [masteredWordKeys]);
+
+  const mistakeOccurrenceCount = useCallback(
+    (lemmaLower) => mistakeOccurrenceCountFromItems(mistakesState.items, lemmaLower),
+    [mistakesState.items],
+  );
+
+  useEffect(() => {
+    const valid = new Set(
+      mistakeLibOptionsKey
+        ? mistakeLibOptionsKey.split("|").map((seg) => seg.split("\t")[0]).filter(Boolean)
+        : [],
+    );
+    if (!valid.has(mistakeLibPackFilter)) setMistakeLibPackFilter("all");
+  }, [mistakeLibPackFilter, mistakeLibOptionsKey]);
+
+  /**
+   * 真实词库对应的「续学源」：
+   * - 真实词库已加载 → 用真实条目（不混 seed 测试词）。
+   * - 真实词库未加载（仅 manifest 有总数）→ 用 length 占位数组（idx/total 可用，lemma 留空）。
+   * - 非真实词库且未加载到 → 回退 sampleWords（仅作兜底，与「seed 仅作加载失败兜底」一致）。
+   */
+  const wordSourceForResume = useCallback(
+    (pack) => {
+      if (!pack) return sampleWords;
+      if (pack.id === "personal-language-parse") return personalPackWords;
+      const bid = LABEL_TO_BANK_ID[pack.name];
+      if (bid) {
+        const arr = bankData[bid];
+        if (arr) return arr.map((e) => ({ word: e.word }));
+        const total = bankManifest?.[bid]?.count;
+        if (typeof total === "number" && total > 0) return new Array(total).fill(null);
+        return [];
+      }
+      return sampleWords;
+    },
+    [bankData, bankManifest],
+  );
+
+  /** 首页/继续：localStorage 最近一条词学习优先，其次 word-learning，最后默认四级第 18 词 */
+  const pickWordResume = useCallback(() => {
+    try {
+      const recent = loadRecentLearning();
+      for (const r of recent) {
+        if (r.kind === "word" && r.packId) {
+          const p = findPackById(r.packId);
+          if (p) {
+            const src = wordSourceForResume(p);
+            const cap = Math.max(0, src.length - 1);
+            const idx = Math.min(Math.max(0, r.wordIndex ?? 0), cap);
+            const hint =
+              typeof r.lemma === "string" && r.lemma.trim()
+                ? r.lemma.trim()
+                : (src[idx]?.word ?? "");
+            return { pack: p, idx, src, resumeLemma: hint };
+          }
+        }
+      }
+      const wl = loadWordLearning();
+      if (wl?.packId) {
+        const p = findPackById(wl.packId);
+        if (p) {
+          const src = wordSourceForResume(p);
+          const cap = Math.max(0, src.length - 1);
+          const idx = Math.min(Math.max(0, wl.wordIndex ?? 0), cap);
+          const hint =
+            typeof wl.lastLearnLemma === "string" && wl.lastLearnLemma.trim()
+              ? wl.lastLearnLemma.trim()
+              : (src[idx]?.word ?? "");
+          return { pack: p, idx, src, resumeLemma: hint };
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+    const defaultPack = wordGroups[0].items[0];
+    const src = wordSourceForResume(defaultPack);
+    const idx = Math.min(17, Math.max(0, src.length - 1));
+    return { pack: defaultPack, idx, src, resumeLemma: src[idx]?.word ?? "" };
+  }, [findPackById, wordSourceForResume]);
+
+  const addRecent = useCallback((item) => {
+    const next = pushRecentLearning(item);
+    setRecentLearning(next);
+  }, []);
+
+  const uniqueFavoriteWordCount = useMemo(() => uniqueWordIdCount(favorites.wordFavorites), [favorites.wordFavorites]);
+
+  useEffect(() => {
+    try {
+      const wl = loadWordLearning();
+      const favRaw = loadFavorites();
+      const fav = patchWordFavoritesFromPackIds(favRaw, findPackById);
+      const recent = loadRecentLearning();
+      const ui = loadUiFlags();
+      const mistakes = loadMistakes();
+      setMasteredWordKeys(wl?.masteredKeys ?? []);
+      setFavorites(fav);
+      setMistakesState(mistakes);
+      setRecentLearning(recent);
+      setHasPersonalPack(ui.hasPersonalPack);
+      if (wl?.learnOrderMode === "sequential" || wl?.learnOrderMode === "shuffle" || wl?.learnOrderMode === "coreFirst") {
+        setLearnOrderMode(wl.learnOrderMode);
+      }
+      if (typeof wl?.shuffleSeed === "number" && wl.shuffleSeed >= 0) {
+        setShuffleSeed(Math.max(1, wl.shuffleSeed >>> 0));
+      }
+      const pos = pickWordResume();
+      setSelectedPack(pos.pack);
+      setWordIndex(pos.idx);
+      if (wl?.packId && findPackById(wl.packId)) {
+        const savedPack = findPackById(wl.packId);
+        if (savedPack && savedPack.id === pos.pack.id) {
+          setWordPage(wl.wordPage === "learn" || wl.wordPage === "list" ? wl.wordPage : "list");
+          setReviewOnly(!!wl.reviewOnly);
+          if (savedPack.name.includes("雅思")) setAccent("英音");
+          else setAccent("美音");
+        } else {
+          setWordPage("list");
+          setReviewOnly(false);
+          if (pos.pack.name.includes("雅思")) setAccent("英音");
+          else setAccent("美音");
+        }
+      } else {
+        if (pos.pack.name.includes("雅思")) setAccent("英音");
+        else setAccent("美音");
+      }
+    } catch {
+      /* 本地数据异常时保持默认状态 */
+    }
+    setV2Hydrated(true);
+  }, [findPackById, pickWordResume]);
+
+  useEffect(() => {
+    if (!v2Hydrated) return;
+    try {
+      if (isFavoriteLearnPack(selectedPack)) {
+        saveFavoriteWordLearning({ currentIndex: wordIndex, updatedAt: Date.now() });
+        const prev = loadWordLearning();
+        const fallbackPack = wordGroups[0].items[0];
+        const prevPackId =
+          prev?.packId && findPackById(prev.packId) && prev.packId !== V2_FAVORITE_LEARN_PACK_ID && prev.packId !== V2_MISTAKE_LEARN_PACK_ID
+            ? prev.packId
+            : fallbackPack.id;
+        saveWordLearning({
+          packId: prevPackId,
+          wordPage: prev?.wordPage === "learn" || prev?.wordPage === "list" ? prev.wordPage : "list",
+          wordIndex: typeof prev?.wordIndex === "number" ? prev.wordIndex : 0,
+          reviewOnly: !!prev?.reviewOnly,
+          masteredKeys: masteredWordKeysRef.current,
+          learnOrderMode,
+          shuffleSeed: Math.max(1, shuffleSeed >>> 0),
+          lastLearnLemma: prev?.lastLearnLemma ?? "",
+        });
+      } else if (isMistakeLearnPack(selectedPack)) {
+        saveMistakeWordLearning({ currentIndex: wordIndex, updatedAt: Date.now() });
+        const prev = loadWordLearning();
+        const fallbackPack = wordGroups[0].items[0];
+        const prevPackId =
+          prev?.packId && findPackById(prev.packId) && prev.packId !== V2_FAVORITE_LEARN_PACK_ID && prev.packId !== V2_MISTAKE_LEARN_PACK_ID
+            ? prev.packId
+            : fallbackPack.id;
+        saveWordLearning({
+          packId: prevPackId,
+          wordPage: prev?.wordPage === "learn" || prev?.wordPage === "list" ? prev.wordPage : "list",
+          wordIndex: typeof prev?.wordIndex === "number" ? prev.wordIndex : 0,
+          reviewOnly: !!prev?.reviewOnly,
+          masteredKeys: masteredWordKeysRef.current,
+          learnOrderMode,
+          shuffleSeed: Math.max(1, shuffleSeed >>> 0),
+          lastLearnLemma: prev?.lastLearnLemma ?? "",
+        });
+      } else {
+        const prevWl = loadWordLearning();
+        let lemmaPersist = prevWl?.lastLearnLemma ?? "";
+        const dw = learnDisplayWordsRef.current;
+        if (wordPage === "learn" && dw.length > 0) {
+          lemmaPersist = dw[Math.min(Math.max(0, wordIndex), dw.length - 1)]?.word ?? "";
+        }
+        saveWordLearning({
+          packId: selectedPack?.id ?? wordGroups[0].items[0].id,
+          wordPage: wordPage === "favorites" || wordPage === "mistakes" ? "list" : wordPage,
+          wordIndex,
+          reviewOnly,
+          masteredKeys: masteredWordKeysRef.current,
+          learnOrderMode,
+          shuffleSeed: Math.max(1, shuffleSeed >>> 0),
+          lastLearnLemma: lemmaPersist,
+        });
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [v2Hydrated, selectedPack?.id, wordPage, wordIndex, reviewOnly, masteredKeysSig, findPackById, learnOrderMode, shuffleSeed, learnDisplayWords.length]);
+
+  useEffect(() => {
+    if (!v2Hydrated) return;
+    try {
+      saveFavorites(favorites);
+    } catch {
+      /* ignore */
+    }
+  }, [v2Hydrated, favorites]);
+
+  /** 已 hydrate 后，按「续学」目标预加载对应真实词库，让首页/单词库续学位显示真实词条而非 seed */
+  useEffect(() => {
+    if (!v2Hydrated) return;
+    try {
+      const candidates = new Set();
+      const recent = loadRecentLearning();
+      for (const r of recent) {
+        if (r.kind === "word" && r.packId) {
+          const p = findPackById(r.packId);
+          if (p?.name && LABEL_TO_BANK_ID[p.name]) candidates.add(LABEL_TO_BANK_ID[p.name]);
+        }
+      }
+      const wl = loadWordLearning();
+      if (wl?.packId) {
+        const p = findPackById(wl.packId);
+        if (p?.name && LABEL_TO_BANK_ID[p.name]) candidates.add(LABEL_TO_BANK_ID[p.name]);
+      }
+      // 兜底：首屏默认推荐 cet4，但只有 manifest 已存在该词包时才发起请求
+      const defaultBid = LABEL_TO_BANK_ID[wordGroups[0].items[0].name];
+      if (defaultBid && bankManifest?.[defaultBid]) candidates.add(defaultBid);
+      for (const bid of candidates) {
+        if (!bankData[bid]) {
+          loadWordBank(bid).then((state) => {
+            if (state.status === "loaded") {
+              setBankData((prev) => (prev[bid] ? prev : { ...prev, [bid]: state.data }));
+            }
+          });
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [v2Hydrated, bankManifest, findPackById, bankDataKeysSig]);
+
+  useEffect(() => {
+    if (!v2Hydrated) return;
+    try {
+      saveUiFlags({ v: 1, hasPersonalPack });
+    } catch {
+      /* ignore */
+    }
+  }, [v2Hydrated, hasPersonalPack]);
+
+  useEffect(() => {
+    if (!v2Hydrated || activeTab !== "words" || wordPage !== "learn") return;
+    const t = setTimeout(() => {
+      try {
+        const pack = selectedPack;
+        const src = learnDisplayWordsRef.current;
+        if (src.length === 0) return;
+        const idx = Math.min(wordIndex, src.length - 1);
+        const lemma = src[idx]?.word ?? "";
+        const next = pushRecentLearning({
+          id: `word-${pack.id}-${idx}`,
+          kind: "word",
+          label: `${pack.name} · ${lemma}`,
+          packId: pack.id,
+          wordIndex: idx,
+          lemma,
+        });
+        setRecentLearning(next);
+      } catch {
+        /* ignore */
+      }
+    }, 400);
+    return () => clearTimeout(t);
+  }, [
+    v2Hydrated,
+    activeTab,
+    wordPage,
+    wordIndex,
+    selectedPack.id,
+    selectedPack.name,
+    learnDisplayWords.length,
+    learnOrderMode,
+    shuffleSeed,
+    reviewOnly,
+    learnBaseDepsKey,
+  ]);
+
+  useEffect(() => {
+    if (wordPage !== "learn") return;
+    const n = learnDisplayWords.length;
+    if (n <= 0) return;
+    setWordIndex((i) => Math.min(Math.max(0, i), n - 1));
+  }, [
+    wordPage,
+    learnDisplayWords.length,
+    reviewOnly,
+    learnOrderMode,
+    shuffleSeed,
+    selectedPack.id,
+    learnBaseDepsKey,
+  ]);
+
+  useEffect(() => {
+    if (wordPage !== "learn") return;
+    if (!isFavoriteLearnPack(selectedPack) && !isMistakeLearnPack(selectedPack)) return;
+    const n = isFavoriteLearnPack(selectedPack) ? favoriteLearnWordItems.length : mistakeLearnWordItems.length;
+    setWordIndex((i) => {
+      if (n <= 0) return 0;
+      return Math.min(Math.max(0, i), n - 1);
+    });
+  }, [selectedPack?.id, wordPage, favoriteLearnWordItems.length, mistakeLearnWordItems.length, favoriteWordIdsSig]);
+
+  useEffect(() => {
+    setWordLearnDetailOpen(false);
+  }, [wordIndex, selectedPack?.id, wordPage]);
 
   const showToast = (text) => {
     setToast(text);
     setTimeout(() => setToast(""), 1500);
   };
 
+  const latestChatMessage = chatMessages[chatMessages.length - 1];
+
+  const getVoiceDraft = useCallback(() => {
+    if (scene === "自由聊天") return "Today I feel a little tired, but I still want to practice speaking English.";
+    if (scene === "校园学习") return "I want to practice introducing myself in class and talk about my favorite subject.";
+    if (scene === "生活出行") return "I need help asking for directions and checking my ticket in English.";
+    if (scene === "求职面试") return "I want to practice speaking about my strengths in an interview.";
+    if (scene === "考试口语") return "I want to speak more clearly and relax before the speaking test.";
+    if (scene === "自定义角色") return "Can we practice a custom role-play and keep the conversation natural?";
+    return "I want to speak more naturally and keep practicing every day.";
+  }, [scene]);
+
+  const buildAiReply = useCallback((userText) => {
+    const lowerText = userText.toLowerCase();
+    if (lowerText.includes("tired")) {
+      return {
+        text: "That is okay. If you feel tired, we can relax and keep the chat light. What made you tired today?",
+        cn: "没关系。如果你觉得累，我们就轻松一点聊。今天是什么让你觉得累呢？",
+      };
+    }
+    if (lowerText.includes("favorite")) {
+      return {
+        text: "Nice. Why is it your favorite? I want to hear one more detail from you.",
+        cn: "不错。为什么它是你的最爱？我想再听你多说一个细节。",
+      };
+    }
+    if (scene === "校园学习") {
+      return {
+        text: "That sounds useful for campus life. Who do you usually practice speaking English with?",
+        cn: "这很适合校园场景。你平时会和谁一起练英语口语？",
+      };
+    }
+    if (scene === "生活出行") {
+      return {
+        text: "Great. In a travel situation, what would you like to ask first, the route or the ticket details?",
+        cn: "很好。如果是在出行情景里，你最想先问路线，还是票务细节？",
+      };
+    }
+    if (scene === "求职面试") {
+      return {
+        text: "Good start. Tell me about one strength you want to describe in a simple and confident way.",
+        cn: "开头不错。试着告诉我一个你想用简单自信方式表达的优点。",
+      };
+    }
+    if (scene === "考试口语") {
+      return {
+        text: "Let us keep it simple. Give me one short answer first, and I will help you practice speaking step by step.",
+        cn: "我们先从简单的开始。你先给我一个简短回答，我会一步一步陪你练口语。",
+      };
+    }
+    if (scene === "自定义角色") {
+      return {
+        text: "Sure. We can stay flexible. Describe the role you want to play, and I will follow your pace.",
+        cn: "当然可以。我们可以保持灵活。你先描述想扮演的角色，我会跟着你的节奏聊。",
+      };
+    }
+    return {
+      text: "That is already a good start. What happened next? Just keep talking and do not worry about perfect grammar.",
+      cn: "这已经是个不错的开始了。接下来发生了什么？继续说就好，不用担心语法必须完美。",
+    };
+  }, [scene]);
+
+  const pushFreeChatMessage = useCallback((userText, source = "text") => {
+    const content = userText.trim();
+    if (!content) return;
+    const now = new Date();
+    const time = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    setChatMessages((prev) => [
+      ...prev,
+      {
+        id: Date.now(),
+        role: "user",
+        text: content,
+        cn: source === "voice" ? "你刚刚通过语音发送了这句英文。" : "你刚刚通过文字发送了这句英文。",
+        time,
+      },
+    ]);
+    setRecording(false);
+    setCallMicPaused(false);
+    window.setTimeout(() => {
+      const reply = buildAiReply(content);
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          role: "ai",
+          text: reply.text,
+          cn: reply.cn,
+          time,
+        },
+      ].slice(-24));
+    }, 700);
+  }, [buildAiReply]);
+
+  const submitTextChat = useCallback(() => {
+    const content = customText.trim();
+    if (!content) return;
+    pushFreeChatMessage(content, "text");
+    setCustomText("");
+  }, [customText, pushFreeChatMessage]);
+
+  const handlePressToTalkStart = useCallback(() => {
+    if (callMicPaused) {
+      showToast("已暂停收音");
+      return;
+    }
+    setRecording(true);
+  }, [callMicPaused]);
+
+  const handlePressToTalkEnd = useCallback(() => {
+    if (!recording || callMicPaused) return;
+    pushFreeChatMessage(getVoiceDraft(), "voice");
+  }, [callMicPaused, getVoiceDraft, pushFreeChatMessage, recording]);
+
+  /** 进入收藏复习；startIndex 缺省则用单独持久化的收藏进度 */
+  const enterFavoriteLearn = (startIndex) => {
+    const items = getFavoriteLearnWordItems(favorites.wordFavorites, findPackById, favoriteWordPackFilter, favoriteWordSearch);
+    if (items.length === 0) {
+      showToast("暂无收藏可复习");
+      return;
+    }
+    if (!isFavoriteLearnPack(selectedPack) && !isMistakeLearnPack(selectedPack)) {
+      lastRealPackBeforeFavoriteRef.current = selectedPack;
+    }
+    let idx;
+    if (typeof startIndex === "number" && !Number.isNaN(startIndex) && startIndex >= 0) {
+      idx = Math.min(Math.max(0, startIndex), items.length - 1);
+    } else {
+      const saved = loadFavoriteWordLearning();
+      idx = Math.min(Math.max(0, saved?.currentIndex ?? 0), items.length - 1);
+    }
+    setSelectedPack(FAVORITE_VIRTUAL_PACK);
+    setWordPage("learn");
+    setReviewOnly(false);
+    setWordIndex(idx);
+  };
+
+  const enterMistakeLearn = (startIndex) => {
+    const rows = filterMistakeRows(allMistakeRows, mistakeLibPackFilter, mistakeWordSearch);
+    if (rows.length === 0) {
+      showToast("暂无错题可复习");
+      return;
+    }
+    if (!isFavoriteLearnPack(selectedPack) && !isMistakeLearnPack(selectedPack)) {
+      lastRealPackBeforeFavoriteRef.current = selectedPack;
+    }
+    let idx;
+    if (typeof startIndex === "number" && !Number.isNaN(startIndex) && startIndex >= 0) {
+      idx = Math.min(Math.max(0, startIndex), rows.length - 1);
+    } else {
+      const saved = loadMistakeWordLearning();
+      idx = Math.min(Math.max(0, saved?.currentIndex ?? 0), rows.length - 1);
+    }
+    setSelectedPack(MISTAKE_VIRTUAL_PACK);
+    setWordPage("learn");
+    setReviewOnly(false);
+    setWordIndex(idx);
+  };
+
   const goTask = (target) => {
     if (target === "words") {
       setActiveTab("words");
       setWordPage("learn");
+      const pos = pickWordResume();
+      setSelectedPack(pos.pack);
+      setWordIndex(pos.idx);
+      if (pos.pack.name.includes("雅思")) setAccent("英音");
+      else setAccent("美音");
+      addRecent({ id: "entry-words", kind: "training", label: "单词学习", trainingTarget: "words" });
     }
     if (target === "shadow") {
       setActiveTab("training");
       setTrainingPage("shadow");
       setShadowPage("overview");
+      addRecent({ id: "entry-shadow", kind: "training", label: "口语跟读训练", trainingTarget: "shadow" });
     }
     if (target === "aiVoice") {
       setActiveTab("training");
       setTrainingPage("aiVoice");
+      addRecent({ id: "entry-aivoice", kind: "training", label: "AI语音对话", trainingTarget: "aiVoice" });
     }
+  };
+
+  const continueWordFromSaved = () => {
+    setActiveTab("words");
+    setWordPage("learn");
+    const pos = pickWordResume();
+    setSelectedPack(pos.pack);
+    setWordIndex(pos.idx);
+    if (pos.pack.name.includes("雅思")) setAccent("英音");
+    else setAccent("美音");
+    addRecent({ id: "entry-words", kind: "training", label: "单词学习", trainingTarget: "words" });
   };
 
   const startTodayLearning = () => {
@@ -84,6 +1356,9 @@ export default function WordRealmCleanPreview() {
   };
 
   function renderHome() {
+    const pos = v2Hydrated ? pickWordResume() : getSeedWordResume();
+    const resumeTitleLine = `${pos.pack.name} · 第${pos.idx + 1}词 ${pos.resumeLemma ?? pos.src[pos.idx]?.word ?? ""}`;
+    const resumeProgressVal = pos.src.length ? Math.min(100, ((pos.idx + 1) / pos.src.length) * 100) : 0;
     const doneCount = todayTasks.filter((item) => item.done).length;
     return (
       <>
@@ -95,9 +1370,11 @@ export default function WordRealmCleanPreview() {
           </div>
           <div className="mt-2"><Progress value={(doneCount / todayTasks.length) * 100} /></div>
           <div className="mt-5 text-[12px] font-bold text-[#8A6324]">继续上次学习</div>
-          <h2 className="mt-2 text-[22px] font-bold leading-tight text-[#2C241C]">大学英语四级 · 第18词 adapt</h2>
+          <h2 className="mt-2 text-[22px] font-bold leading-tight text-[#2C241C]">{resumeTitleLine}</h2>
+          <div className="mt-3"><Progress value={resumeProgressVal} /></div>
           <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">今天建议：复习 8 个词 → 跟读 5 句 → 完成 1 轮生活出行对话。</p>
-          <button onClick={startTodayLearning} className="mt-4 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">开始今日学习</button>
+          <button type="button" onClick={continueWordFromSaved} className="mt-4 w-full rounded-[16px] border border-[#E6D8BF] bg-[#FFF8EA] py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">继续上次学习</button>
+          <button type="button" onClick={startTodayLearning} className="mt-2 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">开始今日学习</button>
         </Surface>
         <div className="mt-4 space-y-3">
           {todayTasks.map((item) => (
@@ -124,107 +1401,766 @@ export default function WordRealmCleanPreview() {
   }
 
   const openPack = (pack) => {
+    lastRealPackBeforeFavoriteRef.current = pack;
     setSelectedPack(pack);
     setWordPage("learn");
     setWordIndex(0);
     if (pack.name.includes("雅思")) setAccent("英音");
     else setAccent("美音");
+    // 如果是真实词库，异步加载
+    const bid = LABEL_TO_BANK_ID[pack.name];
+    if (bid && !bankData[bid]) {
+      setBankLoading(true);
+      setBankError("");
+      loadWordBank(bid).then((state) => {
+        setBankLoading(false);
+        if (state.status === "loaded") {
+          setBankData((prev) => ({ ...prev, [bid]: state.data }));
+        } else {
+          setBankError(state.error);
+        }
+      });
+    }
   };
 
-  /** 当前词包在 App 内可学的词条数（个人词包用 personalPackWords，其余词包复用 sampleWords） */
+  /** 当前词包在 App 内可学的词条数 */
   const wordCountForPack = (pack) => {
     if (!pack) return 0;
+    if (isFavoriteLearnPack(pack)) return favoriteLearnWordItems.length;
+    if (isMistakeLearnPack(pack)) return mistakeLearnWordItems.length;
     if (pack.id === "personal-language-parse") return personalPackWords.length;
+    // 真实词库优先从 manifest 获取
+    const bid = LABEL_TO_BANK_ID[pack.name];
+    if (bid && bankManifest?.[bid]) {
+      return bankManifest[bid].count;
+    }
+    // 从已加载的 bankData 获取
+    if (bid && bankData[bid]) {
+      return bankData[bid].length;
+    }
     return sampleWords.length;
   };
 
   function renderWords() {
-    const wordSource = selectedPack.id === "personal-language-parse" ? personalPackWords : sampleWords;
-    const activeWords = reviewOnly ? wordSource.filter((w) => w.review) : wordSource;
-    const safeIndex = activeWords.length > 0 ? Math.min(wordIndex, activeWords.length - 1) : 0;
+    const favoriteMode = isFavoriteLearnPack(selectedPack);
+    const mistakeMode = isMistakeLearnPack(selectedPack);
+    const bid = LABEL_TO_BANK_ID[selectedPack.name];
+    const isRealBank = !!bid;
+    const realBankWords = isRealBank ? bankData[bid] : null;
+    const wordSource = learnBaseWordSource;
+
+    const exitLearnToWordLibrary = () => {
+      setWordPage("list");
+    };
+
+    const exitFavoriteLearnToList = () => {
+      setWordPage("favorites");
+      setSelectedPack(lastRealPackBeforeFavoriteRef.current);
+    };
+
+    const exitMistakeLearnToList = () => {
+      setWordPage("mistakes");
+      setSelectedPack(lastRealPackBeforeFavoriteRef.current);
+    };
+
+    const learnReviewBack = () => {
+      if (favoriteMode) exitFavoriteLearnToList();
+      else if (mistakeMode) exitMistakeLearnToList();
+      else exitLearnToWordLibrary();
+    };
 
     if (wordPage === "learn") {
-      if (activeWords.length === 0) {
+      // 加载真实词库中
+      if (!favoriteMode && !mistakeMode && selectedPack.id !== "personal-language-parse" && isRealBank && !realBankWords) {
+        if (bankLoading) {
+          return (
+            <>
+              <PageHeader title={selectedPack.name} desc="加载中..." back onBack={() => { setWordPage("list"); }} />
+              <Surface className="p-8 text-center">
+                <div className="animate-pulse text-[16px] font-bold text-[#8A6324]">正在加载词库...</div>
+                <p className="mt-3 text-[13px] text-[#998B78]">{selectedPack.name} · {bankManifest?.[bid]?.count ?? "..."} 词</p>
+              </Surface>
+            </>
+          );
+        }
+        if (bankError) {
+          return (
+            <>
+              <PageHeader title={selectedPack.name} desc="加载失败" back onBack={() => { setWordPage("list"); }} />
+              <Surface className="p-8 text-center">
+                <div className="text-[16px] font-bold text-red-500">加载失败</div>
+                <p className="mt-3 text-[13px] text-[#998B78]">{bankError}</p>
+                <p className="mt-2 text-[12px] text-[#998B78]">已切换到备用词表，功能不受影响</p>
+              </Surface>
+            </>
+          );
+        }
+      }
+      if (favoriteMode && wordSource.length === 0) {
         return (
           <>
-            <PageHeader title={selectedPack.name} desc="当前没有待复习内容。" back onBack={() => setWordPage("list")} />
+            <PageHeader title="我的收藏单词" desc="收藏复习" back onBack={exitFavoriteLearnToList} />
             <Surface className="p-6 text-center">
-              <div className="text-[20px] font-bold text-[#2C241C]">暂无待复习生词</div>
-              <p className="mt-3 text-[13px] leading-6 text-[#6B5B49]">这个词库目前没有需要复习的词。你可以切回全部单词继续学习。</p>
-              <button onClick={() => { setReviewOnly(false); setWordIndex(0); }} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">返回全部单词</button>
+              <div className="text-[20px] font-bold text-[#2C241C]">收藏词已清空</div>
+              <p className="mt-3 text-[13px] leading-6 text-[#6B5B49]">收藏词已清空，先去词包里收藏一些常用词。</p>
+              <button type="button" onClick={exitFavoriteLearnToList} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">
+                返回收藏列表
+              </button>
             </Surface>
           </>
         );
       }
-      const w = activeWords[safeIndex];
+      if (mistakeMode && wordSource.length === 0) {
+        return (
+          <>
+            <PageHeader title="错题库" desc="错题复习" back onBack={exitMistakeLearnToList} />
+            <Surface className="p-6 text-center">
+              <div className="text-[20px] font-bold text-[#2C241C]">当前没有可复习的错题</div>
+              <p className="mt-3 text-[13px] leading-6 text-[#6B5B49]">请调整筛选或返回错题库列表。</p>
+              <button type="button" onClick={exitMistakeLearnToList} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">
+                返回错题库
+              </button>
+            </Surface>
+          </>
+        );
+      }
+      if (reviewOnly && learnDisplayWords.length === 0) {
+        return (
+          <>
+            <PageHeader title={favoriteMode ? "我的收藏单词" : mistakeMode ? "错题库" : selectedPack.name} desc="当前没有待复习内容。" back onBack={learnReviewBack} />
+            <Surface className="p-6 text-center">
+              <div className="text-[20px] font-bold text-[#2C241C]">暂无待复习生词</div>
+              <p className="mt-3 text-[13px] leading-6 text-[#6B5B49]">这个词库目前没有需要复习的词。你可关闭「复习模式」继续按当前顺序学习。</p>
+              <button type="button" onClick={() => { setReviewOnly(false); setWordIndex(0); }} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">关闭复习模式</button>
+            </Surface>
+          </>
+        );
+      }
+      const safeIdx = Math.min(Math.max(0, wordIndex), Math.max(0, learnDisplayWords.length - 1));
+      const w = learnDisplayWords[safeIdx];
+      if (!w) return null;
+      const denom = learnDisplayWords.length;
+      const numer = safeIdx + 1;
+      const wkey = makeWordKey(selectedPack.id, w.word);
+      const favWord = favoriteMode ? true : isWordFavoritedFromPack(favorites.wordFavorites, selectedPack.id, w.word);
+      const lemmaKey = w.word.toLowerCase();
+      const mistakeRow = mistakeMode ? mistakeLearnRows.find((r) => r.item.word === w.word) ?? null : null;
+      const sourceLineLabel = mistakeMode ? "出错类别" : favoriteMode ? "收藏来源" : "学习来源";
+      const sourceLineValue = mistakeMode
+        ? mistakeRow?.mistakeSourcePacks?.length
+          ? mistakeRow.mistakeSourcePacks.join(" / ")
+          : "未记录来源"
+        : favoriteMode
+          ? getFavoriteSourceLineForLemma(favorites, findPackById, lemmaKey)
+          : selectedPack.name;
+      const orderLabel = learnOrderMode === "sequential" ? "正序" : learnOrderMode === "shuffle" ? "乱序" : "核心优先";
+      const favChipLabel = getFavoriteSourcePillOptions().find((o) => o.value === favoriteWordPackFilter)?.label ?? "全部收藏";
+      const misChipLabel = mistakeLibPillOptions.find((o) => o.value === mistakeLibPackFilter)?.label ?? "全部错题";
+      const scopeChip = favoriteMode
+        ? `收藏复习 · ${favChipLabel}`
+        : mistakeMode
+          ? `错题复习 · ${misChipLabel}`
+          : `${selectedPack.name} · ${reviewOnly ? "复习模式" : orderLabel}`;
+      const learnBackLabel = favoriteMode ? "收藏单词" : mistakeMode ? "错题库" : "单词库";
+      const packsForCurrentMistake = mistakeRow?.mistakeSourcePacks ?? [];
+      const alsoInList = mistakeMode ? alsoInDisplayNames(w, packsForCurrentMistake) : allPackNamesContainingLemma(lemmaKey);
+      const misCount = mistakeOccurrenceCount(lemmaKey);
+
       return (
-        <>
-          <PageHeader title={selectedPack.name} desc="左右切换词条，进度自动保存。" back onBack={() => setWordPage("list")} />
-          <div className="mb-4 grid grid-cols-2 gap-3">
-            <Surface className="p-3">
-              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">发音</div>
-              <div className="flex gap-2">
-                {accents.map((item) => (
-                  <button key={item} onClick={() => setAccent(item)} className={`flex-1 rounded-full py-2 text-[12px] font-bold active:scale-95 ${accent === item ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{item}</button>
-                ))}
-              </div>
-            </Surface>
-            <Surface className="p-3">
-              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">模式</div>
-              <button onClick={() => { setReviewOnly(!reviewOnly); setWordIndex(0); }} className={`w-full rounded-full py-2 text-[12px] font-bold active:scale-95 ${reviewOnly ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{reviewOnly ? "复习模式" : "全部单词"}</button>
-            </Surface>
+        <div className="-mx-1 flex min-h-0 flex-col pb-1">
+          <button type="button" onClick={learnReviewBack} className="mb-3 text-left text-[14px] font-bold text-[#8A6324] active:opacity-80">
+            ‹ 返回{learnBackLabel}
+          </button>
+
+          <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
+            {accents.map((item) => (
+              <button
+                key={item}
+                type="button"
+                onClick={() => setAccent(item)}
+                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${accent === item ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+              >
+                {item}
+              </button>
+            ))}
+            {(
+              [
+                ["sequential", "正序"],
+                ["shuffle", "乱序"],
+                ["coreFirst", "核心优先"],
+              ]
+            ).map(([mode, label]) => (
+              <button
+                key={mode}
+                type="button"
+                onClick={() => {
+                  setLearnOrderMode(mode);
+                  setWordIndex(0);
+                  if (mode === "shuffle") setShuffleSeed((Date.now() >>> 0) || 1);
+                }}
+                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${learnOrderMode === mode ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+              >
+                {label}
+              </button>
+            ))}
+            <button
+              type="button"
+              onClick={() => {
+                setReviewOnly((v) => !v);
+                setWordIndex(0);
+              }}
+              className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${reviewOnly ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+            >
+              {reviewOnly ? "复习模式" : "全部词条"}
+            </button>
           </div>
-          <Surface className="p-5">
-            <div className="flex justify-between gap-2">
-              <Badge>{`${wordCountForPack(selectedPack)} 词`}</Badge>
-              <Badge>{safeIndex + 1}/{activeWords.length}</Badge>
+
+          <section className="flex min-h-0 flex-1 flex-col rounded-[28px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 shadow-sm">
+            <div className="flex shrink-0 items-center justify-between gap-2">
+              <span className="max-w-[65%] truncate rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]" title={scopeChip}>
+                {scopeChip}
+              </span>
+              <span className="shrink-0 rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]">
+                {numer}/{denom}
+              </span>
             </div>
-            <div className="mt-8 text-center">
-              <div className="text-[42px] font-bold text-[#2C241C]">{w.word}</div>
-              <div className="mt-2 text-[15px] text-[#8A6324]">{w.phonetic}</div>
-              <div className="mt-4 flex justify-center gap-2">
-                <button onClick={() => showToast(`播放${accent}发音`)} className="rounded-full border border-[#E6D8BF] bg-white/80 px-4 py-2 text-[12px] font-bold text-[#8A6324] active:scale-95">🔊 播放</button>
-                <button onClick={() => { setLoopPlay(!loopPlay); showToast(loopPlay ? "已关闭循环播放" : "已开启循环播放"); }} className={`rounded-full border px-4 py-2 text-[12px] font-bold active:scale-95 ${loopPlay ? "border-[#3A2A1A] bg-[#3A2A1A] text-white" : "border-[#E6D8BF] bg-white/80 text-[#8A6324]"}`}>↻ 循环</button>
+
+            <div className="mt-4 shrink-0 text-center">
+              <h2 className="break-words text-[36px] font-bold leading-tight text-[#2C241C] sm:text-[40px]">{w.word}</h2>
+              <p className="mt-2 text-[15px] font-medium text-[#8A6324]">{w.phonetic}</p>
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
+                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">词性：{w.pos}</span>
+                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">
+                  {sourceLineLabel}：{sourceLineValue}
+                </span>
               </div>
             </div>
-            <div className="mt-8 space-y-3">
-              <div className="rounded-[16px] bg-white p-4"><div className="text-[12px] text-[#998B78]">词性</div><div className="mt-1 text-[15px] font-bold text-[#2C241C]">{w.pos}</div></div>
-              <div className="rounded-[16px] bg-white p-4"><div className="text-[12px] text-[#998B78]">核心释义</div><div className="mt-1 text-[15px] font-bold text-[#2C241C]">{w.cn}</div></div>
-              <div className="rounded-[16px] bg-white p-4">
-                <div className="text-[12px] text-[#998B78]">真题风格例句</div>
-                <div className="mt-2 flex items-start gap-3">
-                  <button onClick={() => showToast("播放例句发音")} className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95">🔊</button>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-[14px] leading-6 text-[#2C241C]"><HighlightedExample sentence={w.example} word={w.word} /></div>
-                    <div className="mt-2 text-[12px] leading-5 text-[#998B78]">{w.exampleCn}</div>
+
+            <div className="mt-4 grid shrink-0 grid-cols-3 gap-2">
+              <button
+                type="button"
+                onClick={() => showToast(`播放${accent}发音`)}
+                className="rounded-full bg-white py-2.5 text-[11px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95 sm:text-[12px]"
+              >
+                🔊 播放
+              </button>
+              {favoriteMode ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const wid = makeWordId(w.word);
+                    setFavorites((f) => ({
+                      ...f,
+                      wordFavorites: f.wordFavorites.filter((e) => e.wordId !== wid),
+                    }));
+                    showToast("已取消收藏");
+                  }}
+                  className="rounded-full bg-[#3A2A1A] py-2.5 text-[11px] font-bold text-white active:scale-95 sm:text-[12px]"
+                >
+                  ★ 已收藏
+                </button>
+              ) : mistakeMode ? (
+                <button
+                  type="button"
+                  onClick={() => setWordLearnDetailOpen(true)}
+                  className="rounded-full bg-[#3A2A1A] py-2.5 text-[11px] font-bold text-white active:scale-95 sm:text-[12px]"
+                >
+                  错题 {misCount} 次
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const wid = makeWordId(w.word);
+                    const h = isWordFavoritedFromPack(favorites.wordFavorites, selectedPack.id, w.word);
+                    const ctx = findPackContext(selectedPack.id);
+                    const groupId = ctx?.savedFromGroupId ?? "";
+                    const groupName = ctx?.savedFromGroupName ?? "";
+                    const packId = ctx?.pack?.id ?? selectedPack.id;
+                    const packName = ctx?.pack?.name ?? selectedPack.name;
+                    setFavorites((f) => {
+                      if (h) {
+                        return {
+                          ...f,
+                          wordFavorites: f.wordFavorites.filter((e) => !(e.savedFromPackId === selectedPack.id && e.wordId === wid)),
+                        };
+                      }
+                      return {
+                        ...f,
+                        wordFavorites: [
+                          ...f.wordFavorites,
+                          {
+                            wordId: wid,
+                            word: w.word,
+                            savedFromGroupId: groupId,
+                            savedFromGroupName: groupName,
+                            savedFromPackId: packId,
+                            savedFromPackName: packName,
+                            savedAt: Date.now(),
+                          },
+                        ],
+                      };
+                    });
+                    showToast(h ? "已取消收藏" : "已收藏单词");
+                  }}
+                  className={`rounded-full py-2.5 text-[11px] font-bold active:scale-95 sm:text-[12px] ${favWord ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
+                >
+                  {favWord ? "★ 已收藏" : "☆ 收藏"}
+                </button>
+              )}
+              <button
+                type="button"
+                onClick={() => {
+                  setLoopPlay(!loopPlay);
+                  showToast(loopPlay ? "已关闭循环播放" : "已开启循环播放");
+                }}
+                className={`rounded-full py-2.5 text-[11px] font-bold active:scale-95 sm:text-[12px] ${loopPlay ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
+              >
+                ↻ 循环
+              </button>
+            </div>
+
+            <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-hidden">
+              <div className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain pr-0.5">
+                <div className="rounded-[20px] bg-white/90 p-3">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-[12px] font-bold text-[#998B78]">核心释义</p>
+                    <span className="rounded-full bg-[#F7EEDB] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">{w.pos}</span>
+                  </div>
+                  <p className="mt-2 text-[17px] font-bold leading-snug text-[#2C241C]">{w.cn}</p>
+                </div>
+
+                <div className="rounded-[20px] bg-white/90 p-3">
+                  <div className="mb-2 text-[12px] font-bold text-[#998B78]">例句</div>
+                  <div className="flex items-start gap-2">
+                    {w.example?.trim() ? (
+                      <button
+                        type="button"
+                        onClick={() => showToast("播放例句发音")}
+                        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95"
+                      >
+                        🔊
+                      </button>
+                    ) : null}
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[14px] leading-relaxed text-[#2C241C]">
+                        <HighlightedExample sentence={w.example} word={w.word} />
+                      </div>
+                      {w.exampleCn?.trim() ? (
+                        <p className="mt-2 text-[12px] leading-relaxed text-[#998B78]">{w.exampleCn}</p>
+                      ) : (
+                        <p className="mt-2 text-[12px] leading-relaxed text-[#8a765f]">例句翻译待补</p>
+                      )}
+                    </div>
                   </div>
                 </div>
+
+                <button
+                  type="button"
+                  onClick={() => setWordLearnDetailOpen((v) => !v)}
+                  className="w-full rounded-[18px] bg-[#F7EEDB] px-3 py-2.5 text-left text-[12px] font-bold text-[#6B5B49] active:scale-[0.99]"
+                >
+                  {wordLearnDetailOpen ? "收起详情" : mistakeMode ? "展开来源详情" : "展开来源 / 错误原因"}
+                </button>
+
+                {wordLearnDetailOpen ? (
+                  <div className="rounded-[20px] bg-white/90 p-3 text-[13px] leading-relaxed">
+                    <p className="font-bold text-[#2C241C]">{mistakeMode ? "错题备注" : favoriteMode ? "复习备注" : "学习来源"}</p>
+                    <p className="mt-1 text-[#6B5B49]">
+                      {mistakeMode ? (
+                        <>
+                          {mistakeRow?.reason ?? ""}
+                          {mistakeRow?.category ? (
+                            <span className="mt-2 block text-[12px] text-[#998B78]">易错类型：{mistakeRow.category}</span>
+                          ) : null}
+                        </>
+                      ) : favoriteMode ? (
+                        "已加入收藏，适合集中复习。"
+                      ) : (
+                        `当前词包：${selectedPack.name}`
+                      )}
+                    </p>
+                    {alsoInList.length > 0 ? (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        <span className="rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">也属于</span>
+                        {alsoInList.slice(0, 12).map((pack) => (
+                          <span key={pack} className="rounded-full bg-[#FFF8EA] px-2 py-0.5 text-[11px] text-[#6B5B49] ring-1 ring-[#E6D8BF]">
+                            {pack}
+                          </span>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
             </div>
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              <button onClick={() => setWordIndex(Math.max(0, safeIndex - 1))} className="rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-95">上一词</button>
-              <button onClick={() => showToast("已标记掌握")} className="rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-95">掌握</button>
-              <button onClick={() => setWordIndex(Math.min(activeWords.length - 1, safeIndex + 1))} className="rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-95">下一词</button>
+          </section>
+
+          <div className="sticky bottom-0 z-10 mt-3 grid shrink-0 grid-cols-3 gap-2 border-t border-transparent bg-[#F1E3CF]/90 py-2 pt-3 backdrop-blur-sm">
+            <button
+              type="button"
+              onClick={() => {
+                setWordIndex((i) => Math.max(0, i - 1));
+              }}
+              className="min-h-[48px] rounded-[18px] bg-white py-3 text-[14px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98]"
+            >
+              上一词
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setMasteredWordKeys((prev) => (prev.includes(wkey) ? prev : [...prev, wkey]));
+                showToast("已标记掌握");
+              }}
+              className="min-h-[48px] rounded-[18px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]"
+            >
+              掌握
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setWordIndex((i) => Math.min(Math.max(0, learnDisplayWords.length - 1), i + 1));
+              }}
+              className="min-h-[48px] rounded-[18px] bg-white py-3 text-[14px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98]"
+            >
+              下一词
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    if (wordPage === "favorites") {
+      const allFavRows = buildAllFavoriteRows(favorites.wordFavorites, findPackById);
+      const filteredByPack = filterFavoriteRowsByPack(allFavRows, favoriteWordPackFilter);
+      const favRows = filterFavoriteRowsBySearch(filteredByPack, favoriteWordSearch);
+      const favoriteSourcePills = getFavoriteSourcePillOptions();
+      const hasStoredFavorites = (favorites.wordFavorites || []).length > 0;
+      const filterTight = favoriteWordPackFilter !== "all" || !!favoriteWordSearch.trim();
+      return (
+        <>
+          <button
+            type="button"
+            onClick={() => {
+              setWordPage("list");
+              setFavoriteWordPackFilter("all");
+              setFavoriteWordSearch("");
+            }}
+            className="mb-4 text-left text-[14px] font-bold text-[#8A6324] active:opacity-80"
+          >
+            ‹ 返回单词库
+          </button>
+          <div className="mb-5 flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h2 className="text-[22px] font-bold leading-tight text-[#2C241C]">我的收藏单词</h2>
+              <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">同一单词只显示一次，保留收藏来源。</p>
             </div>
+            <button type="button" onClick={() => enterFavoriteLearn()} className="shrink-0 rounded-[14px] bg-[#3A2A1A] px-3 py-2 text-[11px] font-bold text-white active:scale-95">
+              复习收藏
+            </button>
+          </div>
+
+          <Surface className="mb-4 p-3 shadow-sm">
+            <input
+              type="search"
+              enterKeyHint="search"
+              value={favoriteWordSearch}
+              onChange={(e) => setFavoriteWordSearch(e.target.value)}
+              placeholder="搜单词 / 释义 / 来源词库"
+              className="w-full rounded-[14px] border border-[#E6D8BF] bg-white/90 px-3 py-2.5 text-[14px] text-[#2C241C] placeholder:text-[#998B78] outline-none focus:border-[#8A6324]"
+              autoComplete="off"
+            />
           </Surface>
+
+          <div className="mb-4 overflow-x-auto pb-1 -mx-1 px-1">
+            <div className="flex min-w-0 items-center gap-2">
+              {favoriteSourcePills.map((opt, i) => (
+                <button
+                  key={`${opt.value}-${i}`}
+                  type="button"
+                  onClick={() => setFavoriteWordPackFilter(opt.value)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold whitespace-nowrap ${
+                    favoriteWordPackFilter === opt.value
+                      ? "bg-[#3A2A1A] text-white"
+                      : "bg-[#FFF8EA] text-[#6B5B49]"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {favRows.length === 0 ? (
+            <Surface className="p-5 text-center shadow-sm">
+              <div className="text-[15px] font-bold text-[#2C241C]">
+                {!hasStoredFavorites
+                  ? "暂无收藏"
+                  : filterTight
+                    ? "没有匹配的收藏"
+                    : allFavRows.length === 0
+                      ? "收藏词条暂无法展示"
+                      : "暂无收藏"}
+              </div>
+              <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">
+                {!hasStoredFavorites
+                  ? "还没有收藏单词，先去词包里收藏一些常用词。"
+                  : filterTight
+                    ? "可清空搜索框或切换到「全部收藏」，也可换一个来源筛选。"
+                    : allFavRows.length === 0
+                      ? "本地收藏记录仍在，但词条未能匹配当前词表数据。"
+                      : "请切换上方筛选，或返回单词库继续学习。"}
+              </p>
+            </Surface>
+          ) : (
+            <div className="space-y-3">
+              {favRows.map((row) => {
+                const savedAtStr = formatFavoriteSavedAt(row.primary.savedAt);
+                return (
+                  <article
+                    key={row.wordId}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        const i = favRows.findIndex((r) => r.wordId === row.wordId);
+                        enterFavoriteLearn(i >= 0 ? i : 0);
+                      }
+                    }}
+                    onClick={() => {
+                      const i = favRows.findIndex((r) => r.wordId === row.wordId);
+                      enterFavoriteLearn(i >= 0 ? i : 0);
+                    }}
+                    className="cursor-pointer rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 shadow-[0_4px_16px_rgba(58,42,26,0.05)] transition active:scale-[0.99]"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-[18px] font-bold text-[#2C241C]">{row.item.word}</h3>
+                          <span className="text-[12px] text-[#8A6324]">{row.item.phonetic}</span>
+                        </div>
+                        <p className="mt-1 text-[14px] font-medium text-[#5f4b38]">{row.item.cn}</p>
+                      </div>
+                      <span className="shrink-0 text-[11px] font-bold text-[#8A6324]">学习 ›</span>
+                    </div>
+                    {row.item.example?.trim() ? (
+                      <p className="mt-3 rounded-[16px] bg-white/70 px-3 py-2 text-[12px] leading-relaxed text-[#6B5B49]">{row.item.example}</p>
+                    ) : null}
+                    <div className="mt-3 rounded-[16px] bg-[#F7EEDB] px-3 py-2 text-[12px] text-[#6B5B49]">
+                      收藏来源：<span className="font-bold text-[#2C241C]">{row.displaySource}</span>
+                      {savedAtStr ? <span className="ml-2 text-[#998B78]">{savedAtStr}</span> : null}
+                    </div>
+                    {row.also.length > 0 ? (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        <span className="rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">也属于</span>
+                        {row.also.slice(0, 8).map((pack) => (
+                          <span key={pack} className="rounded-full bg-white px-2 py-0.5 text-[11px] text-[#6B5B49]">
+                            {pack}
+                          </span>
+                        ))}
+                        {row.also.length > 8 ? <span className="text-[11px] text-[#998B78]">等</span> : null}
+                      </div>
+                    ) : null}
+                  </article>
+                );
+              })}
+            </div>
+          )}
         </>
       );
     }
 
+    if (wordPage === "mistakes") {
+      const mistakeRowsFiltered = filterMistakeRows(allMistakeRows, mistakeLibPackFilter, mistakeWordSearch);
+      const mistakePills = mistakeLibPillOptions;
+      const mistakeFilterTight = mistakeLibPackFilter !== "all" || !!mistakeWordSearch.trim();
+      return (
+        <>
+          <button
+            type="button"
+            onClick={() => {
+              setWordPage("list");
+              setMistakeLibPackFilter("all");
+              setMistakeWordSearch("");
+            }}
+            className="mb-4 text-left text-[14px] font-bold text-[#8A6324] active:opacity-80"
+          >
+            ‹ 返回单词库
+          </button>
+          <div className="mb-5 flex items-start justify-between gap-3">
+            <div className="min-w-0">
+              <h2 className="text-[22px] font-bold leading-tight text-[#2C241C]">错题库</h2>
+              <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">目前只收单词错题，按错在哪个词库分类。</p>
+            </div>
+            <button type="button" onClick={() => enterMistakeLearn()} className="shrink-0 rounded-[14px] bg-[#3A2A1A] px-3 py-2 text-[11px] font-bold text-white active:scale-95">
+              复习错题
+            </button>
+          </div>
+
+          <Surface className="mb-4 p-3 shadow-sm">
+            <input
+              type="search"
+              enterKeyHint="search"
+              value={mistakeWordSearch}
+              onChange={(e) => setMistakeWordSearch(e.target.value)}
+              placeholder="搜单词 / 释义 / 出错类别"
+              className="w-full rounded-[14px] border border-[#E6D8BF] bg-white/90 px-3 py-2.5 text-[14px] text-[#2C241C] placeholder:text-[#998B78] outline-none focus:border-[#8A6324]"
+              autoComplete="off"
+            />
+          </Surface>
+
+          <div className="mb-4 -mx-1 px-1">
+            <div className="mb-2 text-[12px] font-bold text-[#998B78]">出错类别</div>
+            <div className="flex min-w-0 gap-2 overflow-x-auto pb-1">
+              {mistakePills.map((opt, i) => (
+                <button
+                  key={`${opt.value}-${i}`}
+                  type="button"
+                  onClick={() => setMistakeLibPackFilter(opt.value)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold whitespace-nowrap ${
+                    mistakeLibPackFilter === opt.value ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49]"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {mistakeRowsFiltered.length === 0 ? (
+            <Surface className="p-5 text-center shadow-sm">
+              <div className="text-[15px] font-bold text-[#2C241C]">
+                {mistakeLibTotalCount === 0 ? "暂无错题" : mistakeFilterTight ? "没有匹配的错题" : "暂无错题"}
+              </div>
+              <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">
+                {mistakeLibTotalCount === 0
+                  ? "错题数据暂未加载。"
+                  : mistakeFilterTight
+                    ? "可清空搜索框或切换到「全部错题」。"
+                    : "请稍后再试。"}
+              </p>
+            </Surface>
+          ) : (
+            <div className="space-y-3">
+              {mistakeRowsFiltered.map((row, idx) => {
+                const srcLine = row.mistakeSourcePacks?.length ? row.mistakeSourcePacks.join(" / ") : "未记录来源";
+                const alsoExtra = alsoInDisplayNames(row.item, row.mistakeSourcePacks ?? []);
+                return (
+                  <article
+                    key={`${row.wordId}-${row.category}-${idx}`}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        enterMistakeLearn(idx);
+                      }
+                    }}
+                    onClick={() => enterMistakeLearn(idx)}
+                    className="cursor-pointer rounded-[22px] bg-[#FFF8EA] p-4 shadow-sm ring-1 ring-[#E6D8BF] transition active:scale-[0.99]"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-[18px] font-bold text-[#2C241C]">{row.item.word}</h3>
+                          <span className="text-[12px] text-[#8A6324]">{row.item.phonetic}</span>
+                          <span className="rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">{row.item.pos}</span>
+                        </div>
+                        <p className="mt-1 text-[14px] font-medium text-[#5f4b38]">{row.item.cn}</p>
+                      </div>
+                      <span className="shrink-0 rounded-full bg-[#FBF2DA] px-2 py-1 text-[11px] font-bold text-[#8A6324]">错</span>
+                    </div>
+                    {row.item.example?.trim() ? (
+                      <p className="mt-3 rounded-[16px] bg-white/70 px-3 py-2 text-[12px] leading-relaxed text-[#6B5B49]">{row.item.example}</p>
+                    ) : null}
+                    <div className="mt-3 rounded-[16px] bg-[#F7EEDB] px-3 py-2 text-[12px] text-[#6B5B49]">
+                      出错类别：<span className="font-bold text-[#2C241C]">{srcLine}</span>
+                      <span className="ml-2 text-[#998B78]">{mistakeOccurrenceCount(row.wordId)} 次</span>
+                    </div>
+                    {alsoExtra.length > 0 ? (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        <span className="rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">也属于</span>
+                        {alsoExtra.slice(0, 8).map((pack) => (
+                          <span key={pack} className="rounded-full bg-white px-2 py-0.5 text-[11px] text-[#6B5B49] ring-1 ring-[#E6D8BF]/60">
+                            {pack}
+                          </span>
+                        ))}
+                        {alsoExtra.length > 8 ? <span className="text-[11px] text-[#998B78]">等</span> : null}
+                      </div>
+                    ) : null}
+                  </article>
+                );
+              })}
+            </div>
+          )}
+        </>
+      );
+    }
+
+    const pos = v2Hydrated ? pickWordResume() : getSeedWordResume();
+    const listResumeTitle = pos.pack.name;
+    const listResumeSub = `第${pos.idx + 1}词 ${pos.resumeLemma ?? pos.src[pos.idx]?.word ?? ""}`;
+    const listResumeProgressVal = pos.src.length ? Math.min(100, ((pos.idx + 1) / pos.src.length) * 100) : 0;
+
     return (
       <>
-        <PageHeader title="单词库" desc="最近学习置顶，分组可收起，后期注入更多词库也不乱。" />
+        <PageHeader title="单词库" desc="最近学习置顶；收藏单词与错题库作为特殊入口。" />
         <Surface className="mb-5 p-4">
           <div className="text-[12px] font-bold text-[#8A6324]">最近学习</div>
           <div className="mt-2 flex items-center justify-between gap-4">
             <div className="min-w-0">
-              <div className="text-[18px] font-bold text-[#2C241C]">大学英语四级</div>
-              <div className="mt-1 text-[12px] text-[#8A6324]">第18词 adapt</div>
+              <div className="text-[18px] font-bold text-[#2C241C]">{listResumeTitle}</div>
+              <div className="mt-1 text-[12px] text-[#8A6324]">{listResumeSub}</div>
             </div>
-            <button onClick={() => openPack(wordGroups[0].items[0])} className="shrink-0 rounded-[14px] bg-[#3A2A1A] px-4 py-2.5 text-[13px] font-bold text-white active:scale-95">继续</button>
+            <button type="button" onClick={continueWordFromSaved} className="shrink-0 rounded-[14px] bg-[#3A2A1A] px-4 py-2.5 text-[13px] font-bold text-white active:scale-95">继续</button>
           </div>
-          <div className="mt-4"><Progress value={18} /></div>
+          <div className="mt-4"><Progress value={listResumeProgressVal} /></div>
         </Surface>
+        <button
+          type="button"
+          onClick={() => {
+            setWordPage("favorites");
+            setFavoriteWordPackFilter("all");
+            setFavoriteWordSearch("");
+          }}
+          className="mb-5 w-full rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] transition active:scale-[0.99]"
+        >
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex min-w-0 items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[14px] bg-[#FBF2DA] text-[#8A6324]">★</div>
+              <div className="min-w-0">
+                <h3 className="text-[16px] font-bold text-[#2C241C]">我的收藏单词</h3>
+                <p className="mt-1 text-[12px] text-[#7A6B57]">
+                  {uniqueFavoriteWordCount} 个已收藏 · 按来源词库筛选
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-lg text-[#8A6324]">›</span>
+          </div>
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setWordPage("mistakes");
+            setMistakeLibPackFilter("all");
+            setMistakeWordSearch("");
+          }}
+          className="mb-5 w-full rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] transition active:scale-[0.99]"
+        >
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex min-w-0 items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[14px] bg-[#FBF2DA] text-[13px] font-bold text-[#8A6324]">错</div>
+              <div className="min-w-0">
+                <h3 className="text-[16px] font-bold text-[#2C241C]">错题库</h3>
+                <p className="mt-1 text-[12px] text-[#7A6B57]">
+                  {mistakeLibTotalCount} 个单词错题 · 按出错类别筛选
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 text-lg text-[#8A6324]">›</span>
+          </div>
+        </button>
         {hasPersonalPack ? (
           <section className="mb-5">
             <GroupHeader title="个人词包" count={1} open={true} onClick={() => showToast("个人词包已展开")} />
@@ -254,7 +2190,8 @@ export default function WordRealmCleanPreview() {
                   <div className="space-y-3">
                     {visibleItems.map((pack) => {
                       const n = wordCountForPack(pack);
-                      const progressValue = n > 0 && pack.learned > 0 ? Math.min(100, Math.max(3, (pack.learned / n) * 100)) : 0;
+                      const learnedLocal = masteredWordKeys.filter((k) => k.startsWith(`${pack.id}:`)).length;
+                      const progressValue = n > 0 && learnedLocal > 0 ? Math.min(100, Math.max(3, (learnedLocal / n) * 100)) : 0;
                       return (
                       <button key={pack.id} onClick={() => openPack(pack)} className="w-full rounded-[20px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] active:scale-[0.98]">
                         <div className="flex items-start justify-between gap-4">
@@ -363,108 +2300,203 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderAIVoice() {
-    const submitRecording = () => {
-      if (aiStatusDemo === "offline") {
-        setRecording(false);
-        showToast("当前离线，AI对话暂不可用");
-        return;
-      }
-      if (aiStatusDemo === "micDenied") {
-        setRecording(false);
-        setTextFallback(true);
-        showToast("麦克风不可用，已切换文字练习");
-        return;
-      }
-      if (recording) {
-        setRecording(false);
-        if (aiStatusDemo === "aiFailed") {
-          setAiFeedback(false);
-          showToast("AI回复失败，可重试或稍后保存");
-          return;
-        }
-        setAiFeedback(true);
-        showToast("录音已结束，正在分析");
-      } else {
-        setRecording(true);
-        setAiFeedback(false);
-        showToast("开始录音");
-      }
-    };
-
     return (
-      <>
-        <PageHeader title="AI语音对话" desc="点击开始，点击结束。支持文字兜底。" back onBack={() => setTrainingPage("overview")} />
-        <Surface className="mb-4 p-4">
-          <div className="text-[12px] font-bold text-[#8A6324]">状态兜底演示</div>
-          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-            {[
-              ["normal", "正常"],
-              ["micDenied", "麦克风失败"],
-              ["offline", "离线"],
-              ["aiFailed", "AI失败"],
-            ].map(([key, label]) => (
-              <button key={key} onClick={() => { setAiStatusDemo(key); setRecording(false); setAiFeedback(false); }} className={`shrink-0 rounded-full px-3 py-2 text-[12px] font-bold ${aiStatusDemo === key ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{label}</button>
+      <div className="relative flex h-full min-h-full flex-col">
+        <div className="min-h-0 flex-1 overflow-y-auto pb-4">
+          <PageHeader title="AI 英语自由闲聊" desc="默认自由聊天，想说什么就说什么。" back onBack={() => setTrainingPage("overview")} />
+
+          <section className="mx-4 mt-4 rounded-[32px] bg-[#3b2818] px-5 py-6 text-white shadow-xl">
+            <div className="text-xs font-black tracking-wide text-[#f5d88a]">
+              <span>{scene}</span>
+              <span className="mx-1.5 text-[#f5d88a]/50">·</span>
+              <span>{voice}</span>
+              <span className="mx-1.5 text-[#f5d88a]/50">·</span>
+              <span>{speed}</span>
+            </div>
+
+            <h2 className="mt-4 whitespace-nowrap text-[24px] font-black leading-none tracking-[-0.03em] text-white md:text-[26px]">
+              自由英语闲聊
+            </h2>
+
+            <p className="mt-4 text-[15px] font-bold leading-7 text-[#e8d8bd]">
+              不用做任务，想说什么就说什么。
+            </p>
+
+            <div className="mt-5 grid grid-cols-4 gap-2">
+              <button
+                type="button"
+                onClick={() => setCallOpen(true)}
+                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
+                aria-label="电话模式"
+              >
+                电话
+              </button>
+              <button
+                type="button"
+                onClick={() => setHistoryOpen(true)}
+                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
+                aria-label="历史记录"
+              >
+                历史
+              </button>
+              <button
+                type="button"
+                onClick={() => setSubtitlesOn((v) => !v)}
+                className={cx(
+                  "flex h-11 items-center justify-center rounded-full border text-[11px] font-black active:scale-95",
+                  subtitlesOn
+                    ? "border-[#d1a53d] bg-[#d1a53d] text-[#2f2418]"
+                    : "border-white/15 bg-white/10 text-[#f5d88a]",
+                )}
+                aria-label="字幕开关"
+              >
+                字幕
+              </button>
+              <button
+                type="button"
+                onClick={() => setSettingsOpen(true)}
+                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
+                aria-label="设置"
+              >
+                设置
+              </button>
+            </div>
+          </section>
+
+          <div className="mt-[18px] space-y-3 pb-4">
+            {chatMessages.map((msg) => (
+              <div key={msg.id} className={cx("flex", msg.role === "user" ? "justify-end" : "justify-start")}>
+                <div className="max-w-[86%]">
+                  <div className={cx("rounded-[24px] px-4 py-3 shadow-[0_6px_20px_rgba(58,42,26,0.06)]", msg.role === "user" ? "rounded-br-[8px] bg-[#3A2A1A] text-white" : "rounded-bl-[8px] bg-[#FFF8EA] text-[#2C241C] ring-1 ring-[#E6D8BF]")}>
+                    <div className="text-[14px] font-bold leading-7">
+                      <BubbleText text={msg.text} onWordClick={setSelectedWordTip} />
+                    </div>
+                    {subtitlesOn && msg.cn ? (
+                      <p className={cx("mt-2 text-[12px] leading-6", msg.role === "user" ? "text-white/68" : "text-[#6B5B49]")}>{msg.cn}</p>
+                    ) : null}
+                  </div>
+                  <div className={cx("mt-1 px-2 text-[11px]", msg.role === "user" ? "text-right text-[#8F7F6C]" : "text-left text-[#8F7F6C]")}>{msg.time}</div>
+                </div>
+              </div>
             ))}
           </div>
-          {aiStatusDemo !== "normal" ? (
-            <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">
-              {aiStatusDemo === "micDenied" ? "麦克风权限失败时，自动引导用户切换文字练习。" : aiStatusDemo === "offline" ? "离线时基础学习可用，AI对话提示联网后再试。" : "AI回复失败时，不让页面卡死，给出重试或稍后保存。"}
-            </p>
-          ) : null}
-        </Surface>
-        <div className="mb-4 grid grid-cols-2 gap-3">
-          <Surface className="p-4"><div className="text-[12px] font-bold text-[#8A6324]">音色</div><div className="mt-3 flex gap-2">{voices.map((v) => <button key={v} onClick={() => setVoice(v)} className={`flex-1 rounded-full py-2 text-[12px] font-bold ${voice === v ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{v}</button>)}</div></Surface>
-          <Surface className="p-4"><div className="text-[12px] font-bold text-[#8A6324]">语速</div><div className="mt-3 flex gap-2">{speeds.map((s) => <button key={s} onClick={() => setSpeed(s)} className={`flex-1 rounded-full py-2 text-[12px] font-bold ${speed === s ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{s}</button>)}</div></Surface>
         </div>
-        <Surface className="p-4">
-          <div className="mb-4 flex gap-2 overflow-x-auto pb-1">{aiScenes.map((s) => <button key={s} onClick={() => { setScene(s); setAiFeedback(false); }} className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold ${scene === s ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{s}</button>)}</div>
-          <div className="rounded-[28px] bg-gradient-to-br from-[#3A2A1A] to-[#15100B] p-6 text-center text-white">
-            <div className="text-[12px] text-[#D8B65E]">{voice} · {speed}</div>
-            <h2 className="mt-3 text-[24px] font-bold">{scene}</h2>
-            <div className="mt-2 text-[13px] text-white/60">00:{recording ? "18" : "00"}</div>
-            <div className="mt-8 flex h-28 items-center justify-center gap-2">
-              {[18, 42, 70, 52, 86, 48, 64].map((h, i) => <div key={i} className={`w-3 rounded-full ${recording ? "bg-gradient-to-t from-[#B8872E] to-[#F4D58B]" : "bg-white/20"}`} style={{ height: `${h}px` }} />)}
-            </div>
-            <p className="mx-auto mt-4 max-w-xs text-[13px] leading-6 text-white/70">{recording ? "正在录音，再次点击结束并发送。" : "AI 已准备好。点击开始说话。"}</p>
-            <button onClick={submitRecording} className={`mt-6 h-20 w-20 rounded-full text-[13px] font-bold shadow-[0_10px_28px_rgba(0,0,0,0.28)] active:scale-95 ${recording ? "bg-white text-[#3A2A1A]" : "bg-gradient-to-br from-[#D8B65E] to-[#B8872E] text-[#2B2118]"}`}>{recording ? "结束" : "开始"}</button>
+
+        <div className="z-20 mt-4 shrink-0 rounded-[26px] border border-[#E6D8BF] bg-[#FFF8EA]/96 p-3 backdrop-blur">
+          <div className="mb-2 text-[12px] font-bold text-[#8A6324]">
+            {recording ? "正在收音，松开发送" : latestChatMessage?.role === "ai" ? "继续接着聊就行" : "可以继续说，也可以直接打字"}
           </div>
-          <button onClick={() => setTextFallback(!textFallback)} className="mt-4 text-[12px] font-bold text-[#8A6324]">无法录音？切换文字练习</button>
-          {aiStatusDemo === "offline" ? (
-            <div className="mt-3 rounded-[16px] bg-white p-4 text-[12px] leading-5 text-[#6B5B49]">当前处于离线状态，单词库和跟读仍可使用；AI语音对话需要联网。</div>
-          ) : null}
-          {aiStatusDemo === "aiFailed" ? (
-            <div className="mt-3 rounded-[16px] bg-white p-4">
-              <div className="text-[13px] font-bold text-[#2C241C]">AI回复失败</div>
-              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">可以重试本轮对话，或先保存文本记录，稍后继续。</p>
-              <button onClick={() => { setAiStatusDemo("normal"); showToast("已切回正常模式"); }} className="mt-3 rounded-[14px] bg-[#3A2A1A] px-4 py-2.5 text-[12px] font-bold text-white active:scale-95">重试</button>
-            </div>
-          ) : null}
-          {textFallback ? (
-            <div className="mt-3 space-y-3">
-              <textarea value={customText} onChange={(e) => setCustomText(e.target.value)} className="min-h-[86px] w-full rounded-[16px] border border-[#E6D8BF] bg-white p-4 text-[13px] outline-none" />
-              <button onClick={() => { setAiFeedback(true); showToast("已提交文字练习"); }} className="rounded-[14px] bg-[#3A2A1A] px-4 py-3 text-[13px] font-bold text-white active:scale-95">提交文字练习</button>
-            </div>
-          ) : null}
-        </Surface>
-        <div className="mt-4 space-y-3">
-          {aiFeedback ? (
-            <>
-              <Surface className="p-4"><div className="text-[13px] font-bold text-[#2C241C]">表达优化</div><p className="mt-1 text-[13px] leading-6 text-[#6B5B49]">Could I get a late checkout?</p><button onClick={() => showToast("已收录到个人素材库")} className="mt-3 rounded-[14px] bg-[#3A2A1A] px-4 py-3 text-[13px] font-bold text-white active:scale-95">收录</button></Surface>
-              <Surface className="p-4"><div className="text-[13px] font-bold text-[#2C241C]">易错音提示</div><p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">checkout 尾音不要拖长，later 的 /t/ 可以更轻。</p></Surface>
-            </>
-          ) : (
-            <Surface className="p-4 text-center"><div className="text-[13px] font-bold text-[#2C241C]">暂无反馈</div><p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">完成一轮语音或文字练习后，这里会显示表达优化。</p></Surface>
-          )}
+          <div className="flex items-end gap-3">
+            <input
+              value={customText}
+              onChange={(e) => setCustomText(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  submitTextChat();
+                }
+              }}
+              placeholder="文字输入，回车发送"
+              className="min-w-0 flex-1 rounded-[18px] border border-[#E6D8BF] bg-white px-4 py-3 text-[13px] text-[#2C241C] outline-none placeholder:text-[#B0A18D]"
+            />
+            <button
+              type="button"
+              onPointerDown={handlePressToTalkStart}
+              onPointerUp={handlePressToTalkEnd}
+              onPointerCancel={() => setRecording(false)}
+              className={cx("shrink-0 rounded-[18px] px-5 py-3 text-[13px] font-bold shadow-[0_6px_18px_rgba(58,42,26,0.10)] active:scale-95", recording ? "bg-[#D8B65E] text-[#2B2118]" : "bg-[#3A2A1A] text-white")}
+            >
+              {recording ? "松开发送" : "按住说话"}
+            </button>
+          </div>
         </div>
-      </>
+
+        <FreeChatSheet open={settingsOpen} onClose={() => setSettingsOpen(false)} title="设置" subtitle="只保留自由聊天需要的选项">
+          <div className="space-y-5">
+            <div>
+              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">对话形式</div>
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {freeChatModes.map((item) => (
+                  <FreeChatPill key={item} active={chatMode === item} onClick={() => { setChatMode(item); if (item === "电话模式") setCallOpen(true); }}>
+                    {item}
+                  </FreeChatPill>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">音色</div>
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {freeChatVoiceLabels.map((item) => (
+                  <FreeChatPill key={item} active={voice === item} onClick={() => setVoice(item)}>
+                    {item}
+                  </FreeChatPill>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">语速</div>
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {speeds.map((item) => (
+                  <FreeChatPill key={item} active={speed === item} onClick={() => setSpeed(item)}>
+                    {item}
+                  </FreeChatPill>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="mb-2 text-[12px] font-bold text-[#8A6324]">情景</div>
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {freeChatScenes.map((item) => (
+                  <FreeChatPill key={item} active={scene === item} onClick={() => setScene(item)}>
+                    {item}
+                  </FreeChatPill>
+                ))}
+              </div>
+            </div>
+          </div>
+        </FreeChatSheet>
+
+        <FreeChatSheet open={historyOpen} onClose={() => setHistoryOpen(false)} title="历史记录" subtitle="当前自由聊天内容都保存在这里">
+          <div className="max-h-[58dvh] space-y-3 overflow-y-auto pr-1">
+            {chatMessages.map((msg) => (
+              <div key={msg.id} className={cx("rounded-[22px] p-3", msg.role === "ai" ? "bg-[#3A2A1A] text-white" : "bg-white text-[#2C241C] ring-1 ring-[#E6D8BF]")}>
+                <div className="mb-1 flex items-center justify-between text-[11px] font-bold opacity-80">
+                  <span>{msg.role === "ai" ? "AI" : "我"}</span>
+                  <span>{msg.time}</span>
+                </div>
+                <div className="text-[13px] font-bold leading-6">{msg.text}</div>
+                {subtitlesOn && msg.cn ? (
+                  <p className={cx("mt-1 text-[12px] leading-5", msg.role === "ai" ? "text-white/68" : "text-[#6B5B49]")}>{msg.cn}</p>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </FreeChatSheet>
+
+        <PhoneCallOverlay
+          open={callOpen}
+          onClose={() => { setCallOpen(false); setCallMicPaused(false); setChatMode("消息模式"); }}
+          scene={scene}
+          voice={voice}
+          voiceModel={getFreeChatVoiceModel(voice)}
+          speed={speed}
+          subtitlesOn={subtitlesOn}
+          onToggleSubtitles={() => setSubtitlesOn((v) => !v)}
+          paused={callMicPaused}
+          onTogglePaused={() => setCallMicPaused((v) => !v)}
+          latestMessage={latestChatMessage}
+        />
+
+        <WordHintCard tip={selectedWordTip} onClose={() => setSelectedWordTip(null)} />
+      </div>
     );
   }
 
   function renderWriting() {
     if (writingPage !== "overview") {
       const data = writingMap[writingPage];
-      const isSaved = (index) => index === 0 || index === 2;
-      const isRecent = (index) => index <= 1;
+      const isSaved = (index) => favorites.writing.includes(makeWritingFavoriteId(writingPage, index));
+      const isRecent = (index) => recentLearning.some((r) => r.kind === "writing" && r.ref === `${writingPage}:${index}`);
       const writingFilters = ["全部", "收藏", "最近", ...Array.from(new Set(data.items.map(([title]) => title)))];
       const keyword = writingSearch.trim().toLowerCase();
       const filteredWritingItems = data.items
@@ -513,7 +2545,24 @@ export default function WordRealmCleanPreview() {
                   </div>
                   <div className="mt-2 text-[15px] font-bold leading-6 text-[#2C241C]">{main}</div>
                   <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">{desc}</p>
-                  <button onClick={() => showToast("已收录到个人素材库")} className="mt-3 rounded-[14px] bg-[#3A2A1A] px-4 py-2.5 text-[12px] font-bold text-white active:scale-95">收录</button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const fid = makeWritingFavoriteId(writingPage, index);
+                      const has = favorites.writing.includes(fid);
+                      setFavorites((f) => ({ ...f, writing: has ? f.writing.filter((x) => x !== fid) : [...f.writing, fid] }));
+                      addRecent({
+                        id: `writing-${writingPage}-${index}`,
+                        kind: "writing",
+                        label: `${writingPage} · ${title}`,
+                        ref: `${writingPage}:${index}`,
+                      });
+                      showToast(has ? "已取消收录" : "已收录到个人素材库");
+                    }}
+                    className="mt-3 rounded-[14px] bg-[#3A2A1A] px-4 py-2.5 text-[12px] font-bold text-white active:scale-95"
+                  >
+                    收录
+                  </button>
                 </Surface>
               );
             })}
@@ -580,9 +2629,6 @@ export default function WordRealmCleanPreview() {
     }
 
     if (workbenchPage === "sceneResult") {
-      const visibleSceneScript = showFullSceneResult ? sceneScript : sceneScript.slice(0, 4);
-      const visibleShadowLines = showFullSceneResult ? shadowLines : shadowLines.slice(0, 3);
-      const visibleUsefulExpressions = showFullSceneResult ? usefulExpressions : usefulExpressions.slice(0, 3);
       return (
         <>
           <PageHeader title="生成结果" desc="先预览，再决定收录或加入训练。" back onBack={() => setWorkbenchPage("overview")} />
@@ -594,31 +2640,88 @@ export default function WordRealmCleanPreview() {
 
           <div className="mt-4"><SectionTitle title="对话脚本" /></div>
           <div className="space-y-2">
-            {visibleSceneScript.map(([role, text], index) => (
-              <Surface key={index} className="p-4">
-                <div className="text-[12px] font-bold text-[#8A6324]">{role}</div>
-                <div className="mt-1 text-[14px] leading-6 text-[#2C241C]">{text}</div>
-              </Surface>
-            ))}
+            {sceneScript.map(([role, text], gi) => {
+              if (!showFullSceneResult && gi >= 4) return null;
+              const fid = makeWorkbenchFavoriteId("scene", "script", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <Surface key={gi} className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[12px] font-bold text-[#8A6324]">{role}</div>
+                      <div className="mt-1 text-[14px] leading-6 text-[#2C241C]">{text}</div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const h = favorites.workbench.includes(fid);
+                        setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                        addRecent({ id: `wb-${fid}`, kind: "workbench", label: `${role} · ${text.slice(0, 24)}`, ref: fid });
+                        showToast(h ? "已取消收录" : "已收录");
+                      }}
+                      className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[11px] font-bold text-[#8A6324] active:scale-95"
+                    >
+                      {has ? "已藏" : "收录"}
+                    </button>
+                  </div>
+                </Surface>
+              );
+            })}
           </div>
 
           <div className="mt-5"><SectionTitle title="跟读短句" /></div>
           <div className="space-y-2">
-            {visibleShadowLines.map((line) => (
-              <Surface key={line} className="flex items-center gap-3 p-4">
-                <button onClick={() => showToast("播放跟读句")} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95">🔊</button>
-                <div className="text-[14px] leading-6 text-[#2C241C]">{line}</div>
-              </Surface>
-            ))}
+            {shadowLines.map((line, gi) => {
+              if (!showFullSceneResult && gi >= 3) return null;
+              const fid = makeWorkbenchFavoriteId("scene", "shadow", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <Surface key={gi} className="flex flex-wrap items-center gap-3 p-4">
+                  <button type="button" onClick={() => showToast("播放跟读句")} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95">🔊</button>
+                  <div className="min-w-0 flex-1 text-[14px] leading-6 text-[#2C241C]">{line}</div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const h = favorites.workbench.includes(fid);
+                      setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                      addRecent({ id: `wb-${fid}`, kind: "workbench", label: line.slice(0, 28), ref: fid });
+                      showToast(h ? "已取消收录" : "已收录");
+                    }}
+                    className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[11px] font-bold text-[#8A6324] active:scale-95"
+                  >
+                    {has ? "已藏" : "收录"}
+                  </button>
+                </Surface>
+              );
+            })}
           </div>
 
           <div className="mt-5"><SectionTitle title="可收藏表达" /></div>
           <div className="space-y-2">
-            {visibleUsefulExpressions.map((line) => (
-              <Surface key={line} className="p-4">
-                <div className="text-[14px] leading-6 text-[#2C241C]">{line}</div>
-              </Surface>
-            ))}
+            {usefulExpressions.map((line, gi) => {
+              if (!showFullSceneResult && gi >= 3) return null;
+              const fid = makeWorkbenchFavoriteId("scene", "expr", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <Surface key={gi} className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="text-[14px] leading-6 text-[#2C241C]">{line}</div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const h = favorites.workbench.includes(fid);
+                        setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                        addRecent({ id: `wb-${fid}`, kind: "workbench", label: line.slice(0, 28), ref: fid });
+                        showToast(h ? "已取消收录" : "已收录");
+                      }}
+                      className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[11px] font-bold text-[#8A6324] active:scale-95"
+                    >
+                      {has ? "已藏" : "收录"}
+                    </button>
+                  </div>
+                </Surface>
+              );
+            })}
           </div>
 
           <div className="mt-5 space-y-3">
@@ -654,9 +2757,6 @@ export default function WordRealmCleanPreview() {
     }
 
     if (workbenchPage === "textResult") {
-      const visibleParsedWords = showFullTextResult ? parsedWords : parsedWords.slice(0, 5);
-      const visibleParsedPhrases = showFullTextResult ? parsedPhrases : parsedPhrases.slice(0, 5);
-      const visibleParsedSentences = showFullTextResult ? parsedSentences : parsedSentences.slice(0, 2);
       return (
         <>
           <PageHeader title="解析结果" desc="默认只展示重点内容，避免信息过载。" back onBack={() => setWorkbenchPage("overview")} />
@@ -667,29 +2767,83 @@ export default function WordRealmCleanPreview() {
 
           <div className="mt-4"><SectionTitle title="重点生词" /></div>
           <div className="space-y-2">
-            {visibleParsedWords.map(([word, desc]) => (
-              <Surface key={word} className="flex items-center justify-between gap-4 p-4">
-                <div>
-                  <div className="text-[16px] font-bold text-[#2C241C]">{word}</div>
-                  <div className="mt-1 text-[12px] text-[#7A6B57]">{desc}</div>
-                </div>
-                <button onClick={() => showToast("已加入专属词包")} className="rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[12px] font-bold text-[#8A6324] active:scale-95">加入</button>
-              </Surface>
-            ))}
+            {parsedWords.map(([word, desc], gi) => {
+              if (!showFullTextResult && gi >= 5) return null;
+              const fid = makeWorkbenchFavoriteId("text", "word", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <Surface key={word} className="flex items-center justify-between gap-4 p-4">
+                  <div>
+                    <div className="text-[16px] font-bold text-[#2C241C]">{word}</div>
+                    <div className="mt-1 text-[12px] text-[#7A6B57]">{desc}</div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const h = favorites.workbench.includes(fid);
+                      setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                      addRecent({ id: `wb-${fid}`, kind: "workbench", label: word, ref: fid });
+                      showToast(h ? "已取消收录" : "已收录");
+                    }}
+                    className="rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[12px] font-bold text-[#8A6324] active:scale-95"
+                  >
+                    {has ? "已藏" : "加入"}
+                  </button>
+                </Surface>
+              );
+            })}
           </div>
 
           <div className="mt-5"><SectionTitle title="高频短语" /></div>
           <div className="flex flex-wrap gap-2">
-            {visibleParsedPhrases.map((phrase) => <button key={phrase} onClick={() => showToast("已收录短语")} className="rounded-full border border-[#E6D8BF] bg-[#FFF8EA] px-3 py-2 text-[12px] font-bold text-[#8A6324] active:scale-95">{phrase}</button>)}
+            {parsedPhrases.map((phrase, gi) => {
+              if (!showFullTextResult && gi >= 5) return null;
+              const fid = makeWorkbenchFavoriteId("text", "phrase", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <button
+                  key={phrase}
+                  type="button"
+                  onClick={() => {
+                    const h = favorites.workbench.includes(fid);
+                    setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                    addRecent({ id: `wb-${fid}`, kind: "workbench", label: phrase.slice(0, 24), ref: fid });
+                    showToast(h ? "已取消收录" : "已收录短语");
+                  }}
+                  className={`rounded-full border border-[#E6D8BF] px-3 py-2 text-[12px] font-bold active:scale-95 ${has ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#8A6324]"}`}
+                >
+                  {phrase}
+                </button>
+              );
+            })}
           </div>
 
           <div className="mt-5"><SectionTitle title="长难句" /></div>
           <div className="space-y-2">
-            {visibleParsedSentences.map((sentence) => (
-              <Surface key={sentence} className="p-4">
-                <div className="text-[14px] leading-6 text-[#2C241C]">{sentence}</div>
-              </Surface>
-            ))}
+            {parsedSentences.map((sentence, gi) => {
+              if (!showFullTextResult && gi >= 2) return null;
+              const fid = makeWorkbenchFavoriteId("text", "sentence", gi);
+              const has = favorites.workbench.includes(fid);
+              return (
+                <Surface key={gi} className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="text-[14px] leading-6 text-[#2C241C]">{sentence}</div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const h = favorites.workbench.includes(fid);
+                        setFavorites((f) => ({ ...f, workbench: h ? f.workbench.filter((x) => x !== fid) : [...f.workbench, fid] }));
+                        addRecent({ id: `wb-${fid}`, kind: "workbench", label: sentence.slice(0, 28), ref: fid });
+                        showToast(h ? "已取消收录" : "已收录");
+                      }}
+                      className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-1.5 text-[11px] font-bold text-[#8A6324] active:scale-95"
+                    >
+                      {has ? "已藏" : "收录"}
+                    </button>
+                  </div>
+                </Surface>
+              );
+            })}
           </div>
 
           <div className="mt-5 space-y-3">
@@ -783,27 +2937,57 @@ export default function WordRealmCleanPreview() {
     }
 
     if (minePage === "mistakes") {
+      const mineMistakeCats = ["全部"];
+      for (const it of mistakesState.items) {
+        if (it?.category && !mineMistakeCats.includes(it.category)) mineMistakeCats.push(it.category);
+      }
+      const activeCat = mineMistakeCats.includes(mistakeFilter) ? mistakeFilter : "全部";
+      const visibleItems = mistakesState.items.filter(
+        (it) => activeCat === "全部" || it?.category === activeCat,
+      );
       return (
         <>
-          <PageHeader title="易错词库" desc="按发音、释义、拼写分类复盘。" back onBack={() => setMinePage("overview")} />
-          <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
-            {Object.keys(mistakeWords).map((type) => (
-              <button key={type} onClick={() => setMistakeFilter(type)} className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold ${mistakeFilter === type ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49]"}`}>{type}</button>
-            ))}
-          </div>
-          <div className="space-y-3">
-            {mistakeWords[mistakeFilter].map(([word, reason, action]) => (
-              <Surface key={word} className="p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div>
-                    <div className="text-[18px] font-bold text-[#2C241C]">{word}</div>
-                    <div className="mt-1 text-[12px] text-[#6B5B49]">{reason}</div>
-                  </div>
-                  <button onClick={() => showToast(action)} className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-2 text-[12px] font-bold text-[#8A6324] active:scale-95">{action}</button>
-                </div>
-              </Surface>
-            ))}
-          </div>
+          <PageHeader title="错题库" desc="按发音、释义、拼写分类复盘。" back onBack={() => setMinePage("overview")} />
+          {mistakesState.items.length === 0 ? (
+            <Surface className="p-5 text-center shadow-sm">
+              <div className="text-[15px] font-bold text-[#2C241C]">暂无错题</div>
+              <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">错题会在你做题时自动加入，目前还没有记录。</p>
+            </Surface>
+          ) : (
+            <>
+              <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
+                {mineMistakeCats.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setMistakeFilter(type)}
+                    className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-bold ${activeCat === type ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49]"}`}
+                  >
+                    {type}
+                  </button>
+                ))}
+              </div>
+              <div className="space-y-3">
+                {visibleItems.map((it) => (
+                  <Surface key={`${it.wordId || it.word}-${it.addedAt}`} className="p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="text-[18px] font-bold text-[#2C241C]">{it.word}</div>
+                        {it.reason ? <div className="mt-1 text-[12px] text-[#6B5B49]">{it.reason}</div> : null}
+                      </div>
+                      {it.action ? (
+                        <button
+                          onClick={() => showToast(it.action)}
+                          className="shrink-0 rounded-full bg-[#FBF2DA] px-3 py-2 text-[12px] font-bold text-[#8A6324] active:scale-95"
+                        >
+                          {it.action}
+                        </button>
+                      ) : null}
+                    </div>
+                  </Surface>
+                ))}
+              </div>
+            </>
+          )}
         </>
       );
     }
@@ -916,7 +3100,7 @@ export default function WordRealmCleanPreview() {
 
     return (
       <>
-        <PageHeader title="我的" desc="学习记录、易错词、备份与设置。" />
+        <PageHeader title="我的" desc="学习记录、错题库、备份与设置。" />
         <button onClick={() => setMinePage("login")} className="mb-5 flex w-full items-center gap-4 rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.06)] active:scale-[0.98]">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[16px] font-bold text-white">词</div>
           <div className="min-w-0 flex-1">
@@ -936,7 +3120,7 @@ export default function WordRealmCleanPreview() {
                     <button key={title} onClick={() => setMinePage(pageMap[title] || "overview")} className="w-full rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] active:scale-[0.98]">
                       <div className="flex items-center justify-between gap-3">
                         <div>
-                          <div className="text-[16px] font-bold text-[#2C241C]">{title}</div>
+                          <div className="text-[16px] font-bold text-[#2C241C]">{title === "易错词库" ? "错题库" : title}</div>
                           <p className="mt-1 text-[13px] leading-6 text-[#6B5B49]">{desc}</p>
                         </div>
                         <div className="shrink-0 text-[#8A6324]">›</div>
@@ -961,7 +3145,7 @@ export default function WordRealmCleanPreview() {
   };
 
   return (
-    <PhoneShell tabs={tabs} activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
+    <PhoneShell tabs={tabs} activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "words") { setSelectedPack((p) => (p?.id === V2_FAVORITE_LEARN_PACK_ID || p?.id === V2_MISTAKE_LEARN_PACK_ID ? lastRealPackBeforeFavoriteRef.current : p)); setWordPage("list"); setFavoriteWordPackFilter("all"); setFavoriteWordSearch(""); setMistakeLibPackFilter("all"); setMistakeWordSearch(""); } if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
       {renderActive()}
       {toast ? <div className="fixed bottom-[92px] left-1/2 z-50 -translate-x-1/2 rounded-full bg-[#3A2A1A] px-5 py-3 text-[13px] font-bold text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">{toast}</div> : null}
     </PhoneShell>
