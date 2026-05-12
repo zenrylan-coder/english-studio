@@ -1,0 +1,62 @@
+{
+  "cet4": {
+    "count": 4596,
+    "withPhonetic": 4529,
+    "withoutPhonetic": 67,
+    "phoneticRate": "98.5%",
+    "posMissingBefore": 4534,
+    "posMissingAfter": 2,
+    "posMissingRateAfter": "0.0%",
+    "posExtractedFromWord": 64,
+    "posExtractedFromMeaning": 4468,
+    "wordCleanedCount": 64
+  },
+  "cet6": {
+    "count": 5775,
+    "withPhonetic": 5698,
+    "withoutPhonetic": 77,
+    "phoneticRate": "98.7%",
+    "posMissingBefore": 5710,
+    "posMissingAfter": 2,
+    "posMissingRateAfter": "0.0%",
+    "posExtractedFromWord": 64,
+    "posExtractedFromMeaning": 5644,
+    "wordCleanedCount": 64
+  },
+  "kaoyan": {
+    "count": 5392,
+    "withPhonetic": 5303,
+    "withoutPhonetic": 89,
+    "phoneticRate": "98.3%",
+    "posMissingBefore": 5348,
+    "posMissingAfter": 1,
+    "posMissingRateAfter": "0.0%",
+    "posExtractedFromWord": 90,
+    "posExtractedFromMeaning": 5257,
+    "wordCleanedCount": 90
+  },
+  "zhuanshengben": {
+    "count": 5169,
+    "withPhonetic": 4309,
+    "withoutPhonetic": 860,
+    "phoneticRate": "83.4%",
+    "posMissingBefore": 5141,
+    "posMissingAfter": 30,
+    "posMissingRateAfter": "0.6%",
+    "posExtractedFromWord": 0,
+    "posExtractedFromMeaning": 5111,
+    "wordCleanedCount": 0
+  },
+  "ielts": {
+    "count": 3631,
+    "withPhonetic": 3047,
+    "withoutPhonetic": 584,
+    "phoneticRate": "83.9%",
+    "posMissingBefore": 3051,
+    "posMissingAfter": 0,
+    "posMissingRateAfter": "0.0%",
+    "posExtractedFromWord": 0,
+    "posExtractedFromMeaning": 3051,
+    "wordCleanedCount": 0
+  }
+}

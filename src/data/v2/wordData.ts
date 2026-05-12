@@ -1,37 +1,30 @@
 import type { Accent, WordGroup, WordItem, WordPack } from "@/types/v2";
 
 /**
- * wordGroups 各 pack 的 `total`：数据结构占位字段，页面不展示该数字。
- * 词包卡片上的「词」数量在页面中按词表计算：共用 `sampleWords.length`，个人词包用 `personalPackWords.length`。
- * `learned` 用于进度条相对当前词表规模的示例进度（与 `total` 无耦合）。
+ * wordGroups 各 pack 的 `total`：标记为 0 表示动态从 manifest 加载真实数量。
+ * 词包卡片上的「词」数量在页面中从 manifest 获取，fallback 到 `sampleWords.length`。
+ * `learned` / `last` 不再硬编码 demo 进度，保持为 0；真实进度来自 localStorage（masteredKeys / recentLearning）。
  */
-export const wordGroups = [
+export const wordGroups: WordGroup[] = [
   {
     title: "升学备考组",
     items: [
-      { id: "cet4", name: "大学英语四级", total: 4500, learned: 18, current: true, last: "继续：第18词 adapt" },
-      { id: "cet6", name: "大学英语六级", total: 5500, learned: 0, current: false, last: "" },
-      { id: "kaoyan", name: "考研英语", total: 5500, learned: 0, current: false, last: "" },
-      {
-        id: "zsb",
-        name: "专升本英语",
-        total: 3800,
-        learned: 10,
-        current: false,
-        last: "继续：常见动词与搭配",
-      },
-      { id: "ielts", name: "雅思英语", total: 4000, learned: 0, current: false, last: "" },
+      { id: "cet4", name: "大学英语四级", total: 0, learned: 0, current: true, last: "" },
+      { id: "cet6", name: "大学英语六级", total: 0, learned: 0, current: false, last: "" },
+      { id: "kaoyan", name: "考研英语", total: 0, learned: 0, current: false, last: "" },
+      { id: "zsb", name: "专升本英语", total: 0, learned: 0, current: false, last: "" },
+      { id: "ielts", name: "雅思英语", total: 0, learned: 0, current: false, last: "" },
     ],
   },
   {
     title: "基础学段组",
     items: [
-      { id: "high", name: "高中英语", total: 3500, learned: 22, current: false, last: "" },
+      { id: "high", name: "高中英语", total: 3500, learned: 0, current: false, last: "" },
       { id: "middle", name: "初中英语", total: 1600, learned: 0, current: false, last: "" },
       { id: "primary", name: "小学英语", total: 800, learned: 0, current: false, last: "" },
     ],
   },
-] satisfies WordGroup[];
+];
 
 /** 第一批 seed 词表（面向专升本 / 四级基础巩固；非权威词频统计） */
 export const sampleWords = [
@@ -52,6 +45,8 @@ export const sampleWords = [
     example: "Try a practical approach when you revise grammar.",
     exampleCn: "复习语法时可以试试更务实的方法。",
     review: false,
+    mistakeSources: [{ group: "升学备考组", pack: "专升本英语" }],
+    alsoIn: ["大学英语四级", "高中英语", "考研英语"],
   },
   {
     word: "attitude",
@@ -88,6 +83,8 @@ export const sampleWords = [
     example: "We need simple words to communicate ideas clearly.",
     exampleCn: "我们需要简单的词句来把意思说清楚。",
     review: true,
+    mistakeSources: [{ group: "升学备考组", pack: "大学英语四级" }],
+    alsoIn: ["大学英语六级", "考研英语", "专升本英语"],
   },
   {
     word: "develop",
@@ -115,6 +112,11 @@ export const sampleWords = [
     example: "A quiet environment helps me focus on listening practice.",
     exampleCn: "安静的环境有助于我专注练听力。",
     review: true,
+    mistakeSources: [
+      { group: "升学备考组", pack: "大学英语四级" },
+      { group: "升学备考组", pack: "大学英语六级" },
+    ],
+    alsoIn: ["考研英语"],
   },
   {
     word: "experience",
@@ -169,6 +171,11 @@ export const sampleWords = [
     example: "She explained why she chose her major in simple English.",
     exampleCn: "她用简单的英语说明了为什么选这个专业。",
     review: false,
+    mistakeSources: [
+      { group: "升学备考组", pack: "大学英语四级" },
+      { group: "升学备考组", pack: "大学英语六级" },
+    ],
+    alsoIn: ["考研英语", "专升本英语"],
   },
   {
     word: "opportunity",
@@ -299,6 +306,8 @@ export const personalPackWords = [
     example: "I joined a study group for more speaking practice.",
     exampleCn: "我加入了学习小组，多练口语。",
     review: false,
+    mistakeSources: [{ group: "升学备考组", pack: "专升本英语" }],
+    alsoIn: ["大学英语四级", "高中英语"],
   },
   {
     word: "simulation",
