@@ -1,13 +1,11 @@
 /**
- * V2 单词学习页：浏览器 Web Speech API（不接后端 TTS）。
- * 仅客户端；需在用户点击等手势后调用，利于移动端 Safari / Chrome。
+ * Web Speech API 实现（仅在本目录内使用；page 不直接碰 speechSynthesis）。
  */
 
-export const V2_SPEECH_GENDERS = ["女声", "男声"] as const;
-export type V2SpeechGender = (typeof V2_SPEECH_GENDERS)[number];
+import type { VoiceGender, SpeakTextOptions } from "./types";
 
-const RATE = 0.85;
-const LANG = "en-US";
+const DEFAULT_LANG = "en-US";
+const DEFAULT_RATE = 0.85;
 
 const FEMALE_HINT =
   /\bfemale\b|\bwoman\b|samantha|zira|karen|victoria|susan|veena|ivy|joanna|kimberly|linda|michelle|maria|paulina|fiona|moira|tilly/i;
@@ -31,7 +29,7 @@ function englishVoices(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice[] {
   return en.length ? en : voices;
 }
 
-function pickVoice(voices: SpeechSynthesisVoice[], gender: V2SpeechGender): SpeechSynthesisVoice | null {
+function pickVoice(voices: SpeechSynthesisVoice[], gender: VoiceGender): SpeechSynthesisVoice | null {
   if (voices.length === 0) return null;
   const pool = englishVoices(voices);
   const hints = gender === "女声" ? FEMALE_HINT : MALE_HINT;
@@ -50,26 +48,25 @@ function pickVoice(voices: SpeechSynthesisVoice[], gender: V2SpeechGender): Spee
   return hit ?? null;
 }
 
-/**
- * 朗读英文文本；会先 cancel 上一轮。
- * @returns 是否已发起 speak（false 表示环境不支持或文本为空）
- */
-export function speakV2English(text: string, gender: V2SpeechGender): boolean {
+export function speakWithWebSpeech(text: string, options?: SpeakTextOptions): boolean {
   if (!isBrowserSpeechSupported()) return false;
   const raw = (text ?? "").trim();
   if (!raw) return false;
 
+  const gender = options?.gender ?? "女声";
+  const lang = options?.lang ?? DEFAULT_LANG;
+  const rate = typeof options?.rate === "number" ? options.rate : DEFAULT_RATE;
+
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(raw);
-  u.lang = LANG;
-  u.rate = RATE;
+  u.lang = lang;
+  u.rate = rate;
   const voice = pickVoice(collectVoices(), gender);
   if (voice) u.voice = voice;
   window.speechSynthesis.speak(u);
   return true;
 }
 
-/** 预热 voices 列表（iOS 等需 voiceschanged 后才完整） */
 export function warmUpWebSpeechVoices(): void {
   if (!isBrowserSpeechSupported()) return;
   window.speechSynthesis.getVoices();

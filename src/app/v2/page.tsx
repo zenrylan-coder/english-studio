@@ -23,7 +23,7 @@ import {
   type WordBankManifest,
   type WordBankEntry,
 } from "@/lib/v2/wordBankLoader";
-import { speakV2English, warmUpWebSpeechVoices, V2_SPEECH_GENDERS, type V2SpeechGender } from "@/lib/v2/webSpeech";
+import { speakText, warmUpVoiceProviders, VOICE_GENDERS, type VoiceGender } from "@/lib/v2/voice";
 import { mineGroups, studyRecords } from "@/data/v2/mineData";
 import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
 import { writingMap, writingStages, writingTypes } from "@/data/v2/writingData";
@@ -668,7 +668,7 @@ export default function WordRealmCleanPreview() {
   const [selectedPack, setSelectedPack] = useState(wordGroups[0].items[0]);
   const [wordIndex, setWordIndex] = useState(0);
   const [reviewOnly, setReviewOnly] = useState(false);
-  const [learnSpeechGender, setLearnSpeechGender] = useState<V2SpeechGender>("女声");
+  const [learnSpeechGender, setLearnSpeechGender] = useState<VoiceGender>("女声");
   /** 单词学习页顺序：正序 / 乱序 / 核心优先（仅前端重排，不写回 JSON） */
   const [learnOrderMode, setLearnOrderMode] = useState("sequential");
   /** 乱序稳定种子（与词条数共同决定置换；持久化到 word-learning） */
@@ -967,8 +967,8 @@ export default function WordRealmCleanPreview() {
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
-    warmUpWebSpeechVoices();
-    const onVoices = () => warmUpWebSpeechVoices();
+    warmUpVoiceProviders();
+    const onVoices = () => warmUpVoiceProviders();
     window.speechSynthesis.addEventListener("voiceschanged", onVoices);
     return () => window.speechSynthesis.removeEventListener("voiceschanged", onVoices);
   }, []);
@@ -1569,7 +1569,7 @@ export default function WordRealmCleanPreview() {
           </button>
 
           <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-            {V2_SPEECH_GENDERS.map((item) => (
+            {VOICE_GENDERS.map((item) => (
               <button
                 key={item}
                 type="button"
@@ -1636,7 +1636,7 @@ export default function WordRealmCleanPreview() {
               <button
                 type="button"
                 onClick={() => {
-                  if (!speakV2English(w.word, learnSpeechGender)) showToast("当前环境不支持朗读");
+                  if (!speakText(w.word, { gender: learnSpeechGender })) showToast("当前环境不支持朗读");
                 }}
                 className="rounded-full bg-white py-2.5 text-[11px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95 sm:text-[12px]"
               >
@@ -1735,7 +1735,7 @@ export default function WordRealmCleanPreview() {
                       <button
                         type="button"
                         onClick={() => {
-                          if (!speakV2English(w.example, learnSpeechGender)) showToast("当前环境不支持朗读");
+                          if (!speakText(w.example, { gender: learnSpeechGender })) showToast("当前环境不支持朗读");
                         }}
                         className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95"
                       >
