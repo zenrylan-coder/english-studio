@@ -1,0 +1,893 @@
+[
+  {
+    "word": "abandon",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Do not abandon yourself to despair",
+    "oldExampleCn": "",
+    "newExample": "Do not abandon yourself to despair",
+    "newExampleCn": "别让自己陷入绝望。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "aboard",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "All passengers aboard fell into the river",
+    "oldExampleCn": "",
+    "newExample": "All passengers aboard fell into the river",
+    "newExampleCn": "船上所有乘客都掉进了河里。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "abroad",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The news spread abroad",
+    "oldExampleCn": "",
+    "newExample": "The news spread abroad",
+    "newExampleCn": "消息传到了国外。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "absent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Daniel was absent from the house all the next day",
+    "oldExampleCn": "",
+    "newExample": "Daniel was absent from the house all the next day",
+    "newExampleCn": "丹尼尔第二天一整天都不在家。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "absorb",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Dry sand absorbs water",
+    "oldExampleCn": "",
+    "newExample": "Dry sand absorbs water",
+    "newExampleCn": "干沙吸水。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "abstract",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Iron is abstracted from ore",
+    "oldExampleCn": "",
+    "newExample": "Iron is abstracted from ore",
+    "newExampleCn": "铁是从矿石中提取的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "abuse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It's easy to abuse one's power",
+    "oldExampleCn": "",
+    "newExample": "It's easy to abuse one's power",
+    "newExampleCn": "滥用权力是很容易的事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "academy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This is an academy of music",
+    "oldExampleCn": "",
+    "newExample": "This is an academy of music",
+    "newExampleCn": "这是一所音乐学院。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He speaks with a strong southern accent",
+    "oldExampleCn": "",
+    "newExample": "He speaks with a strong southern accent",
+    "newExampleCn": "他说话带有浓重的南方口音。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "access",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Citizens have free access to the library",
+    "oldExampleCn": "",
+    "newExample": "Citizens have free access to the library",
+    "newExampleCn": "市民可以免费进入图书馆。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accessory",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Car accessories include the roof rack and radio",
+    "oldExampleCn": "",
+    "newExample": "Car accessories include the roof rack and radio",
+    "newExampleCn": "汽车配件包括行李架和收音机。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accident",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "His left knee was hurt in a traffic accident",
+    "oldExampleCn": "",
+    "newExample": "His left knee was hurt in a traffic accident",
+    "newExampleCn": "他的左膝在一次交通事故中受了伤。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accommodation",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The authorities must provide suitble accommodation for the family",
+    "oldExampleCn": "",
+    "newExample": "The authorities must provide suitble accommodation for the family",
+    "newExampleCn": "当局必须为这家人提供合适的住所。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accompany",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She accompanied me to the doctors",
+    "oldExampleCn": "",
+    "newExample": "She accompanied me to the doctors",
+    "newExampleCn": "她陪我去看了医生。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accomplish",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Though the task was challenging, we managed to accomplish it on time",
+    "oldExampleCn": "",
+    "newExample": "Though the task was challenging, we managed to accomplish it on time",
+    "newExampleCn": "虽然任务很有挑战性，我们还是按时完成了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accord",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The government and the rebels are in accord on one point",
+    "oldExampleCn": "",
+    "newExample": "The government and the rebels are in accord on one point",
+    "newExampleCn": "政府和叛军在一个问题上意见一致。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "account",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Have you got a bank account?",
+    "oldExampleCn": "",
+    "newExample": "Have you got a bank account?",
+    "newExampleCn": "你有银行账户吗？",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accumulate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Dust and dirt soon accumulate if you don't clean your house regularly",
+    "oldExampleCn": "",
+    "newExample": "Dust and dirt soon accumulate if you don't clean your house regularly",
+    "newExampleCn": "如果不定期打扫，灰尘和污垢很快就会堆积起来。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accurate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Hearsay definitely can't be regarded as accurate information",
+    "oldExampleCn": "",
+    "newExample": "Hearsay definitely can't be regarded as accurate information",
+    "newExampleCn": "道听途说绝对不能当作准确信息。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accuse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The police accused him of murder",
+    "oldExampleCn": "",
+    "newExample": "The police accused him of murder",
+    "newExampleCn": "警方指控他谋杀。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "accustom",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They have to accustom themselves to the hot weather",
+    "oldExampleCn": "",
+    "newExample": "They have to accustom themselves to the hot weather",
+    "newExampleCn": "他们得让自己习惯炎热的天气。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "achieve",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In many fields, women have yet to achieve the equal participation in policy making processes",
+    "oldExampleCn": "",
+    "newExample": "In many fields, women have yet to achieve the equal participation in policy making processes",
+    "newExampleCn": "在许多领域，女性尚未在决策过程中实现平等参与。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "acid",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "When she spoke, her tone was like acid",
+    "oldExampleCn": "",
+    "newExample": "When she spoke, her tone was like acid",
+    "newExampleCn": "她说话时的语气像刀子一样尖刻。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "acquire",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We hope to acquire the knowledge within happiness",
+    "oldExampleCn": "",
+    "newExample": "We hope to acquire the knowledge within happiness",
+    "newExampleCn": "我们希望在快乐中获取知识。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "act",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Dreaming is one thing, but acting is another",
+    "oldExampleCn": "",
+    "newExample": "Dreaming is one thing, but acting is another",
+    "newExampleCn": "做梦是一回事，行动是另一回事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "actress",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This actress was perfect for the part",
+    "oldExampleCn": "",
+    "newExample": "This actress was perfect for the part",
+    "newExampleCn": "这位女演员演这个角色再合适不过了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adapt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There will be more than one person who can adapt to your personality",
+    "oldExampleCn": "",
+    "newExample": "There will be more than one person who can adapt to your personality",
+    "newExampleCn": "总会有不止一个人能够适应你的性格。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "add",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He didn't add milk nor sugar to his coffee",
+    "oldExampleCn": "",
+    "newExample": "He didn't add milk nor sugar to his coffee",
+    "newExampleCn": "他既没有往咖啡里加牛奶，也没有加糖。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adequate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We had adequate food for a week's journey",
+    "oldExampleCn": "",
+    "newExample": "We had adequate food for a week's journey",
+    "newExampleCn": "我们有足够一星期行程的食物。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adjective",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The function of an adjective is to describe or add to the meaning of a noun",
+    "oldExampleCn": "",
+    "newExample": "The function of an adjective is to describe or add to the meaning of a noun",
+    "newExampleCn": "形容词的作用是描述或补充名词的含义。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adjust",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He soon adjusted to army life",
+    "oldExampleCn": "",
+    "newExample": "He soon adjusted to army life",
+    "newExampleCn": "他很快就适应了军队生活。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "administration",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "You will need some experience in administration before you can run the department",
+    "oldExampleCn": "",
+    "newExample": "You will need some experience in administration before you can run the department",
+    "newExampleCn": "你需要一些管理经验才能运营这个部门。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "admission",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He gained admission into the association",
+    "oldExampleCn": "",
+    "newExample": "He gained admission into the association",
+    "newExampleCn": "他获准加入了该协会。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "admit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He admitted to his father that he had failed his driving test",
+    "oldExampleCn": "",
+    "newExample": "He admitted to his father that he had failed his driving test",
+    "newExampleCn": "他向父亲承认自己驾照考试没通过。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adopt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They adopted our effective methods",
+    "oldExampleCn": "",
+    "newExample": "They adopted our effective methods",
+    "newExampleCn": "他们采用了我们高效的方法。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "advance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We have advanced greatly in our knowledge of the universe",
+    "oldExampleCn": "",
+    "newExample": "We have advanced greatly in our knowledge of the universe",
+    "newExampleCn": "我们在对宇宙的认识上取得了巨大进步。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adventure",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "All the children were listening to her adventures with eager attention",
+    "oldExampleCn": "",
+    "newExample": "All the children were listening to her adventures with eager attention",
+    "newExampleCn": "孩子们都聚精会神地听着她的冒险经历。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "adverb",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Adverb is to describe a verb or an action",
+    "oldExampleCn": "",
+    "newExample": "Adverb is to describe a verb or an action",
+    "newExampleCn": "副词用来描述动词或动作。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "advertise",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We advertised in the local press",
+    "oldExampleCn": "",
+    "newExample": "We advertised in the local press",
+    "newExampleCn": "我们在当地报纸上登了广告。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "advise",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She advised the government on economic affairs",
+    "oldExampleCn": "",
+    "newExample": "She advised the government on economic affairs",
+    "newExampleCn": "她就经济事务向政府提供建议。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "affair",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The minister is busy with important state affairs",
+    "oldExampleCn": "",
+    "newExample": "The minister is busy with important state affairs",
+    "newExampleCn": "部长正忙于重要的国家事务。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "affect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The disease affects the central nervous system",
+    "oldExampleCn": "",
+    "newExample": "The disease affects the central nervous system",
+    "newExampleCn": "这种疾病影响中枢神经系统。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "affluent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We live in an affluent society",
+    "oldExampleCn": "",
+    "newExample": "We live in an affluent society",
+    "newExampleCn": "我们生活在一个富裕的社会。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "afford",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I couldn't afford the rent on my own",
+    "oldExampleCn": "",
+    "newExample": "I couldn't afford the rent on my own",
+    "newExampleCn": "我一个人付不起房租。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "african",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Many African people are very energetic and outgoing",
+    "oldExampleCn": "",
+    "newExample": "Many African people are very energetic and outgoing",
+    "newExampleCn": "许多非洲人充满活力，性格外向。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "agent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The travel agent has made all their reservations for my journey",
+    "oldExampleCn": "",
+    "newExample": "The travel agent has made all their reservations for my journey",
+    "newExampleCn": "旅行代理已经为我订好了行程的所有票务。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "aggressive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The world dooms itself to war because man is aggressive at heart",
+    "oldExampleCn": "",
+    "newExample": "The world dooms itself to war because man is aggressive at heart",
+    "newExampleCn": "世界注定走向战争，因为人类骨子里是好斗的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "agreement",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The agreement has raised hopes that the war may end soon",
+    "oldExampleCn": "",
+    "newExample": "The agreement has raised hopes that the war may end soon",
+    "newExampleCn": "这份协议让人们看到了战争可能很快结束的希望。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "agriculture",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In the past, agriculture located a family to a place",
+    "oldExampleCn": "",
+    "newExample": "In the past, agriculture located a family to a place",
+    "newExampleCn": "在过去，农业把一个家庭固定在一个地方。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "aid",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "An English-Chinese dictionary is an important aid in learning English",
+    "oldExampleCn": "",
+    "newExample": "An English-Chinese dictionary is an important aid in learning English",
+    "newExampleCn": "英汉词典是学习英语的重要辅助工具。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "airline",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The airline launched a European route for the first time",
+    "oldExampleCn": "",
+    "newExample": "The airline launched a European route for the first time",
+    "newExampleCn": "这家航空公司首次开通了一条欧洲航线。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "airplane",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "An airplane engine is a complex machanism",
+    "oldExampleCn": "",
+    "newExample": "An airplane engine is a complex machanism",
+    "newExampleCn": "飞机引擎是一种复杂的机械装置。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "aisle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Don't stand in the aisle",
+    "oldExampleCn": "",
+    "newExample": "Don't stand in the aisle",
+    "newExampleCn": "别站在过道里。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "alarm",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The instant they heard the alarm, they fell in for action",
+    "oldExampleCn": "",
+    "newExample": "The instant they heard the alarm, they fell in for action",
+    "newExampleCn": "他们一听到警报就立即集合待命。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "alcohol",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The doctor told me to keep off alcohol",
+    "oldExampleCn": "",
+    "newExample": "The doctor told me to keep off alcohol",
+    "newExampleCn": "医生让我远离酒精。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "allow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They did not allow the slaves any freedom",
+    "oldExampleCn": "",
+    "newExample": "They did not allow the slaves any freedom",
+    "newExampleCn": "他们不给奴隶任何自由。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "alphabet",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Q comes between P and R in the English alphabet",
+    "oldExampleCn": "",
+    "newExample": "Q comes between P and R in the English alphabet",
+    "newExampleCn": "在英语字母表中，Q 排在 P 和 R 之间。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "alter",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "If it is not a convenient time, we can alter the date",
+    "oldExampleCn": "",
+    "newExample": "If it is not a convenient time, we can alter the date",
+    "newExampleCn": "如果这个时间不方便，我们可以改日期。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "amaze",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "John amazed his friends by suddenly getting married",
+    "oldExampleCn": "",
+    "newExample": "John amazed his friends by suddenly getting married",
+    "newExampleCn": "约翰突然结婚，让朋友们大吃一惊。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "ambassador",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was appointed ambassador to France",
+    "oldExampleCn": "",
+    "newExample": "He was appointed ambassador to France",
+    "newExampleCn": "他被任命为驻法国大使。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "ambition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Her ambition was to be a famous politician",
+    "oldExampleCn": "",
+    "newExample": "Her ambition was to be a famous politician",
+    "newExampleCn": "她的志向是成为一名著名的政治家。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "ambulance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "An ambulance was racing by with its siren wailing",
+    "oldExampleCn": "",
+    "newExample": "An ambulance was racing by with its siren wailing",
+    "newExampleCn": "一辆救护车鸣着警笛疾驰而过。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "amuse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Harry makes up funny stories to amuse his little brother",
+    "oldExampleCn": "",
+    "newExample": "Harry makes up funny stories to amuse his little brother",
+    "newExampleCn": "哈里编有趣的故事逗弟弟开心。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "analyse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We should analyze the cause and the effect of this event",
+    "oldExampleCn": "",
+    "newExample": "We should analyze the cause and the effect of this event",
+    "newExampleCn": "我们应该分析这件事的因果。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "ancestor",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Lions and house cats evolved from a common ancestor",
+    "oldExampleCn": "",
+    "newExample": "Lions and house cats evolved from a common ancestor",
+    "newExampleCn": "狮子与家猫是从同一个祖先演化而来的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "anecdote",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He preceded his lecture with a humorous anecdote.",
+    "oldExampleCn": "",
+    "newExample": "He preceded his lecture with a humorous anecdote.",
+    "newExampleCn": "他在讲座前先讲了一个幽默的逸事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "angle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The temple is especially beautiful to look at from this angle",
+    "oldExampleCn": "",
+    "newExample": "The temple is especially beautiful to look at from this angle",
+    "newExampleCn": "从这个角度看，这座寺庙格外美丽。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "announce",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The government announced that they would build a new highway to that area",
+    "oldExampleCn": "",
+    "newExample": "The government announced that they would build a new highway to that area",
+    "newExampleCn": "政府宣布将修建一条通往该地区的新公路。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "annoy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Sometimes we annoy or upset others unintentionally",
+    "oldExampleCn": "",
+    "newExample": "Sometimes we annoy or upset others unintentionally",
+    "newExampleCn": "有时候我们无意中就会惹恼或冒犯别人。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "antenna",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "You should fix the televison antenna before receiving programs",
+    "oldExampleCn": "",
+    "newExample": "You should fix the televison antenna before receiving programs",
+    "newExampleCn": "接收节目之前，你应该先修好电视天线。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "anticipate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Sales are better than they have anticipated",
+    "oldExampleCn": "",
+    "newExample": "Sales are better than they have anticipated",
+    "newExampleCn": "销售额比他们预期的要好。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "apartment",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I have an apartment in downtown Manhattan",
+    "oldExampleCn": "",
+    "newExample": "I have an apartment in downtown Manhattan",
+    "newExampleCn": "我在曼哈顿市中心有一套公寓。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "apparatus",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A new piece of apparatus was used in the experiment",
+    "oldExampleCn": "",
+    "newExample": "A new piece of apparatus was used in the experiment",
+    "newExampleCn": "实验中用了一件新设备。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appeal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The response to our appeal was encouraging",
+    "oldExampleCn": "",
+    "newExample": "The response to our appeal was encouraging",
+    "newExampleCn": "对我们呼吁的响应令人鼓舞。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appearance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Don't judge by appearances",
+    "oldExampleCn": "",
+    "newExample": "Don't judge by appearances",
+    "newExampleCn": "不要以貌取人。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appetite",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I lost my appetite",
+    "oldExampleCn": "",
+    "newExample": "I lost my appetite",
+    "newExampleCn": "我没有胃口了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appliance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The household appliances were just bought by him for his family",
+    "oldExampleCn": "",
+    "newExample": "The household appliances were just bought by him for his family",
+    "newExampleCn": "这些家用电器是他刚给家里人买的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "apply",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "My cousin applied to four universities and was accepted by all of them",
+    "oldExampleCn": "",
+    "newExample": "My cousin applied to four universities and was accepted by all of them",
+    "newExampleCn": "我表弟申请了四所大学，全部被录取了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appointment",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I made an appointment to see the doctor",
+    "oldExampleCn": "",
+    "newExample": "I made an appointment to see the doctor",
+    "newExampleCn": "我约好了去看医生。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "appreciate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We appreciate your efforts for the development of the company",
+    "oldExampleCn": "",
+    "newExample": "We appreciate your efforts for the development of the company",
+    "newExampleCn": "我们感谢你为公司发展所做的努力。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "approach",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I like his approach to the problem",
+    "oldExampleCn": "",
+    "newExample": "I like his approach to the problem",
+    "newExampleCn": "我喜欢他处理这个问题的方式。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "aptitude",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "That student has an aptitude for music",
+    "oldExampleCn": "",
+    "newExample": "That student has an aptitude for music",
+    "newExampleCn": "那个学生有音乐天赋。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "architecture",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The forbidden city is one of the world's greatest works of architecture",
+    "oldExampleCn": "",
+    "newExample": "The forbidden city is one of the world's greatest works of architecture",
+    "newExampleCn": "紫禁城是世界上最伟大的建筑杰作之一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "argument",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We accepted the agreement without argument",
+    "oldExampleCn": "",
+    "newExample": "We accepted the agreement without argument",
+    "newExampleCn": "我们毫无异议地接受了协议。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "arouse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The young man's behavior aroused the suspicions of the police",
+    "oldExampleCn": "",
+    "newExample": "The young man's behavior aroused the suspicions of the police",
+    "newExampleCn": "那个年轻人的行为引起了警方的怀疑。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "arrange",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Contact your local branch to arrange an appointment",
+    "oldExampleCn": "",
+    "newExample": "Contact your local branch to arrange an appointment",
+    "newExampleCn": "联系当地的分支机构预约。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "arrest",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "You shouldn't arrest him without an arrest warrant",
+    "oldExampleCn": "",
+    "newExample": "You shouldn't arrest him without an arrest warrant",
+    "newExampleCn": "没有逮捕令不应该抓他。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "arrive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "You must arrive at the airport at least two hours in advance",
+    "oldExampleCn": "",
+    "newExample": "You must arrive at the airport at least two hours in advance",
+    "newExampleCn": "你必须至少提前两小时到达机场。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "arrow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The arrow pierced her shoulder",
+    "oldExampleCn": "",
+    "newExample": "The arrow pierced her shoulder",
+    "newExampleCn": "箭射穿了她的肩膀。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "article",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The editor asked him to contribute a weekly article on european affairs",
+    "oldExampleCn": "",
+    "newExample": "The editor asked him to contribute a weekly article on european affairs",
+    "newExampleCn": "编辑请他每周写一篇关于欧洲事务的专栏文章。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "artificial",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This fruit joice contains absolutely no artificial flavorings or colorings",
+    "oldExampleCn": "",
+    "newExample": "This fruit joice contains absolutely no artificial flavorings or colorings",
+    "newExampleCn": "这种果汁完全不含人工香精或色素。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "artist",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was not the kind of artist who could work collaboratively",
+    "oldExampleCn": "",
+    "newExample": "He was not the kind of artist who could work collaboratively",
+    "newExampleCn": "他不是那种能够与人合作的艺术家。"
+  },
+  {
+    "word": "ash",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Don't drop your cigarette ash on the carpet. Use an ashtray",
+    "oldExampleCn": "",
+    "newExample": "Don't drop your cigarette ash on the carpet. Use an ashtray",
+    "newExampleCn": "别把烟灰掉在地毯上，用烟灰缸。"
+  },
+  {
+    "word": "aspect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We must consider a problem in its all aspects",
+    "oldExampleCn": "",
+    "newExample": "We must consider a problem in its all aspects",
+    "newExampleCn": "我们必须从各个方面来考虑问题。"
+  },
+  {
+    "word": "assemble",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A large crowd had assembled outside the American Embassy",
+    "oldExampleCn": "",
+    "newExample": "A large crowd had assembled outside the American Embassy",
+    "newExampleCn": "一大群人聚集在美国大使馆外面。"
+  },
+  {
+    "word": "assess",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We will assess the damage caused by the flood",
+    "oldExampleCn": "",
+    "newExample": "We will assess the damage caused by the flood",
+    "newExampleCn": "我们将评估洪水造成的损失。"
+  },
+  {
+    "word": "assign",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It is not possible to assign this building an exact date",
+    "oldExampleCn": "",
+    "newExample": "It is not possible to assign this building an exact date",
+    "newExampleCn": "很难确定这栋建筑的确切建造年代。"
+  },
+  {
+    "word": "assignment",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A brave fighter never shrinks from danger when executing an assignment",
+    "oldExampleCn": "",
+    "newExample": "A brave fighter never shrinks from danger when executing an assignment",
+    "newExampleCn": "勇敢的战士在执行任务时从不畏惧危险。"
+  },
+  {
+    "word": "assist",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A team of nurses assisted the doctor in performing the operation",
+    "oldExampleCn": "",
+    "newExample": "A team of nurses assisted the doctor in performing the operation",
+    "newExampleCn": "一组护士协助医生完成手术。"
+  },
+  {
+    "word": "assistant",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Her assistant was accused of theft and fraud by the police",
+    "oldExampleCn": "",
+    "newExample": "Her assistant was accused of theft and fraud by the police",
+    "newExampleCn": "她的助手被警方指控盗窃和欺诈。"
+  }
+]

@@ -1,0 +1,1802 @@
+[
+  {
+    "word": "chore",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It's such a chore to do the shopping everyday",
+    "oldExampleCn": "",
+    "newExample": "It's such a chore to do the shopping everyday",
+    "newExampleCn": "每天买菜真是件烦人的事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "church",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'm just going to the church to see the priest",
+    "oldExampleCn": "",
+    "newExample": "I'm just going to the church to see the priest",
+    "newExampleCn": "我正要去教堂见神父。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cigarette",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A cigarette set the dry grass on fire",
+    "oldExampleCn": "",
+    "newExample": "A cigarette set the dry grass on fire",
+    "newExampleCn": "一根香烟点燃了干草。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "circle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The circle is ten centimeters in diameter",
+    "oldExampleCn": "",
+    "newExample": "The circle is ten centimeters in diameter",
+    "newExampleCn": "这个圆的直径是十厘米。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "circuit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "For many years, He was top banana on the circuit 许多年来，他都是巡回剧团里的主角——top banana主要人物",
+    "oldExampleCn": "",
+    "newExample": "For many years, He was top banana on the circuit 许多年来，他都是巡回剧团里的主角——top banana主要人物",
+    "newExampleCn": "许多年来，他都是巡回剧团里的主角。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "circumstance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Circumtances are the ruler of the weak, the instrument of the wise",
+    "oldExampleCn": "",
+    "newExample": "Circumtances are the ruler of the weak, the instrument of the wise",
+    "newExampleCn": "环境支配弱者，智慧之人利用环境。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cite",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'll just cite some figures for comparison",
+    "oldExampleCn": "",
+    "newExample": "I'll just cite some figures for comparison",
+    "newExampleCn": "我来引用一些数据做比较。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "citizen",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She a lawful citizen",
+    "oldExampleCn": "",
+    "newExample": "She a lawful citizen",
+    "newExampleCn": "她是个守法的公民。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "civil",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Gone With the Wind, a film about American Civil War, is still regarded as one of the best Hollywood films",
+    "oldExampleCn": "",
+    "newExample": "Gone With the Wind, a film about American Civil War, is still regarded as one of the best Hollywood films",
+    "newExampleCn": "《乱世佳人》这部关于美国内战的电影，仍被认为是最好的好莱坞电影之一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "claim",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Every citizen may claim the protection of the law",
+    "oldExampleCn": "",
+    "newExample": "Every citizen may claim the protection of the law",
+    "newExampleCn": "每个公民都可以要求法律的保护。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clap",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Let's give the children a big clap",
+    "oldExampleCn": "",
+    "newExample": "Let's give the children a big clap",
+    "newExampleCn": "来给孩子们热烈的掌声。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clarify",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The government has clarified its position on equal pay for women",
+    "oldExampleCn": "",
+    "newExample": "The government has clarified its position on equal pay for women",
+    "newExampleCn": "政府已阐明其在女性同工同酬问题上的立场。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "classical",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Beethoven is regarded as one of the immortals of classical music",
+    "oldExampleCn": "",
+    "newExample": "Beethoven is regarded as one of the immortals of classical music",
+    "newExampleCn": "贝多芬被视为古典音乐界不朽的人物之一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "classify",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Librarians spend a lot of time classifying books",
+    "oldExampleCn": "",
+    "newExample": "Librarians spend a lot of time classifying books",
+    "newExampleCn": "图书管理员花大量时间给图书分类。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clause",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A confidentiality clause was added to the contract",
+    "oldExampleCn": "",
+    "newExample": "A confidentiality clause was added to the contract",
+    "newExampleCn": "合同中加入了一项保密条款。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clear",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It seems clear that he has no reasonable alternative",
+    "oldExampleCn": "",
+    "newExample": "It seems clear that he has no reasonable alternative",
+    "newExampleCn": "显然他没有其他合理的选择。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clerk",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The clerk was elevated to a managerial position",
+    "oldExampleCn": "",
+    "newExample": "The clerk was elevated to a managerial position",
+    "newExampleCn": "这名职员被提升到了管理岗位。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clever",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Even clever people may do something stupid when put on the spot",
+    "oldExampleCn": "",
+    "newExample": "Even clever people may do something stupid when put on the spot",
+    "newExampleCn": "即使聪明的人在关键时刻也可能做傻事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "client",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He proves to be a successful lawyer with lots of clients",
+    "oldExampleCn": "",
+    "newExample": "He proves to be a successful lawyer with lots of clients",
+    "newExampleCn": "事实证明他是一位成功的律师，客户很多。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cliff",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The narrow path leads to a wooden hut on the cliff",
+    "oldExampleCn": "",
+    "newExample": "The narrow path leads to a wooden hut on the cliff",
+    "newExampleCn": "这条狭窄的小路通向悬崖上的一间木屋。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "climate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The current political climate in that country is favorable for foreign investment",
+    "oldExampleCn": "",
+    "newExample": "The current political climate in that country is favorable for foreign investment",
+    "newExampleCn": "该国当前的政治气候有利于外国投资。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "climb",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It is not easy to climb a steep mountain",
+    "oldExampleCn": "",
+    "newExample": "It is not easy to climb a steep mountain",
+    "newExampleCn": "攀登陡峭的山可不容易。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clothe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He had to work hard to feed and clothe the large family",
+    "oldExampleCn": "",
+    "newExample": "He had to work hard to feed and clothe the large family",
+    "newExampleCn": "他不得不辛苦工作来养活一大家子人。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "clue",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The police found a clue which helped them catch the robber",
+    "oldExampleCn": "",
+    "newExample": "The police found a clue which helped them catch the robber",
+    "newExampleCn": "警方找到了有助于抓获抢劫犯的线索。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coach",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We went to New York City by coach",
+    "oldExampleCn": "",
+    "newExample": "We went to New York City by coach",
+    "newExampleCn": "我们坐长途汽车去了纽约市。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coast",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He is going to live by the coast for the sake of his health",
+    "oldExampleCn": "",
+    "newExample": "He is going to live by the coast for the sake of his health",
+    "newExampleCn": "为了健康，他打算住在海边。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cock",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The cock has brighter colored feathers than the hen",
+    "oldExampleCn": "",
+    "newExample": "The cock has brighter colored feathers than the hen",
+    "newExampleCn": "公鸡的羽毛颜色比母鸡更鲜艳。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coffee",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He put some sugar into his coffee",
+    "oldExampleCn": "",
+    "newExample": "He put some sugar into his coffee",
+    "newExampleCn": "他在咖啡里加了些糖。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coin",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We'd better not coin terms which are not intelligible",
+    "oldExampleCn": "",
+    "newExample": "We'd better not coin terms which are not intelligible",
+    "newExampleCn": "我们最好不要生造别人听不懂的词。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "collaborate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We would like to ask you to collaborate with us",
+    "oldExampleCn": "",
+    "newExample": "We would like to ask you to collaborate with us",
+    "newExampleCn": "我们想请你与我们合作。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "collapse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The man lost all his money in the collapse of the stock market",
+    "oldExampleCn": "",
+    "newExample": "The man lost all his money in the collapse of the stock market",
+    "newExampleCn": "那个人的所有钱财都在股市崩盘中赔光了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "collar",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She turned up his coat collar against the chilly wind",
+    "oldExampleCn": "",
+    "newExample": "She turned up his coat collar against the chilly wind",
+    "newExampleCn": "他竖起衣领抵御寒风。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "colleague",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He is getting along well with his colleagues",
+    "oldExampleCn": "",
+    "newExample": "He is getting along well with his colleagues",
+    "newExampleCn": "他和同事们相处得很好。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "collect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He used to collect stamps, but now he likes to collect coins",
+    "oldExampleCn": "",
+    "newExample": "He used to collect stamps, but now he likes to collect coins",
+    "newExampleCn": "他过去集邮，但现在喜欢收藏硬币。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "college",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Their son will start college in the autumn",
+    "oldExampleCn": "",
+    "newExample": "Their son will start college in the autumn",
+    "newExampleCn": "他们的儿子秋天就要上大学了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "colony",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Britain lost its American colonies in a revolution",
+    "oldExampleCn": "",
+    "newExample": "Britain lost its American colonies in a revolution",
+    "newExampleCn": "英国在一场革命中失去了美洲殖民地。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "colour",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Due to the use of natural pigments, these folk paintings retain their color well. 因为使用了天然颜料，这些民俗画的颜色很好地保留了下来",
+    "oldExampleCn": "",
+    "newExample": "Due to the use of natural pigments, these folk paintings retain their color well. 因为使用了天然颜料，这些民俗画的颜色很好地保留了下来",
+    "newExampleCn": "因为使用了天然颜料，这些民俗画的颜色很好地保留了下来。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "column",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The dome was supported by white marble columns",
+    "oldExampleCn": "",
+    "newExample": "The dome was supported by white marble columns",
+    "newExampleCn": "穹顶由白色大理石柱支撑着。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "combine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Carbon, hydrogen, and oxygen can combine to form carbohydrates and fats",
+    "oldExampleCn": "",
+    "newExample": "Carbon, hydrogen, and oxygen can combine to form carbohydrates and fats",
+    "newExampleCn": "碳、氢、氧可以结合形成碳水化合物和脂肪。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "comedy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Dwayne Johnson talked about his experiences of starring in comedies",
+    "oldExampleCn": "",
+    "newExample": "Dwayne Johnson talked about his experiences of starring in comedies",
+    "newExampleCn": "道恩·强森谈到了他主演喜剧片的经历。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "comfort",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A father is a treasure, a brother is a comfort, but a friend is both",
+    "oldExampleCn": "",
+    "newExample": "A father is a treasure, a brother is a comfort, but a friend is both",
+    "newExampleCn": "父亲是财富，兄弟是慰藉，而朋友既是财富又是慰藉。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "command",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The army is under the King's command",
+    "oldExampleCn": "",
+    "newExample": "The army is under the King's command",
+    "newExampleCn": "军队由国王指挥。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "commence",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I will commence around a visit",
+    "oldExampleCn": "",
+    "newExample": "I will commence around a visit",
+    "newExampleCn": "我将开始一次访问。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "commercial",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The downtown area is zoned for commercial use",
+    "oldExampleCn": "",
+    "newExample": "The downtown area is zoned for commercial use",
+    "newExampleCn": "市中心被划为商业用地。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "commit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He, who commits a fault, thinks everyone speaks of it",
+    "oldExampleCn": "",
+    "newExample": "He, who commits a fault, thinks everyone speaks of it",
+    "newExampleCn": "做错事的人，总以为别人也在议论他。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "committee",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They have set up a committee to inspect the park facilities",
+    "oldExampleCn": "",
+    "newExample": "They have set up a committee to inspect the park facilities",
+    "newExampleCn": "他们成立了一个委员会来检查公园设施。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "communicate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We communicate mostly by e-mail",
+    "oldExampleCn": "",
+    "newExample": "We communicate mostly by e-mail",
+    "newExampleCn": "我们主要通过电子邮件沟通。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "community",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "To host the Olympics Games, Beijing expanded its English speaking community",
+    "oldExampleCn": "",
+    "newExample": "To host the Olympics Games, Beijing expanded its English speaking community",
+    "newExampleCn": "为了举办奥运会，北京扩大了英语使用人群。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "company",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The company has connections with a number of Canadian firms",
+    "oldExampleCn": "",
+    "newExample": "The company has connections with a number of Canadian firms",
+    "newExampleCn": "这家公司与好几家加拿大公司有业务往来。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compare",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Your knowledge cannot yet compare with his",
+    "oldExampleCn": "",
+    "newExample": "Your knowledge cannot yet compare with his",
+    "newExampleCn": "你的知识还比不上他。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compel",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I was compelled to find a part-time job because I needed money",
+    "oldExampleCn": "",
+    "newExample": "I was compelled to find a part-time job because I needed money",
+    "newExampleCn": "因为需要钱，我被迫找了份兼职。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compete",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Our products must be able to compete in marketplace",
+    "oldExampleCn": "",
+    "newExample": "Our products must be able to compete in marketplace",
+    "newExampleCn": "我们的产品必须在市场上具有竞争力。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "competition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There is a rise in unemployment, so the competition for jobs is very fierce",
+    "oldExampleCn": "",
+    "newExample": "There is a rise in unemployment, so the competition for jobs is very fierce",
+    "newExampleCn": "失业率上升，所以求职竞争非常激烈。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "complain",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She complained that the room is too cold",
+    "oldExampleCn": "",
+    "newExample": "She complained that the room is too cold",
+    "newExampleCn": "她抱怨房间太冷了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "complex",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "As tools have become more and more complex, we need more complex controls to control them",
+    "oldExampleCn": "",
+    "newExample": "As tools have become more and more complex, we need more complex controls to control them",
+    "newExampleCn": "随着工具变得越来越复杂，我们需要更复杂的控制系统来操控它们。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "complicated",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The business is a large, complicated organism",
+    "oldExampleCn": "",
+    "newExample": "The business is a large, complicated organism",
+    "newExampleCn": "企业是一个庞大而复杂的有机组织。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "component",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Regular exercise is one of the key components of a healthy lifestyle",
+    "oldExampleCn": "",
+    "newExample": "Regular exercise is one of the key components of a healthy lifestyle",
+    "newExampleCn": "定期锻炼是健康生活方式的关键组成部分之一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compose",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Water is composed of hydrogen and oxygen",
+    "oldExampleCn": "",
+    "newExample": "Water is composed of hydrogen and oxygen",
+    "newExampleCn": "水由氢和氧组成。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "composition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Scientists study the composition of the soil",
+    "oldExampleCn": "",
+    "newExample": "Scientists study the composition of the soil",
+    "newExampleCn": "科学家研究土壤的成分。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compound",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "English loves compound words: \"washing machine\" and that sort of thing",
+    "oldExampleCn": "",
+    "newExample": "English loves compound words: \"washing machine\" and that sort of thing",
+    "newExampleCn": "英语喜欢复合词，比如'washing machine'之类的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "comprehend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "You can say you have comprehended a word if you can use it correctly and effectively",
+    "oldExampleCn": "",
+    "newExample": "You can say you have comprehended a word if you can use it correctly and effectively",
+    "newExampleCn": "如果你能正确有效地使用一个词，就可以说你已经掌握了它。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compromise",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They cannot compromise with the terrorists on such terms",
+    "oldExampleCn": "",
+    "newExample": "They cannot compromise with the terrorists on such terms",
+    "newExampleCn": "他们不能在这种条件下与恐怖分子妥协。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compulsory",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Britain did not introduce compulsory primary education until 1880",
+    "oldExampleCn": "",
+    "newExample": "Britain did not introduce compulsory primary education until 1880",
+    "newExampleCn": "英国直到一八八〇年才实行义务教育。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "compute",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I compute my loss at 500 dollars",
+    "oldExampleCn": "",
+    "newExample": "I compute my loss at 500 dollars",
+    "newExampleCn": "我估计我的损失为五百美元。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conceal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was unable to conceal his surprise",
+    "oldExampleCn": "",
+    "newExample": "He was unable to conceal his surprise",
+    "newExampleCn": "他无法掩饰自己的惊讶。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "concentrate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They will concentrate on teaching the basics of reading, writing, and arithmetic",
+    "oldExampleCn": "",
+    "newExample": "They will concentrate on teaching the basics of reading, writing, and arithmetic",
+    "newExampleCn": "他们将专注于教授阅读、写作和算术的基础知识。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "concert",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Various performers will present a concert to raise money for AIDS charities",
+    "oldExampleCn": "",
+    "newExample": "Various performers will present a concert to raise money for AIDS charities",
+    "newExampleCn": "多位表演者将举办一场音乐会，为艾滋病慈善机构筹款。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conclude",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "What do you conclude from his explanation?",
+    "oldExampleCn": "",
+    "newExample": "What do you conclude from his explanation?",
+    "newExampleCn": "你从他的解释中得出了什么结论？",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "condense",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A long story may be condensed into a few sentences",
+    "oldExampleCn": "",
+    "newExample": "A long story may be condensed into a few sentences",
+    "newExampleCn": "一个长篇故事可以压缩成几句话。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "condition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I had almost decided to accept their conditions at that time",
+    "oldExampleCn": "",
+    "newExample": "I had almost decided to accept their conditions at that time",
+    "newExampleCn": "那时我几乎决定接受他们的条件。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conduct",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "His conduct contradicts his words",
+    "oldExampleCn": "",
+    "newExample": "His conduct contradicts his words",
+    "newExampleCn": "他的行为与言语自相矛盾。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conference",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The world's conference on human rights discussed the common problems of mankind and advanced human rights work around the world",
+    "oldExampleCn": "",
+    "newExample": "The world's conference on human rights discussed the common problems of mankind and advanced human rights work around the world",
+    "newExampleCn": "世界人权大会讨论了人类的共同问题，并推动了全球人权工作。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "confess",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The suspect confessed to the armed robbery",
+    "oldExampleCn": "",
+    "newExample": "The suspect confessed to the armed robbery",
+    "newExampleCn": "嫌疑犯承认了持械抢劫。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "confine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "this is outside the confines of human knowledge",
+    "oldExampleCn": "",
+    "newExample": "this is outside the confines of human knowledge",
+    "newExampleCn": "这超出了人类知识的范围。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "confirm",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Her new film confirmed her as one of our leading directors",
+    "oldExampleCn": "",
+    "newExample": "Her new film confirmed her as one of our leading directors",
+    "newExampleCn": "她的新片证实了她是我们顶尖导演之一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conflict",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Many people feel that religion conflicts with science",
+    "oldExampleCn": "",
+    "newExample": "Many people feel that religion conflicts with science",
+    "newExampleCn": "许多人觉得宗教与科学相冲突。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conform",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A coat must conform to the figure of the wearer",
+    "oldExampleCn": "",
+    "newExample": "A coat must conform to the figure of the wearer",
+    "newExampleCn": "外套必须合身。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "congratulate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "My must congratulate you on your engagement",
+    "oldExampleCn": "",
+    "newExample": "My must congratulate you on your engagement",
+    "newExampleCn": "我必须祝贺你订婚了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conjunction",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The word is a temporal conjunction",
+    "oldExampleCn": "",
+    "newExample": "The word is a temporal conjunction",
+    "newExampleCn": "这个词是时间连词。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "connect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Has the phone been connected yet?",
+    "oldExampleCn": "",
+    "newExample": "Has the phone been connected yet?",
+    "newExampleCn": "电话接通了吗？",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conquer",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "To conquer or to die",
+    "oldExampleCn": "",
+    "newExample": "To conquer or to die",
+    "newExampleCn": "不征服，毋宁死。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "conscious",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was conscious of his guilt",
+    "oldExampleCn": "",
+    "newExample": "He was conscious of his guilt",
+    "newExampleCn": "他意识到了自己的罪过。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "consequence",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Your behavior is of no great consequence",
+    "oldExampleCn": "",
+    "newExample": "Your behavior is of no great consequence",
+    "newExampleCn": "你的行为无足轻重。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "considerable",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It is a considerable sum of money",
+    "oldExampleCn": "",
+    "newExample": "It is a considerable sum of money",
+    "newExampleCn": "那是一笔相当可观的钱。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "consistent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The policies, which will be put into place, are clear and consistent",
+    "oldExampleCn": "",
+    "newExample": "The policies, which will be put into place, are clear and consistent",
+    "newExampleCn": "即将实施的政策清晰且一致。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "constraint",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He felt constraint when in her presence",
+    "oldExampleCn": "",
+    "newExample": "He felt constraint when in her presence",
+    "newExampleCn": "他在她面前感到拘束。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "construct",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They are planning to construct a new highway",
+    "oldExampleCn": "",
+    "newExample": "They are planning to construct a new highway",
+    "newExampleCn": "他们正计划修建一条新高速公路。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "consult",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In this case, I recommended that you consult your doctor",
+    "oldExampleCn": "",
+    "newExample": "In this case, I recommended that you consult your doctor",
+    "newExampleCn": "这种情况下，我建议你咨询医生。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "consultant",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The consultant committee met at the call of the chairman",
+    "oldExampleCn": "",
+    "newExample": "The consultant committee met at the call of the chairman",
+    "newExampleCn": "咨询委员会应主席的召集开了会。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "consume",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Chinese people consume huge amounts of rice every year",
+    "oldExampleCn": "",
+    "newExample": "Chinese people consume huge amounts of rice every year",
+    "newExampleCn": "中国人每年消耗大量的米饭。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contact",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This remote tribe had little contact with the outside world",
+    "oldExampleCn": "",
+    "newExample": "This remote tribe had little contact with the outside world",
+    "newExampleCn": "这个偏远的部落与外界几乎没有什么联系。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contain",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The speech contained some interesting ideas",
+    "oldExampleCn": "",
+    "newExample": "The speech contained some interesting ideas",
+    "newExampleCn": "这次演讲包含了一些有趣的想法。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contaminate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The river was contaminated with waste",
+    "oldExampleCn": "",
+    "newExample": "The river was contaminated with waste",
+    "newExampleCn": "这条河被废物污染了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contempt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A liar is held in contempt 说谎者为人所轻视",
+    "oldExampleCn": "",
+    "newExample": "A liar is held in contempt 说谎者为人所轻视",
+    "newExampleCn": "说谎者为人所轻视。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He contended that it was not his fault",
+    "oldExampleCn": "",
+    "newExample": "He contended that it was not his fault",
+    "newExampleCn": "他坚称那不是他的错。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "content",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The calorie content in a regular coke is very high",
+    "oldExampleCn": "",
+    "newExample": "The calorie content in a regular coke is very high",
+    "newExampleCn": "普通可乐的热量含量很高。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contest",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "If the election is one-sided, it is really no contest",
+    "oldExampleCn": "",
+    "newExample": "If the election is one-sided, it is really no contest",
+    "newExampleCn": "如果选举是一边倒的，那就毫无竞争可言。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "context",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We should judge the past in its historic context",
+    "oldExampleCn": "",
+    "newExample": "We should judge the past in its historic context",
+    "newExampleCn": "我们应该在历史背景下来评判过去。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "continent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It is generally thought that Columbus discovered the American continent",
+    "oldExampleCn": "",
+    "newExample": "It is generally thought that Columbus discovered the American continent",
+    "newExampleCn": "人们普遍认为是哥伦布发现了美洲大陆。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contradict",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Your actions contradict your belief",
+    "oldExampleCn": "",
+    "newExample": "Your actions contradict your belief",
+    "newExampleCn": "你的行为和你的信仰矛盾。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contrast",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There is a great contrast between good and evil",
+    "oldExampleCn": "",
+    "newExample": "There is a great contrast between good and evil",
+    "newExampleCn": "善恶之间有着巨大的反差。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "contribute",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She seldom contributes to the discussion",
+    "oldExampleCn": "",
+    "newExample": "She seldom contributes to the discussion",
+    "newExampleCn": "她很少在讨论中发言。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "controversy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The new traffic regulations caused much controversy among drivers",
+    "oldExampleCn": "",
+    "newExample": "The new traffic regulations caused much controversy among drivers",
+    "newExampleCn": "新的交通法规在司机中引起了很大争议。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "convention",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The handshake is a social convention",
+    "oldExampleCn": "",
+    "newExample": "The handshake is a social convention",
+    "newExampleCn": "握手是一种社交惯例。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "convert",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The solar cell can convert the energy of sunlight into electric energy",
+    "oldExampleCn": "",
+    "newExample": "The solar cell can convert the energy of sunlight into electric energy",
+    "newExampleCn": "太阳能电池可以将阳光的能量转化为电能。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "convey",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It's hard to convey my feelings in words",
+    "oldExampleCn": "",
+    "newExample": "It's hard to convey my feelings in words",
+    "newExampleCn": "我难以用语言表达我的感受。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "convince",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He finally convinced us of his innocence",
+    "oldExampleCn": "",
+    "newExample": "He finally convinced us of his innocence",
+    "newExampleCn": "他终于让我们相信他是清白的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cook",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Will she cook dinner this evening?",
+    "oldExampleCn": "",
+    "newExample": "Will she cook dinner this evening?",
+    "newExampleCn": "她今晚会做晚饭吗？",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cooperate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "If they cooperate with each other, everyone will run smoothly",
+    "oldExampleCn": "",
+    "newExample": "If they cooperate with each other, everyone will run smoothly",
+    "newExampleCn": "如果他们互相合作，一切都会顺利运转。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coordinate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Our efforts need to be further coordinated for higher efficiency",
+    "oldExampleCn": "",
+    "newExample": "Our efforts need to be further coordinated for higher efficiency",
+    "newExampleCn": "为了提高效率，我们的工作需要进一步协调。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cope",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'm afraid I can't cope with these troubles",
+    "oldExampleCn": "",
+    "newExample": "I'm afraid I can't cope with these troubles",
+    "newExampleCn": "恐怕我应付不了这些麻烦。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "copper",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He polished up the old copper coins",
+    "oldExampleCn": "",
+    "newExample": "He polished up the old copper coins",
+    "newExampleCn": "他把那些旧铜币擦亮了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "copy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This painting is a copy of the one in the museum",
+    "oldExampleCn": "",
+    "newExample": "This painting is a copy of the one in the museum",
+    "newExampleCn": "这幅画是博物馆那幅画的复制品。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "copyright",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He retained the copyright of his book",
+    "oldExampleCn": "",
+    "newExample": "He retained the copyright of his book",
+    "newExampleCn": "他保留了自己书的版权。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cord",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Our voices depend on our vocal cords",
+    "oldExampleCn": "",
+    "newExample": "Our voices depend on our vocal cords",
+    "newExampleCn": "我们发声靠的是声带。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "corn",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The corn is nearly ready for harvesting",
+    "oldExampleCn": "",
+    "newExample": "The corn is nearly ready for harvesting",
+    "newExampleCn": "玉米差不多可以收割了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "correct",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The correct answers can be found at the bottom of page eight",
+    "oldExampleCn": "",
+    "newExample": "The correct answers can be found at the bottom of page eight",
+    "newExampleCn": "正确答案可以在第八页底部找到。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "correspond",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "These goods don't correspond with my order",
+    "oldExampleCn": "",
+    "newExample": "These goods don't correspond with my order",
+    "newExampleCn": "这些货物与我的订单不符。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "correspondent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "That war correspondent proudly outgunned the army sharp shooters",
+    "oldExampleCn": "",
+    "newExample": "That war correspondent proudly outgunned the army sharp shooters",
+    "newExampleCn": "那位战地记者骄傲地比部队里的神枪手还厉害。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "corridor",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The corridor leads to the headmaster's office",
+    "oldExampleCn": "",
+    "newExample": "The corridor leads to the headmaster's office",
+    "newExampleCn": "走廊通向校长办公室。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cosmos",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Our world is but a small part of the cosmos",
+    "oldExampleCn": "",
+    "newExample": "Our world is but a small part of the cosmos",
+    "newExampleCn": "我们的世界不过是宇宙的一小部分。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cost",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'm determined to attain my purpose at any cost",
+    "oldExampleCn": "",
+    "newExample": "I'm determined to attain my purpose at any cost",
+    "newExampleCn": "我决心不惜任何代价达到目的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cotton",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The cotton has been picked and weighed up",
+    "oldExampleCn": "",
+    "newExample": "The cotton has been picked and weighed up",
+    "newExampleCn": "棉花已采摘完毕并称重。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "council",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The city council will decide the fate of the building",
+    "oldExampleCn": "",
+    "newExample": "The city council will decide the fate of the building",
+    "newExampleCn": "市议会将决定这栋楼的命运。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "count",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It is impossible to count the stars in the sky",
+    "oldExampleCn": "",
+    "newExample": "It is impossible to count the stars in the sky",
+    "newExampleCn": "天上的星星数不清。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "counter",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "My colleague countered my proposal with one of his own",
+    "oldExampleCn": "",
+    "newExample": "My colleague countered my proposal with one of his own",
+    "newExampleCn": "我的同事用自己的方案反驳了我的提议。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "couple",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I waited a couple of hours",
+    "oldExampleCn": "",
+    "newExample": "I waited a couple of hours",
+    "newExampleCn": "我等了几个小时。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coupon",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I have a coupon for thirty percent off any dairy product in this supermarket",
+    "oldExampleCn": "",
+    "newExample": "I have a coupon for thirty percent off any dairy product in this supermarket",
+    "newExampleCn": "我有一张这家超市任何乳制品打七折的优惠券。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "course",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She is currently doing a business studies course at Leeds",
+    "oldExampleCn": "",
+    "newExample": "She is currently doing a business studies course at Leeds",
+    "newExampleCn": "她目前在利兹读一门商务课程。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "court",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The company is anxious to keep the whole case out of court",
+    "oldExampleCn": "",
+    "newExample": "The company is anxious to keep the whole case out of court",
+    "newExampleCn": "公司急于不让整个案件闹到法庭上。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cousin",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "For our first anniversary, he's taking me to his cousin's cabi",
+    "oldExampleCn": "",
+    "newExample": "For our first anniversary, he's taking me to his cousin's cabi",
+    "newExampleCn": "我们的一周年纪念日，他要带我去他表弟的小屋。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cover",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The front cover of the novel has been torn off",
+    "oldExampleCn": "",
+    "newExample": "The front cover of the novel has been torn off",
+    "newExampleCn": "这本小说的封面已经被撕掉了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "coward",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He is a liar and a coward to boot",
+    "oldExampleCn": "",
+    "newExample": "He is a liar and a coward to boot",
+    "newExampleCn": "他既是个骗子，还是个懦夫。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crack",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The door opened just a crack",
+    "oldExampleCn": "",
+    "newExample": "The door opened just a crack",
+    "newExampleCn": "门只开了一条缝。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crane",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We used a crane to lift a slab of concrete",
+    "oldExampleCn": "",
+    "newExample": "We used a crane to lift a slab of concrete",
+    "newExampleCn": "我们用起重机吊起了一块混凝土板。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crash",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The rocks crash down onto the car",
+    "oldExampleCn": "",
+    "newExample": "The rocks crash down onto the car",
+    "newExampleCn": "岩石轰然砸在汽车上。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crawl",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Your must not crawl into the favor of your superior",
+    "oldExampleCn": "",
+    "newExample": "Your must not crawl into the favor of your superior",
+    "newExampleCn": "你不该巴结讨好上司。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cream",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He is whipping cream",
+    "oldExampleCn": "",
+    "newExample": "He is whipping cream",
+    "newExampleCn": "他正在搅打奶油。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "creature",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The crocodile is a strange looking creature",
+    "oldExampleCn": "",
+    "newExample": "The crocodile is a strange looking creature",
+    "newExampleCn": "鳄鱼是一种长相奇怪的生物。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "credit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I need three more credits to graduate",
+    "oldExampleCn": "",
+    "newExample": "I need three more credits to graduate",
+    "newExampleCn": "我还差三个学分才能毕业。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "creep",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We take off our shoes and creep cautiously along the passage",
+    "oldExampleCn": "",
+    "newExample": "We take off our shoes and creep cautiously along the passage",
+    "newExampleCn": "我们脱下鞋，沿着过道小心翼翼地溜过去。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crew",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'd like to thank you on your behalf of the crew",
+    "oldExampleCn": "",
+    "newExample": "I'd like to thank you on your behalf of the crew",
+    "newExampleCn": "我代表全体机组成员感谢你。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crime",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There is no proof that he was on the crime scene",
+    "oldExampleCn": "",
+    "newExample": "There is no proof that he was on the crime scene",
+    "newExampleCn": "没有证据证明他在犯罪现场。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crisis",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They suffered huge losses in the financial crisis",
+    "oldExampleCn": "",
+    "newExample": "They suffered huge losses in the financial crisis",
+    "newExampleCn": "他们在金融危机中损失惨重。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "criteria",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We each have our own criteria for success",
+    "oldExampleCn": "",
+    "newExample": "We each have our own criteria for success",
+    "newExampleCn": "我们每个人都有自己的成功标准。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "critic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The critic said the new movie would not do well at the box office",
+    "oldExampleCn": "",
+    "newExample": "The critic said the new movie would not do well at the box office",
+    "newExampleCn": "评论家说这部新电影票房不会好。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crop",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We have had the biggest wheat crop ever this year",
+    "oldExampleCn": "",
+    "newExample": "We have had the biggest wheat crop ever this year",
+    "newExampleCn": "今年我们的小麦收成是有史以来最好的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cross",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "It's very dangerous for children to cross a busy road",
+    "oldExampleCn": "",
+    "newExample": "It's very dangerous for children to cross a busy road",
+    "newExampleCn": "小孩子穿过繁忙的马路非常危险。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crowd",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The crowd was very well behaved",
+    "oldExampleCn": "",
+    "newExample": "The crowd was very well behaved",
+    "newExampleCn": "那群人表现得非常好。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crown",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They crowned him shortly after the old king's death",
+    "oldExampleCn": "",
+    "newExample": "They crowned him shortly after the old king's death",
+    "newExampleCn": "老国王去世后不久他们就给他加冕了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crude",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The price of crude oil has come down recently",
+    "oldExampleCn": "",
+    "newExample": "The price of crude oil has come down recently",
+    "newExampleCn": "最近原油价格下跌了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cruel",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The death of their daughter was a cruel blow",
+    "oldExampleCn": "",
+    "newExample": "The death of their daughter was a cruel blow",
+    "newExampleCn": "他们女儿的死是一个残酷的打击。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cruise",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The car was cruising along at 60 kilometers an hour",
+    "oldExampleCn": "",
+    "newExample": "The car was cruising along at 60 kilometers an hour",
+    "newExampleCn": "汽车以每小时六十公里的速度平稳行驶。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crush",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There was such a crush on the bus that I could hardly breathe",
+    "oldExampleCn": "",
+    "newExample": "There was such a crush on the bus that I could hardly breathe",
+    "newExampleCn": "公交车上挤得我几乎喘不过气来。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "crystal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "People imitate diamond with crystal",
+    "oldExampleCn": "",
+    "newExample": "People imitate diamond with crystal",
+    "newExampleCn": "人们用水晶仿制钻石。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cube",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She dropped a cube of sugar into her coffee and stirred it with a spoon",
+    "oldExampleCn": "",
+    "newExample": "She dropped a cube of sugar into her coffee and stirred it with a spoon",
+    "newExampleCn": "她往咖啡里丢了一块方糖，用勺子搅了搅。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cucumber",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I would like a cucumber salad for an appetizer",
+    "oldExampleCn": "",
+    "newExample": "I would like a cucumber salad for an appetizer",
+    "newExampleCn": "我想来一份黄瓜沙拉做开胃菜。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cuisine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Chinese cuisine is the perfect fusion of color, shape, appearance and flavor",
+    "oldExampleCn": "",
+    "newExample": "Chinese cuisine is the perfect fusion of color, shape, appearance and flavor",
+    "newExampleCn": "中国菜是色、形、香、味的完美融合。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cultivate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The farmer is cultivating his land",
+    "oldExampleCn": "",
+    "newExample": "The farmer is cultivating his land",
+    "newExampleCn": "那个农民正在耕地。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "culture",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "China plays an important role in promoting Asian culture",
+    "oldExampleCn": "",
+    "newExample": "China plays an important role in promoting Asian culture",
+    "newExampleCn": "中国在推动亚洲文化方面发挥着重要作用。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curb",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I stopped and stood at the curb, trying to breathe",
+    "oldExampleCn": "",
+    "newExample": "I stopped and stood at the curb, trying to breathe",
+    "newExampleCn": "我停下来站在路边，努力呼吸。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curl",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "As he got older, his hair lost its curl",
+    "oldExampleCn": "",
+    "newExample": "As he got older, his hair lost its curl",
+    "newExampleCn": "随着年龄增长，他的头发不卷了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "currency",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Our currency will not depreciate",
+    "oldExampleCn": "",
+    "newExample": "Our currency will not depreciate",
+    "newExampleCn": "我们的货币不会贬值。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "current",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was swept away by the current",
+    "oldExampleCn": "",
+    "newExample": "He was swept away by the current",
+    "newExampleCn": "他被水流冲走了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curriculum",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The staff should work together to revise the school curriculum",
+    "oldExampleCn": "",
+    "newExample": "The staff should work together to revise the school curriculum",
+    "newExampleCn": "全体教职员工应共同修订学校课程。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A light purse is a heavy curse 贫穷是沉重的诅咒",
+    "oldExampleCn": "",
+    "newExample": "A light purse is a heavy curse 贫穷是沉重的诅咒",
+    "newExampleCn": "贫穷是沉重的诅咒。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curtain",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I have enough material to curtain all the windows",
+    "oldExampleCn": "",
+    "newExample": "I have enough material to curtain all the windows",
+    "newExampleCn": "我有足够的布料给所有窗户装上窗帘。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "curve",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The stairs ascended in a graceful curve",
+    "oldExampleCn": "",
+    "newExample": "The stairs ascended in a graceful curve",
+    "newExampleCn": "楼梯呈优美的弧线向上延伸。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cushion",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She plumps up the sofa cushion 她把沙发垫拍得鼓鼓的",
+    "oldExampleCn": "",
+    "newExample": "She plumps up the sofa cushion 她把沙发垫拍得鼓鼓的",
+    "newExampleCn": "她把沙发垫拍得鼓鼓的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "custom",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The custom prevails over the whole area 该风俗盛行于这整个地区",
+    "oldExampleCn": "",
+    "newExample": "The custom prevails over the whole area 该风俗盛行于这整个地区",
+    "newExampleCn": "该风俗盛行于这整个地区。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "customer",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "If that doesn't work, ask them if they really think customer is King",
+    "oldExampleCn": "",
+    "newExample": "If that doesn't work, ask them if they really think customer is King",
+    "newExampleCn": "如果那样行不通，问问他们是否真的认为顾客是上帝。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "cycle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In many universities, students cycle from their dorms to the classroom or library",
+    "oldExampleCn": "",
+    "newExample": "In many universities, students cycle from their dorms to the classroom or library",
+    "newExampleCn": "在许多大学，学生们从宿舍骑车去教室或图书馆。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "dairy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We bought milk at the dairy",
+    "oldExampleCn": "",
+    "newExample": "We bought milk at the dairy",
+    "newExampleCn": "我们在奶制品店买了牛奶。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "damage",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "An earthquake sometimes causes extensive damage to a town",
+    "oldExampleCn": "",
+    "newExample": "An earthquake sometimes causes extensive damage to a town",
+    "newExampleCn": "地震有时会给城镇造成大面积破坏。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "damp",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The damp match won't strike",
+    "oldExampleCn": "",
+    "newExample": "The damp match won't strike",
+    "newExampleCn": "潮湿的火柴擦不燃。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "darling",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Oh darling, I couldn't be more pleased for you",
+    "oldExampleCn": "",
+    "newExample": "Oh darling, I couldn't be more pleased for you",
+    "newExampleCn": "哦亲爱的，我为你高兴得不得了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "dash",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He dashed the bowl to bits against the ground",
+    "oldExampleCn": "",
+    "newExample": "He dashed the bowl to bits against the ground",
+    "newExampleCn": "他把碗猛摔在地上，砸成了碎片。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "data",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The data should updated once a week",
+    "oldExampleCn": "",
+    "newExample": "The data should updated once a week",
+    "newExampleCn": "数据应该每周更新一次。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deadline",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I hope we can finish this before the deadline",
+    "oldExampleCn": "",
+    "newExample": "I hope we can finish this before the deadline",
+    "newExampleCn": "我希望我们能在截止日期前完成。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'll deal with the children later",
+    "oldExampleCn": "",
+    "newExample": "I'll deal with the children later",
+    "newExampleCn": "我以后再收拾这些孩子。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "dean",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She is the dean of the Faculty of Social Sciences",
+    "oldExampleCn": "",
+    "newExample": "She is the dean of the Faculty of Social Sciences",
+    "newExampleCn": "她是社会科学学院的院长。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "dear",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Dear John, thanks for asking me to help you with the class trip",
+    "oldExampleCn": "",
+    "newExample": "Dear John, thanks for asking me to help you with the class trip",
+    "newExampleCn": "亲爱的约翰，谢谢你请我帮忙组织班级旅行。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "debate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The government is debating about the education laws",
+    "oldExampleCn": "",
+    "newExample": "The government is debating about the education laws",
+    "newExampleCn": "政府正在就教育法展开辩论。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "debt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Liabilities are the debt or obligation that a businessman must pay in money or services at some time in the future",
+    "oldExampleCn": "",
+    "newExample": "Liabilities are the debt or obligation that a businessman must pay in money or services at some time in the future",
+    "newExampleCn": "负债是商人必须在未来以货币或服务偿还的债务或义务。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decay",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The vegetables have begun to decay",
+    "oldExampleCn": "",
+    "newExample": "The vegetables have begun to decay",
+    "newExampleCn": "蔬菜已经开始腐烂。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deceive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Nobody can deceive me",
+    "oldExampleCn": "",
+    "newExample": "Nobody can deceive me",
+    "newExampleCn": "谁也骗不了我。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He made a decent record 他成绩善佳",
+    "oldExampleCn": "",
+    "newExample": "He made a decent record 他成绩善佳",
+    "newExampleCn": "他成绩善佳。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decide",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Don't decide on important matters too quickly",
+    "oldExampleCn": "",
+    "newExample": "Don't decide on important matters too quickly",
+    "newExampleCn": "重要的事情不要草率决定。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deck",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The deck of the sailing ship was made of thick planks",
+    "oldExampleCn": "",
+    "newExample": "The deck of the sailing ship was made of thick planks",
+    "newExampleCn": "帆船的甲板是用厚木板铺成的。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "declare",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He declared that he would never come back again",
+    "oldExampleCn": "",
+    "newExample": "He declared that he would never come back again",
+    "newExampleCn": "他宣称他再也不回来了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decline",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There is a sharp decline in unemployment",
+    "oldExampleCn": "",
+    "newExample": "There is a sharp decline in unemployment",
+    "newExampleCn": "失业率大幅下降。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decorate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Using extremely different decorating schemes in adjoining rooms may result in lack of unity in style. 相邻的房间用悬殊太大的装修方案会导致风格不统一",
+    "oldExampleCn": "",
+    "newExample": "Using extremely different decorating schemes in adjoining rooms may result in lack of unity in style. 相邻的房间用悬殊太大的装修方案会导致风格不统一",
+    "newExampleCn": "相邻的房间用悬殊太大的装修方案会导致风格不统一。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "decrease",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Her interest in the subject gradually decreases",
+    "oldExampleCn": "",
+    "newExample": "Her interest in the subject gradually decreases",
+    "newExampleCn": "她对这门学科的兴趣逐渐减退。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deed",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The primacy of the deed is over word and thought",
+    "oldExampleCn": "",
+    "newExample": "The primacy of the deed is over word and thought",
+    "newExampleCn": "行动高于言辞和思想。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deem",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The board deemed it urgent that these files be printed right away",
+    "oldExampleCn": "",
+    "newExample": "The board deemed it urgent that these files be printed right away",
+    "newExampleCn": "董事会认为这些文件必须立即打印。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "defeat",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "They were defeated in the football match",
+    "oldExampleCn": "",
+    "newExample": "They were defeated in the football match",
+    "newExampleCn": "他们在足球赛中被击败了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "defend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She demonstrated the best way to defend oneself",
+    "oldExampleCn": "",
+    "newExample": "She demonstrated the best way to defend oneself",
+    "newExampleCn": "她演示了最佳的自我保护方法。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "deficit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The current trade deficit indicates a serious inbalance between our imports and exports",
+    "oldExampleCn": "",
+    "newExample": "The current trade deficit indicates a serious inbalance between our imports and exports",
+    "newExampleCn": "当前的贸易逆差显示我们的进出口严重失衡。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "degree",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He left without completing his degree",
+    "oldExampleCn": "",
+    "newExample": "He left without completing his degree",
+    "newExampleCn": "他没读完学位就走了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "delay",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We have decided to delay our holiday until September",
+    "oldExampleCn": "",
+    "newExample": "We have decided to delay our holiday until September",
+    "newExampleCn": "我们决定将假期推迟到九月。",
+    "reason": "exampleCn missing"
+  }
+]
