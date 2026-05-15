@@ -1,0 +1,398 @@
+[
+  {
+    "word": "way",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I'm on my way to the grocery",
+    "oldExampleCn": "",
+    "newExample": "I'm on my way to the grocery",
+    "newExampleCn": "我正在去杂货店的路上。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wealth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Health is better than wealth",
+    "oldExampleCn": "",
+    "newExample": "Health is better than wealth",
+    "newExampleCn": "健康胜于财富。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "weapon",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Their ultimate weapon was the threat of an all-out strike",
+    "oldExampleCn": "",
+    "newExample": "Their ultimate weapon was the threat of an all-out strike",
+    "newExampleCn": "他们最后的武器是威胁举行全面罢工。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "weather",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In warm weather, you should wear clothing that is cool and comfortable",
+    "oldExampleCn": "",
+    "newExample": "In warm weather, you should wear clothing that is cool and comfortable",
+    "newExampleCn": "天气暖和的时候，你应该穿凉爽舒适的衣服。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "weave",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We're weaving garlands of flowers for heros",
+    "oldExampleCn": "",
+    "newExample": "We're weaving garlands of flowers for heros",
+    "newExampleCn": "我们正在为英雄们编织花环。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "weed",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The garden is choked with weeds",
+    "oldExampleCn": "",
+    "newExample": "The garden is choked with weeds",
+    "newExampleCn": "花园里长满了杂草。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "welcome",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We welcome constructive criticism",
+    "oldExampleCn": "",
+    "newExample": "We welcome constructive criticism",
+    "newExampleCn": "我们欢迎建设性的批评。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "welfare",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "In making this decision, the court's main concern is for the welfare of the children",
+    "oldExampleCn": "",
+    "newExample": "In making this decision, the court's main concern is for the welfare of the children",
+    "newExampleCn": "在做出这个决定时，法院主要关心的是孩子们的福祉。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "well-being",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "To reduce public spending on the well-being of the citizens is an act of sheer folly",
+    "oldExampleCn": "",
+    "newExample": "To reduce public spending on the well-being of the citizens is an act of sheer folly",
+    "newExampleCn": "削减用于公民福祉的公共开支纯粹是愚蠢之举。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "whale",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We may live to see the extinction of the whale",
+    "oldExampleCn": "",
+    "newExample": "We may live to see the extinction of the whale",
+    "newExampleCn": "我们有生之年可能会看到鲸鱼的灭绝。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wheat",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This old man is a leading authority on wheat diseases",
+    "oldExampleCn": "",
+    "newExample": "This old man is a leading authority on wheat diseases",
+    "newExampleCn": "这位老人是小麦病害方面的权威。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wheel",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The driver slumped over the steering wheel",
+    "oldExampleCn": "",
+    "newExample": "The driver slumped over the steering wheel",
+    "newExampleCn": "司机趴在方向盘上。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "whisky",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A great deal of whisky is made in Scotland",
+    "oldExampleCn": "",
+    "newExample": "A great deal of whisky is made in Scotland",
+    "newExampleCn": "苏格兰生产大量威士忌。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "whisper",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The children were whispering in the corner",
+    "oldExampleCn": "",
+    "newExample": "The children were whispering in the corner",
+    "newExampleCn": "孩子们在角落里窃窃私语。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "white",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He was white with fury 他气的脸色发白",
+    "oldExampleCn": "",
+    "newExample": "He was white with fury 他气的脸色发白",
+    "newExampleCn": "他气得脸色发白。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "widow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He left a widow and children totally unprovided for",
+    "oldExampleCn": "",
+    "newExample": "He left a widow and children totally unprovided for",
+    "newExampleCn": "他留下了一个寡妇和完全没有生活保障的孩子们。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wilderness",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "From his attic window, he looked out over a beautiful wildernes",
+    "oldExampleCn": "",
+    "newExample": "From his attic window, he looked out over a beautiful wildernes",
+    "newExampleCn": "从阁楼的窗户望去，他看到了美丽的荒野。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wildlife",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Environmental pollution endangers wildlife",
+    "oldExampleCn": "",
+    "newExample": "Environmental pollution endangers wildlife",
+    "newExampleCn": "环境污染危及野生动物。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wing",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "A seagull fluttered down with an injured wing",
+    "oldExampleCn": "",
+    "newExample": "A seagull fluttered down with an injured wing",
+    "newExampleCn": "一只海鸥扑扇着受伤的翅膀飞落下来。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wipe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She wiped off dust with a rag",
+    "oldExampleCn": "",
+    "newExample": "She wiped off dust with a rag",
+    "newExampleCn": "她用抹布擦掉了灰尘。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wisdom",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Confucius's words hold a great deal of wisdom",
+    "oldExampleCn": "",
+    "newExample": "Confucius's words hold a great deal of wisdom",
+    "newExampleCn": "孔子的话蕴含着大智慧。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wish",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I wish it to be clearly understood",
+    "oldExampleCn": "",
+    "newExample": "I wish it to be clearly understood",
+    "newExampleCn": "我希望这件事被清楚地理解。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Holmes was a gregarious, a great wit, a man of wide interests",
+    "oldExampleCn": "",
+    "newExample": "Holmes was a gregarious, a great wit, a man of wide interests",
+    "newExampleCn": "福尔摩斯是个爱交际的人，非常风趣，兴趣广泛。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "withdraw",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She withdrew all her savings from the bank",
+    "oldExampleCn": "",
+    "newExample": "She withdrew all her savings from the bank",
+    "newExampleCn": "她从银行取出了所有积蓄。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "withstand",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The bridge is built to withstand an earthquake of 8.0 magnitude 这座桥可以经受 8 级地震",
+    "oldExampleCn": "",
+    "newExample": "The bridge is built to withstand an earthquake of 8.0 magnitude 这座桥可以经受 8 级地震",
+    "newExampleCn": "这座桥可以经受八级地震。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "witness",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Children in regions of chaos and bloodshed are witnessing a disturbing amount of violence",
+    "oldExampleCn": "",
+    "newExample": "Children in regions of chaos and bloodshed are witnessing a disturbing amount of violence",
+    "newExampleCn": "生活在动荡和流血地区的孩子们正目睹着令人不安的大量暴力。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wolf",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The wolf snapped at the hunter's hand",
+    "oldExampleCn": "",
+    "newExample": "The wolf snapped at the hunter's hand",
+    "newExampleCn": "狼猛地咬向猎人的手。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wool",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "He found a job of shearing wool from sheep",
+    "oldExampleCn": "",
+    "newExample": "He found a job of shearing wool from sheep",
+    "newExampleCn": "他找到了一份剪羊毛的工作。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "workaholic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "I do not want to become a workaholic",
+    "oldExampleCn": "",
+    "newExample": "I do not want to become a workaholic",
+    "newExampleCn": "我不想成为一个工作狂。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "workforce",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This year 5 percent of the workforce will be made redundant",
+    "oldExampleCn": "",
+    "newExample": "This year 5 percent of the workforce will be made redundant",
+    "newExampleCn": "今年将有百分之五的员工被裁掉。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "worldwide",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The money came from worldwide contribution",
+    "oldExampleCn": "",
+    "newExample": "The money came from worldwide contribution",
+    "newExampleCn": "这笔钱来自世界各地的捐款。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "worm",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The worm was crushed under the feet",
+    "oldExampleCn": "",
+    "newExample": "The worm was crushed under the feet",
+    "newExampleCn": "虫子被踩在脚下碾碎了。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "worship",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "She gazed at the famous singer with worship in her eyes",
+    "oldExampleCn": "",
+    "newExample": "She gazed at the famous singer with worship in her eyes",
+    "newExampleCn": "她凝视着那位著名歌手，眼中满是崇拜。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "worthy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This book is worthy of reading",
+    "oldExampleCn": "",
+    "newExample": "This book is worthy of reading",
+    "newExampleCn": "这本书值得一读。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wrap",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Over her shoulders was a much-mended wrap 她的肩上搭着一条被多次缝补的披肩",
+    "oldExampleCn": "",
+    "newExample": "Over her shoulders was a much-mended wrap 她的肩上搭着一条被多次缝补的披肩",
+    "newExampleCn": "她的肩上搭着一条被多次缝补的披肩。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wreck",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Because of the tsunami, the coast was a wreck",
+    "oldExampleCn": "",
+    "newExample": "Because of the tsunami, the coast was a wreck",
+    "newExampleCn": "由于海啸，海岸一片狼藉。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "wrong",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Instead of complaining about what's wrong, be grateful for what's right",
+    "oldExampleCn": "",
+    "newExample": "Instead of complaining about what's wrong, be grateful for what's right",
+    "newExampleCn": "与其抱怨不好的事，不如感恩好的事。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "yellow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "The leaves turn yellow in autumn",
+    "oldExampleCn": "",
+    "newExample": "The leaves turn yellow in autumn",
+    "newExampleCn": "叶子在秋天变黄。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "yield",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "This land yields well",
+    "oldExampleCn": "",
+    "newExample": "This land yields well",
+    "newExampleCn": "这块土地产量很高。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "yoga",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Some people practice yoga to aid relaxation",
+    "oldExampleCn": "",
+    "newExample": "Some people practice yoga to aid relaxation",
+    "newExampleCn": "有些人练习瑜伽来帮助放松。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "yogurt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "Do you have any low-fat yogurt?",
+    "oldExampleCn": "",
+    "newExample": "Do you have any low-fat yogurt?",
+    "newExampleCn": "你们有低脂酸奶吗？",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "youngster",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "These youngsters yarn for an adventure in the wild",
+    "oldExampleCn": "",
+    "newExample": "These youngsters yarn for an adventure in the wild",
+    "newExampleCn": "这些年轻人渴望在野外探险。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "youth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "We shouldn't blame youth crime simply on unemployment",
+    "oldExampleCn": "",
+    "newExample": "We shouldn't blame youth crime simply on unemployment",
+    "newExampleCn": "我们不应简单地将青少年犯罪归咎于失业。",
+    "reason": "exampleCn missing"
+  },
+  {
+    "word": "zebra",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "There are several species of zebra",
+    "oldExampleCn": "",
+    "newExample": "There are several species of zebra",
+    "newExampleCn": "斑马有多个品种。",
+    "reason": "exampleCn missing"
+  }
+]
