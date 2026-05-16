@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "subtract",
+    "word": "subtract",
+    "oldExample": "The littel girl has begun to learn to add and subtract",
+    "newExampleCn": "这个小女孩已经开始学习加减法了"
+  },
+  {
+    "wordId": "sunset",
+    "word": "sunset",
+    "oldExample": "By sunset, we had covered 30 miles",
+    "newExampleCn": "到日落时，我们已经走了30英里。"
+  },
+  {
+    "wordId": "sunshine",
+    "word": "sunshine",
+    "oldExample": "I was sitting in the garden, enjoying the sunshine",
+    "newExampleCn": "我坐在花园里，享受着阳光。"
+  },
+  {
+    "wordId": "super",
+    "word": "super",
+    "oldExample": "I've discoverd a super restaurant near here",
+    "newExampleCn": "我发现这附近有一家很棒的餐厅"
+  },
+  {
+    "wordId": "superficial",
+    "word": "superficial",
+    "oldExample": "Superficial scratches can be easily removed",
+    "newExampleCn": "表面的划痕很容易去除"
+  },
+  {
+    "wordId": "supermarket",
+    "word": "supermarket",
+    "oldExample": "A variety of foods are sold at a supermarket",
+    "newExampleCn": "超市里出售各种各样的食品"
+  },
+  {
+    "wordId": "supper",
+    "word": "supper",
+    "oldExample": "His wife made some pumpkin pie for supper",
+    "newExampleCn": "他妻子做了一些南瓜派当晚餐。"
+  },
+  {
+    "wordId": "supplement",
+    "word": "supplement",
+    "oldExample": "John had to get a job to supplement the family income",
+    "newExampleCn": "约翰不得不找份工作来补贴家用"
+  },
+  {
+    "wordId": "supply",
+    "word": "supply",
+    "oldExample": "Domestic consumers were supplied enough necessities by those companies",
+    "newExampleCn": "国内消费者由那些公司供应了足够的生活必需品。"
+  },
+  {
+    "wordId": "support",
+    "word": "support",
+    "oldExample": "We should encourage and support them to participate in collective activities with friends, family, colleagues and support groups",
+    "newExampleCn": "我们应该鼓励并支持他们和朋友、家人、同事以及互助小组一起参加集体活动。"
+  },
+  {
+    "wordId": "suppose",
+    "word": "suppose",
+    "oldExample": "Let us suppose another planet with conditions similar to those on the earth",
+    "newExampleCn": "让我们假设有另一颗星球，其条件与地球相似。"
+  },
+  {
+    "wordId": "supreme",
+    "word": "supreme",
+    "oldExample": "He was supreme leader of that fascist dictatorship",
+    "newExampleCn": "他是那个法西斯独裁政权的最高领导人"
+  },
+  {
+    "wordId": "surface",
+    "word": "surface",
+    "oldExample": "The surface of the bamboo feels so smooth",
+    "newExampleCn": "竹子的表面摸起来很光滑"
+  },
+  {
+    "wordId": "surname",
+    "word": "surname",
+    "oldExample": "To make a nickname from someone's surname can sometimes be bad",
+    "newExampleCn": "用别人的姓氏起外号有时可能不太好"
+  },
+  {
+    "wordId": "surrender",
+    "word": "surrender",
+    "oldExample": "Thousands of illegal immigrants have surrendered to police",
+    "newExampleCn": "数千名非法移民已向警方自首。"
+  },
+  {
+    "wordId": "surround",
+    "word": "surround",
+    "oldExample": "They have surrounded the town with troops",
+    "newExampleCn": "他们用军队包围了这座城镇"
+  },
+  {
+    "wordId": "surroundings",
+    "word": "surroundings",
+    "oldExample": "The adaptability of the youth to new surroundings is one of they good qualities",
+    "newExampleCn": "年轻人适应新环境的能力是他们的优点之一。"
+  },
+  {
+    "wordId": "survey",
+    "word": "survey",
+    "oldExample": "A recent survey of public opinions shows that many people are worried about the rising house prices",
+    "newExampleCn": "最近一项民意调查显示，许多人担心房价上涨。"
+  },
+  {
+    "wordId": "survive",
+    "word": "survive",
+    "oldExample": "The man was very ill, but he survived",
+    "newExampleCn": "那个男人病得很重，但他活了下来"
+  },
+  {
+    "wordId": "suspect",
+    "word": "suspect",
+    "oldExample": "The police couldn't prove that the suspect was guilty",
+    "newExampleCn": "警方无法证明嫌疑人有罪"
+  },
+  {
+    "wordId": "swallow",
+    "word": "swallow",
+    "oldExample": "There are many swallows flying in the sky",
+    "newExampleCn": "天空中有许多燕子在飞。"
+  },
+  {
+    "wordId": "swamp",
+    "word": "swamp",
+    "oldExample": "In the swamp we were beset by mosquitoes",
+    "newExampleCn": "在沼泽里，我们被蚊子围攻。"
+  },
+  {
+    "wordId": "swan",
+    "word": "swan",
+    "oldExample": "The witch turns the princess into a swan",
+    "newExampleCn": "女巫把公主变成了一只天鹅"
+  },
+  {
+    "wordId": "swarm",
+    "word": "swarm",
+    "oldExample": "I saw a swarm of bees attacking the poor monkey",
+    "newExampleCn": "我看到一群蜜蜂在攻击那只可怜的猴子"
+  },
+  {
+    "wordId": "sway",
+    "word": "sway",
+    "oldExample": "Swaying hips properly is the basis of the heel-and-toe walking race",
+    "newExampleCn": "正确摆动臀部是竞走中脚跟脚尖走法的基础"
+  },
+  {
+    "wordId": "swear",
+    "word": "swear",
+    "oldExample": "He had to swear that his story was true",
+    "newExampleCn": "他不得不发誓说他的故事是真的。"
+  },
+  {
+    "wordId": "sweater",
+    "word": "sweater",
+    "oldExample": "This woolen sweater may keep you warm in winter",
+    "newExampleCn": "这件羊毛衫可以让你在冬天保暖"
+  },
+  {
+    "wordId": "sweep",
+    "word": "sweep",
+    "oldExample": "I saw the tops of trees moving in circles and pieces of wood were swept up into the air",
+    "newExampleCn": "我看到树梢在打转，木片被卷到了空中"
+  },
+  {
+    "wordId": "sweet",
+    "word": "sweet",
+    "oldExample": "The dish tastes a bit sweet",
+    "newExampleCn": "这道菜尝起来有点甜"
+  },
+  {
+    "wordId": "swift",
+    "word": "swift",
+    "oldExample": "With the failure of the peace talks, all hopes of a swift end to the war have flown out the window",
+    "newExampleCn": "随着和谈失败，战争迅速结束的所有希望都化为泡影。"
+  },
+  {
+    "wordId": "swiss",
+    "word": "Swiss",
+    "oldExample": "The Swiss standard of living is very high",
+    "newExampleCn": "瑞士人的生活水平很高"
+  },
+  {
+    "wordId": "switch",
+    "word": "switch",
+    "oldExample": "Press the switch to see if the light comes on",
+    "newExampleCn": "按一下开关，看看灯会不会亮。"
+  },
+  {
+    "wordId": "sword",
+    "word": "sword",
+    "oldExample": "Fame can be a double-edged sword",
+    "newExampleCn": "名声可能是一把双刃剑"
+  },
+  {
+    "wordId": "symbol",
+    "word": "symbol",
+    "oldExample": "To them the monarchy is the special symbol of nationhood",
+    "newExampleCn": "对他们来说，君主制是民族身份的特殊象征。"
+  },
+  {
+    "wordId": "synthetic",
+    "word": "synthetic",
+    "oldExample": "Nylon is a synthetic material; it is not from nature",
+    "newExampleCn": "尼龙是一种合成材料；它不是天然的。"
+  },
+  {
+    "wordId": "system",
+    "word": "system",
+    "oldExample": "The new system is still in the planning stage",
+    "newExampleCn": "新系统仍处于规划阶段"
+  },
+  {
+    "wordId": "table",
+    "word": "table",
+    "oldExample": "We should create a table for the sales data",
+    "newExampleCn": "我们应该为销售数据创建一个表格"
+  },
+  {
+    "wordId": "tablet",
+    "word": "tablet",
+    "oldExample": "The doctor told him to take two tablets before every meal",
+    "newExampleCn": "医生让他每餐前服用两片药。"
+  },
+  {
+    "wordId": "tag",
+    "word": "tag",
+    "oldExample": "Don't forget to put tags with your name and address on your suitcases",
+    "newExampleCn": "别忘了在你的行李箱上挂上写有你姓名和地址的标签。"
+  },
+  {
+    "wordId": "tail",
+    "word": "tail",
+    "oldExample": "He drove into the back of my truck and smashed the tail light",
+    "newExampleCn": "他撞上了我卡车的后部，把尾灯撞碎了"
+  },
+  {
+    "wordId": "tailor",
+    "word": "tailor",
+    "oldExample": "The tailor can alter your new coat to fit you",
+    "newExampleCn": "裁缝可以修改你的新外套，让它更合身。"
+  },
+  {
+    "wordId": "tale",
+    "word": "tale",
+    "oldExample": "She looks like a princess in a fairy tale",
+    "newExampleCn": "她看起来像童话里的公主"
+  },
+  {
+    "wordId": "tame",
+    "word": "tame",
+    "oldExample": "The tame lions can communicate and dance together with the actors",
+    "newExampleCn": "那些温顺的狮子会和演员们一起交流和跳舞。"
+  },
+  {
+    "wordId": "tan",
+    "word": "tan",
+    "oldExample": "It took me all summer to get this tan",
+    "newExampleCn": "我花了整个夏天才晒成这个肤色。"
+  },
+  {
+    "wordId": "tank",
+    "word": "tank",
+    "oldExample": "The tank got bogged down in the mud",
+    "newExampleCn": "坦克陷在了泥里。"
+  },
+  {
+    "wordId": "tap",
+    "word": "tap",
+    "oldExample": "He rigged a rubber hose to tap in kitchen",
+    "newExampleCn": "他接了一根橡胶软管，把水引到厨房。"
+  },
+  {
+    "wordId": "tape",
+    "word": "tape",
+    "oldExample": "A technician loads a video tape into one of the machines",
+    "newExampleCn": "一名技术人员把一盘录像带装进其中一台机器。"
+  },
+  {
+    "wordId": "target",
+    "word": "target",
+    "oldExample": "The hunter's target was a wild beast",
+    "newExampleCn": "猎人的目标是一头野兽"
+  },
+  {
+    "wordId": "tax",
+    "word": "tax",
+    "oldExample": "Governments don't tax children",
+    "newExampleCn": "政府不向儿童征税"
+  },
+  {
+    "wordId": "technique",
+    "word": "technique",
+    "oldExample": "I want to learn the latest technique in toy making",
+    "newExampleCn": "我想学习最新的玩具制作技术"
+  },
+  {
+    "wordId": "technology",
+    "word": "technology",
+    "oldExample": "Life is made so much easier with modern science and technology",
+    "newExampleCn": "现代科学技术让生活变得轻松多了"
+  },
+  {
+    "wordId": "teenager",
+    "word": "teenager",
+    "oldExample": "The survey shows that four out of five teenagers in this area have experimented with illegal drugs",
+    "newExampleCn": "调查显示，该地区五分之四的青少年曾尝试过非法毒品。"
+  },
+  {
+    "wordId": "telescope",
+    "word": "telescope",
+    "oldExample": "What is the range of this telescope?",
+    "newExampleCn": "这架望远镜的观测范围有多远？"
+  },
+  {
+    "wordId": "temperature",
+    "word": "temperature",
+    "oldExample": "After the storm, there will be a sharp drop in temperature",
+    "newExampleCn": "暴风雨过后，气温将会急剧下降。"
+  },
+  {
+    "wordId": "temple",
+    "word": "temple",
+    "oldExample": "The temple has been considered an example of classic design",
+    "newExampleCn": "这座寺庙一直被视为经典设计的典范"
+  },
+  {
+    "wordId": "tempt",
+    "word": "tempt",
+    "oldExample": "Apply generous amounts of sunscreen 15 minutes before you go out. Don't allow impatience to tempt you into sunburn",
+    "newExampleCn": "出门前15分钟涂足量防晒霜。不要因为一时心急而晒伤。"
+  },
+  {
+    "wordId": "tenant",
+    "word": "tenant",
+    "oldExample": "He threatened to take the tenant to court or to have the tenant evicted",
+    "newExampleCn": "他威胁说要把租户告上法庭，或者把租户驱逐出去。"
+  },
+  {
+    "wordId": "tendency",
+    "word": "tendency",
+    "oldExample": "There is a growing tendency for people to work at home instead of in offices",
+    "newExampleCn": "人们在家办公而不是去办公室上班的趋势越来越明显。"
+  },
+  {
+    "wordId": "tennis",
+    "word": "tennis",
+    "oldExample": "He is a professional tennis player",
+    "newExampleCn": "他是一名职业网球运动员"
+  },
+  {
+    "wordId": "tense",
+    "word": "tense",
+    "oldExample": "Dut, who had at first been very tense, at last relaxed",
+    "newExampleCn": "杜特起初非常紧张，最后终于放松了下来。"
+  },
+  {
+    "wordId": "tent",
+    "word": "tent",
+    "oldExample": "He drew back the tent flap and strode out into the blizzard 他拉开帐篷门帘，大步走进暴风雪中",
+    "newExampleCn": "他拉开帐篷门帘，大步走进暴风雪中"
+  },
+  {
+    "wordId": "term",
+    "word": "term",
+    "oldExample": "The protocol would have many positive results in the long term",
+    "newExampleCn": "从长远来看，该协议会带来许多积极成果。"
+  },
+  {
+    "wordId": "terrible",
+    "word": "terrible",
+    "oldExample": "The earthquake was a terrible catastrophe",
+    "newExampleCn": "那场地震是一场可怕的灾难。"
+  },
+  {
+    "wordId": "terrific",
+    "word": "terrific",
+    "oldExample": "The ceiling came down with a terrific crash",
+    "newExampleCn": "天花板轰然塌了下来"
+  },
+  {
+    "wordId": "terror",
+    "word": "terror",
+    "oldExample": "His terror is so intense that he can't do anything",
+    "newExampleCn": "他害怕到了极点，什么也做不了。"
+  },
+  {
+    "wordId": "test",
+    "word": "test",
+    "oldExample": "The scientist have already experimented at test sites",
+    "newExampleCn": "科学家已经在试验场进行了实验"
+  },
+  {
+    "wordId": "textile",
+    "word": "textile",
+    "oldExample": "He intends to retail textile goods",
+    "newExampleCn": "他打算零售纺织品。"
+  },
+  {
+    "wordId": "theory",
+    "word": "theory",
+    "oldExample": "There are many theories about the origin of the universe",
+    "newExampleCn": "关于宇宙的起源有很多理论。"
+  },
+  {
+    "wordId": "thief",
+    "word": "thief",
+    "oldExample": "The thief got in through the open window",
+    "newExampleCn": "小偷从开着的窗户进来了"
+  },
+  {
+    "wordId": "thirsty",
+    "word": "thirsty",
+    "oldExample": "He was thirsty for power",
+    "newExampleCn": "他渴望权力"
+  },
+  {
+    "wordId": "thorn",
+    "word": "thorn",
+    "oldExample": "She got her finger pricked by a thorn",
+    "newExampleCn": "她的手指被刺扎了一下"
+  },
+  {
+    "wordId": "thorough",
+    "word": "thorough",
+    "oldExample": "A thorough brushing helps to protect your teeth and gums",
+    "newExampleCn": "彻底刷牙有助于保护牙齿和牙龈"
+  },
+  {
+    "wordId": "thread",
+    "word": "thread",
+    "oldExample": "She is looking for threads which match the cloth",
+    "newExampleCn": "她在找与这块布相配的线。"
+  },
+  {
+    "wordId": "threat",
+    "word": "threat",
+    "oldExample": "The United Nations is trying to free the world from the threat of war",
+    "newExampleCn": "联合国正努力使世界摆脱战争威胁。"
+  },
+  {
+    "wordId": "thrive",
+    "word": "thrive",
+    "oldExample": "First thrive and then wive. 先立业，后成家",
+    "newExampleCn": "先立业，后成家"
+  },
+  {
+    "wordId": "throne",
+    "word": "throne",
+    "oldExample": "He was only eight when he ascended the throne",
+    "newExampleCn": "他登基时只有八岁"
+  },
+  {
+    "wordId": "throng",
+    "word": "throng",
+    "oldExample": "He was met a throng of journalists and photographers",
+    "newExampleCn": "迎接他的是一大群记者和摄影师"
+  },
+  {
+    "wordId": "throw",
+    "word": "throw",
+    "oldExample": "Throw the stone in the air",
+    "newExampleCn": "把石头扔到空中"
+  },
+  {
+    "wordId": "thunder",
+    "word": "thunder",
+    "oldExample": "An express train thundered through the station",
+    "newExampleCn": "一列特快列车轰隆隆地驶过车站"
+  },
+  {
+    "wordId": "tide",
+    "word": "tide",
+    "oldExample": "The gravitational attraction between the moon and the earth causes tides",
+    "newExampleCn": "月球和地球之间的引力会引起潮汐。"
+  },
+  {
+    "wordId": "tight",
+    "word": "tight",
+    "oldExample": "This drawer is too tight for me to open it",
+    "newExampleCn": "这个抽屉太紧了，我打不开。"
+  },
+  {
+    "wordId": "timber",
+    "word": "timber",
+    "oldExample": "The farmer spent a day in the woods, hewing timber",
+    "newExampleCn": "那个农民在树林里花了一天时间砍削木材。"
+  },
+  {
+    "wordId": "timetable",
+    "word": "timetable",
+    "oldExample": "There are eight English classes listed on this term's timetable",
+    "newExampleCn": "这学期的课程表上列有八节英语课"
+  },
+  {
+    "wordId": "tin",
+    "word": "tin",
+    "oldExample": "I never eat anything out of a tin",
+    "newExampleCn": "我从来不吃罐头食品"
+  },
+  {
+    "wordId": "tire",
+    "word": "tire",
+    "oldExample": "My uncle jacked up his car to fix a flat tire",
+    "newExampleCn": "我叔叔用千斤顶把车顶起来修补漏气的轮胎。"
+  },
+  {
+    "wordId": "tissue",
+    "word": "tissue",
+    "oldExample": "She wipes off the sweat from her face with a tissue",
+    "newExampleCn": "她用纸巾擦掉脸上的汗。"
+  },
+  {
+    "wordId": "toast",
+    "word": "toast",
+    "oldExample": "We toasted the bride and bridegroom",
+    "newExampleCn": "我们为新郎新娘举杯祝酒"
+  },
+  {
+    "wordId": "tobacco",
+    "word": "tobacco",
+    "oldExample": "A high amount of money is spent on tobacco every year",
+    "newExampleCn": "每年都有大量的钱花在烟草上。"
+  },
+  {
+    "wordId": "toilet",
+    "word": "toilet",
+    "oldExample": "Every flat has its own toilet",
+    "newExampleCn": "每套公寓都有自己的卫生间"
+  },
+  {
+    "wordId": "tomato",
+    "word": "tomato",
+    "oldExample": "His shirt was stained with tomato juice",
+    "newExampleCn": "他的衬衫被番茄汁弄脏了"
+  },
+  {
+    "wordId": "tomb",
+    "word": "tomb",
+    "oldExample": "Many things left by the ancient people in tombs haven't been brought to light",
+    "newExampleCn": "古人留在墓中的许多东西还没有被发现。"
+  },
+  {
+    "wordId": "tone",
+    "word": "tone",
+    "oldExample": "This violin has a very good tone",
+    "newExampleCn": "这把小提琴的音色很好"
+  },
+  {
+    "wordId": "tool",
+    "word": "tool",
+    "oldExample": "Advertising is a tool that nearly every company is utilizing",
+    "newExampleCn": "广告是几乎每家公司都在使用的一种工具。"
+  },
+  {
+    "wordId": "torrent",
+    "word": "torrent",
+    "oldExample": "A torrent of water poured down the mountain",
+    "newExampleCn": "一股急流从山上倾泻而下"
+  },
+  {
+    "wordId": "tortoise",
+    "word": "tortoise",
+    "oldExample": "Do you remember the story about a race between the tortoise and the hare?",
+    "newExampleCn": "你还记得乌龟和兔子赛跑的故事吗？"
+  },
+  {
+    "wordId": "torture",
+    "word": "torture",
+    "oldExample": "She suffered the torture of toothache",
+    "newExampleCn": "她饱受牙痛的折磨"
+  },
+  {
+    "wordId": "toss",
+    "word": "toss",
+    "oldExample": "The canoe was tossed about among the eddies",
+    "newExampleCn": "独木舟在漩涡中被颠来颠去"
+  },
+  {
+    "wordId": "total",
+    "word": "total",
+    "oldExample": "In total, over 100, 000 people were killed in the tsunami and a great many of people were homeless",
+    "newExampleCn": "总共有超过10万人在海啸中丧生，还有许多人无家可归。"
+  },
+  {
+    "wordId": "touch",
+    "word": "touch",
+    "oldExample": "By the way, you don't want to touch the onion and then touch your eyes",
+    "newExampleCn": "顺便说一下，你可别摸了洋葱之后再去碰眼睛"
+  },
+  {
+    "wordId": "towel",
+    "word": "towel",
+    "oldExample": "I dry my hands and face with the towel",
+    "newExampleCn": "我用毛巾擦干手和脸"
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "canvas",
+    "word": "canvas",
+    "oldExample": "They carried canvas sacks over their shoulders",
+    "newExampleCn": "他们肩上扛着帆布袋。"
+  },
+  {
+    "wordId": "charming",
+    "word": "charming",
+    "oldExample": "Her colorful character makes her very charming",
+    "newExampleCn": "她丰富多彩的个性让她很有魅力。"
+  },
+  {
+    "wordId": "chart",
+    "word": "chart",
+    "oldExample": "This chart displays the links connecting these groups",
+    "newExampleCn": "这张图表显示了连接这些群体的联系。"
+  },
+  {
+    "wordId": "chase",
+    "word": "chase",
+    "oldExample": "Please chased the speeding car",
+    "newExampleCn": "请追那辆超速行驶的车"
+  },
+  {
+    "wordId": "cheap",
+    "word": "cheap",
+    "oldExample": "Cheap shoes soon wear out",
+    "newExampleCn": "便宜的鞋很快就会穿坏。"
+  },
+  {
+    "wordId": "cheat",
+    "word": "cheat",
+    "oldExample": "She always cheats at cards",
+    "newExampleCn": "她打牌总是作弊"
+  },
+  {
+    "wordId": "cheese",
+    "word": "cheese",
+    "oldExample": "Cheese often upset her stomach",
+    "newExampleCn": "奶酪经常让她胃不舒服"
+  },
+  {
+    "wordId": "chemistry",
+    "word": "chemistry",
+    "oldExample": "I am not good at organic chemistry",
+    "newExampleCn": "我不擅长有机化学"
+  },
+  {
+    "wordId": "cheque",
+    "word": "cheque",
+    "oldExample": "The bank cashed my check",
+    "newExampleCn": "银行给我兑现了支票"
+  },
+  {
+    "wordId": "cherry",
+    "word": "cherry",
+    "oldExample": "We have different pies, such as apple, cherry and strawberry pies",
+    "newExampleCn": "我们有不同口味的派，比如苹果派、樱桃派和草莓派。"
+  },
+  {
+    "wordId": "chess",
+    "word": "chess",
+    "oldExample": "Games like chess are intellectual pursuits",
+    "newExampleCn": "像国际象棋这样的游戏是智力活动。"
+  },
+  {
+    "wordId": "chew",
+    "word": "chew",
+    "oldExample": "You must chew your food well before you swallow it",
+    "newExampleCn": "你必须把食物嚼碎了再咽下去。"
+  },
+  {
+    "wordId": "chicken",
+    "word": "chicken",
+    "oldExample": "He has a chicken farm",
+    "newExampleCn": "他有一个养鸡场"
+  },
+  {
+    "wordId": "chill",
+    "word": "chill",
+    "oldExample": "The bad news cast a chill over the whole family",
+    "newExampleCn": "这个坏消息让全家人都感到一阵寒意。"
+  },
+  {
+    "wordId": "chimney",
+    "word": "chimney",
+    "oldExample": "The chimney is choked up with soot and needs to be cleaned",
+    "newExampleCn": "烟囱被烟灰堵住了，需要清理。"
+  },
+  {
+    "wordId": "chocolate",
+    "word": "chocolate",
+    "oldExample": "Never eat chocolate before dinner",
+    "newExampleCn": "晚饭前不要吃巧克力"
+  },
+  {
+    "wordId": "choose",
+    "word": "choose",
+    "oldExample": "We have many patterns in stock for you to choose from",
+    "newExampleCn": "我们有许多现货图案供你选择。"
+  },
+  {
+    "wordId": "chop",
+    "word": "chop",
+    "oldExample": "onions must be chopped up to make a salad",
+    "newExampleCn": "做沙拉必须把洋葱切碎。"
+  },
+  {
+    "wordId": "church",
+    "word": "church",
+    "oldExample": "I'm just going to the church to see the priest",
+    "newExampleCn": "我只是要去教堂见神父。"
+  },
+  {
+    "wordId": "cigarette",
+    "word": "cigarette",
+    "oldExample": "A cigarette set the dry grass on fire",
+    "newExampleCn": "一根香烟点燃了干草。"
+  },
+  {
+    "wordId": "circle",
+    "word": "circle",
+    "oldExample": "The circle is ten centimeters in diameter",
+    "newExampleCn": "这个圆的直径是十厘米"
+  },
+  {
+    "wordId": "circuit",
+    "word": "circuit",
+    "oldExample": "For many years, He was top banana on the circuit 许多年来，他都是巡回剧团里的主角——top banana主要人物",
+    "newExampleCn": "多年来，他一直是巡回演出圈里的头号人物。"
+  },
+  {
+    "wordId": "circulate",
+    "word": "circulate",
+    "oldExample": "Circulating blood helps transfer the body heat out to the air",
+    "newExampleCn": "循环的血液有助于把身体热量传递到空气中"
+  },
+  {
+    "wordId": "circumstance",
+    "word": "circumstance",
+    "oldExample": "Circumtances are the ruler of the weak, the instrument of the wise",
+    "newExampleCn": "环境支配弱者，却为智者所用"
+  },
+  {
+    "wordId": "citizen",
+    "word": "citizen",
+    "oldExample": "She a lawful citizen",
+    "newExampleCn": "她是合法公民"
+  },
+  {
+    "wordId": "civil",
+    "word": "civil",
+    "oldExample": "Gone With the Wind, a film about American Civil War, is still regarded as one of the best Hollywood films",
+    "newExampleCn": "《乱世佳人》是一部关于美国内战的电影，至今仍被视为好莱坞最优秀的影片之一。"
+  },
+  {
+    "wordId": "claim",
+    "word": "claim",
+    "oldExample": "Every citizen may claim the protection of the law",
+    "newExampleCn": "每个公民都可以要求得到法律的保护"
+  },
+  {
+    "wordId": "clap",
+    "word": "clap",
+    "oldExample": "Let's give the children a big clap",
+    "newExampleCn": "让我们给孩子们热烈鼓掌。"
+  },
+  {
+    "wordId": "clarify",
+    "word": "clarify",
+    "oldExample": "The government has clarified its position on equal pay for women",
+    "newExampleCn": "政府已经阐明了其在女性同工同酬问题上的立场"
+  },
+  {
+    "wordId": "clasp",
+    "word": "clasp",
+    "oldExample": "The button won't clasp 纽扣扣不上",
+    "newExampleCn": "纽扣扣不上"
+  },
+  {
+    "wordId": "classical",
+    "word": "classical",
+    "oldExample": "Beethoven is regarded as one of the immortals of classical music",
+    "newExampleCn": "贝多芬被认为是古典音乐史上不朽的大师之一"
+  },
+  {
+    "wordId": "classify",
+    "word": "classify",
+    "oldExample": "Librarians spend a lot of time classifying books",
+    "newExampleCn": "图书管理员花很多时间给书籍分类"
+  },
+  {
+    "wordId": "claw",
+    "word": "claw",
+    "oldExample": "A hen's claw has four toes",
+    "newExampleCn": "母鸡的爪子有四个脚趾"
+  },
+  {
+    "wordId": "clay",
+    "word": "clay",
+    "oldExample": "Bricks and dishes are made from various kinds of clay",
+    "newExampleCn": "砖和盘子是用各种黏土制成的"
+  },
+  {
+    "wordId": "clear",
+    "word": "clear",
+    "oldExample": "It seems clear that he has no reasonable alternative",
+    "newExampleCn": "很明显，他没有合理的替代选择"
+  },
+  {
+    "wordId": "clerk",
+    "word": "clerk",
+    "oldExample": "The clerk was elevated to a managerial position",
+    "newExampleCn": "那名职员被提拔到了管理岗位。"
+  },
+  {
+    "wordId": "clever",
+    "word": "clever",
+    "oldExample": "Even clever people may do something stupid when put on the spot",
+    "newExampleCn": "即使聪明的人在被当场追问时也可能做出蠢事。"
+  },
+  {
+    "wordId": "cliff",
+    "word": "cliff",
+    "oldExample": "The narrow path leads to a wooden hut on the cliff",
+    "newExampleCn": "这条狭窄的小路通向悬崖上的一间木屋"
+  },
+  {
+    "wordId": "climate",
+    "word": "climate",
+    "oldExample": "The current political climate in that country is favorable for foreign investment",
+    "newExampleCn": "该国当前的政治环境有利于外国投资。"
+  },
+  {
+    "wordId": "climb",
+    "word": "climb",
+    "oldExample": "It is not easy to climb a steep mountain",
+    "newExampleCn": "爬一座陡峭的山并不容易"
+  },
+  {
+    "wordId": "cloak",
+    "word": "cloak",
+    "oldExample": "She picked up the old brown cloak and handed it to him",
+    "newExampleCn": "她拿起那件旧的棕色斗篷，递给了他。"
+  },
+  {
+    "wordId": "clothe",
+    "word": "clothe",
+    "oldExample": "He had to work hard to feed and clothe the large family",
+    "newExampleCn": "他必须努力工作来养活这个大家庭，并给他们提供衣物。"
+  },
+  {
+    "wordId": "clue",
+    "word": "clue",
+    "oldExample": "The police found a clue which helped them catch the robber",
+    "newExampleCn": "警方发现了一条线索，帮助他们抓住了抢劫犯。"
+  },
+  {
+    "wordId": "coach",
+    "word": "coach",
+    "oldExample": "We went to New York City by coach",
+    "newExampleCn": "我们乘长途汽车去了纽约市。"
+  },
+  {
+    "wordId": "coast",
+    "word": "coast",
+    "oldExample": "He is going to live by the coast for the sake of his health",
+    "newExampleCn": "为了健康，他打算住到海边。"
+  },
+  {
+    "wordId": "cock",
+    "word": "cock",
+    "oldExample": "The cock has brighter colored feathers than the hen",
+    "newExampleCn": "公鸡的羽毛比母鸡的颜色更鲜艳。"
+  },
+  {
+    "wordId": "coffee",
+    "word": "coffee",
+    "oldExample": "He put some sugar into his coffee",
+    "newExampleCn": "他往咖啡里加了些糖。"
+  },
+  {
+    "wordId": "coin",
+    "word": "coin",
+    "oldExample": "We'd better not coin terms which are not intelligible",
+    "newExampleCn": "我们最好不要创造别人难以理解的术语。"
+  },
+  {
+    "wordId": "collapse",
+    "word": "collapse",
+    "oldExample": "The man lost all his money in the collapse of the stock market",
+    "newExampleCn": "那个人在股市崩盘中失去了所有的钱。"
+  },
+  {
+    "wordId": "collar",
+    "word": "collar",
+    "oldExample": "She turned up his coat collar against the chilly wind",
+    "newExampleCn": "她把他的外套衣领竖起来挡住寒风。"
+  },
+  {
+    "wordId": "colleague",
+    "word": "colleague",
+    "oldExample": "He is getting along well with his colleagues",
+    "newExampleCn": "他和同事们相处得很好"
+  },
+  {
+    "wordId": "collect",
+    "word": "collect",
+    "oldExample": "He used to collect stamps, but now he likes to collect coins",
+    "newExampleCn": "他过去常集邮，但现在喜欢收藏硬币。"
+  },
+  {
+    "wordId": "college",
+    "word": "college",
+    "oldExample": "Their son will start college in the autumn",
+    "newExampleCn": "他们的儿子秋天要开始上大学了"
+  },
+  {
+    "wordId": "collision",
+    "word": "collision",
+    "oldExample": "He is responsible for the rear-end collision",
+    "newExampleCn": "他对这起追尾事故负有责任"
+  },
+  {
+    "wordId": "colony",
+    "word": "colony",
+    "oldExample": "Britain lost its American colonies in a revolution",
+    "newExampleCn": "英国在一场革命中失去了它在美洲的殖民地"
+  },
+  {
+    "wordId": "column",
+    "word": "column",
+    "oldExample": "The dome was supported by white marble columns",
+    "newExampleCn": "圆顶由白色大理石柱支撑。"
+  },
+  {
+    "wordId": "combine",
+    "word": "combine",
+    "oldExample": "Carbon, hydrogen, and oxygen can combine to form carbohydrates and fats",
+    "newExampleCn": "碳、氢和氧可以结合形成碳水化合物和脂肪"
+  },
+  {
+    "wordId": "comfort",
+    "word": "comfort",
+    "oldExample": "A father is a treasure, a brother is a comfort, but a friend is both",
+    "newExampleCn": "父亲是财富，兄弟是慰藉，而朋友兼具二者。"
+  },
+  {
+    "wordId": "command",
+    "word": "command",
+    "oldExample": "The army is under the King's command",
+    "newExampleCn": "军队由国王指挥"
+  },
+  {
+    "wordId": "commander",
+    "word": "commander",
+    "oldExample": "You must follow the commander's order",
+    "newExampleCn": "你必须服从指挥官的命令"
+  },
+  {
+    "wordId": "commercial",
+    "word": "commercial",
+    "oldExample": "The downtown area is zoned for commercial use",
+    "newExampleCn": "市中心区域被划为商业用途。"
+  },
+  {
+    "wordId": "commit",
+    "word": "commit",
+    "oldExample": "He, who commits a fault, thinks everyone speaks of it",
+    "newExampleCn": "犯了错的人，总觉得大家都在议论这件事。"
+  },
+  {
+    "wordId": "committee",
+    "word": "committee",
+    "oldExample": "They have set up a committee to inspect the park facilities",
+    "newExampleCn": "他们成立了一个委员会来检查公园设施。"
+  },
+  {
+    "wordId": "communicate",
+    "word": "communicate",
+    "oldExample": "We communicate mostly by e-mail",
+    "newExampleCn": "我们主要通过电子邮件交流。"
+  },
+  {
+    "wordId": "communism",
+    "word": "communism",
+    "oldExample": "Communism is based on Marxism",
+    "newExampleCn": "共产主义以马克思主义为基础"
+  },
+  {
+    "wordId": "community",
+    "word": "community",
+    "oldExample": "To host the Olympics Games, Beijing expanded its English speaking community",
+    "newExampleCn": "为了举办奥运会，北京扩大了英语交流社区。"
+  },
+  {
+    "wordId": "company",
+    "word": "company",
+    "oldExample": "The company has connections with a number of Canadian firms",
+    "newExampleCn": "这家公司与多家加拿大公司有业务往来。"
+  },
+  {
+    "wordId": "compare",
+    "word": "compare",
+    "oldExample": "Your knowledge cannot yet compare with his",
+    "newExampleCn": "你的知识还不能和他相比。"
+  },
+  {
+    "wordId": "compel",
+    "word": "compel",
+    "oldExample": "I was compelled to find a part-time job because I needed money",
+    "newExampleCn": "因为需要钱，我不得不找一份兼职工作"
+  },
+  {
+    "wordId": "compete",
+    "word": "compete",
+    "oldExample": "Our products must be able to compete in marketplace",
+    "newExampleCn": "我们的产品必须能够在市场上竞争。"
+  },
+  {
+    "wordId": "competition",
+    "word": "competition",
+    "oldExample": "There is a rise in unemployment, so the competition for jobs is very fierce",
+    "newExampleCn": "失业率上升，所以求职竞争非常激烈。"
+  },
+  {
+    "wordId": "compile",
+    "word": "compile",
+    "oldExample": "It takes years of hard work to compile a good dictionary",
+    "newExampleCn": "编写一本好词典需要多年的辛勤努力。"
+  },
+  {
+    "wordId": "complain",
+    "word": "complain",
+    "oldExample": "She complained that the room is too cold",
+    "newExampleCn": "她抱怨房间太冷了"
+  },
+  {
+    "wordId": "complex",
+    "word": "complex",
+    "oldExample": "As tools have become more and more complex, we need more complex controls to control them",
+    "newExampleCn": "随着工具变得越来越复杂，我们需要更复杂的控制装置来操控它们。"
+  },
+  {
+    "wordId": "complicated",
+    "word": "complicated",
+    "oldExample": "The business is a large, complicated organism",
+    "newExampleCn": "这家公司就像一个庞大而复杂的有机体"
+  },
+  {
+    "wordId": "component",
+    "word": "component",
+    "oldExample": "Regular exercise is one of the key components of a healthy lifestyle",
+    "newExampleCn": "定期锻炼是健康生活方式的关键组成部分之一"
+  },
+  {
+    "wordId": "compose",
+    "word": "compose",
+    "oldExample": "Water is composed of hydrogen and oxygen",
+    "newExampleCn": "水由氢和氧组成"
+  },
+  {
+    "wordId": "composition",
+    "word": "composition",
+    "oldExample": "Scientists study the composition of the soil",
+    "newExampleCn": "科学家研究土壤的成分"
+  },
+  {
+    "wordId": "compound",
+    "word": "compound",
+    "oldExample": "English loves compound words: \"washing machine\" and that sort of thing",
+    "newExampleCn": "英语喜欢复合词，比如洗衣机之类的词。"
+  },
+  {
+    "wordId": "compress",
+    "word": "compress",
+    "oldExample": "Reining in inflation can increase income inequality by compressing wages while allowing asset prices to soar",
+    "newExampleCn": "遏制通货膨胀可能会压低工资，同时让资产价格飙升，从而加剧收入不平等。"
+  },
+  {
+    "wordId": "compromise",
+    "word": "compromise",
+    "oldExample": "They cannot compromise with the terrorists on such terms",
+    "newExampleCn": "他们不能在这样的条件下向恐怖分子妥协。"
+  },
+  {
+    "wordId": "compute",
+    "word": "compute",
+    "oldExample": "I compute my loss at 500 dollars",
+    "newExampleCn": "我估算我的损失为500美元"
+  },
+  {
+    "wordId": "comrade",
+    "word": "comrade",
+    "oldExample": "The medic saved a comrade's life and helped evacuate many other wounded soldiers",
+    "newExampleCn": "医护兵救了一名战友的命，并帮助疏散了许多其他受伤的士兵。"
+  },
+  {
+    "wordId": "conceal",
+    "word": "conceal",
+    "oldExample": "He was unable to conceal his surprise",
+    "newExampleCn": "他无法掩饰自己的惊讶"
+  },
+  {
+    "wordId": "concentrate",
+    "word": "concentrate",
+    "oldExample": "They will concentrate on teaching the basics of reading, writing, and arithmetic",
+    "newExampleCn": "他们将专注于教授阅读、写作和算术的基础知识"
+  },
+  {
+    "wordId": "concert",
+    "word": "concert",
+    "oldExample": "Various performers will present a concert to raise money for AIDS charities",
+    "newExampleCn": "多位表演者将举办一场音乐会，为艾滋病慈善机构筹款。"
+  },
+  {
+    "wordId": "conclude",
+    "word": "conclude",
+    "oldExample": "What do you conclude from his explanation?",
+    "newExampleCn": "你从他的解释中得出了什么结论？"
+  },
+  {
+    "wordId": "concrete",
+    "word": "concrete",
+    "oldExample": "The statue rests on a concrete base",
+    "newExampleCn": "这座雕像立在一个混凝土底座上"
+  },
+  {
+    "wordId": "condemn",
+    "word": "condemn",
+    "oldExample": "Most people would condemn violence of any sort as evil",
+    "newExampleCn": "大多数人都会谴责任何形式的暴力，认为它是邪恶的。"
+  },
+  {
+    "wordId": "condense",
+    "word": "condense",
+    "oldExample": "A long story may be condensed into a few sentences",
+    "newExampleCn": "一个很长的故事可以浓缩成几句话。"
+  },
+  {
+    "wordId": "condition",
+    "word": "condition",
+    "oldExample": "I had almost decided to accept their conditions at that time",
+    "newExampleCn": "那时我几乎已经决定接受他们的条件了"
+  },
+  {
+    "wordId": "conduct",
+    "word": "conduct",
+    "oldExample": "His conduct contradicts his words",
+    "newExampleCn": "他的行为与他的话相矛盾"
+  },
+  {
+    "wordId": "conference",
+    "word": "conference",
+    "oldExample": "The world's conference on human rights discussed the common problems of mankind and advanced human rights work around the world",
+    "newExampleCn": "世界人权大会讨论了人类面临的共同问题，并推动了全球人权工作的发展。"
+  },
+  {
+    "wordId": "confess",
+    "word": "confess",
+    "oldExample": "The suspect confessed to the armed robbery",
+    "newExampleCn": "嫌疑人承认了持械抢劫罪"
+  },
+  {
+    "wordId": "confine",
+    "word": "confine",
+    "oldExample": "this is outside the confines of human knowledge",
+    "newExampleCn": "这超出了人类知识的范围"
+  },
+  {
+    "wordId": "confirm",
+    "word": "confirm",
+    "oldExample": "Her new film confirmed her as one of our leading directors",
+    "newExampleCn": "她的新电影确立了她作为我们顶尖导演之一的地位"
+  },
+  {
+    "wordId": "conflict",
+    "word": "conflict",
+    "oldExample": "Many people feel that religion conflicts with science",
+    "newExampleCn": "许多人觉得宗教与科学相冲突"
+  },
+  {
+    "wordId": "congratulate",
+    "word": "congratulate",
+    "oldExample": "My must congratulate you on your engagement",
+    "newExampleCn": "我必须祝贺你订婚。"
+  },
+  {
+    "wordId": "conjunction",
+    "word": "conjunction",
+    "oldExample": "The word is a temporal conjunction",
+    "newExampleCn": "这个词是时间连词"
+  },
+  {
+    "wordId": "connect",
+    "word": "connect",
+    "oldExample": "Has the phone been connected yet?",
+    "newExampleCn": "电话接好了吗？"
+  }
+]

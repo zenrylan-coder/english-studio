@@ -1,0 +1,596 @@
+[
+  {
+    "wordId": "spend",
+    "word": "spend",
+    "oldExample": "The time I spend in commuting everyday adds up to two hours",
+    "newExampleCn": "我每天花在通勤上的时间加起来有两个小时。"
+  },
+  {
+    "wordId": "sphere",
+    "word": "sphere",
+    "oldExample": "We move in different social sphere",
+    "newExampleCn": "我们生活在不同的社交圈里"
+  },
+  {
+    "wordId": "spider",
+    "word": "spider",
+    "oldExample": "The little girl thinks spiders are terrible creatures",
+    "newExampleCn": "小女孩觉得蜘蛛是可怕的生物"
+  },
+  {
+    "wordId": "spill",
+    "word": "spill",
+    "oldExample": "The teacup is so full that the tea might spill over",
+    "newExampleCn": "茶杯太满了，茶可能会溢出来。"
+  },
+  {
+    "wordId": "spin",
+    "word": "spin",
+    "oldExample": "We took a spin around the town",
+    "newExampleCn": "我们开车在镇上转了一圈"
+  },
+  {
+    "wordId": "spirit",
+    "word": "spirit",
+    "oldExample": "We need a spirit of enterprise if we are to overcome our difficulties. 如果要克服困难，我们就要有进取心",
+    "newExampleCn": "如果要克服困难，我们就需要有进取精神。"
+  },
+  {
+    "wordId": "splendid",
+    "word": "splendid",
+    "oldExample": "You're all doing a splendid job; keep up the good work",
+    "newExampleCn": "你们都做得非常出色，继续保持。"
+  },
+  {
+    "wordId": "split",
+    "word": "split",
+    "oldExample": "The crowd split into several groups",
+    "newExampleCn": "人群分成了几个小组"
+  },
+  {
+    "wordId": "spoil",
+    "word": "spoil",
+    "oldExample": "You should be careful because you make a mistake which will spoil your life",
+    "newExampleCn": "你应该小心，因为一个错误可能会毁掉你的人生。"
+  },
+  {
+    "wordId": "sponge",
+    "word": "sponge",
+    "oldExample": "That child soaks up new facts like a sponge",
+    "newExampleCn": "那个孩子像海绵一样吸收新知识。"
+  },
+  {
+    "wordId": "sponsor",
+    "word": "sponsor",
+    "oldExample": "The company has sponsored the football match",
+    "newExampleCn": "这家公司赞助了这场足球比赛"
+  },
+  {
+    "wordId": "spoon",
+    "word": "spoon",
+    "oldExample": "His soup spoon dropped onto the ground",
+    "newExampleCn": "他的汤匙掉到了地上"
+  },
+  {
+    "wordId": "spring",
+    "word": "spring",
+    "oldExample": "It can be quite windy there, especially in spring",
+    "newExampleCn": "那里风可能很大，尤其是在春天。"
+  },
+  {
+    "wordId": "sprinkle",
+    "word": "sprinkle",
+    "oldExample": "We've only had a few sprinkles of rain recently",
+    "newExampleCn": "最近我们这里只下过几阵小雨"
+  },
+  {
+    "wordId": "spur",
+    "word": "spur",
+    "oldExample": "Pride spur the man to fight",
+    "newExampleCn": "骄傲促使这个男人去战斗"
+  },
+  {
+    "wordId": "spy",
+    "word": "spy",
+    "oldExample": "She hired a detective to spy on her husband",
+    "newExampleCn": "她雇了一名侦探监视她的丈夫"
+  },
+  {
+    "wordId": "squeeze",
+    "word": "squeeze",
+    "oldExample": "He squeezed an orange to get the juice out",
+    "newExampleCn": "他挤了一个橙子，把汁挤出来。"
+  },
+  {
+    "wordId": "squirrel",
+    "word": "squirrel",
+    "oldExample": "The squirrel ran up a tree and got out of my reach",
+    "newExampleCn": "松鼠爬上了树，跑出了我够得着的范围。"
+  },
+  {
+    "wordId": "stab",
+    "word": "stab",
+    "oldExample": "She stabbled him in the leg with a knife",
+    "newExampleCn": "她用刀刺伤了他的腿"
+  },
+  {
+    "wordId": "stability",
+    "word": "stability",
+    "oldExample": "The government has taken measures to maintain the stability of prices",
+    "newExampleCn": "政府已采取措施维持物价稳定"
+  },
+  {
+    "wordId": "stable",
+    "word": "stable",
+    "oldExample": "The horse in the stable has broken out",
+    "newExampleCn": "马厩里的那匹马跑出来了"
+  },
+  {
+    "wordId": "stack",
+    "word": "stack",
+    "oldExample": "I have a stack of homework to do；He placed the books in a neat stack",
+    "newExampleCn": "我有一大堆作业要做；他把书整齐地堆成一摞"
+  },
+  {
+    "wordId": "stadium",
+    "word": "stadium",
+    "oldExample": "The stadium has been fitted with seating for 100, 000 spectators",
+    "newExampleCn": "这座体育场已安装可容纳10万名观众的座位。"
+  },
+  {
+    "wordId": "stage",
+    "word": "stage",
+    "oldExample": "Each stage of the battle was carried off flawlessly",
+    "newExampleCn": "战斗的每个阶段都进行得天衣无缝"
+  },
+  {
+    "wordId": "stain",
+    "word": "stain",
+    "oldExample": "The coffe stained her shirt brown",
+    "newExampleCn": "咖啡把她的衬衫染成了棕色"
+  },
+  {
+    "wordId": "stair",
+    "word": "stair",
+    "oldExample": "The child was sitting on the bottom stair",
+    "newExampleCn": "那个孩子正坐在最下面一级楼梯上"
+  },
+  {
+    "wordId": "staircase",
+    "word": "staircase",
+    "oldExample": "Only the staff members were allowed to use the staircase",
+    "newExampleCn": "只有工作人员可以使用这座楼梯"
+  },
+  {
+    "wordId": "stake",
+    "word": "stake",
+    "oldExample": "I'd stake my all on it",
+    "newExampleCn": "我愿意把我的一切都押在这上面"
+  },
+  {
+    "wordId": "stale",
+    "word": "stale",
+    "oldExample": "He always bought two loaves of stale bread",
+    "newExampleCn": "他总是买两条不新鲜的面包"
+  },
+  {
+    "wordId": "stamp",
+    "word": "stamp",
+    "oldExample": "You can buy a stamp over there and affix it to the postcard",
+    "newExampleCn": "你可以在那边买一张邮票，然后贴在明信片上。"
+  },
+  {
+    "wordId": "standard",
+    "word": "standard",
+    "oldExample": "This piece of work does not come up to your usual standard",
+    "newExampleCn": "这项工作没有达到你平常的水准。"
+  },
+  {
+    "wordId": "standpoint",
+    "word": "standpoint",
+    "oldExample": "We all look at things from a certain standpoint",
+    "newExampleCn": "我们都会从某个特定的立场看待事物。"
+  },
+  {
+    "wordId": "stare",
+    "word": "stare",
+    "oldExample": "He stared at the word, trying to remember what it meant",
+    "newExampleCn": "他盯着那个单词看，努力回想它是什么意思。"
+  },
+  {
+    "wordId": "starve",
+    "word": "starve",
+    "oldExample": "They besieged the town and tried to starve the army into surrender",
+    "newExampleCn": "他们围困了那座城镇，试图通过断粮迫使军队投降。"
+  },
+  {
+    "wordId": "state",
+    "word": "state",
+    "oldExample": "Railways in Britain belong to the state",
+    "newExampleCn": "英国的铁路属于国家。"
+  },
+  {
+    "wordId": "statesman",
+    "word": "statesman",
+    "oldExample": "He will go down in history as a great statesman",
+    "newExampleCn": "他将作为一位伟大的政治家载入史册。"
+  },
+  {
+    "wordId": "static",
+    "word": "static",
+    "oldExample": "This cloth material has static electricity",
+    "newExampleCn": "这种布料带有静电"
+  },
+  {
+    "wordId": "statue",
+    "word": "statue",
+    "oldExample": "The statue of liberty was presented to the United States of America in the 19th century by the people from France",
+    "newExampleCn": "自由女神像是法国人民在19世纪赠送给美国的。"
+  },
+  {
+    "wordId": "status",
+    "word": "status",
+    "oldExample": "Being an engineer gives him a high status",
+    "newExampleCn": "工程师的身份让他拥有很高的地位"
+  },
+  {
+    "wordId": "steady",
+    "word": "steady",
+    "oldExample": "That ladder doesn't look very steady",
+    "newExampleCn": "那架梯子看起来不太稳。"
+  },
+  {
+    "wordId": "steal",
+    "word": "steal",
+    "oldExample": "The young man was sent to prison for stealing",
+    "newExampleCn": "那个年轻人因偷窃被送进了监狱"
+  },
+  {
+    "wordId": "steamer",
+    "word": "steamer",
+    "oldExample": "The steamer arrived at the harbor this morning",
+    "newExampleCn": "汽船今天早上抵达了港口。"
+  },
+  {
+    "wordId": "steel",
+    "word": "steel",
+    "oldExample": "Hot steel is quenched to be hardened",
+    "newExampleCn": "热钢经过淬火后会变硬"
+  },
+  {
+    "wordId": "steep",
+    "word": "steep",
+    "oldExample": "A long steep path leads to a tea house with a grand view of the sea",
+    "newExampleCn": "一条又长又陡的小路通向一座茶馆，在那里可以欣赏壮阔的海景。"
+  },
+  {
+    "wordId": "steer",
+    "word": "steer",
+    "oldExample": "He steered the ship carefully among the reefs",
+    "newExampleCn": "他小心翼翼地驾驶船只穿过礁石区。"
+  },
+  {
+    "wordId": "stem",
+    "word": "stem",
+    "oldExample": "Correct decisions stem from correct judgments",
+    "newExampleCn": "正确的决定源于正确的判断"
+  },
+  {
+    "wordId": "step",
+    "word": "step",
+    "oldExample": "One thing you can do is trying to solve it step by step",
+    "newExampleCn": "你可以做的一件事就是试着一步一步解决它。"
+  },
+  {
+    "wordId": "stern",
+    "word": "stern",
+    "oldExample": "She seated herself in the stern",
+    "newExampleCn": "她在船尾坐了下来"
+  },
+  {
+    "wordId": "steward",
+    "word": "steward",
+    "oldExample": "He is a steward of that great mansion",
+    "newExampleCn": "他是那座大宅的管家"
+  },
+  {
+    "wordId": "stimulate",
+    "word": "stimulate",
+    "oldExample": "I'm trying to stimulate him to study harder",
+    "newExampleCn": "我正努力激励他更用功学习"
+  },
+  {
+    "wordId": "sting",
+    "word": "sting",
+    "oldExample": "It is the nature of the scorpion to sting",
+    "newExampleCn": "蝎子天生就会蜇人"
+  },
+  {
+    "wordId": "stir",
+    "word": "stir",
+    "oldExample": "The oatmeal will become lumpy if you don't stir it well",
+    "newExampleCn": "如果你不把燕麦粥搅拌均匀，它会结块。"
+  },
+  {
+    "wordId": "stitch",
+    "word": "stitch",
+    "oldExample": "My mother is stitching a new dress",
+    "newExampleCn": "我妈妈正在缝制一件新连衣裙"
+  },
+  {
+    "wordId": "stock",
+    "word": "stock",
+    "oldExample": "All stock prices have jumped up this month",
+    "newExampleCn": "这个月所有股票价格都上涨了"
+  },
+  {
+    "wordId": "stocking",
+    "word": "stocking",
+    "oldExample": "The thief musked his face with a stocking",
+    "newExampleCn": "小偷用长筒袜蒙住了脸"
+  },
+  {
+    "wordId": "stony",
+    "word": "stony",
+    "oldExample": "The ground in this part of the country is poor and stony",
+    "newExampleCn": "这个国家这一地区的土地贫瘠而多石。"
+  },
+  {
+    "wordId": "stool",
+    "word": "stool",
+    "oldExample": "Because of that stool and a pair of computers, I gained a best friend",
+    "newExampleCn": "因为那张凳子和两台电脑，我收获了一个最好的朋友。"
+  },
+  {
+    "wordId": "store",
+    "word": "store",
+    "oldExample": "When he got into the convenience store, he saw the long lines",
+    "newExampleCn": "当他走进便利店时，他看到了长长的队伍。"
+  },
+  {
+    "wordId": "storey",
+    "word": "storey",
+    "oldExample": "There's a nice-story apartment building next to the park",
+    "newExampleCn": "公园旁边有一栋九层的公寓楼"
+  },
+  {
+    "wordId": "stormy",
+    "word": "stormy",
+    "oldExample": "Our ship was tossed about on the stormy sea",
+    "newExampleCn": "我们的船在暴风雨中的海面上颠簸摇晃。"
+  },
+  {
+    "wordId": "story",
+    "word": "story",
+    "oldExample": "Her little sister often asks her to retell the story",
+    "newExampleCn": "她的小妹妹经常让她重讲这个故事"
+  },
+  {
+    "wordId": "stove",
+    "word": "stove",
+    "oldExample": "Please warm up this milk over the stove",
+    "newExampleCn": "请在炉子上把这杯牛奶热一下。"
+  },
+  {
+    "wordId": "straight",
+    "word": "straight",
+    "oldExample": "The old lady closed her book and looked straight at me",
+    "newExampleCn": "那位老妇人合上书，直直地看着我"
+  },
+  {
+    "wordId": "strain",
+    "word": "strain",
+    "oldExample": "I strained my back when I lifted the box",
+    "newExampleCn": "我搬箱子的时候扭伤了背。"
+  },
+  {
+    "wordId": "stranger",
+    "word": "stranger",
+    "oldExample": "The region is no stranger to armed conflict",
+    "newExampleCn": "该地区对武装冲突并不陌生"
+  },
+  {
+    "wordId": "strap",
+    "word": "strap",
+    "oldExample": "A safety strap is used to prevent falling",
+    "newExampleCn": "安全带用于防止跌落"
+  },
+  {
+    "wordId": "strategy",
+    "word": "strategy",
+    "oldExample": "Maozedong was a great strategist and skilled in developing military strategies",
+    "newExampleCn": "毛泽东是一位伟大的战略家，擅长制定军事战略。"
+  },
+  {
+    "wordId": "straw",
+    "word": "straw",
+    "oldExample": "This hat is made of straw",
+    "newExampleCn": "这顶帽子是用稻草做的"
+  },
+  {
+    "wordId": "stream",
+    "word": "stream",
+    "oldExample": "On either bank of the stream stand rows of willow trees",
+    "newExampleCn": "小溪两岸立着一排排柳树。"
+  },
+  {
+    "wordId": "stretch",
+    "word": "stretch",
+    "oldExample": "He stretched out his hand, reaching for a book",
+    "newExampleCn": "他伸出手去拿一本书"
+  },
+  {
+    "wordId": "strike",
+    "word": "strike",
+    "oldExample": "The strike has delivered a heavy blow to the management 这场罢工给了资方一个沉重的打击",
+    "newExampleCn": "这场罢工给管理层造成了沉重打击"
+  },
+  {
+    "wordId": "string",
+    "word": "string",
+    "oldExample": "We have had a string of complaints about the program",
+    "newExampleCn": "我们收到了对这个节目的接连投诉。"
+  },
+  {
+    "wordId": "strip",
+    "word": "strip",
+    "oldExample": "Elephants strip the leaves from trees",
+    "newExampleCn": "大象会把树上的叶子剥下来"
+  },
+  {
+    "wordId": "stripe",
+    "word": "stripe",
+    "oldExample": "The body of a zebra is marked by black and white stripes",
+    "newExampleCn": "斑马的身上有黑白相间的条纹。"
+  },
+  {
+    "wordId": "structure",
+    "word": "structure",
+    "oldExample": "Most linguists would say they were concerned primarily with the grammatical structure of languages",
+    "newExampleCn": "大多数语言学家会说，他们主要关注语言的语法结构。"
+  },
+  {
+    "wordId": "struggle",
+    "word": "struggle",
+    "oldExample": "His father struggled to control his temper",
+    "newExampleCn": "他父亲努力控制自己的脾气"
+  },
+  {
+    "wordId": "study",
+    "word": "study",
+    "oldExample": "This reference book is very useful to study from",
+    "newExampleCn": "这本参考书很适合用来学习。"
+  },
+  {
+    "wordId": "stuff",
+    "word": "stuff",
+    "oldExample": "I've got quite a lot of stuff to read",
+    "newExampleCn": "我有很多东西要读"
+  },
+  {
+    "wordId": "stumble",
+    "word": "stumble",
+    "oldExample": "The sudden weakness in her legs made her stumble",
+    "newExampleCn": "她双腿突然发软，踉跄了一下。"
+  },
+  {
+    "wordId": "style",
+    "word": "style",
+    "oldExample": "The style of this skirt is just in season",
+    "newExampleCn": "这条裙子的款式正当季。"
+  },
+  {
+    "wordId": "subject",
+    "word": "subject",
+    "oldExample": "In the car, she reverted to the subject which is uppermost in her mind",
+    "newExampleCn": "在车里，她又回到了她最挂念的那个话题。"
+  },
+  {
+    "wordId": "submerge",
+    "word": "submerge",
+    "oldExample": "I watched the submarine submerge",
+    "newExampleCn": "我看着潜艇潜入水中"
+  },
+  {
+    "wordId": "submit",
+    "word": "submit",
+    "oldExample": "I hope you can submit your term papers before the deadline",
+    "newExampleCn": "我希望你们能在截止日期前提交学期论文。"
+  },
+  {
+    "wordId": "substance",
+    "word": "substance",
+    "oldExample": "Is there a basic substance that everything else is made of?",
+    "newExampleCn": "有没有一种基本物质，其他一切都是由它构成的？"
+  },
+  {
+    "wordId": "substitute",
+    "word": "substitute",
+    "oldExample": "We recommended this brand as a substitute",
+    "newExampleCn": "我们推荐这个品牌作为替代品"
+  },
+  {
+    "wordId": "suburb",
+    "word": "suburb",
+    "oldExample": "They proposed setting up a school in the suburbs",
+    "newExampleCn": "他们提议在郊区建一所学校"
+  },
+  {
+    "wordId": "subway",
+    "word": "subway",
+    "oldExample": "There is a new subway being built",
+    "newExampleCn": "一条新的地铁正在建设中"
+  },
+  {
+    "wordId": "succeed",
+    "word": "succeed",
+    "oldExample": "If you work hard, you will succeed",
+    "newExampleCn": "如果你努力，就会成功。"
+  },
+  {
+    "wordId": "succession",
+    "word": "succession",
+    "oldExample": "He has been late for school three times in succession",
+    "newExampleCn": "他已经连续三次上学迟到了。"
+  },
+  {
+    "wordId": "suck",
+    "word": "suck",
+    "oldExample": "Don't suck your thumb. It's so dirty",
+    "newExampleCn": "别吮吸你的拇指，太脏了。"
+  },
+  {
+    "wordId": "suffer",
+    "word": "suffer",
+    "oldExample": "They suffered huge losses in the financial crisis",
+    "newExampleCn": "他们在金融危机中遭受了巨大损失"
+  },
+  {
+    "wordId": "sufficient",
+    "word": "sufficient",
+    "oldExample": "We must work hard, but equally, we must get sufficient rest",
+    "newExampleCn": "我们必须努力工作，但同样也要有足够的休息。"
+  },
+  {
+    "wordId": "sugar",
+    "word": "sugar",
+    "oldExample": "I bought him a packet of sugar",
+    "newExampleCn": "我给他买了一袋糖。"
+  },
+  {
+    "wordId": "suggest",
+    "word": "suggest",
+    "oldExample": "I suggested him tackle the problem in another way",
+    "newExampleCn": "我建议他换一种方式解决这个问题"
+  },
+  {
+    "wordId": "suitable",
+    "word": "suitable",
+    "oldExample": "The authorities must provide suitable accommodation for the family",
+    "newExampleCn": "当局必须为这个家庭提供合适的住所"
+  },
+  {
+    "wordId": "sum",
+    "word": "sum",
+    "oldExample": "The man has decided to give his son a huge sum of money for his independence from the family",
+    "newExampleCn": "这个男人决定给儿子一大笔钱，让他脱离家庭独立生活。"
+  },
+  {
+    "wordId": "summary",
+    "word": "summary",
+    "oldExample": "The professor asked the students to make a summary of the reading material",
+    "newExampleCn": "教授要求学生们对阅读材料做一个总结。"
+  },
+  {
+    "wordId": "sunlight",
+    "word": "sunlight",
+    "oldExample": "The sunlight was reflected by the water",
+    "newExampleCn": "阳光被水面反射出来了"
+  },
+  {
+    "wordId": "sunrise",
+    "word": "sunrise",
+    "oldExample": "The beauty of the sunrise is beyond description",
+    "newExampleCn": "日出的美丽难以形容"
+  }
+]

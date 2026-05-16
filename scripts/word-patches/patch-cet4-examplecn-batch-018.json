@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "senior",
+    "word": "senior",
+    "oldExample": "The seniors defeated the juniors by 4-2",
+    "newExampleCn": "高年级学生以4比2击败了低年级学生。"
+  },
+  {
+    "wordId": "sensitive",
+    "word": "sensitive",
+    "oldExample": "She is sensitive to what people think of her",
+    "newExampleCn": "她很在意别人对她的看法"
+  },
+  {
+    "wordId": "sentence",
+    "word": "sentence",
+    "oldExample": "He stood emtionless as he heard the judge sentence him to twenty years in prison",
+    "newExampleCn": "听到法官判处他二十年监禁时，他面无表情地站在那里。"
+  },
+  {
+    "wordId": "separate",
+    "word": "separate",
+    "oldExample": "The children sleep in separate beds",
+    "newExampleCn": "孩子们睡在各自的床上"
+  },
+  {
+    "wordId": "series",
+    "word": "series",
+    "oldExample": "She published a new book series for English learners",
+    "newExampleCn": "她为英语学习者出版了一套新书。"
+  },
+  {
+    "wordId": "service",
+    "word": "service",
+    "oldExample": "The volunteers for community service are doing a good job",
+    "newExampleCn": "参加社区服务的志愿者做得很好"
+  },
+  {
+    "wordId": "session",
+    "word": "session",
+    "oldExample": "The general sesion approved the report of the investigation committee",
+    "newExampleCn": "全体会议批准了调查委员会的报告"
+  },
+  {
+    "wordId": "settle",
+    "word": "settle",
+    "oldExample": "They moved the local people and settled them in another place",
+    "newExampleCn": "他们把当地人迁走，并安置在另一个地方。"
+  },
+  {
+    "wordId": "sew",
+    "word": "sew",
+    "oldExample": "The skirt is finished and I'm going to sew a pocket.",
+    "newExampleCn": "裙子已经做好了，我准备缝一个口袋。"
+  },
+  {
+    "wordId": "sex",
+    "word": "sex",
+    "oldExample": "What sex is your cat",
+    "newExampleCn": "你的猫是什么性别？"
+  },
+  {
+    "wordId": "shade",
+    "word": "shade",
+    "oldExample": "He tried the shade his house with thick trees",
+    "newExampleCn": "他试图用茂密的树木给房子遮阴"
+  },
+  {
+    "wordId": "shadow",
+    "word": "shadow",
+    "oldExample": "The willow's shadow falls on the lake",
+    "newExampleCn": "柳树的影子落在湖面上"
+  },
+  {
+    "wordId": "shake",
+    "word": "shake",
+    "oldExample": "The movie didn't give me any kind of shake",
+    "newExampleCn": "这部电影没有给我带来任何震撼"
+  },
+  {
+    "wordId": "shallow",
+    "word": "shallow",
+    "oldExample": "The sea is shallow here",
+    "newExampleCn": "这里的海水很浅"
+  },
+  {
+    "wordId": "shampoo",
+    "word": "shampoo",
+    "oldExample": "She weted her hair and then put shampoo on it",
+    "newExampleCn": "她先把头发弄湿，然后抹上洗发水。"
+  },
+  {
+    "wordId": "share",
+    "word": "share",
+    "oldExample": "He has put all his money in stocks and shares",
+    "newExampleCn": "他把所有的钱都投进了股票和股份里。"
+  },
+  {
+    "wordId": "shave",
+    "word": "shave",
+    "oldExample": "I lathered my face and started to shave",
+    "newExampleCn": "我在脸上抹好剃须泡沫，开始刮胡子。"
+  },
+  {
+    "wordId": "shear",
+    "word": "shear",
+    "oldExample": "With a few quick snips of the shears, he pruned the bush",
+    "newExampleCn": "他用园艺剪迅速剪了几下，修剪了灌木。"
+  },
+  {
+    "wordId": "shed",
+    "word": "shed",
+    "oldExample": "He built a bicycle shed",
+    "newExampleCn": "他建了一个自行车棚"
+  },
+  {
+    "wordId": "sheet",
+    "word": "sheet",
+    "oldExample": "We changed the sheet every week",
+    "newExampleCn": "我们每周都换床单。"
+  },
+  {
+    "wordId": "shelf",
+    "word": "shelf",
+    "oldExample": "The shelf is too weak to hold all those books",
+    "newExampleCn": "这个架子太不结实，放不下那么多书。"
+  },
+  {
+    "wordId": "shelter",
+    "word": "shelter",
+    "oldExample": "These plants must be sheltered from direct sunlight",
+    "newExampleCn": "这些植物必须避免阳光直射"
+  },
+  {
+    "wordId": "shepherd",
+    "word": "shepherd",
+    "oldExample": "The shepherd set out to look for the sheep that had wandered away",
+    "newExampleCn": "牧羊人出发去寻找那只走丢的羊。"
+  },
+  {
+    "wordId": "shield",
+    "word": "shield",
+    "oldExample": "The shield protected the warrior from the blows of his enemies",
+    "newExampleCn": "盾牌保护了那名战士，使他免受敌人的打击。"
+  },
+  {
+    "wordId": "shift",
+    "word": "shift",
+    "oldExample": "The wind shifted to the north",
+    "newExampleCn": "风转向了北方。"
+  },
+  {
+    "wordId": "shilling",
+    "word": "shilling",
+    "oldExample": "Five pence was equal to a shilling",
+    "newExampleCn": "五便士等于一先令"
+  },
+  {
+    "wordId": "shiver",
+    "word": "shiver",
+    "oldExample": "She shivered because she was worried and afraid",
+    "newExampleCn": "她因为担心和害怕而发抖。"
+  },
+  {
+    "wordId": "shore",
+    "word": "shore",
+    "oldExample": "His ship pulled in to the shore at midnight",
+    "newExampleCn": "他的船在午夜靠岸了"
+  },
+  {
+    "wordId": "shower",
+    "word": "shower",
+    "oldExample": "The weatherman predicts showers this afternoon",
+    "newExampleCn": "天气预报员预测今天下午有阵雨"
+  },
+  {
+    "wordId": "shrink",
+    "word": "shrink",
+    "oldExample": "The dress shrank when I washed it",
+    "newExampleCn": "这条裙子洗过之后缩水了"
+  },
+  {
+    "wordId": "sideways",
+    "word": "sideways",
+    "oldExample": "The dog swatted the hedgehog sideways",
+    "newExampleCn": "那只狗把刺猬一爪子拍到了一边"
+  },
+  {
+    "wordId": "sign",
+    "word": "sign",
+    "oldExample": "He made a sign for me to follow him",
+    "newExampleCn": "他示意我跟着他"
+  },
+  {
+    "wordId": "signal",
+    "word": "signal",
+    "oldExample": "Her speech yesterday was a signal that her her view has changed",
+    "newExampleCn": "她昨天的讲话表明她的观点已经改变了。"
+  },
+  {
+    "wordId": "significance",
+    "word": "significance",
+    "oldExample": "The fact has little significance for us",
+    "newExampleCn": "这个事实对我们没什么意义"
+  },
+  {
+    "wordId": "silent",
+    "word": "silent",
+    "oldExample": "He couldn't speak English and was completely silent during the visit",
+    "newExampleCn": "他不会说英语，整个访问期间都一言不发。"
+  },
+  {
+    "wordId": "silver",
+    "word": "silver",
+    "oldExample": "She wore a silver chain around her neck",
+    "newExampleCn": "她脖子上戴着一条银链子"
+  },
+  {
+    "wordId": "simplify",
+    "word": "simplify",
+    "oldExample": "Try to simplify your explanation for the children",
+    "newExampleCn": "试着把你的解释简化一下，好让孩子们听懂。"
+  },
+  {
+    "wordId": "sin",
+    "word": "sin",
+    "oldExample": "She was baptized and she was pure and clean of sin",
+    "newExampleCn": "她受了洗，变得纯洁无瑕，摆脱了罪孽。"
+  },
+  {
+    "wordId": "single",
+    "word": "single",
+    "oldExample": "Not a single detail can escape his notice",
+    "newExampleCn": "任何一个细节都逃不过他的注意。"
+  },
+  {
+    "wordId": "singular",
+    "word": "singular",
+    "oldExample": "The young man has a singular ear for music",
+    "newExampleCn": "这个年轻人对音乐有着非凡的听觉。"
+  },
+  {
+    "wordId": "sink",
+    "word": "sink",
+    "oldExample": "The captain of the sinking ship used flares to attract the attention of the coast guard",
+    "newExampleCn": "正在下沉的船上，船长用信号弹吸引海岸警卫队的注意。"
+  },
+  {
+    "wordId": "site",
+    "word": "site",
+    "oldExample": "The construction site of a new shopping mall was a hive of activity 一片繁忙的景象",
+    "newExampleCn": "新购物中心的建筑工地一片繁忙。"
+  },
+  {
+    "wordId": "situation",
+    "word": "situation",
+    "oldExample": "Due to poor management, they finally got into a difficult financial situation",
+    "newExampleCn": "由于管理不善，他们最终陷入了困难的财务状况。"
+  },
+  {
+    "wordId": "skate",
+    "word": "skate",
+    "oldExample": "What fun it is to throw snowballs and to skate on the ice",
+    "newExampleCn": "打雪仗和在冰上滑冰多么有趣啊！"
+  },
+  {
+    "wordId": "sketch",
+    "word": "sketch",
+    "oldExample": "I have figured out a basic sketch of a plan",
+    "newExampleCn": "我已经想出了一个计划的大致框架"
+  },
+  {
+    "wordId": "ski",
+    "word": "ski",
+    "oldExample": "The students often go skiing during winter vacations",
+    "newExampleCn": "学生们经常在寒假去滑雪"
+  },
+  {
+    "wordId": "skill",
+    "word": "skill",
+    "oldExample": "It requires an athlete to have great skill, cool nerves and quick reflexes",
+    "newExampleCn": "这要求运动员具备高超的技巧、冷静的心态和快速的反应。"
+  },
+  {
+    "wordId": "skim",
+    "word": "skim",
+    "oldExample": "It's important for you to skim through this article",
+    "newExampleCn": "你有必要快速浏览一下这篇文章"
+  },
+  {
+    "wordId": "skin",
+    "word": "skin",
+    "oldExample": "When he fell he just broke the skin",
+    "newExampleCn": "他摔倒时只是擦破了点皮"
+  },
+  {
+    "wordId": "skirt",
+    "word": "skirt",
+    "oldExample": "How many skirts do you have?",
+    "newExampleCn": "你有几条裙子？"
+  },
+  {
+    "wordId": "slave",
+    "word": "slave",
+    "oldExample": "Slaves were mercilessly ground down by slave owners",
+    "newExampleCn": "奴隶受到奴隶主的残酷压迫。"
+  },
+  {
+    "wordId": "slavery",
+    "word": "slavery",
+    "oldExample": "They thought slavery was morally wrong",
+    "newExampleCn": "他们认为奴隶制在道德上是错误的"
+  },
+  {
+    "wordId": "sleeve",
+    "word": "sleeve",
+    "oldExample": "A stranger pulled at my sleeve as I was leaving",
+    "newExampleCn": "我正要离开时，一个陌生人拉了拉我的袖子。"
+  },
+  {
+    "wordId": "slender",
+    "word": "slender",
+    "oldExample": "All of us admired her slender figure",
+    "newExampleCn": "我们都羡慕她苗条的身材"
+  },
+  {
+    "wordId": "slice",
+    "word": "slice",
+    "oldExample": "I sliced the bread",
+    "newExampleCn": "我把面包切成了片"
+  },
+  {
+    "wordId": "slide",
+    "word": "slide",
+    "oldExample": "House values may begin to slide",
+    "newExampleCn": "房价可能会开始下跌"
+  },
+  {
+    "wordId": "slight",
+    "word": "slight",
+    "oldExample": "Our army suffered a slight reverse",
+    "newExampleCn": "我军遭遇了一次小挫折"
+  },
+  {
+    "wordId": "slip",
+    "word": "slip",
+    "oldExample": "She slipped and fell down the stairs",
+    "newExampleCn": "她滑了一跤，从楼梯上摔了下来"
+  },
+  {
+    "wordId": "slipper",
+    "word": "slipper",
+    "oldExample": "No slipper is allowed in the laboratory",
+    "newExampleCn": "实验室内不允许穿拖鞋"
+  },
+  {
+    "wordId": "slogan",
+    "word": "slogan",
+    "oldExample": "The advertising slogan is play on words",
+    "newExampleCn": "这个广告标语运用了文字游戏。"
+  },
+  {
+    "wordId": "slope",
+    "word": "slope",
+    "oldExample": "He ran up the slope to the top of the hill",
+    "newExampleCn": "他沿着斜坡跑上了山顶。"
+  },
+  {
+    "wordId": "slum",
+    "word": "slum",
+    "oldExample": "I grew up in the East London slums",
+    "newExampleCn": "我在东伦敦的贫民窟长大。"
+  },
+  {
+    "wordId": "smart",
+    "word": "smart",
+    "oldExample": "This boy is very smart. He may become another Stephen Hawking",
+    "newExampleCn": "这个男孩很聪明。他可能会成为另一个史蒂芬·霍金。"
+  },
+  {
+    "wordId": "smog",
+    "word": "smog",
+    "oldExample": "The smog was so bad that school children were adviced to stay indoors",
+    "newExampleCn": "雾霾非常严重，学校建议孩子们待在室内。"
+  },
+  {
+    "wordId": "smooth",
+    "word": "smooth",
+    "oldExample": "The process of negotiation was not entirely smooth",
+    "newExampleCn": "谈判过程并非完全顺利"
+  },
+  {
+    "wordId": "snowy",
+    "word": "snowy",
+    "oldExample": "The snowy weather lasted the whole time we were there",
+    "newExampleCn": "我们在那儿的整个期间一直是下雪天。"
+  },
+  {
+    "wordId": "soak",
+    "word": "soak",
+    "oldExample": "I have soaked the beans for eight hours",
+    "newExampleCn": "我已经把豆子泡了八个小时。"
+  },
+  {
+    "wordId": "soap",
+    "word": "soap",
+    "oldExample": "Don't touch anything before you soap your hands",
+    "newExampleCn": "先用肥皂洗手，然后再碰东西"
+  },
+  {
+    "wordId": "sober",
+    "word": "sober",
+    "oldExample": "He was tipsy yesterday, but now he is sober",
+    "newExampleCn": "他昨天有点醉，但现在清醒了。"
+  },
+  {
+    "wordId": "soccer",
+    "word": "soccer",
+    "oldExample": "In soccer, only the goalkeeper can play the ball with his hands",
+    "newExampleCn": "在足球比赛中，只有守门员可以用手触球。"
+  },
+  {
+    "wordId": "socialism",
+    "word": "socialism",
+    "oldExample": "Let us do our best to build socialism",
+    "newExampleCn": "让我们尽最大努力建设社会主义"
+  },
+  {
+    "wordId": "sock",
+    "word": "sock",
+    "oldExample": "There is a hole in my sock",
+    "newExampleCn": "我的袜子破了个洞"
+  },
+  {
+    "wordId": "soda",
+    "word": "soda",
+    "oldExample": "He gave me a bottle of orange soda",
+    "newExampleCn": "他给了我一瓶橙味汽水"
+  },
+  {
+    "wordId": "solar",
+    "word": "solar",
+    "oldExample": "This toy is operated by solar energy",
+    "newExampleCn": "这个玩具靠太阳能运行"
+  },
+  {
+    "wordId": "soldier",
+    "word": "soldier",
+    "oldExample": "The soldier received a serious wound on the chest",
+    "newExampleCn": "那名士兵胸部受了重伤"
+  },
+  {
+    "wordId": "sole",
+    "word": "sole",
+    "oldExample": "My sole aim was to discover what had happened during that period",
+    "newExampleCn": "我唯一的目的就是弄清楚那段时间发生了什么。"
+  },
+  {
+    "wordId": "solid",
+    "word": "solid",
+    "oldExample": "The new office has a very solid structure",
+    "newExampleCn": "新办公室的结构非常坚固"
+  },
+  {
+    "wordId": "solve",
+    "word": "solve",
+    "oldExample": "I must alert him to the needs to solve the problem",
+    "newExampleCn": "我必须提醒他需要解决这个问题"
+  },
+  {
+    "wordId": "sort",
+    "word": "sort",
+    "oldExample": "We must sort out the good apples from the bad ones",
+    "newExampleCn": "我们必须把好苹果和坏苹果分开。"
+  },
+  {
+    "wordId": "soul",
+    "word": "soul",
+    "oldExample": "No words can express the secret agony of my soul. 没有语言能够表达我心灵的隐痛",
+    "newExampleCn": "没有语言能表达我灵魂深处的隐痛"
+  },
+  {
+    "wordId": "soup",
+    "word": "soup",
+    "oldExample": "He had spoiled the soup by putting in too much salt",
+    "newExampleCn": "他放了太多盐，把汤弄坏了。"
+  },
+  {
+    "wordId": "sour",
+    "word": "sour",
+    "oldExample": "Most green fruits are sour",
+    "newExampleCn": "大多数未成熟的水果都是酸的"
+  },
+  {
+    "wordId": "source",
+    "word": "source",
+    "oldExample": "I have heard from reliable sources that the company is in trouble",
+    "newExampleCn": "我从可靠消息来源听说那家公司遇到了麻烦。"
+  },
+  {
+    "wordId": "southern",
+    "word": "southern",
+    "oldExample": "Only in the southern part of Taiwan have I seen such scenery",
+    "newExampleCn": "只有在台湾南部，我才见过这样的景色"
+  },
+  {
+    "wordId": "soviet",
+    "word": "Soviet",
+    "oldExample": "The Soviet Union was a major power on the Eurasian continent",
+    "newExampleCn": "苏联曾是欧亚大陆上的一个主要强国"
+  },
+  {
+    "wordId": "sow",
+    "word": "sow",
+    "oldExample": "These seeds should be sown in April",
+    "newExampleCn": "这些种子应该在四月播种"
+  },
+  {
+    "wordId": "spacecraft",
+    "word": "spacecraft",
+    "oldExample": "The spacecraft is orbiting the moon",
+    "newExampleCn": "这艘航天器正在绕月球运行"
+  },
+  {
+    "wordId": "spaceship",
+    "word": "spaceship",
+    "oldExample": "The scientists are able to calculate accurately when the spaceship will reach the moon",
+    "newExampleCn": "科学家们能够准确计算出宇宙飞船何时到达月球"
+  },
+  {
+    "wordId": "spade",
+    "word": "spade",
+    "oldExample": "He bought a new spade",
+    "newExampleCn": "他买了一把新铁锹"
+  },
+  {
+    "wordId": "span",
+    "word": "span",
+    "oldExample": "The bridge has a clear span of 40 meters",
+    "newExampleCn": "这座桥的净跨度为40米"
+  },
+  {
+    "wordId": "spanish",
+    "word": "Spanish",
+    "oldExample": "French is a sister language of Spanish",
+    "newExampleCn": "法语是西班牙语的姊妹语言。"
+  },
+  {
+    "wordId": "spare",
+    "word": "spare",
+    "oldExample": "If you have a spare bed, may I stay tonight?",
+    "newExampleCn": "如果你有空床，我今晚可以住下吗？"
+  },
+  {
+    "wordId": "spark",
+    "word": "spark",
+    "oldExample": "A single spark can start a prairie fire. 星星之火可以燎原",
+    "newExampleCn": "星星之火，可以燎原"
+  },
+  {
+    "wordId": "sparrow",
+    "word": "sparrow",
+    "oldExample": "A sparrow is very alert in its movement",
+    "newExampleCn": "麻雀行动时非常机警"
+  },
+  {
+    "wordId": "spear",
+    "word": "spear",
+    "oldExample": "The athlete is trying to launch a spear",
+    "newExampleCn": "那名运动员正试图投掷标枪"
+  },
+  {
+    "wordId": "specialist",
+    "word": "specialist",
+    "oldExample": "She is a specialist in E-business",
+    "newExampleCn": "她是电子商务方面的专家。"
+  },
+  {
+    "wordId": "specify",
+    "word": "specify",
+    "oldExample": "Can you specify the reasons",
+    "newExampleCn": "你能具体说明原因吗"
+  },
+  {
+    "wordId": "specimen",
+    "word": "specimen",
+    "oldExample": "The biologist brought out a specimen box and showed the items one by one",
+    "newExampleCn": "那位生物学家拿出一个标本盒，逐一展示里面的物品。"
+  },
+  {
+    "wordId": "spectacle",
+    "word": "spectacle",
+    "oldExample": "The sunrise was a splendid spectacle",
+    "newExampleCn": "日出是一幅壮丽的景象"
+  },
+  {
+    "wordId": "speed",
+    "word": "speed",
+    "oldExample": "The police advised motorists to reduce their speed because of the fog",
+    "newExampleCn": "由于有雾，警方建议驾车者降低车速。"
+  }
+]

@@ -1,0 +1,386 @@
+[
+  {
+    "wordId": "vine",
+    "word": "vine",
+    "oldExample": "The grapes withered on the vine",
+    "newExampleCn": "葡萄在藤上枯萎了"
+  },
+  {
+    "wordId": "vinegar",
+    "word": "vinegar",
+    "oldExample": "Vinegar has a acid taste",
+    "newExampleCn": "醋有酸味"
+  },
+  {
+    "wordId": "violence",
+    "word": "violence",
+    "oldExample": "The French government today called for an end to the violence",
+    "newExampleCn": "法国政府今天呼吁停止暴力行为"
+  },
+  {
+    "wordId": "violet",
+    "word": "violet",
+    "oldExample": "The violet is dainty spring flower",
+    "newExampleCn": "紫罗兰是一种娇小的春季花卉"
+  },
+  {
+    "wordId": "violin",
+    "word": "violin",
+    "oldExample": "The violin is not quite in tune with the piano",
+    "newExampleCn": "小提琴和钢琴的音调不太合。"
+  },
+  {
+    "wordId": "vision",
+    "word": "vision",
+    "oldExample": "I've had my eyes tested and the report says my vision is perfect",
+    "newExampleCn": "我检查过眼睛，报告说我的视力很好。"
+  },
+  {
+    "wordId": "vitamin",
+    "word": "vitamin",
+    "oldExample": "Fresh green foodstuffs contain rich vitamins",
+    "newExampleCn": "新鲜的绿色食品富含维生素"
+  },
+  {
+    "wordId": "vocabulary",
+    "word": "vocabulary",
+    "oldExample": "His vocabulary was sound and his grammer was excellent",
+    "newExampleCn": "他的词汇量很扎实，语法也很出色"
+  },
+  {
+    "wordId": "volcano",
+    "word": "volcano",
+    "oldExample": "The valcano erupted and two small towns were buried under meters of hot ash, mud and bits of molten rock",
+    "newExampleCn": "火山爆发了，两个小镇被数米厚的炽热火山灰、泥浆和熔岩碎块掩埋。"
+  },
+  {
+    "wordId": "volleyball",
+    "word": "volleyball",
+    "oldExample": "They are watching a live TV broadcast of the volleyball match",
+    "newExampleCn": "他们正在看排球比赛的电视直播。"
+  },
+  {
+    "wordId": "volt",
+    "word": "volt",
+    "oldExample": "A child miraculously survived a 25, 000 volt electric shock",
+    "newExampleCn": "一个孩子在遭受25000伏电击后奇迹般地活了下来"
+  },
+  {
+    "wordId": "volume",
+    "word": "volume",
+    "oldExample": "The volume of this container is one cubic meter",
+    "newExampleCn": "这个容器的容积是一立方米"
+  },
+  {
+    "wordId": "vote",
+    "word": "vote",
+    "oldExample": "The vote will be held next month",
+    "newExampleCn": "投票将于下个月举行"
+  },
+  {
+    "wordId": "voyage",
+    "word": "voyage",
+    "oldExample": "He goes on a voyage on a warship in the name of the government",
+    "newExampleCn": "他以政府的名义乘军舰出航。"
+  },
+  {
+    "wordId": "wage",
+    "word": "wage",
+    "oldExample": "These workers demanded a wage rise of 5 percent",
+    "newExampleCn": "这些工人要求加薪5%。"
+  },
+  {
+    "wordId": "wallet",
+    "word": "wallet",
+    "oldExample": "She placed the receipt in her wallet",
+    "newExampleCn": "她把收据放进了钱包。"
+  },
+  {
+    "wordId": "wander",
+    "word": "wander",
+    "oldExample": "It is fun to wander the world",
+    "newExampleCn": "漫游世界很有趣"
+  },
+  {
+    "wordId": "warm",
+    "word": "warm",
+    "oldExample": "The blood of a warm-blooded animal remains around the same temperature both on warm and cold days",
+    "newExampleCn": "温血动物的血液无论在暖和还是寒冷的日子里，都保持在大致相同的温度。"
+  },
+  {
+    "wordId": "warn",
+    "word": "warn",
+    "oldExample": "They warned her that if she did it again, she would be sent to prison",
+    "newExampleCn": "他们警告她，如果她再这么做，就会被送进监狱。"
+  },
+  {
+    "wordId": "waste",
+    "word": "waste",
+    "oldExample": "It's a waste of time to speak to her",
+    "newExampleCn": "跟她说话就是浪费时间。"
+  },
+  {
+    "wordId": "waterfall",
+    "word": "waterfall",
+    "oldExample": "They were filled with wonder at the new waterfall",
+    "newExampleCn": "他们对这处新瀑布惊叹不已"
+  },
+  {
+    "wordId": "wax",
+    "word": "wax",
+    "oldExample": "The candle gutters when the melted wax runs down its sides",
+    "newExampleCn": "融化的蜡沿着蜡烛边缘流下时，烛火就会摇曳不定。"
+  },
+  {
+    "wordId": "way",
+    "word": "way",
+    "oldExample": "I'm on my way to the grocery",
+    "newExampleCn": "我正在去杂货店的路上"
+  },
+  {
+    "wordId": "wealth",
+    "word": "wealth",
+    "oldExample": "Health is better than wealth",
+    "newExampleCn": "健康胜于财富"
+  },
+  {
+    "wordId": "weapon",
+    "word": "weapon",
+    "oldExample": "Their ultimate weapon was the threat of an all-out strike",
+    "newExampleCn": "他们的终极武器是以全面罢工相威胁"
+  },
+  {
+    "wordId": "weather",
+    "word": "weather",
+    "oldExample": "In warm weather, you should wear clothing that is cool and comfortable",
+    "newExampleCn": "天气暖和的时候，你应该穿凉爽舒适的衣服。"
+  },
+  {
+    "wordId": "weave",
+    "word": "weave",
+    "oldExample": "We're weaving garlands of flowers for heros",
+    "newExampleCn": "我们正在为英雄们编织花环。"
+  },
+  {
+    "wordId": "wedding",
+    "word": "wedding",
+    "oldExample": "They went out to a fancy restaurant to celebrate their wedding anniversary",
+    "newExampleCn": "他们去了一家高档餐厅庆祝结婚纪念日"
+  },
+  {
+    "wordId": "weed",
+    "word": "weed",
+    "oldExample": "The garden is choked with weeds",
+    "newExampleCn": "花园里杂草丛生。"
+  },
+  {
+    "wordId": "welcome",
+    "word": "welcome",
+    "oldExample": "We welcome constructive criticism",
+    "newExampleCn": "我们欢迎建设性的批评"
+  },
+  {
+    "wordId": "weld",
+    "word": "weld",
+    "oldExample": "His job is to weld all those parts together",
+    "newExampleCn": "他的工作是把所有那些部件焊接在一起"
+  },
+  {
+    "wordId": "welfare",
+    "word": "welfare",
+    "oldExample": "In making this decision, the court's main concern is for the welfare of the children",
+    "newExampleCn": "法院在作出这一决定时，主要考虑的是孩子们的福祉。"
+  },
+  {
+    "wordId": "wheat",
+    "word": "wheat",
+    "oldExample": "This old man is a leading authority on wheat diseases",
+    "newExampleCn": "这位老人是小麦病害方面的权威。"
+  },
+  {
+    "wordId": "wheel",
+    "word": "wheel",
+    "oldExample": "The driver slumped over the steering wheel",
+    "newExampleCn": "司机瘫倒在方向盘上"
+  },
+  {
+    "wordId": "whirl",
+    "word": "whirl",
+    "oldExample": "He whirled about in the yard",
+    "newExampleCn": "他在院子里快速转来转去"
+  },
+  {
+    "wordId": "whisky",
+    "word": "whisky",
+    "oldExample": "A great deal of whisky is made in Scotland",
+    "newExampleCn": "苏格兰生产大量威士忌"
+  },
+  {
+    "wordId": "whisper",
+    "word": "whisper",
+    "oldExample": "The children were whispering in the corner",
+    "newExampleCn": "孩子们在角落里窃窃私语。"
+  },
+  {
+    "wordId": "whistle",
+    "word": "whistle",
+    "oldExample": "The referee blew the whistle at the end of the game",
+    "newExampleCn": "比赛结束时，裁判吹响了哨子"
+  },
+  {
+    "wordId": "white",
+    "word": "white",
+    "oldExample": "He was white with fury 他气的脸色发白",
+    "newExampleCn": "他气得脸色发白"
+  },
+  {
+    "wordId": "widow",
+    "word": "widow",
+    "oldExample": "He left a widow and children totally unprovided for",
+    "newExampleCn": "他留下了寡妻和孩子，完全无人供养。"
+  },
+  {
+    "wordId": "width",
+    "word": "width",
+    "oldExample": "In front of the mountain is a river of great width",
+    "newExampleCn": "山前有一条很宽的河。"
+  },
+  {
+    "wordId": "wing",
+    "word": "wing",
+    "oldExample": "A seagull fluttered down with an injured wing",
+    "newExampleCn": "一只海鸥扑腾着落下来，一只翅膀受了伤"
+  },
+  {
+    "wordId": "wipe",
+    "word": "wipe",
+    "oldExample": "She wiped off dust with a rag",
+    "newExampleCn": "她用抹布擦掉了灰尘"
+  },
+  {
+    "wordId": "wireless",
+    "word": "wireless",
+    "oldExample": "We still don't have the wireless network",
+    "newExampleCn": "我们还没有无线网络"
+  },
+  {
+    "wordId": "wisdom",
+    "word": "wisdom",
+    "oldExample": "Confucius's words hold a great deal of wisdom",
+    "newExampleCn": "孔子的话蕴含着许多智慧"
+  },
+  {
+    "wordId": "wish",
+    "word": "wish",
+    "oldExample": "I wish it to be clearly understood",
+    "newExampleCn": "我希望这一点能被清楚理解"
+  },
+  {
+    "wordId": "wit",
+    "word": "wit",
+    "oldExample": "Holmes was a gregarious, a great wit, a man of wide interests",
+    "newExampleCn": "霍姆斯善于交际，机智风趣，兴趣广泛。"
+  },
+  {
+    "wordId": "withdraw",
+    "word": "withdraw",
+    "oldExample": "She withdrew all her savings from the bank",
+    "newExampleCn": "她从银行取出了所有积蓄"
+  },
+  {
+    "wordId": "withstand",
+    "word": "withstand",
+    "oldExample": "The bridge is built to withstand an earthquake of 8.0 magnitude 这座桥可以经受 8 级地震",
+    "newExampleCn": "这座桥的设计可以承受8.0级地震。"
+  },
+  {
+    "wordId": "witness",
+    "word": "witness",
+    "oldExample": "Children in regions of chaos and bloodshed are witnessing a disturbing amount of violence",
+    "newExampleCn": "生活在混乱和流血冲突地区的儿童目睹了大量令人不安的暴力事件"
+  },
+  {
+    "wordId": "wolf",
+    "word": "wolf",
+    "oldExample": "The wolf snapped at the hunter's hand",
+    "newExampleCn": "那只狼猛咬猎人的手。"
+  },
+  {
+    "wordId": "wooden",
+    "word": "wooden",
+    "oldExample": "There is a wooden porch over the sidewalk",
+    "newExampleCn": "人行道上方有一个木制门廊。"
+  },
+  {
+    "wordId": "wool",
+    "word": "wool",
+    "oldExample": "He found a job of shearing wool from sheep",
+    "newExampleCn": "他找到了一份给羊剪羊毛的工作。"
+  },
+  {
+    "wordId": "worm",
+    "word": "worm",
+    "oldExample": "The worm was crushed under the feet",
+    "newExampleCn": "那条虫子被踩扁了"
+  },
+  {
+    "wordId": "worship",
+    "word": "worship",
+    "oldExample": "She gazed at the famous singer with worship in her eyes",
+    "newExampleCn": "她用崇拜的眼神凝视着那位著名歌手。"
+  },
+  {
+    "wordId": "worthy",
+    "word": "worthy",
+    "oldExample": "This book is worthy of reading",
+    "newExampleCn": "这本书值得一读"
+  },
+  {
+    "wordId": "wrap",
+    "word": "wrap",
+    "oldExample": "Over her shoulders was a much-mended wrap 她的肩上搭着一条被多次缝补的披肩",
+    "newExampleCn": "她肩上披着一条补了又补的披肩"
+  },
+  {
+    "wordId": "wreath",
+    "word": "wreath",
+    "oldExample": "A group of students placed a wreath at the tomb of the national hero",
+    "newExampleCn": "一群学生在民族英雄的墓前献上了花圈"
+  },
+  {
+    "wordId": "wreck",
+    "word": "wreck",
+    "oldExample": "Because of the tsunami, the coast was a wreck",
+    "newExampleCn": "由于海啸，海岸一片狼藉"
+  },
+  {
+    "wordId": "wrong",
+    "word": "wrong",
+    "oldExample": "Instead of complaining about what's wrong, be grateful for what's right",
+    "newExampleCn": "与其抱怨不如意的事，不如感恩那些美好的事。"
+  },
+  {
+    "wordId": "yellow",
+    "word": "yellow",
+    "oldExample": "The leaves turn yellow in autumn",
+    "newExampleCn": "秋天树叶会变黄"
+  },
+  {
+    "wordId": "yield",
+    "word": "yield",
+    "oldExample": "This land yields well",
+    "newExampleCn": "这块土地的产量很高"
+  },
+  {
+    "wordId": "youth",
+    "word": "youth",
+    "oldExample": "We shouldn't blame youth crime simply on unemployment",
+    "newExampleCn": "我们不应该把青少年犯罪简单归咎于失业。"
+  },
+  {
+    "wordId": "zebra",
+    "word": "zebra",
+    "oldExample": "There are several species of zebra",
+    "newExampleCn": "斑马有好几个种类"
+  }
+]

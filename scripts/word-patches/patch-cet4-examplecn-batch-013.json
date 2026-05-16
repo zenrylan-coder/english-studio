@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "molecule",
+    "word": "molecule",
+    "oldExample": "There is a molecule separator in the lab",
+    "newExampleCn": "实验室里有一个分子分离器"
+  },
+  {
+    "wordId": "monitor",
+    "word": "monitor",
+    "oldExample": "The agents are monitoring the enemy's radio broadcasts to try to find out their secret plans",
+    "newExampleCn": "特工们正在监听敌人的无线电广播，试图查明他们的秘密计划。"
+  },
+  {
+    "wordId": "monument",
+    "word": "monument",
+    "oldExample": "This work is one of the great monuments of French literature",
+    "newExampleCn": "这部作品是法国文学的伟大丰碑之一"
+  },
+  {
+    "wordId": "moral",
+    "word": "moral",
+    "oldExample": "The old gentleman claimed himself to be a moral man, who had never told a lie in his life",
+    "newExampleCn": "那位老先生自称是个有道德的人，一生从未说过谎。"
+  },
+  {
+    "wordId": "mosquito",
+    "word": "mosquito",
+    "oldExample": "The mosquito is an annoying creature",
+    "newExampleCn": "蚊子是一种讨厌的生物"
+  },
+  {
+    "wordId": "motion",
+    "word": "motion",
+    "oldExample": "Parts of the film were shown again in slow motion",
+    "newExampleCn": "影片的部分片段以慢动作重放。"
+  },
+  {
+    "wordId": "motivate",
+    "word": "motivate",
+    "oldExample": "Good teachers are those who can motivate their students",
+    "newExampleCn": "好老师是那些能够激励学生的人。"
+  },
+  {
+    "wordId": "motive",
+    "word": "motive",
+    "oldExample": "His motive for working so hard is that he needs money",
+    "newExampleCn": "他这么努力工作的动机是他需要钱。"
+  },
+  {
+    "wordId": "motor",
+    "word": "motor",
+    "oldExample": "If the battery is dead, the motor won't be started",
+    "newExampleCn": "如果电池没电了，马达就启动不了。"
+  },
+  {
+    "wordId": "mould",
+    "word": "mould",
+    "oldExample": "The walls were black with mould",
+    "newExampleCn": "墙上发霉发黑了"
+  },
+  {
+    "wordId": "mount",
+    "word": "mount",
+    "oldExample": "The old lady can only mount the stairs with difficulty",
+    "newExampleCn": "那位老妇人只能艰难地爬上楼梯"
+  },
+  {
+    "wordId": "mountain",
+    "word": "mountain",
+    "oldExample": "The northern side of the mountain is almost vertical",
+    "newExampleCn": "这座山的北侧几乎是垂直的"
+  },
+  {
+    "wordId": "mouse",
+    "word": "mouse",
+    "oldExample": "The cat was playing with a live mouse",
+    "newExampleCn": "那只猫正在玩弄一只活老鼠"
+  },
+  {
+    "wordId": "movement",
+    "word": "movement",
+    "oldExample": "Her every movement is very graceful",
+    "newExampleCn": "她的一举一动都很优雅"
+  },
+  {
+    "wordId": "movie",
+    "word": "movie",
+    "oldExample": "This movie was hyped up in the media before it was screened",
+    "newExampleCn": "这部电影上映前被媒体大肆炒作。"
+  },
+  {
+    "wordId": "muddy",
+    "word": "muddy",
+    "oldExample": "We left the car and struck out along the muddy track",
+    "newExampleCn": "我们下了车，沿着泥泞的小路出发了。"
+  },
+  {
+    "wordId": "mug",
+    "word": "mug",
+    "oldExample": "He asked me to make him a mug of coffee",
+    "newExampleCn": "他让我给他泡一大杯咖啡。"
+  },
+  {
+    "wordId": "multiple",
+    "word": "multiple",
+    "oldExample": "Eighteen is a multiple of six",
+    "newExampleCn": "十八是六的倍数"
+  },
+  {
+    "wordId": "multiply",
+    "word": "multiply",
+    "oldExample": "Friendships multiply joy and divide grievance",
+    "newExampleCn": "友谊能使快乐倍增，使烦恼减半"
+  },
+  {
+    "wordId": "murder",
+    "word": "murder",
+    "oldExample": "There have been serveral murder cases this year",
+    "newExampleCn": "今年已经发生了好几起谋杀案"
+  },
+  {
+    "wordId": "museum",
+    "word": "museum",
+    "oldExample": "A visit to the museum is an unforgetable experience",
+    "newExampleCn": "参观博物馆是一次难忘的经历"
+  },
+  {
+    "wordId": "mushroom",
+    "word": "mushroom",
+    "oldExample": "The smoke mushroomed into the sky",
+    "newExampleCn": "烟雾呈蘑菇状升上天空"
+  },
+  {
+    "wordId": "musical",
+    "word": "musical",
+    "oldExample": "The drum is one of the oldest musical instruments",
+    "newExampleCn": "鼓是最古老的乐器之一"
+  },
+  {
+    "wordId": "mute",
+    "word": "mute",
+    "oldExample": "She kept herself mute during the meeting",
+    "newExampleCn": "开会时她一直保持沉默。"
+  },
+  {
+    "wordId": "mutter",
+    "word": "mutter",
+    "oldExample": "That man muttered his dissatisfaction",
+    "newExampleCn": "那个男人低声抱怨着他的不满。"
+  },
+  {
+    "wordId": "mutton",
+    "word": "mutton",
+    "oldExample": "People like to have mutton in the winter",
+    "newExampleCn": "人们喜欢在冬天吃羊肉"
+  },
+  {
+    "wordId": "nail",
+    "word": "nail",
+    "oldExample": "Please hammer a nail into the wall",
+    "newExampleCn": "请把钉子钉进墙里"
+  },
+  {
+    "wordId": "narrow",
+    "word": "narrow",
+    "oldExample": "The only access to the garden is by a narrow path at the side of the house",
+    "newExampleCn": "通往花园的唯一入口是房子侧面的一条狭窄小路"
+  },
+  {
+    "wordId": "nation",
+    "word": "nation",
+    "oldExample": "My judgment may be faulty, but my loyalty to the nation could not be questioned",
+    "newExampleCn": "我的判断可能有误，但我对国家的忠诚不容置疑。"
+  },
+  {
+    "wordId": "native",
+    "word": "native",
+    "oldExample": "He is a native of Beijing",
+    "newExampleCn": "他是北京人"
+  },
+  {
+    "wordId": "natural",
+    "word": "natural",
+    "oldExample": "It is natural that he should fall in love with such a beautiful girl",
+    "newExampleCn": "他爱上这么漂亮的女孩是很自然的。"
+  },
+  {
+    "wordId": "nature",
+    "word": "nature",
+    "oldExample": "In fact, nature is much better at recycling than we humans are",
+    "newExampleCn": "事实上，大自然在循环利用方面比我们人类做得好得多。"
+  },
+  {
+    "wordId": "naval",
+    "word": "naval",
+    "oldExample": "He took part in a great naval battle",
+    "newExampleCn": "他参加了一场大规模海战"
+  },
+  {
+    "wordId": "navigation",
+    "word": "navigation",
+    "oldExample": "Navigation is a game for brave people",
+    "newExampleCn": "导航是一项适合勇敢者的游戏"
+  },
+  {
+    "wordId": "necessity",
+    "word": "necessity",
+    "oldExample": "Water is a necessity of life",
+    "newExampleCn": "水是生命的必需品。"
+  },
+  {
+    "wordId": "necklace",
+    "word": "necklace",
+    "oldExample": "I valued this necklace at five thousand dollars",
+    "newExampleCn": "我估计这条项链值五千美元"
+  },
+  {
+    "wordId": "needle",
+    "word": "needle",
+    "oldExample": "The needle pierced her finger",
+    "newExampleCn": "针扎破了她的手指"
+  },
+  {
+    "wordId": "neglect",
+    "word": "neglect",
+    "oldExample": "In course of time, old customs and observances tend to fall into neglect",
+    "newExampleCn": "随着时间的推移，旧的习俗和礼仪往往会逐渐被忽视。"
+  },
+  {
+    "wordId": "nephew",
+    "word": "nephew",
+    "oldExample": "I'm going to have a nephew soon",
+    "newExampleCn": "我很快就要有个侄子了"
+  },
+  {
+    "wordId": "nest",
+    "word": "nest",
+    "oldExample": "The male hunts for food while his mate guards the nest",
+    "newExampleCn": "雄鸟外出觅食，而它的伴侣守护鸟巢。"
+  },
+  {
+    "wordId": "network",
+    "word": "network",
+    "oldExample": "President Bush's speech was broadcast on national television network",
+    "newExampleCn": "布什总统的演讲在全国电视网播出。"
+  },
+  {
+    "wordId": "neutral",
+    "word": "neutral",
+    "oldExample": "He is neutral in this argument and doesn't care who wins",
+    "newExampleCn": "他在这场争论中保持中立，不在乎谁赢。"
+  },
+  {
+    "wordId": "niece",
+    "word": "niece",
+    "oldExample": "My niece drew a picture of my family when she was four",
+    "newExampleCn": "我侄女四岁时画了一幅我家人的画。"
+  },
+  {
+    "wordId": "noun",
+    "word": "noun",
+    "oldExample": "The word \"person\" is a countable noun",
+    "newExampleCn": "person 这个词是可数名词。"
+  },
+  {
+    "wordId": "nuclear",
+    "word": "nuclear",
+    "oldExample": "Nowadays, more and more people prefer a nuclear family to a standard family",
+    "newExampleCn": "如今，越来越多的人更喜欢核心家庭，而不是传统大家庭。"
+  },
+  {
+    "wordId": "nurse",
+    "word": "nurse",
+    "oldExample": "She is waiting for the nurse to give her a injection",
+    "newExampleCn": "她正在等护士给她打针"
+  },
+  {
+    "wordId": "nursery",
+    "word": "nursery",
+    "oldExample": "The nursery teacher made the children sit bold upright 笔直坐",
+    "newExampleCn": "幼儿园老师让孩子们坐得笔直。"
+  },
+  {
+    "wordId": "nut",
+    "word": "nut",
+    "oldExample": "He carefully cracked a nut and then gave it to me",
+    "newExampleCn": "他小心地敲开一颗坚果，然后把它递给我。"
+  },
+  {
+    "wordId": "nylon",
+    "word": "nylon",
+    "oldExample": "This dress is eighty percent nylon",
+    "newExampleCn": "这条裙子含有百分之八十的尼龙。"
+  },
+  {
+    "wordId": "oar",
+    "word": "oar",
+    "oldExample": "In dragon boat rowing, each paddler has one oar",
+    "newExampleCn": "在龙舟划行中，每位划手都有一支桨。"
+  },
+  {
+    "wordId": "obey",
+    "word": "obey",
+    "oldExample": "The students obeyed the new teacher without hesitation",
+    "newExampleCn": "学生们毫不犹豫地服从了新老师。"
+  },
+  {
+    "wordId": "object",
+    "word": "object",
+    "oldExample": "He strongly objects to getting up early",
+    "newExampleCn": "他强烈反对早起"
+  },
+  {
+    "wordId": "objective",
+    "word": "objective",
+    "oldExample": "My objective this summer is to learn to swim",
+    "newExampleCn": "我今年夏天的目标是学会游泳"
+  },
+  {
+    "wordId": "oblige",
+    "word": "oblige",
+    "oldExample": "The law obliges parents to send their children to school",
+    "newExampleCn": "法律规定父母必须送孩子上学"
+  },
+  {
+    "wordId": "observe",
+    "word": "observe",
+    "oldExample": "I observed a stranger enter my neighbor's home",
+    "newExampleCn": "我看到一个陌生人进了邻居家"
+  },
+  {
+    "wordId": "obstacle",
+    "word": "obstacle",
+    "oldExample": "Her father's disapproval remains their obstacle",
+    "newExampleCn": "她父亲的反对仍然是他们的障碍。"
+  },
+  {
+    "wordId": "obtain",
+    "word": "obtain",
+    "oldExample": "It is wise to obtain an independent valuation",
+    "newExampleCn": "获得一份独立评估是明智的"
+  },
+  {
+    "wordId": "occasion",
+    "word": "occasion",
+    "oldExample": "A wedding is a very happy occasion",
+    "newExampleCn": "婚礼是一个非常快乐的场合"
+  },
+  {
+    "wordId": "occupation",
+    "word": "occupation",
+    "oldExample": "I regard being a teacher as a decent occupation and I love being a teacher",
+    "newExampleCn": "我认为教师是一份体面的职业，而且我热爱当老师。"
+  },
+  {
+    "wordId": "occur",
+    "word": "occur",
+    "oldExample": "The accident occurred at six o'clock in the morning",
+    "newExampleCn": "事故发生在早上六点。"
+  },
+  {
+    "wordId": "ocean",
+    "word": "ocean",
+    "oldExample": "These creatures live in the depth of the Pacific Ocean",
+    "newExampleCn": "这些生物生活在太平洋深处。"
+  },
+  {
+    "wordId": "oceania",
+    "word": "Oceania",
+    "oldExample": "Oceania is a separate landmass, but it is separated from Asia by very shallow water",
+    "newExampleCn": "大洋洲是一块独立的陆地，但它与亚洲之间只隔着很浅的海水。"
+  },
+  {
+    "wordId": "odd",
+    "word": "odd",
+    "oldExample": "One, three, five, and seven are odd numbers",
+    "newExampleCn": "一、三、五和七都是奇数。"
+  },
+  {
+    "wordId": "offend",
+    "word": "offend",
+    "oldExample": "We mustn't offend the local customs",
+    "newExampleCn": "我们不能冒犯当地习俗"
+  },
+  {
+    "wordId": "offer",
+    "word": "offer",
+    "oldExample": "They reject all our offers to help",
+    "newExampleCn": "他们拒绝了我们所有的帮助提议。"
+  },
+  {
+    "wordId": "office",
+    "word": "office",
+    "oldExample": "Now he holds office in the foreign ministry",
+    "newExampleCn": "现在他在外交部任职。"
+  },
+  {
+    "wordId": "official",
+    "word": "official",
+    "oldExample": "The mass media demanded that all the official documents concerning the product in question be made public",
+    "newExampleCn": "大众媒体要求公开所有有关涉事产品的官方文件。"
+  },
+  {
+    "wordId": "omit",
+    "word": "omit",
+    "oldExample": "The secretary omitted the date when typing the contract",
+    "newExampleCn": "秘书在打印合同时漏掉了日期"
+  },
+  {
+    "wordId": "onion",
+    "word": "onion",
+    "oldExample": "I don't like the flavor of onion",
+    "newExampleCn": "我不喜欢洋葱的味道"
+  },
+  {
+    "wordId": "opera",
+    "word": "opera",
+    "oldExample": "She joined the Royal Opera House the following year",
+    "newExampleCn": "第二年，她加入了皇家歌剧院。"
+  },
+  {
+    "wordId": "operate",
+    "word": "operate",
+    "oldExample": "It's too difficult for him to operate this new sophisticated machine",
+    "newExampleCn": "对他来说，操作这台新型精密机器太难了。"
+  },
+  {
+    "wordId": "opinion",
+    "word": "opinion",
+    "oldExample": "She asked her friends' opinions about her plans",
+    "newExampleCn": "她询问了朋友们对她计划的看法"
+  },
+  {
+    "wordId": "opportunity",
+    "word": "opportunity",
+    "oldExample": "I'd like to take this opportunity to thank everyone for their hard work on this project",
+    "newExampleCn": "我想借此机会感谢大家为这个项目付出的辛勤努力。"
+  },
+  {
+    "wordId": "oppose",
+    "word": "oppose",
+    "oldExample": "The employees opposed their company's new policies",
+    "newExampleCn": "员工们反对公司的新政策"
+  },
+  {
+    "wordId": "oppress",
+    "word": "oppress",
+    "oldExample": "The king oppressed his people with terrible taxes and punishments",
+    "newExampleCn": "国王用苛重的税收和严厉的惩罚压迫人民"
+  },
+  {
+    "wordId": "optical",
+    "word": "optical",
+    "oldExample": "Microscopes and telescopes are optical instruments",
+    "newExampleCn": "显微镜和望远镜都是光学仪器"
+  },
+  {
+    "wordId": "oral",
+    "word": "oral",
+    "oldExample": "Students of English should have a lot of oral drills",
+    "newExampleCn": "英语学习者应该进行大量口语练习"
+  },
+  {
+    "wordId": "orange",
+    "word": "orange",
+    "oldExample": "Would you peel me an orange?",
+    "newExampleCn": "你能帮我剥个橙子吗？"
+  },
+  {
+    "wordId": "orbit",
+    "word": "orbit",
+    "oldExample": "The earth moves in an approximately circular orbit around the sun",
+    "newExampleCn": "地球沿着近似圆形的轨道绕太阳运行"
+  },
+  {
+    "wordId": "orchestra",
+    "word": "orchestra",
+    "oldExample": "This orchestra has been established under the patronage of the government",
+    "newExampleCn": "这个管弦乐团是在政府的赞助下成立的"
+  },
+  {
+    "wordId": "order",
+    "word": "order",
+    "oldExample": "He gave his order to the waiter",
+    "newExampleCn": "他向服务员点了餐"
+  },
+  {
+    "wordId": "ore",
+    "word": "ore",
+    "oldExample": "This mountain area is rich in iron ore",
+    "newExampleCn": "这片山区铁矿石资源丰富"
+  },
+  {
+    "wordId": "organism",
+    "word": "organism",
+    "oldExample": "This insect behaves like a parasite, an organism that lives on or in another organism called a host",
+    "newExampleCn": "这种昆虫的行为像寄生虫，寄生虫是一种生活在另一种被称为宿主的生物体表面或体内的生物。"
+  },
+  {
+    "wordId": "organization",
+    "word": "organization",
+    "oldExample": "They have established a student organization",
+    "newExampleCn": "他们成立了一个学生组织"
+  },
+  {
+    "wordId": "oriental",
+    "word": "oriental",
+    "oldExample": "She has studied the cultures of oriental countries",
+    "newExampleCn": "她研究过东方国家的文化。"
+  },
+  {
+    "wordId": "ornament",
+    "word": "ornament",
+    "oldExample": "Clearness ornaments profound thought 清晰性能为深刻的思想增辉",
+    "newExampleCn": "清晰能为深刻的思想增辉"
+  },
+  {
+    "wordId": "orphan",
+    "word": "orphan",
+    "oldExample": "The three children were orphaned when their parents died in the plane crash",
+    "newExampleCn": "那三个孩子的父母在飞机失事中遇难后，他们成了孤儿。"
+  },
+  {
+    "wordId": "ounce",
+    "word": "ounce",
+    "oldExample": "An ounce of prevention is worth of a pound of cure 预防胜于治疗",
+    "newExampleCn": "一分预防胜过十分治疗"
+  },
+  {
+    "wordId": "outcome",
+    "word": "outcome",
+    "oldExample": "We are anxiously awaiting the outcome of their discussion",
+    "newExampleCn": "我们正焦急地等待他们讨论的结果。"
+  },
+  {
+    "wordId": "outdoor",
+    "word": "outdoor",
+    "oldExample": "If you enjoy outdoor activities, this is the trip for you",
+    "newExampleCn": "如果你喜欢户外活动，这趟旅行就很适合你。"
+  },
+  {
+    "wordId": "outline",
+    "word": "outline",
+    "oldExample": "This document provided a broad outline of the country's development after the World War II",
+    "newExampleCn": "这份文件概述了二战后该国的发展情况。"
+  },
+  {
+    "wordId": "outlook",
+    "word": "outlook",
+    "oldExample": "The economic outlook is not very bright",
+    "newExampleCn": "经济前景不太乐观"
+  },
+  {
+    "wordId": "outset",
+    "word": "outset",
+    "oldExample": "The science fiction fascinates the readers from the outset",
+    "newExampleCn": "这本科幻小说从一开始就吸引了读者。"
+  },
+  {
+    "wordId": "outside",
+    "word": "outside",
+    "oldExample": "He had a tough outside but a kind heart",
+    "newExampleCn": "他外表坚强，但内心善良。"
+  },
+  {
+    "wordId": "outstanding",
+    "word": "outstanding",
+    "oldExample": "He is an outstanding athelete and deserved to win",
+    "newExampleCn": "他是一名出色的运动员，理应获胜。"
+  },
+  {
+    "wordId": "outward",
+    "word": "outward",
+    "oldExample": "Frost consists of tiny crystals of ice, which grow outward from a solid surface",
+    "newExampleCn": "霜由微小的冰晶组成，这些冰晶从固体表面向外生长"
+  },
+  {
+    "wordId": "oven",
+    "word": "oven",
+    "oldExample": "The bread is fresh out of the oven 新鲜出炉的面包",
+    "newExampleCn": "面包刚出炉，很新鲜"
+  },
+  {
+    "wordId": "overall",
+    "word": "overall",
+    "oldExample": "The shop assistant was wearing a white overall",
+    "newExampleCn": "店员穿着一件白色工作服"
+  },
+  {
+    "wordId": "overcoat",
+    "word": "overcoat",
+    "oldExample": "He turned his overcoat collar up",
+    "newExampleCn": "他把大衣领子翻了起来"
+  },
+  {
+    "wordId": "overlook",
+    "word": "overlook",
+    "oldExample": "The house on the hill overlooks the village",
+    "newExampleCn": "山上的那栋房子俯瞰着村庄"
+  }
+]

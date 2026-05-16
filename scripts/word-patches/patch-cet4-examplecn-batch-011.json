@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "interrupt",
+    "word": "interrupt",
+    "oldExample": "Execuse me, I wonder if I could interrupt you",
+    "newExampleCn": "不好意思，我可以打扰你一下吗？"
+  },
+  {
+    "wordId": "interview",
+    "word": "interview",
+    "oldExample": "The interview has drawn considerable attention to the profession",
+    "newExampleCn": "这次采访让这个职业受到了相当多的关注"
+  },
+  {
+    "wordId": "intimate",
+    "word": "intimate",
+    "oldExample": "Do you believe these two intimates friends used to be mutual sworn enemies?",
+    "newExampleCn": "你相信这两个亲密的朋友曾经是彼此不共戴天的死敌吗？"
+  },
+  {
+    "wordId": "introduce",
+    "word": "introduce",
+    "oldExample": "Britain did not introduce complusory primary education until 1880",
+    "newExampleCn": "英国直到1880年才实行小学义务教育。"
+  },
+  {
+    "wordId": "invade",
+    "word": "invade",
+    "oldExample": "They are determined to resist the invading armies",
+    "newExampleCn": "他们决心抵抗入侵的军队"
+  },
+  {
+    "wordId": "invent",
+    "word": "invent",
+    "oldExample": "Do you who invented the magnetic needle?",
+    "newExampleCn": "你知道是谁发明了磁针吗？"
+  },
+  {
+    "wordId": "invest",
+    "word": "invest",
+    "oldExample": "The state has planned to invest 2 million in the dam",
+    "newExampleCn": "该州计划投资200万修建大坝"
+  },
+  {
+    "wordId": "investigate",
+    "word": "investigate",
+    "oldExample": "To investigate a problem is indeed to solve it",
+    "newExampleCn": "调查一个问题，实际上就是在解决它。"
+  },
+  {
+    "wordId": "invisible",
+    "word": "invisible",
+    "oldExample": "Some stars are invisible to the naked eye",
+    "newExampleCn": "有些星星是肉眼看不见的"
+  },
+  {
+    "wordId": "invite",
+    "word": "invite",
+    "oldExample": "She invited us to her party",
+    "newExampleCn": "她邀请我们参加她的聚会"
+  },
+  {
+    "wordId": "involve",
+    "word": "involve",
+    "oldExample": "This forum will involve people with specialist knowledge",
+    "newExampleCn": "这个论坛将邀请具备专业知识的人参与。"
+  },
+  {
+    "wordId": "inward",
+    "word": "inward",
+    "oldExample": "The expedition discovered an inward passage",
+    "newExampleCn": "探险队发现了一条通往内部的通道"
+  },
+  {
+    "wordId": "iron",
+    "word": "iron",
+    "oldExample": "They analyzed the ore and found iron in it",
+    "newExampleCn": "他们分析了矿石，发现里面含有铁。"
+  },
+  {
+    "wordId": "issue",
+    "word": "issue",
+    "oldExample": "On this issue, they thought as one",
+    "newExampleCn": "在这个问题上，他们想法一致。"
+  },
+  {
+    "wordId": "italian",
+    "word": "Italian",
+    "oldExample": "Italian pizza is very popular in China",
+    "newExampleCn": "意大利披萨在中国很受欢迎"
+  },
+  {
+    "wordId": "item",
+    "word": "item",
+    "oldExample": "She couldn't wedge another item into the suitcase",
+    "newExampleCn": "她没法再往行李箱里塞任何东西了"
+  },
+  {
+    "wordId": "jacket",
+    "word": "jacket",
+    "oldExample": "He wore a pair of dark glasses and a jacket all day long",
+    "newExampleCn": "他整天戴着一副墨镜，穿着一件夹克。"
+  },
+  {
+    "wordId": "jail",
+    "word": "jail",
+    "oldExample": "A bunch of prisoners broke loose from jail",
+    "newExampleCn": "一群囚犯越狱了"
+  },
+  {
+    "wordId": "jam",
+    "word": "jam",
+    "oldExample": "He spread some apple jam on the bread",
+    "newExampleCn": "他在面包上抹了一些苹果酱"
+  },
+  {
+    "wordId": "jar",
+    "word": "jar",
+    "oldExample": "I can't get the lid off this jar",
+    "newExampleCn": "我打不开这个罐子的盖子"
+  },
+  {
+    "wordId": "jazz",
+    "word": "jazz",
+    "oldExample": "He is well versed in many styles of jazz",
+    "newExampleCn": "他精通多种爵士乐风格"
+  },
+  {
+    "wordId": "jet",
+    "word": "jet",
+    "oldExample": "Developing the supersonic jet was quite an accomplishment",
+    "newExampleCn": "研制出超音速喷气式飞机是一项了不起的成就"
+  },
+  {
+    "wordId": "jewel",
+    "word": "jewel",
+    "oldExample": "That jewel has a beautiful shimmer",
+    "newExampleCn": "那颗宝石闪着美丽的光泽"
+  },
+  {
+    "wordId": "jewish",
+    "word": "jewish",
+    "oldExample": "Jewish people are scattered around the world",
+    "newExampleCn": "犹太人分布在世界各地"
+  },
+  {
+    "wordId": "job",
+    "word": "job",
+    "oldExample": "The job is not yet finished",
+    "newExampleCn": "这项工作还没有完成"
+  },
+  {
+    "wordId": "journal",
+    "word": "journal",
+    "oldExample": "This study was published by two journals of repute",
+    "newExampleCn": "这项研究发表在两本有声望的期刊上"
+  },
+  {
+    "wordId": "journalist",
+    "word": "journalist",
+    "oldExample": "No journalist was bold enough to challenge the prime minister",
+    "newExampleCn": "没有记者敢大胆质疑首相。"
+  },
+  {
+    "wordId": "journey",
+    "word": "journey",
+    "oldExample": "I wish a pleasant journey to you",
+    "newExampleCn": "祝你旅途愉快"
+  },
+  {
+    "wordId": "judge",
+    "word": "judge",
+    "oldExample": "TGhe defence counsel said his client was too tired, so the judge called a recess",
+    "newExampleCn": "辩护律师说他的当事人太累了，所以法官宣布休庭。"
+  },
+  {
+    "wordId": "juice",
+    "word": "juice",
+    "oldExample": "She was drinking juice through a straw",
+    "newExampleCn": "她正在用吸管喝果汁"
+  },
+  {
+    "wordId": "jump",
+    "word": "jump",
+    "oldExample": "He jumped when he heard the news",
+    "newExampleCn": "他听到这个消息时吓了一跳"
+  },
+  {
+    "wordId": "jungle",
+    "word": "jungle",
+    "oldExample": "Tigets are found in the jungle of Asia",
+    "newExampleCn": "老虎生活在亚洲的丛林中"
+  },
+  {
+    "wordId": "junior",
+    "word": "junior",
+    "oldExample": "At that time, I was a sophomore and Miss Yang was a junior",
+    "newExampleCn": "那时，我是大二学生，杨小姐是大三学生。"
+  },
+  {
+    "wordId": "jury",
+    "word": "jury",
+    "oldExample": "The jury will retire to consider its verdict today. 陪审团今天将退庭商议其e决",
+    "newExampleCn": "陪审团今天将退庭商议裁决。"
+  },
+  {
+    "wordId": "just",
+    "word": "just",
+    "oldExample": "Our aim is a just and lasting peace",
+    "newExampleCn": "我们的目标是实现公正而持久的和平。"
+  },
+  {
+    "wordId": "justify",
+    "word": "justify",
+    "oldExample": "Don't try to justify your mistakes",
+    "newExampleCn": "不要试图为你的错误辩解"
+  },
+  {
+    "wordId": "keeper",
+    "word": "keeper",
+    "oldExample": "He turned his eyes towards the food, which the keeper had brought",
+    "newExampleCn": "他把目光转向看守带来的食物。"
+  },
+  {
+    "wordId": "kettle",
+    "word": "kettle",
+    "oldExample": "The kettle is boiling",
+    "newExampleCn": "水壶里的水开了"
+  },
+  {
+    "wordId": "keyboard",
+    "word": "keyboard",
+    "oldExample": "The machine is operated through the keyboard",
+    "newExampleCn": "这台机器通过键盘操作"
+  },
+  {
+    "wordId": "kick",
+    "word": "kick",
+    "oldExample": "Don't kick the ball into the road",
+    "newExampleCn": "不要把球踢到马路上。"
+  },
+  {
+    "wordId": "king",
+    "word": "king",
+    "oldExample": "The king is the most important person in a kingdom",
+    "newExampleCn": "国王是王国中最重要的人。"
+  },
+  {
+    "wordId": "kiss",
+    "word": "kiss",
+    "oldExample": "The singer blew a kiss to the audience",
+    "newExampleCn": "那位歌手向观众飞吻。"
+  },
+  {
+    "wordId": "kitchen",
+    "word": "kitchen",
+    "oldExample": "I have to mop the kitchen floor at least once a day",
+    "newExampleCn": "我每天至少得拖一次厨房地板"
+  },
+  {
+    "wordId": "kneel",
+    "word": "kneel",
+    "oldExample": "The man knelt down to say his pray",
+    "newExampleCn": "那个男人跪下来祈祷。"
+  },
+  {
+    "wordId": "knife",
+    "word": "knife",
+    "oldExample": "He halved an apple with a knife",
+    "newExampleCn": "他用刀把一个苹果切成了两半"
+  },
+  {
+    "wordId": "knit",
+    "word": "knit",
+    "oldExample": "My grandmother knited me some socks",
+    "newExampleCn": "我奶奶给我织了几双袜子"
+  },
+  {
+    "wordId": "knob",
+    "word": "knob",
+    "oldExample": "He twisted the knob of the door and went inside",
+    "newExampleCn": "他转动门把手，走了进去"
+  },
+  {
+    "wordId": "knock",
+    "word": "knock",
+    "oldExample": "I was so hurried that I knocked into my teacher",
+    "newExampleCn": "我太匆忙了，撞到了我的老师。"
+  },
+  {
+    "wordId": "knot",
+    "word": "knot",
+    "oldExample": "He made a knot in the rope",
+    "newExampleCn": "他在绳子上打了个结"
+  },
+  {
+    "wordId": "knowledge",
+    "word": "knowledge",
+    "oldExample": "To the young boy, his big brother was the fountain of all knowledge",
+    "newExampleCn": "在这个小男孩眼里，他的哥哥无所不知。"
+  },
+  {
+    "wordId": "label",
+    "word": "label",
+    "oldExample": "I read the information on the labels before deciding which jam to buy",
+    "newExampleCn": "我先看了标签上的信息，再决定买哪种果酱。"
+  },
+  {
+    "wordId": "laboratory",
+    "word": "laboratory",
+    "oldExample": "It is important to check when the laboratory can do the tests",
+    "newExampleCn": "确认实验室什么时候能做这些检测很重要"
+  },
+  {
+    "wordId": "labour",
+    "word": "labour",
+    "oldExample": "Many women do hard manual labour",
+    "newExampleCn": "许多女性从事繁重的体力劳动"
+  },
+  {
+    "wordId": "lace",
+    "word": "lace",
+    "oldExample": "He stopped to tie the laces of his sneakers",
+    "newExampleCn": "他停下来系运动鞋的鞋带。"
+  },
+  {
+    "wordId": "lack",
+    "word": "lack",
+    "oldExample": "Serious lack of circulating funds forced the closure of the company",
+    "newExampleCn": "流动资金严重短缺迫使公司倒闭。"
+  },
+  {
+    "wordId": "ladder",
+    "word": "ladder",
+    "oldExample": "Diligence is often a ladder to success",
+    "newExampleCn": "勤奋往往是通向成功的阶梯"
+  },
+  {
+    "wordId": "lag",
+    "word": "lag",
+    "oldExample": "Let not a single classmate lag behind",
+    "newExampleCn": "不要让任何一个同学掉队"
+  },
+  {
+    "wordId": "lamb",
+    "word": "lamb",
+    "oldExample": "The little lamb was caught by the wolf",
+    "newExampleCn": "小羊被狼抓住了"
+  },
+  {
+    "wordId": "landing",
+    "word": "landing",
+    "oldExample": "The plane circled over the airport before landing",
+    "newExampleCn": "飞机在降落前在机场上空盘旋。"
+  },
+  {
+    "wordId": "landlady",
+    "word": "landlady",
+    "oldExample": "The landlady has prepared some coffee for us",
+    "newExampleCn": "女房东给我们准备了一些咖啡。"
+  },
+  {
+    "wordId": "landlord",
+    "word": "landlord",
+    "oldExample": "He is the landlord of this house",
+    "newExampleCn": "他是这所房子的房东"
+  },
+  {
+    "wordId": "lane",
+    "word": "lane",
+    "oldExample": "There are many small lanes in the quiant town",
+    "newExampleCn": "这个古朴的小镇里有许多小巷。"
+  },
+  {
+    "wordId": "language",
+    "word": "language",
+    "oldExample": "His misunderstanding of language was the primary cause of his other problems",
+    "newExampleCn": "他对语言的误解是他其他问题的主要原因"
+  },
+  {
+    "wordId": "lantern",
+    "word": "lantern",
+    "oldExample": "The ice lantern festival, held in Harbin every winter, is fantastic",
+    "newExampleCn": "每年冬天在哈尔滨举办的冰灯节非常精彩。"
+  },
+  {
+    "wordId": "latin",
+    "word": "Latin",
+    "oldExample": "Many languages have Latin as their origin",
+    "newExampleCn": "许多语言都起源于拉丁语"
+  },
+  {
+    "wordId": "launch",
+    "word": "launch",
+    "oldExample": "Full market research is needed before a new proudct is launched",
+    "newExampleCn": "新产品上市前需要进行全面的市场调研"
+  },
+  {
+    "wordId": "laundry",
+    "word": "laundry",
+    "oldExample": "There's a lot of laundry in the basket",
+    "newExampleCn": "篮子里有很多要洗的衣服。"
+  },
+  {
+    "wordId": "lavatory",
+    "word": "lavatory",
+    "oldExample": "The use of the lavatory is suspended during takeoff",
+    "newExampleCn": "起飞期间暂停使用洗手间"
+  },
+  {
+    "wordId": "law",
+    "word": "law",
+    "oldExample": "Those who break the law are subjected to justice. 违法者要受到法律的制裁",
+    "newExampleCn": "违法者要受到法律的制裁"
+  },
+  {
+    "wordId": "lawn",
+    "word": "lawn",
+    "oldExample": "My mother asked me to mow the lawn",
+    "newExampleCn": "我妈妈让我修剪草坪"
+  },
+  {
+    "wordId": "lay",
+    "word": "lay",
+    "oldExample": "They lay eggs from the beginning of July to the middle of August",
+    "newExampleCn": "它们从七月初到八月中旬产卵。"
+  },
+  {
+    "wordId": "layer",
+    "word": "layer",
+    "oldExample": "There is a layer of dust on the table. Clean it before the guests arrive",
+    "newExampleCn": "桌子上有一层灰尘。客人来之前把它擦干净。"
+  },
+  {
+    "wordId": "layout",
+    "word": "layout",
+    "oldExample": "The new page layout is appealing to teenagers",
+    "newExampleCn": "新的页面布局对青少年很有吸引力"
+  },
+  {
+    "wordId": "lead",
+    "word": "lead",
+    "oldExample": "Lead is one of the softer metals",
+    "newExampleCn": "铅是较软的金属之一"
+  },
+  {
+    "wordId": "league",
+    "word": "league",
+    "oldExample": "Our club is a member of the football league",
+    "newExampleCn": "我们的俱乐部是这个足球联赛的成员"
+  },
+  {
+    "wordId": "leak",
+    "word": "leak",
+    "oldExample": "A small leak will sink a great ship",
+    "newExampleCn": "小漏洞也会沉大船"
+  },
+  {
+    "wordId": "lean",
+    "word": "lean",
+    "oldExample": "She leaned against his shoulder",
+    "newExampleCn": "她靠在他的肩膀上"
+  },
+  {
+    "wordId": "leap",
+    "word": "leap",
+    "oldExample": "The thief leaped over the wall and ran away",
+    "newExampleCn": "小偷跳过墙逃跑了"
+  },
+  {
+    "wordId": "learn",
+    "word": "learn",
+    "oldExample": "It is more useful to learn modern languages, such as English and French, than Latin",
+    "newExampleCn": "学习现代语言，比如英语和法语，比学习拉丁语更有用。"
+  },
+  {
+    "wordId": "leather",
+    "word": "leather",
+    "oldExample": "Wax polish preserves wood and leather",
+    "newExampleCn": "蜡光剂可以保护木材和皮革。"
+  },
+  {
+    "wordId": "legal",
+    "word": "legal",
+    "oldExample": "When you are eighteen, you are a legal voter",
+    "newExampleCn": "年满十八岁，你就是合法选民。"
+  },
+  {
+    "wordId": "lemon",
+    "word": "lemon",
+    "oldExample": "I like orange more than lemon",
+    "newExampleCn": "比起柠檬，我更喜欢橙子"
+  },
+  {
+    "wordId": "length",
+    "word": "length",
+    "oldExample": "The room is 7 meters in length and 5 meters in breadth",
+    "newExampleCn": "这个房间长7米，宽5米。"
+  },
+  {
+    "wordId": "lens",
+    "word": "lens",
+    "oldExample": "When viewing through a lens, we can see the thing clearer, larger or smaller",
+    "newExampleCn": "透过镜片观察时，我们可以把东西看得更清楚、更大或更小。"
+  },
+  {
+    "wordId": "lesson",
+    "word": "lesson",
+    "oldExample": "The lesson from your failure is perhaps a broader one",
+    "newExampleCn": "你从失败中得到的教训也许具有更广泛的意义"
+  },
+  {
+    "wordId": "lever",
+    "word": "lever",
+    "oldExample": "Push the lever and the machine will start",
+    "newExampleCn": "推动操纵杆，机器就会启动。"
+  },
+  {
+    "wordId": "liar",
+    "word": "liar",
+    "oldExample": "Why did they call him a liar",
+    "newExampleCn": "他们为什么说他是骗子？"
+  },
+  {
+    "wordId": "liberty",
+    "word": "liberty",
+    "oldExample": "Those prisoners are dreaming of liberty",
+    "newExampleCn": "那些囚犯梦想着获得自由"
+  },
+  {
+    "wordId": "library",
+    "word": "library",
+    "oldExample": "I went to the library and return your books for you",
+    "newExampleCn": "我去了图书馆，顺便帮你还了书。"
+  },
+  {
+    "wordId": "license",
+    "word": "license",
+    "oldExample": "His driving license was suspended for three months",
+    "newExampleCn": "他的驾驶证被吊销了三个月"
+  },
+  {
+    "wordId": "lick",
+    "word": "lick",
+    "oldExample": "He licked his fingers",
+    "newExampleCn": "他舔了舔手指"
+  },
+  {
+    "wordId": "lid",
+    "word": "lid",
+    "oldExample": "He slammed the lid down",
+    "newExampleCn": "他砰的一声把盖子合上了"
+  },
+  {
+    "wordId": "lift",
+    "word": "lift",
+    "oldExample": "This box is too heavy for me to lift",
+    "newExampleCn": "这个箱子太重了，我抬不起来。"
+  },
+  {
+    "wordId": "lightning",
+    "word": "lightning",
+    "oldExample": "During the storm, flashes of lightning appeared in the sky",
+    "newExampleCn": "暴风雨中，天空中出现了一道道闪电。"
+  },
+  {
+    "wordId": "lime",
+    "word": "lime",
+    "oldExample": "Lime in the soil is detrimental to some plants",
+    "newExampleCn": "土壤中的石灰对某些植物有害"
+  },
+  {
+    "wordId": "limit",
+    "word": "limit",
+    "oldExample": "I'll help as much as I can, but there is a limit to what I can do",
+    "newExampleCn": "我会尽力帮忙，但我能做的也是有限的"
+  },
+  {
+    "wordId": "linen",
+    "word": "linen",
+    "oldExample": "Low elasticity, imparting a hard and smooth texture, makes linen subject to wrinkling",
+    "newExampleCn": "亚麻弹性低，因此质地硬而光滑，也容易起皱。"
+  },
+  {
+    "wordId": "liner",
+    "word": "liner",
+    "oldExample": "The liner has been refitted from stern to stern 从头到尾整修",
+    "newExampleCn": "这艘邮轮已经从头到尾整修一新。"
+  },
+  {
+    "wordId": "liquid",
+    "word": "liquid",
+    "oldExample": "If you add too much liquid, the mixture will not be thick enough",
+    "newExampleCn": "如果你加入太多液体，混合物就不够浓稠。"
+  },
+  {
+    "wordId": "liquor",
+    "word": "liquor",
+    "oldExample": "He appears to have drunk a lot of liquor",
+    "newExampleCn": "他好像喝了很多烈酒。"
+  }
+]

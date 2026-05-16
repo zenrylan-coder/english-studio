@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "federal",
+    "word": "federal",
+    "oldExample": "Switzerland is a federal state in Europe",
+    "newExampleCn": "瑞士是欧洲的一个联邦国家"
+  },
+  {
+    "wordId": "fruit",
+    "word": "fruit",
+    "oldExample": "The apple trees fruited early this year",
+    "newExampleCn": "今年苹果树结果很早"
+  },
+  {
+    "wordId": "fry",
+    "word": "fry",
+    "oldExample": "The eggs are frying in the pan",
+    "newExampleCn": "鸡蛋正在锅里煎着"
+  },
+  {
+    "wordId": "fuel",
+    "word": "fuel",
+    "oldExample": "We aim for a ten percent saving in fuel",
+    "newExampleCn": "我们的目标是节省百分之十的燃料。"
+  },
+  {
+    "wordId": "fulfil",
+    "word": "fulfil",
+    "oldExample": "We're determined to fulfill the task",
+    "newExampleCn": "我们决心完成这项任务"
+  },
+  {
+    "wordId": "fund",
+    "word": "fund",
+    "oldExample": "The research is funded the government",
+    "newExampleCn": "这项研究由政府资助。"
+  },
+  {
+    "wordId": "fundamental",
+    "word": "fundamental",
+    "oldExample": "Another fundamental consideration in the conception of a design is function",
+    "newExampleCn": "在构思设计时，另一个基本考虑因素是功能。"
+  },
+  {
+    "wordId": "funeral",
+    "word": "funeral",
+    "oldExample": "Funeral customs vary with different religions",
+    "newExampleCn": "不同宗教的葬礼习俗各不相同"
+  },
+  {
+    "wordId": "fur",
+    "word": "fur",
+    "oldExample": "Alice is allergic to fur of cats",
+    "newExampleCn": "爱丽丝对猫毛过敏"
+  },
+  {
+    "wordId": "furnace",
+    "word": "furnace",
+    "oldExample": "Would you please fire up the furnace?",
+    "newExampleCn": "你能把炉子点起来吗？"
+  },
+  {
+    "wordId": "furnish",
+    "word": "furnish",
+    "oldExample": "The house is well furnished",
+    "newExampleCn": "这所房子家具配备齐全"
+  },
+  {
+    "wordId": "gain",
+    "word": "gain",
+    "oldExample": "every time they reap gains from their investment, more people wish to join them",
+    "newExampleCn": "每当他们从投资中获得收益，就有更多人想加入他们。"
+  },
+  {
+    "wordId": "gallery",
+    "word": "gallery",
+    "oldExample": "The pictures in the gallery were well spaced out",
+    "newExampleCn": "画廊里的画摆放得间距很合适"
+  },
+  {
+    "wordId": "gang",
+    "word": "gang",
+    "oldExample": "Have you seen any of the gang lately?",
+    "newExampleCn": "你最近见过那帮人中的谁吗？"
+  },
+  {
+    "wordId": "gap",
+    "word": "gap",
+    "oldExample": "There are wide gaps in my knowledge of history",
+    "newExampleCn": "我的历史知识有很大的空白。"
+  },
+  {
+    "wordId": "garage",
+    "word": "garage",
+    "oldExample": "My car broke down, and it has been towed to a garage",
+    "newExampleCn": "我的车坏了，已经被拖到修车厂了。"
+  },
+  {
+    "wordId": "garbage",
+    "word": "garbage",
+    "oldExample": "They fouled the water by throwing in garbage",
+    "newExampleCn": "他们把垃圾扔进水里，污染了水。"
+  },
+  {
+    "wordId": "gardener",
+    "word": "gardener",
+    "oldExample": "The old gardener had rough hands",
+    "newExampleCn": "那位老园丁的手很粗糙"
+  },
+  {
+    "wordId": "gas",
+    "word": "gas",
+    "oldExample": "There are reports that some gas stations have run out of gas",
+    "newExampleCn": "有报道称，一些加油站的汽油已经卖完了。"
+  },
+  {
+    "wordId": "gasoline",
+    "word": "gasoline",
+    "oldExample": "The price of gasoline is unstable",
+    "newExampleCn": "汽油价格不稳定"
+  },
+  {
+    "wordId": "gather",
+    "word": "gather",
+    "oldExample": "He took the trouble to gather the materials for me",
+    "newExampleCn": "他特意为我收集了这些材料"
+  },
+  {
+    "wordId": "gauge",
+    "word": "gauge",
+    "oldExample": "It was difficult to gauge how people would respond",
+    "newExampleCn": "很难判断人们会作何反应"
+  },
+  {
+    "wordId": "gay",
+    "word": "gay",
+    "oldExample": "The children were all gay at the thought of the coming holidays",
+    "newExampleCn": "孩子们一想到即将到来的假期都很开心。"
+  },
+  {
+    "wordId": "gaze",
+    "word": "gaze",
+    "oldExample": "The child gazed at the toys in the shop window",
+    "newExampleCn": "那个孩子凝视着商店橱窗里的玩具。"
+  },
+  {
+    "wordId": "general",
+    "word": "general",
+    "oldExample": "As a general rule, prices follow demands",
+    "newExampleCn": "一般来说，价格会随需求变化。"
+  },
+  {
+    "wordId": "generation",
+    "word": "generation",
+    "oldExample": "A mother and her daughters represent two generations",
+    "newExampleCn": "一位母亲和她的女儿们代表了两代人"
+  },
+  {
+    "wordId": "generator",
+    "word": "generator",
+    "oldExample": "A new type of wind generator may offer an answer to that problem",
+    "newExampleCn": "一种新型风力发电机或许能解决那个问题"
+  },
+  {
+    "wordId": "genius",
+    "word": "genius",
+    "oldExample": "His genius is not confined to maths and physics",
+    "newExampleCn": "他的天赋并不局限于数学和物理。"
+  },
+  {
+    "wordId": "genuine",
+    "word": "genuine",
+    "oldExample": "This metal is made of genuine gold",
+    "newExampleCn": "这种金属是由真金制成的"
+  },
+  {
+    "wordId": "geography",
+    "word": "geography",
+    "oldExample": "I'd like to introduce you to my geography professor",
+    "newExampleCn": "我想把你介绍给我的地理学教授。"
+  },
+  {
+    "wordId": "geometry",
+    "word": "geometry",
+    "oldExample": "Geometry is a piece of cake for me, but a big headache for my friend Clare",
+    "newExampleCn": "几何对我来说小菜一碟，但对我的朋友克莱尔来说却很头疼。"
+  },
+  {
+    "wordId": "germ",
+    "word": "germ",
+    "oldExample": "Disinfectants are used to kill germs",
+    "newExampleCn": "消毒剂用于杀死细菌"
+  },
+  {
+    "wordId": "germany",
+    "word": "Germany",
+    "oldExample": "I need to buy a round-trip ticket to Germany",
+    "newExampleCn": "我需要买一张去德国的往返票"
+  },
+  {
+    "wordId": "gesture",
+    "word": "gesture",
+    "oldExample": "He put his arm around her in a protective gesture",
+    "newExampleCn": "他搂住她，以示保护。"
+  },
+  {
+    "wordId": "glance",
+    "word": "glance",
+    "oldExample": "The man glanced at the burglar climbing out of the window",
+    "newExampleCn": "那个男人瞥了一眼正从窗户爬出来的窃贼。"
+  },
+  {
+    "wordId": "glare",
+    "word": "glare",
+    "oldExample": "The glare of the oncoming headlights temporarily blinded me",
+    "newExampleCn": "迎面而来的车灯强光让我一时看不见东西"
+  },
+  {
+    "wordId": "glass",
+    "word": "glass",
+    "oldExample": "I cut my hand on some broken glass",
+    "newExampleCn": "我的手被一些碎玻璃划伤了"
+  },
+  {
+    "wordId": "glide",
+    "word": "glide",
+    "oldExample": "The beautiful swan glides gracefully on the pond",
+    "newExampleCn": "美丽的天鹅在池塘上优雅地滑行。"
+  },
+  {
+    "wordId": "glimpse",
+    "word": "glimpse",
+    "oldExample": "I caught a glimpse of our new neighbor",
+    "newExampleCn": "我瞥见了我们的新邻居"
+  },
+  {
+    "wordId": "glitter",
+    "word": "glitter",
+    "oldExample": "The diamond ring on her finger glittered in the moonlight",
+    "newExampleCn": "她手指上的钻戒在月光下闪闪发光"
+  },
+  {
+    "wordId": "globe",
+    "word": "globe",
+    "oldExample": "There are people in almost every habitable part of this globe",
+    "newExampleCn": "地球上几乎每个适宜居住的地方都有人。"
+  },
+  {
+    "wordId": "glorious",
+    "word": "glorious",
+    "oldExample": "Our country has a glorious past",
+    "newExampleCn": "我们的国家有着辉煌的过去"
+  },
+  {
+    "wordId": "glove",
+    "word": "glove",
+    "oldExample": "It's getting cold and I have to take out my woolen gloves",
+    "newExampleCn": "天气变冷了，我得把我的羊毛手套拿出来。"
+  },
+  {
+    "wordId": "glow",
+    "word": "glow",
+    "oldExample": "Maple leaves glowed red in the sunlight 枫叶在阳光里闪耀着红光",
+    "newExampleCn": "枫叶在阳光下泛着红光"
+  },
+  {
+    "wordId": "glue",
+    "word": "glue",
+    "oldExample": "Stick them on the card using a small amount of glue",
+    "newExampleCn": "用少量胶水把它们粘在卡片上"
+  },
+  {
+    "wordId": "goal",
+    "word": "goal",
+    "oldExample": "The home side rubbed in their superiority with a further goal",
+    "newExampleCn": "主队又进一球，进一步凸显了他们的优势"
+  },
+  {
+    "wordId": "golf",
+    "word": "golf",
+    "oldExample": "Hundreds of private golf clubs took part in a recent study",
+    "newExampleCn": "数百家私人高尔夫俱乐部参与了最近的一项研究"
+  },
+  {
+    "wordId": "goods",
+    "word": "goods",
+    "oldExample": "You give me the money and I'll give you the goods",
+    "newExampleCn": "你把钱给我，我就把货给你。"
+  },
+  {
+    "wordId": "goose",
+    "word": "goose",
+    "oldExample": "They often have goose at Christmas time",
+    "newExampleCn": "他们经常在圣诞节吃鹅肉"
+  },
+  {
+    "wordId": "government",
+    "word": "government",
+    "oldExample": "He is a man of some influence in the government",
+    "newExampleCn": "他在政府里有一定的影响力。"
+  },
+  {
+    "wordId": "gown",
+    "word": "gown",
+    "oldExample": "She put on her silk gown and went to the ball",
+    "newExampleCn": "她穿上丝绸礼服去参加舞会。"
+  },
+  {
+    "wordId": "grace",
+    "word": "grace",
+    "oldExample": "She was a beautiful girl with the grace and poise of a natural model 她是一个美丽的女孩，天生有着模特的那种优雅仪态",
+    "newExampleCn": "她是个美丽的女孩，举手投足间有着天生模特般的优雅与从容。"
+  },
+  {
+    "wordId": "grade",
+    "word": "grade",
+    "oldExample": "This grade of jade can be bought at a fairly low price",
+    "newExampleCn": "这种等级的玉可以以相当低的价格买到。"
+  },
+  {
+    "wordId": "graduate",
+    "word": "graduate",
+    "oldExample": "Preference will be given to graduates in journalism",
+    "newExampleCn": "新闻学毕业生将被优先考虑"
+  },
+  {
+    "wordId": "grain",
+    "word": "grain",
+    "oldExample": "We ship grain to Africa",
+    "newExampleCn": "我们把粮食运往非洲"
+  },
+  {
+    "wordId": "grammar",
+    "word": "grammar",
+    "oldExample": "He was known for his poor grammar and punctuation",
+    "newExampleCn": "他因语法和标点很差而出名。"
+  },
+  {
+    "wordId": "grand",
+    "word": "grand",
+    "oldExample": "He was born in the purple and was brougt up in the grand palace",
+    "newExampleCn": "他出身显赫，在宏伟的宫殿中长大。"
+  },
+  {
+    "wordId": "grandfather",
+    "word": "grandfather",
+    "oldExample": "The kid was named after his grandfather",
+    "newExampleCn": "这个孩子是以他祖父的名字命名的"
+  },
+  {
+    "wordId": "grant",
+    "word": "grant",
+    "oldExample": "I grant that book gives us something insights into human nature, but generally speaking, it is boring",
+    "newExampleCn": "我承认那本书让我们对人性有了一些洞见，但总的来说，它很无聊。"
+  },
+  {
+    "wordId": "grape",
+    "word": "grape",
+    "oldExample": "Sour grapes can never make sweet wine",
+    "newExampleCn": "酸葡萄酿不出甜酒"
+  },
+  {
+    "wordId": "graph",
+    "word": "graph",
+    "oldExample": "They made a graph of how cold the weather was everyday for a month",
+    "newExampleCn": "他们制作了一张图表，记录一个月里每天的气温有多低。"
+  },
+  {
+    "wordId": "grasp",
+    "word": "grasp",
+    "oldExample": "A man who grasps at too much may lose everything",
+    "newExampleCn": "贪多的人可能会失去一切"
+  },
+  {
+    "wordId": "grass",
+    "word": "grass",
+    "oldExample": "The grass was wet with dew",
+    "newExampleCn": "草地被露水打湿了"
+  },
+  {
+    "wordId": "grave",
+    "word": "grave",
+    "oldExample": "The lady's grave is made of granite",
+    "newExampleCn": "那位女士的坟墓是用花岗岩建成的"
+  },
+  {
+    "wordId": "gravity",
+    "word": "gravity",
+    "oldExample": "Enormous energy is needed to launch a spacecraft against gravity",
+    "newExampleCn": "发射航天器克服重力需要巨大的能量"
+  },
+  {
+    "wordId": "greek",
+    "word": "Greek",
+    "oldExample": "The chef is not interested in Greek food",
+    "newExampleCn": "这位厨师对希腊菜不感兴趣"
+  },
+  {
+    "wordId": "greenhouse",
+    "word": "greenhouse",
+    "oldExample": "The flowers are grown in the greenhouse",
+    "newExampleCn": "这些花是在温室里种植的"
+  },
+  {
+    "wordId": "greet",
+    "word": "greet",
+    "oldExample": "The audiences greeted his speech with a great cheer",
+    "newExampleCn": "观众们对他的演讲报以热烈欢呼。"
+  },
+  {
+    "wordId": "grey",
+    "word": "grey",
+    "oldExample": "She dressed in grey",
+    "newExampleCn": "她穿着灰色的衣服"
+  },
+  {
+    "wordId": "grind",
+    "word": "grind",
+    "oldExample": "The mill of god grinds slowly but it grinds exceedingly well",
+    "newExampleCn": "天网恢恢，疏而不漏"
+  },
+  {
+    "wordId": "grip",
+    "word": "grip",
+    "oldExample": "She has a fragile grip on reality",
+    "newExampleCn": "她对现实的把握很脆弱。"
+  },
+  {
+    "wordId": "grocery",
+    "word": "grocery",
+    "oldExample": "Her mother began to operate a small grocery",
+    "newExampleCn": "她妈妈开始经营一家小杂货店"
+  },
+  {
+    "wordId": "gross",
+    "word": "gross",
+    "oldExample": "GDP stands for Gross Domestic Product",
+    "newExampleCn": "GDP 代表国内生产总值"
+  },
+  {
+    "wordId": "growth",
+    "word": "growth",
+    "oldExample": "Cold weather constrained the plant's growth",
+    "newExampleCn": "寒冷的天气限制了植物的生长"
+  },
+  {
+    "wordId": "guarantee",
+    "word": "guarantee",
+    "oldExample": "They offer a two-year guarantee on all their household appliances",
+    "newExampleCn": "他们所有的家用电器都提供两年保修。"
+  },
+  {
+    "wordId": "guard",
+    "word": "guard",
+    "oldExample": "The dog guarded the house against strangers",
+    "newExampleCn": "那只狗守护着房子，防止陌生人靠近。"
+  },
+  {
+    "wordId": "guest",
+    "word": "guest",
+    "oldExample": "The guest who arrives half an hour earlier is the greatest nuisance",
+    "newExampleCn": "提前半小时到的客人最让人头疼"
+  },
+  {
+    "wordId": "gulf",
+    "word": "gulf",
+    "oldExample": "The gulf extends northward",
+    "newExampleCn": "海湾向北延伸"
+  },
+  {
+    "wordId": "gum",
+    "word": "gum",
+    "oldExample": "Would you like some sugarless gum?",
+    "newExampleCn": "你想来点无糖口香糖吗？"
+  },
+  {
+    "wordId": "gunpowder",
+    "word": "gunpowder",
+    "oldExample": "Gunpowder was used for military purposes in China as far back as the 10th Century",
+    "newExampleCn": "早在10世纪，中国就已将火药用于军事目的。"
+  },
+  {
+    "wordId": "haircut",
+    "word": "haircut",
+    "oldExample": "He was unshaven and badly needed a haircut",
+    "newExampleCn": "他胡子没刮，很需要理个发。"
+  },
+  {
+    "wordId": "halt",
+    "word": "halt",
+    "oldExample": "The cab rolled to a halt before the hotel 计程车缓缓地停在了酒店前",
+    "newExampleCn": "出租车在酒店前缓缓停了下来"
+  },
+  {
+    "wordId": "hamburger",
+    "word": "hamburger",
+    "oldExample": "I had a hamburger and a fried chicken leg",
+    "newExampleCn": "我吃了一个汉堡和一个炸鸡腿"
+  },
+  {
+    "wordId": "hammer",
+    "word": "hammer",
+    "oldExample": "He hammered the nail into the wall with a hammer",
+    "newExampleCn": "他用锤子把钉子钉进了墙里"
+  },
+  {
+    "wordId": "handkerchief",
+    "word": "handkerchief",
+    "oldExample": "He was playing with his handkerchief all the while during his speech",
+    "newExampleCn": "他演讲时一直在摆弄他的手帕。"
+  },
+  {
+    "wordId": "handle",
+    "word": "handle",
+    "oldExample": "You have to press on the handle to turn it. It's very stiff",
+    "newExampleCn": "你得按住把手才能转动它。它很紧。"
+  },
+  {
+    "wordId": "handsome",
+    "word": "handsome",
+    "oldExample": "The waitress received a handsome tip",
+    "newExampleCn": "女服务员收到了一笔丰厚的小费。"
+  },
+  {
+    "wordId": "handwriting",
+    "word": "handwriting",
+    "oldExample": "The address was in Anna's handwriting",
+    "newExampleCn": "地址是安娜的笔迹。"
+  },
+  {
+    "wordId": "hang",
+    "word": "hang",
+    "oldExample": "He was hanged for murder",
+    "newExampleCn": "他因谋杀罪被处以绞刑。"
+  },
+  {
+    "wordId": "happen",
+    "word": "happen",
+    "oldExample": "It is important to anticipate when it will happen",
+    "newExampleCn": "提前预判它什么时候会发生很重要"
+  },
+  {
+    "wordId": "harbour",
+    "word": "harbour",
+    "oldExample": "Our hotel room overlooked a pretty little harbour",
+    "newExampleCn": "我们的酒店房间俯瞰着一个漂亮的小港湾"
+  },
+  {
+    "wordId": "hare",
+    "word": "hare",
+    "oldExample": "The hunter watched for the hare to come out of the burrow",
+    "newExampleCn": "猎人守着洞口，等野兔出来。"
+  },
+  {
+    "wordId": "harmful",
+    "word": "harmful",
+    "oldExample": "A freezing winter is harmful to orange trees",
+    "newExampleCn": "严寒的冬天对橙树有害"
+  },
+  {
+    "wordId": "harmony",
+    "word": "harmony",
+    "oldExample": "They worked in perfect harmony",
+    "newExampleCn": "他们配合得十分默契"
+  },
+  {
+    "wordId": "harness",
+    "word": "harness",
+    "oldExample": "You cannot judge a horse by its harness",
+    "newExampleCn": "不能凭马具来判断一匹马。"
+  },
+  {
+    "wordId": "harvest",
+    "word": "harvest",
+    "oldExample": "A good summer harvest is not easy to come by",
+    "newExampleCn": "一个好的夏季收成来之不易"
+  },
+  {
+    "wordId": "hasten",
+    "word": "hasten",
+    "oldExample": "It was now obvious that she was hastening to restore the car to its owner",
+    "newExampleCn": "现在很明显，她正急着把车还给车主。"
+  },
+  {
+    "wordId": "hat",
+    "word": "hat",
+    "oldExample": "She bought a hat yesterday",
+    "newExampleCn": "她昨天买了一顶帽子"
+  },
+  {
+    "wordId": "hatch",
+    "word": "hatch",
+    "oldExample": "Don't count the chickens before they are hatched 不要过早打如意算盘",
+    "newExampleCn": "小鸡还没孵出来，别先数有多少只。"
+  },
+  {
+    "wordId": "hatred",
+    "word": "hatred",
+    "oldExample": "His words stirred up my hatred. 他的话激起了我的仇恨",
+    "newExampleCn": "他的话激起了我的仇恨"
+  }
+]

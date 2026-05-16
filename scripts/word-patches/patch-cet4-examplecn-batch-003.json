@@ -1,0 +1,596 @@
+[
+  {
+    "wordId": "attraction",
+    "word": "attraction",
+    "oldExample": "The main attraction in this amusement park is a large swimming pool with salt water",
+    "newExampleCn": "这个游乐园的主要景点是一个大型咸水游泳池"
+  },
+  {
+    "wordId": "author",
+    "word": "author",
+    "oldExample": "The author's style is subtle and elegant",
+    "newExampleCn": "这位作者的风格含蓄而优雅"
+  },
+  {
+    "wordId": "bough",
+    "word": "bough",
+    "oldExample": "The window of her car was broken by a bough during last night's storm",
+    "newExampleCn": "昨晚的暴风雨中，一根大树枝砸破了她的车窗。"
+  },
+  {
+    "wordId": "bounce",
+    "word": "bounce",
+    "oldExample": "The ball hit the wall and bounced off it",
+    "newExampleCn": "球撞到墙上，然后弹了回来"
+  },
+  {
+    "wordId": "bound",
+    "word": "bound",
+    "oldExample": "You are not legally bound to answer these questions",
+    "newExampleCn": "你在法律上没有义务回答这些问题"
+  },
+  {
+    "wordId": "boundary",
+    "word": "boundary",
+    "oldExample": "The river is the boundary between the two countries",
+    "newExampleCn": "这条河是两国之间的边界"
+  },
+  {
+    "wordId": "bow",
+    "word": "bow",
+    "oldExample": "He can't agree with her, but bowed to her greater experience and knowledge",
+    "newExampleCn": "他无法同意她的看法，但还是因她更丰富的经验和知识而让步了"
+  },
+  {
+    "wordId": "bowl",
+    "word": "bowl",
+    "oldExample": "I have a bowl of cereal every morning",
+    "newExampleCn": "我每天早上吃一碗麦片。"
+  },
+  {
+    "wordId": "brake",
+    "word": "brake",
+    "oldExample": "The car in front of me stopped suddenly, and I had to brake sharply",
+    "newExampleCn": "我前面的车突然停了下来，我只好猛踩刹车。"
+  },
+  {
+    "wordId": "branch",
+    "word": "branch",
+    "oldExample": "The company's head office in is the city, but it has branches all over the country",
+    "newExampleCn": "这家公司的总部在城里，但它在全国各地都有分公司。"
+  },
+  {
+    "wordId": "brandy",
+    "word": "brandy",
+    "oldExample": "I drank a miniature bottle of brandy last night",
+    "newExampleCn": "我昨晚喝了一小瓶白兰地。"
+  },
+  {
+    "wordId": "brass",
+    "word": "brass",
+    "oldExample": "Brass is formed by the fusion of copper and zinc",
+    "newExampleCn": "黄铜是由铜和锌熔合而成的。"
+  },
+  {
+    "wordId": "breed",
+    "word": "breed",
+    "oldExample": "She breeds orchids in her greenhouse",
+    "newExampleCn": "她在温室里培育兰花。"
+  },
+  {
+    "wordId": "breeze",
+    "word": "breeze",
+    "oldExample": "We are enjoying the cool breeze that comes from the lake",
+    "newExampleCn": "我们正享受着从湖面吹来的凉爽微风。"
+  },
+  {
+    "wordId": "brilliant",
+    "word": "brilliant",
+    "oldExample": "He drew the curtains and brilliant sunlight flooded into the room",
+    "newExampleCn": "他拉开窗帘，明亮的阳光涌进了房间。"
+  },
+  {
+    "wordId": "brim",
+    "word": "brim",
+    "oldExample": "He drank at the fountain's brim",
+    "newExampleCn": "他在喷泉边喝水。"
+  },
+  {
+    "wordId": "bristle",
+    "word": "bristle",
+    "oldExample": "The brush is made of animal bristles",
+    "newExampleCn": "这把刷子是用动物鬃毛制成的"
+  },
+  {
+    "wordId": "britain",
+    "word": "Britain",
+    "oldExample": "The United Kingdom consists of Great Britain and Northern Ireland",
+    "newExampleCn": "英国由大不列颠和北爱尔兰组成"
+  },
+  {
+    "wordId": "bronze",
+    "word": "bronze",
+    "oldExample": "We fuse copper and tin to make bronze",
+    "newExampleCn": "我们把铜和锡熔合制成青铜"
+  },
+  {
+    "wordId": "brood",
+    "word": "brood",
+    "oldExample": "The bird was trying to find food for its brood",
+    "newExampleCn": "那只鸟正试图为它的一窝幼鸟寻找食物。"
+  },
+  {
+    "wordId": "brook",
+    "word": "brook",
+    "oldExample": "Before we drink at a brook, it is good to know its source",
+    "newExampleCn": "在我们喝小溪里的水之前，最好先了解它的源头。"
+  },
+  {
+    "wordId": "broom",
+    "word": "broom",
+    "oldExample": "She used a broom to sweep up the scraps of paper",
+    "newExampleCn": "她用扫帚把纸屑扫起来。"
+  },
+  {
+    "wordId": "brown",
+    "word": "brown",
+    "oldExample": "He had brown skin",
+    "newExampleCn": "他的皮肤是棕色的"
+  },
+  {
+    "wordId": "brute",
+    "word": "brute",
+    "oldExample": "We all want to punish the brute",
+    "newExampleCn": "我们都想惩罚那个恶棍"
+  },
+  {
+    "wordId": "bucket",
+    "word": "bucket",
+    "oldExample": "One bucket of paint will be enough for the ceiling",
+    "newExampleCn": "一桶油漆足够刷天花板了"
+  },
+  {
+    "wordId": "bud",
+    "word": "bud",
+    "oldExample": "The rose are in bud",
+    "newExampleCn": "玫瑰正含苞待放"
+  },
+  {
+    "wordId": "build",
+    "word": "build",
+    "oldExample": "We should study hard to build a better future for ourselves",
+    "newExampleCn": "我们应该努力学习，为自己创造更美好的未来。"
+  },
+  {
+    "wordId": "bulb",
+    "word": "bulb",
+    "oldExample": "An efficient bulb may lighten the load of power stations",
+    "newExampleCn": "一个节能灯泡可以减轻发电站的负荷。"
+  },
+  {
+    "wordId": "bull",
+    "word": "bull",
+    "oldExample": "He was a great bull of a man 他以前是个大块头",
+    "newExampleCn": "他以前是个大块头"
+  },
+  {
+    "wordId": "bullet",
+    "word": "bullet",
+    "oldExample": "The bullet hit him in the leg",
+    "newExampleCn": "子弹击中了他的腿"
+  },
+  {
+    "wordId": "bunch",
+    "word": "bunch",
+    "oldExample": "I bought a bunch of lilacs 我买了一束丁香花",
+    "newExampleCn": "我买了一束丁香花"
+  },
+  {
+    "wordId": "bundle",
+    "word": "bundle",
+    "oldExample": "He collected a bundle of sticks",
+    "newExampleCn": "他收集了一捆树枝"
+  },
+  {
+    "wordId": "burden",
+    "word": "burden",
+    "oldExample": "It's a burden I have been carrying for a long time",
+    "newExampleCn": "这是我背负了很久的负担"
+  },
+  {
+    "wordId": "bureau",
+    "word": "bureau",
+    "oldExample": "The Bureau of Land Management is not so far from here",
+    "newExampleCn": "土地管理局离这里不太远。"
+  },
+  {
+    "wordId": "burst",
+    "word": "burst",
+    "oldExample": "Prices went up and up in those years before the housing bubble burst",
+    "newExampleCn": "在房地产泡沫破裂前的那些年里，房价一涨再涨。"
+  },
+  {
+    "wordId": "bury",
+    "word": "bury",
+    "oldExample": "He felt lonely after he buried his good friend",
+    "newExampleCn": "埋葬了他的好朋友后，他感到很孤独。"
+  },
+  {
+    "wordId": "butcher",
+    "word": "butcher",
+    "oldExample": "Tom is a friendly butcher in our neighborhood",
+    "newExampleCn": "汤姆是我们社区里一位友善的肉店老板。"
+  },
+  {
+    "wordId": "butter",
+    "word": "butter",
+    "oldExample": "I'll butter the bread",
+    "newExampleCn": "我要在面包上抹黄油"
+  },
+  {
+    "wordId": "butterfly",
+    "word": "butterfly",
+    "oldExample": "A butterfly is flying up and down among the flowers",
+    "newExampleCn": "一只蝴蝶在花丛中上下飞舞"
+  },
+  {
+    "wordId": "button",
+    "word": "button",
+    "oldExample": "One of the buttons has come off my coat",
+    "newExampleCn": "我外套上的一颗纽扣掉了"
+  },
+  {
+    "wordId": "cabbage",
+    "word": "cabbage",
+    "oldExample": "I'd like to cook dishes with cabbage",
+    "newExampleCn": "我想用卷心菜做几道菜"
+  },
+  {
+    "wordId": "cabin",
+    "word": "cabin",
+    "oldExample": "They lived in a little log cabin in the mountains",
+    "newExampleCn": "他们住在山里的一间小木屋里"
+  },
+  {
+    "wordId": "cabinet",
+    "word": "cabinet",
+    "oldExample": "She needs a cherry cabinet in her room",
+    "newExampleCn": "她的房间需要一个樱桃木柜子"
+  },
+  {
+    "wordId": "cable",
+    "word": "cable",
+    "oldExample": "This country has almost 15 milliion subscribers to satellite and cable television",
+    "newExampleCn": "这个国家有近1500万卫星电视和有线电视用户。"
+  },
+  {
+    "wordId": "cafeteria",
+    "word": "cafeteria",
+    "oldExample": "In the cafeteria, we serve ourselves",
+    "newExampleCn": "在自助餐厅里，我们自己取餐。"
+  },
+  {
+    "wordId": "cage",
+    "word": "cage",
+    "oldExample": "The lion paced the floor of his cage restlessly",
+    "newExampleCn": "狮子在笼子里焦躁不安地来回踱步"
+  },
+  {
+    "wordId": "calculate",
+    "word": "calculate",
+    "oldExample": "Our price has already been closely calculated. There is no room for reduction",
+    "newExampleCn": "我们的价格已经仔细核算过了，没有降价空间。"
+  },
+  {
+    "wordId": "calendar",
+    "word": "calendar",
+    "oldExample": "The Islamic calendar has fewer days than the Gregorian calendar",
+    "newExampleCn": "伊斯兰历的天数比公历少"
+  },
+  {
+    "wordId": "camel",
+    "word": "camel",
+    "oldExample": "The merchant decided to use camels to carry his goods across the desert",
+    "newExampleCn": "那位商人决定用骆驼把货物运过沙漠。"
+  },
+  {
+    "wordId": "camera",
+    "word": "camera",
+    "oldExample": "You'd better declare the camera to the official",
+    "newExampleCn": "你最好向海关官员申报这台相机"
+  },
+  {
+    "wordId": "camp",
+    "word": "camp",
+    "oldExample": "At dusk, we pitched camp in the middle of nowhere",
+    "newExampleCn": "黄昏时，我们在荒郊野外扎了营。"
+  },
+  {
+    "wordId": "campaign",
+    "word": "campaign",
+    "oldExample": "Those people are campaigning for equal rights for women",
+    "newExampleCn": "那些人正在为女性争取平等权利而开展运动。"
+  },
+  {
+    "wordId": "campus",
+    "word": "campus",
+    "oldExample": "The campus covers an area of about 1.37 square kilometers",
+    "newExampleCn": "这个校园占地约1.37平方公里"
+  },
+  {
+    "wordId": "can",
+    "word": "can",
+    "oldExample": "She was carrying an armful of cat food cans and talking to herself",
+    "newExampleCn": "她抱着一大堆猫粮罐头，嘴里自言自语。"
+  },
+  {
+    "wordId": "canada",
+    "word": "Canada",
+    "oldExample": "The maple leaf is the emblem of Canada",
+    "newExampleCn": "枫叶是加拿大的象征"
+  },
+  {
+    "wordId": "canal",
+    "word": "canal",
+    "oldExample": "The canal is now open to shipping",
+    "newExampleCn": "这条运河现在已开放通航。"
+  },
+  {
+    "wordId": "cancel",
+    "word": "cancel",
+    "oldExample": "The match had to be canceled due to the bad whether",
+    "newExampleCn": "由于天气不好，比赛不得不取消。"
+  },
+  {
+    "wordId": "candidate",
+    "word": "candidate",
+    "oldExample": "They are interviewing candidates for the positions of sales manager",
+    "newExampleCn": "他们正在面试销售经理职位的候选人"
+  },
+  {
+    "wordId": "candle",
+    "word": "candle",
+    "oldExample": "The candle was blown out by the wind",
+    "newExampleCn": "蜡烛被风吹灭了"
+  },
+  {
+    "wordId": "candy",
+    "word": "candy",
+    "oldExample": "The greedy little boy ate all the candy at the party",
+    "newExampleCn": "那个贪吃的小男孩把聚会上的糖果全都吃光了。"
+  },
+  {
+    "wordId": "cannon",
+    "word": "cannon",
+    "oldExample": "The fighter planes are all armed with cannons",
+    "newExampleCn": "这些战斗机都装备了机炮。"
+  },
+  {
+    "wordId": "canoe",
+    "word": "canoe",
+    "oldExample": "We crossed the lake in a canoe",
+    "newExampleCn": "我们划着独木舟穿过了湖面"
+  },
+  {
+    "wordId": "canteen",
+    "word": "canteen",
+    "oldExample": "This canteen is much frequented by students",
+    "newExampleCn": "学生们经常光顾这家食堂"
+  },
+  {
+    "wordId": "cap",
+    "word": "cap",
+    "oldExample": "The cap goes well with your suit",
+    "newExampleCn": "这顶帽子和你的西装很搭。"
+  },
+  {
+    "wordId": "capable",
+    "word": "capable",
+    "oldExample": "Not everyone is capable of judging fine arts",
+    "newExampleCn": "并不是每个人都有能力鉴赏美术作品。"
+  },
+  {
+    "wordId": "captain",
+    "word": "captain",
+    "oldExample": "The captain of the sinking ship used flares to attract the attention of the coast guard",
+    "newExampleCn": "正在下沉的船的船长用信号弹吸引海岸警卫队的注意。"
+  },
+  {
+    "wordId": "captive",
+    "word": "captive",
+    "oldExample": "Armed gunmen broke into the church and took the priest captive",
+    "newExampleCn": "持枪歹徒闯入教堂，挟持了神父。"
+  },
+  {
+    "wordId": "capture",
+    "word": "capture",
+    "oldExample": "The fraudster was captured when trying to escape from the city",
+    "newExampleCn": "那个骗子在试图逃离城市时被抓获了"
+  },
+  {
+    "wordId": "career",
+    "word": "career",
+    "oldExample": "After the accident, she realized that her acting career was over",
+    "newExampleCn": "事故发生后，她意识到自己的演艺生涯结束了。"
+  },
+  {
+    "wordId": "cargo",
+    "word": "cargo",
+    "oldExample": "The ship is discharging cargo",
+    "newExampleCn": "这艘船正在卸货"
+  },
+  {
+    "wordId": "carpenter",
+    "word": "carpenter",
+    "oldExample": "The carpenter charged ninety dollars for the job",
+    "newExampleCn": "木匠做这项工作收了九十美元"
+  },
+  {
+    "wordId": "carpet",
+    "word": "carpet",
+    "oldExample": "The armchair blends well with the color of the carpet",
+    "newExampleCn": "这把扶手椅和地毯的颜色很搭。"
+  },
+  {
+    "wordId": "carriage",
+    "word": "carriage",
+    "oldExample": "The carriage, which he had ordered, arrived, and we drove off",
+    "newExampleCn": "他叫的马车到了，我们便出发了"
+  },
+  {
+    "wordId": "carrier",
+    "word": "carrier",
+    "oldExample": "The missile is launched from the aircraft carrier",
+    "newExampleCn": "这枚导弹是从航空母舰上发射的"
+  },
+  {
+    "wordId": "carrot",
+    "word": "carrot",
+    "oldExample": "The dish of boiled beef and carrot tastes good",
+    "newExampleCn": "这道胡萝卜炖牛肉味道很好"
+  },
+  {
+    "wordId": "cart",
+    "word": "cart",
+    "oldExample": "A heavy cart rumbled down the street",
+    "newExampleCn": "一辆沉重的手推车隆隆地沿街驶过"
+  },
+  {
+    "wordId": "carve",
+    "word": "carve",
+    "oldExample": "The statue was carved out of mable",
+    "newExampleCn": "这座雕像是用大理石雕刻而成的"
+  },
+  {
+    "wordId": "cash",
+    "word": "cash",
+    "oldExample": "He paied for the meal in cash",
+    "newExampleCn": "他用现金付了餐费"
+  },
+  {
+    "wordId": "cassette",
+    "word": "cassette",
+    "oldExample": "He inserted a cassette into the machine",
+    "newExampleCn": "他把一盒磁带放进机器里"
+  },
+  {
+    "wordId": "castle",
+    "word": "castle",
+    "oldExample": "The ancient castle commands a fine view of the town",
+    "newExampleCn": "这座古老的城堡俯瞰着小镇的美景。"
+  },
+  {
+    "wordId": "catch",
+    "word": "catch",
+    "oldExample": "It is natural for a cat to catch mice",
+    "newExampleCn": "猫抓老鼠是天性"
+  },
+  {
+    "wordId": "cathedral",
+    "word": "cathedral",
+    "oldExample": "This cathedral was regarded as a miracle in architectual history",
+    "newExampleCn": "这座大教堂被视为建筑史上的奇迹。"
+  },
+  {
+    "wordId": "cattle",
+    "word": "cattle",
+    "oldExample": "There are many herds of cattle in the meadow",
+    "newExampleCn": "草地上有许多群牛。"
+  },
+  {
+    "wordId": "cause",
+    "word": "cause",
+    "oldExample": "Police are investigating the likely cause of the explosion",
+    "newExampleCn": "警方正在调查这起爆炸的可能原因"
+  },
+  {
+    "wordId": "cave",
+    "word": "cave",
+    "oldExample": "The cave was used by smugglers in the 18th century",
+    "newExampleCn": "这个洞穴在18世纪曾被走私者使用"
+  },
+  {
+    "wordId": "cease",
+    "word": "cease",
+    "oldExample": "At last, they ceased working for lack of capital 他们最终由于缺乏资金停工了",
+    "newExampleCn": "最后，他们因缺乏资金停止了工作。"
+  },
+  {
+    "wordId": "ceiling",
+    "word": "ceiling",
+    "oldExample": "The traditional houses in that country have very low ceilings",
+    "newExampleCn": "那个国家的传统房屋天花板很低"
+  },
+  {
+    "wordId": "celebrate",
+    "word": "celebrate",
+    "oldExample": "They all passed the exam and celebrated with a party",
+    "newExampleCn": "他们都通过了考试，并开派对庆祝。"
+  },
+  {
+    "wordId": "cell",
+    "word": "cell",
+    "oldExample": "The prisoner was locked in a cell",
+    "newExampleCn": "囚犯被关在牢房里"
+  },
+  {
+    "wordId": "cellar",
+    "word": "cellar",
+    "oldExample": "The celler floods whenever it rains heavily",
+    "newExampleCn": "每当下大雨，地窖就会进水。"
+  },
+  {
+    "wordId": "cement",
+    "word": "cement",
+    "oldExample": "The mixed cement has been hoisted up the building",
+    "newExampleCn": "搅拌好的水泥已经被吊到楼上了"
+  },
+  {
+    "wordId": "ceremony",
+    "word": "ceremony",
+    "oldExample": "What the old headmaster said at the graduation ceremony dwells in my mind",
+    "newExampleCn": "老校长在毕业典礼上说的话一直萦绕在我心头。"
+  },
+  {
+    "wordId": "chain",
+    "word": "chain",
+    "oldExample": "She wore a silver chain around her neck",
+    "newExampleCn": "她脖子上戴着一条银链子"
+  },
+  {
+    "wordId": "challenge",
+    "word": "challenge",
+    "oldExample": "He challenged me to play another tennis game",
+    "newExampleCn": "他向我挑战，要再打一场网球。"
+  },
+  {
+    "wordId": "champion",
+    "word": "champion",
+    "oldExample": "As the defending champion, she is expected to reach the final",
+    "newExampleCn": "作为卫冕冠军，她有望进入决赛"
+  },
+  {
+    "wordId": "chance",
+    "word": "chance",
+    "oldExample": "Her testimony works against his chance of winning the case",
+    "newExampleCn": "她的证词不利于他赢得这场官司。"
+  },
+  {
+    "wordId": "change",
+    "word": "change",
+    "oldExample": "All our previous ideas are now in the melting pot, which means our jobs are bound to change radically",
+    "newExampleCn": "我们以前所有的想法现在都在重新酝酿之中，这意味着我们的工作必然会发生根本性的变化。"
+  },
+  {
+    "wordId": "channel",
+    "word": "channel",
+    "oldExample": "The English Channel is between France and England",
+    "newExampleCn": "英吉利海峡位于法国和英格兰之间"
+  },
+  {
+    "wordId": "chapter",
+    "word": "chapter",
+    "oldExample": "Steamboat travel opened a new chapter in America's exploration of the west",
+    "newExampleCn": "汽船旅行开启了美国西部探索的新篇章"
+  }
+]

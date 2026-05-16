@@ -1,0 +1,590 @@
+[
+  {
+    "wordId": "assess",
+    "word": "assess",
+    "oldExample": "We will assess the damage caused by the flood",
+    "newExampleCn": "我们将评估洪水造成的损失。"
+  },
+  {
+    "wordId": "assign",
+    "word": "assign",
+    "oldExample": "It is not possible to assign this building an exact date",
+    "newExampleCn": "无法给这座建筑确定一个确切的年代"
+  },
+  {
+    "wordId": "assignment",
+    "word": "assignment",
+    "oldExample": "A brave fighter never shrinks from danger when executing an assignment",
+    "newExampleCn": "勇敢的战士在执行任务时从不畏惧危险"
+  },
+  {
+    "wordId": "assist",
+    "word": "assist",
+    "oldExample": "A team of nurses assisted the doctor in performing the operation",
+    "newExampleCn": "一队护士协助医生进行了手术"
+  },
+  {
+    "wordId": "assistant",
+    "word": "assistant",
+    "oldExample": "Her assistant was accused of theft and fraud by the police",
+    "newExampleCn": "她的助手被警方指控盗窃和欺诈。"
+  },
+  {
+    "wordId": "association",
+    "word": "association",
+    "oldExample": "Have you ever joined the parent teacher association?",
+    "newExampleCn": "你加入过家长教师协会吗？"
+  },
+  {
+    "wordId": "assure",
+    "word": "assure",
+    "oldExample": "I can assure you of the reliability of the news",
+    "newExampleCn": "我可以向你保证这条消息的可靠性"
+  },
+  {
+    "wordId": "astonish",
+    "word": "astonish",
+    "oldExample": "We were astonished to hear that their football team had won the championship",
+    "newExampleCn": "听说他们的足球队赢得了冠军，我们都感到很惊讶。"
+  },
+  {
+    "wordId": "astronaut",
+    "word": "astronaut",
+    "oldExample": "An american astronaut is begining a year-long trip in space",
+    "newExampleCn": "一名美国宇航员正开始为期一年的太空之旅"
+  },
+  {
+    "wordId": "athlete",
+    "word": "athlete",
+    "oldExample": "The boy first showed promise as an athlete in primary school",
+    "newExampleCn": "这个男孩在小学时就初次展现出了运动员的潜力。"
+  },
+  {
+    "wordId": "atlantic",
+    "word": "atlantic",
+    "oldExample": "The Atlantic coast is within sight of the hotel",
+    "newExampleCn": "从酒店可以看到大西洋海岸。"
+  },
+  {
+    "wordId": "atmosphere",
+    "word": "atmosphere",
+    "oldExample": "The approaching examination created a tense atmosphere on the campus",
+    "newExampleCn": "即将到来的考试让校园里的气氛变得紧张。"
+  },
+  {
+    "wordId": "atom",
+    "word": "atom",
+    "oldExample": "An molecule of water is made up of two atoms of hydrogen and one atom of oxygen",
+    "newExampleCn": "一个水分子由两个氢原子和一个氧原子组成"
+  },
+  {
+    "wordId": "attach",
+    "word": "attach",
+    "oldExample": "China will not attach itself to any big power",
+    "newExampleCn": "中国不会依附于任何大国"
+  },
+  {
+    "wordId": "attack",
+    "word": "attack",
+    "oldExample": "The police are launching a major attack on drug dealers",
+    "newExampleCn": "警方正在对毒贩发起大规模打击。"
+  },
+  {
+    "wordId": "attain",
+    "word": "attain",
+    "oldExample": "Great efforts are needed before we can attain our goal",
+    "newExampleCn": "我们需要付出巨大努力，才能实现目标。"
+  },
+  {
+    "wordId": "attempt",
+    "word": "attempt",
+    "oldExample": "He studied hard in an attempt to pass the exam",
+    "newExampleCn": "他努力学习，试图通过考试。"
+  },
+  {
+    "wordId": "attend",
+    "word": "attend",
+    "oldExample": "A large number of people attended her birthday party",
+    "newExampleCn": "很多人参加了她的生日派对"
+  },
+  {
+    "wordId": "attract",
+    "word": "attract",
+    "oldExample": "She was attracted by the novel advertisement",
+    "newExampleCn": "她被那则新颖的广告吸引了"
+  },
+  {
+    "wordId": "attribute",
+    "word": "attribute",
+    "oldExample": "David attributed his company success to the unity of the staff and their persevering hard word",
+    "newExampleCn": "大卫把公司的成功归功于员工的团结和坚持不懈的努力。"
+  },
+  {
+    "wordId": "australia",
+    "word": "australia",
+    "oldExample": "Australia is the hometown of kangaroos",
+    "newExampleCn": "澳大利亚是袋鼠的故乡"
+  },
+  {
+    "wordId": "authority",
+    "word": "authority",
+    "oldExample": "The government is the highest authority in a country",
+    "newExampleCn": "政府是一个国家的最高权力机构"
+  },
+  {
+    "wordId": "auto",
+    "word": "auto",
+    "oldExample": "The auto industry has brought many people to Detroit",
+    "newExampleCn": "汽车行业吸引了很多人来到底特律"
+  },
+  {
+    "wordId": "auxiliary",
+    "word": "auxiliary",
+    "oldExample": "When there is a power shortage, they count on the auxiliary power supply",
+    "newExampleCn": "电力短缺时，他们依靠备用电源。"
+  },
+  {
+    "wordId": "available",
+    "word": "available",
+    "oldExample": "Water and electric hookups are available and facilities are good",
+    "newExampleCn": "这里有水电接口，设施也很好。"
+  },
+  {
+    "wordId": "avenue",
+    "word": "avenue",
+    "oldExample": "One of the world's most beautiful avenues is the Champs-Élysées in Paris",
+    "newExampleCn": "世界上最美丽的大街之一是巴黎的香榭丽舍大街"
+  },
+  {
+    "wordId": "aviation",
+    "word": "aviation",
+    "oldExample": "He was a pilot in the early days of aviation",
+    "newExampleCn": "他是航空业早期的一名飞行员"
+  },
+  {
+    "wordId": "avoid",
+    "word": "avoid",
+    "oldExample": "He'll look for any excuse to avoid doing the dishes",
+    "newExampleCn": "他会找各种借口逃避洗碗。"
+  },
+  {
+    "wordId": "await",
+    "word": "await",
+    "oldExample": "If you are lucky enough to vacation in the Alps, what delights will await you!",
+    "newExampleCn": "如果你有幸去阿尔卑斯山度假，将会有多少美妙的体验等着你啊！"
+  },
+  {
+    "wordId": "award",
+    "word": "award",
+    "oldExample": "The novice writer is especially thrilled with this award",
+    "newExampleCn": "这位新手作家对获得这个奖感到格外激动。"
+  },
+  {
+    "wordId": "ax",
+    "word": "ax",
+    "oldExample": "He cut a hole through the wall with an ax",
+    "newExampleCn": "他用斧头在墙上砍了一个洞"
+  },
+  {
+    "wordId": "axis",
+    "word": "axis",
+    "oldExample": "The earth's axis is the line between the North and the South Poles",
+    "newExampleCn": "地轴是连接北极和南极的那条线。"
+  },
+  {
+    "wordId": "background",
+    "word": "background",
+    "oldExample": "He is a man with a special cultural background",
+    "newExampleCn": "他是一个有着特殊文化背景的人"
+  },
+  {
+    "wordId": "bacteria",
+    "word": "bacteria",
+    "oldExample": "Bacteria in drinking water have spread the illness",
+    "newExampleCn": "饮用水中的细菌传播了这种疾病"
+  },
+  {
+    "wordId": "badminton",
+    "word": "badminton",
+    "oldExample": "Badminton can be played by two or four people",
+    "newExampleCn": "羽毛球可以由两个人或四个人一起打"
+  },
+  {
+    "wordId": "baggage",
+    "word": "baggage",
+    "oldExample": "We may have lost some pieces of baggage, so we want to make a lost-baggage report",
+    "newExampleCn": "我们可能丢了几件行李，所以想提交一份行李遗失报告"
+  },
+  {
+    "wordId": "bake",
+    "word": "bake",
+    "oldExample": "The bread is baking in the oven",
+    "newExampleCn": "面包正在烤箱里烘烤。"
+  },
+  {
+    "wordId": "band",
+    "word": "band",
+    "oldExample": "The band will play on request",
+    "newExampleCn": "乐队会应邀演奏。"
+  },
+  {
+    "wordId": "banner",
+    "word": "banner",
+    "oldExample": "Banners demanding an immediate ceasefire are flying in the city's main square",
+    "newExampleCn": "要求立即停火的横幅在城市主广场上飘扬。"
+  },
+  {
+    "wordId": "bar",
+    "word": "bar",
+    "oldExample": "A bar of chocolate is enough to stop his crying",
+    "newExampleCn": "一块巧克力就足以让他不哭了"
+  },
+  {
+    "wordId": "barber",
+    "word": "barber",
+    "oldExample": "He asked the barber to crop his hair short",
+    "newExampleCn": "他让理发师把他的头发剪短。"
+  },
+  {
+    "wordId": "bark",
+    "word": "bark",
+    "oldExample": "Barking dogs seldom bite",
+    "newExampleCn": "爱叫的狗很少咬人"
+  },
+  {
+    "wordId": "barn",
+    "word": "barn",
+    "oldExample": "The cows were feeding on hay in the barn",
+    "newExampleCn": "奶牛在谷仓里吃干草。"
+  },
+  {
+    "wordId": "barrel",
+    "word": "barrel",
+    "oldExample": "The wine is aged in oak barrels",
+    "newExampleCn": "葡萄酒在橡木桶中陈酿。"
+  },
+  {
+    "wordId": "barrier",
+    "word": "barrier",
+    "oldExample": "Lack of confidence is the biggest barrier to the improvement of your English",
+    "newExampleCn": "缺乏自信是你提高英语水平的最大障碍"
+  },
+  {
+    "wordId": "basic",
+    "word": "basic",
+    "oldExample": "The government increased prices on some basic commodities like meat and dairy products",
+    "newExampleCn": "政府提高了一些基本商品的价格，比如肉类和乳制品。"
+  },
+  {
+    "wordId": "basin",
+    "word": "basin",
+    "oldExample": "This basin is made of iron",
+    "newExampleCn": "这个盆是铁做的"
+  },
+  {
+    "wordId": "bat",
+    "word": "bat",
+    "oldExample": "I want to buy a new cricket bat",
+    "newExampleCn": "我想买一根新的板球球棒"
+  },
+  {
+    "wordId": "bath",
+    "word": "bath",
+    "oldExample": "He has a cold bath every day",
+    "newExampleCn": "他每天洗冷水澡"
+  },
+  {
+    "wordId": "battery",
+    "word": "battery",
+    "oldExample": "You can charge your car battery at this car park",
+    "newExampleCn": "你可以在这个停车场给汽车电池充电"
+  },
+  {
+    "wordId": "battle",
+    "word": "battle",
+    "oldExample": "Life is a battle from cradle to grave",
+    "newExampleCn": "人生从摇篮到坟墓就是一场战斗"
+  },
+  {
+    "wordId": "beach",
+    "word": "beach",
+    "oldExample": "They walked along the beach, talking and laughing",
+    "newExampleCn": "他们沿着海滩一边走，一边说笑。"
+  },
+  {
+    "wordId": "beam",
+    "word": "beam",
+    "oldExample": "The beam of the searchlights flooded the sky over the airport",
+    "newExampleCn": "探照灯的光束照亮了机场上空。"
+  },
+  {
+    "wordId": "bean",
+    "word": "bean",
+    "oldExample": "A bean grows rapidly",
+    "newExampleCn": "豆子长得很快"
+  },
+  {
+    "wordId": "bear",
+    "word": "bear",
+    "oldExample": "The bear is a large heavy animal with thick fur",
+    "newExampleCn": "熊是一种体型庞大、身体笨重、长着厚厚皮毛的动物。"
+  },
+  {
+    "wordId": "beast",
+    "word": "beast",
+    "oldExample": "The hunters blocked up the den of the beast",
+    "newExampleCn": "猎人们堵住了那头野兽的巢穴。"
+  },
+  {
+    "wordId": "beat",
+    "word": "beat",
+    "oldExample": "If we don't prepare for the debate, they will beat us",
+    "newExampleCn": "如果我们不为辩论做准备，他们会打败我们。"
+  },
+  {
+    "wordId": "beautiful",
+    "word": "beautiful",
+    "oldExample": "Looking at a beautiful painting always gives one satisfaction",
+    "newExampleCn": "欣赏一幅美丽的画总能让人感到满足。"
+  },
+  {
+    "wordId": "beef",
+    "word": "beef",
+    "oldExample": "Do you like stewed beef?",
+    "newExampleCn": "你喜欢炖牛肉吗？"
+  },
+  {
+    "wordId": "beggar",
+    "word": "beggar",
+    "oldExample": "He tossed the beggar a handful of coins",
+    "newExampleCn": "他随手扔给乞丐一把硬币"
+  },
+  {
+    "wordId": "behalf",
+    "word": "behalf",
+    "oldExample": "The president signed the document on behalf of the school",
+    "newExampleCn": "校长代表学校签署了这份文件"
+  },
+  {
+    "wordId": "behave",
+    "word": "behave",
+    "oldExample": "The children must behave in a way which would be socially acceptable",
+    "newExampleCn": "孩子们的行为必须符合社会规范。"
+  },
+  {
+    "wordId": "belief",
+    "word": "belief",
+    "oldExample": "His firmness in his belief supported him through difficulties",
+    "newExampleCn": "他对信念的坚定支撑他渡过了难关"
+  },
+  {
+    "wordId": "bell",
+    "word": "bell",
+    "oldExample": "I was roused by the sound of the bell this morning",
+    "newExampleCn": "今天早上我被铃声吵醒了"
+  },
+  {
+    "wordId": "belong",
+    "word": "belong",
+    "oldExample": "Russia a major oil exportor, but does not belong to OPEC",
+    "newExampleCn": "俄罗斯是主要石油出口国，但不属于欧佩克。"
+  },
+  {
+    "wordId": "beloved",
+    "word": "beloved",
+    "oldExample": "This safari park is beloved by tourists from all parts of the globe",
+    "newExampleCn": "这座野生动物园深受来自世界各地游客的喜爱"
+  },
+  {
+    "wordId": "belt",
+    "word": "belt",
+    "oldExample": "A belt of trees grew between the two fields",
+    "newExampleCn": "两块田地之间长着一带树木。"
+  },
+  {
+    "wordId": "bench",
+    "word": "bench",
+    "oldExample": "An old man sat on the park bench and fed the pigeons",
+    "newExampleCn": "一位老人坐在公园长椅上喂鸽子。"
+  },
+  {
+    "wordId": "bend",
+    "word": "bend",
+    "oldExample": "He bent his walking direction toward me",
+    "newExampleCn": "他改变了行走方向，朝我走来"
+  },
+  {
+    "wordId": "benefit",
+    "word": "benefit",
+    "oldExample": "A large number of students will benefit from the new teaching method",
+    "newExampleCn": "许多学生将从新的教学方法中受益"
+  },
+  {
+    "wordId": "berry",
+    "word": "berry",
+    "oldExample": "The berry is nutritious and has a sweetish taste",
+    "newExampleCn": "这种浆果营养丰富，味道微甜。"
+  },
+  {
+    "wordId": "bet",
+    "word": "bet",
+    "oldExample": "I bet our team will win",
+    "newExampleCn": "我敢打赌我们队会赢"
+  },
+  {
+    "wordId": "betray",
+    "word": "betray",
+    "oldExample": "They have promised never to betray the organization",
+    "newExampleCn": "他们承诺永远不会背叛这个组织"
+  },
+  {
+    "wordId": "bible",
+    "word": "Bible",
+    "oldExample": "The Bible begins with the Genesis. 圣经的开篇是创世记",
+    "newExampleCn": "《圣经》的开篇是《创世记》。"
+  },
+  {
+    "wordId": "bind",
+    "word": "bind",
+    "oldExample": "Love rules without a sword and binds without a chord",
+    "newExampleCn": "爱无需刀剑便能统治，无需绳索便能束缚。"
+  },
+  {
+    "wordId": "biology",
+    "word": "biology",
+    "oldExample": "Biology is the study of living things",
+    "newExampleCn": "生物学是研究生物的学科"
+  },
+  {
+    "wordId": "biscuit",
+    "word": "biscuit",
+    "oldExample": "He had some biscuits before the dinner",
+    "newExampleCn": "晚饭前他吃了几块饼干。"
+  },
+  {
+    "wordId": "bite",
+    "word": "bite",
+    "oldExample": "The mosquitoes are biting me",
+    "newExampleCn": "蚊子在咬我"
+  },
+  {
+    "wordId": "bitter",
+    "word": "bitter",
+    "oldExample": "The medicine has a bitter taste",
+    "newExampleCn": "这药有苦味"
+  },
+  {
+    "wordId": "blade",
+    "word": "blade",
+    "oldExample": "The blades of the electric fan are covered with dust",
+    "newExampleCn": "电风扇的叶片上满是灰尘"
+  },
+  {
+    "wordId": "blame",
+    "word": "blame",
+    "oldExample": "Bad workmen often blame their tools",
+    "newExampleCn": "拙劣的工匠常常怪罪工具不好"
+  },
+  {
+    "wordId": "blanket",
+    "word": "blanket",
+    "oldExample": "She huddled herself in the blanket",
+    "newExampleCn": "她用毯子把自己裹了起来"
+  },
+  {
+    "wordId": "blast",
+    "word": "blast",
+    "oldExample": "It's thought that the blast occurred when volatile chemicals exploded.",
+    "newExampleCn": "人们认为，爆炸是在挥发性化学品爆炸时发生的。"
+  },
+  {
+    "wordId": "blend",
+    "word": "blend",
+    "oldExample": "His manner was a blend of friendliness and respect",
+    "newExampleCn": "他的态度既友好又尊重人。"
+  },
+  {
+    "wordId": "bless",
+    "word": "bless",
+    "oldExample": "It is more blessed to give than to receive",
+    "newExampleCn": "施比受更有福"
+  },
+  {
+    "wordId": "block",
+    "word": "block",
+    "oldExample": "Walk two blocks down the street and go pass the city hall",
+    "newExampleCn": "沿着这条街走两个街区，然后经过市政厅。"
+  },
+  {
+    "wordId": "bloom",
+    "word": "bloom",
+    "oldExample": "The apple trees are out of bloom",
+    "newExampleCn": "苹果树已经谢花了"
+  },
+  {
+    "wordId": "blossom",
+    "word": "blossom",
+    "oldExample": "The tree was covered with beautiful pink blossom",
+    "newExampleCn": "那棵树开满了美丽的粉色花朵"
+  },
+  {
+    "wordId": "blow",
+    "word": "blow",
+    "oldExample": "Now, Peter, make a wish and blow out the candles",
+    "newExampleCn": "现在，彼得，许个愿，然后吹灭蜡烛。"
+  },
+  {
+    "wordId": "boast",
+    "word": "boast",
+    "oldExample": "Nobody should boast of his knowledge",
+    "newExampleCn": "任何人都不应该炫耀自己的知识"
+  },
+  {
+    "wordId": "boil",
+    "word": "boil",
+    "oldExample": "The watched pot never boils 性急烧水不沸",
+    "newExampleCn": "心急水不开"
+  },
+  {
+    "wordId": "bolt",
+    "word": "bolt",
+    "oldExample": "We need an eye bold to fit this valve",
+    "newExampleCn": "我们需要一个适合这个阀门的吊环螺栓。"
+  },
+  {
+    "wordId": "bomb",
+    "word": "bomb",
+    "oldExample": "The terrorist planted a bomb in the post office",
+    "newExampleCn": "恐怖分子在邮局安放了一枚炸弹"
+  },
+  {
+    "wordId": "bond",
+    "word": "bond",
+    "oldExample": "A company issues a bond to collect money and will pay back with interest",
+    "newExampleCn": "一家公司发行债券来筹集资金，并会连本带息偿还。"
+  },
+  {
+    "wordId": "boot",
+    "word": "boot",
+    "oldExample": "My foot won't go into this boot",
+    "newExampleCn": "我的脚穿不进这只靴子"
+  },
+  {
+    "wordId": "booth",
+    "word": "booth",
+    "oldExample": "Would you please watch over my booth?请照料一下我的摊位号码？",
+    "newExampleCn": "你能帮我照看一下我的摊位吗？"
+  },
+  {
+    "wordId": "border",
+    "word": "border",
+    "oldExample": "The border incident led to the war between the two countries",
+    "newExampleCn": "那起边境事件导致两国之间爆发了战争"
+  },
+  {
+    "wordId": "boss",
+    "word": "boss",
+    "oldExample": "The boss always makes them work overtime without pay",
+    "newExampleCn": "老板总是让他们无偿加班"
+  }
+]

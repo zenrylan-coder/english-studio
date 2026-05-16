@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "list",
+    "word": "list",
+    "oldExample": "The results are listed in numerical order",
+    "newExampleCn": "结果按数字顺序列出"
+  },
+  {
+    "wordId": "literature",
+    "word": "literature",
+    "oldExample": "Literature stands related to men as science stands to nature",
+    "newExampleCn": "文学之于人，犹如科学之于自然。"
+  },
+  {
+    "wordId": "load",
+    "word": "load",
+    "oldExample": "The lorry was carrying a load of pineapples",
+    "newExampleCn": "那辆卡车载着一车菠萝。"
+  },
+  {
+    "wordId": "loaf",
+    "word": "loaf",
+    "oldExample": "Half a loaf is better than no bread 聊胜于无",
+    "newExampleCn": "半块面包总比没有面包好"
+  },
+  {
+    "wordId": "local",
+    "word": "local",
+    "oldExample": "He provided local delicacies for his guests.他用当地的美味佳肴来招待客人",
+    "newExampleCn": "他用当地美食招待客人。"
+  },
+  {
+    "wordId": "locate",
+    "word": "locate",
+    "oldExample": "The new hospital will be located near college",
+    "newExampleCn": "新医院将位于大学附近"
+  },
+  {
+    "wordId": "locomotive",
+    "word": "locomotive",
+    "oldExample": "The locomotive is detached from the train",
+    "newExampleCn": "机车与列车分离了"
+  },
+  {
+    "wordId": "lodge",
+    "word": "lodge",
+    "oldExample": "Where we lodge is the problem",
+    "newExampleCn": "我们住在哪儿是个问题"
+  },
+  {
+    "wordId": "log",
+    "word": "log",
+    "oldExample": "A log got in his way as he drove",
+    "newExampleCn": "他开车时，一根木头挡住了他的路。"
+  },
+  {
+    "wordId": "logic",
+    "word": "logic",
+    "oldExample": "Socrates laied the foundations of logic",
+    "newExampleCn": "苏格拉底奠定了逻辑学的基础"
+  },
+  {
+    "wordId": "loosen",
+    "word": "loosen",
+    "oldExample": "My belt is too tight. I must loosen it",
+    "newExampleCn": "我的腰带太紧了，我得把它松一松。"
+  },
+  {
+    "wordId": "lord",
+    "word": "lord",
+    "oldExample": "The yound lord with the red gold hair bowed, \"As you command, Lord Edword.\"",
+    "newExampleCn": "那位有着红金色头发的年轻领主鞠了一躬，说，遵命，爱德华大人。"
+  },
+  {
+    "wordId": "lorry",
+    "word": "lorry",
+    "oldExample": "A heavy lorry is floundering in deep snow",
+    "newExampleCn": "一辆重型卡车在厚厚的积雪中艰难前行"
+  },
+  {
+    "wordId": "loss",
+    "word": "loss",
+    "oldExample": "They forfeited the business after only two months and with great loss",
+    "newExampleCn": "他们只经营了两个月就放弃了这桩生意，损失惨重。"
+  },
+  {
+    "wordId": "loudspeaker",
+    "word": "loudspeaker",
+    "oldExample": "The loudspeaker announced each airplane as it landed at the airport",
+    "newExampleCn": "机场的扩音器播报每架飞机的降落信息。"
+  },
+  {
+    "wordId": "lover",
+    "word": "lover",
+    "oldExample": "He and his wife are both great lovers of drama",
+    "newExampleCn": "他和妻子都非常喜爱戏剧。"
+  },
+  {
+    "wordId": "luggage",
+    "word": "luggage",
+    "oldExample": "I've just been informed that my luggage had already arrived",
+    "newExampleCn": "我刚被告知我的行李已经到了。"
+  },
+  {
+    "wordId": "lumber",
+    "word": "lumber",
+    "oldExample": "Forested areas have been expanding every year, with the amount of increase in standing timber greater than that of the felled lumber",
+    "newExampleCn": "森林面积每年都在扩大，活立木的增加量超过了砍伐木材的数量。"
+  },
+  {
+    "wordId": "luxury",
+    "word": "luxury",
+    "oldExample": "The increasing sales of luxuries are an indication of the country's prosperity",
+    "newExampleCn": "奢侈品销量的不断增长表明这个国家日益繁荣。"
+  },
+  {
+    "wordId": "madam",
+    "word": "madam",
+    "oldExample": "That poor madam has lost all contact with reality",
+    "newExampleCn": "那位可怜的女士已经完全脱离现实了"
+  },
+  {
+    "wordId": "magazine",
+    "word": "magazine",
+    "oldExample": "This magazine has a large circulation",
+    "newExampleCn": "这本杂志发行量很大"
+  },
+  {
+    "wordId": "magic",
+    "word": "magic",
+    "oldExample": "The magician thrilled his audience with his magic",
+    "newExampleCn": "魔术师用他的魔术让观众兴奋不已"
+  },
+  {
+    "wordId": "magnet",
+    "word": "magnet",
+    "oldExample": "He picked all the pins up with a magnet",
+    "newExampleCn": "他用磁铁把所有大头针都吸了起来"
+  },
+  {
+    "wordId": "magnificent",
+    "word": "magnificent",
+    "oldExample": "The king lived in this magnificent palace",
+    "newExampleCn": "国王住在这座宏伟的宫殿里。"
+  },
+  {
+    "wordId": "maid",
+    "word": "maid",
+    "oldExample": "Those people looked at me like I was just a maid",
+    "newExampleCn": "那些人看我的眼神，好像我只是个女佣。"
+  },
+  {
+    "wordId": "mail",
+    "word": "mail",
+    "oldExample": "She opened her mail and took out a vase carefully",
+    "newExampleCn": "她打开邮件，小心地拿出一个花瓶。"
+  },
+  {
+    "wordId": "mainland",
+    "word": "mainland",
+    "oldExample": "Hawaii and Alaska are not on the mainland of the United States",
+    "newExampleCn": "夏威夷和阿拉斯加不在美国本土。"
+  },
+  {
+    "wordId": "maintain",
+    "word": "maintain",
+    "oldExample": "It is absolutely vital that food supplies should be maintained",
+    "newExampleCn": "维持食品供应绝对至关重要"
+  },
+  {
+    "wordId": "major",
+    "word": "major",
+    "oldExample": "She majored in international economy at university",
+    "newExampleCn": "她大学主修国际经济。"
+  },
+  {
+    "wordId": "manage",
+    "word": "manage",
+    "oldExample": "From this day on, I will manage all my affairs on my own",
+    "newExampleCn": "从今天起，我会自己处理所有事务。"
+  },
+  {
+    "wordId": "manager",
+    "word": "manager",
+    "oldExample": "She has been promoted to a middle manager",
+    "newExampleCn": "她已经晋升为中层经理"
+  },
+  {
+    "wordId": "manual",
+    "word": "manual",
+    "oldExample": "The maintenance manual gives diagrams and instructions for repairing your car",
+    "newExampleCn": "维修手册提供了修理汽车的图示和说明。"
+  },
+  {
+    "wordId": "marble",
+    "word": "marble",
+    "oldExample": "They used marble to build the steps",
+    "newExampleCn": "他们用大理石修建台阶"
+  },
+  {
+    "wordId": "margin",
+    "word": "margin",
+    "oldExample": "There is no margin for error in our plan",
+    "newExampleCn": "我们的计划不容有失。"
+  },
+  {
+    "wordId": "marine",
+    "word": "marine",
+    "oldExample": "It is true that a lot of people like marine plants as their food",
+    "newExampleCn": "确实有很多人喜欢把海洋植物当作食物。"
+  },
+  {
+    "wordId": "mark",
+    "word": "mark",
+    "oldExample": "It is dangerous to swim beyond this mark",
+    "newExampleCn": "游过这个标记很危险"
+  },
+  {
+    "wordId": "market",
+    "word": "market",
+    "oldExample": "The market is experiencing depression at the moment",
+    "newExampleCn": "市场目前正处于萧条状态"
+  },
+  {
+    "wordId": "marry",
+    "word": "marry",
+    "oldExample": "It is easier to marry than to divorce",
+    "newExampleCn": "结婚容易，离婚难"
+  },
+  {
+    "wordId": "marxism",
+    "word": "Marxism",
+    "oldExample": "The essence of Marxism is seeking truth from facts",
+    "newExampleCn": "马克思主义的精髓是实事求是"
+  },
+  {
+    "wordId": "master",
+    "word": "master",
+    "oldExample": "They are able to master the situation",
+    "newExampleCn": "他们能够掌控局面"
+  },
+  {
+    "wordId": "mat",
+    "word": "mat",
+    "oldExample": "I wiped my shoes on the mat before I came in",
+    "newExampleCn": "进来之前，我在垫子上擦了擦鞋底。"
+  },
+  {
+    "wordId": "match",
+    "word": "match",
+    "oldExample": "A high standard of play marked the match between the two teams",
+    "newExampleCn": "两队之间的比赛水平很高。"
+  },
+  {
+    "wordId": "mate",
+    "word": "mate",
+    "oldExample": "Many animals mate in the spring",
+    "newExampleCn": "许多动物在春天交配"
+  },
+  {
+    "wordId": "material",
+    "word": "material",
+    "oldExample": "There is singer material among these young girls",
+    "newExampleCn": "这些年轻女孩中有当歌手的料。"
+  },
+  {
+    "wordId": "materialism",
+    "word": "materialism",
+    "oldExample": "Both of them believed in Marxism and materialism",
+    "newExampleCn": "他们两人都信仰马克思主义和唯物主义"
+  },
+  {
+    "wordId": "maths",
+    "word": "maths",
+    "oldExample": "The teacher will test us in maths",
+    "newExampleCn": "老师会考我们数学。"
+  },
+  {
+    "wordId": "matter",
+    "word": "matter",
+    "oldExample": "He reconsidered his decision on the matter because something unexpected happened",
+    "newExampleCn": "因为发生了意想不到的事，他重新考虑了自己在这件事上的决定"
+  },
+  {
+    "wordId": "mature",
+    "word": "mature",
+    "oldExample": "You are a mature man now, you are no longer a boy",
+    "newExampleCn": "你现在是个成熟的男人了，不再是男孩了。"
+  },
+  {
+    "wordId": "maximum",
+    "word": "maximum",
+    "oldExample": "The maximum load for this truck is ten tons",
+    "newExampleCn": "这辆卡车的最大载重量是十吨"
+  },
+  {
+    "wordId": "mayor",
+    "word": "mayor",
+    "oldExample": "The mayor is determined to clean up the city",
+    "newExampleCn": "市长决心整治这座城市"
+  },
+  {
+    "wordId": "meadow",
+    "word": "meadow",
+    "oldExample": "The children ran free across the meadow",
+    "newExampleCn": "孩子们在草地上自由奔跑"
+  },
+  {
+    "wordId": "mean",
+    "word": "mean",
+    "oldExample": "The professor asked the students to take 200 values and calculate the mean",
+    "newExampleCn": "教授要求学生取200个数值并计算平均值"
+  },
+  {
+    "wordId": "measure",
+    "word": "measure",
+    "oldExample": "Measure this impedance, and you can measure how much it has rained",
+    "newExampleCn": "测量这个阻抗，你就能测出下了多少雨。"
+  },
+  {
+    "wordId": "mechanic",
+    "word": "mechanic",
+    "oldExample": "This car has broken down again. I have to ring the mechanic",
+    "newExampleCn": "这辆车又坏了。我得给修车师傅打电话。"
+  },
+  {
+    "wordId": "mechanics",
+    "word": "mechanics",
+    "oldExample": "He is studying the mechanics and now is learning all the parts of an engine",
+    "newExampleCn": "他在学习机械学，现在正在学习发动机的所有部件。"
+  },
+  {
+    "wordId": "medal",
+    "word": "medal",
+    "oldExample": "It was an unbelievable moment when Victoria won the gold medal",
+    "newExampleCn": "维多利亚赢得金牌的那一刻令人难以置信。"
+  },
+  {
+    "wordId": "mediterranean",
+    "word": "Mediterranean",
+    "oldExample": "This dish is a cross between Asian and Mediterranean food",
+    "newExampleCn": "这道菜融合了亚洲风味和地中海风味。"
+  },
+  {
+    "wordId": "medium",
+    "word": "medium",
+    "oldExample": "The president's speech was broadcast through the medium of television",
+    "newExampleCn": "总统的演讲通过电视这一媒介播出。"
+  },
+  {
+    "wordId": "meeting",
+    "word": "meeting",
+    "oldExample": "I have written down the date of the next meeting in my diary",
+    "newExampleCn": "我已经把下次会议的日期记在日记本里了"
+  },
+  {
+    "wordId": "melon",
+    "word": "melon",
+    "oldExample": "We garnished the melon with strawberries",
+    "newExampleCn": "我们用草莓装饰了甜瓜。"
+  },
+  {
+    "wordId": "melt",
+    "word": "melt",
+    "oldExample": "Iron melts at a great heat",
+    "newExampleCn": "铁在高温下会熔化"
+  },
+  {
+    "wordId": "member",
+    "word": "member",
+    "oldExample": "Yesterday, there was a meeting between OPEC member Saudi Arabia and non-member Russia",
+    "newExampleCn": "昨天，欧佩克成员国沙特阿拉伯和非成员国俄罗斯举行了一次会议。"
+  },
+  {
+    "wordId": "memorial",
+    "word": "memorial",
+    "oldExample": "A memorial for victims of the blast was built",
+    "newExampleCn": "为爆炸遇难者建了一座纪念碑"
+  },
+  {
+    "wordId": "mend",
+    "word": "mend",
+    "oldExample": "It won't take long to mend the car",
+    "newExampleCn": "修好这辆车不会花太久。"
+  },
+  {
+    "wordId": "mention",
+    "word": "mention",
+    "oldExample": "As for that film you mentioned, not my scene",
+    "newExampleCn": "至于你提到的那部电影，不是我的菜"
+  },
+  {
+    "wordId": "menu",
+    "word": "menu",
+    "oldExample": "He called the waiter to bring the menu",
+    "newExampleCn": "他叫服务员拿菜单来。"
+  },
+  {
+    "wordId": "merchant",
+    "word": "merchant",
+    "oldExample": "The merchant decided to use camels to carry his goods across the desert",
+    "newExampleCn": "那位商人决定用骆驼把货物运过沙漠。"
+  },
+  {
+    "wordId": "mercury",
+    "word": "mercury",
+    "oldExample": "The mercury stood at nearly 40 degrees C",
+    "newExampleCn": "温度计显示接近40摄氏度。"
+  },
+  {
+    "wordId": "mess",
+    "word": "mess",
+    "oldExample": "Your books and magazines are all in a mess; go and put them in order.",
+    "newExampleCn": "你的书和杂志乱七八糟的，去把它们整理好。"
+  },
+  {
+    "wordId": "messenger",
+    "word": "messenger",
+    "oldExample": "The messenger brought you a note today",
+    "newExampleCn": "信使今天给你带来了一张便条"
+  },
+  {
+    "wordId": "metal",
+    "word": "metal",
+    "oldExample": "A gust of wind pried loose a section of sheet metal roofing",
+    "newExampleCn": "一阵大风掀松了一块金属板屋顶"
+  },
+  {
+    "wordId": "method",
+    "word": "method",
+    "oldExample": "New methods of teaching foreign languages are adopted in this institute",
+    "newExampleCn": "这所学院采用了新的外语教学方法。"
+  },
+  {
+    "wordId": "microcomputer",
+    "word": "microcomputer",
+    "oldExample": "A newly devised microcomputer can act as a guide for a blind person",
+    "newExampleCn": "一种新设计的微型计算机可以为盲人充当向导。"
+  },
+  {
+    "wordId": "microphone",
+    "word": "microphone",
+    "oldExample": "Unfortunately, I didn't have a microphone at the time to record us.",
+    "newExampleCn": "可惜我当时没有麦克风来录下我们的声音。"
+  },
+  {
+    "wordId": "microscope",
+    "word": "microscope",
+    "oldExample": "The optical microscope magnifies the object a thousand times",
+    "newExampleCn": "光学显微镜把物体放大一千倍"
+  },
+  {
+    "wordId": "might",
+    "word": "might",
+    "oldExample": "We fear the military might of the enemy",
+    "newExampleCn": "我们害怕敌人的军事实力"
+  },
+  {
+    "wordId": "mild",
+    "word": "mild",
+    "oldExample": "The weather is mild today. It is neither hot nor cold",
+    "newExampleCn": "今天天气很温和，不冷也不热。"
+  },
+  {
+    "wordId": "military",
+    "word": "military",
+    "oldExample": "According to the constitution of the country, all the young men should do a year's military service",
+    "newExampleCn": "根据该国宪法，所有年轻男子都应服一年兵役。"
+  },
+  {
+    "wordId": "milk",
+    "word": "milk",
+    "oldExample": "I am boiling the milk",
+    "newExampleCn": "我正在煮牛奶"
+  },
+  {
+    "wordId": "mill",
+    "word": "mill",
+    "oldExample": "Corn is ground into flour in a mill",
+    "newExampleCn": "玉米在磨坊里被磨成面粉"
+  },
+  {
+    "wordId": "mine",
+    "word": "mine",
+    "oldExample": "The mine was closed owing to exhaustion",
+    "newExampleCn": "由于资源枯竭，这座矿井被关闭了"
+  },
+  {
+    "wordId": "mineral",
+    "word": "mineral",
+    "oldExample": "China is rich in mineral resources",
+    "newExampleCn": "中国矿产资源丰富"
+  },
+  {
+    "wordId": "minimum",
+    "word": "minimum",
+    "oldExample": "You must get a minimum of 60 questions right to pass the test",
+    "newExampleCn": "你必须至少答对60道题才能通过考试。"
+  },
+  {
+    "wordId": "minister",
+    "word": "minister",
+    "oldExample": "The minister can only act in this matter with the sanction of parliament",
+    "newExampleCn": "部长在这个问题上只能在议会批准后采取行动"
+  },
+  {
+    "wordId": "minor",
+    "word": "minor",
+    "oldExample": "My major is English, but I also have a minor in history.",
+    "newExampleCn": "我的主修专业是英语，但我还辅修历史。"
+  },
+  {
+    "wordId": "minus",
+    "word": "minus",
+    "oldExample": "The temperature is minus ten degrees now",
+    "newExampleCn": "现在气温是零下十度。"
+  },
+  {
+    "wordId": "mislead",
+    "word": "mislead",
+    "oldExample": "A description about a product should not mislead the consumers",
+    "newExampleCn": "产品描述不应误导消费者"
+  },
+  {
+    "wordId": "miss",
+    "word": "miss",
+    "oldExample": "The woman missed her baby dreadfully",
+    "newExampleCn": "这个女人非常想念她的宝宝"
+  },
+  {
+    "wordId": "missile",
+    "word": "missile",
+    "oldExample": "A hand-grenade is a missile weapon 手榴弹是一种投掷武器",
+    "newExampleCn": "手榴弹是一种投掷武器"
+  },
+  {
+    "wordId": "mission",
+    "word": "mission",
+    "oldExample": "He has been on confidential missions to Berlin",
+    "newExampleCn": "他曾多次执行前往柏林的秘密任务"
+  },
+  {
+    "wordId": "mist",
+    "word": "mist",
+    "oldExample": "She could hardly recognize her son from her mist of tears",
+    "newExampleCn": "泪眼朦胧中，她几乎认不出自己的儿子。"
+  },
+  {
+    "wordId": "mistake",
+    "word": "mistake",
+    "oldExample": "I may have made a mistake in that regard",
+    "newExampleCn": "在那方面我可能犯了个错误"
+  },
+  {
+    "wordId": "mistress",
+    "word": "mistress",
+    "oldExample": "Our wife is duty; our mistress is honor",
+    "newExampleCn": "我们的妻子是责任，我们的情妇是荣誉。"
+  },
+  {
+    "wordId": "mixture",
+    "word": "mixture",
+    "oldExample": "her new play is mixture of sadness and humour",
+    "newExampleCn": "她的新剧融合了悲伤与幽默。"
+  },
+  {
+    "wordId": "mobile",
+    "word": "mobile",
+    "oldExample": "The mobile phone business actually was the company's bread and butter",
+    "newExampleCn": "手机业务其实曾是这家公司的主要收入来源"
+  },
+  {
+    "wordId": "mode",
+    "word": "mode",
+    "oldExample": "This fever will return from time to time if it follows its usual mode",
+    "newExampleCn": "如果这种发烧按通常的模式发展，就会时不时复发。"
+  },
+  {
+    "wordId": "model",
+    "word": "model",
+    "oldExample": "After a brief spell as a model, she got into singing",
+    "newExampleCn": "短暂做过一段时间模特后，她开始从事歌唱事业。"
+  },
+  {
+    "wordId": "moderate",
+    "word": "moderate",
+    "oldExample": "The wind was strong all day, but it moderated in the evening",
+    "newExampleCn": "风刮了一整天都很大，但到了晚上减弱了。"
+  },
+  {
+    "wordId": "modify",
+    "word": "modify",
+    "oldExample": "We have to modify our plan a little bit",
+    "newExampleCn": "我们得稍微修改一下计划。"
+  },
+  {
+    "wordId": "moist",
+    "word": "moist",
+    "oldExample": "His eyes were moist with tears",
+    "newExampleCn": "他的眼里噙满了泪水"
+  }
+]

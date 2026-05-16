@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "polish",
+    "word": "polish",
+    "oldExample": "Silver can be easily polished with this special cloth",
+    "newExampleCn": "银器可以用这块特殊的布轻松擦亮。"
+  },
+  {
+    "wordId": "political",
+    "word": "political",
+    "oldExample": "The British political system has evolved over several centuries",
+    "newExampleCn": "英国的政治制度经过了几个世纪的演变。"
+  },
+  {
+    "wordId": "politics",
+    "word": "politics",
+    "oldExample": "He closed down the business and went into politics",
+    "newExampleCn": "他关掉了生意，转而从政。"
+  },
+  {
+    "wordId": "pollution",
+    "word": "pollution",
+    "oldExample": "Wastewater from the factory is the main cause of pollution in local rivers",
+    "newExampleCn": "工厂排放的废水是当地河流污染的主要原因。"
+  },
+  {
+    "wordId": "pond",
+    "word": "pond",
+    "oldExample": "The dear lowered its head to drink from the pond",
+    "newExampleCn": "鹿低下头在池塘边喝水"
+  },
+  {
+    "wordId": "pop",
+    "word": "pop",
+    "oldExample": "The radio has fed him a stream of pop songs",
+    "newExampleCn": "收音机一直给他播放一连串流行歌曲"
+  },
+  {
+    "wordId": "population",
+    "word": "population",
+    "oldExample": "There is a stable increase in population of this city",
+    "newExampleCn": "这座城市的人口正在稳定增长"
+  },
+  {
+    "wordId": "porch",
+    "word": "porch",
+    "oldExample": "A pigeon perched on our porch railing 一只鸽子栖息在我们门廊的栏杆上",
+    "newExampleCn": "一只鸽子停在我们门廊的栏杆上"
+  },
+  {
+    "wordId": "pork",
+    "word": "pork",
+    "oldExample": "The little girl only eats lean pork",
+    "newExampleCn": "这个小女孩只吃瘦猪肉"
+  },
+  {
+    "wordId": "porridge",
+    "word": "porridge",
+    "oldExample": "She spooned out bowls of porridge",
+    "newExampleCn": "她舀出一碗碗粥"
+  },
+  {
+    "wordId": "port",
+    "word": "port",
+    "oldExample": "The boy often watched the boats return to port in the late afternoon",
+    "newExampleCn": "那个男孩常常在傍晚看着船只返回港口"
+  },
+  {
+    "wordId": "portable",
+    "word": "portable",
+    "oldExample": "The new portale computers are selling like hot cakes",
+    "newExampleCn": "新款便携式电脑卖得很火。"
+  },
+  {
+    "wordId": "portrait",
+    "word": "portrait",
+    "oldExample": "Her portrait hangs in the lobby of the library",
+    "newExampleCn": "她的肖像挂在图书馆大厅里"
+  },
+  {
+    "wordId": "portuguese",
+    "word": "Portuguese",
+    "oldExample": "The Portuguese power in the East was on the wane",
+    "newExampleCn": "葡萄牙在东方的势力正在衰落"
+  },
+  {
+    "wordId": "possess",
+    "word": "possess",
+    "oldExample": "She was possessed by the desire to be rich",
+    "newExampleCn": "她一心渴望变得富有"
+  },
+  {
+    "wordId": "postage",
+    "word": "postage",
+    "oldExample": "What is the postage for an airmail letter",
+    "newExampleCn": "寄一封航空信的邮费是多少？"
+  },
+  {
+    "wordId": "postpone",
+    "word": "postpone",
+    "oldExample": "The match was postponed from March the 5th to March the 19th",
+    "newExampleCn": "比赛从3月5日推迟到了3月19日"
+  },
+  {
+    "wordId": "pot",
+    "word": "pot",
+    "oldExample": "Will you help me wash up all these pots and pans?",
+    "newExampleCn": "你能帮我把这些锅碗瓢盆都洗了吗？"
+  },
+  {
+    "wordId": "potato",
+    "word": "potato",
+    "oldExample": "This salad is made up of apple, pear, potato and celery",
+    "newExampleCn": "这道沙拉由苹果、梨、土豆和芹菜做成。"
+  },
+  {
+    "wordId": "potential",
+    "word": "potential",
+    "oldExample": "She showed great potential as an actress",
+    "newExampleCn": "她展现出了成为一名优秀演员的巨大潜力"
+  },
+  {
+    "wordId": "pour",
+    "word": "pour",
+    "oldExample": "Tears poured from her eyes",
+    "newExampleCn": "泪水从她眼中夺眶而出"
+  },
+  {
+    "wordId": "power",
+    "word": "power",
+    "oldExample": "A person should rely upon his or her own power",
+    "newExampleCn": "一个人应该依靠自己的力量"
+  },
+  {
+    "wordId": "practical",
+    "word": "practical",
+    "oldExample": "He is very practical. He can make or mend almost anything",
+    "newExampleCn": "他很务实，几乎什么东西都会做，也会修。"
+  },
+  {
+    "wordId": "praise",
+    "word": "praise",
+    "oldExample": "American reviewers are lavish in their praise of this movie",
+    "newExampleCn": "美国影评人对这部电影赞不绝口。"
+  },
+  {
+    "wordId": "precise",
+    "word": "precise",
+    "oldExample": "A lawyer needs a precise mind",
+    "newExampleCn": "律师需要缜密的头脑"
+  },
+  {
+    "wordId": "predict",
+    "word": "predict",
+    "oldExample": "It is virtually impossible to predict the future accurately",
+    "newExampleCn": "几乎不可能准确预测未来。"
+  },
+  {
+    "wordId": "preference",
+    "word": "preference",
+    "oldExample": "A teacher should not show preference for any one of his or her students",
+    "newExampleCn": "老师不应该偏袒任何一个学生"
+  },
+  {
+    "wordId": "prejudice",
+    "word": "prejudice",
+    "oldExample": "A judge must be free from prejudice",
+    "newExampleCn": "法官必须不带偏见。"
+  },
+  {
+    "wordId": "premier",
+    "word": "premier",
+    "oldExample": "The premier deals with important state affairs",
+    "newExampleCn": "总理处理重要的国家事务"
+  },
+  {
+    "wordId": "prepare",
+    "word": "prepare",
+    "oldExample": "The defence lawyer asked for another week to prepare for their case",
+    "newExampleCn": "辩护律师要求再给一周时间来准备他们的案件。"
+  },
+  {
+    "wordId": "preposition",
+    "word": "preposition",
+    "oldExample": "You should cross out this preposition in the sentence",
+    "newExampleCn": "你应该把句子里的这个介词划掉"
+  },
+  {
+    "wordId": "preserve",
+    "word": "preserve",
+    "oldExample": "It is the duty of the police to preserve public order",
+    "newExampleCn": "维护公共秩序是警察的职责"
+  },
+  {
+    "wordId": "president",
+    "word": "president",
+    "oldExample": "When the president of the country retired, the vice-president was elevated to his position",
+    "newExampleCn": "当这个国家的总统退休后，副总统被提升到了他的职位。"
+  },
+  {
+    "wordId": "press",
+    "word": "press",
+    "oldExample": "The power of the press is very great",
+    "newExampleCn": "新闻界的力量非常强大"
+  },
+  {
+    "wordId": "pressure",
+    "word": "pressure",
+    "oldExample": "We will never capitulate to pressure from outside",
+    "newExampleCn": "我们绝不会屈服于外部压力"
+  },
+  {
+    "wordId": "pretend",
+    "word": "pretend",
+    "oldExample": "The children pretended to be different animals and danced to the music",
+    "newExampleCn": "孩子们假装成不同的动物，随着音乐跳舞。"
+  },
+  {
+    "wordId": "pretty",
+    "word": "pretty",
+    "oldExample": "All the pretty mowen wore their smartest dresses",
+    "newExampleCn": "所有漂亮的女人都穿上了最漂亮的裙子"
+  },
+  {
+    "wordId": "prevail",
+    "word": "prevail",
+    "oldExample": "Truth will ultimately prevail",
+    "newExampleCn": "真相终将胜出"
+  },
+  {
+    "wordId": "prevent",
+    "word": "prevent",
+    "oldExample": "Scientists are trying to find ways to prevent the disease from spreading",
+    "newExampleCn": "科学家们正在努力寻找防止这种疾病传播的方法。"
+  },
+  {
+    "wordId": "priest",
+    "word": "priest",
+    "oldExample": "The priest persuaded him to give up his bad habit",
+    "newExampleCn": "牧师劝他改掉坏习惯"
+  },
+  {
+    "wordId": "primary",
+    "word": "primary",
+    "oldExample": "The primary cause of his failure was his underestimation of the enemy",
+    "newExampleCn": "他失败的主要原因是低估了敌人"
+  },
+  {
+    "wordId": "prince",
+    "word": "prince",
+    "oldExample": "The prince fell in love with a fair young maiden",
+    "newExampleCn": "王子爱上了一位美丽的年轻少女"
+  },
+  {
+    "wordId": "princess",
+    "word": "princess",
+    "oldExample": "The princess was ostracised for marrying a rich bourgeois man. 公主因与一位富有的资本家结婚而遭到排挤",
+    "newExampleCn": "公主因嫁给一位富有的资产阶级男子而遭到排斥"
+  },
+  {
+    "wordId": "principal",
+    "word": "principal",
+    "oldExample": "He is going to resign from the position of principal",
+    "newExampleCn": "他将辞去校长职务。"
+  },
+  {
+    "wordId": "principle",
+    "word": "principle",
+    "oldExample": "A bicycle and a motorcycle are built on the same principle",
+    "newExampleCn": "自行车和摩托车的构造原理相同"
+  },
+  {
+    "wordId": "print",
+    "word": "print",
+    "oldExample": "Print these words in Italics across the top of the page",
+    "newExampleCn": "把这些字用斜体印在页面顶部。"
+  },
+  {
+    "wordId": "prison",
+    "word": "prison",
+    "oldExample": "Many people believe that prison isn't a cure for crime",
+    "newExampleCn": "许多人认为监狱并不能解决犯罪问题"
+  },
+  {
+    "wordId": "privilege",
+    "word": "privilege",
+    "oldExample": "The privilege was abused",
+    "newExampleCn": "这项特权被滥用了"
+  },
+  {
+    "wordId": "prize",
+    "word": "prize",
+    "oldExample": "We prize honor above money",
+    "newExampleCn": "我们珍视荣誉胜过金钱"
+  },
+  {
+    "wordId": "problem",
+    "word": "problem",
+    "oldExample": "Heavy traffic poses a big problem in many big cities",
+    "newExampleCn": "交通拥堵在许多大城市是个大问题"
+  },
+  {
+    "wordId": "procedure",
+    "word": "procedure",
+    "oldExample": "The new work procedure is a great improvement on the old one",
+    "newExampleCn": "新的工作流程比旧的有了很大改进"
+  },
+  {
+    "wordId": "proceed",
+    "word": "proceed",
+    "oldExample": "The conference proceeded in a very friendly atmosphere",
+    "newExampleCn": "会议在非常友好的气氛中进行。"
+  },
+  {
+    "wordId": "process",
+    "word": "process",
+    "oldExample": "They went over every process again, but couldn't find the cause of the problem",
+    "newExampleCn": "他们又检查了一遍每个流程，但还是找不到问题的原因。"
+  },
+  {
+    "wordId": "proclaim",
+    "word": "proclaim",
+    "oldExample": "His accent proclaimed that he was an American",
+    "newExampleCn": "他的口音表明他是美国人"
+  },
+  {
+    "wordId": "product",
+    "word": "product",
+    "oldExample": "A series of technical issues delayed the launch of the new product",
+    "newExampleCn": "一系列技术问题推迟了新产品的发布。"
+  },
+  {
+    "wordId": "productive",
+    "word": "productive",
+    "oldExample": "Once the plants have produced fruit, they become less productive",
+    "newExampleCn": "一旦这些植物结了果，它们的产量就会下降。"
+  },
+  {
+    "wordId": "profession",
+    "word": "profession",
+    "oldExample": "The medical profession requires a strong sense of responsibility",
+    "newExampleCn": "医疗行业需要很强的责任感"
+  },
+  {
+    "wordId": "professor",
+    "word": "professor",
+    "oldExample": "Our professor is learned man with great insight",
+    "newExampleCn": "我们的教授是一位学识渊博、很有见地的人。"
+  },
+  {
+    "wordId": "progress",
+    "word": "progress",
+    "oldExample": "The building of the largest bridge across a river in that country is in progress",
+    "newExampleCn": "该国最大跨河大桥的建设正在进行中"
+  },
+  {
+    "wordId": "prohibit",
+    "word": "prohibit",
+    "oldExample": "Smoking is strictly prohibited in the process of handling explosive materials",
+    "newExampleCn": "处理爆炸物品过程中严禁吸烟"
+  },
+  {
+    "wordId": "project",
+    "word": "project",
+    "oldExample": "It is an elaborate project that applies to many purposes",
+    "newExampleCn": "这是一个精心设计的项目，适用于多种用途。"
+  },
+  {
+    "wordId": "promise",
+    "word": "promise",
+    "oldExample": "I hope you'll keep your promise to come for a long visit",
+    "newExampleCn": "我希望你能信守承诺，来长住一段时间。"
+  },
+  {
+    "wordId": "prompt",
+    "word": "prompt",
+    "oldExample": "What prompted you to do such a thing?",
+    "newExampleCn": "是什么促使你做出这样的事？"
+  },
+  {
+    "wordId": "pronoun",
+    "word": "pronoun",
+    "oldExample": "He always put stress on the pronoun",
+    "newExampleCn": "他总是重读那个代词"
+  },
+  {
+    "wordId": "pronounce",
+    "word": "pronounce",
+    "oldExample": "Did I pronounce your name correctly?",
+    "newExampleCn": "我把你的名字读对了吗？"
+  },
+  {
+    "wordId": "proof",
+    "word": "proof",
+    "oldExample": "Have you got any proof that you own his handbag?",
+    "newExampleCn": "你有什么证据证明这个手提包是你的吗？"
+  },
+  {
+    "wordId": "proportion",
+    "word": "proportion",
+    "oldExample": "This door is very narrow in proportion to its height",
+    "newExampleCn": "这扇门相对于它的高度来说很窄。"
+  },
+  {
+    "wordId": "proposal",
+    "word": "proposal",
+    "oldExample": "The proposal of new terms for a peace treaty has been put forward",
+    "newExampleCn": "关于和平条约新条款的提议已经被提出。"
+  },
+  {
+    "wordId": "propose",
+    "word": "propose",
+    "oldExample": "They proposed that a new school should be set up in the suburbs",
+    "newExampleCn": "他们提议在郊区建一所新学校"
+  },
+  {
+    "wordId": "prospect",
+    "word": "prospect",
+    "oldExample": "There is not much prospect of his being elected as a congressman",
+    "newExampleCn": "他当选国会议员的可能性不大"
+  },
+  {
+    "wordId": "prosperity",
+    "word": "prosperity",
+    "oldExample": "The empire was on the wane after its period of prosperity. 帝国在经历繁盛之后逐渐衰落",
+    "newExampleCn": "帝国在经历繁荣时期后逐渐衰落"
+  },
+  {
+    "wordId": "protect",
+    "word": "protect",
+    "oldExample": "We have to do what it takes to protect our parks and protect our planet for generations to come",
+    "newExampleCn": "我们必须尽一切努力保护我们的公园，保护我们的地球，造福子孙后代。"
+  },
+  {
+    "wordId": "protein",
+    "word": "protein",
+    "oldExample": "You need more protein to build you up",
+    "newExampleCn": "你需要摄入更多蛋白质来增强体质"
+  },
+  {
+    "wordId": "protest",
+    "word": "protest",
+    "oldExample": "The diners protested about the bad service at the restaurant",
+    "newExampleCn": "用餐者抗议餐厅的服务太差。"
+  },
+  {
+    "wordId": "prove",
+    "word": "prove",
+    "oldExample": "He has proved his loyalty in the battle",
+    "newExampleCn": "他在战斗中证明了自己的忠诚。"
+  },
+  {
+    "wordId": "provide",
+    "word": "provide",
+    "oldExample": "The hotel provides a reservation of tickets for its residents",
+    "newExampleCn": "这家酒店为住客提供订票服务。"
+  },
+  {
+    "wordId": "provision",
+    "word": "provision",
+    "oldExample": "Provision of shelter was the Red Cross's main concern for the disaster victims",
+    "newExampleCn": "为灾民提供住所是红十字会最关心的事。"
+  },
+  {
+    "wordId": "publish",
+    "word": "publish",
+    "oldExample": "News of the pop star's sudden death was not published for several days",
+    "newExampleCn": "这位流行歌星突然去世的消息几天后才被公布。"
+  },
+  {
+    "wordId": "pudding",
+    "word": "pudding",
+    "oldExample": "Let the pudding chill for an hour",
+    "newExampleCn": "让布丁冷藏一个小时"
+  },
+  {
+    "wordId": "puff",
+    "word": "puff",
+    "oldExample": "Don't puff cigarette smoke in my face",
+    "newExampleCn": "别把香烟烟雾喷到我脸上"
+  },
+  {
+    "wordId": "pull",
+    "word": "pull",
+    "oldExample": "They pulled the boat towards the light house",
+    "newExampleCn": "他们把船拉向灯塔。"
+  },
+  {
+    "wordId": "pump",
+    "word": "pump",
+    "oldExample": "At the farm, there was a old-fashioned pump for drawing water from a well",
+    "newExampleCn": "农场里有一个老式水泵，用来从井里抽水。"
+  },
+  {
+    "wordId": "punch",
+    "word": "punch",
+    "oldExample": "Spectators cheered at his knockout punch 观众为他击倒对手的一拳而喝彩",
+    "newExampleCn": "观众为他击倒对手的一拳而喝彩"
+  },
+  {
+    "wordId": "punishment",
+    "word": "punishment",
+    "oldExample": "Punishment had very little effect on him",
+    "newExampleCn": "惩罚对他几乎没有什么作用"
+  },
+  {
+    "wordId": "pupil",
+    "word": "pupil",
+    "oldExample": "As a girl, she had been a model pupil",
+    "newExampleCn": "她小时候曾是个模范学生"
+  },
+  {
+    "wordId": "puppet",
+    "word": "puppet",
+    "oldExample": "Are we the puppets of fate?",
+    "newExampleCn": "我们是命运的傀儡吗？"
+  },
+  {
+    "wordId": "purchase",
+    "word": "purchase",
+    "oldExample": "The new couple spent some money for the purchase of the furniture necessary for their new house",
+    "newExampleCn": "这对新婚夫妇花了一些钱购买新房所需的家具。"
+  },
+  {
+    "wordId": "purify",
+    "word": "purify",
+    "oldExample": "They opened the windows to purify the air of the room",
+    "newExampleCn": "他们打开窗户来净化房间里的空气"
+  },
+  {
+    "wordId": "purple",
+    "word": "purple",
+    "oldExample": "That girl liked to wear purple dresses",
+    "newExampleCn": "那个女孩喜欢穿紫色连衣裙"
+  },
+  {
+    "wordId": "purpose",
+    "word": "purpose",
+    "oldExample": "Their purpose is to build a fair society and a strong economy",
+    "newExampleCn": "他们的目标是建设一个公平的社会和强大的经济。"
+  },
+  {
+    "wordId": "purse",
+    "word": "purse",
+    "oldExample": "The lost of her purse caused her much inconvenience",
+    "newExampleCn": "她丢了钱包，给她带来了很多不便。"
+  },
+  {
+    "wordId": "pursue",
+    "word": "pursue",
+    "oldExample": "Why should we even have to decide whether to pursue truth",
+    "newExampleCn": "我们为什么还要决定是否追求真理？"
+  },
+  {
+    "wordId": "puzzle",
+    "word": "puzzle",
+    "oldExample": "He is puzzled about the matter",
+    "newExampleCn": "他对这件事感到困惑。"
+  },
+  {
+    "wordId": "qualify",
+    "word": "qualify",
+    "oldExample": "His knowledge and skill qualify him for the job",
+    "newExampleCn": "他的知识和技能使他胜任这份工作"
+  },
+  {
+    "wordId": "quality",
+    "word": "quality",
+    "oldExample": "It is a bad year for films in terms of quality rather than quantity",
+    "newExampleCn": "就电影质量而言，这一年很糟糕，问题不在数量上。"
+  },
+  {
+    "wordId": "quantity",
+    "word": "quantity",
+    "oldExample": "Our company is more concerned with quality than with quantity",
+    "newExampleCn": "我们公司更注重质量，而不是数量。"
+  },
+  {
+    "wordId": "quarrel",
+    "word": "quarrel",
+    "oldExample": "We had a quarrel about the price",
+    "newExampleCn": "我们因为价格吵了一架"
+  },
+  {
+    "wordId": "queen",
+    "word": "queen",
+    "oldExample": "They were bowing as the king and the queen walked in. 当国王和王后进来时，他们屈膝致敬",
+    "newExampleCn": "国王和王后走进来时，他们都在鞠躬致敬。"
+  },
+  {
+    "wordId": "queue",
+    "word": "queue",
+    "oldExample": "We should join the queue inside the bank",
+    "newExampleCn": "我们应该在银行里面排队"
+  },
+  {
+    "wordId": "quilt",
+    "word": "quilt",
+    "oldExample": "If you air your quilt on such a wet day, it'll soak up the moisture",
+    "newExampleCn": "如果你在这么潮湿的天晒被子，它会吸收湿气。"
+  }
+]

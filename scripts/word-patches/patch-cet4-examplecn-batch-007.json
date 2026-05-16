@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "drift",
+    "word": "drift",
+    "oldExample": "The dead body drifted ashore on the beach",
+    "newExampleCn": "那具尸体漂到了海滩岸边"
+  },
+  {
+    "wordId": "drill",
+    "word": "drill",
+    "oldExample": "The Saudi government has announced plans to drill for water in the desert",
+    "newExampleCn": "沙特政府宣布计划在沙漠中钻探取水。"
+  },
+  {
+    "wordId": "drink",
+    "word": "drink",
+    "oldExample": "It is harmful to your health to drink too much",
+    "newExampleCn": "喝太多酒对你的健康有害"
+  },
+  {
+    "wordId": "drip",
+    "word": "drip",
+    "oldExample": "Be careful. Your paintbrush is dripping",
+    "newExampleCn": "小心点，你的画笔在滴颜料。"
+  },
+  {
+    "wordId": "drop",
+    "word": "drop",
+    "oldExample": "In the winter, the temperature often drops below freezing",
+    "newExampleCn": "冬天，气温经常降到零度以下。"
+  },
+  {
+    "wordId": "drought",
+    "word": "drought",
+    "oldExample": "Many areas in Africa have suffered severe drought this year",
+    "newExampleCn": "今年非洲许多地区遭受了严重干旱"
+  },
+  {
+    "wordId": "drown",
+    "word": "drown",
+    "oldExample": "She attempted to drown herself in the river",
+    "newExampleCn": "她试图在河里溺水自杀。"
+  },
+  {
+    "wordId": "drum",
+    "word": "drum",
+    "oldExample": "The drum beats were steady and slow",
+    "newExampleCn": "鼓声平稳而缓慢"
+  },
+  {
+    "wordId": "drunk",
+    "word": "drunk",
+    "oldExample": "He was obviously drunk",
+    "newExampleCn": "他显然喝醉了"
+  },
+  {
+    "wordId": "due",
+    "word": "due",
+    "oldExample": "If you are going to the library, would you mind returning this book for me? It's due today",
+    "newExampleCn": "如果你要去图书馆，能帮我还一下这本书吗？今天到期。"
+  },
+  {
+    "wordId": "dump",
+    "word": "dump",
+    "oldExample": "Some people just dumped their rubbish in the river",
+    "newExampleCn": "有些人直接把垃圾倒进了河里"
+  },
+  {
+    "wordId": "durable",
+    "word": "durable",
+    "oldExample": "Some parts of the machine have to be made from durable materials",
+    "newExampleCn": "这台机器的一些部件必须用耐用的材料制成"
+  },
+  {
+    "wordId": "dusk",
+    "word": "dusk",
+    "oldExample": "The street lights go on at dusk",
+    "newExampleCn": "街灯在黄昏时亮起。"
+  },
+  {
+    "wordId": "dust",
+    "word": "dust",
+    "oldExample": "The mirror is covered with a film of dust",
+    "newExampleCn": "镜子上蒙了一层灰尘"
+  },
+  {
+    "wordId": "duty",
+    "word": "duty",
+    "oldExample": "I feel it my duty to speak frankly to you",
+    "newExampleCn": "我觉得有责任坦率地跟你说。"
+  },
+  {
+    "wordId": "dwelling",
+    "word": "dwelling",
+    "oldExample": "He has changed his dwelling recently",
+    "newExampleCn": "他最近换了住处。"
+  },
+  {
+    "wordId": "dye",
+    "word": "dye",
+    "oldExample": "My roommate has dyed her hair red. It looks so unnatural",
+    "newExampleCn": "我的室友把头发染成了红色，看起来很不自然。"
+  },
+  {
+    "wordId": "each",
+    "word": "each",
+    "oldExample": "They each have their own dream",
+    "newExampleCn": "他们每个人都有自己的梦想"
+  },
+  {
+    "wordId": "eagle",
+    "word": "eagle",
+    "oldExample": "The eagle dive down on the rabbit",
+    "newExampleCn": "鹰俯冲下来扑向兔子"
+  },
+  {
+    "wordId": "earn",
+    "word": "earn",
+    "oldExample": "He has earned a lot of money this month",
+    "newExampleCn": "他这个月赚了很多钱"
+  },
+  {
+    "wordId": "earthquake",
+    "word": "earthquake",
+    "oldExample": "Several countries in Eastern Europe are counting the losses caused by yesterday's earthquake",
+    "newExampleCn": "东欧几个国家正在统计昨天地震造成的损失。"
+  },
+  {
+    "wordId": "eastern",
+    "word": "eastern",
+    "oldExample": "The eastern situation is similarly intense",
+    "newExampleCn": "东部的局势同样紧张"
+  },
+  {
+    "wordId": "echo",
+    "word": "echo",
+    "oldExample": "The cathedral is echoing with joynous hymns",
+    "newExampleCn": "大教堂里回荡着欢乐的赞美诗。"
+  },
+  {
+    "wordId": "economy",
+    "word": "economy",
+    "oldExample": "As the war debt lightened, the economy of the country developed quickly",
+    "newExampleCn": "随着战争债务减轻，这个国家的经济迅速发展。"
+  },
+  {
+    "wordId": "edge",
+    "word": "edge",
+    "oldExample": "Look out! You could fall off the edge here",
+    "newExampleCn": "小心！你在这里可能会从边缘掉下去。"
+  },
+  {
+    "wordId": "editor",
+    "word": "editor",
+    "oldExample": "She gave the editor a dishonest account of this event",
+    "newExampleCn": "她向编辑不诚实地讲述了这件事。"
+  },
+  {
+    "wordId": "education",
+    "word": "education",
+    "oldExample": "A good education gives your child a good start in life",
+    "newExampleCn": "良好的教育能让你的孩子在人生中有一个好的起点。"
+  },
+  {
+    "wordId": "effective",
+    "word": "effective",
+    "oldExample": "These are effective measures",
+    "newExampleCn": "这些是有效的措施"
+  },
+  {
+    "wordId": "efficient",
+    "word": "efficient",
+    "oldExample": "These new coffee machine is more efficient than the old one",
+    "newExampleCn": "这些新咖啡机比旧款效率更高"
+  },
+  {
+    "wordId": "effort",
+    "word": "effort",
+    "oldExample": "Our effects were unveiling",
+    "newExampleCn": "我们的努力正在显现成效"
+  },
+  {
+    "wordId": "elect",
+    "word": "elect",
+    "oldExample": "They organized a poll to elect a president",
+    "newExampleCn": "他们组织了一次投票来选举总统"
+  },
+  {
+    "wordId": "electron",
+    "word": "electron",
+    "oldExample": "Electrons are negatively charged with electricity",
+    "newExampleCn": "电子带负电荷"
+  },
+  {
+    "wordId": "electronics",
+    "word": "electronics",
+    "oldExample": "That country wants to increase tariffs on items such as electronics",
+    "newExampleCn": "那个国家想提高电子产品等商品的关税"
+  },
+  {
+    "wordId": "element",
+    "word": "element",
+    "oldExample": "Both hydrogen and oxygen are elements",
+    "newExampleCn": "氢和氧都是元素"
+  },
+  {
+    "wordId": "elementary",
+    "word": "elementary",
+    "oldExample": "Their course of study includes elementary hygiene and medical theories",
+    "newExampleCn": "他们的学习课程包括基础卫生知识和医学理论。"
+  },
+  {
+    "wordId": "elephant",
+    "word": "elephant",
+    "oldExample": "A specific attribute of the elephant is its long trunk",
+    "newExampleCn": "大象的一个独特特征是它长长的鼻子。"
+  },
+  {
+    "wordId": "elevator",
+    "word": "elevator",
+    "oldExample": "Her job is to operate an elevator",
+    "newExampleCn": "她的工作是操作电梯"
+  },
+  {
+    "wordId": "emerge",
+    "word": "emerge",
+    "oldExample": "The sun emerged from behind the clouds",
+    "newExampleCn": "太阳从云后露了出来"
+  },
+  {
+    "wordId": "emergency",
+    "word": "emergency",
+    "oldExample": "He has the ability to keep calm in emergencies",
+    "newExampleCn": "他有在紧急情况下保持冷静的能力"
+  },
+  {
+    "wordId": "emit",
+    "word": "emit",
+    "oldExample": "The tail exhaust pipe of the car emitted poisonous smoke",
+    "newExampleCn": "汽车的尾气管排出了有毒烟雾"
+  },
+  {
+    "wordId": "emperor",
+    "word": "emperor",
+    "oldExample": "The emperor unified the country by the sword",
+    "newExampleCn": "这位皇帝用武力统一了国家"
+  },
+  {
+    "wordId": "empire",
+    "word": "empire",
+    "oldExample": "The empire had for years been falling into decadence",
+    "newExampleCn": "这个帝国多年来一直在走向衰落。"
+  },
+  {
+    "wordId": "employ",
+    "word": "employ",
+    "oldExample": "They employ casual labor to pick the fruit",
+    "newExampleCn": "他们雇用临时工采摘水果"
+  },
+  {
+    "wordId": "enable",
+    "word": "enable",
+    "oldExample": "This dictionary will enable you to understand English words",
+    "newExampleCn": "这本词典能帮助你理解英语单词"
+  },
+  {
+    "wordId": "enclose",
+    "word": "enclose",
+    "oldExample": "The writer's house is enclosed by a wall",
+    "newExampleCn": "这位作家的房子被一堵墙围着。"
+  },
+  {
+    "wordId": "encounter",
+    "word": "encounter",
+    "oldExample": "The more dangerous we encounter, the harder should we push forward",
+    "newExampleCn": "我们遇到的危险越多，就越应该奋力前进。"
+  },
+  {
+    "wordId": "encourage",
+    "word": "encourage",
+    "oldExample": "Her success encouraged me to try the same thing",
+    "newExampleCn": "她的成功鼓励我也尝试做同样的事。"
+  },
+  {
+    "wordId": "enemy",
+    "word": "enemy",
+    "oldExample": "Disease is an enemy of mankind",
+    "newExampleCn": "疾病是人类的敌人"
+  },
+  {
+    "wordId": "energy",
+    "word": "energy",
+    "oldExample": "The majority of the energy we consume comes from fossil fuel energy sources",
+    "newExampleCn": "我们消耗的大部分能源来自化石燃料能源。"
+  },
+  {
+    "wordId": "enforce",
+    "word": "enforce",
+    "oldExample": "The police are there to enforce the law",
+    "newExampleCn": "警察在那里是为了执法。"
+  },
+  {
+    "wordId": "engineer",
+    "word": "engineer",
+    "oldExample": "Each engineer needs to be in touch with the entire engineering department",
+    "newExampleCn": "每位工程师都需要与整个工程部门保持联系。"
+  },
+  {
+    "wordId": "engineering",
+    "word": "engineering",
+    "oldExample": "The percentage of girls in engineering has increased in recent years",
+    "newExampleCn": "近年来，工科女生的比例有所上升"
+  },
+  {
+    "wordId": "enlarge",
+    "word": "enlarge",
+    "oldExample": "This photograph probably won't enlarge well",
+    "newExampleCn": "这张照片放大后效果可能不会好"
+  },
+  {
+    "wordId": "enter",
+    "word": "enter",
+    "oldExample": "Please knock on the door before you enter",
+    "newExampleCn": "进去之前请先敲门"
+  },
+  {
+    "wordId": "entertain",
+    "word": "entertain",
+    "oldExample": "This television program is designed to educate and to entertain as well",
+    "newExampleCn": "这个电视节目旨在寓教于乐。"
+  },
+  {
+    "wordId": "entitle",
+    "word": "entitle",
+    "oldExample": "This ticket entitles you to one-day admission to all three parks",
+    "newExampleCn": "凭这张票，你可以在一天内进入全部三个公园。"
+  },
+  {
+    "wordId": "entrance",
+    "word": "entrance",
+    "oldExample": "I'll meet you at the entrance of the zoo tomorrow",
+    "newExampleCn": "明天我在动物园入口处见你"
+  },
+  {
+    "wordId": "entry",
+    "word": "entry",
+    "oldExample": "He pretended not to observe our entry",
+    "newExampleCn": "他假装没有注意到我们进来。"
+  },
+  {
+    "wordId": "envelope",
+    "word": "envelope",
+    "oldExample": "The surface of the sun is a glowing gas envelope",
+    "newExampleCn": "太阳的表面是一层发光的气体外壳"
+  },
+  {
+    "wordId": "environment",
+    "word": "environment",
+    "oldExample": "An incresing number of people are concerned about the pollution of the environment",
+    "newExampleCn": "越来越多的人开始关注环境污染。"
+  },
+  {
+    "wordId": "equation",
+    "word": "equation",
+    "oldExample": "If you're trying to lose weight in a healthy way, exercise should be part of the equation",
+    "newExampleCn": "如果你想以健康的方式减肥，运动应该是其中的一部分。"
+  },
+  {
+    "wordId": "equip",
+    "word": "equip",
+    "oldExample": "He equipped himself for an expedition to the jungle",
+    "newExampleCn": "他为去丛林探险做好了装备。"
+  },
+  {
+    "wordId": "equipment",
+    "word": "equipment",
+    "oldExample": "We should make better use of the existing equipment",
+    "newExampleCn": "我们应该更好地利用现有设备"
+  },
+  {
+    "wordId": "error",
+    "word": "error",
+    "oldExample": "The accident was caused by human error",
+    "newExampleCn": "这起事故是由人为失误造成的"
+  },
+  {
+    "wordId": "escape",
+    "word": "escape",
+    "oldExample": "To my suprise, he managed to escape from that big fire",
+    "newExampleCn": "令我惊讶的是，他竟然从那场大火中逃了出来。"
+  },
+  {
+    "wordId": "essay",
+    "word": "essay",
+    "oldExample": "This essay represents a considerable improvement on your recent work",
+    "newExampleCn": "这篇文章比你最近的作业有了相当大的进步"
+  },
+  {
+    "wordId": "establish",
+    "word": "establish",
+    "oldExample": "The minister established a commission to suggest improments in the educational system",
+    "newExampleCn": "部长成立了一个委员会，为改进教育制度提出建议。"
+  },
+  {
+    "wordId": "estimate",
+    "word": "estimate",
+    "oldExample": "Now I've realized that my estimate of her character was one-sided",
+    "newExampleCn": "现在我意识到，我对她性格的判断是片面的。"
+  },
+  {
+    "wordId": "european",
+    "word": "European",
+    "oldExample": "The Japanese have taken in many European ways of life",
+    "newExampleCn": "日本人吸收了许多欧洲的生活方式。"
+  },
+  {
+    "wordId": "evaluate",
+    "word": "evaluate",
+    "oldExample": "The research project has only been underway for three months, so it is too early to evaluate its success",
+    "newExampleCn": "这个研究项目才进行了三个月，现在评估它是否成功还为时过早。"
+  },
+  {
+    "wordId": "evaporate",
+    "word": "evaporate",
+    "oldExample": "The pool of water on the playground evaporated in the sun",
+    "newExampleCn": "操场上的那摊水在阳光下蒸发了"
+  },
+  {
+    "wordId": "even",
+    "word": "even",
+    "oldExample": "He won the first round and I won the second, so our scores are even now",
+    "newExampleCn": "他赢了第一轮，我赢了第二轮，所以我们现在比分打平了"
+  },
+  {
+    "wordId": "event",
+    "word": "event",
+    "oldExample": "There will be a fundraising event in the library tomorrow",
+    "newExampleCn": "明天图书馆将举办一场募捐活动"
+  },
+  {
+    "wordId": "evidence",
+    "word": "evidence",
+    "oldExample": "Can you show me any evidence for your statement?",
+    "newExampleCn": "你能给我看一下支持你说法的证据吗？"
+  },
+  {
+    "wordId": "evil",
+    "word": "evil",
+    "oldExample": "Money is thought to be the root cause of all evil",
+    "newExampleCn": "金钱被认为是万恶之源"
+  },
+  {
+    "wordId": "evolve",
+    "word": "evolve",
+    "oldExample": "The developmental history of society tells us that man has evolved from some ancient primates",
+    "newExampleCn": "社会的发展史告诉我们，人类是由某些古代灵长类动物进化而来的。"
+  },
+  {
+    "wordId": "exaggerate",
+    "word": "exaggerate",
+    "oldExample": "A painter may exaggerate or distort shapes and forms",
+    "newExampleCn": "画家可能会夸大或扭曲形状和形态"
+  },
+  {
+    "wordId": "examination",
+    "word": "examination",
+    "oldExample": "Did you have to get through an entrance examination",
+    "newExampleCn": "你必须通过入学考试吗"
+  },
+  {
+    "wordId": "example",
+    "word": "example",
+    "oldExample": "Her diligence has set an example to the others",
+    "newExampleCn": "她的勤奋为其他人树立了榜样。"
+  },
+  {
+    "wordId": "exceed",
+    "word": "exceed",
+    "oldExample": "The driver exceeds the speed limit",
+    "newExampleCn": "司机超速了"
+  },
+  {
+    "wordId": "excellent",
+    "word": "excellent",
+    "oldExample": "She had a high reputation for her excellent detective novels",
+    "newExampleCn": "她因出色的侦探小说而享有很高的声誉。"
+  },
+  {
+    "wordId": "exchange",
+    "word": "exchange",
+    "oldExample": "It seems the exchange rate fluctuates almost daily",
+    "newExampleCn": "汇率似乎几乎每天都在波动"
+  },
+  {
+    "wordId": "exclude",
+    "word": "exclude",
+    "oldExample": "They excluded people under 18 to join the club",
+    "newExampleCn": "他们不允许18岁以下的人加入俱乐部"
+  },
+  {
+    "wordId": "excursion",
+    "word": "excursion",
+    "oldExample": "We went on an excursion to that town",
+    "newExampleCn": "我们去那个小镇游览了一番"
+  },
+  {
+    "wordId": "excuse",
+    "word": "excuse",
+    "oldExample": "There is no excuse for treapassing on private property",
+    "newExampleCn": "擅闯私人领地是没有借口的。"
+  },
+  {
+    "wordId": "execute",
+    "word": "execute",
+    "oldExample": "We can execute the big volume of orders in 20 days",
+    "newExampleCn": "我们可以在20天内完成这批大量订单。"
+  },
+  {
+    "wordId": "exercise",
+    "word": "exercise",
+    "oldExample": "Swimming is probably the best form of exercise you can get",
+    "newExampleCn": "游泳可能是你能做的最好的锻炼方式。"
+  },
+  {
+    "wordId": "exert",
+    "word": "exert",
+    "oldExample": "For college students to do a part-time job, we'll exert a profound influence on their personality and life",
+    "newExampleCn": "大学生做兼职会对他们的性格和生活产生深远影响"
+  },
+  {
+    "wordId": "exhibition",
+    "word": "exhibition",
+    "oldExample": "They are coming to the exhibition as my guests",
+    "newExampleCn": "他们将作为我的客人来参观展览。"
+  },
+  {
+    "wordId": "exist",
+    "word": "exist",
+    "oldExample": "Most scientists believe that water doesn't exist on the surface of the Moon",
+    "newExampleCn": "大多数科学家认为月球表面不存在水"
+  },
+  {
+    "wordId": "exit",
+    "word": "exit",
+    "oldExample": "I was eventually granted an exit visa",
+    "newExampleCn": "我最终获得了出境签证"
+  },
+  {
+    "wordId": "expand",
+    "word": "expand",
+    "oldExample": "Metals expand when they are heated",
+    "newExampleCn": "金属受热会膨胀"
+  },
+  {
+    "wordId": "expect",
+    "word": "expect",
+    "oldExample": "The managers expect exceptional sales growth in the last quarter",
+    "newExampleCn": "经理们预计最后一个季度销售额会大幅增长"
+  },
+  {
+    "wordId": "expense",
+    "word": "expense",
+    "oldExample": "Society should try to save every plant and animal species regardless of the expense",
+    "newExampleCn": "社会应该努力拯救每一种动植物物种，不计代价。"
+  },
+  {
+    "wordId": "experience",
+    "word": "experience",
+    "oldExample": "It was a truly memorible experience",
+    "newExampleCn": "那真是一次难忘的经历"
+  },
+  {
+    "wordId": "experiment",
+    "word": "experiment",
+    "oldExample": "We will have an experiment in the laboratory this afternoon",
+    "newExampleCn": "今天下午我们将在实验室做一个实验。"
+  },
+  {
+    "wordId": "experimental",
+    "word": "experimental",
+    "oldExample": "There is no cure or vaccine, but some patients have been given experimental treatments",
+    "newExampleCn": "目前没有治愈方法或疫苗，但一些患者接受了实验性治疗。"
+  },
+  {
+    "wordId": "explain",
+    "word": "explain",
+    "oldExample": "He explained his plan in detail",
+    "newExampleCn": "他详细解释了他的计划"
+  },
+  {
+    "wordId": "exploit",
+    "word": "exploit",
+    "oldExample": "They plan to exploit oil under the sea",
+    "newExampleCn": "他们计划开采海底石油"
+  },
+  {
+    "wordId": "explore",
+    "word": "explore",
+    "oldExample": "We explore all the possibilities to find the solution",
+    "newExampleCn": "我们探索所有可能性，以找到解决办法。"
+  }
+]

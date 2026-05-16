@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "conquer",
+    "word": "conquer",
+    "oldExample": "To conquer or to die",
+    "newExampleCn": "不成功，便成仁"
+  },
+  {
+    "wordId": "conscious",
+    "word": "conscious",
+    "oldExample": "He was conscious of his guilt",
+    "newExampleCn": "他意识到自己有罪"
+  },
+  {
+    "wordId": "consequence",
+    "word": "consequence",
+    "oldExample": "Your behavior is of no great consequence",
+    "newExampleCn": "你的行为没有什么重大影响"
+  },
+  {
+    "wordId": "conservation",
+    "word": "conservation",
+    "oldExample": "Some accommodation between conservation and tourism is essential. 对自然环境的保护和旅游业之前的相互协调是至关重要的 —— accommodation 除了有住宿还有和解协调的意思",
+    "newExampleCn": "在环境保护和旅游业之间作出一定协调是必不可少的。"
+  },
+  {
+    "wordId": "conservative",
+    "word": "conservative",
+    "oldExample": "The researchers made a conservative estimation of the population of New Delhi",
+    "newExampleCn": "研究人员对新德里的人口做出了保守估计。"
+  },
+  {
+    "wordId": "considerable",
+    "word": "considerable",
+    "oldExample": "It is a considerable sum of money",
+    "newExampleCn": "这是一笔相当可观的钱。"
+  },
+  {
+    "wordId": "consistent",
+    "word": "consistent",
+    "oldExample": "The policies, which will be put into place, are clear and consistent",
+    "newExampleCn": "即将实施的政策清晰且一致。"
+  },
+  {
+    "wordId": "construct",
+    "word": "construct",
+    "oldExample": "They are planning to construct a new highway",
+    "newExampleCn": "他们计划修建一条新的高速公路"
+  },
+  {
+    "wordId": "consult",
+    "word": "consult",
+    "oldExample": "In this case, I recommended that you consult your doctor",
+    "newExampleCn": "在这种情况下，我建议你咨询医生。"
+  },
+  {
+    "wordId": "consume",
+    "word": "consume",
+    "oldExample": "Chinese people consume huge amounts of rice every year",
+    "newExampleCn": "中国人每年消耗大量大米"
+  },
+  {
+    "wordId": "contact",
+    "word": "contact",
+    "oldExample": "This remote tribe had little contact with the outside world",
+    "newExampleCn": "这个偏远部落很少与外界接触"
+  },
+  {
+    "wordId": "contain",
+    "word": "contain",
+    "oldExample": "The speech contained some interesting ideas",
+    "newExampleCn": "这篇演讲包含了一些有趣的想法"
+  },
+  {
+    "wordId": "contemporary",
+    "word": "contemporary",
+    "oldExample": "These clothes are more contemporary and wearable",
+    "newExampleCn": "这些衣服更现代，也更适合日常穿着"
+  },
+  {
+    "wordId": "contempt",
+    "word": "contempt",
+    "oldExample": "A liar is held in contempt 说谎者为人所轻视",
+    "newExampleCn": "说谎的人会被人轻视"
+  },
+  {
+    "wordId": "content",
+    "word": "content",
+    "oldExample": "The calorie content in a regular coke is very high",
+    "newExampleCn": "普通可乐的卡路里含量很高"
+  },
+  {
+    "wordId": "contest",
+    "word": "contest",
+    "oldExample": "If the election is one-sided, it is really no contest",
+    "newExampleCn": "如果选举是一边倒的，那就真的没有悬念。"
+  },
+  {
+    "wordId": "continent",
+    "word": "continent",
+    "oldExample": "It is generally thought that Columbus discovered the American continent",
+    "newExampleCn": "人们普遍认为哥伦布发现了美洲大陆。"
+  },
+  {
+    "wordId": "contradiction",
+    "word": "contradiction",
+    "oldExample": "Your attitude is in contradiction to your character",
+    "newExampleCn": "你的态度和你的性格相矛盾"
+  },
+  {
+    "wordId": "contrast",
+    "word": "contrast",
+    "oldExample": "There is a great contrast between good and evil",
+    "newExampleCn": "善与恶之间有着鲜明的对比。"
+  },
+  {
+    "wordId": "contribute",
+    "word": "contribute",
+    "oldExample": "She seldom contributes to the discussion",
+    "newExampleCn": "她很少参与讨论。"
+  },
+  {
+    "wordId": "convention",
+    "word": "convention",
+    "oldExample": "The handshake is a social convention",
+    "newExampleCn": "握手是一种社会习俗"
+  },
+  {
+    "wordId": "convert",
+    "word": "convert",
+    "oldExample": "The solar cell can convert the energy of sunlight into electric energy",
+    "newExampleCn": "太阳能电池可以把太阳光的能量转化为电能。"
+  },
+  {
+    "wordId": "convey",
+    "word": "convey",
+    "oldExample": "It's hard to convey my feelings in words",
+    "newExampleCn": "很难用语言表达我的感受"
+  },
+  {
+    "wordId": "convince",
+    "word": "convince",
+    "oldExample": "He finally convinced us of his innocence",
+    "newExampleCn": "他最终使我们相信他是清白的"
+  },
+  {
+    "wordId": "cook",
+    "word": "cook",
+    "oldExample": "Will she cook dinner this evening?",
+    "newExampleCn": "她今天晚上会做晚饭吗？"
+  },
+  {
+    "wordId": "cooperate",
+    "word": "cooperate",
+    "oldExample": "If they cooperate with each other, everyone will run smoothly",
+    "newExampleCn": "如果他们互相合作，一切都会顺利进行。"
+  },
+  {
+    "wordId": "coordinate",
+    "word": "coordinate",
+    "oldExample": "Our efforts need to be further coordinated for higher efficiency",
+    "newExampleCn": "为了提高效率，我们的工作需要进一步协调。"
+  },
+  {
+    "wordId": "cope",
+    "word": "cope",
+    "oldExample": "I'm afraid I can't cope with these troubles",
+    "newExampleCn": "恐怕我应付不了这些麻烦。"
+  },
+  {
+    "wordId": "copper",
+    "word": "copper",
+    "oldExample": "He polished up the old copper coins",
+    "newExampleCn": "他把那些旧铜币擦亮了"
+  },
+  {
+    "wordId": "copy",
+    "word": "copy",
+    "oldExample": "This painting is a copy of the one in the museum",
+    "newExampleCn": "这幅画是博物馆里那幅画的复制品"
+  },
+  {
+    "wordId": "cord",
+    "word": "cord",
+    "oldExample": "Our voices depend on our vocal cords",
+    "newExampleCn": "我们的声音依赖于声带。"
+  },
+  {
+    "wordId": "core",
+    "word": "core",
+    "oldExample": "He is the core of the working group",
+    "newExampleCn": "他是这个工作小组的核心。"
+  },
+  {
+    "wordId": "corn",
+    "word": "corn",
+    "oldExample": "The corn is nearly ready for harvesting",
+    "newExampleCn": "玉米快要可以收割了"
+  },
+  {
+    "wordId": "correct",
+    "word": "correct",
+    "oldExample": "The correct answers can be found at the bottom of page eight",
+    "newExampleCn": "正确答案可以在第八页底部找到"
+  },
+  {
+    "wordId": "correspond",
+    "word": "correspond",
+    "oldExample": "These goods don't correspond with my order",
+    "newExampleCn": "这些货物和我的订单不符"
+  },
+  {
+    "wordId": "correspondent",
+    "word": "correspondent",
+    "oldExample": "That war correspondent proudly outgunned the army sharp shooters",
+    "newExampleCn": "那位战地记者自豪地在火力上压过了军队的神枪手。"
+  },
+  {
+    "wordId": "corridor",
+    "word": "corridor",
+    "oldExample": "The corridor leads to the headmaster's office",
+    "newExampleCn": "这条走廊通向校长办公室"
+  },
+  {
+    "wordId": "cost",
+    "word": "cost",
+    "oldExample": "I'm determined to attain my purpose at any cost",
+    "newExampleCn": "我决心不惜任何代价实现我的目标"
+  },
+  {
+    "wordId": "cottage",
+    "word": "cottage",
+    "oldExample": "The cottage could accommodate up to six people",
+    "newExampleCn": "这间小屋最多可容纳六个人"
+  },
+  {
+    "wordId": "cotton",
+    "word": "cotton",
+    "oldExample": "The cotton has been picked and weighed up",
+    "newExampleCn": "棉花已经采摘完并称重了"
+  },
+  {
+    "wordId": "council",
+    "word": "council",
+    "oldExample": "The city council will decide the fate of the building",
+    "newExampleCn": "市议会将决定这栋建筑的命运"
+  },
+  {
+    "wordId": "count",
+    "word": "count",
+    "oldExample": "It is impossible to count the stars in the sky",
+    "newExampleCn": "数清天空中的星星是不可能的"
+  },
+  {
+    "wordId": "counter",
+    "word": "counter",
+    "oldExample": "My colleague countered my proposal with one of his own",
+    "newExampleCn": "我的同事提出了他自己的方案来反驳我的提议"
+  },
+  {
+    "wordId": "couple",
+    "word": "couple",
+    "oldExample": "I waited a couple of hours",
+    "newExampleCn": "我等了几个小时"
+  },
+  {
+    "wordId": "course",
+    "word": "course",
+    "oldExample": "She is currently doing a business studies course at Leeds",
+    "newExampleCn": "她目前正在利兹学习一门商业研究课程。"
+  },
+  {
+    "wordId": "court",
+    "word": "court",
+    "oldExample": "The company is anxious to keep the whole case out of court",
+    "newExampleCn": "公司急于避免整个案件闹上法庭"
+  },
+  {
+    "wordId": "cousin",
+    "word": "cousin",
+    "oldExample": "For our first anniversary, he's taking me to his cousin's cabi",
+    "newExampleCn": "为了庆祝我们的一周年纪念日，他要带我去他表亲的小木屋。"
+  },
+  {
+    "wordId": "cover",
+    "word": "cover",
+    "oldExample": "The front cover of the novel has been torn off",
+    "newExampleCn": "这本小说的封面被撕掉了"
+  },
+  {
+    "wordId": "coward",
+    "word": "coward",
+    "oldExample": "He is a liar and a coward to boot",
+    "newExampleCn": "他是个骗子，而且还是个懦夫。"
+  },
+  {
+    "wordId": "crack",
+    "word": "crack",
+    "oldExample": "The door opened just a crack",
+    "newExampleCn": "门只开了一条小缝。"
+  },
+  {
+    "wordId": "crane",
+    "word": "crane",
+    "oldExample": "We used a crane to lift a slab of concrete",
+    "newExampleCn": "我们用起重机吊起了一块混凝土板。"
+  },
+  {
+    "wordId": "crash",
+    "word": "crash",
+    "oldExample": "The rocks crash down onto the car",
+    "newExampleCn": "岩石轰然砸到车上"
+  },
+  {
+    "wordId": "crawl",
+    "word": "crawl",
+    "oldExample": "Your must not crawl into the favor of your superior",
+    "newExampleCn": "你不应该卑躬屈膝地讨好上司"
+  },
+  {
+    "wordId": "cream",
+    "word": "cream",
+    "oldExample": "He is whipping cream",
+    "newExampleCn": "他正在打发奶油"
+  },
+  {
+    "wordId": "creature",
+    "word": "creature",
+    "oldExample": "The crocodile is a strange looking creature",
+    "newExampleCn": "鳄鱼是一种长相奇特的生物"
+  },
+  {
+    "wordId": "credit",
+    "word": "credit",
+    "oldExample": "I need three more credits to graduate",
+    "newExampleCn": "我还需要三个学分才能毕业"
+  },
+  {
+    "wordId": "creep",
+    "word": "creep",
+    "oldExample": "We take off our shoes and creep cautiously along the passage",
+    "newExampleCn": "我们脱下鞋子，小心翼翼地沿着通道悄悄前行"
+  },
+  {
+    "wordId": "crew",
+    "word": "crew",
+    "oldExample": "I'd like to thank you on your behalf of the crew",
+    "newExampleCn": "我想代表全体船员向你表示感谢"
+  },
+  {
+    "wordId": "cricket",
+    "word": "cricket",
+    "oldExample": "A cricket in the house is good luck",
+    "newExampleCn": "屋里有蟋蟀是好兆头"
+  },
+  {
+    "wordId": "crime",
+    "word": "crime",
+    "oldExample": "There is no proof that he was on the crime scene",
+    "newExampleCn": "没有证据证明他在犯罪现场。"
+  },
+  {
+    "wordId": "crisis",
+    "word": "crisis",
+    "oldExample": "They suffered huge losses in the financial crisis",
+    "newExampleCn": "他们在金融危机中遭受了巨大损失"
+  },
+  {
+    "wordId": "critic",
+    "word": "critic",
+    "oldExample": "The critic said the new movie would not do well at the box office",
+    "newExampleCn": "那位评论家说这部新电影票房不会好。"
+  },
+  {
+    "wordId": "crop",
+    "word": "crop",
+    "oldExample": "We have had the biggest wheat crop ever this year",
+    "newExampleCn": "今年我们的小麦收成创下了历史新高"
+  },
+  {
+    "wordId": "cross",
+    "word": "cross",
+    "oldExample": "It's very dangerous for children to cross a busy road",
+    "newExampleCn": "孩子们横穿繁忙的马路非常危险"
+  },
+  {
+    "wordId": "crow",
+    "word": "crow",
+    "oldExample": "The farmers tried to fear the crows out of the cornfield by planting several men of straw",
+    "newExampleCn": "农民们在玉米地里竖了几个稻草人，想把乌鸦吓走。"
+  },
+  {
+    "wordId": "crowd",
+    "word": "crowd",
+    "oldExample": "The crowd was very well behaved",
+    "newExampleCn": "人群非常守秩序"
+  },
+  {
+    "wordId": "crown",
+    "word": "crown",
+    "oldExample": "They crowned him shortly after the old king's death",
+    "newExampleCn": "老国王去世后不久，他们为他加冕。"
+  },
+  {
+    "wordId": "crude",
+    "word": "crude",
+    "oldExample": "The price of crude oil has come down recently",
+    "newExampleCn": "原油价格最近下降了。"
+  },
+  {
+    "wordId": "cruel",
+    "word": "cruel",
+    "oldExample": "The death of their daughter was a cruel blow",
+    "newExampleCn": "女儿的去世对他们来说是残酷的打击"
+  },
+  {
+    "wordId": "crush",
+    "word": "crush",
+    "oldExample": "There was such a crush on the bus that I could hardly breathe",
+    "newExampleCn": "公交车上挤得水泄不通，我几乎喘不过气来。"
+  },
+  {
+    "wordId": "crust",
+    "word": "crust",
+    "oldExample": "The crust on the snow was thick enough for us to walk on it",
+    "newExampleCn": "雪上的硬壳厚得足以让我们在上面行走。"
+  },
+  {
+    "wordId": "crystal",
+    "word": "crystal",
+    "oldExample": "People imitate diamond with crystal",
+    "newExampleCn": "人们用水晶仿制钻石"
+  },
+  {
+    "wordId": "cube",
+    "word": "cube",
+    "oldExample": "She dropped a cube of sugar into her coffee and stirred it with a spoon",
+    "newExampleCn": "她往咖啡里放了一块方糖，然后用勺子搅了搅。"
+  },
+  {
+    "wordId": "cucumber",
+    "word": "cucumber",
+    "oldExample": "I would like a cucumber salad for an appetizer",
+    "newExampleCn": "我想要一份黄瓜沙拉作为开胃菜"
+  },
+  {
+    "wordId": "cultivate",
+    "word": "cultivate",
+    "oldExample": "The farmer is cultivating his land",
+    "newExampleCn": "农民正在耕种他的土地"
+  },
+  {
+    "wordId": "culture",
+    "word": "culture",
+    "oldExample": "China plays an important role in promoting Asian culture",
+    "newExampleCn": "中国在促进亚洲文化发展方面发挥着重要作用"
+  },
+  {
+    "wordId": "curl",
+    "word": "curl",
+    "oldExample": "As he got older, his hair lost its curl",
+    "newExampleCn": "随着年龄增长，他的头发不再卷了"
+  },
+  {
+    "wordId": "current",
+    "word": "current",
+    "oldExample": "He was swept away by the current",
+    "newExampleCn": "他被水流冲走了"
+  },
+  {
+    "wordId": "curse",
+    "word": "curse",
+    "oldExample": "A light purse is a heavy curse 贫穷是沉重的诅咒",
+    "newExampleCn": "贫穷是沉重的负担"
+  },
+  {
+    "wordId": "curtain",
+    "word": "curtain",
+    "oldExample": "I have enough material to curtain all the windows",
+    "newExampleCn": "我有足够的布料给所有窗户装上窗帘。"
+  },
+  {
+    "wordId": "curve",
+    "word": "curve",
+    "oldExample": "The stairs ascended in a graceful curve",
+    "newExampleCn": "楼梯沿着优美的弧线向上延伸"
+  },
+  {
+    "wordId": "cushion",
+    "word": "cushion",
+    "oldExample": "She plumps up the sofa cushion 她把沙发垫拍得鼓鼓的",
+    "newExampleCn": "她把沙发垫拍得鼓鼓的"
+  },
+  {
+    "wordId": "custom",
+    "word": "custom",
+    "oldExample": "The custom prevails over the whole area 该风俗盛行于这整个地区",
+    "newExampleCn": "这种风俗盛行于整个地区"
+  },
+  {
+    "wordId": "customer",
+    "word": "customer",
+    "oldExample": "If that doesn't work, ask them if they really think customer is King",
+    "newExampleCn": "如果那样不管用，就问他们是不是真的觉得顾客就是上帝"
+  },
+  {
+    "wordId": "cycle",
+    "word": "cycle",
+    "oldExample": "In many universities, students cycle from their dorms to the classroom or library",
+    "newExampleCn": "在许多大学里，学生会骑自行车从宿舍去教室或图书馆。"
+  },
+  {
+    "wordId": "dairy",
+    "word": "dairy",
+    "oldExample": "We bought milk at the dairy",
+    "newExampleCn": "我们在乳品店买了牛奶。"
+  },
+  {
+    "wordId": "dam",
+    "word": "dam",
+    "oldExample": "A new dam is under construction at the valley",
+    "newExampleCn": "山谷里正在修建一座新水坝。"
+  },
+  {
+    "wordId": "damage",
+    "word": "damage",
+    "oldExample": "An earthquake sometimes causes extensive damage to a town",
+    "newExampleCn": "地震有时会给一个城镇造成严重破坏"
+  },
+  {
+    "wordId": "damp",
+    "word": "damp",
+    "oldExample": "The damp match won't strike",
+    "newExampleCn": "这根受潮的火柴划不着。"
+  },
+  {
+    "wordId": "darling",
+    "word": "darling",
+    "oldExample": "Oh darling, I couldn't be more pleased for you",
+    "newExampleCn": "哦，亲爱的，我真为你高兴。"
+  },
+  {
+    "wordId": "dash",
+    "word": "dash",
+    "oldExample": "He dashed the bowl to bits against the ground",
+    "newExampleCn": "他把碗猛摔在地上，摔得粉碎。"
+  },
+  {
+    "wordId": "data",
+    "word": "data",
+    "oldExample": "The data should updated once a week",
+    "newExampleCn": "这些数据应该每周更新一次"
+  },
+  {
+    "wordId": "deal",
+    "word": "deal",
+    "oldExample": "I'll deal with the children later",
+    "newExampleCn": "我稍后会处理孩子们的事"
+  },
+  {
+    "wordId": "dear",
+    "word": "dear",
+    "oldExample": "Dear John, thanks for asking me to help you with the class trip",
+    "newExampleCn": "亲爱的约翰，谢谢你请我帮忙安排班级旅行。"
+  },
+  {
+    "wordId": "debate",
+    "word": "debate",
+    "oldExample": "The government is debating about the education laws",
+    "newExampleCn": "政府正在讨论教育法律。"
+  },
+  {
+    "wordId": "debt",
+    "word": "debt",
+    "oldExample": "Liabilities are the debt or obligation that a businessman must pay in money or services at some time in the future",
+    "newExampleCn": "负债是商人将来某个时候必须以金钱或服务偿还的债务或义务。"
+  },
+  {
+    "wordId": "decay",
+    "word": "decay",
+    "oldExample": "The vegetables have begun to decay",
+    "newExampleCn": "蔬菜已经开始腐烂了"
+  },
+  {
+    "wordId": "deceive",
+    "word": "deceive",
+    "oldExample": "Nobody can deceive me",
+    "newExampleCn": "没人能骗我"
+  },
+  {
+    "wordId": "decent",
+    "word": "decent",
+    "oldExample": "He made a decent record 他成绩善佳",
+    "newExampleCn": "他取得了不错的成绩"
+  },
+  {
+    "wordId": "decide",
+    "word": "decide",
+    "oldExample": "Don't decide on important matters too quickly",
+    "newExampleCn": "不要太快决定重要的事情"
+  }
+]

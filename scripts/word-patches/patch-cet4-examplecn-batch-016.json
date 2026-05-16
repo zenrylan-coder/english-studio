@@ -1,0 +1,590 @@
+[
+  {
+    "wordId": "quit",
+    "word": "quit",
+    "oldExample": "She has not quit smoking, but is holding down to three cigarettes a day",
+    "newExampleCn": "她还没有戒烟，但把每天抽烟量控制在三支以内。"
+  },
+  {
+    "wordId": "quiz",
+    "word": "quiz",
+    "oldExample": "The quiz was a good opportunity for him to exhibit his knowledge",
+    "newExampleCn": "这次测验是他展示自己知识的好机会。"
+  },
+  {
+    "wordId": "quote",
+    "word": "quote",
+    "oldExample": "The author frequently quoted Shakespeare",
+    "newExampleCn": "这位作者经常引用莎士比亚。"
+  },
+  {
+    "wordId": "race",
+    "word": "race",
+    "oldExample": "The horse is racing against five others",
+    "newExampleCn": "这匹马正在和另外五匹马比赛"
+  },
+  {
+    "wordId": "racial",
+    "word": "racial",
+    "oldExample": "A new law has been brought in to eliminate racial discrimination",
+    "newExampleCn": "一项新法律已经出台，旨在消除种族歧视。"
+  },
+  {
+    "wordId": "rack",
+    "word": "rack",
+    "oldExample": "He put his bag on the luggage rack",
+    "newExampleCn": "他把包放在了行李架上"
+  },
+  {
+    "wordId": "racket",
+    "word": "racket",
+    "oldExample": "Can I borrow your tennis racket?",
+    "newExampleCn": "我可以借一下你的网球拍吗？"
+  },
+  {
+    "wordId": "radar",
+    "word": "radar",
+    "oldExample": "Officials want to scan the tomb with radar in the hope of unlocking the mystery",
+    "newExampleCn": "官员们想用雷达扫描这座陵墓，希望解开这个谜团"
+  },
+  {
+    "wordId": "radiate",
+    "word": "radiate",
+    "oldExample": "Four avenues radiate from the square",
+    "newExampleCn": "四条大道从广场向外延伸。"
+  },
+  {
+    "wordId": "radioactive",
+    "word": "radioactive",
+    "oldExample": "Nuclear energy gives millions heat, light and power, just as it creates unwanted radioactive side effects",
+    "newExampleCn": "核能为数百万人提供热量、光和电力，同时也会产生不必要的放射性副作用。"
+  },
+  {
+    "wordId": "radish",
+    "word": "radish",
+    "oldExample": "Please help me pull up the radishes",
+    "newExampleCn": "请帮我把萝卜拔出来。"
+  },
+  {
+    "wordId": "radius",
+    "word": "radius",
+    "oldExample": "They searched within one mile radius of the school",
+    "newExampleCn": "他们在学校一英里半径范围内进行了搜索"
+  },
+  {
+    "wordId": "rag",
+    "word": "rag",
+    "oldExample": "She wrapped the box with an old rag",
+    "newExampleCn": "她用一块旧抹布把盒子包了起来"
+  },
+  {
+    "wordId": "rage",
+    "word": "rage",
+    "oldExample": "My father was in a rage last night",
+    "newExampleCn": "我爸爸昨晚大发雷霆。"
+  },
+  {
+    "wordId": "raid",
+    "word": "raid",
+    "oldExample": "We launched a bombing raid on enemy bases.",
+    "newExampleCn": "我们对敌方基地发动了轰炸袭击。"
+  },
+  {
+    "wordId": "rail",
+    "word": "rail",
+    "oldExample": "The man was holding onto the rail as he walked down the stairs",
+    "newExampleCn": "那个男人下楼梯时扶着栏杆。"
+  },
+  {
+    "wordId": "railroad",
+    "word": "railroad",
+    "oldExample": "The building of the railroad is progressing",
+    "newExampleCn": "铁路建设正在推进。"
+  },
+  {
+    "wordId": "railway",
+    "word": "railway",
+    "oldExample": "The goods were sent to you by railway",
+    "newExampleCn": "货物是通过铁路运给你的"
+  },
+  {
+    "wordId": "rainbow",
+    "word": "rainbow",
+    "oldExample": "A rainbow is usually seen after a heavy rain",
+    "newExampleCn": "大雨过后通常会看到彩虹"
+  },
+  {
+    "wordId": "raise",
+    "word": "raise",
+    "oldExample": "Please raise your hand if you've been told you're too aggressive at work",
+    "newExampleCn": "如果有人说过你在工作中太强势，请举手。"
+  },
+  {
+    "wordId": "rake",
+    "word": "rake",
+    "oldExample": "With an ancient rusty rake I went to work",
+    "newExampleCn": "我拿着一把生锈的旧耙子开始干活。"
+  },
+  {
+    "wordId": "range",
+    "word": "range",
+    "oldExample": "A range of hills rose on our left",
+    "newExampleCn": "我们左边耸起一排山丘。"
+  },
+  {
+    "wordId": "rank",
+    "word": "rank",
+    "oldExample": "There are people of all ranks and classes",
+    "newExampleCn": "这里有各个等级和阶层的人。"
+  },
+  {
+    "wordId": "rat",
+    "word": "rat",
+    "oldExample": "Now I can see why people say he is such a rat",
+    "newExampleCn": "现在我明白为什么大家都说他是个卑鄙小人了"
+  },
+  {
+    "wordId": "rate",
+    "word": "rate",
+    "oldExample": "The rate of inflation decreased to 5 percent last year",
+    "newExampleCn": "去年通货膨胀率降至5%。"
+  },
+  {
+    "wordId": "ratio",
+    "word": "ratio",
+    "oldExample": "The ratio of 3 to 9 is the same as that of 9 to 27",
+    "newExampleCn": "3比9的比率与9比27的比率相同。"
+  },
+  {
+    "wordId": "rational",
+    "word": "rational",
+    "oldExample": "A rational number can be expressed as a ratio of two integers",
+    "newExampleCn": "有理数可以表示为两个整数的比值"
+  },
+  {
+    "wordId": "raw",
+    "word": "raw",
+    "oldExample": "Today the main resources of raw cotton are China and India",
+    "newExampleCn": "如今，原棉的主要产地是中国和印度。"
+  },
+  {
+    "wordId": "razor",
+    "word": "razor",
+    "oldExample": "He razored his face, clean off the beard",
+    "newExampleCn": "他用剃刀把脸上的胡子剃得干干净净。"
+  },
+  {
+    "wordId": "react",
+    "word": "react",
+    "oldExample": "An acid can react with an alkali to form a salt",
+    "newExampleCn": "酸能与碱反应生成盐"
+  },
+  {
+    "wordId": "realm",
+    "word": "realm",
+    "oldExample": "Such an idea only belongs in the realm of science fiction",
+    "newExampleCn": "这样的想法只属于科幻领域"
+  },
+  {
+    "wordId": "reap",
+    "word": "reap",
+    "oldExample": "We reap what we sow",
+    "newExampleCn": "种瓜得瓜，种豆得豆"
+  },
+  {
+    "wordId": "rear",
+    "word": "rear",
+    "oldExample": "Most farmers in this area rear sheep",
+    "newExampleCn": "这个地区的大多数农民养羊。"
+  },
+  {
+    "wordId": "reasonable",
+    "word": "reasonable",
+    "oldExample": "At first sight, their reaction was reasonable",
+    "newExampleCn": "乍一看，他们的反应是合理的"
+  },
+  {
+    "wordId": "rebel",
+    "word": "rebel",
+    "oldExample": "The rebels made regular attacks on the railways",
+    "newExampleCn": "叛军经常袭击铁路。"
+  },
+  {
+    "wordId": "recall",
+    "word": "recall",
+    "oldExample": "Recall the misery of the past and contrast it with the happiness of today",
+    "newExampleCn": "回想过去的苦难，对比今天的幸福。"
+  },
+  {
+    "wordId": "receipt",
+    "word": "receipt",
+    "oldExample": "When you have paied for something, a receipt is given to you",
+    "newExampleCn": "当你买东西付完钱后，会收到一张收据。"
+  },
+  {
+    "wordId": "reception",
+    "word": "reception",
+    "oldExample": "You can leave your key at reception",
+    "newExampleCn": "你可以把钥匙留在前台。"
+  },
+  {
+    "wordId": "recite",
+    "word": "recite",
+    "oldExample": "Each child had to recite a poem in class",
+    "newExampleCn": "每个孩子都必须在课堂上背诵一首诗。"
+  },
+  {
+    "wordId": "recollect",
+    "word": "recollect",
+    "oldExample": "I can recollect hearing his speech",
+    "newExampleCn": "我记得听过他的演讲"
+  },
+  {
+    "wordId": "recommend",
+    "word": "recommend",
+    "oldExample": "I recommend you to reserve a table in advance",
+    "newExampleCn": "我建议你提前订桌。"
+  },
+  {
+    "wordId": "record",
+    "word": "record",
+    "oldExample": "The subjects in the research were asked to keep a record of everything they ate for a week",
+    "newExampleCn": "研究对象被要求记录一周内吃的所有东西。"
+  },
+  {
+    "wordId": "recover",
+    "word": "recover",
+    "oldExample": "She soon recovered and stopped crying",
+    "newExampleCn": "她很快恢复过来，不再哭了。"
+  },
+  {
+    "wordId": "reduce",
+    "word": "reduce",
+    "oldExample": "The prices in the shop have been reduced, so it's a good time to buy",
+    "newExampleCn": "这家商店的价格已经降低了，所以现在是购买的好时机。"
+  },
+  {
+    "wordId": "reed",
+    "word": "reed",
+    "oldExample": "The roof is made of dried reeds",
+    "newExampleCn": "屋顶是用晒干的芦苇做的"
+  },
+  {
+    "wordId": "reel",
+    "word": "reel",
+    "oldExample": "I put a new reel of film in my camera",
+    "newExampleCn": "我给相机装上了一卷新胶卷。"
+  },
+  {
+    "wordId": "reference",
+    "word": "reference",
+    "oldExample": "This book is for reference only",
+    "newExampleCn": "这本书仅供参考"
+  },
+  {
+    "wordId": "refine",
+    "word": "refine",
+    "oldExample": "The purpose of oil refinery is to refine crude petroleum",
+    "newExampleCn": "炼油厂的目的是提炼原油。"
+  },
+  {
+    "wordId": "reflect",
+    "word": "reflect",
+    "oldExample": "Her look reflected the thought passing though her mind",
+    "newExampleCn": "她的表情反映出她脑海中闪过的念头。"
+  },
+  {
+    "wordId": "reform",
+    "word": "reform",
+    "oldExample": "He promised to reform if given another chance",
+    "newExampleCn": "他承诺如果再给他一次机会，他会改过自新。"
+  },
+  {
+    "wordId": "refreshment",
+    "word": "refreshment",
+    "oldExample": "We only serve drinks and light refreshments on this short flight",
+    "newExampleCn": "这趟短途航班上我们只提供饮料和少量茶点。"
+  },
+  {
+    "wordId": "refuse",
+    "word": "refuse",
+    "oldExample": "Jonah's mother refused to let him go abroad",
+    "newExampleCn": "乔纳的妈妈拒绝让他出国。"
+  },
+  {
+    "wordId": "refute",
+    "word": "refute",
+    "oldExample": "He had hardly finished when someone rose to refute his points 他还没有说完，就有人起来驳斥他的观点",
+    "newExampleCn": "他刚讲完，就有人站起来反驳他的观点"
+  },
+  {
+    "wordId": "regard",
+    "word": "regard",
+    "oldExample": "You can't regard him as a friend but a business associate",
+    "newExampleCn": "你不能把他当作朋友，而只能把他看作生意伙伴。"
+  },
+  {
+    "wordId": "register",
+    "word": "register",
+    "oldExample": "You must register for the tax",
+    "newExampleCn": "你必须进行税务登记"
+  },
+  {
+    "wordId": "regulate",
+    "word": "regulate",
+    "oldExample": "You watch is slow. It needs to be regulated",
+    "newExampleCn": "你的手表慢了，需要调一下。"
+  },
+  {
+    "wordId": "regulation",
+    "word": "regulation",
+    "oldExample": "The rules and regulations should be made clear to all employees",
+    "newExampleCn": "应该向所有员工明确说明各项规章制度。"
+  },
+  {
+    "wordId": "rehearsal",
+    "word": "rehearsal",
+    "oldExample": "The play is in rehearsal now",
+    "newExampleCn": "这部戏现在正在排练。"
+  },
+  {
+    "wordId": "reign",
+    "word": "reign",
+    "oldExample": "The reign of Queen Victoria lasted more than 60 years",
+    "newExampleCn": "维多利亚女王的统治持续了60多年"
+  },
+  {
+    "wordId": "rein",
+    "word": "rein",
+    "oldExample": "The hourse responds to the slightest pull on the rein",
+    "newExampleCn": "这匹马对缰绳最轻微的拉动都会有反应"
+  },
+  {
+    "wordId": "reinforce",
+    "word": "reinforce",
+    "oldExample": "If concrete has steel bars inside it, it is known as reinforced concrete",
+    "newExampleCn": "如果混凝土内部有钢筋，就被称为钢筋混凝土。"
+  },
+  {
+    "wordId": "reject",
+    "word": "reject",
+    "oldExample": "The board of directors rejected the proposal as a non-starter",
+    "newExampleCn": "董事会认为该提案不可行，予以否决。"
+  },
+  {
+    "wordId": "relative",
+    "word": "relative",
+    "oldExample": "We do not abandon our relatives when times get tough",
+    "newExampleCn": "困难时期，我们不会抛弃亲人"
+  },
+  {
+    "wordId": "release",
+    "word": "release",
+    "oldExample": "I released the horse and it ran away",
+    "newExampleCn": "我放开了那匹马，它跑走了。"
+  },
+  {
+    "wordId": "reliable",
+    "word": "reliable",
+    "oldExample": "It's reliable to judge a man only by his looks",
+    "newExampleCn": "只凭外表来判断一个人是可靠的。"
+  },
+  {
+    "wordId": "religion",
+    "word": "religion",
+    "oldExample": "There are many religions in the world",
+    "newExampleCn": "世界上有许多宗教"
+  },
+  {
+    "wordId": "remind",
+    "word": "remind",
+    "oldExample": "This photos remind me of my childhood",
+    "newExampleCn": "这些照片让我想起了我的童年。"
+  },
+  {
+    "wordId": "remote",
+    "word": "remote",
+    "oldExample": "She came from a remote village",
+    "newExampleCn": "她来自一个偏远的村庄"
+  },
+  {
+    "wordId": "render",
+    "word": "render",
+    "oldExample": "You have rendered great service",
+    "newExampleCn": "你提供了很大的帮助"
+  },
+  {
+    "wordId": "repeat",
+    "word": "repeat",
+    "oldExample": "A large proportion of our bookings come from repeat business and personal recommendation",
+    "newExampleCn": "我们很大一部分预订来自回头客和个人推荐。"
+  },
+  {
+    "wordId": "replace",
+    "word": "replace",
+    "oldExample": "We'll get someone or other to replace him",
+    "newExampleCn": "我们会找个人来接替他。"
+  },
+  {
+    "wordId": "reply",
+    "word": "reply",
+    "oldExample": "He tried to reply and then stopped",
+    "newExampleCn": "他试着回答，但又停住了"
+  },
+  {
+    "wordId": "represent",
+    "word": "represent",
+    "oldExample": "A committee has been elected to represent us",
+    "newExampleCn": "已经选出一个委员会来代表我们。"
+  },
+  {
+    "wordId": "reproach",
+    "word": "reproach",
+    "oldExample": "His manners are beyond reproach 他的举止无可指摘",
+    "newExampleCn": "他的举止无可指摘"
+  },
+  {
+    "wordId": "reproduce",
+    "word": "reproduce",
+    "oldExample": "When they can't reproduce, cancerous cells die off, instead of becoming dangerous",
+    "newExampleCn": "当它们无法繁殖时，癌细胞会逐渐死亡，而不是变得危险。"
+  },
+  {
+    "wordId": "republic",
+    "word": "republic",
+    "oldExample": "He was one of the architects of the republic",
+    "newExampleCn": "他是这个共和国的缔造者之一"
+  },
+  {
+    "wordId": "reputation",
+    "word": "reputation",
+    "oldExample": "If a company has a good reputation, investors will natually back it",
+    "newExampleCn": "如果一家公司声誉良好，投资者自然会支持它。"
+  },
+  {
+    "wordId": "request",
+    "word": "request",
+    "oldExample": "We shall give your request our careful consideration",
+    "newExampleCn": "我们会认真考虑您的请求。"
+  },
+  {
+    "wordId": "require",
+    "word": "require",
+    "oldExample": "You are requried by law to wear a seat belt",
+    "newExampleCn": "法律规定你必须系安全带"
+  },
+  {
+    "wordId": "rescue",
+    "word": "rescue",
+    "oldExample": "They rescued the boy who fell into the river",
+    "newExampleCn": "他们救起了掉进河里的男孩"
+  },
+  {
+    "wordId": "research",
+    "word": "research",
+    "oldExample": "It is a good idea to do some research before you buy a house",
+    "newExampleCn": "在买房之前做些调查是个好主意。"
+  },
+  {
+    "wordId": "reserve",
+    "word": "reserve",
+    "oldExample": "I have reserved a room for you at the hotel",
+    "newExampleCn": "我已经在酒店为你预订了一个房间。"
+  },
+  {
+    "wordId": "reservoir",
+    "word": "reservoir",
+    "oldExample": "This reservoir gives water to the whole city",
+    "newExampleCn": "这个水库为整个城市供水"
+  },
+  {
+    "wordId": "resident",
+    "word": "resident",
+    "oldExample": "The residents of the town are proud of its new library",
+    "newExampleCn": "镇上的居民为他们的新图书馆感到自豪"
+  },
+  {
+    "wordId": "resign",
+    "word": "resign",
+    "oldExample": "Catherine was forced to resign from the board of directors",
+    "newExampleCn": "凯瑟琳被迫辞去董事会职务"
+  },
+  {
+    "wordId": "resist",
+    "word": "resist",
+    "oldExample": "She could hardly resist laughing",
+    "newExampleCn": "她忍不住笑了出来"
+  },
+  {
+    "wordId": "resolve",
+    "word": "resolve",
+    "oldExample": "She resolves that she will never eat junk food",
+    "newExampleCn": "她下定决心再也不吃垃圾食品。"
+  },
+  {
+    "wordId": "resort",
+    "word": "resort",
+    "oldExample": "I'm sorry you have resorted to deception",
+    "newExampleCn": "很遗憾你竟然诉诸欺骗。"
+  },
+  {
+    "wordId": "respect",
+    "word": "respect",
+    "oldExample": "You should know how to respect to yourself before you can get respect from others",
+    "newExampleCn": "你应该先懂得尊重自己，才能获得别人的尊重。"
+  },
+  {
+    "wordId": "respective",
+    "word": "respective",
+    "oldExample": "We went back to school and visited our respective teachers",
+    "newExampleCn": "我们回到学校，拜访了各自的老师。"
+  },
+  {
+    "wordId": "respond",
+    "word": "respond",
+    "oldExample": "I offered him a drink, but he didn't respond",
+    "newExampleCn": "我请他喝一杯，但他没有回应。"
+  },
+  {
+    "wordId": "restaurant",
+    "word": "restaurant",
+    "oldExample": "I had my breakfast in a small restaurant",
+    "newExampleCn": "我在一家小餐馆吃了早餐"
+  },
+  {
+    "wordId": "restore",
+    "word": "restore",
+    "oldExample": "It's hard to restore a broken mirror",
+    "newExampleCn": "破镜难以复原"
+  },
+  {
+    "wordId": "restrain",
+    "word": "restrain",
+    "oldExample": "I can't restrain my anger when I hear someone being cruel to animals",
+    "newExampleCn": "当我听到有人虐待动物时，我就忍不住愤怒。"
+  },
+  {
+    "wordId": "restrict",
+    "word": "restrict",
+    "oldExample": "Don't restrict their proper activities",
+    "newExampleCn": "不要限制他们正当的活动"
+  },
+  {
+    "wordId": "result",
+    "word": "result",
+    "oldExample": "As a result, there is often trouble in American families",
+    "newExampleCn": "因此，美国家庭常常会出现矛盾。"
+  },
+  {
+    "wordId": "retell",
+    "word": "retell",
+    "oldExample": "The student was asked to retell the story in his own words",
+    "newExampleCn": "老师要求这名学生用自己的话复述这个故事"
+  },
+  {
+    "wordId": "retire",
+    "word": "retire",
+    "oldExample": "If they prove incompetent, they should be demoted or asked to retire",
+    "newExampleCn": "如果证明他们不称职，就应该被降职或被要求退休。"
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "deck",
+    "word": "deck",
+    "oldExample": "The deck of the sailing ship was made of thick planks",
+    "newExampleCn": "这艘帆船的甲板是用厚木板铺成的"
+  },
+  {
+    "wordId": "declare",
+    "word": "declare",
+    "oldExample": "He declared that he would never come back again",
+    "newExampleCn": "他宣称自己再也不会回来了"
+  },
+  {
+    "wordId": "decorate",
+    "word": "decorate",
+    "oldExample": "Using extremely different decorating schemes in adjoining rooms may result in lack of unity in style. 相邻的房间用悬殊太大的装修方案会导致风格不统一",
+    "newExampleCn": "相邻房间采用差异过大的装修方案，可能会导致风格不统一。"
+  },
+  {
+    "wordId": "decrease",
+    "word": "decrease",
+    "oldExample": "Her interest in the subject gradually decreases",
+    "newExampleCn": "她对这门学科的兴趣逐渐减少。"
+  },
+  {
+    "wordId": "deduce",
+    "word": "deduce",
+    "oldExample": "We can deduce a conclusion from this premise",
+    "newExampleCn": "我们可以从这个前提推导出一个结论"
+  },
+  {
+    "wordId": "deed",
+    "word": "deed",
+    "oldExample": "The primacy of the deed is over word and thought",
+    "newExampleCn": "行动比语言和思想更重要"
+  },
+  {
+    "wordId": "defeat",
+    "word": "defeat",
+    "oldExample": "They were defeated in the football match",
+    "newExampleCn": "他们在足球比赛中输了。"
+  },
+  {
+    "wordId": "defend",
+    "word": "defend",
+    "oldExample": "She demonstrated the best way to defend oneself",
+    "newExampleCn": "她示范了保护自己的最佳方法"
+  },
+  {
+    "wordId": "degree",
+    "word": "degree",
+    "oldExample": "He left without completing his degree",
+    "newExampleCn": "他没有完成学位就离开了"
+  },
+  {
+    "wordId": "delay",
+    "word": "delay",
+    "oldExample": "We have decided to delay our holiday until September",
+    "newExampleCn": "我们决定把假期推迟到九月。"
+  },
+  {
+    "wordId": "delegation",
+    "word": "delegation",
+    "oldExample": "The delegation ended their visit to China on March the 30th",
+    "newExampleCn": "代表团于3月30日结束了对中国的访问"
+  },
+  {
+    "wordId": "delete",
+    "word": "delete",
+    "oldExample": "References to places of battle were deleted from soldiers' letters during the war",
+    "newExampleCn": "战争期间，士兵信件中提到战斗地点的内容都被删掉了。"
+  },
+  {
+    "wordId": "delicate",
+    "word": "delicate",
+    "oldExample": "Delicate plants must be protected from cold wind and frost",
+    "newExampleCn": "娇嫩的植物必须避免受到冷风和霜冻的侵害"
+  },
+  {
+    "wordId": "delicious",
+    "word": "delicious",
+    "oldExample": "She can make a delicious meal from very simple ingredients",
+    "newExampleCn": "她能用非常简单的食材做出美味的一餐。"
+  },
+  {
+    "wordId": "deliver",
+    "word": "deliver",
+    "oldExample": "You don't have to go out into the rain since the store delivers for free",
+    "newExampleCn": "既然商店免费送货，你就不用冒雨出门了"
+  },
+  {
+    "wordId": "demand",
+    "word": "demand",
+    "oldExample": "This work demands your patience",
+    "newExampleCn": "这项工作需要你的耐心"
+  },
+  {
+    "wordId": "democracy",
+    "word": "democracy",
+    "oldExample": "The military government promised to restore democracy within one year",
+    "newExampleCn": "军政府承诺在一年内恢复民主。"
+  },
+  {
+    "wordId": "demonstrate",
+    "word": "demonstrate",
+    "oldExample": "He demonstrated how to use the new machine",
+    "newExampleCn": "他演示了如何使用这台新机器"
+  },
+  {
+    "wordId": "dense",
+    "word": "dense",
+    "oldExample": "There will be dense fog in northern parts of the country tomorrow",
+    "newExampleCn": "明天该国北部地区将有浓雾。"
+  },
+  {
+    "wordId": "density",
+    "word": "density",
+    "oldExample": "The population density of big cities is incresing year by year",
+    "newExampleCn": "大城市的人口密度正在逐年增加"
+  },
+  {
+    "wordId": "depart",
+    "word": "depart",
+    "oldExample": "When does the next train depart?",
+    "newExampleCn": "下一班火车什么时候出发？"
+  },
+  {
+    "wordId": "department",
+    "word": "department",
+    "oldExample": "He worked in the community welfare department",
+    "newExampleCn": "他在社区福利部门工作。"
+  },
+  {
+    "wordId": "dependent",
+    "word": "dependent",
+    "oldExample": "She was unemployed for several years and almost totally dependent on welfare to survive",
+    "newExampleCn": "她失业了好几年，几乎完全依靠福利救济维持生计。"
+  },
+  {
+    "wordId": "deposit",
+    "word": "deposit",
+    "oldExample": "The interest of the current account is lower than that of the deposit account",
+    "newExampleCn": "活期账户的利息低于定期存款账户。"
+  },
+  {
+    "wordId": "derive",
+    "word": "derive",
+    "oldExample": "I derived a lot of pleasure from meeting new people at college",
+    "newExampleCn": "在大学里结识新朋友让我获得了很多快乐。"
+  },
+  {
+    "wordId": "descend",
+    "word": "descend",
+    "oldExample": "She is said to be descended from a French aristocratic family",
+    "newExampleCn": "据说她是一个法国贵族家族的后裔"
+  },
+  {
+    "wordId": "describe",
+    "word": "describe",
+    "oldExample": "Words can not describe the beauty of the scene",
+    "newExampleCn": "言语无法描述那景色的美。"
+  },
+  {
+    "wordId": "desert",
+    "word": "desert",
+    "oldExample": "The baby's mother deserted him soon after giving birth",
+    "newExampleCn": "这个婴儿的母亲生下他后不久就遗弃了他。"
+  },
+  {
+    "wordId": "deserve",
+    "word": "deserve",
+    "oldExample": "You deserve a reward for being so helpful",
+    "newExampleCn": "你这么乐于助人，应该得到奖励。"
+  },
+  {
+    "wordId": "design",
+    "word": "design",
+    "oldExample": "He has already designed a good excuse for not attending the conference",
+    "newExampleCn": "他已经为不参加会议编好了一个不错的借口"
+  },
+  {
+    "wordId": "desire",
+    "word": "desire",
+    "oldExample": "He desired a college education",
+    "newExampleCn": "他渴望接受大学教育"
+  },
+  {
+    "wordId": "despair",
+    "word": "despair",
+    "oldExample": "This boy is his mother's last despair",
+    "newExampleCn": "这个男孩让他母亲彻底绝望了"
+  },
+  {
+    "wordId": "desperate",
+    "word": "desperate",
+    "oldExample": "The man lost in the desert was desperate for water",
+    "newExampleCn": "那个在沙漠中迷路的男人急需水。"
+  },
+  {
+    "wordId": "destination",
+    "word": "destination",
+    "oldExample": "We eventually arrived at our destination",
+    "newExampleCn": "我们最终到达了目的地"
+  },
+  {
+    "wordId": "detail",
+    "word": "detail",
+    "oldExample": "No detail was too small to escape the detective's attention",
+    "newExampleCn": "再小的细节也逃不过侦探的注意。"
+  },
+  {
+    "wordId": "detect",
+    "word": "detect",
+    "oldExample": "The man is responsible for detecting some kind of weak signals",
+    "newExampleCn": "这个人负责探测某种微弱信号"
+  },
+  {
+    "wordId": "determine",
+    "word": "determine",
+    "oldExample": "He determined to move to another city and start a new life",
+    "newExampleCn": "他决定搬到另一个城市，开始新的生活。"
+  },
+  {
+    "wordId": "develop",
+    "word": "develop",
+    "oldExample": "The United States can't develop in isolation from the rest of world",
+    "newExampleCn": "美国不可能脱离世界其他地区而发展。"
+  },
+  {
+    "wordId": "device",
+    "word": "device",
+    "oldExample": "These newly designed devices will appear in the exhibition next month",
+    "newExampleCn": "这些新设计的设备将于下个月在展览会上亮相"
+  },
+  {
+    "wordId": "devil",
+    "word": "devil",
+    "oldExample": "That enemy officer is the devil incarnate 他是魔鬼的化身",
+    "newExampleCn": "那个敌军军官简直是魔鬼的化身"
+  },
+  {
+    "wordId": "devise",
+    "word": "devise",
+    "oldExample": "The team is trying to devise a new system for handling mail order",
+    "newExampleCn": "团队正在尝试设计一个处理邮购订单的新系统"
+  },
+  {
+    "wordId": "devote",
+    "word": "devote",
+    "oldExample": "After she graduated, she continuted to devote herself to research",
+    "newExampleCn": "毕业后，她继续投身于研究。"
+  },
+  {
+    "wordId": "dew",
+    "word": "dew",
+    "oldExample": "Dew dripped from the leaves",
+    "newExampleCn": "露水从叶子上滴落。"
+  },
+  {
+    "wordId": "diagram",
+    "word": "diagram",
+    "oldExample": "The teacher draws a diagram showing how the plant seedling bends towards the sunlight",
+    "newExampleCn": "老师画了一张图，展示植物幼苗如何朝着阳光弯曲。"
+  },
+  {
+    "wordId": "dial",
+    "word": "dial",
+    "oldExample": "She picked up the phone and began to dial his number",
+    "newExampleCn": "她拿起电话，开始拨他的号码。"
+  },
+  {
+    "wordId": "dialect",
+    "word": "dialect",
+    "oldExample": "The dialect is spoken principally in the southern areas",
+    "newExampleCn": "这种方言主要在南部地区使用"
+  },
+  {
+    "wordId": "diameter",
+    "word": "diameter",
+    "oldExample": "The earth is slightly flat at the poles so that the polar diameter is slightly less than the equatorial diameter",
+    "newExampleCn": "地球两极略扁，因此极直径略小于赤道直径。"
+  },
+  {
+    "wordId": "diamond",
+    "word": "diamond",
+    "oldExample": "The diamond ring on her finger glittered in the light",
+    "newExampleCn": "她手指上的钻戒在光线下闪闪发光"
+  },
+  {
+    "wordId": "diary",
+    "word": "diary",
+    "oldExample": "Her diary is full of entries about him",
+    "newExampleCn": "她的日记里满是关于他的记录"
+  },
+  {
+    "wordId": "dictate",
+    "word": "dictate",
+    "oldExample": "The English teacher dictates to the class every other week",
+    "newExampleCn": "英语老师每隔一周给全班听写一次"
+  },
+  {
+    "wordId": "dictionary",
+    "word": "dictionary",
+    "oldExample": "The dictionary is a vast treasure trove of information",
+    "newExampleCn": "词典是一个蕴藏丰富信息的巨大宝库"
+  },
+  {
+    "wordId": "differ",
+    "word": "differ",
+    "oldExample": "The two theories differ from each other in many ways",
+    "newExampleCn": "这两种理论在许多方面彼此不同。"
+  },
+  {
+    "wordId": "digest",
+    "word": "digest",
+    "oldExample": "Mary can't digest fat",
+    "newExampleCn": "玛丽消化不了脂肪"
+  },
+  {
+    "wordId": "digital",
+    "word": "digital",
+    "oldExample": "The BCC has just successfully demonstrated a new digital radio transmission system",
+    "newExampleCn": "BCC刚刚成功演示了一套新的数字无线电传输系统"
+  },
+  {
+    "wordId": "diligent",
+    "word": "diligent",
+    "oldExample": "She is diligent and busy with all kinds of experiments all the time",
+    "newExampleCn": "她很勤奋，总是忙着做各种实验。"
+  },
+  {
+    "wordId": "dimension",
+    "word": "dimension",
+    "oldExample": "A line has one dimension and a square has two",
+    "newExampleCn": "线有一个维度，正方形有两个维度。"
+  },
+  {
+    "wordId": "dip",
+    "word": "dip",
+    "oldExample": "She dipped her hand in the sea to find out how cold it was",
+    "newExampleCn": "她把手伸进海水里，试试水有多冷。"
+  },
+  {
+    "wordId": "director",
+    "word": "director",
+    "oldExample": "The director cast him as a deaf and dumb man",
+    "newExampleCn": "导演安排他饰演一个聋哑人"
+  },
+  {
+    "wordId": "dirt",
+    "word": "dirt",
+    "oldExample": "The children were outside, playing happily in the dirt",
+    "newExampleCn": "孩子们在外面开心地玩泥巴。"
+  },
+  {
+    "wordId": "disagree",
+    "word": "disagree",
+    "oldExample": "I strongly disagree with this immoral approach to science",
+    "newExampleCn": "我强烈反对这种不道德的科学研究方法。"
+  },
+  {
+    "wordId": "disappear",
+    "word": "disappear",
+    "oldExample": "He has disappeared for three years",
+    "newExampleCn": "他已经失踪三年了"
+  },
+  {
+    "wordId": "disaster",
+    "word": "disaster",
+    "oldExample": "There was a great flood disaster in East China",
+    "newExampleCn": "中国东部发生了一场严重的洪灾"
+  },
+  {
+    "wordId": "discard",
+    "word": "discard",
+    "oldExample": "Outdated theory should be discarded",
+    "newExampleCn": "过时的理论应该被抛弃"
+  },
+  {
+    "wordId": "discharge",
+    "word": "discharge",
+    "oldExample": "How long will the discharge of the cargo take?",
+    "newExampleCn": "卸货需要多长时间？"
+  },
+  {
+    "wordId": "discipline",
+    "word": "discipline",
+    "oldExample": "It takes years of discipline to become a ballerina",
+    "newExampleCn": "要成为一名芭蕾舞演员需要多年的自律。"
+  },
+  {
+    "wordId": "disclose",
+    "word": "disclose",
+    "oldExample": "The authority finally disclosed the truth to the press",
+    "newExampleCn": "当局最终向媒体披露了真相"
+  },
+  {
+    "wordId": "discover",
+    "word": "discover",
+    "oldExample": "He discovered his talent for fashion design when he was very young",
+    "newExampleCn": "他很小的时候就发现了自己在时装设计方面的天赋"
+  },
+  {
+    "wordId": "discussion",
+    "word": "discussion",
+    "oldExample": "After a lot of discussion among the directors, the matter was settled in the end",
+    "newExampleCn": "董事们经过多次讨论后，事情最终得到了解决。"
+  },
+  {
+    "wordId": "disguise",
+    "word": "disguise",
+    "oldExample": "The spy disguised himself as a nurse",
+    "newExampleCn": "那个间谍把自己伪装成一名护士"
+  },
+  {
+    "wordId": "dish",
+    "word": "dish",
+    "oldExample": "The careless waiter dropped the dish onto the ground",
+    "newExampleCn": "那个粗心的服务员把盘子掉到了地上"
+  },
+  {
+    "wordId": "dismiss",
+    "word": "dismiss",
+    "oldExample": "If you are late again, you will be dismissed",
+    "newExampleCn": "如果你再迟到，就会被解雇。"
+  },
+  {
+    "wordId": "dispose",
+    "word": "dispose",
+    "oldExample": "I have to dispose of this pile of old papers and magazines",
+    "newExampleCn": "我得处理掉这堆旧报纸和杂志。"
+  },
+  {
+    "wordId": "dispute",
+    "word": "dispute",
+    "oldExample": "A long dispute means that both parties are wrong",
+    "newExampleCn": "长期争执意味着双方都有错"
+  },
+  {
+    "wordId": "dissolve",
+    "word": "dissolve",
+    "oldExample": "Sugar dissolves in water",
+    "newExampleCn": "糖溶解在水中"
+  },
+  {
+    "wordId": "distant",
+    "word": "distant",
+    "oldExample": "It snows all year around in that distant little village",
+    "newExampleCn": "那个遥远的小村庄一年到头都下雪"
+  },
+  {
+    "wordId": "distinct",
+    "word": "distinct",
+    "oldExample": "Those two ideas are quite distinct from each other",
+    "newExampleCn": "那两个想法彼此很不相同。"
+  },
+  {
+    "wordId": "distinguish",
+    "word": "distinguish",
+    "oldExample": "Some people cannot distinguished between some colors",
+    "newExampleCn": "有些人无法区分某些颜色"
+  },
+  {
+    "wordId": "distribute",
+    "word": "distribute",
+    "oldExample": "His part-time job on Sunday was to distribute leaflets on the street",
+    "newExampleCn": "他周日的兼职是在街上分发传单。"
+  },
+  {
+    "wordId": "disturb",
+    "word": "disturb",
+    "oldExample": "A soft breeze gently disturbed the surface of the pool",
+    "newExampleCn": "微风轻轻拂动了池水表面"
+  },
+  {
+    "wordId": "ditch",
+    "word": "ditch",
+    "oldExample": "When the road became impassable, they ditched their car and walked",
+    "newExampleCn": "道路无法通行时，他们弃车步行。"
+  },
+  {
+    "wordId": "dive",
+    "word": "dive",
+    "oldExample": "Diving is a part of this expedition",
+    "newExampleCn": "潜水是这次探险的一部分"
+  },
+  {
+    "wordId": "diverse",
+    "word": "diverse",
+    "oldExample": "The original meaning of this word has become more diverse over time",
+    "newExampleCn": "这个词的原意随着时间推移变得更加多样。"
+  },
+  {
+    "wordId": "divide",
+    "word": "divide",
+    "oldExample": "Twelve divided by three is four",
+    "newExampleCn": "十二除以三等于四"
+  },
+  {
+    "wordId": "divorce",
+    "word": "divorce",
+    "oldExample": "Never be divorced from real life",
+    "newExampleCn": "永远不要脱离现实生活"
+  },
+  {
+    "wordId": "dock",
+    "word": "dock",
+    "oldExample": "The ship's hull scraped along the side of the dock",
+    "newExampleCn": "船身沿着码头边擦过。"
+  },
+  {
+    "wordId": "doctor",
+    "word": "doctor",
+    "oldExample": "He is a doctor of philosophy",
+    "newExampleCn": "他拥有哲学博士学位"
+  },
+  {
+    "wordId": "donkey",
+    "word": "donkey",
+    "oldExample": "The donkey is eating grass on the field",
+    "newExampleCn": "驴正在田野里吃草"
+  },
+  {
+    "wordId": "dorm",
+    "word": "dorm",
+    "oldExample": "Are you going to live in the student dorm or at home?",
+    "newExampleCn": "你打算住学生宿舍还是住在家里？"
+  },
+  {
+    "wordId": "dot",
+    "word": "dot",
+    "oldExample": "On the map, convenience stores are marked by a red dot",
+    "newExampleCn": "在地图上，便利店用红点标出。"
+  },
+  {
+    "wordId": "double",
+    "word": "double",
+    "oldExample": "Many things now cost double what they did a couple of years ago",
+    "newExampleCn": "现在许多东西的价格是几年前的两倍。"
+  },
+  {
+    "wordId": "draft",
+    "word": "draft",
+    "oldExample": "When the first draft was completed, she took a break",
+    "newExampleCn": "初稿完成后，她休息了一下。"
+  },
+  {
+    "wordId": "drag",
+    "word": "drag",
+    "oldExample": "Use your mouse to drag the pictures into that folder",
+    "newExampleCn": "用鼠标把这些图片拖到那个文件夹里。"
+  },
+  {
+    "wordId": "dragon",
+    "word": "dragon",
+    "oldExample": "Dragons are described as monsters in most western countries",
+    "newExampleCn": "在大多数西方国家，龙被描述成怪物。"
+  },
+  {
+    "wordId": "drain",
+    "word": "drain",
+    "oldExample": "They drained the swamp and turn it into fertile land",
+    "newExampleCn": "他们排干了沼泽，把它变成了肥沃的土地"
+  },
+  {
+    "wordId": "drama",
+    "word": "drama",
+    "oldExample": "My brother was studying a course in drama at university",
+    "newExampleCn": "我哥哥当时在大学学习戏剧课程。"
+  },
+  {
+    "wordId": "dramatic",
+    "word": "dramatic",
+    "oldExample": "She made a dramatic speech at the meeting",
+    "newExampleCn": "她在会上发表了激动人心的演讲。"
+  },
+  {
+    "wordId": "draw",
+    "word": "draw",
+    "oldExample": "Draw a line with the ruler",
+    "newExampleCn": "用尺子画一条线"
+  },
+  {
+    "wordId": "drawer",
+    "word": "drawer",
+    "oldExample": "The keys are in the back left hand corner of the drawer",
+    "newExampleCn": "钥匙在抽屉左后角。"
+  },
+  {
+    "wordId": "dread",
+    "word": "dread",
+    "oldExample": "I dread to think what will happen if she finds out the truth",
+    "newExampleCn": "我不敢想象如果她发现真相会发生什么。"
+  },
+  {
+    "wordId": "dress",
+    "word": "dress",
+    "oldExample": "She wears a beautiful evening dress",
+    "newExampleCn": "她穿着一条漂亮的晚礼服"
+  }
+]

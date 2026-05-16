@@ -1,0 +1,596 @@
+[
+  {
+    "wordId": "explosion",
+    "word": "explosion",
+    "oldExample": "The explosion was caused by a burst gas pipe",
+    "newExampleCn": "爆炸是由煤气管道破裂引起的"
+  },
+  {
+    "wordId": "export",
+    "word": "export",
+    "oldExample": "Oil has supplanted coffee as our main export",
+    "newExampleCn": "石油已经取代咖啡，成为我们的主要出口产品。"
+  },
+  {
+    "wordId": "expose",
+    "word": "expose",
+    "oldExample": "The crime of the corrupt officials must be exposed without any reserve",
+    "newExampleCn": "腐败官员的罪行必须毫无保留地揭露出来。"
+  },
+  {
+    "wordId": "express",
+    "word": "express",
+    "oldExample": "We have to change here for the express train",
+    "newExampleCn": "我们得在这里换乘快车"
+  },
+  {
+    "wordId": "expression",
+    "word": "expression",
+    "oldExample": "Her expression of gratitude was simple and touching",
+    "newExampleCn": "她表达感谢的方式简单而感人"
+  },
+  {
+    "wordId": "extent",
+    "word": "extent",
+    "oldExample": "No one cares about the extent of his debts",
+    "newExampleCn": "没人关心他欠了多少债"
+  },
+  {
+    "wordId": "exterior",
+    "word": "exterior",
+    "oldExample": "The designer gives a design for the exterior of the container",
+    "newExampleCn": "设计师为集装箱的外观设计了方案"
+  },
+  {
+    "wordId": "external",
+    "word": "external",
+    "oldExample": "The external sector has improved performance significantly during the period",
+    "newExampleCn": "在此期间，对外部门的表现显著改善。"
+  },
+  {
+    "wordId": "fabric",
+    "word": "fabric",
+    "oldExample": "The jacket is comfortable because the fabric breathes",
+    "newExampleCn": "这件夹克很舒服，因为面料透气"
+  },
+  {
+    "wordId": "facility",
+    "word": "facility",
+    "oldExample": "This facility is open to both new and existing borrowers",
+    "newExampleCn": "这项服务向新借款人和现有借款人开放"
+  },
+  {
+    "wordId": "factor",
+    "word": "factor",
+    "oldExample": "Her friendly manner is an important factor in her rapid success",
+    "newExampleCn": "她友好的态度是她迅速成功的重要因素。"
+  },
+  {
+    "wordId": "faculty",
+    "word": "faculty",
+    "oldExample": "Faculty members devote most of their time to scholarly research",
+    "newExampleCn": "大学教师把大部分时间都投入到学术研究中"
+  },
+  {
+    "wordId": "fade",
+    "word": "fade",
+    "oldExample": "Beauty fades like a flower",
+    "newExampleCn": "美貌如花般凋谢"
+  },
+  {
+    "wordId": "fahrenheit",
+    "word": "Fahrenheit",
+    "oldExample": "Water freezes at 32 degrees Fahrenheit",
+    "newExampleCn": "水在32华氏度时结冰"
+  },
+  {
+    "wordId": "failure",
+    "word": "failure",
+    "oldExample": "His failure may lead to the bankruptcy of the company",
+    "newExampleCn": "他的失败可能会导致公司破产"
+  },
+  {
+    "wordId": "fair",
+    "word": "fair",
+    "oldExample": "He won the game, fair and square",
+    "newExampleCn": "他光明正大地赢了比赛"
+  },
+  {
+    "wordId": "false",
+    "word": "false",
+    "oldExample": "Cutting down on libraries seems a false economy to me",
+    "newExampleCn": "在我看来，削减图书馆开支似乎是省小钱吃大亏。"
+  },
+  {
+    "wordId": "famine",
+    "word": "famine",
+    "oldExample": "Many people died of famine that year",
+    "newExampleCn": "那一年，许多人死于饥荒。"
+  },
+  {
+    "wordId": "famous",
+    "word": "famous",
+    "oldExample": "Weathering Heights in one of the most famous novels in the world",
+    "newExampleCn": "《呼啸山庄》是世界上最著名的小说之一。"
+  },
+  {
+    "wordId": "fan",
+    "word": "fan",
+    "oldExample": "He has charmed most of them into membership of his fan club",
+    "newExampleCn": "他凭借魅力让他们中的大多数人加入了他的粉丝俱乐部"
+  },
+  {
+    "wordId": "fare",
+    "word": "fare",
+    "oldExample": "He didn't have enough money for the railway fare",
+    "newExampleCn": "他没有足够的钱付火车票钱。"
+  },
+  {
+    "wordId": "farewell",
+    "word": "farewell",
+    "oldExample": "The girl had come on the pretext of bidding him farewell",
+    "newExampleCn": "那个女孩借口来向他告别。"
+  },
+  {
+    "wordId": "fashion",
+    "word": "fashion",
+    "oldExample": "Loose trousers are the latest fashion",
+    "newExampleCn": "宽松长裤是最新潮流"
+  },
+  {
+    "wordId": "fasten",
+    "word": "fasten",
+    "oldExample": "Please fasten your seatbelts while the plane is taking off",
+    "newExampleCn": "飞机起飞时请系好安全带"
+  },
+  {
+    "wordId": "father-in-law",
+    "word": "father-in-law",
+    "oldExample": "He has paid a formal visit to his father-in-law",
+    "newExampleCn": "他已经正式拜访了他的岳父。"
+  },
+  {
+    "wordId": "fault",
+    "word": "fault",
+    "oldExample": "It is hard to fault the way he runs his own operation",
+    "newExampleCn": "很难挑出他经营自己业务的毛病"
+  },
+  {
+    "wordId": "favourable",
+    "word": "favourable",
+    "oldExample": "It's encouraging to receive a favorable report on one study",
+    "newExampleCn": "收到一项研究的积极报告令人鼓舞。"
+  },
+  {
+    "wordId": "feast",
+    "word": "feast",
+    "oldExample": "The feast was served by his mother and sisters",
+    "newExampleCn": "这顿盛宴是由他的母亲和姐妹们准备的"
+  },
+  {
+    "wordId": "feather",
+    "word": "feather",
+    "oldExample": "A feather is very light so that we say as light as a feather",
+    "newExampleCn": "羽毛很轻，所以我们说“轻如鸿毛”。"
+  },
+  {
+    "wordId": "fee",
+    "word": "fee",
+    "oldExample": "A higher fee doesn't necessarily mean a better course",
+    "newExampleCn": "费用更高并不一定意味着课程更好"
+  },
+  {
+    "wordId": "feed",
+    "word": "feed",
+    "oldExample": "He has to work hard to feed and clothe his family",
+    "newExampleCn": "他必须努力工作来养活家人，让他们有衣穿。"
+  },
+  {
+    "wordId": "feedback",
+    "word": "feedback",
+    "oldExample": "We'd appreciate it if you gave us some feedback on our new product",
+    "newExampleCn": "如果您能对我们的新产品提出一些反馈意见，我们将不胜感激。"
+  },
+  {
+    "wordId": "feel",
+    "word": "feel",
+    "oldExample": "Can you feel the tension in this room?",
+    "newExampleCn": "你能感觉到这个房间里的紧张气氛吗？"
+  },
+  {
+    "wordId": "female",
+    "word": "female",
+    "oldExample": "We've got three cats, two females and a male",
+    "newExampleCn": "我们有三只猫，两只母的，一只公的。"
+  },
+  {
+    "wordId": "fence",
+    "word": "fence",
+    "oldExample": "That fence is the limit of the schoolyard",
+    "newExampleCn": "那道栅栏是校园的边界。"
+  },
+  {
+    "wordId": "fertile",
+    "word": "fertile",
+    "oldExample": "There's enough to ransform barrel coral atolls into fertile groves",
+    "newExampleCn": "这些足以把珊瑚环礁变成肥沃的林地"
+  },
+  {
+    "wordId": "festival",
+    "word": "festival",
+    "oldExample": "This music festival will feature fireworks, live music, and barbecue",
+    "newExampleCn": "这个音乐节将有烟花、现场音乐和烧烤。"
+  },
+  {
+    "wordId": "fiction",
+    "word": "fiction",
+    "oldExample": "The writer poignantly described her own mothering experiences in her fiction",
+    "newExampleCn": "这位作家在她的小说中深情地描写了自己的育儿经历"
+  },
+  {
+    "wordId": "field",
+    "word": "field",
+    "oldExample": "The student of the geological class will be out on field exploration for the duration of the school year",
+    "newExampleCn": "地质班的学生将在整个学年期间外出进行野外考察。"
+  },
+  {
+    "wordId": "fierce",
+    "word": "fierce",
+    "oldExample": "They launched a fierce attack against the enemy position 他们向敌人的阵地发起了猛烈的进攻",
+    "newExampleCn": "他们向敌人的阵地发起了猛烈的进攻"
+  },
+  {
+    "wordId": "figure",
+    "word": "figure",
+    "oldExample": "I could see a tall figure near the door",
+    "newExampleCn": "我看见门口附近有个高大的身影"
+  },
+  {
+    "wordId": "file",
+    "word": "file",
+    "oldExample": "The police have a file on him",
+    "newExampleCn": "警方有他的档案"
+  },
+  {
+    "wordId": "film",
+    "word": "film",
+    "oldExample": "A good film will be on this weekend",
+    "newExampleCn": "这周末会上映一部好电影"
+  },
+  {
+    "wordId": "filter",
+    "word": "filter",
+    "oldExample": "Sunlight filtered through the chinks of the shutters",
+    "newExampleCn": "阳光透过百叶窗的缝隙洒了进来"
+  },
+  {
+    "wordId": "financial",
+    "word": "financial",
+    "oldExample": "Southeast Asia's financial crisis taught an important lesson",
+    "newExampleCn": "东南亚金融危机给人们上了重要的一课"
+  },
+  {
+    "wordId": "fine",
+    "word": "fine",
+    "oldExample": "The judge imposed a fine of twenty pounds on him",
+    "newExampleCn": "法官对他处以二十英镑的罚款"
+  },
+  {
+    "wordId": "fire",
+    "word": "fire",
+    "oldExample": "He was fired by his boss",
+    "newExampleCn": "他被老板解雇了"
+  },
+  {
+    "wordId": "fireman",
+    "word": "fireman",
+    "oldExample": "I saw a fireman racing into the burning house",
+    "newExampleCn": "我看到一名消防员冲进了着火的房子。"
+  },
+  {
+    "wordId": "firm",
+    "word": "firm",
+    "oldExample": "Because of their common values, they soon formed a firm friendship",
+    "newExampleCn": "由于他们有共同的价值观，很快就建立了牢固的友谊。"
+  },
+  {
+    "wordId": "fish",
+    "word": "fish",
+    "oldExample": "We caught three little fish",
+    "newExampleCn": "我们捉到了三条小鱼"
+  },
+  {
+    "wordId": "fisherman",
+    "word": "fisherman",
+    "oldExample": "What is it like to be a tuna fisherman",
+    "newExampleCn": "当一名金枪鱼渔民是什么感觉？"
+  },
+  {
+    "wordId": "fix",
+    "word": "fix",
+    "oldExample": "My watch has stopped. Can you fix it?",
+    "newExampleCn": "我的手表停了。你能修一下吗？"
+  },
+  {
+    "wordId": "flag",
+    "word": "flag",
+    "oldExample": "Flags were fluttering in the wind",
+    "newExampleCn": "旗帜在风中飘扬"
+  },
+  {
+    "wordId": "flame",
+    "word": "flame",
+    "oldExample": "It's been dry for so long that the forest could burst into flames at any moment",
+    "newExampleCn": "天气已经干燥了这么久，森林随时都可能燃起大火。"
+  },
+  {
+    "wordId": "flare",
+    "word": "flare",
+    "oldExample": "The flare of the match lit up the little girl's face",
+    "newExampleCn": "火柴突然燃起的光照亮了小女孩的脸。"
+  },
+  {
+    "wordId": "flash",
+    "word": "flash",
+    "oldExample": "The good news was flashed across the country",
+    "newExampleCn": "这个好消息迅速传遍了全国"
+  },
+  {
+    "wordId": "flat",
+    "word": "flat",
+    "oldExample": "In flat open country, there is plenty of grass for the cattle to feed on",
+    "newExampleCn": "在平坦开阔的乡间，有大量青草供牛群食用。"
+  },
+  {
+    "wordId": "fleet",
+    "word": "fleet",
+    "oldExample": "The general ordered the fleet to remain where they were and wait for further instructions",
+    "newExampleCn": "将军命令舰队留在原地，等待进一步指示。"
+  },
+  {
+    "wordId": "flexible",
+    "word": "flexible",
+    "oldExample": "We can visit your company on Monday or Tuesday. Our plans are fairly flexible",
+    "newExampleCn": "我们可以周一或周二去贵公司拜访。我们的计划相当灵活。"
+  },
+  {
+    "wordId": "flight",
+    "word": "flight",
+    "oldExample": "I'll book a direct flight to Shanghai for you",
+    "newExampleCn": "我会给你订一班直飞上海的航班"
+  },
+  {
+    "wordId": "float",
+    "word": "float",
+    "oldExample": "The smell of roses floated around",
+    "newExampleCn": "玫瑰花香四处飘荡"
+  },
+  {
+    "wordId": "flock",
+    "word": "flock",
+    "oldExample": "Sheep usually flock together",
+    "newExampleCn": "绵羊通常会成群聚在一起"
+  },
+  {
+    "wordId": "flour",
+    "word": "flour",
+    "oldExample": "Bread is chiefly made of flour",
+    "newExampleCn": "面包主要是由面粉制成的"
+  },
+  {
+    "wordId": "flourish",
+    "word": "flourish",
+    "oldExample": "Plants will not flurish without water",
+    "newExampleCn": "没有水，植物就无法茁壮成长。"
+  },
+  {
+    "wordId": "flower",
+    "word": "flower",
+    "oldExample": "Cherry trees flower in the early spring",
+    "newExampleCn": "樱花树在早春开花"
+  },
+  {
+    "wordId": "fluid",
+    "word": "fluid",
+    "oldExample": "When you are sick, you should drink plenty of fluids",
+    "newExampleCn": "生病的时候，你应该多喝水。"
+  },
+  {
+    "wordId": "focus",
+    "word": "focus",
+    "oldExample": "Today he was able to focus his message exclusively on the economy",
+    "newExampleCn": "今天他能够把讲话内容完全集中在经济问题上。"
+  },
+  {
+    "wordId": "fold",
+    "word": "fold",
+    "oldExample": "She folded the letter so that it would fit into her bag",
+    "newExampleCn": "她把信折起来，好放进包里。"
+  },
+  {
+    "wordId": "folk",
+    "word": "folk",
+    "oldExample": "You're on the list of folds I'm indebted to",
+    "newExampleCn": "你在我感激的人名单上"
+  },
+  {
+    "wordId": "follow",
+    "word": "follow",
+    "oldExample": "You are to follow his advice",
+    "newExampleCn": "你要听从他的建议"
+  },
+  {
+    "wordId": "food",
+    "word": "food",
+    "oldExample": "I prefer vegetarian food",
+    "newExampleCn": "我更喜欢素食。"
+  },
+  {
+    "wordId": "fool",
+    "word": "fool",
+    "oldExample": "A fool's haste is no speed. 欲速则不达",
+    "newExampleCn": "欲速则不达"
+  },
+  {
+    "wordId": "forbid",
+    "word": "forbid",
+    "oldExample": "Lack of time forbids any further discussion on this issue",
+    "newExampleCn": "时间不够，不允许再进一步讨论这个问题。"
+  },
+  {
+    "wordId": "force",
+    "word": "force",
+    "oldExample": "We'll settle the problem by force if necessary",
+    "newExampleCn": "如果有必要，我们会用武力解决这个问题。"
+  },
+  {
+    "wordId": "forecast",
+    "word": "forecast",
+    "oldExample": "The recent statement of the president forecasts a change in the situation",
+    "newExampleCn": "总统最近的声明预示着形势将发生变化"
+  },
+  {
+    "wordId": "foreign",
+    "word": "foreign",
+    "oldExample": "The new policy helped us to attract a lot of foreign investment",
+    "newExampleCn": "这项新政策帮助我们吸引了大量外国投资"
+  },
+  {
+    "wordId": "foreigner",
+    "word": "foreigner",
+    "oldExample": "Some foreigners assimilate easily into our way of life",
+    "newExampleCn": "有些外国人很容易融入我们的生活方式。"
+  },
+  {
+    "wordId": "forgive",
+    "word": "forgive",
+    "oldExample": "I'll never forgive you for what have done wrong to my friend",
+    "newExampleCn": "我永远不会原谅你对我朋友所做的错事。"
+  },
+  {
+    "wordId": "fork",
+    "word": "fork",
+    "oldExample": "They usually eat with a knife and fork",
+    "newExampleCn": "他们通常用刀叉吃饭"
+  },
+  {
+    "wordId": "formation",
+    "word": "formation",
+    "oldExample": "In planet formation, as in adolescence, you've got your late bloomers",
+    "newExampleCn": "在行星形成过程中，就像青春期一样，也会有晚熟者。"
+  },
+  {
+    "wordId": "formula",
+    "word": "formula",
+    "oldExample": "The formula for water is H2O",
+    "newExampleCn": "水的化学式是H2O"
+  },
+  {
+    "wordId": "found",
+    "word": "found",
+    "oldExample": "The rich businessman founded a hospital and a school in the town where he was born",
+    "newExampleCn": "那位富商在他出生的小镇创办了一家医院和一所学校"
+  },
+  {
+    "wordId": "foundation",
+    "word": "foundation",
+    "oldExample": "He laid the foundations his success by hard work",
+    "newExampleCn": "他通过努力工作为自己的成功奠定了基础"
+  },
+  {
+    "wordId": "fountain",
+    "word": "fountain",
+    "oldExample": "Social life is the fountain of wisdom for writers",
+    "newExampleCn": "社会生活是作家智慧的源泉"
+  },
+  {
+    "wordId": "fox",
+    "word": "fox",
+    "oldExample": "Don't trust him. He is a sly old fox",
+    "newExampleCn": "别相信他。他是个狡猾的老狐狸。"
+  },
+  {
+    "wordId": "fraction",
+    "word": "fraction",
+    "oldExample": "She spends only a fraction of her earnings on clothes",
+    "newExampleCn": "她只把收入中的一小部分花在衣服上。"
+  },
+  {
+    "wordId": "fragment",
+    "word": "fragment",
+    "oldExample": "He was still in bad condition and could give only a fragmented account of the accident",
+    "newExampleCn": "他当时身体状况仍然很差，只能断断续续地讲述事故经过。"
+  },
+  {
+    "wordId": "frame",
+    "word": "frame",
+    "oldExample": "The house has a wooden frame which is braced with bricks",
+    "newExampleCn": "这座房子有一个用砖块加固的木制框架。"
+  },
+  {
+    "wordId": "framework",
+    "word": "framework",
+    "oldExample": "This bridge over the river has a steel framework",
+    "newExampleCn": "这座横跨河流的桥有钢制框架。"
+  },
+  {
+    "wordId": "france",
+    "word": "France",
+    "oldExample": "The English channel divides England from France",
+    "newExampleCn": "英吉利海峡将英格兰与法国隔开"
+  },
+  {
+    "wordId": "freeze",
+    "word": "freeze",
+    "oldExample": "The weatherman predicted a freeze for tonight",
+    "newExampleCn": "天气预报员预测今晚会有霜冻。"
+  },
+  {
+    "wordId": "freight",
+    "word": "freight",
+    "oldExample": "We can send these goods by air freight or by sea freight",
+    "newExampleCn": "我们可以通过空运或海运发送这些货物。"
+  },
+  {
+    "wordId": "frequency",
+    "word": "frequency",
+    "oldExample": "This radio signal has a frequency of 800 kilohertz",
+    "newExampleCn": "这个无线电信号的频率是800千赫。"
+  },
+  {
+    "wordId": "friction",
+    "word": "friction",
+    "oldExample": "In designing this device, it is necessary to reduce friction as much as possible",
+    "newExampleCn": "在设计这种装置时，必须尽可能减少摩擦。"
+  },
+  {
+    "wordId": "fridge",
+    "word": "fridge",
+    "oldExample": "The butter will soften out of the fridge",
+    "newExampleCn": "黄油从冰箱里拿出来会变软。"
+  },
+  {
+    "wordId": "friendship",
+    "word": "friendship",
+    "oldExample": "No one can wreck the friendship between them",
+    "newExampleCn": "没有人能破坏他们之间的友谊"
+  },
+  {
+    "wordId": "frighten",
+    "word": "frighten",
+    "oldExample": "He frightened the old man into giving him all the money",
+    "newExampleCn": "他吓唬那位老人把所有钱都交给了他"
+  },
+  {
+    "wordId": "frog",
+    "word": "frog",
+    "oldExample": "A frog can live both on land and in water",
+    "newExampleCn": "青蛙既能生活在陆地上，也能生活在水里。"
+  },
+  {
+    "wordId": "frost",
+    "word": "frost",
+    "oldExample": "Sweet potatoes decayed after the frost",
+    "newExampleCn": "霜冻过后，红薯烂掉了。"
+  }
+]

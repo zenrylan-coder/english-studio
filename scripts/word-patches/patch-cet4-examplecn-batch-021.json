@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "trace",
+    "word": "trace",
+    "oldExample": "They traced the criminal to a house in the city",
+    "newExampleCn": "他们追踪那名罪犯到了城里的一所房子。"
+  },
+  {
+    "wordId": "track",
+    "word": "track",
+    "oldExample": "The hunter followed the animal's tracks",
+    "newExampleCn": "猎人跟着动物的足迹追踪。"
+  },
+  {
+    "wordId": "tractor",
+    "word": "tractor",
+    "oldExample": "The tractor has been demaged owing to rough usage",
+    "newExampleCn": "由于使用粗暴，这台拖拉机已经损坏了"
+  },
+  {
+    "wordId": "trade",
+    "word": "trade",
+    "oldExample": "China does a lot of trade with many countries",
+    "newExampleCn": "中国和许多国家进行大量贸易"
+  },
+  {
+    "wordId": "tradition",
+    "word": "tradition",
+    "oldExample": "Asia has a long tradition of tea drinking. China is of no exception",
+    "newExampleCn": "亚洲有着悠久的饮茶传统，中国也不例外。"
+  },
+  {
+    "wordId": "traffic",
+    "word": "traffic",
+    "oldExample": "Traffic reaches a peak between 8 and 9 in the morning",
+    "newExampleCn": "早上8点到9点之间交通达到高峰"
+  },
+  {
+    "wordId": "tragedy",
+    "word": "tragedy",
+    "oldExample": "She was too exhausted and distressed to talk about the tragedy",
+    "newExampleCn": "她太疲惫、太痛苦了，无法谈论那场悲剧。"
+  },
+  {
+    "wordId": "trail",
+    "word": "trail",
+    "oldExample": "The carriage drove along a dirt road and left a trail of dust",
+    "newExampleCn": "马车沿着土路行驶，留下一路尘土。"
+  },
+  {
+    "wordId": "training",
+    "word": "training",
+    "oldExample": "Training a prerequisite for competence",
+    "newExampleCn": "培训是胜任工作的前提"
+  },
+  {
+    "wordId": "traitor",
+    "word": "traitor",
+    "oldExample": "He stuck a knife into the traitor's heart",
+    "newExampleCn": "他把刀刺进了叛徒的心脏。"
+  },
+  {
+    "wordId": "tram",
+    "word": "tram",
+    "oldExample": "If you want to go to that place, you can travel by tram",
+    "newExampleCn": "如果你想去那个地方，可以坐有轨电车去。"
+  },
+  {
+    "wordId": "transfer",
+    "word": "transfer",
+    "oldExample": "The cat has transferred her affection to her new master",
+    "newExampleCn": "这只猫已经把感情转移到了新主人身上"
+  },
+  {
+    "wordId": "transform",
+    "word": "transform",
+    "oldExample": "She transformed the room by painting it",
+    "newExampleCn": "她通过粉刷改变了这个房间。"
+  },
+  {
+    "wordId": "translate",
+    "word": "translate",
+    "oldExample": "No matter how well a poem is translated, something of the spirit of the original work is lost",
+    "newExampleCn": "一首诗无论翻译得多好，原作中的某种精神都会有所流失。"
+  },
+  {
+    "wordId": "transmit",
+    "word": "transmit",
+    "oldExample": "Parents transmit some of their values and ideas to their children",
+    "newExampleCn": "父母会把他们的一些价值观和想法传递给孩子。"
+  },
+  {
+    "wordId": "transparent",
+    "word": "transparent",
+    "oldExample": "Not all glass is transparent",
+    "newExampleCn": "并不是所有玻璃都是透明的"
+  },
+  {
+    "wordId": "trap",
+    "word": "trap",
+    "oldExample": "The police set a trap for the thieves",
+    "newExampleCn": "警察给小偷设下了陷阱"
+  },
+  {
+    "wordId": "travel",
+    "word": "travel",
+    "oldExample": "During his travels, he met many interesting people",
+    "newExampleCn": "在旅行期间，他遇到了许多有趣的人。"
+  },
+  {
+    "wordId": "tray",
+    "word": "tray",
+    "oldExample": "He put the toast on the breakfast tray",
+    "newExampleCn": "他把吐司放在早餐托盘上。"
+  },
+  {
+    "wordId": "treason",
+    "word": "treason",
+    "oldExample": "They have committed treason against the state",
+    "newExampleCn": "他们犯下了叛国罪。"
+  },
+  {
+    "wordId": "treasure",
+    "word": "treasure",
+    "oldExample": "This museum has many art treasures",
+    "newExampleCn": "这家博物馆有许多艺术珍品"
+  },
+  {
+    "wordId": "treat",
+    "word": "treat",
+    "oldExample": "It is my turn to treat us today",
+    "newExampleCn": "今天轮到我请客了"
+  },
+  {
+    "wordId": "treaty",
+    "word": "treaty",
+    "oldExample": "In the treaty, both sides pledged to respect human rights",
+    "newExampleCn": "在条约中，双方承诺尊重人权。"
+  },
+  {
+    "wordId": "tremble",
+    "word": "tremble",
+    "oldExample": "There was a tremble in her voice",
+    "newExampleCn": "她的声音有些颤抖"
+  },
+  {
+    "wordId": "trend",
+    "word": "trend",
+    "oldExample": "The youth like to follow the latest trend in fashion",
+    "newExampleCn": "年轻人喜欢追随最新的时尚潮流"
+  },
+  {
+    "wordId": "trial",
+    "word": "trial",
+    "oldExample": "I noticed that his report was highly critical of the trial judge of this case",
+    "newExampleCn": "我注意到他的报告对本案的主审法官提出了严厉批评。"
+  },
+  {
+    "wordId": "triangle",
+    "word": "triangle",
+    "oldExample": "The three places form a triangle",
+    "newExampleCn": "这三个地方形成一个三角形"
+  },
+  {
+    "wordId": "tribe",
+    "word": "tribe",
+    "oldExample": "The tribe's development was more primitive than that of their neighbours/neighbors",
+    "newExampleCn": "这个部落的发展比邻近部落更原始。"
+  },
+  {
+    "wordId": "trick",
+    "word": "trick",
+    "oldExample": "The children played a trick on their teacher",
+    "newExampleCn": "孩子们捉弄了他们的老师"
+  },
+  {
+    "wordId": "trim",
+    "word": "trim",
+    "oldExample": "They trimmed their Christmas tree and put strings of color lights on it",
+    "newExampleCn": "他们装饰了圣诞树，还挂上了一串串彩灯。"
+  },
+  {
+    "wordId": "trip",
+    "word": "trip",
+    "oldExample": "The trip was expensive and uncomfortable",
+    "newExampleCn": "这次旅行又贵又不舒服"
+  },
+  {
+    "wordId": "triumph",
+    "word": "triumph",
+    "oldExample": "It was a great triumph when our team won the race",
+    "newExampleCn": "我们队赢得比赛时，那是一次巨大的胜利。"
+  },
+  {
+    "wordId": "troop",
+    "word": "troop",
+    "oldExample": "The troops made good their retreat from the occupied city",
+    "newExampleCn": "部队成功从被占领的城市撤退。"
+  },
+  {
+    "wordId": "trousers",
+    "word": "trousers",
+    "oldExample": "This pair of trousers is too tight for me",
+    "newExampleCn": "这条裤子对我来说太紧了"
+  },
+  {
+    "wordId": "truck",
+    "word": "truck",
+    "oldExample": "They transported the goods by truck",
+    "newExampleCn": "他们用卡车运输货物"
+  },
+  {
+    "wordId": "trumpet",
+    "word": "trumpet",
+    "oldExample": "His performance as a trumpet player was quite revolutionary",
+    "newExampleCn": "他作为小号手的演奏相当具有革命性"
+  },
+  {
+    "wordId": "trunk",
+    "word": "trunk",
+    "oldExample": "Can she move that trunk by herself?",
+    "newExampleCn": "她能自己搬动那个大箱子吗？"
+  },
+  {
+    "wordId": "tub",
+    "word": "tub",
+    "oldExample": "She comforted her husband by putting his feet in a tub of hot water",
+    "newExampleCn": "她把丈夫的脚放进一盆热水里，安慰他。"
+  },
+  {
+    "wordId": "tube",
+    "word": "tube",
+    "oldExample": "She passed me a tube of toothpaste",
+    "newExampleCn": "她递给我一管牙膏"
+  },
+  {
+    "wordId": "tumble",
+    "word": "tumble",
+    "oldExample": "She tumbled on the slick, damp ground",
+    "newExampleCn": "她在湿滑的地面上摔倒了"
+  },
+  {
+    "wordId": "tune",
+    "word": "tune",
+    "oldExample": "The violin seems to be out of tune",
+    "newExampleCn": "这把小提琴好像走音了"
+  },
+  {
+    "wordId": "tunnel",
+    "word": "tunnel",
+    "oldExample": "The train rolled into a tunnel and everything went black",
+    "newExampleCn": "火车驶进隧道，一切都变黑了。"
+  },
+  {
+    "wordId": "turbine",
+    "word": "turbine",
+    "oldExample": "The turbine is spun by the high pressure gases",
+    "newExampleCn": "涡轮由高压气体带动旋转"
+  },
+  {
+    "wordId": "turbulent",
+    "word": "turbulent",
+    "oldExample": "The sea was to turbulent for us to set sail",
+    "newExampleCn": "海上风浪太大，我们无法启航"
+  },
+  {
+    "wordId": "turkey",
+    "word": "turkey",
+    "oldExample": "People often drink white wine with turkey",
+    "newExampleCn": "人们常常喝白葡萄酒配火鸡。"
+  },
+  {
+    "wordId": "turn",
+    "word": "turn",
+    "oldExample": "It was your turn last time. It's always your turn to be the boss",
+    "newExampleCn": "上次就轮到你了。总是轮到你当老大。"
+  },
+  {
+    "wordId": "turnip",
+    "word": "turnip",
+    "oldExample": "My nephew loves to eat raw turnip",
+    "newExampleCn": "我侄子喜欢吃生萝卜。"
+  },
+  {
+    "wordId": "tutor",
+    "word": "tutor",
+    "oldExample": "She was my personal tutor at university",
+    "newExampleCn": "她是我大学时的私人导师"
+  },
+  {
+    "wordId": "twin",
+    "word": "twin",
+    "oldExample": "You should know that this plan has a twin purpose",
+    "newExampleCn": "你应该知道，这个计划有双重目的。"
+  },
+  {
+    "wordId": "twinkle",
+    "word": "twinkle",
+    "oldExample": "We could see the distant twinkle of the harbor lights",
+    "newExampleCn": "我们能看到远处港口灯光的闪烁。"
+  },
+  {
+    "wordId": "twist",
+    "word": "twist",
+    "oldExample": "Twist the lid to open it",
+    "newExampleCn": "拧开盖子。"
+  },
+  {
+    "wordId": "typhoon",
+    "word": "typhoon",
+    "oldExample": "The typhoon is gathering strength",
+    "newExampleCn": "台风正在增强。"
+  },
+  {
+    "wordId": "typist",
+    "word": "typist",
+    "oldExample": "The two typists have already worked all day",
+    "newExampleCn": "这两名打字员已经工作了一整天。"
+  },
+  {
+    "wordId": "ugly",
+    "word": "ugly",
+    "oldExample": "You can't persuade me to buy this ugly vase",
+    "newExampleCn": "你说服不了我买这个丑花瓶。"
+  },
+  {
+    "wordId": "umbrella",
+    "word": "umbrella",
+    "oldExample": "The wind blew my umbrella inside out",
+    "newExampleCn": "风把我的伞吹翻了"
+  },
+  {
+    "wordId": "uncover",
+    "word": "uncover",
+    "oldExample": "The detective must uncover the murder by deduction of facts",
+    "newExampleCn": "侦探必须通过对事实的推理来揭开这起谋杀案的真相"
+  },
+  {
+    "wordId": "undergo",
+    "word": "undergo",
+    "oldExample": "I underwent so much suffering in early years that I am afraid of nothing today",
+    "newExampleCn": "我早年经历了太多苦难，所以如今什么都不怕。"
+  },
+  {
+    "wordId": "underground",
+    "word": "underground",
+    "oldExample": "There is an underground passage leading to the old house",
+    "newExampleCn": "有一条地下通道通向那座老房子"
+  },
+  {
+    "wordId": "understand",
+    "word": "understand",
+    "oldExample": "What human beings have understood is just the tip of the iceberg",
+    "newExampleCn": "人类已经理解的东西只是冰山一角"
+  },
+  {
+    "wordId": "undertake",
+    "word": "undertake",
+    "oldExample": "The developed countries should undertake the main responsibilities of global warming",
+    "newExampleCn": "发达国家应承担全球变暖的主要责任"
+  },
+  {
+    "wordId": "undertaking",
+    "word": "undertaking",
+    "oldExample": "I give an undertaking that we shall proceed with the legislation",
+    "newExampleCn": "我承诺我们将推进这项立法。"
+  },
+  {
+    "wordId": "undo",
+    "word": "undo",
+    "oldExample": "He finally managed to undo this knot",
+    "newExampleCn": "他终于设法解开了这个结。"
+  },
+  {
+    "wordId": "uniform",
+    "word": "uniform",
+    "oldExample": "Do you have to wear uniform if you work at McDonald's?",
+    "newExampleCn": "如果你在麦当劳工作，必须穿制服吗？"
+  },
+  {
+    "wordId": "union",
+    "word": "union",
+    "oldExample": "The largest teachers' union supports the education reforms",
+    "newExampleCn": "最大的教师工会支持这些教育改革"
+  },
+  {
+    "wordId": "unique",
+    "word": "unique",
+    "oldExample": "Each person's fingerprints are unique",
+    "newExampleCn": "每个人的指纹都是独一无二的"
+  },
+  {
+    "wordId": "unite",
+    "word": "unite",
+    "oldExample": "All parties should unite their efforts to bring peace",
+    "newExampleCn": "各方应共同努力带来和平"
+  },
+  {
+    "wordId": "universe",
+    "word": "universe",
+    "oldExample": "The depth of the universe is immeasurable",
+    "newExampleCn": "宇宙的深度无法衡量"
+  },
+  {
+    "wordId": "university",
+    "word": "university",
+    "oldExample": "She is a student at Peking University",
+    "newExampleCn": "她是北京大学的学生"
+  },
+  {
+    "wordId": "upset",
+    "word": "upset",
+    "oldExample": "I hope I haven't said anything to upset you",
+    "newExampleCn": "希望我没说什么让你不高兴的话"
+  },
+  {
+    "wordId": "urge",
+    "word": "urge",
+    "oldExample": "They urged Washington to reconsider its decision",
+    "newExampleCn": "他们敦促华盛顿重新考虑其决定"
+  },
+  {
+    "wordId": "usage",
+    "word": "usage",
+    "oldExample": "The college board said what's on the new test will relate to usage",
+    "newExampleCn": "大学理事会表示，新考试的内容将与用法有关。"
+  },
+  {
+    "wordId": "vacation",
+    "word": "vacation",
+    "oldExample": "I was too busy to spare time for a vacation",
+    "newExampleCn": "我太忙了，抽不出时间去度假。"
+  },
+  {
+    "wordId": "vacuum",
+    "word": "vacuum",
+    "oldExample": "The food is kept in a vacuum pack",
+    "newExampleCn": "食物保存在真空包装里"
+  },
+  {
+    "wordId": "valley",
+    "word": "valley",
+    "oldExample": "The valley was hidden from view in the mist",
+    "newExampleCn": "山谷隐藏在雾中，看不见。"
+  },
+  {
+    "wordId": "valuable",
+    "word": "valuable",
+    "oldExample": "His wife put on her valuable ring and necklace",
+    "newExampleCn": "他的妻子戴上了她贵重的戒指和项链"
+  },
+  {
+    "wordId": "van",
+    "word": "van",
+    "oldExample": "As the car turned the corner, it collided with a van",
+    "newExampleCn": "那辆车转弯时撞上了一辆货车。"
+  },
+  {
+    "wordId": "vanish",
+    "word": "vanish",
+    "oldExample": "He seemed to vanish into thin air",
+    "newExampleCn": "他好像凭空消失了"
+  },
+  {
+    "wordId": "vapour",
+    "word": "vapour",
+    "oldExample": "When water changes to water vapor, we say it evaporates",
+    "newExampleCn": "当水变成水蒸气时，我们说它蒸发了"
+  },
+  {
+    "wordId": "variable",
+    "word": "variable",
+    "oldExample": "There are some variables that can change our plan",
+    "newExampleCn": "有一些变量可能会改变我们的计划"
+  },
+  {
+    "wordId": "variation",
+    "word": "variation",
+    "oldExample": "Variation among dogs is limited to the possible permutations of their genes",
+    "newExampleCn": "狗之间的差异仅限于其基因可能的排列组合。"
+  },
+  {
+    "wordId": "vase",
+    "word": "vase",
+    "oldExample": "This flaw makes the vase less valable",
+    "newExampleCn": "这个瑕疵使花瓶没那么值钱。"
+  },
+  {
+    "wordId": "vegetable",
+    "word": "vegetable",
+    "oldExample": "Is a tomato a fruit or a vegetable?",
+    "newExampleCn": "西红柿是水果还是蔬菜？"
+  },
+  {
+    "wordId": "vehicle",
+    "word": "vehicle",
+    "oldExample": "Subway is a convenient vehicle for white-collar workers",
+    "newExampleCn": "地铁是上班族便捷的交通工具。"
+  },
+  {
+    "wordId": "veil",
+    "word": "veil",
+    "oldExample": "The bride's face was covered with a white veil",
+    "newExampleCn": "新娘的脸被白色面纱遮住了"
+  },
+  {
+    "wordId": "velocity",
+    "word": "velocity",
+    "oldExample": "The velocity of light is about 300,000 kilometers per second",
+    "newExampleCn": "光速约为每秒30万公里。"
+  },
+  {
+    "wordId": "velvet",
+    "word": "velvet",
+    "oldExample": "The lawn looks like green velvet",
+    "newExampleCn": "草坪看起来像绿色的天鹅绒。"
+  },
+  {
+    "wordId": "verb",
+    "word": "verb",
+    "oldExample": "A sentence usually contains a subject and a verb",
+    "newExampleCn": "一个句子通常包含一个主语和一个动词"
+  },
+  {
+    "wordId": "verify",
+    "word": "verify",
+    "oldExample": "He tried in every way to verify this theory",
+    "newExampleCn": "他想尽各种办法来验证这个理论"
+  },
+  {
+    "wordId": "version",
+    "word": "version",
+    "oldExample": "These books are Chinese versions of Shakespeare",
+    "newExampleCn": "这些书是莎士比亚作品的中文版。"
+  },
+  {
+    "wordId": "vertical",
+    "word": "vertical",
+    "oldExample": "In some places, the cliff is almost vertical and too dangerous to climb",
+    "newExampleCn": "有些地方的悬崖几乎是垂直的，太危险了，不能攀爬。"
+  },
+  {
+    "wordId": "vessel",
+    "word": "vessel",
+    "oldExample": "We haved cited the vessel and are following it",
+    "newExampleCn": "我们已经发现那艘船，正在跟踪它。"
+  },
+  {
+    "wordId": "vest",
+    "word": "vest",
+    "oldExample": "One button on the vest is loose",
+    "newExampleCn": "背心上有一颗扣子松了"
+  },
+  {
+    "wordId": "veteran",
+    "word": "veteran",
+    "oldExample": "The baseball veteran loved to coach young players",
+    "newExampleCn": "那位棒球老将喜欢指导年轻球员"
+  },
+  {
+    "wordId": "vex",
+    "word": "vex",
+    "oldExample": "She was vexed at her failure. 她因失败而恼火",
+    "newExampleCn": "她因失败而恼火"
+  },
+  {
+    "wordId": "vibrate",
+    "word": "vibrate",
+    "oldExample": "Some insects' wings vibrate so fast that the movement is invisible to human eyes",
+    "newExampleCn": "有些昆虫的翅膀振动得非常快，以至于人眼看不见这种运动。"
+  },
+  {
+    "wordId": "vice",
+    "word": "vice",
+    "oldExample": "Virtue and vise are two different things: the former leads to peace, the latter to misery",
+    "newExampleCn": "美德和恶行是两回事：前者带来平静，后者导致痛苦。"
+  },
+  {
+    "wordId": "victim",
+    "word": "victim",
+    "oldExample": "One of the booming victims was dead on arrival in hospital",
+    "newExampleCn": "其中一名爆炸受害者被送到医院时已经死亡。"
+  },
+  {
+    "wordId": "victory",
+    "word": "victory",
+    "oldExample": "The school football team has had three victories this month against other schools",
+    "newExampleCn": "这个月，学校足球队对阵其他学校已经赢了三场。"
+  },
+  {
+    "wordId": "viewpoint",
+    "word": "viewpoint",
+    "oldExample": "I look at this problem from a different viewpoint",
+    "newExampleCn": "我从不同的角度看这个问题"
+  },
+  {
+    "wordId": "vigorous",
+    "word": "vigorous",
+    "oldExample": "Our attack was very vigorous and the enemy retreated back to the riverbank",
+    "newExampleCn": "我们的进攻非常猛烈，敌人退回到了河岸边。"
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "hawk",
+    "word": "hawk",
+    "oldExample": "A hawk hovered in the blue sky",
+    "newExampleCn": "一只鹰在蓝天中盘旋。"
+  },
+  {
+    "wordId": "hay",
+    "word": "hay",
+    "oldExample": "Make hay while sun shines 趁晴晒草，趁热打铁",
+    "newExampleCn": "趁热打铁"
+  },
+  {
+    "wordId": "hazard",
+    "word": "hazard",
+    "oldExample": "There are many hazards in a journey across the Arctic",
+    "newExampleCn": "穿越北极的旅途中有许多危险。"
+  },
+  {
+    "wordId": "heading",
+    "word": "heading",
+    "oldExample": "The heading was in large print",
+    "newExampleCn": "标题是用大号字体印刷的"
+  },
+  {
+    "wordId": "headmaster",
+    "word": "headmaster",
+    "oldExample": "His track record as a headmaster was excellent",
+    "newExampleCn": "他担任校长期间的业绩非常出色"
+  },
+  {
+    "wordId": "headquarters",
+    "word": "headquarters",
+    "oldExample": "The company's headquarters is in Paris",
+    "newExampleCn": "这家公司的总部在巴黎。"
+  },
+  {
+    "wordId": "heap",
+    "word": "heap",
+    "oldExample": "A heap of clothes was lying in the corner",
+    "newExampleCn": "一堆衣服堆在角落里"
+  },
+  {
+    "wordId": "heating",
+    "word": "heating",
+    "oldExample": "The workers are installing a heating system",
+    "newExampleCn": "工人们正在安装供暖系统"
+  },
+  {
+    "wordId": "heaven",
+    "word": "heaven",
+    "oldExample": "A week on the tropical island was heaven",
+    "newExampleCn": "在热带岛屿上待一周简直像天堂。"
+  },
+  {
+    "wordId": "hedge",
+    "word": "hedge",
+    "oldExample": "There is a opening in the hedge",
+    "newExampleCn": "树篱上有一个开口"
+  },
+  {
+    "wordId": "heir",
+    "word": "heir",
+    "oldExample": "In the UK, it is customary for the next heir to the throne to be regent",
+    "newExampleCn": "在英国，通常由下一位王位继承人担任摄政。"
+  },
+  {
+    "wordId": "helicopter",
+    "word": "helicopter",
+    "oldExample": "The president helicoptered to that city yesterday",
+    "newExampleCn": "总统昨天乘直升机去了那座城市"
+  },
+  {
+    "wordId": "hell",
+    "word": "hell",
+    "oldExample": "The priest said they would go to hell for their sins",
+    "newExampleCn": "牧师说他们会因自己的罪孽下地狱。"
+  },
+  {
+    "wordId": "helmet",
+    "word": "helmet",
+    "oldExample": "All visitors to the site must wear a safety helmet",
+    "newExampleCn": "所有到工地参观的人都必须戴安全帽"
+  },
+  {
+    "wordId": "herd",
+    "word": "herd",
+    "oldExample": "The herdsman looks after a herd of animals",
+    "newExampleCn": "牧民照看一群牲畜。"
+  },
+  {
+    "wordId": "hero",
+    "word": "hero",
+    "oldExample": "The hero of the novel is Bilbo",
+    "newExampleCn": "这部小说的主人公是比尔博"
+  },
+  {
+    "wordId": "heroine",
+    "word": "heroine",
+    "oldExample": "The fairy godmother waves her magic wand and grants the heroine's wishes",
+    "newExampleCn": "仙女教母挥动魔杖，实现了女主角的愿望。"
+  },
+  {
+    "wordId": "highway",
+    "word": "highway",
+    "oldExample": "A four-lane highway connects the two towns",
+    "newExampleCn": "一条四车道高速公路连接着这两个城镇"
+  },
+  {
+    "wordId": "hillside",
+    "word": "hillside",
+    "oldExample": "The path steepened as they climed the hillside",
+    "newExampleCn": "他们沿着山坡往上爬时，小路变得更陡了"
+  },
+  {
+    "wordId": "hint",
+    "word": "hint",
+    "oldExample": "When she said she was tired, it was a hint that she wanted us to leave",
+    "newExampleCn": "当她说她累了，那是在暗示她想让我们离开。"
+  },
+  {
+    "wordId": "hire",
+    "word": "hire",
+    "oldExample": "They hired an advertising company to help sell a new product",
+    "newExampleCn": "他们聘请了一家广告公司来帮助销售一款新产品。"
+  },
+  {
+    "wordId": "history",
+    "word": "history",
+    "oldExample": "China is a oriental country with a long history",
+    "newExampleCn": "中国是一个有着悠久历史的东方国家"
+  },
+  {
+    "wordId": "hit",
+    "word": "hit",
+    "oldExample": "They insisted that food and medical supplis should be given to the worst hit areas",
+    "newExampleCn": "他们坚持认为，应该向受灾最严重的地区提供食物和医疗用品。"
+  },
+  {
+    "wordId": "hollow",
+    "word": "hollow",
+    "oldExample": "The trunk of this tree looks solid, but in fact, it is hollow",
+    "newExampleCn": "这棵树的树干看起来很结实，但其实是空心的。"
+  },
+  {
+    "wordId": "holy",
+    "word": "holy",
+    "oldExample": "A holy person is spiritually pure",
+    "newExampleCn": "圣洁的人在精神上是纯洁的"
+  },
+  {
+    "wordId": "honey",
+    "word": "honey",
+    "oldExample": "We can use honey as a substitute for sugar",
+    "newExampleCn": "我们可以用蜂蜜代替糖。"
+  },
+  {
+    "wordId": "honeymoon",
+    "word": "honeymoon",
+    "oldExample": "While on honeymoon in Bali, she learned to surf",
+    "newExampleCn": "在巴厘岛度蜜月时，她学会了冲浪。"
+  },
+  {
+    "wordId": "hook",
+    "word": "hook",
+    "oldExample": "Hang your coat on the hook",
+    "newExampleCn": "把你的外套挂在挂钩上"
+  },
+  {
+    "wordId": "hopeless",
+    "word": "hopeless",
+    "oldExample": "He feels that his chances of winning the contest are hopeless",
+    "newExampleCn": "他觉得自己赢得比赛的机会渺茫。"
+  },
+  {
+    "wordId": "horizon",
+    "word": "horizon",
+    "oldExample": "I could see a ship on the horizon",
+    "newExampleCn": "我能看见地平线上有一艘船。"
+  },
+  {
+    "wordId": "horn",
+    "word": "horn",
+    "oldExample": "The young goat is just beginning to grow horns",
+    "newExampleCn": "这只小山羊刚开始长角。"
+  },
+  {
+    "wordId": "horse",
+    "word": "horse",
+    "oldExample": "The horse became frightened and ran away",
+    "newExampleCn": "那匹马受惊后跑掉了"
+  },
+  {
+    "wordId": "horsepower",
+    "word": "horsepower",
+    "oldExample": "The horsepower of the engine is not very impressive",
+    "newExampleCn": "这台发动机的马力不是很强。"
+  },
+  {
+    "wordId": "host",
+    "word": "host",
+    "oldExample": "Do not bring alcoholic beverages in case your host or hostess doesn't drink alcohol",
+    "newExampleCn": "不要带酒精饮料，以防主人不喝酒。"
+  },
+  {
+    "wordId": "hostess",
+    "word": "hostess",
+    "oldExample": "It's polite to bring flowers, chocolates or a bottle of wine to the hostess",
+    "newExampleCn": "给主人带花、巧克力或一瓶葡萄酒是很有礼貌的。"
+  },
+  {
+    "wordId": "household",
+    "word": "household",
+    "oldExample": "The appliance of electricity to household makes the housework much easier",
+    "newExampleCn": "家用电器让家务变得轻松多了"
+  },
+  {
+    "wordId": "housewife",
+    "word": "housewife",
+    "oldExample": "The cleverest housewife can't cook a meal without rice",
+    "newExampleCn": "巧妇难为无米之炊"
+  },
+  {
+    "wordId": "humid",
+    "word": "humid",
+    "oldExample": "The milk powder has lumped together because my home is so humid",
+    "newExampleCn": "因为家里太潮湿，奶粉都结块了。"
+  },
+  {
+    "wordId": "hunger",
+    "word": "hunger",
+    "oldExample": "His hunger was soon appeased 平息、和缓",
+    "newExampleCn": "他的饥饿很快得到了缓解"
+  },
+  {
+    "wordId": "hunt",
+    "word": "hunt",
+    "oldExample": "Parent birds begin to hunt for food for their young",
+    "newExampleCn": "鸟爸鸟妈开始为幼鸟觅食"
+  },
+  {
+    "wordId": "hurry",
+    "word": "hurry",
+    "oldExample": "I'm in no hurry to get back to school",
+    "newExampleCn": "我不急着回学校。"
+  },
+  {
+    "wordId": "husband",
+    "word": "husband",
+    "oldExample": "He is a model husband and father",
+    "newExampleCn": "他是模范丈夫和父亲。"
+  },
+  {
+    "wordId": "hut",
+    "word": "hut",
+    "oldExample": "The hut was made out of pieces of wood",
+    "newExampleCn": "那间小屋是用木片搭成的"
+  },
+  {
+    "wordId": "hydrogen",
+    "word": "hydrogen",
+    "oldExample": "Two parts hydrogen, one part oxygen, you'll get water everytime",
+    "newExampleCn": "两份氢加一份氧，每次都会生成水。"
+  },
+  {
+    "wordId": "identical",
+    "word": "identical",
+    "oldExample": "This is the identical hotel we stayed at last year",
+    "newExampleCn": "这就是我们去年住过的那家酒店。"
+  },
+  {
+    "wordId": "idiom",
+    "word": "idiom",
+    "oldExample": "Never too old to learn is an idiom",
+    "newExampleCn": "活到老，学到老是一句习语。"
+  },
+  {
+    "wordId": "illustrate",
+    "word": "illustrate",
+    "oldExample": "The book was illustrated with color photographs",
+    "newExampleCn": "这本书配有彩色照片。"
+  },
+  {
+    "wordId": "imitate",
+    "word": "imitate",
+    "oldExample": "He imitates other people to perfection",
+    "newExampleCn": "他模仿别人惟妙惟肖"
+  },
+  {
+    "wordId": "immense",
+    "word": "immense",
+    "oldExample": "They plunged into their work with immense zeal",
+    "newExampleCn": "他们以极大的热情投入到工作中。"
+  },
+  {
+    "wordId": "impact",
+    "word": "impact",
+    "oldExample": "We are a flash in time, but our impact is forever",
+    "newExampleCn": "我们只是时间中的一瞬，但我们的影响将永存"
+  },
+  {
+    "wordId": "imply",
+    "word": "imply",
+    "oldExample": "The way he talked implied that he was not willing to accept the agreement",
+    "newExampleCn": "他说话的方式暗示他不愿意接受这项协议"
+  },
+  {
+    "wordId": "import",
+    "word": "import",
+    "oldExample": "We import a huge amount of produce from other countries every year",
+    "newExampleCn": "我们每年从其他国家进口大量农产品。"
+  },
+  {
+    "wordId": "importance",
+    "word": "importance",
+    "oldExample": "The police officer emphasised the importance of careful driving",
+    "newExampleCn": "警察强调了谨慎驾驶的重要性"
+  },
+  {
+    "wordId": "impose",
+    "word": "impose",
+    "oldExample": "She often imposed her values on her daughter",
+    "newExampleCn": "她经常把自己的价值观强加给女儿"
+  },
+  {
+    "wordId": "impress",
+    "word": "impress",
+    "oldExample": "His courage and determination impressed his rivals",
+    "newExampleCn": "他的勇气和决心给对手留下了深刻印象"
+  },
+  {
+    "wordId": "improve",
+    "word": "improve",
+    "oldExample": "The offered a suggestion to improve the plan",
+    "newExampleCn": "他们提出了一个改进计划的建议"
+  },
+  {
+    "wordId": "incident",
+    "word": "incident",
+    "oldExample": "A serious incident along the border increased our fears of war",
+    "newExampleCn": "边境发生的一起严重事件加剧了我们对战争的担忧。"
+  },
+  {
+    "wordId": "incline",
+    "word": "incline",
+    "oldExample": "What he said inclines me to think that he will agree to our plan",
+    "newExampleCn": "他说的话使我倾向于认为他会同意我们的计划"
+  },
+  {
+    "wordId": "income",
+    "word": "income",
+    "oldExample": "Many staff members made an accusation that the earned incomes were not distributed upon the principle of equality",
+    "newExampleCn": "许多员工指责说，收入没有按照公平原则分配。"
+  },
+  {
+    "wordId": "increase",
+    "word": "increase",
+    "oldExample": "His employer has increased his salary",
+    "newExampleCn": "他的雇主给他涨了工资"
+  },
+  {
+    "wordId": "independence",
+    "word": "independence",
+    "oldExample": "The country attained its independence in 1972",
+    "newExampleCn": "这个国家于1972年获得独立"
+  },
+  {
+    "wordId": "index",
+    "word": "index",
+    "oldExample": "The index is arranged in alphabetical order",
+    "newExampleCn": "索引是按字母顺序排列的"
+  },
+  {
+    "wordId": "indian",
+    "word": "Indian",
+    "oldExample": "To an Indian, the owl is a symbol of bad luck",
+    "newExampleCn": "对印度人来说，猫头鹰是坏运气的象征"
+  },
+  {
+    "wordId": "individual",
+    "word": "individual",
+    "oldExample": "The rights of the individual are considered to be very important",
+    "newExampleCn": "个人的权利被认为非常重要"
+  },
+  {
+    "wordId": "industry",
+    "word": "industry",
+    "oldExample": "The conference underscored the importance of modern industry",
+    "newExampleCn": "这次会议强调了现代工业的重要性"
+  },
+  {
+    "wordId": "inevitable",
+    "word": "inevitable",
+    "oldExample": "Such a difficult operation may not succeed, but it's an inevitable gamble",
+    "newExampleCn": "这么困难的手术可能不会成功，但这是一场不可避免的赌博。"
+  },
+  {
+    "wordId": "infant",
+    "word": "infant",
+    "oldExample": "The infant mortality rate is highly sensitive barometer of social-economic conditions",
+    "newExampleCn": "婴儿死亡率是衡量社会经济状况的高度敏感指标。"
+  },
+  {
+    "wordId": "infer",
+    "word": "infer",
+    "oldExample": "From your smile, I infer that you like this drink",
+    "newExampleCn": "从你的笑容来看，我推断你喜欢这杯饮料。"
+  },
+  {
+    "wordId": "inferior",
+    "word": "inferior",
+    "oldExample": "I grudge paying so much for such inferior goods",
+    "newExampleCn": "我不情愿花这么多钱买这种劣质商品。"
+  },
+  {
+    "wordId": "influence",
+    "word": "influence",
+    "oldExample": "I was influenced by my teacher and chose to study science at college",
+    "newExampleCn": "我受到老师的影响，选择在大学学习科学。"
+  },
+  {
+    "wordId": "inhabit",
+    "word": "inhabit",
+    "oldExample": "Thoughts inhabit my mind",
+    "newExampleCn": "各种想法充满了我的脑海"
+  },
+  {
+    "wordId": "inhabitant",
+    "word": "inhabitant",
+    "oldExample": "The local inhabitants do not like the noisy tourists in summer",
+    "newExampleCn": "当地居民不喜欢夏天吵闹的游客"
+  },
+  {
+    "wordId": "inherit",
+    "word": "inherit",
+    "oldExample": "He inherited a house from his father",
+    "newExampleCn": "他从父亲那里继承了一栋房子"
+  },
+  {
+    "wordId": "ink",
+    "word": "ink",
+    "oldExample": "If the ink sinks in, it would be hard to remove it",
+    "newExampleCn": "如果墨水渗进去，就很难去除了。"
+  },
+  {
+    "wordId": "inner",
+    "word": "inner",
+    "oldExample": "I can feel the inner peace again",
+    "newExampleCn": "我又能感受到内心的平静了"
+  },
+  {
+    "wordId": "input",
+    "word": "input",
+    "oldExample": "We must increase the output with less labor input",
+    "newExampleCn": "我们必须用更少的劳动力投入提高产出。"
+  },
+  {
+    "wordId": "inquire",
+    "word": "inquire",
+    "oldExample": "We must inquire into the matter",
+    "newExampleCn": "我们必须调查这件事。"
+  },
+  {
+    "wordId": "insect",
+    "word": "insect",
+    "oldExample": "The insect bit him and drew blood from his arm",
+    "newExampleCn": "那只昆虫咬了他，把他的胳膊咬出血了"
+  },
+  {
+    "wordId": "insert",
+    "word": "insert",
+    "oldExample": "He inserted the key into the lock but could not open the door",
+    "newExampleCn": "他把钥匙插进锁里，但打不开门。"
+  },
+  {
+    "wordId": "insist",
+    "word": "insist",
+    "oldExample": "We insist on self-reliance",
+    "newExampleCn": "我们坚持自力更生"
+  },
+  {
+    "wordId": "inspect",
+    "word": "inspect",
+    "oldExample": "The mayor will inspect our school tomorrow",
+    "newExampleCn": "市长明天将视察我们学校。"
+  },
+  {
+    "wordId": "inspire",
+    "word": "inspire",
+    "oldExample": "Our task is to motivate the voters and inspire them to join our cause",
+    "newExampleCn": "我们的任务是激励选民，并鼓舞他们加入我们的事业。"
+  },
+  {
+    "wordId": "install",
+    "word": "install",
+    "oldExample": "We're installing a new heating system",
+    "newExampleCn": "我们正在安装一套新的供暖系统"
+  },
+  {
+    "wordId": "instance",
+    "word": "instance",
+    "oldExample": "Nowadays we can read many instances of good people and good deeds in the press",
+    "newExampleCn": "如今我们可以在报刊上读到许多好人好事的事例。"
+  },
+  {
+    "wordId": "instinct",
+    "word": "instinct",
+    "oldExample": "Don't trust anything except your instinct",
+    "newExampleCn": "除了你的直觉，什么都别信"
+  },
+  {
+    "wordId": "institute",
+    "word": "institute",
+    "oldExample": "The government set up an institute devoted to renewable energy sources",
+    "newExampleCn": "政府成立了一家致力于可再生能源研究的机构"
+  },
+  {
+    "wordId": "institution",
+    "word": "institution",
+    "oldExample": "Universities are educational institutions",
+    "newExampleCn": "大学是教育机构"
+  },
+  {
+    "wordId": "instruct",
+    "word": "instruct",
+    "oldExample": "The tour guide instructed the tourists in customs regulations",
+    "newExampleCn": "导游向游客讲解了海关规定"
+  },
+  {
+    "wordId": "instrument",
+    "word": "instrument",
+    "oldExample": "A plow is an instrument used for farming",
+    "newExampleCn": "犁是一种用于耕作的工具"
+  },
+  {
+    "wordId": "insure",
+    "word": "insure",
+    "oldExample": "His talent and commitment will insure his success",
+    "newExampleCn": "他的才华和投入将确保他取得成功"
+  },
+  {
+    "wordId": "intelligence",
+    "word": "intelligence",
+    "oldExample": "Use your intelligence, and you're sure to succeed some day",
+    "newExampleCn": "运用你的智慧，总有一天你一定会成功。"
+  },
+  {
+    "wordId": "intelligent",
+    "word": "intelligent",
+    "oldExample": "Clara is a highly intelligent girl",
+    "newExampleCn": "克拉拉是一个非常聪明的女孩"
+  },
+  {
+    "wordId": "intensity",
+    "word": "intensity",
+    "oldExample": "I was surprised by the intensity of his anxiety",
+    "newExampleCn": "他焦虑的程度让我感到惊讶。"
+  },
+  {
+    "wordId": "intensive",
+    "word": "intensive",
+    "oldExample": "Intensive care in hospitals is given to the seriously ill",
+    "newExampleCn": "医院的重症监护是为重病患者提供的。"
+  },
+  {
+    "wordId": "interest",
+    "word": "interest",
+    "oldExample": "You must pay interest on that loan",
+    "newExampleCn": "你必须支付那笔贷款的利息"
+  },
+  {
+    "wordId": "interesting",
+    "word": "interesting",
+    "oldExample": "There is an interesting program on television tonight",
+    "newExampleCn": "今晚电视上有一个有趣的节目"
+  },
+  {
+    "wordId": "interfere",
+    "word": "interfere",
+    "oldExample": "Don't allow pleasure to interfere with duty",
+    "newExampleCn": "不要让享乐妨碍职责。"
+  },
+  {
+    "wordId": "interior",
+    "word": "interior",
+    "oldExample": "Interior design is a very promising industry nowadays",
+    "newExampleCn": "如今，室内设计是一个很有前景的行业。"
+  },
+  {
+    "wordId": "internal",
+    "word": "internal",
+    "oldExample": "Every theory has its internal logic",
+    "newExampleCn": "每种理论都有其内在逻辑"
+  },
+  {
+    "wordId": "interpret",
+    "word": "interpret",
+    "oldExample": "He interpreted the silence as contempt",
+    "newExampleCn": "他把沉默理解为轻蔑。"
+  }
+]

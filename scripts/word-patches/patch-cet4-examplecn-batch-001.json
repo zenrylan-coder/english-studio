@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "abandon",
+    "word": "abandon",
+    "oldExample": "Do not abandon yourself to despair",
+    "newExampleCn": "不要沉溺于绝望。"
+  },
+  {
+    "wordId": "abnormal",
+    "word": "abnormal",
+    "oldExample": "El Nino will result in the abnormal weather",
+    "newExampleCn": "厄尔尼诺现象会导致异常天气"
+  },
+  {
+    "wordId": "aboard",
+    "word": "aboard",
+    "oldExample": "All passengers aboard fell into the river",
+    "newExampleCn": "船上所有乘客都掉进了河里"
+  },
+  {
+    "wordId": "abroad",
+    "word": "abroad",
+    "oldExample": "The news spread abroad",
+    "newExampleCn": "消息传到了国外"
+  },
+  {
+    "wordId": "absent",
+    "word": "absent",
+    "oldExample": "Daniel was absent from the house all the next day",
+    "newExampleCn": "丹尼尔第二天一整天都不在家"
+  },
+  {
+    "wordId": "absorb",
+    "word": "absorb",
+    "oldExample": "Dry sand absorbs water",
+    "newExampleCn": "干沙会吸水"
+  },
+  {
+    "wordId": "abstract",
+    "word": "abstract",
+    "oldExample": "Iron is abstracted from ore",
+    "newExampleCn": "铁是从矿石中提炼出来的。"
+  },
+  {
+    "wordId": "abuse",
+    "word": "abuse",
+    "oldExample": "It's easy to abuse one's power",
+    "newExampleCn": "人很容易滥用自己的权力"
+  },
+  {
+    "wordId": "academy",
+    "word": "academy",
+    "oldExample": "This is an academy of music",
+    "newExampleCn": "这是一所音乐学院"
+  },
+  {
+    "wordId": "accelerate",
+    "word": "accelerate",
+    "oldExample": "Good economic policies can accelerate the economic growth of a society",
+    "newExampleCn": "良好的经济政策可以加速一个社会的经济增长"
+  },
+  {
+    "wordId": "accent",
+    "word": "accent",
+    "oldExample": "He speaks with a strong southern accent",
+    "newExampleCn": "他说话带有很重的南方口音"
+  },
+  {
+    "wordId": "access",
+    "word": "access",
+    "oldExample": "Citizens have free access to the library",
+    "newExampleCn": "市民可以免费使用图书馆。"
+  },
+  {
+    "wordId": "accessory",
+    "word": "accessory",
+    "oldExample": "Car accessories include the roof rack and radio",
+    "newExampleCn": "汽车配件包括车顶行李架和收音机。"
+  },
+  {
+    "wordId": "accident",
+    "word": "accident",
+    "oldExample": "His left knee was hurt in a traffic accident",
+    "newExampleCn": "他的左膝在一次交通事故中受伤了"
+  },
+  {
+    "wordId": "accommodation",
+    "word": "accommodation",
+    "oldExample": "The authorities must provide suitble accommodation for the family",
+    "newExampleCn": "有关部门必须为这个家庭提供合适的住处。"
+  },
+  {
+    "wordId": "accompany",
+    "word": "accompany",
+    "oldExample": "She accompanied me to the doctors",
+    "newExampleCn": "她陪我去了医生那里"
+  },
+  {
+    "wordId": "accomplish",
+    "word": "accomplish",
+    "oldExample": "Though the task was challenging, we managed to accomplish it on time",
+    "newExampleCn": "尽管任务很有挑战性，我们还是设法按时完成了。"
+  },
+  {
+    "wordId": "accord",
+    "word": "accord",
+    "oldExample": "The government and the rebels are in accord on one point",
+    "newExampleCn": "政府和叛军在一点上意见一致"
+  },
+  {
+    "wordId": "account",
+    "word": "account",
+    "oldExample": "Have you got a bank account?",
+    "newExampleCn": "你有银行账户吗？"
+  },
+  {
+    "wordId": "accumulate",
+    "word": "accumulate",
+    "oldExample": "Dust and dirt soon accumulate if you don't clean your house regularly",
+    "newExampleCn": "如果你不定期打扫房子，灰尘和污垢很快就会积起来。"
+  },
+  {
+    "wordId": "accurate",
+    "word": "accurate",
+    "oldExample": "Hearsay definitely can't be regarded as accurate information",
+    "newExampleCn": "道听途说绝对不能被当作准确信息。"
+  },
+  {
+    "wordId": "accuse",
+    "word": "accuse",
+    "oldExample": "The police accused him of murder",
+    "newExampleCn": "警方指控他谋杀。"
+  },
+  {
+    "wordId": "accustom",
+    "word": "accustom",
+    "oldExample": "They have to accustom themselves to the hot weather",
+    "newExampleCn": "他们得让自己适应炎热的天气"
+  },
+  {
+    "wordId": "achieve",
+    "word": "achieve",
+    "oldExample": "In many fields, women have yet to achieve the equal participation in policy making processes",
+    "newExampleCn": "在许多领域，女性尚未在政策制定过程中实现平等参与。"
+  },
+  {
+    "wordId": "acid",
+    "word": "acid",
+    "oldExample": "When she spoke, her tone was like acid",
+    "newExampleCn": "她说话时，语气尖酸刻薄。"
+  },
+  {
+    "wordId": "acquaintance",
+    "word": "acquaintance",
+    "oldExample": "I have some acquaintance with French but don't speak it well",
+    "newExampleCn": "我懂一点法语，但说得不好"
+  },
+  {
+    "wordId": "acquire",
+    "word": "acquire",
+    "oldExample": "We hope to acquire the knowledge within happiness",
+    "newExampleCn": "我们希望在快乐中获取知识"
+  },
+  {
+    "wordId": "act",
+    "word": "act",
+    "oldExample": "Dreaming is one thing, but acting is another",
+    "newExampleCn": "做梦是一回事，付诸行动又是另一回事。"
+  },
+  {
+    "wordId": "actress",
+    "word": "actress",
+    "oldExample": "This actress was perfect for the part",
+    "newExampleCn": "这位女演员非常适合这个角色"
+  },
+  {
+    "wordId": "adapt",
+    "word": "adapt",
+    "oldExample": "There will be more than one person who can adapt to your personality",
+    "newExampleCn": "会有不止一个人能适应你的性格"
+  },
+  {
+    "wordId": "add",
+    "word": "add",
+    "oldExample": "He didn't add milk nor sugar to his coffee",
+    "newExampleCn": "他没有往咖啡里加牛奶，也没有加糖。"
+  },
+  {
+    "wordId": "adequate",
+    "word": "adequate",
+    "oldExample": "We had adequate food for a week's journey",
+    "newExampleCn": "我们有足够的食物，可以支撑一周的旅程。"
+  },
+  {
+    "wordId": "adjective",
+    "word": "adjective",
+    "oldExample": "The function of an adjective is to describe or add to the meaning of a noun",
+    "newExampleCn": "形容词的作用是描述名词或补充名词的含义。"
+  },
+  {
+    "wordId": "adjust",
+    "word": "adjust",
+    "oldExample": "He soon adjusted to army life",
+    "newExampleCn": "他很快适应了军队生活"
+  },
+  {
+    "wordId": "administration",
+    "word": "administration",
+    "oldExample": "You will need some experience in administration before you can run the department",
+    "newExampleCn": "在你能管理这个部门之前，你需要有一些行政管理方面的经验。"
+  },
+  {
+    "wordId": "admission",
+    "word": "admission",
+    "oldExample": "He gained admission into the association",
+    "newExampleCn": "他获准加入了该协会"
+  },
+  {
+    "wordId": "admit",
+    "word": "admit",
+    "oldExample": "He admitted to his father that he had failed his driving test",
+    "newExampleCn": "他向父亲承认自己驾照考试没通过。"
+  },
+  {
+    "wordId": "adopt",
+    "word": "adopt",
+    "oldExample": "They adopted our effective methods",
+    "newExampleCn": "他们采用了我们的有效方法"
+  },
+  {
+    "wordId": "advance",
+    "word": "advance",
+    "oldExample": "We have advanced greatly in our knowledge of the universe",
+    "newExampleCn": "我们对宇宙的认识已经有了很大进步。"
+  },
+  {
+    "wordId": "adventure",
+    "word": "adventure",
+    "oldExample": "All the children were listening to her adventures with eager attention",
+    "newExampleCn": "所有孩子都兴致勃勃地听她讲冒险经历。"
+  },
+  {
+    "wordId": "adverb",
+    "word": "adverb",
+    "oldExample": "Adverb is to describe a verb or an action",
+    "newExampleCn": "副词用于描述动词或动作"
+  },
+  {
+    "wordId": "advise",
+    "word": "advise",
+    "oldExample": "She advised the government on economic affairs",
+    "newExampleCn": "她就经济事务向政府提供建议"
+  },
+  {
+    "wordId": "affair",
+    "word": "affair",
+    "oldExample": "The minister is busy with important state affairs",
+    "newExampleCn": "部长正忙于重要的国家事务"
+  },
+  {
+    "wordId": "affect",
+    "word": "affect",
+    "oldExample": "The disease affects the central nervous system",
+    "newExampleCn": "这种疾病会影响中枢神经系统"
+  },
+  {
+    "wordId": "affection",
+    "word": "affection",
+    "oldExample": "I can not believe that you are unaware of my growing affection for you",
+    "newExampleCn": "我不敢相信你竟然没有察觉到我对你的感情日渐加深。"
+  },
+  {
+    "wordId": "afford",
+    "word": "afford",
+    "oldExample": "I couldn't afford the rent on my own",
+    "newExampleCn": "我一个人付不起房租"
+  },
+  {
+    "wordId": "african",
+    "word": "african",
+    "oldExample": "Many African people are very energetic and outgoing",
+    "newExampleCn": "许多非洲人都很有活力，也很外向。"
+  },
+  {
+    "wordId": "agent",
+    "word": "agent",
+    "oldExample": "The travel agent has made all their reservations for my journey",
+    "newExampleCn": "旅行代理已经为我的旅程预订好了一切。"
+  },
+  {
+    "wordId": "aggressive",
+    "word": "aggressive",
+    "oldExample": "The world dooms itself to war because man is aggressive at heart",
+    "newExampleCn": "世界注定陷入战争，因为人类本性好斗。"
+  },
+  {
+    "wordId": "agreement",
+    "word": "agreement",
+    "oldExample": "The agreement has raised hopes that the war may end soon",
+    "newExampleCn": "这项协议让人们对战争可能很快结束燃起了希望"
+  },
+  {
+    "wordId": "agriculture",
+    "word": "agriculture",
+    "oldExample": "In the past, agriculture located a family to a place",
+    "newExampleCn": "过去，农业使一个家庭定居在一个地方。"
+  },
+  {
+    "wordId": "aid",
+    "word": "aid",
+    "oldExample": "An English-Chinese dictionary is an important aid in learning English",
+    "newExampleCn": "英汉词典是学习英语的重要辅助工具。"
+  },
+  {
+    "wordId": "airline",
+    "word": "airline",
+    "oldExample": "The airline launched a European route for the first time",
+    "newExampleCn": "这家航空公司首次开通了一条欧洲航线"
+  },
+  {
+    "wordId": "airplane",
+    "word": "airplane",
+    "oldExample": "An airplane engine is a complex machanism",
+    "newExampleCn": "飞机发动机是一种复杂的机械装置"
+  },
+  {
+    "wordId": "alarm",
+    "word": "alarm",
+    "oldExample": "The instant they heard the alarm, they fell in for action",
+    "newExampleCn": "他们一听到警报，就立刻集合准备行动。"
+  },
+  {
+    "wordId": "alcohol",
+    "word": "alcohol",
+    "oldExample": "The doctor told me to keep off alcohol",
+    "newExampleCn": "医生叫我不要喝酒"
+  },
+  {
+    "wordId": "allow",
+    "word": "allow",
+    "oldExample": "They did not allow the slaves any freedom",
+    "newExampleCn": "他们不允许奴隶拥有任何自由"
+  },
+  {
+    "wordId": "alloy",
+    "word": "alloy",
+    "oldExample": "Brass is an alloy of copper and zinc",
+    "newExampleCn": "黄铜是铜和锌的合金"
+  },
+  {
+    "wordId": "alphabet",
+    "word": "alphabet",
+    "oldExample": "Q comes between P and R in the English alphabet",
+    "newExampleCn": "在英语字母表中，Q 位于 P 和 R 之间。"
+  },
+  {
+    "wordId": "alter",
+    "word": "alter",
+    "oldExample": "If it is not a convenient time, we can alter the date",
+    "newExampleCn": "如果这个时间不方便，我们可以改日期。"
+  },
+  {
+    "wordId": "altitude",
+    "word": "altitude",
+    "oldExample": "We're currently flying at an altitude of 8,000 meters",
+    "newExampleCn": "我们现在正以8000米的高度飞行。"
+  },
+  {
+    "wordId": "amaze",
+    "word": "amaze",
+    "oldExample": "John amazed his friends by suddenly getting married",
+    "newExampleCn": "约翰突然结婚，让他的朋友们大吃一惊。"
+  },
+  {
+    "wordId": "ambition",
+    "word": "ambition",
+    "oldExample": "Her ambition was to be a famous politician",
+    "newExampleCn": "她的志向是成为一名著名的政治家"
+  },
+  {
+    "wordId": "ambulance",
+    "word": "ambulance",
+    "oldExample": "An ambulance was racing by with its siren wailing",
+    "newExampleCn": "一辆救护车鸣着警笛疾驰而过"
+  },
+  {
+    "wordId": "amplify",
+    "word": "amplify",
+    "oldExample": "The student amplified his new findings with drawings and figures",
+    "newExampleCn": "这名学生用图画和图表进一步说明了他的新发现。"
+  },
+  {
+    "wordId": "amuse",
+    "word": "amuse",
+    "oldExample": "Harry makes up funny stories to amuse his little brother",
+    "newExampleCn": "哈里编有趣的故事逗他弟弟开心"
+  },
+  {
+    "wordId": "analyse",
+    "word": "analyse",
+    "oldExample": "We should analyze the cause and the effect of this event",
+    "newExampleCn": "我们应该分析这个事件的原因和影响。"
+  },
+  {
+    "wordId": "ancestor",
+    "word": "ancestor",
+    "oldExample": "Lions and house cats evolved from a common ancestor",
+    "newExampleCn": "狮子和家猫是由共同祖先进化而来的"
+  },
+  {
+    "wordId": "anchor",
+    "word": "anchor",
+    "oldExample": "We raised the anchor and set sail during the night",
+    "newExampleCn": "我们在夜里起锚出航。"
+  },
+  {
+    "wordId": "angle",
+    "word": "angle",
+    "oldExample": "The temple is especially beautiful to look at from this angle",
+    "newExampleCn": "从这个角度看，这座寺庙特别美。"
+  },
+  {
+    "wordId": "announce",
+    "word": "announce",
+    "oldExample": "The government announced that they would build a new highway to that area",
+    "newExampleCn": "政府宣布他们将修建一条通往该地区的新高速公路"
+  },
+  {
+    "wordId": "announcer",
+    "word": "announcer",
+    "oldExample": "The announcer started with the day's top stories",
+    "newExampleCn": "播音员先播报了当天的头条新闻。"
+  },
+  {
+    "wordId": "annoy",
+    "word": "annoy",
+    "oldExample": "Sometimes we annoy or upset others unintentionally",
+    "newExampleCn": "有时我们会无意中惹恼或伤害别人。"
+  },
+  {
+    "wordId": "anticipate",
+    "word": "anticipate",
+    "oldExample": "Sales are better than they have anticipated",
+    "newExampleCn": "销售额比他们预期的要好。"
+  },
+  {
+    "wordId": "apartment",
+    "word": "apartment",
+    "oldExample": "I have an apartment in downtown Manhattan",
+    "newExampleCn": "我在曼哈顿市中心有一套公寓"
+  },
+  {
+    "wordId": "apparatus",
+    "word": "apparatus",
+    "oldExample": "A new piece of apparatus was used in the experiment",
+    "newExampleCn": "实验中使用了一台新设备"
+  },
+  {
+    "wordId": "appeal",
+    "word": "appeal",
+    "oldExample": "The response to our appeal was encouraging",
+    "newExampleCn": "大家对我们呼吁的回应令人鼓舞"
+  },
+  {
+    "wordId": "appearance",
+    "word": "appearance",
+    "oldExample": "Don't judge by appearances",
+    "newExampleCn": "不要以貌取人"
+  },
+  {
+    "wordId": "appetite",
+    "word": "appetite",
+    "oldExample": "I lost my appetite",
+    "newExampleCn": "我没胃口了"
+  },
+  {
+    "wordId": "appliance",
+    "word": "appliance",
+    "oldExample": "The household appliances were just bought by him for his family",
+    "newExampleCn": "这些家用电器是他刚给家里买的"
+  },
+  {
+    "wordId": "apply",
+    "word": "apply",
+    "oldExample": "My cousin applied to four universities and was accepted by all of them",
+    "newExampleCn": "我表弟申请了四所大学，并且都被录取了。"
+  },
+  {
+    "wordId": "appointment",
+    "word": "appointment",
+    "oldExample": "I made an appointment to see the doctor",
+    "newExampleCn": "我预约了看医生。"
+  },
+  {
+    "wordId": "appreciate",
+    "word": "appreciate",
+    "oldExample": "We appreciate your efforts for the development of the company",
+    "newExampleCn": "我们感谢你为公司发展所做的努力"
+  },
+  {
+    "wordId": "approach",
+    "word": "approach",
+    "oldExample": "I like his approach to the problem",
+    "newExampleCn": "我喜欢他处理这个问题的方法"
+  },
+  {
+    "wordId": "approximately",
+    "word": "approximately",
+    "oldExample": "The yelk contains all the fat and approximately half the protein of the egg",
+    "newExampleCn": "蛋黄含有鸡蛋中所有的脂肪和大约一半的蛋白质。"
+  },
+  {
+    "wordId": "arabian",
+    "word": "arabian",
+    "oldExample": "Arabian Nights and Treasure Island are famous romances",
+    "newExampleCn": "《一千零一夜》和《金银岛》是著名的传奇故事。"
+  },
+  {
+    "wordId": "architecture",
+    "word": "architecture",
+    "oldExample": "The forbidden city is one of the world's greatest works of architecture",
+    "newExampleCn": "紫禁城是世界上最伟大的建筑作品之一"
+  },
+  {
+    "wordId": "argument",
+    "word": "argument",
+    "oldExample": "We accepted the agreement without argument",
+    "newExampleCn": "我们没有争论就接受了这项协议"
+  },
+  {
+    "wordId": "arithmetic",
+    "word": "arithmetic",
+    "oldExample": "Arab brought arithmetic and algebra to the fore once again and placed it almost on a par with geometry",
+    "newExampleCn": "阿拉伯人让算术和代数再次受到重视，并使其地位几乎与几何学相当。"
+  },
+  {
+    "wordId": "arouse",
+    "word": "arouse",
+    "oldExample": "The young man's behavior aroused the suspicions of the police",
+    "newExampleCn": "这个年轻人的行为引起了警方的怀疑"
+  },
+  {
+    "wordId": "arrange",
+    "word": "arrange",
+    "oldExample": "Contact your local branch to arrange an appointment",
+    "newExampleCn": "请联系当地分行安排预约。"
+  },
+  {
+    "wordId": "arrest",
+    "word": "arrest",
+    "oldExample": "You shouldn't arrest him without an arrest warrant",
+    "newExampleCn": "没有逮捕令，你不应该逮捕他。"
+  },
+  {
+    "wordId": "arrive",
+    "word": "arrive",
+    "oldExample": "You must arrive at the airport at least two hours in advance",
+    "newExampleCn": "你必须至少提前两个小时到达机场"
+  },
+  {
+    "wordId": "arrow",
+    "word": "arrow",
+    "oldExample": "The arrow pierced her shoulder",
+    "newExampleCn": "箭刺穿了她的肩膀"
+  },
+  {
+    "wordId": "article",
+    "word": "article",
+    "oldExample": "The editor asked him to contribute a weekly article on european affairs",
+    "newExampleCn": "编辑请他每周撰写一篇关于欧洲事务的文章"
+  },
+  {
+    "wordId": "artificial",
+    "word": "artificial",
+    "oldExample": "This fruit joice contains absolutely no artificial flavorings or colorings",
+    "newExampleCn": "这种果汁完全不含任何人工香精或色素。"
+  },
+  {
+    "wordId": "artist",
+    "word": "artist",
+    "oldExample": "He was not the kind of artist who could work collaboratively",
+    "newExampleCn": "他不是那种能够与人合作创作的艺术家。"
+  },
+  {
+    "wordId": "ash",
+    "word": "ash",
+    "oldExample": "Don't drop your cigarette ash on the carpet. Use an ashtray",
+    "newExampleCn": "别把烟灰掉在地毯上。用烟灰缸。"
+  },
+  {
+    "wordId": "aspect",
+    "word": "aspect",
+    "oldExample": "We must consider a problem in its all aspects",
+    "newExampleCn": "我们必须全面考虑问题。"
+  },
+  {
+    "wordId": "assemble",
+    "word": "assemble",
+    "oldExample": "A large crowd had assembled outside the American Embassy",
+    "newExampleCn": "一大群人已经聚集在美国大使馆外。"
+  }
+]

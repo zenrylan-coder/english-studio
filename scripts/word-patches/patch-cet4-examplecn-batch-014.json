@@ -1,0 +1,602 @@
+[
+  {
+    "wordId": "overseas",
+    "word": "overseas",
+    "oldExample": "The overseas students were concerned about the destiny of their motherland",
+    "newExampleCn": "海外学生关心着祖国的命运"
+  },
+  {
+    "wordId": "overtake",
+    "word": "overtake",
+    "oldExample": "I had to drive very fast to overtake you",
+    "newExampleCn": "我得开得很快才能超过你"
+  },
+  {
+    "wordId": "owe",
+    "word": "owe",
+    "oldExample": "I owe a lot to my wife and children",
+    "newExampleCn": "我非常感激我的妻子和孩子们"
+  },
+  {
+    "wordId": "owl",
+    "word": "owl",
+    "oldExample": "The owl is sacred for many Californian Indian people",
+    "newExampleCn": "猫头鹰对许多加利福尼亚印第安人来说是神圣的。"
+  },
+  {
+    "wordId": "ownership",
+    "word": "ownership",
+    "oldExample": "The equity ownership ought to be protected",
+    "newExampleCn": "股权所有权应当受到保护"
+  },
+  {
+    "wordId": "ox",
+    "word": "ox",
+    "oldExample": "The frequent, unresonable whips angered the ox",
+    "newExampleCn": "频繁而无理的鞭打激怒了那头牛"
+  },
+  {
+    "wordId": "pace",
+    "word": "pace",
+    "oldExample": "Our wage's keeping pace with inflation",
+    "newExampleCn": "我们的工资跟上了通货膨胀的步伐"
+  },
+  {
+    "wordId": "pacific",
+    "word": "pacific",
+    "oldExample": "What a beautiful and pacific place this is",
+    "newExampleCn": "这是一个多么美丽而宁静的地方啊"
+  },
+  {
+    "wordId": "package",
+    "word": "package",
+    "oldExample": "The old town was packaged to attract tourists",
+    "newExampleCn": "这座老城被包装起来以吸引游客"
+  },
+  {
+    "wordId": "packet",
+    "word": "packet",
+    "oldExample": "The government has imposed an additional tax on a packet of cigarettes",
+    "newExampleCn": "政府对一包香烟加征了额外的税。"
+  },
+  {
+    "wordId": "pad",
+    "word": "pad",
+    "oldExample": "She always kept a pad and a pencil by the phone",
+    "newExampleCn": "她总是在电话旁放着一本便笺簿和一支铅笔。"
+  },
+  {
+    "wordId": "pail",
+    "word": "pail",
+    "oldExample": "He tipped the slops out of the pail",
+    "newExampleCn": "他把桶里的污水倒了出来"
+  },
+  {
+    "wordId": "painter",
+    "word": "painter",
+    "oldExample": "This painter is not first class",
+    "newExampleCn": "这位画家并非一流。"
+  },
+  {
+    "wordId": "painting",
+    "word": "painting",
+    "oldExample": "This painting is invaluable",
+    "newExampleCn": "这幅画价值连城"
+  },
+  {
+    "wordId": "pan",
+    "word": "pan",
+    "oldExample": "I cracked two eggs into the frying pan",
+    "newExampleCn": "我往煎锅里打了两个鸡蛋"
+  },
+  {
+    "wordId": "panda",
+    "word": "panda",
+    "oldExample": "Pandas are loved by people all over the world",
+    "newExampleCn": "熊猫受到全世界人们的喜爱"
+  },
+  {
+    "wordId": "pane",
+    "word": "pane",
+    "oldExample": "He suffered a lot of pain after he accidentally broke a pane of glass",
+    "newExampleCn": "他不小心打碎了一块玻璃后，疼了很久。"
+  },
+  {
+    "wordId": "paper",
+    "word": "paper",
+    "oldExample": "She is working hard at her term paper in the library",
+    "newExampleCn": "她正在图书馆努力写学期论文。"
+  },
+  {
+    "wordId": "parade",
+    "word": "parade",
+    "oldExample": "The sports meeting began with a parade for all the competing teams",
+    "newExampleCn": "运动会以所有参赛队伍的入场游行开始。"
+  },
+  {
+    "wordId": "paradise",
+    "word": "paradise",
+    "oldExample": "This club is a sportsman's paradise",
+    "newExampleCn": "这家俱乐部是运动爱好者的天堂。"
+  },
+  {
+    "wordId": "parallel",
+    "word": "parallel",
+    "oldExample": "There are few parallels between American football and European football",
+    "newExampleCn": "美式橄榄球和欧洲足球之间几乎没有相似之处。"
+  },
+  {
+    "wordId": "parcel",
+    "word": "parcel",
+    "oldExample": "He parcelled up the books",
+    "newExampleCn": "他把书打包起来了"
+  },
+  {
+    "wordId": "parliament",
+    "word": "parliament",
+    "oldExample": "He lost his seat in the parliament at the election",
+    "newExampleCn": "他在选举中失去了议会席位。"
+  },
+  {
+    "wordId": "participate",
+    "word": "participate",
+    "oldExample": "If only I could participate in your good fortune",
+    "newExampleCn": "要是我也能分享你的好运就好了"
+  },
+  {
+    "wordId": "particle",
+    "word": "particle",
+    "oldExample": "There are particles of dust everywhere",
+    "newExampleCn": "到处都是灰尘颗粒。"
+  },
+  {
+    "wordId": "partner",
+    "word": "partner",
+    "oldExample": "He was considered as a partner in the crime",
+    "newExampleCn": "他被认为是这起犯罪的同伙"
+  },
+  {
+    "wordId": "passage",
+    "word": "passage",
+    "oldExample": "The bridge is not strong enough to allow for the passage of vehicles",
+    "newExampleCn": "这座桥不够坚固，无法让车辆通行"
+  },
+  {
+    "wordId": "passenger",
+    "word": "passenger",
+    "oldExample": "The baggage allowance per passenger is 25 kilograms",
+    "newExampleCn": "每位乘客的行李限额为25公斤"
+  },
+  {
+    "wordId": "paste",
+    "word": "paste",
+    "oldExample": "We used paste to attach our designs to the poster",
+    "newExampleCn": "我们用糨糊把设计图贴在海报上。"
+  },
+  {
+    "wordId": "pastime",
+    "word": "pastime",
+    "oldExample": "Listening to music is the favorite pastime of many people all over the world",
+    "newExampleCn": "听音乐是世界各地许多人最喜欢的消遣方式。"
+  },
+  {
+    "wordId": "patch",
+    "word": "patch",
+    "oldExample": "She sewed a patch onto the knee of the trousers 她在裤子的膝部缝了个补丁",
+    "newExampleCn": "她在裤子的膝盖处缝了个补丁"
+  },
+  {
+    "wordId": "path",
+    "word": "path",
+    "oldExample": "We bumped up and down along the gravel path",
+    "newExampleCn": "我们沿着碎石小路颠簸前行"
+  },
+  {
+    "wordId": "pattern",
+    "word": "pattern",
+    "oldExample": "Training and education follow different patterns in different regions",
+    "newExampleCn": "不同地区的培训和教育遵循不同的模式"
+  },
+  {
+    "wordId": "pause",
+    "word": "pause",
+    "oldExample": "After she ran up the hill, she paused for a minute to rest",
+    "newExampleCn": "她跑上山后，停下来休息了一分钟。"
+  },
+  {
+    "wordId": "pave",
+    "word": "pave",
+    "oldExample": "The road was paved with cobblestones",
+    "newExampleCn": "这条路是用鹅卵石铺成的"
+  },
+  {
+    "wordId": "paw",
+    "word": "paw",
+    "oldExample": "This is a black cat with white paws",
+    "newExampleCn": "这是一只长着白爪子的黑猫"
+  },
+  {
+    "wordId": "payment",
+    "word": "payment",
+    "oldExample": "You may defer payment until next week",
+    "newExampleCn": "你可以把付款推迟到下周。"
+  },
+  {
+    "wordId": "pea",
+    "word": "pea",
+    "oldExample": "This kind of pea has a long pod（荚）",
+    "newExampleCn": "这种豌豆的豆荚很长"
+  },
+  {
+    "wordId": "peach",
+    "word": "peach",
+    "oldExample": "The peach is a sweet and juicy fruit",
+    "newExampleCn": "桃子是一种香甜多汁的水果"
+  },
+  {
+    "wordId": "peak",
+    "word": "peak",
+    "oldExample": "The mountain peaks are covered with snow all year around",
+    "newExampleCn": "这些山峰终年被积雪覆盖。"
+  },
+  {
+    "wordId": "pear",
+    "word": "pear",
+    "oldExample": "Would you like a pear",
+    "newExampleCn": "你想要一个梨吗？"
+  },
+  {
+    "wordId": "pebble",
+    "word": "pebble",
+    "oldExample": "The boy put his hand into the money bag and drew out a pebble",
+    "newExampleCn": "男孩把手伸进钱袋，掏出了一颗鹅卵石"
+  },
+  {
+    "wordId": "peel",
+    "word": "peel",
+    "oldExample": "She throwed the banana peel into the trash can",
+    "newExampleCn": "她把香蕉皮扔进了垃圾桶。"
+  },
+  {
+    "wordId": "peep",
+    "word": "peep",
+    "oldExample": "I peeped through the window to see if she was there",
+    "newExampleCn": "我透过窗户偷看，想看看她在不在那里。"
+  },
+  {
+    "wordId": "penetrate",
+    "word": "penetrate",
+    "oldExample": "Western ideas penetrate slowly through the east",
+    "newExampleCn": "西方思想慢慢渗透到东方"
+  },
+  {
+    "wordId": "peninsula",
+    "word": "peninsula",
+    "oldExample": "His house is located on the tip of the peninsula",
+    "newExampleCn": "他的房子位于半岛的尖端"
+  },
+  {
+    "wordId": "pepper",
+    "word": "pepper",
+    "oldExample": "The pepper in the food causes me to sneeze",
+    "newExampleCn": "食物里的胡椒让我打喷嚏"
+  },
+  {
+    "wordId": "perceive",
+    "word": "perceive",
+    "oldExample": "I perceived that it was not possible to make her change her mind",
+    "newExampleCn": "我意识到不可能让她改变主意"
+  },
+  {
+    "wordId": "percent",
+    "word": "percent",
+    "oldExample": "I am 100 percent in agreement",
+    "newExampleCn": "我百分之百同意"
+  },
+  {
+    "wordId": "perfect",
+    "word": "perfect",
+    "oldExample": "No one expect you to be perfect, but we do expect you to do your best always",
+    "newExampleCn": "没有人期望你十全十美，但我们确实希望你始终尽力而为。"
+  },
+  {
+    "wordId": "perform",
+    "word": "perform",
+    "oldExample": "A jazz band will perform live at tommorrow's party",
+    "newExampleCn": "一支爵士乐队将在明天的派对上现场演出"
+  },
+  {
+    "wordId": "perfume",
+    "word": "perfume",
+    "oldExample": "The smell of her perfume lingered in the empty house",
+    "newExampleCn": "她的香水味在空荡荡的房子里久久不散。"
+  },
+  {
+    "wordId": "permit",
+    "word": "permit",
+    "oldExample": "You can't work here without a work permit",
+    "newExampleCn": "没有工作许可证，你不能在这里工作。"
+  },
+  {
+    "wordId": "persist",
+    "word": "persist",
+    "oldExample": "On the top the massive mountains, snow persists throughout the year",
+    "newExampleCn": "在巍峨的高山之巅，积雪终年不化。"
+  },
+  {
+    "wordId": "personnel",
+    "word": "personnel",
+    "oldExample": "The next project needs new personnel",
+    "newExampleCn": "下一个项目需要新员工"
+  },
+  {
+    "wordId": "perspective",
+    "word": "perspective",
+    "oldExample": "We all have confidence in this new technology from a developmental perspective",
+    "newExampleCn": "从发展的角度来看，我们都对这项新技术充满信心。"
+  },
+  {
+    "wordId": "persuade",
+    "word": "persuade",
+    "oldExample": "The woman persuaded the robber to turn himself in",
+    "newExampleCn": "那名女子劝说劫匪自首。"
+  },
+  {
+    "wordId": "petrol",
+    "word": "petrol",
+    "oldExample": "My new car really eats up petrol",
+    "newExampleCn": "我的新车真的很耗油"
+  },
+  {
+    "wordId": "petroleum",
+    "word": "petroleum",
+    "oldExample": "Petroleum is an important natural resource",
+    "newExampleCn": "石油是一种重要的自然资源"
+  },
+  {
+    "wordId": "phase",
+    "word": "phase",
+    "oldExample": "The first phase of the project has been completed",
+    "newExampleCn": "项目的第一阶段已经完成"
+  },
+  {
+    "wordId": "phenomenon",
+    "word": "phenomenon",
+    "oldExample": "Snow is an almost unknown phenomenon in Egypt",
+    "newExampleCn": "在埃及，下雪几乎是闻所未闻的现象。"
+  },
+  {
+    "wordId": "philosophy",
+    "word": "philosophy",
+    "oldExample": "He has a master degree in philosophy",
+    "newExampleCn": "他拥有哲学硕士学位"
+  },
+  {
+    "wordId": "phone",
+    "word": "phone",
+    "oldExample": "We swapped phone numbers",
+    "newExampleCn": "我们交换了电话号码"
+  },
+  {
+    "wordId": "photograph",
+    "word": "photograph",
+    "oldExample": "His photograph showed how the plant turned out",
+    "newExampleCn": "他的照片展示了这株植物最后长成的样子"
+  },
+  {
+    "wordId": "phrase",
+    "word": "phrase",
+    "oldExample": "The phrase was not meant to be taken seriously",
+    "newExampleCn": "这句话不是当真的。"
+  },
+  {
+    "wordId": "physics",
+    "word": "physics",
+    "oldExample": "He is one of top students in physics",
+    "newExampleCn": "他是物理学科的尖子生之一。"
+  },
+  {
+    "wordId": "piano",
+    "word": "piano",
+    "oldExample": "He started to learn the piano when he was very young",
+    "newExampleCn": "他很小的时候就开始学钢琴了"
+  },
+  {
+    "wordId": "pick",
+    "word": "pick",
+    "oldExample": "He picked the watch up from the carpet",
+    "newExampleCn": "他从地毯上捡起了那块手表"
+  },
+  {
+    "wordId": "picnic",
+    "word": "picnic",
+    "oldExample": "Let's eat our picnic by the waterfall",
+    "newExampleCn": "我们在瀑布旁吃野餐吧"
+  },
+  {
+    "wordId": "pie",
+    "word": "pie",
+    "oldExample": "Would you like another piece of apple pie?",
+    "newExampleCn": "你想再来一块苹果派吗？"
+  },
+  {
+    "wordId": "pierce",
+    "word": "pierce",
+    "oldExample": "The needle pierced the material",
+    "newExampleCn": "针刺穿了布料"
+  },
+  {
+    "wordId": "pigeon",
+    "word": "pigeon",
+    "oldExample": "An old man sat on the park bench and fed the pigeons",
+    "newExampleCn": "一位老人坐在公园长椅上喂鸽子"
+  },
+  {
+    "wordId": "pillar",
+    "word": "pillar",
+    "oldExample": "The robber tied him to a pillar",
+    "newExampleCn": "强盗把他绑在一根柱子上"
+  },
+  {
+    "wordId": "pillow",
+    "word": "pillow",
+    "oldExample": "My daughter asked me to buy her a pillow stuffed with feathers",
+    "newExampleCn": "我女儿让我给她买一个羽绒枕头。"
+  },
+  {
+    "wordId": "pilot",
+    "word": "pilot",
+    "oldExample": "A pilot must stay alert for the changes in weather",
+    "newExampleCn": "飞行员必须时刻注意天气变化。"
+  },
+  {
+    "wordId": "pin",
+    "word": "pin",
+    "oldExample": "Pin the bills together so you won't lose them",
+    "newExampleCn": "把账单别在一起，这样就不会弄丢了。"
+  },
+  {
+    "wordId": "pine",
+    "word": "pine",
+    "oldExample": "It's a place noted for its pine trees and springs",
+    "newExampleCn": "这个地方以松树和泉水闻名。"
+  },
+  {
+    "wordId": "pink",
+    "word": "pink",
+    "oldExample": "She carried a spray of pink roses",
+    "newExampleCn": "她拿着一束粉红色的玫瑰。"
+  },
+  {
+    "wordId": "pioneer",
+    "word": "pioneer",
+    "oldExample": "Napoleon was a pioneer and a symbol",
+    "newExampleCn": "拿破仑是一位先驱，也是一个象征。"
+  },
+  {
+    "wordId": "pipe",
+    "word": "pipe",
+    "oldExample": "All through the afternoon and the evening, he went on thinking silently and smoking pipe after pipe",
+    "newExampleCn": "整个下午和晚上，他一直默默地想着，一斗接一斗地抽着烟斗。"
+  },
+  {
+    "wordId": "pistol",
+    "word": "pistol",
+    "oldExample": "The robber took a pistol out of his pocket and pointed it at the shopkeeper",
+    "newExampleCn": "强盗从口袋里掏出一把手枪，指着店主。"
+  },
+  {
+    "wordId": "pit",
+    "word": "pit",
+    "oldExample": "When you fall into a pit, you either die or get out",
+    "newExampleCn": "当你掉进坑里时，要么死掉，要么爬出来"
+  },
+  {
+    "wordId": "pitch",
+    "word": "pitch",
+    "oldExample": "She pitched the ball as far as she could",
+    "newExampleCn": "她把球尽可能远地投了出去"
+  },
+  {
+    "wordId": "plain",
+    "word": "plain",
+    "oldExample": "Once there were seventy million buffalo roaming in the great plains",
+    "newExampleCn": "曾经有七千万头野牛在大平原上漫游。"
+  },
+  {
+    "wordId": "plantation",
+    "word": "plantation",
+    "oldExample": "They work on plantations",
+    "newExampleCn": "他们在种植园工作"
+  },
+  {
+    "wordId": "plaster",
+    "word": "plaster",
+    "oldExample": "The plaster had started to come away from the wall",
+    "newExampleCn": "墙上的灰泥已经开始脱落了"
+  },
+  {
+    "wordId": "plastic",
+    "word": "plastic",
+    "oldExample": "Many items in daily use are made out of plastic",
+    "newExampleCn": "许多日常用品都是塑料制成的"
+  },
+  {
+    "wordId": "plate",
+    "word": "plate",
+    "oldExample": "It is generally accepted that earthquakes are caused by two tectonic plates bumping into each other",
+    "newExampleCn": "人们普遍认为，地震是由两个构造板块相互碰撞引起的。"
+  },
+  {
+    "wordId": "platform",
+    "word": "platform",
+    "oldExample": "He spoke to us from a platform in the lecture hall",
+    "newExampleCn": "他站在讲堂里的讲台上对我们讲话。"
+  },
+  {
+    "wordId": "plough",
+    "word": "plough",
+    "oldExample": "The ground was ploughed/plowed and planted with corn",
+    "newExampleCn": "这片地被犁过后种上了玉米"
+  },
+  {
+    "wordId": "pluck",
+    "word": "pluck",
+    "oldExample": "The pluck a rose for his lover",
+    "newExampleCn": "他为爱人摘了一朵玫瑰。"
+  },
+  {
+    "wordId": "plug",
+    "word": "plug",
+    "oldExample": "You don't need to plug your ears since the music is not so loud",
+    "newExampleCn": "音乐没那么大声，你不用捂住耳朵。"
+  },
+  {
+    "wordId": "plunge",
+    "word": "plunge",
+    "oldExample": "He plunged into the water to save the child",
+    "newExampleCn": "他跳入水中去救那个孩子"
+  },
+  {
+    "wordId": "plural",
+    "word": "plural",
+    "oldExample": "A plural marriage is forbidden by many countries",
+    "newExampleCn": "一夫多妻婚姻在许多国家是被禁止的"
+  },
+  {
+    "wordId": "plus",
+    "word": "plus",
+    "oldExample": "Intelligence plus wit makes for an interesting person",
+    "newExampleCn": "聪明加上机智会让一个人变得有趣"
+  },
+  {
+    "wordId": "poetry",
+    "word": "poetry",
+    "oldExample": "I myself enjoy cinema, drama, poetry and travelling",
+    "newExampleCn": "我自己喜欢电影、戏剧、诗歌和旅行。"
+  },
+  {
+    "wordId": "point",
+    "word": "point",
+    "oldExample": "That is not the point in question",
+    "newExampleCn": "那不是正在讨论的重点"
+  },
+  {
+    "wordId": "poison",
+    "word": "poison",
+    "oldExample": "Spiritual rubbish can poison the children's pure minds",
+    "newExampleCn": "精神垃圾会毒害孩子们纯洁的心灵"
+  },
+  {
+    "wordId": "pole",
+    "word": "pole",
+    "oldExample": "English is spoken from pole to pole",
+    "newExampleCn": "从南极到北极都有人说英语"
+  },
+  {
+    "wordId": "police",
+    "word": "police",
+    "oldExample": "His strange behavior made the police suspicious",
+    "newExampleCn": "他的奇怪行为引起了警方的怀疑"
+  }
+]
