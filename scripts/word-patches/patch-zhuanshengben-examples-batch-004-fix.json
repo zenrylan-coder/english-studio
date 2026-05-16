@@ -1,0 +1,1559 @@
+[
+  {
+    "word": "dental",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Dental care is important for children and older adults.",
+    "newExampleCn": "牙齿护理对儿童和老年人都很重要。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dentist",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I need to see a dentist about this tooth.",
+    "newExampleCn": "我得去看牙医检查这颗牙。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "deny",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He did not deny the mistake in the meeting.",
+    "newExampleCn": "他在会上没有否认这个错误。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "depend upon",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many small kids depend upon their parents every day.",
+    "newExampleCn": "许多小孩子每天都依赖父母。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "depth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The depth of the river changes after heavy rain.",
+    "newExampleCn": "大雨过后，这条河的深度会发生变化。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "desktop",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There is a family photo on my desktop.",
+    "newExampleCn": "我的桌面上有一张全家福照片。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dessert",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We shared a light dessert after dinner last night.",
+    "newExampleCn": "昨晚晚饭后，我们一起吃了一份清淡的甜点。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "destruction",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The storm caused great destruction in the small town.",
+    "newExampleCn": "这场暴风雨给这座小镇造成了巨大破坏。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "development",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The development of the project took three months.",
+    "newExampleCn": "这个项目的开发花了三个月。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "diabetes",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My uncle controls diabetes with diet and exercise.",
+    "newExampleCn": "我叔叔通过饮食和锻炼控制糖尿病。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "die",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Leaves die quickly without enough water and light.",
+    "newExampleCn": "没有足够的水和光，叶子很快会枯死。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "die down",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The strong wind began to die down at noon.",
+    "newExampleCn": "中午时，强风开始减弱。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "die from",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "People can die from severe heat without water.",
+    "newExampleCn": "人在没有水的情况下可能会死于严重高温。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "die of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Some old people die of heart disease each year.",
+    "newExampleCn": "一些老人每年会死于心脏病。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "die off",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Rare plants may die off in polluted water.",
+    "newExampleCn": "珍稀植物可能会在被污染的水中逐渐消失。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dig",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We need to dig a hole for the young tree.",
+    "newExampleCn": "我们需要为这棵小树挖一个坑。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "digit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Write one digit in each small square here.",
+    "newExampleCn": "请在这里的每个小方格里写一个数字。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dime",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He found a dime under the old wooden chair.",
+    "newExampleCn": "他在那把旧木椅下面发现了一枚一角硬币。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dinosaur",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child keeps a dinosaur toy on his bed.",
+    "newExampleCn": "那个孩子把一个恐龙玩具放在床上。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "direction",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The teacher gave clear direction before the group task.",
+    "newExampleCn": "老师在小组任务前给出了明确指示。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dirty",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "These shoes look dirty after the long walk.",
+    "newExampleCn": "走了很长一段路后，这双鞋看起来很脏。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "disapprove",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My parents disapprove of staying out too late.",
+    "newExampleCn": "我父母不赞成在外面待得太晚。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "disco",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They played disco music at the school party.",
+    "newExampleCn": "他们在学校派对上播放了迪斯科音乐。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "disconnect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please disconnect the printer before moving the desk.",
+    "newExampleCn": "搬桌子前请先断开打印机。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "discovery",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The discovery of the cave excited the whole town.",
+    "newExampleCn": "这个山洞的发现让全镇都很兴奋。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "discriminate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Good laws should not discriminate against poor people.",
+    "newExampleCn": "好的法律不应歧视穷人。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "disintegrate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Dry leaves disintegrate slowly in the wet soil.",
+    "newExampleCn": "干叶子会在湿土里慢慢分解。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dismantle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Workers will dismantle the old stage after the show.",
+    "newExampleCn": "演出结束后，工人会拆掉旧舞台。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dispatch",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The company will dispatch the goods tomorrow morning.",
+    "newExampleCn": "公司明天早上会发出这批货物。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dispose of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please dispose of old batteries with great care.",
+    "newExampleCn": "请小心处理旧电池。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "disrupt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Loud noises can disrupt our class during the test.",
+    "newExampleCn": "大声噪音会在考试时扰乱我们的课堂。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "divert",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The police divert traffic during the road repair.",
+    "newExampleCn": "道路维修期间，警察会疏导车辆。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "do",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please do your homework before you watch TV.",
+    "newExampleCn": "请先做作业，再看电视。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dollar",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This book costs ten dollar in the small shop.",
+    "newExampleCn": "这本书在这家小店卖十美元。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "doubtful",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I feel doubtful about their sudden change of plan.",
+    "newExampleCn": "我对他们突然改变计划感到怀疑。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dove",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A white dove landed on the garden wall.",
+    "newExampleCn": "一只白鸽落在花园的墙上。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "down",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please sit down and listen to the news.",
+    "newExampleCn": "请坐下听这个消息。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "downstairs",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My parents are waiting downstairs near the door.",
+    "newExampleCn": "我父母正在楼下门口附近等着。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "downward",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The line shows a downward change this month.",
+    "newExampleCn": "这条线显示本月出现了下降趋势。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drastic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The school made a drastic change to the rules.",
+    "newExampleCn": "学校对规定做了重大调整。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "draught",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A cold draught came through the open window.",
+    "newExampleCn": "一阵冷风从开着的窗户吹了进来。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drawing",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her drawing of the village looks very peaceful.",
+    "newExampleCn": "她画的村庄看起来很宁静。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dream",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My dream is to teach in a village school.",
+    "newExampleCn": "我的梦想是在一所乡村学校教书。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dresser",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She keeps her watch on the bedroom dresser.",
+    "newExampleCn": "她把手表放在卧室的梳妆台上。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I cannot drive on icy roads at night.",
+    "newExampleCn": "我不能在夜里开车走结冰的路。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "driver",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The driver stopped the bus near the school gate.",
+    "newExampleCn": "司机在学校门口附近停下了公交车。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drone",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A drone flew above the field this morning.",
+    "newExampleCn": "今天早上一架无人机飞过了那片田地。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dropout",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The school helps every dropout return to class.",
+    "newExampleCn": "学校帮助每一位辍学生重新回到课堂。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drug",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The doctor warned him not to mix this drug.",
+    "newExampleCn": "医生提醒他不要把这种药和别的药混着吃。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "drunken",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The drunken man slept on the last bus seat.",
+    "newExampleCn": "那个醉汉睡在最后一排公交座位上。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dry",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please keep the towels dry after you wash them.",
+    "newExampleCn": "毛巾洗完后请保持干燥。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dual",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The phone supports dual cards for daily use.",
+    "newExampleCn": "这部手机支持双卡日常使用。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "duck",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A small duck swam across the quiet pond.",
+    "newExampleCn": "一只小鸭子游过了安静的池塘。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "due to",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The game was canceled due to heavy rain.",
+    "newExampleCn": "由于大雨，比赛被取消了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dull",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The lecture felt dull after the long meeting.",
+    "newExampleCn": "在长会之后，这场讲座显得很乏味。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dumpling",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My grandma made a dumpling for each child.",
+    "newExampleCn": "我奶奶给每个孩子都包了一个饺子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "duration",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The duration of the talk was only ten minutes.",
+    "newExampleCn": "这次讲话的持续时间只有十分钟。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "dynamic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She is a dynamic leader with fresh ideas.",
+    "newExampleCn": "她是一位充满活力且很有新想法的领导者。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eager",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The children were eager to open the gifts.",
+    "newExampleCn": "孩子们急着想打开礼物。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "early",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please arrive early for the morning meeting tomorrow.",
+    "newExampleCn": "明天早上的会议请早点到。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "earnest",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She gave an earnest answer to the teacher.",
+    "newExampleCn": "她认真地回答了老师的问题。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "earth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The earth looked red after the heavy rain.",
+    "newExampleCn": "大雨过后，地面看起来发红。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "ease",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A short walk can ease your stress after work.",
+    "newExampleCn": "下班后短暂散步可以缓解你的压力。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "east",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The sun rises in the east every day.",
+    "newExampleCn": "太阳每天都从东方升起。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "easy-going",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Our new coach is easy-going and very patient.",
+    "newExampleCn": "我们的新教练很随和，也很有耐心。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "economic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The report studies economic change in small cities.",
+    "newExampleCn": "这份报告研究了小城市的经济变化。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "economical",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This small car is economical for city travel.",
+    "newExampleCn": "这辆小车在城市出行中很省钱。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "edit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please edit this sentence before you submit it.",
+    "newExampleCn": "提交前请修改这个句子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "edition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I bought the latest edition of that dictionary.",
+    "newExampleCn": "我买了那本词典的最新版。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "editorial",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The paper printed an editorial on school reform.",
+    "newExampleCn": "这家报纸刊登了一篇关于学校改革的社论。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "educate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Schools should educate children with care and patience.",
+    "newExampleCn": "学校应当用关心和耐心教育孩子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "effect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The new rule had little effect on traffic.",
+    "newExampleCn": "新规定对交通几乎没有影响。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "egg",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He boiled one egg for breakfast this morning.",
+    "newExampleCn": "他今天早上煮了一个鸡蛋当早餐。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "ego",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His ego grew after he won the prize.",
+    "newExampleCn": "获奖后，他的自我意识变强了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eight",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We have eight chairs around the small table.",
+    "newExampleCn": "这张小桌子周围有八把椅子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eighteen",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She turns eighteen at the end of this month.",
+    "newExampleCn": "她这个月底就满十八岁了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eighth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He lives on the eighth floor of the building.",
+    "newExampleCn": "他住在这栋楼的第八层。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "either",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "You can choose either plan for the final task.",
+    "newExampleCn": "最后的任务你可以选择任意一个方案。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elaborate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please elaborate your idea with one clear example.",
+    "newExampleCn": "请用一个清楚的例子详细说明你的想法。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elbow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He hurt his elbow during the basketball game.",
+    "newExampleCn": "他在篮球比赛中伤到了手肘。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elder",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My elder brother works in a local bank.",
+    "newExampleCn": "我哥哥在当地一家银行工作。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "election",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The school election will take place next Friday.",
+    "newExampleCn": "学校选举将在下周五举行。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "electric",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This shop sells electric bikes at fair prices.",
+    "newExampleCn": "这家店卖价格公道的电动车。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "electricity",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The storm cut off electricity in the whole village.",
+    "newExampleCn": "暴风雨切断了整个村子的电力供应。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "electronic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Electronic books are easy to carry when traveling.",
+    "newExampleCn": "出行时电子书很方便携带。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elegant",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She wore an elegant dress to the evening party.",
+    "newExampleCn": "她穿着一条优雅的裙子去参加晚会。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elevate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Good books can elevate the mind and spirit.",
+    "newExampleCn": "好书可以提升人的思想和精神。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eleven",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There are eleven students in the music club.",
+    "newExampleCn": "音乐社里有十一名学生。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eleventh",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her office is on the eleventh floor downtown.",
+    "newExampleCn": "她的办公室在市中心的第十一层。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "else",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do you need anything else before we leave?",
+    "newExampleCn": "我们离开前你还需要别的吗？",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "elsewhere",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "If this shop is closed, try elsewhere today.",
+    "newExampleCn": "如果这家店关门了，今天就去别处试试。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "embarrass",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not embarrass him in front of his friends.",
+    "newExampleCn": "不要在他朋友面前让他难堪。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "embassy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She went to the embassy for visa advice.",
+    "newExampleCn": "她去大使馆咨询签证问题。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "embrace",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We should embrace change with an open mind.",
+    "newExampleCn": "我们应该以开放心态拥抱变化。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "emphasis",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The teacher put emphasis on clear pronunciation today.",
+    "newExampleCn": "老师今天特别强调清晰发音。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "emphasize",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please emphasize the main point in your talk.",
+    "newExampleCn": "请在发言中强调主要观点。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "employee",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Every employee must wear a name card here.",
+    "newExampleCn": "这里每位员工都必须佩戴工牌。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "employer",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A good employer respects honest and hard workers.",
+    "newExampleCn": "好雇主会尊重诚实勤奋的员工。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "empty",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The room looked empty after the chairs were moved.",
+    "newExampleCn": "椅子搬走后，房间看起来空荡荡的。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "end",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We will end the class five minutes early.",
+    "newExampleCn": "我们会提前五分钟结束这节课。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "endless",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child asked endless questions during the trip.",
+    "newExampleCn": "那个孩子在旅途中问了没完没了的问题。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "endure",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We must endure the noise for one more hour.",
+    "newExampleCn": "我们还得再忍受一个小时的噪音。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "engine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The engine made a strange sound on the road.",
+    "newExampleCn": "发动机在路上发出了奇怪的声音。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "England",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My cousin plans to study in England next year.",
+    "newExampleCn": "我表哥打算明年去英国读书。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "English",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "English helps me read news from many countries.",
+    "newExampleCn": "英语帮助我阅读来自许多国家的新闻。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "Englishman",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The Englishman spoke slowly to help us understand.",
+    "newExampleCn": "那位英国人说得很慢，好让我们听懂。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enjoy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I enjoy quiet music while I read at night.",
+    "newExampleCn": "我喜欢在夜里读书时听安静的音乐。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enlist",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They tried to enlist local help after the flood.",
+    "newExampleCn": "洪水过后，他们试着寻求当地帮助。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enormous",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The new bridge brought enormous change to the town.",
+    "newExampleCn": "新桥给这座城镇带来了巨大的变化。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enough",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We have enough food for the whole weekend.",
+    "newExampleCn": "我们的食物足够整个周末吃。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enquire",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "You can enquire about the course at the office.",
+    "newExampleCn": "你可以去办公室询问这门课程。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enquiry",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The manager answered every enquiry with great patience.",
+    "newExampleCn": "经理耐心地回答了每一个询问。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enroll",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many students enroll in the class each spring.",
+    "newExampleCn": "每年春天都有很多学生注册这门课。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "ensure",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please ensure the door is locked before leaving.",
+    "newExampleCn": "离开前请确保门已经锁好。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "enthusiasm",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her enthusiasm made the whole team feel hopeful.",
+    "newExampleCn": "她的热情让整个团队都感到充满希望。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "entire",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We spent the entire afternoon cleaning the house.",
+    "newExampleCn": "我们花了整个下午打扫房子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "entrepreneur",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The young entrepreneur opened a cafe near campus.",
+    "newExampleCn": "这位年轻创业者在校园附近开了一家咖啡馆。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "envy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I do not envy people with too much pressure.",
+    "newExampleCn": "我并不羡慕那些压力太大的人。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "equal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Every child should have equal chances to learn.",
+    "newExampleCn": "每个孩子都应拥有平等的学习机会。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "equate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not equate silence with agreement too quickly.",
+    "newExampleCn": "不要太快把沉默等同于同意。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "equivalent",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This word has no equivalent in simple Chinese.",
+    "newExampleCn": "这个词在简单汉语里没有完全对应的说法。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "era",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We live in an era of fast information.",
+    "newExampleCn": "我们生活在一个信息高速发展的时代。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "erect",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Workers will erect a new sign at the gate.",
+    "newExampleCn": "工人会在大门口竖起一块新牌子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "err",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Even careful people can err under great pressure.",
+    "newExampleCn": "即使再谨慎的人，在巨大压力下也会出错。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "especially",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I like fruit, especially sweet oranges in winter.",
+    "newExampleCn": "我喜欢水果，尤其是冬天的甜橙。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "essence",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Trust is the essence of a strong friendship.",
+    "newExampleCn": "信任是牢固友谊的本质。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "essential",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Water is essential for life in every place.",
+    "newExampleCn": "水在任何地方都是生命必需的。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eternal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The poem speaks of eternal love and memory.",
+    "newExampleCn": "这首诗写的是永恒的爱与记忆。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "Europe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My aunt plans to travel across Europe this summer.",
+    "newExampleCn": "我姑妈打算今年夏天去欧洲旅行。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eve",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We stayed home on the eve of the exam.",
+    "newExampleCn": "考试前夜我们待在家里。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "evening",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We often take a walk in the evening.",
+    "newExampleCn": "我们经常在傍晚散步。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "evenly",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Spread the butter evenly over the warm bread.",
+    "newExampleCn": "请把黄油均匀地抹在热面包上。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eventually",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He eventually found the answer after many tries.",
+    "newExampleCn": "经过多次尝试后，他最终找到了答案。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "ever",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Have you ever seen snow in real life?",
+    "newExampleCn": "你曾在现实中见过雪吗？",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "every",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Every student needs a pencil for this test.",
+    "newExampleCn": "每个学生都需要一支铅笔来做这次测试。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "everybody",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Everybody stood up when the teacher came in.",
+    "newExampleCn": "老师进来时，大家都站了起来。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "everywhere",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Spring flowers are blooming everywhere in the park.",
+    "newExampleCn": "公园里到处都开着春花。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "evident",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her worry was evident from her quiet face.",
+    "newExampleCn": "从她沉默的表情里可以明显看出她的担心。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "evolution",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The book explains the evolution of modern cities.",
+    "newExampleCn": "这本书解释了现代城市的演变。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exact",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please give me the exact time of departure.",
+    "newExampleCn": "请告诉我确切的出发时间。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exam",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Our final exam starts at nine tomorrow morning.",
+    "newExampleCn": "我们的期末考试明天早上九点开始。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "examine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The doctor will examine your eyes very carefully.",
+    "newExampleCn": "医生会非常仔细地检查你的眼睛。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "excel",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She can excel in science with steady practice.",
+    "newExampleCn": "只要持续练习，她就能在科学方面表现出色。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "except",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Everybody came except the boy with a fever.",
+    "newExampleCn": "除了那个发烧的男孩，大家都来了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exception",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There was one exception to the school rule.",
+    "newExampleCn": "这条校规有一个例外。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "excess",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Too much sugar is an excess in daily meals.",
+    "newExampleCn": "日常饮食中糖分过多是一种过量。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "excessive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Excessive noise makes it hard to study well.",
+    "newExampleCn": "过大的噪音会让人难以好好学习。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "excite",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Good news can excite the whole family quickly.",
+    "newExampleCn": "好消息会很快让全家人兴奋起来。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "excited",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The children felt excited before the school trip.",
+    "newExampleCn": "孩子们在春游前感到很兴奋。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exciting",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The match was exciting from start to finish.",
+    "newExampleCn": "这场比赛从头到尾都很刺激。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exclaim",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She could not help but exclaim with joy.",
+    "newExampleCn": "她忍不住高兴地叫了出来。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exempt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Children under six are exempt from this fee.",
+    "newExampleCn": "六岁以下儿童免交这项费用。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exhaust",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Long work hours can exhaust both body and mind.",
+    "newExampleCn": "长时间工作会让身心都筋疲力尽。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exhibit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The museum will exhibit old maps next month.",
+    "newExampleCn": "博物馆下个月将展出旧地图。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exile",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The poet lived in exile for many years.",
+    "newExampleCn": "这位诗人流亡了很多年。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "existence",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The existence of clean water cannot be ignored.",
+    "newExampleCn": "清洁水源的存在不容忽视。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expansion",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The expansion of the school will start soon.",
+    "newExampleCn": "学校的扩建工程很快就会开始。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not expend all your energy too early.",
+    "newExampleCn": "不要太早耗尽你的全部精力。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expensive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This bag looks nice but feels too expensive.",
+    "newExampleCn": "这个包看起来不错，但感觉太贵了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expert",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We asked an expert to check the machine.",
+    "newExampleCn": "我们请了一位专家来检查机器。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "explanation",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His explanation made the difficult idea much clearer.",
+    "newExampleCn": "他的解释让那个难懂的想法清楚多了。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "explode",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Old pipes may explode under too much pressure.",
+    "newExampleCn": "旧管道在压力过大时可能会爆裂。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expo",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We visited a science expo near the city center.",
+    "newExampleCn": "我们参观了市中心附近的一场科技博览会。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "exposure",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Too much sun exposure can hurt your skin.",
+    "newExampleCn": "过多的日晒会伤害你的皮肤。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "expressway",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The new expressway shortened our trip by an hour.",
+    "newExampleCn": "这条新高速公路让我们的行程缩短了一小时。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "extend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Could you extend the deadline by two days?",
+    "newExampleCn": "你能把截止日期延长两天吗？",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "extensive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The report is based on extensive field research.",
+    "newExampleCn": "这份报告基于广泛的实地研究。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "extra",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We need extra chairs for the evening meeting.",
+    "newExampleCn": "晚上开会我们还需要额外的椅子。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "extraordinary",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She showed extraordinary courage in that hard time.",
+    "newExampleCn": "她在那段艰难时期表现出了非凡的勇气。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eye",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There was dust in my eye all morning.",
+    "newExampleCn": "整个上午我眼睛里都有灰尘。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eyeball",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The doctor checked each eyeball with a light.",
+    "newExampleCn": "医生用灯检查了每一只眼球。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eyebrow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She raised one eyebrow when she heard the news.",
+    "newExampleCn": "听到这个消息时，她扬起了一边眉毛。",
+    "reason": "batch-004 validation-failure fix"
+  },
+  {
+    "word": "eyelid",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A small cut appeared above his left eyelid.",
+    "newExampleCn": "他的左眼皮上方出现了一道小伤口。",
+    "reason": "batch-004 validation-failure fix"
+  }
+]

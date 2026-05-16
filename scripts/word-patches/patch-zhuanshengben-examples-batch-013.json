@@ -1,0 +1,974 @@
+[
+  {
+    "word": "shit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The actor shouted a rude shit joke.",
+    "newExampleCn": "那个演员粗鲁地讲了个脏话笑话。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "situate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The hotel situate near the old station.",
+    "newExampleCn": "这家酒店位于老车站附近。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skateboard",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He rides a skateboard after school.",
+    "newExampleCn": "他放学后会玩滑板。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skeleton",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The museum displayed a whale skeleton.",
+    "newExampleCn": "博物馆展出了一具鲸鱼骨架。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skid",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The car began to skid on ice.",
+    "newExampleCn": "汽车开始在冰面上打滑。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skilful",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She is skilful with small repairs.",
+    "newExampleCn": "她很擅长做一些小修理。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skilled",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They need skilled workers this month.",
+    "newExampleCn": "他们这个月需要熟练工人。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skillful",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He gave a skillful final answer.",
+    "newExampleCn": "他给出了一个很熟练的最终回答。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skinny",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The skinny cat hid under chair.",
+    "newExampleCn": "那只瘦猫躲在椅子下面。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skip",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not skip breakfast before class.",
+    "newExampleCn": "上课前不要不吃早饭。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "skyrocket",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Prices may skyrocket during the holiday.",
+    "newExampleCn": "价格在假期期间可能会飙升。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "slap",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not slap the table again.",
+    "newExampleCn": "不要再拍桌子了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "slash",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Someone used a knife to slash tires.",
+    "newExampleCn": "有人用刀划破了轮胎。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sleepwalk",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He may sleepwalk when deeply stressed.",
+    "newExampleCn": "他压力大时可能会梦游。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sly",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He gave me a sly smile.",
+    "newExampleCn": "他冲我露出了一个狡黠的笑。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sneeze",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I always sneeze in dusty rooms.",
+    "newExampleCn": "我在有灰尘的房间里总会打喷嚏。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sniff",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The dog came over to sniff.",
+    "newExampleCn": "那只狗走过来闻了闻。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "snowman",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The children built a snowman outside.",
+    "newExampleCn": "孩子们在外面堆了个雪人。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "so-called",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The so-called expert knew very little.",
+    "newExampleCn": "那个所谓的专家其实懂得很少。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "soar",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Birds soar above the valley at noon.",
+    "newExampleCn": "鸟儿在中午飞翔在山谷上空。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sofa",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The cat slept on the sofa.",
+    "newExampleCn": "那只猫睡在沙发上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "solemn",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His solemn voice quieted the room.",
+    "newExampleCn": "他庄重的声音让房间安静下来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "solitary",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The old man lived a solitary life.",
+    "newExampleCn": "那位老人过着独居生活。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "someday",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I hope to travel abroad someday.",
+    "newExampleCn": "我希望有一天去国外旅行。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sooner or later",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "You will understand it sooner or later.",
+    "newExampleCn": "你迟早会明白这件事。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sophisticated",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The system looks sophisticated but simple.",
+    "newExampleCn": "这个系统看起来复杂却很简洁。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sore",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My legs feel sore after running.",
+    "newExampleCn": "跑完步后我的腿很酸。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sorrow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Deep sorrow filled the quiet room.",
+    "newExampleCn": "深深的悲伤充满了安静的房间。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "southeast",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The wind came from the southeast.",
+    "newExampleCn": "风从东南方向吹来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "soy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We bought soy milk for breakfast.",
+    "newExampleCn": "我们买了豆浆当早餐。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "soybean",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Farmers grow soybean in this area.",
+    "newExampleCn": "农民在这个地区种植大豆。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spam",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please do not spam the group chat.",
+    "newExampleCn": "请不要在群聊里刷屏。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sparkle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her eyes sparkle in the sunlight.",
+    "newExampleCn": "她的眼睛在阳光下闪闪发亮。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sparse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Trees are sparse on that hill.",
+    "newExampleCn": "那座山上的树木很稀疏。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "specialization",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His specialization is modern Chinese history.",
+    "newExampleCn": "他的专业方向是中国近代史。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "specialize",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many doctors specialize in heart disease.",
+    "newExampleCn": "很多医生专门研究心脏病。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "specification",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Read the product specification before buying.",
+    "newExampleCn": "购买前请先看产品规格。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spite",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He smiled in spite of the pain.",
+    "newExampleCn": "尽管疼痛，他还是笑了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "splash",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Kids love to splash in puddles.",
+    "newExampleCn": "孩子们喜欢在水坑里踩水花。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spokeswoman",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The spokeswoman answered every question calmly.",
+    "newExampleCn": "女发言人冷静地回答了每个问题。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spontaneous",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her spontaneous laugh eased the tension.",
+    "newExampleCn": "她自然而然的笑缓和了紧张气氛。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spray",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please spray water on the leaves.",
+    "newExampleCn": "请往叶子上喷点水。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "spread",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "News spread quickly across the town.",
+    "newExampleCn": "消息很快传遍了整个小镇。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stand",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please stand near the front door.",
+    "newExampleCn": "请站在前门附近。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stand for",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "UN stand for the United Nations.",
+    "newExampleCn": "UN 代表联合国。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stand up",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please stand up when your name is called.",
+    "newExampleCn": "叫到你名字时请站起来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "startle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The sudden noise may startle birds.",
+    "newExampleCn": "突如其来的声音可能会惊到鸟。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "startup",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The startup hired three new engineers.",
+    "newExampleCn": "这家初创公司新招了三名工程师。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "statement",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her statement surprised the whole class.",
+    "newExampleCn": "她的声明让全班都很惊讶。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stationer",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The stationer sold pens and notebooks.",
+    "newExampleCn": "那家文具商卖钢笔和笔记本。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stay up",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not stay up too late tonight.",
+    "newExampleCn": "今晚不要熬夜太晚。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stepmother",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His stepmother cared for him kindly.",
+    "newExampleCn": "他的继母对他很照顾。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stick out",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Your red bag stick out in crowd.",
+    "newExampleCn": "你那个红包在人群里很显眼。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stick to",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please stick to the main topic.",
+    "newExampleCn": "请坚持围绕主要话题。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stick up for",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Good friends stick up for each other.",
+    "newExampleCn": "好朋友会彼此撑腰。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stick with",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please stick with the original plan.",
+    "newExampleCn": "请坚持原来的计划。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stiff",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My neck feels stiff this morning.",
+    "newExampleCn": "今天早上我的脖子很僵。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stockbroker",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The stockbroker watched the market closely.",
+    "newExampleCn": "那位股票经纪人紧盯着市场。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "storefront",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The storefront looked bright at night.",
+    "newExampleCn": "那家店面的夜晚看起来很亮。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "strawberry",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The strawberry cake smelled very sweet.",
+    "newExampleCn": "草莓蛋糕闻起来很香甜。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "strengthen",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Daily exercise can strengthen your heart.",
+    "newExampleCn": "每天锻炼可以增强心脏功能。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "strive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We strive to improve every day.",
+    "newExampleCn": "我们努力每天都进步一点。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stroke",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He stroked the cat after each stroke.",
+    "newExampleCn": "他每抚摸一下都让猫更放松。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "stubborn",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child remained stubborn all morning.",
+    "newExampleCn": "那个孩子整个上午都很固执。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "submission",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Your submission arrived before the deadline.",
+    "newExampleCn": "你的提交在截止前就到了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "subscribe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many readers subscribe to this magazine.",
+    "newExampleCn": "很多读者订阅这本杂志。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "substantial",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They made substantial progress this week.",
+    "newExampleCn": "他们这周取得了实质性进展。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "subtlety",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I missed the subtlety in her joke.",
+    "newExampleCn": "我没听出她笑话里的微妙之处。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "success",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Hard work often leads to success.",
+    "newExampleCn": "努力工作常常会带来成功。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "suggestion",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Thank you for the helpful suggestion.",
+    "newExampleCn": "谢谢你这个有帮助的建议。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "summarise",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please summarise the article in class.",
+    "newExampleCn": "请在课堂上概括这篇文章。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "summarize",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please summarize the article in class.",
+    "newExampleCn": "请在课堂上概括这篇文章。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "summit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Snow covered the summit all year.",
+    "newExampleCn": "山顶终年被雪覆盖。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sunbathe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Tourists love to sunbathe on beach.",
+    "newExampleCn": "游客们喜欢在海滩上晒太阳。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sunglasses",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her sunglasses were on the table.",
+    "newExampleCn": "她的太阳镜放在桌上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "superman",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child dreamed of becoming superman.",
+    "newExampleCn": "那个孩子梦想成为超人。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "superpower",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "No country should abuse its superpower.",
+    "newExampleCn": "没有国家应该滥用自己的超级力量。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "superstar",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The young singer became a superstar.",
+    "newExampleCn": "那位年轻歌手成了超级明星。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "superstition",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Old superstition still affects some villages.",
+    "newExampleCn": "古老的迷信仍影响着一些村庄。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "surf",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Teenagers surf the internet after school.",
+    "newExampleCn": "青少年放学后会上网冲浪。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "surge",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Orders began to surge this morning.",
+    "newExampleCn": "今天早上订单开始猛增。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "surpass",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her score may surpass last year.",
+    "newExampleCn": "她的分数可能会超过去年。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sustain",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Fresh food helps sustain our energy.",
+    "newExampleCn": "新鲜食物有助于维持我们的精力。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "swipe",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please swipe the screen to unlock.",
+    "newExampleCn": "请滑动屏幕解锁。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "sympathy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She showed sympathy for the injured dog.",
+    "newExampleCn": "她对那只受伤的狗表示同情。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "systematic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They made a systematic study plan.",
+    "newExampleCn": "他们做了一个系统的学习计划。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take advantage of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We should take advantage of good weather.",
+    "newExampleCn": "我们应该利用好天气。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take away",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please take away these empty cups.",
+    "newExampleCn": "请把这些空杯子拿走。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take down",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please take down the old poster.",
+    "newExampleCn": "请把那张旧海报取下来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take notice of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please take notice of the warning sign.",
+    "newExampleCn": "请注意那个警示牌。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take out",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please take out the trash tonight.",
+    "newExampleCn": "今晚请把垃圾拿出去。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take pride in",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They take pride in honest work.",
+    "newExampleCn": "他们为诚实劳动感到自豪。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take the place of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Robots cannot take the place of teachers.",
+    "newExampleCn": "机器人不能取代老师。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "take-off",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The plane made a smooth take-off.",
+    "newExampleCn": "飞机顺利起飞了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "tangible",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We need tangible results this month.",
+    "newExampleCn": "我们这个月需要看得见的成果。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "teammate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My teammate encouraged me during practice.",
+    "newExampleCn": "训练时我的队友一直鼓励我。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "teamwork",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Good teamwork saved us much time.",
+    "newExampleCn": "良好的团队合作帮我们省了很多时间。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "teapot",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The teapot stayed warm on table.",
+    "newExampleCn": "茶壶放在桌上还热着。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "teen",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The teen spends hours reading online.",
+    "newExampleCn": "那个青少年会花好几个小时在线看书。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "telegram",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The family received a telegram at noon.",
+    "newExampleCn": "这家人在中午收到了一封电报。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "teller",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The bank teller checked my card.",
+    "newExampleCn": "银行柜员查看了我的卡。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "temper",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He lost his temper at work.",
+    "newExampleCn": "他在工作中发了脾气。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "tender",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The meat became tender after cooking.",
+    "newExampleCn": "肉煮过之后变得很嫩。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "terminal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We waited at the bus terminal.",
+    "newExampleCn": "我们在汽车站候车。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "textbook",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The textbook is under the chair.",
+    "newExampleCn": "课本就在椅子下面。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "thanks to",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Thanks to your help, we finished early.",
+    "newExampleCn": "多亏了你的帮助，我们提前完成了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "theater",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We met outside the theater tonight.",
+    "newExampleCn": "今晚我们在剧院外见面。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "theatre",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The theatre lights went out suddenly.",
+    "newExampleCn": "剧院的灯突然灭了。",
+    "reason": "example/exampleCn missing"
+  }
+]

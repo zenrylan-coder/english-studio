@@ -1,0 +1,488 @@
+[
+  {
+    "word": "departure",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Our departure was delayed because of the heavy rain.",
+    "newExampleCn": "因为大雨，我们的出发被推迟了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "depend",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Children depend on adults for safety and daily care.",
+    "newExampleCn": "孩子依赖大人提供安全和日常照顾。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "depend on",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Success often depends on steady effort over a long time.",
+    "newExampleCn": "成功往往取决于长期稳定的努力。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "depress",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Bad news can depress people during a difficult week.",
+    "newExampleCn": "坏消息会让人在艰难的一周里感到沮丧。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "description",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her description of the village made us want to visit.",
+    "newExampleCn": "她对那个村庄的描述让我们很想去看看。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "desirable",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A quiet neighborhood is desirable for young families.",
+    "newExampleCn": "安静的社区对年轻家庭来说很理想。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "desk",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There is a blue notebook on my desk near the lamp.",
+    "newExampleCn": "我的书桌上台灯旁边有一本蓝色笔记本。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "despite",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Despite the rain, the children still played outside happily.",
+    "newExampleCn": "尽管下着雨，孩子们还是在外面玩得很开心。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "destroy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A strong fire can destroy years of careful work.",
+    "newExampleCn": "一场大火可能毁掉多年的细心成果。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "determination",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Her determination impressed everyone in the training camp.",
+    "newExampleCn": "她的决心给训练营里的每个人都留下了深刻印象。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dictation",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We had an English dictation in class this morning.",
+    "newExampleCn": "我们今天早上在课堂上做了英语听写。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "die away",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The sound of the drums slowly died away at night.",
+    "newExampleCn": "夜里鼓声慢慢消失了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "difference",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There is a big difference between the two plans.",
+    "newExampleCn": "这两个方案之间有很大差别。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "different",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "People have different ideas about a perfect holiday.",
+    "newExampleCn": "人们对完美假期有不同的看法。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "difficult",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This question looks difficult, but the answer is simple.",
+    "newExampleCn": "这道题看起来很难，但答案其实很简单。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "difficulty",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She had no difficulty finding the office this morning.",
+    "newExampleCn": "她今天早上毫不费力就找到了办公室。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dim",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The room stayed dim because only one lamp was on.",
+    "newExampleCn": "房间里只有一盏灯亮着，所以一直很昏暗。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We plan to dine by the river after the meeting.",
+    "newExampleCn": "会议结束后，我们打算在河边用餐。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dinner",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We had a light dinner before watching the film.",
+    "newExampleCn": "看电影前我们吃了一顿简单的晚饭。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "direct",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please direct your questions to the front desk.",
+    "newExampleCn": "请把你的问题直接交给前台。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "directly",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "You can contact me directly if the problem returns.",
+    "newExampleCn": "如果问题再次出现，你可以直接联系我。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disable",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A strong password can disable many simple attacks.",
+    "newExampleCn": "一个强密码能挡住很多简单攻击。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disadvantage",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The main disadvantage of the plan is its high cost.",
+    "newExampleCn": "这个方案的主要缺点是成本太高。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disappoint",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Late changes may disappoint people who planned carefully.",
+    "newExampleCn": "临时变动可能会让认真做计划的人失望。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "discourage",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Harsh words can discourage students from asking questions.",
+    "newExampleCn": "严厉的话会打击学生提问的积极性。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "discuss",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Let us discuss the plan again after lunch today.",
+    "newExampleCn": "今天午饭后我们再讨论一次这个计划。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disease",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Regular exercise can reduce the risk of heart disease.",
+    "newExampleCn": "规律运动可以降低心脏病的风险。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disgust",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The smell of rotten food filled him with disgust.",
+    "newExampleCn": "腐烂食物的气味让他感到恶心。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disgusting",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The sink looked disgusting after days without cleaning.",
+    "newExampleCn": "几天没清理后，水槽看起来很恶心。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disk",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please save the backup on a separate disk.",
+    "newExampleCn": "请把备份保存到另一张磁盘上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dislike",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many children dislike bitter medicine at first taste.",
+    "newExampleCn": "很多孩子第一次尝到苦药时都会不喜欢。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "disorder",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Too much noise can create disorder in the classroom.",
+    "newExampleCn": "太大的噪音会让教室变得混乱。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "display",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The museum will display the painting next month.",
+    "newExampleCn": "博物馆下个月将展出这幅画。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "distance",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The distance from here to the station is not far.",
+    "newExampleCn": "从这里到车站的距离并不远。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "distinction",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There is a clear distinction between price and value.",
+    "newExampleCn": "价格和价值之间有明显区别。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "distort",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The broken mirror can distort every face it reflects.",
+    "newExampleCn": "破镜子会让照出来的每张脸都变形。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "distract",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Phone messages can distract students during quiet study time.",
+    "newExampleCn": "手机消息会让学生在安静学习时分心。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "distress",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The bad news caused great distress in the family.",
+    "newExampleCn": "这个坏消息给这个家庭带来了巨大的痛苦。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "district",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She grew up in a busy shopping district downtown.",
+    "newExampleCn": "她在市中心一个热闹的商业区长大。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "diverge",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Their opinions began to diverge after the second meeting.",
+    "newExampleCn": "第二次会议后，他们的意见开始出现分歧。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "divine",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The painting shows a divine light above the clouds.",
+    "newExampleCn": "这幅画展现了云层上方神圣的光。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "division",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The division of tasks made the project run smoothly.",
+    "newExampleCn": "任务分工让这个项目进行得很顺利。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "do away with",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Many people want to do away with useless paperwork.",
+    "newExampleCn": "很多人都想废除那些无用的纸质流程。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "document",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please document every change before closing the project.",
+    "newExampleCn": "在结束项目之前请记录每一项变更。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dog",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The dog waited quietly by the door all morning.",
+    "newExampleCn": "那只狗整个早上都安静地守在门边。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "doll",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The little girl hugged her doll before sleeping.",
+    "newExampleCn": "小女孩睡前抱着她的玩偶。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dolphin",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We saw a dolphin jump above the waves at sea.",
+    "newExampleCn": "我们在海上看到一只海豚跃出海面。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "domestic",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The report focuses on domestic travel during the holiday.",
+    "newExampleCn": "这份报告关注假期期间的国内出行。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "doom",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Some people thought the storm would doom the harvest.",
+    "newExampleCn": "有些人认为这场暴风雨会毁掉收成。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "door",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please close the door when you leave the room.",
+    "newExampleCn": "你离开房间时请把门关上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dormitory",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The new dormitory has a study room on each floor.",
+    "newExampleCn": "新宿舍楼每层都有一个自习室。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dose",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Take one small dose after meals as the doctor advised.",
+    "newExampleCn": "按医生建议，饭后服用一小剂。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "doubt",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I doubt that he will forget such an important date.",
+    "newExampleCn": "我不相信他会忘记这么重要的日子。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "dozen",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She bought a dozen eggs at the market this morning.",
+    "newExampleCn": "她今天早上在市场买了一打鸡蛋。",
+    "reason": "example/exampleCn missing"
+  }
+]

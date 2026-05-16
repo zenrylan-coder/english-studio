@@ -1,0 +1,308 @@
+[
+  {
+    "word": "fable",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My teacher read a short fable to us.",
+    "newExampleCn": "老师给我们读了一则简短的寓言。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "face",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She could not hide fear on her face.",
+    "newExampleCn": "她脸上的恐惧怎么也藏不住。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fail",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not fail to lock the front door.",
+    "newExampleCn": "一定不要忘记锁前门。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fairy",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child loves every fairy in the book.",
+    "newExampleCn": "那个孩子喜欢书里的每一个仙子。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fall off",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Be careful not to let the box fall off.",
+    "newExampleCn": "小心别让箱子掉下来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fast",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This train is fast enough for business travel.",
+    "newExampleCn": "这列火车对商务出行来说足够快。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fatal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "That small mistake proved fatal in the storm.",
+    "newExampleCn": "那个小错误在暴风雨中成了致命问题。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "No one can fully control their own fate.",
+    "newExampleCn": "没有人能完全掌控自己的命运。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "favorable",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The weather is favorable for a short trip.",
+    "newExampleCn": "这样的天气适合短途出行。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "feeling",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I have a strange feeling about this call.",
+    "newExampleCn": "我对这通电话有一种奇怪的感觉。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fellow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A fellow student helped me find the room.",
+    "newExampleCn": "一位同学帮我找到了那个房间。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "festive",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The hall looked festive before the holiday dinner.",
+    "newExampleCn": "节日晚餐前，大厅看起来很有节日气氛。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fetch",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please fetch a glass of water for grandma.",
+    "newExampleCn": "请给奶奶拿一杯水。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fever",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The child had a fever all night long.",
+    "newExampleCn": "那个孩子整夜都在发烧。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fight",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They did not fight after the teacher came.",
+    "newExampleCn": "老师来了以后，他们就没有再打架。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fight with",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not fight with your friends at school.",
+    "newExampleCn": "在学校里不要和朋友打架。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "final",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This is the final answer to the question.",
+    "newExampleCn": "这是这个问题的最终答案。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "find fault with",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He likes to find fault with simple plans.",
+    "newExampleCn": "他喜欢对简单方案吹毛求疵。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "find out",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We need to find out the real cause.",
+    "newExampleCn": "我们需要查明真正的原因。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fingerprint",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The police found one fingerprint on the door.",
+    "newExampleCn": "警方在门上发现了一枚指纹。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "flood",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The flood damaged many homes near the river.",
+    "newExampleCn": "洪水损坏了河边的许多房屋。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "flu",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He stayed home because the flu felt worse.",
+    "newExampleCn": "他因为流感加重而留在家里。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "footprint",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We saw one footprint near the wet door.",
+    "newExampleCn": "我们在湿漉漉的门边看到了一个脚印。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "for the good of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They worked hard for the good of all.",
+    "newExampleCn": "他们为了大家的利益而努力工作。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "for the purpose of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This room is used for the purpose of study.",
+    "newExampleCn": "这个房间是用于学习目的的。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "for the sake of",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He stayed calm for the sake of peace.",
+    "newExampleCn": "为了和平，他保持了冷静。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "forefather",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Our forefather worked on this land long ago.",
+    "newExampleCn": "我们的祖先很久以前就在这片土地上劳作。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "forehead",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A drop of sweat rolled down his forehead.",
+    "newExampleCn": "一滴汗从他的额头滚落下来。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "foremost",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Safety is our foremost concern in this job.",
+    "newExampleCn": "安全是这项工作中我们最关心的事。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "forget",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Do not forget your umbrella near the door.",
+    "newExampleCn": "别忘了你放在门边的雨伞。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "formal",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He wore a formal suit to the wedding.",
+    "newExampleCn": "他穿着正式西装去参加婚礼。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "format",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please keep the same format in the report.",
+    "newExampleCn": "请在报告中保持相同格式。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fortunate",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "You are fortunate to have such kind friends.",
+    "newExampleCn": "你有这么好的朋友真幸运。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "fortune",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He made a fortune through careful business choices.",
+    "newExampleCn": "他通过谨慎的商业选择赚了一大笔钱。",
+    "reason": "example/exampleCn missing"
+  }
+]

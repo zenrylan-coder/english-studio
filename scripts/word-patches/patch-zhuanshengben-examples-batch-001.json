@@ -1,0 +1,452 @@
+[
+  {
+    "word": "best",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She is the best student in our class.",
+    "newExampleCn": "她是我们班上最好的学生。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "best-seller",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "This novel became a best-seller very quickly.",
+    "newExampleCn": "这本小说很快就成了畅销书。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "better",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I want to find a better job next year.",
+    "newExampleCn": "我想明年找一份更好的工作。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "between",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "There is a park between the two buildings.",
+    "newExampleCn": "两栋楼之间有一个公园。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "beyond",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The village is beyond the mountain.",
+    "newExampleCn": "村庄在山的那一边。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bicycle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He rides his bicycle to school every day.",
+    "newExampleCn": "他每天骑自行车上学。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "big",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "They live in a big house with a garden.",
+    "newExampleCn": "他们住在一栋带花园的大房子里。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bike",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I bought a new bike last weekend.",
+    "newExampleCn": "我上周末买了一辆新自行车。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bilingual",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She is bilingual in English and French.",
+    "newExampleCn": "她精通英语和法语两种语言。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bill",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Can you pay the electricity bill today?",
+    "newExampleCn": "你今天能付电费吗？",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "billion",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The company is worth over a billion dollars.",
+    "newExampleCn": "这家公司价值超过十亿美元。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bin",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please throw the empty bottle into the bin.",
+    "newExampleCn": "请把空瓶子扔进垃圾桶。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "biotechnology",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Biotechnology is changing the way we grow food.",
+    "newExampleCn": "生物技术正在改变我们种植食物的方式。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bird",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "A bird is singing in the tree.",
+    "newExampleCn": "一只鸟在树上唱歌。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "birth",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The baby's birth brought great joy to the family.",
+    "newExampleCn": "婴儿的出生给这个家庭带来了巨大的喜悦。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "birthday",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "My birthday is on the first of May.",
+    "newExampleCn": "我的生日在五月一号。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bit",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Can I have a bit of your cake?",
+    "newExampleCn": "我能尝一口你的蛋糕吗？",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bitch",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He called her a bad name like bitch.",
+    "newExampleCn": "他用婊子之类的脏话骂了她。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "black",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She wore a beautiful black dress to the party.",
+    "newExampleCn": "她穿了一件漂亮的黑裙子去参加派对。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blackboard",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The teacher wrote the answer on the blackboard.",
+    "newExampleCn": "老师把答案写在了黑板上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blacksmith",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The blacksmith made a strong iron gate for the house.",
+    "newExampleCn": "铁匠为房子打造了一扇结实的铁门。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blank",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Please fill in the blank space with your name.",
+    "newExampleCn": "请在空白处填上你的名字。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bleed",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "His finger began to bleed after the cut.",
+    "newExampleCn": "他的手指被割伤后开始流血。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blind",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The blind man uses a stick to help him walk.",
+    "newExampleCn": "这位盲人用一根拐杖帮助自己行走。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blog",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She writes a blog about her travels.",
+    "newExampleCn": "她写了一个关于旅行的博客。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blond",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The little girl has long blond hair.",
+    "newExampleCn": "这个小女孩有一头长长的金发。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blood",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The doctor tested his blood for the disease.",
+    "newExampleCn": "医生检测了他的血液是否患病。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blouse",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She wore a white blouse with a blue skirt.",
+    "newExampleCn": "她穿了一件白衬衫配蓝裙子。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blue",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The sky is very blue today.",
+    "newExampleCn": "今天天空非常蓝。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blur",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The moving car was just a blur in the photo.",
+    "newExampleCn": "行驶中的汽车在照片里只是一片模糊的影子。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "blush",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She began to blush when everyone looked at her.",
+    "newExampleCn": "当所有人看着她时，她开始脸红。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "board",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He wrote his name on the board at the front.",
+    "newExampleCn": "他把自己的名字写在前面的黑板上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "boat",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "We took a small boat across the lake.",
+    "newExampleCn": "我们坐一艘小船过了湖。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "body",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Regular exercise keeps your body healthy.",
+    "newExampleCn": "定期锻炼能保持你的身体健康。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bold",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "He made a bold decision to start his own company.",
+    "newExampleCn": "他做了一个大胆的决定，创办了自己的公司。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bone",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The dog is chewing on a bone.",
+    "newExampleCn": "狗正在啃一根骨头。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bonus",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "All employees received a year-end bonus.",
+    "newExampleCn": "所有员工都收到了一笔年终奖金。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "book",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "I am reading a book about history.",
+    "newExampleCn": "我正在读一本关于历史的书。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bookshop",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The bookshop on the corner sells used books.",
+    "newExampleCn": "拐角处的书店卖二手书。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bookstore",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She works at a bookstore near the university.",
+    "newExampleCn": "她在大学附近的一家书店工作。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "boost",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The new policy will boost the local economy.",
+    "newExampleCn": "新政策将促进当地经济。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bore",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The long speech began to bore the audience.",
+    "newExampleCn": "冗长的演讲开始让观众感到厌烦。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "boring",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The movie was so boring that I fell asleep.",
+    "newExampleCn": "这部电影太无聊了，我睡着了。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "born",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She was born in a small town in 1990.",
+    "newExampleCn": "她于一九九〇年出生在一个小镇上。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "borrow",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Can I borrow your pen for a moment?",
+    "newExampleCn": "我能借用一下你的钢笔吗？",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "both",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Both of my parents are teachers.",
+    "newExampleCn": "我的父母都是老师。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bother",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Sorry to bother you, but I have a question.",
+    "newExampleCn": "抱歉打扰你，但我有个问题。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bottle",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "She filled the bottle with cold water.",
+    "newExampleCn": "她把瓶子装满了冷水。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bottom",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "The keys are at the bottom of my bag.",
+    "newExampleCn": "钥匙在我包的最底下。",
+    "reason": "example/exampleCn missing"
+  },
+  {
+    "word": "bowel",
+    "sourceBank": "zhuanshengben",
+    "oldExample": "",
+    "oldExampleCn": "",
+    "newExample": "Eating more fiber helps keep your bowel healthy.",
+    "newExampleCn": "多吃纤维有助于肠道健康。",
+    "reason": "example/exampleCn missing"
+  }
+]
