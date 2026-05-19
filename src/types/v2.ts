@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
+
 /** V2 mock / UI data shapes (tabs, training, word book, mine, workbench, writing). */
 
 export type TabItem = {
   key: string;
   label: string;
-  icon: string;
+  icon: ReactNode;
 };
 
 export type TodayTaskTarget = "words" | "shadow" | "aiVoice";
@@ -35,6 +37,12 @@ export type V2WordMistakeSource = {
   pack: string;
 };
 
+/** 易混词条目：词 + 一句话区分提示 */
+export type WordConfusable = {
+  word: string;
+  note: string;
+};
+
 export type WordItem = {
   word: string;
   phonetic: string;
@@ -47,6 +55,12 @@ export type WordItem = {
   mistakeSources?: V2WordMistakeSource[];
   /** 词条在其它词包也出现；仅用于「也属于」，不参与出错类别 */
   alsoIn?: string[];
+  /** 常见搭配（短语 / 习语） */
+  collocations?: string[];
+  /** 易混词：拼写或意义接近、考点常考的近义/形近词 */
+  confusables?: WordConfusable[];
+  /** 常错点：拼写 / 发音 / 用法上的典型 pitfall */
+  pitfalls?: string[];
 };
 
 export type Accent = "美音" | "英音";

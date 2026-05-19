@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">English Studio app icon</title>
+  <desc id="desc">Warm beige rounded-square icon with a dark brown center tile and the Chinese character �.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6EAD6" />
+      <stop offset="100%" stop-color="#E6D0B3" />
+    </linearGradient>
+    <linearGradient id="tile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A3623" />
+      <stop offset="100%" stop-color="#2B1F14" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)" />
+  <rect x="86" y="86" width="340" height="340" rx="90" fill="url(#tile)" />
+  <circle cx="256" cy="165" r="19" fill="#D8B65E" opacity="0.92" />
+  <text x="256" y="314" text-anchor="middle" font-family="'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="168" font-weight="700" fill="#F6EAD6">�</text>
+  <text x="256" y="405" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="7" fill="#D8B65E">ES</text>
+</svg>

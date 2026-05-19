@@ -42,3 +42,18 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# CloudBase local-only config (never commit; may contain API keys)
+cloudbaserc.json
+cloudbaserc.local.json
+cloudbaserc.local.*.json
+
+# scratch / temp request bodies used during local debugging
+.tmp-*
+.playwright-mcp/
+
+/my-open-design-test/
+
+backups/
+public/data/v2/word-banks-backups/
+scripts/word-patches/backups/

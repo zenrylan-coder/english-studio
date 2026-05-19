@@ -1,4 +1,5 @@
 import type { Accent, WordGroup, WordItem, WordPack } from "@/types/v2";
+import { WORD_ITEM_EXTRAS_BY_LEMMA } from "./wordItemExtras";
 
 /**
  * wordGroups 各 pack 的 `total`：标记为 0 表示动态从 manifest 加载真实数量。
@@ -12,7 +13,7 @@ export const wordGroups: WordGroup[] = [
       { id: "cet4", name: "大学英语四级", total: 0, learned: 0, current: true, last: "" },
       { id: "cet6", name: "大学英语六级", total: 0, learned: 0, current: false, last: "" },
       { id: "kaoyan", name: "考研英语", total: 0, learned: 0, current: false, last: "" },
-      { id: "zsb", name: "专升本英语", total: 0, learned: 0, current: false, last: "" },
+      { id: "zsb" /* 对应 wordBankLoader 中 bankId = "zhuanshengben"，JSON 文件名 zhuanshengben.json */, name: "专升本英语", total: 0, learned: 0, current: false, last: "" },
       { id: "ielts", name: "雅思英语", total: 0, learned: 0, current: false, last: "" },
     ],
   },
@@ -36,6 +37,7 @@ export const sampleWords = [
     example: "Small goals help me achieve steady progress in English.",
     exampleCn: "小目标帮我在英语上取得稳步进步。",
     review: false,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.achieve,
   },
   {
     word: "approach",
@@ -47,6 +49,7 @@ export const sampleWords = [
     review: false,
     mistakeSources: [{ group: "升学备考组", pack: "专升本英语" }],
     alsoIn: ["大学英语四级", "高中英语", "考研英语"],
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.approach,
   },
   {
     word: "attitude",
@@ -65,6 +68,7 @@ export const sampleWords = [
     example: "Morning reading benefits my memory more than I expected.",
     exampleCn: "晨读对记忆的帮助比我想象的大。",
     review: false,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.benefit,
   },
   {
     word: "challenge",
@@ -74,6 +78,7 @@ export const sampleWords = [
     example: "Speaking in public is still a challenge for many beginners.",
     exampleCn: "公开演讲对许多初学者仍是一项挑战。",
     review: false,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.challenge,
   },
   {
     word: "communicate",
@@ -85,14 +90,15 @@ export const sampleWords = [
     review: true,
     mistakeSources: [{ group: "升学备考组", pack: "大学英语四级" }],
     alsoIn: ["大学英语六级", "考研英语", "专升本英语"],
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.communicate,
   },
   {
     word: "develop",
     phonetic: "/dɪˈveləp/",
     pos: "v.",
     cn: "发展；培养",
-    example: "Regular writing helps develop stronger sentence patterns.",
-    exampleCn: "坚持写作有助于培养更扎实的句型。",
+    example: "Regular shadowing helps develop stronger sentence patterns.",
+    exampleCn: "坚持复述与跟读有助于培养更扎实的句型。",
     review: true,
   },
   {
@@ -103,6 +109,7 @@ export const sampleWords = [
     example: "Progress comes from daily effort rather than one long cram.",
     exampleCn: "进步来自日常积累，而不是一次长时间突击。",
     review: false,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.effort,
   },
   {
     word: "environment",
@@ -117,6 +124,7 @@ export const sampleWords = [
       { group: "升学备考组", pack: "大学英语六级" },
     ],
     alsoIn: ["考研英语"],
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.environment,
   },
   {
     word: "experience",
@@ -135,14 +143,15 @@ export const sampleWords = [
     example: "I focus on collocations when I read news articles.",
     exampleCn: "读新闻时我会重点留意搭配。",
     review: false,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.focus,
   },
   {
     word: "goal",
     phonetic: "/ɡoʊl/",
     pos: "n.",
     cn: "目标",
-    example: "My short-term goal is to pass the basic writing section.",
-    exampleCn: "我的短期目标是通过写作基础模块。",
+    example: "My short-term goal is to finish one daily speaking warm-up.",
+    exampleCn: "我的短期目标是每天完成一组口语热身。",
     review: false,
   },
   {
@@ -203,6 +212,7 @@ export const sampleWords = [
     example: "Students need time to adapt to a new learning environment.",
     exampleCn: "学生需要时间适应新的学习环境。",
     review: true,
+    ...WORD_ITEM_EXTRAS_BY_LEMMA.adapt,
   },
   {
     word: "available",
@@ -335,7 +345,7 @@ export const personalPackMeta = {
   total: 6,
   learned: 0,
   current: false,
-  last: "由文本解析生成",
+  last: "个人生成",
 } satisfies WordPack;
 
 export const accents = ["美音", "英音"] as const satisfies readonly Accent[];

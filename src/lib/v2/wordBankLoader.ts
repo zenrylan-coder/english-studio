@@ -6,6 +6,8 @@
  * 加载失败返回错误状态，不让页面崩溃
  */
 
+import { pickWordItemExtrasFromBankEntry } from "@/data/v2/wordItemExtras";
+
 export type WordBankEntry = {
   wordId: string;
   word: string;
@@ -17,6 +19,8 @@ export type WordBankEntry = {
   belongsTo: string[];
   sourceNotes: string;
   phoneticMissing: boolean;
+  /** JSON 部分词条携带，便于与清洗后形式对齐侧载扩展 */
+  wordClean?: string;
 };
 
 export type WordBankManifest = Record<
@@ -40,7 +44,7 @@ export const BANK_LABELS: Record<string, string> = {
   cet4: "大学英语四级",
   cet6: "大学英语六级",
   kaoyan: "考研英语",
-  zhuanshengben: "专升本英语",
+  zhuanshengben: "专升本英语" /* packId = "zsb" 指向此 bankId；JSON 文件名为 zhuanshengben.json */,
   ielts: "雅思英语",
 };
 
@@ -316,6 +320,7 @@ export function bankEntryToWordItem(
   extra?: { mistakeSources?: any[]; alsoIn?: string[] }
 ): any {
   const { meaning, pos } = cleanMeaningAndPos(entry.meaning || "", entry.partOfSpeech || "");
+  const fromBankExtras = pickWordItemExtrasFromBankEntry(entry);
   return {
     word: entry.word,
     phonetic: entry.phonetic || "音标待补",
@@ -326,6 +331,7 @@ export function bankEntryToWordItem(
     review: false,
     mistakeSources: extra?.mistakeSources ?? [],
     alsoIn: extra?.alsoIn ?? entry.belongsTo ?? [],
+    ...fromBankExtras,
     // 保留原始标记
     _phoneticMissing: entry.phoneticMissing,
   };

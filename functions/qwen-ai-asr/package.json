@@ -1,0 +1,6 @@
+{
+  "name": "qwen-ai-asr",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js"
+}

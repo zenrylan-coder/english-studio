@@ -5,14 +5,22 @@ import { Badge } from "@/components/v2/Badge";
 import { GroupHeader } from "@/components/v2/GroupHeader";
 import { HighlightedExample } from "@/components/v2/HighlightedExample";
 import { PageHeader } from "@/components/v2/PageHeader";
-import { PhoneShell } from "@/components/v2/PhoneShell";
+import { DeviceShell } from "@/v2/shells/DeviceShell";
 import { Progress } from "@/components/v2/Progress";
 import { SectionTitle } from "@/components/v2/SectionTitle";
 import { Surface } from "@/components/v2/Surface";
+import { WordUnitFilterPanel } from "@/components/v2/WordUnitFilterPanel";
 import { tabs } from "@/data/v2/tabs";
 import { todayTasks } from "@/data/v2/homeData";
 import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainingCards } from "@/data/v2/trainingData";
 import { personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
+import {
+  bootstrapCloudSync,
+  syncChatState,
+  syncLearningState,
+  type CloudSyncProfile,
+} from "@/lib/v2/cloudbaseSync";
+import { createChatSession, loadChatMessages, loadChatSessions, saveChatMessages, saveChatSessions, type V2ChatMessage, type V2ChatSession } from "@/lib/v2/chatLocal";
 import {
   BANK_LABELS,
   LABEL_TO_BANK_ID,
@@ -23,7 +31,10 @@ import {
   type WordBankManifest,
   type WordBankEntry,
 } from "@/lib/v2/wordBankLoader";
-import { speakText, warmUpVoiceProviders, VOICE_GENDERS, type VoiceGender } from "@/lib/v2/voice";
+import { bankDisplayLabel, countWordsInGroups, lemmasFromSelectedGroups, loadWordBankGroups, resolveBankIdForPack, type WordBankGroupsDoc } from "@/lib/v2/wordBankGroups";
+import { playQwenAiChat, queueLearnExampleQwenSpeech, speakText, warmUpVoiceProviders, VOICE_GENDERS, type VoiceGender } from "@/lib/v2/voice";
+import { chatUiToApiMessages, requestQwenFreeChat } from "@/lib/v2/qwenTextChatApi";
+import { requestQwenSpeechToText } from "@/lib/v2/qwenSpeechToTextApi";
 import { mineGroups, studyRecords } from "@/data/v2/mineData";
 import { parsedPhrases, parsedSentences, parsedWords, sceneScript, shadowLines, usefulExpressions } from "@/data/v2/workbenchData";
 import { writingMap, writingStages, writingTypes } from "@/data/v2/writingData";
@@ -478,11 +489,10 @@ function formatFavoriteSavedAt(savedAt) {
 }
 
 const freeChatModes = ["消息模式", "电话模式"];
-/** AI 对话页音色文案仅「女声 / 男声」；对内映射 TTS 角色名（当前不接 API） */
-const freeChatVoiceLabels = ["女声", "男声"];
-const FREE_CHAT_VOICE_MODEL = { 女声: "Stella", 男声: "Ethan" };
-function getFreeChatVoiceModel(uiLabel) {
-  return FREE_CHAT_VOICE_MODEL[uiLabel] ?? "Stella";
+/** AI 对话页音色文案仅「女声 / 男声」；对内映射千问 TTS 音色 */
+const FREE_CHAT_VOICE_MODEL = { 女声: "Cherry", 男声: "Ethan" };
+function getFreeChatVoiceModel(uiLabel: VoiceGender) {
+  return FREE_CHAT_VOICE_MODEL[uiLabel] ?? "Cherry";
 }
 const freeChatScenes = ["自由聊天", ...aiScenes];
 const freeChatWordTips = {
@@ -497,25 +507,18 @@ const freeChatInitialMessages = [
   {
     id: 1,
     role: "ai",
-    text: "Hi, I am here for free English chat. What would you like to talk about today?",
-    cn: "我在这里陪你自由聊英语。今天你想聊点什么？",
+    text: "Hi, I'm glad you're here — feel free to talk about anything in English. What's on your mind today?",
+    cn: "很高兴见到你，我们可以用英语随便聊聊。今天想聊点什么？",
     time: "18:40",
   },
-  {
-    id: 2,
-    role: "user",
-    text: "I want to practice speaking English, but I feel a little tired today.",
-    cn: "我想练英语口语，但今天有一点累。",
-    time: "18:41",
-  },
-  {
-    id: 3,
-    role: "ai",
-    text: "That is totally fine. We can relax and start with one small thing from your day.",
-    cn: "这完全没问题。我们可以放轻松，从你今天的一件小事开始聊。",
-    time: "18:41",
-  },
 ];
+
+/** 字幕：user / ai 统一用 cn（用户句在入列后用接口返回的 userCn 写入 cn） */
+function getFreeChatSubtitle(msg) {
+  if (!msg) return "";
+  const c = typeof msg.cn === "string" ? msg.cn.trim() : "";
+  return c || "翻译生成中…";
+}
 
 function cx(...items) {
   return items.filter(Boolean).join(" ");
@@ -602,62 +605,132 @@ function WordHintCard({ tip, onClose }) {
 
 function PhoneCallOverlay({
   open,
-  onClose,
-  scene,
-  voice,
   voiceModel,
-  speed,
   subtitlesOn,
   onToggleSubtitles,
-  paused,
-  onTogglePaused,
+  /** idle | listening | paused，仅电话模式，与消息模式解耦 */
+  micPhase,
+  recording,
+  transcribing,
+  busy,
+  /** TTS 正在播放本条回复 */
+  audioPlaying = false,
+  onStartListening,
+  onPauseListening,
+  onHangUp,
   latestMessage,
+  /** 仅种子欢迎 AI 一句在会话中时：中间区显示短开场，不铺满长初始化台词 */
+  soloSeedWelcome,
 }) {
   if (!open) return null;
-  const statusText = paused ? "已暂停收音" : latestMessage?.role === "ai" ? "AI 正在说" : "正在聆听";
+  const canTapMain = !busy && !transcribing;
+  const subtitleLine =
+    subtitlesOn && latestMessage?.role === "ai" && !soloSeedWelcome ? getFreeChatSubtitle(latestMessage) : "";
+  const micLive = recording || micPhase === "listening";
+  const canPauseActive = micLive && canTapMain;
+  const pauseReadyClass = cx(
+    "min-h-[52px] rounded-[17px] text-[13px] font-bold transition active:scale-[0.98]",
+    !canPauseActive ? "cursor-not-allowed border border-white/22 bg-[#3D342C] text-[#EDE4D8] opacity-[0.92]" : "border border-[#CFBB8F]/85 bg-[#E8CF8A] text-[#2B2118] shadow-inner shadow-black/10",
+  );
+  const startReadyClass = cx(
+    "min-h-[52px] rounded-[17px] text-[13px] font-bold transition active:scale-[0.98]",
+    !canTapMain || micLive ? "cursor-not-allowed border border-white/22 bg-[#40362E] text-[#D9CFBF] opacity-[0.92]" : "border border-transparent bg-white text-[#2B2118] shadow-[0_6px_18px_rgba(0,0,0,0.12)]",
+  );
+  /** 简短状态徽章（长说明放在中间文案区会破坏沉浸） */
+  const statusChip =
+    transcribing ? "识别中"
+    : busy ? "回复中"
+    : audioPlaying ? "朗读"
+    : micLive ? "收音"
+    : micPhase === "paused" ? "已暂停"
+    : "待接通";
+  const btnMuted = cx("min-h-[52px] rounded-[17px] text-[13px] font-bold transition active:scale-[0.98]");
+
   return (
-    <div className="absolute inset-0 z-[60] flex flex-col bg-[#231A12] text-white" data-voice-model={voiceModel}>
-      <div className="flex items-center justify-between px-5 py-4">
-        <button type="button" onClick={onClose} className="rounded-full bg-white/10 px-4 py-2 text-[12px] font-bold text-[#F4D58B] active:scale-95">
-          返回聊天
-        </button>
-        <div className="text-center">
-          <div className="text-[15px] font-bold">AI 英语自由闲聊</div>
-          <div className="mt-1 text-[11px] text-white/60">{scene} · {voice} · {speed}</div>
-        </div>
-        <div className="w-[76px]" />
-      </div>
-
-      <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-        <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-[#D8B65E]/15">
-          {!paused ? <div className="absolute h-40 w-40 animate-ping rounded-full bg-[#D8B65E]/10" /> : null}
-          <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-[#D8B65E] text-[28px] font-bold text-[#2B2118] shadow-[0_18px_40px_rgba(0,0,0,0.28)]">AI</div>
-        </div>
-        <div className="mt-6 text-[28px] font-bold">正在通话</div>
-        <div className="mt-2 text-[13px] text-white/65">{statusText}</div>
-
-        <div className="mt-8 w-full max-w-md rounded-[28px] bg-white/10 p-4 text-left ring-1 ring-white/10">
-          <div className="text-[11px] font-bold text-[#F4D58B]">实时字幕</div>
-          <div className="mt-2 text-[18px] font-bold leading-8">
-            {latestMessage?.text || "Tell me anything in English, and I will keep the conversation going."}
+    <div
+      className="absolute inset-0 z-[60] flex flex-col bg-gradient-to-b from-[#282018] via-[#1f1710] to-[#17110c] text-white ring-1 ring-black/35"
+      data-voice-model={voiceModel}
+    >
+      {/* 顶：安全区内 · Alex / English Call · 状态 */}
+      <header className="shrink-0 px-5 pt-[max(calc(env(safe-area-inset-top,0px)+10px),20px)] pb-4">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <h1 className="text-[19px] font-bold tracking-tight text-white">Alex</h1>
+            <p className="mt-0.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/42">English Call</p>
           </div>
-          {subtitlesOn && latestMessage?.cn ? (
-            <p className="mt-2 text-[12px] leading-6 text-white/68">{latestMessage.cn}</p>
-          ) : null}
+          <output className="shrink-0 text-right" aria-live="polite">
+            <span className="inline-flex rounded-full border border-white/16 bg-black/18 px-3 py-1.5 text-[11px] font-bold text-[#E8CF8A]">{statusChip}</span>
+          </output>
+        </div>
+      </header>
+
+      {/* 中：视觉焦点 + 短文案 */}
+      <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-6">
+        <div className="relative mb-10 flex shrink-0 items-center justify-center">
+          <div className="relative flex h-[108px] w-[108px] items-center justify-center rounded-full bg-[#D8B65E]/12 ring-2 ring-[#D8B65E]/20">
+            {micLive ? <div className="absolute -inset-3 animate-pulse rounded-full bg-[#D8B65E]/08" aria-hidden /> : null}
+            <div className="relative flex h-[76px] w-[76px] items-center justify-center rounded-full bg-gradient-to-br from-[#EADCA3] via-[#D8B65E] to-[#9A7432] text-[22px] font-black text-[#231a12] shadow-[0_14px_32px_rgba(0,0,0,0.35)]">
+              A
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[288px] space-y-4 text-center">
+          {soloSeedWelcome ? (
+            <>
+              <p className="text-[14px] font-semibold leading-relaxed tracking-[-0.01em] text-white/93">Hi, I&apos;m Alex. Let&apos;s practice English together.</p>
+              <p className="text-[14px] font-semibold leading-relaxed tracking-[-0.01em] text-white/93">Say anything in English when you&apos;re ready.</p>
+              <p className="text-[13px] font-medium leading-relaxed text-[#C9BEA8]/95">准备好后，说一句英文开始练习。</p>
+            </>
+          ) : (
+            <>
+              {latestMessage?.text ? (
+                <>
+                  <p className="line-clamp-4 text-[15px] font-semibold leading-relaxed tracking-[-0.01em] text-white/93">{latestMessage.text}</p>
+                  {subtitleLine ? <p className="line-clamp-3 pt-1 text-[12px] leading-relaxed text-white/62">{subtitleLine}</p> : null}
+                </>
+              ) : (
+                <>
+                  <p className="text-[14px] font-semibold leading-relaxed tracking-[-0.01em] text-white/93">Hi, I&apos;m Alex. Let&apos;s practice English together.</p>
+                  <p className="text-[14px] font-semibold leading-relaxed tracking-[-0.01em] text-white/93">Say anything in English when you&apos;re ready.</p>
+                  <p className="text-[13px] font-medium leading-relaxed text-[#C9BEA8]/95">准备好后，说一句英文开始练习。</p>
+                </>
+              )}
+            </>
+          )}
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 px-5 pb-8">
-        <button type="button" onClick={onToggleSubtitles} className={cx("rounded-[22px] py-4 text-[13px] font-bold active:scale-95", subtitlesOn ? "bg-[#F4D58B] text-[#2B2118]" : "bg-white/10 text-[#F4D58B]")}>
-          {subtitlesOn ? "字幕开" : "字幕关"}
-        </button>
-        <button type="button" onClick={onTogglePaused} className="rounded-[22px] bg-white py-4 text-[13px] font-bold text-[#2B2118] active:scale-95">
-          {paused ? "继续收音" : "暂停收音"}
-        </button>
-        <button type="button" onClick={onClose} className="rounded-[22px] bg-[#A7372A] py-4 text-[13px] font-bold text-white active:scale-95">
-          挂断
-        </button>
-      </div>
+      {/* 底：两行四键 + 底部安全距离 */}
+      <footer className="shrink-0 space-y-3 px-5" style={{ paddingBottom: "max(14px, env(safe-area-inset-bottom, 14px))" }}>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={onToggleSubtitles}
+            className={cx(
+              btnMuted,
+              subtitlesOn ? "border border-[#EADCA3]/50 bg-[#F4D58B] text-[#231a12] shadow-inner shadow-black/10" : "border border-white/22 bg-[#332B24] text-[#F6E9C6]",
+            )}
+          >
+            {subtitlesOn ? "字幕开" : "字幕关"}
+          </button>
+          <button type="button" disabled={!canTapMain || micLive} onClick={onStartListening} className={startReadyClass}>
+            开始
+          </button>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <button type="button" disabled={!canPauseActive} onClick={onPauseListening} className={pauseReadyClass}>
+            暂停
+          </button>
+          <button
+            type="button"
+            onClick={onHangUp}
+            className={cx(btnMuted, "border border-[#8F4F48]/65 bg-[#7A3932]/55 text-[#FDEBEA] backdrop-blur-[1px] hover:bg-[#7A3932]/65")}
+          >
+            挂断
+          </button>
+        </div>
+      </footer>
     </div>
   );
 }
@@ -668,7 +741,6 @@ export default function WordRealmCleanPreview() {
   const [selectedPack, setSelectedPack] = useState(wordGroups[0].items[0]);
   const [wordIndex, setWordIndex] = useState(0);
   const [reviewOnly, setReviewOnly] = useState(false);
-  const [learnSpeechGender, setLearnSpeechGender] = useState<VoiceGender>("女声");
   /** 单词学习页顺序：正序 / 乱序 / 核心优先（仅前端重排，不写回 JSON） */
   const [learnOrderMode, setLearnOrderMode] = useState("sequential");
   /** 乱序稳定种子（与词条数共同决定置换；持久化到 word-learning） */
@@ -681,7 +753,10 @@ export default function WordRealmCleanPreview() {
   const [shadowPage, setShadowPage] = useState("overview");
   const [shadowType, setShadowType] = useState("学段短句");
   const [shadowIndex, setShadowIndex] = useState(0);
-  const [voice, setVoice] = useState("女声");
+  const [voice, setVoice] = useState<VoiceGender>("女声");
+  /** 例句播放按钮：仅在例句 TTS 链路上使用 */
+  const [learnExamplePhase, setLearnExamplePhase] = useState<"idle" | "preparing" | "playing">("idle");
+  const learnExampleGenRef = useRef(0);
   const [speed, setSpeed] = useState("标准");
   const [scene, setScene] = useState("自由聊天");
   const [recording, setRecording] = useState(false);
@@ -691,8 +766,24 @@ export default function WordRealmCleanPreview() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [callOpen, setCallOpen] = useState(false);
-  const [callMicPaused, setCallMicPaused] = useState(false);
-  const [chatMessages, setChatMessages] = useState(() => freeChatInitialMessages);
+  /** 电话模式收音状态机：idle 未开始 / listening 持续收音中 / paused 已暂停 */
+  const [callPhoneMicPhase, setCallPhoneMicPhase] = useState("idle");
+  /** 电话模式 MediaRecorder 是否正在运行（与消息模式 recording 分离） */
+  const [callRecording, setCallRecording] = useState(false);
+  const [chatSessions, setChatSessions] = useState<V2ChatSession[]>(() => loadChatSessions(freeChatInitialMessages).sessions);
+  const [currentChatSessionId, setCurrentChatSessionId] = useState(() => loadChatSessions(freeChatInitialMessages).currentSessionId);
+  const [chatMessages, setChatMessages] = useState<V2ChatMessage[]>(() => {
+    const store = loadChatSessions(freeChatInitialMessages);
+    const current = store.sessions.find((item) => item.id === store.currentSessionId) ?? store.sessions[0];
+    return current?.messages ?? loadChatMessages(freeChatInitialMessages);
+  });
+  /** AI 文本多轮：云函数请求进行中时禁止叠加上一条 */
+  const [chatAiBusy, setChatAiBusy] = useState(false);
+  const [chatTranscribing, setChatTranscribing] = useState(false);
+  const [chatAudioLoadingId, setChatAudioLoadingId] = useState<number | null>(null);
+  const [cloudSyncProfile, setCloudSyncProfile] = useState<CloudSyncProfile | null>(null);
+  const [cloudSyncBusy, setCloudSyncBusy] = useState(false);
+  const [cloudSyncNotice, setCloudSyncNotice] = useState("本地模式");
   const [selectedWordTip, setSelectedWordTip] = useState(null);
   const [toast, setToast] = useState("");
   const [minePage, setMinePage] = useState("overview");
@@ -720,10 +811,27 @@ export default function WordRealmCleanPreview() {
   const [bankData, setBankData] = useState<Record<string, WordBankEntry[]>>({});
   const [bankLoading, setBankLoading] = useState(false);
   const [bankError, setBankError] = useState("");
+  const [bankGroupsDoc, setBankGroupsDoc] = useState<WordBankGroupsDoc | null>(null);
+  /** 按 bankId 隔离单元筛选（cet4 / cet6 / kaoyan / zhuanshengben / ielts） */
+  const [unitGroupByBank, setUnitGroupByBank] = useState<Record<string, { pick: string[]; applied: string[] }>>({});
   const [masteredWordKeys, setMasteredWordKeys] = useState([]);
   const [favorites, setFavorites] = useState(() => defaultFavorites());
   const [mistakesState, setMistakesState] = useState(() => defaultMistakes());
   const [recentLearning, setRecentLearning] = useState([]);
+  const autoPlayedChatIdsRef = useRef(new Set<number>());
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
+  const mediaChunksRef = useRef<Blob[]>([]);
+  const chatScrollRef = useRef(null);
+  const aiPageRef = useRef(null);
+  const chatMessageIdRef = useRef(10);
+  /** message：消息模式松手；callPause：电话点暂停；hangup：挂断丢弃录音 */
+  const micStopReasonRef = useRef<"message" | "callPause" | "hangup">("message");
+
+  useEffect(() => {
+    learnExampleGenRef.current += 1;
+    setLearnExamplePhase("idle");
+  }, [wordIndex, selectedPack.id]);
 
   // 加载 manifest
   useEffect(() => {
@@ -733,6 +841,42 @@ export default function WordRealmCleanPreview() {
       }
     });
   }, []);
+
+  const activeBankId = useMemo(
+    () => resolveBankIdForPack(selectedPack),
+    [selectedPack.id, selectedPack.name],
+  );
+
+  const unitGroupPickIds = activeBankId ? unitGroupByBank[activeBankId]?.pick ?? [] : [];
+  const unitGroupAppliedIds = activeBankId ? unitGroupByBank[activeBankId]?.applied ?? [] : [];
+
+  const patchUnitGroupForBank = useCallback((bankId: string, patch: Partial<{ pick: string[]; applied: string[] }>) => {
+    if (!bankId) return;
+    setUnitGroupByBank((prev) => {
+      const cur = prev[bankId] ?? { pick: [], applied: [] };
+      return { ...prev, [bankId]: { ...cur, ...patch } };
+    });
+  }, []);
+
+  useEffect(() => {
+    const bid = resolveBankIdForPack(selectedPack);
+    if (!bid) {
+      setBankGroupsDoc(null);
+      return;
+    }
+    let cancelled = false;
+    void loadWordBankGroups(bid).then((doc) => {
+      if (!cancelled) setBankGroupsDoc(doc);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedPack.id, selectedPack.name]);
+
+  const unitLemmaAllow = useMemo(
+    () => lemmasFromSelectedGroups(bankGroupsDoc, unitGroupAppliedIds),
+    [bankGroupsDoc, unitGroupAppliedIds],
+  );
 
   const findPackById = useCallback((id) => {
     if (!id) return null;
@@ -829,9 +973,12 @@ export default function WordRealmCleanPreview() {
           )
         : null;
     const ordered = orderWordItemsForLearn(base, learnOrderMode, perm);
-    if (!reviewOnly) return ordered;
-    return ordered.filter((w) => w.review);
-  }, [learnBaseDepsKey, learnOrderMode, shuffleSeed, selectedPack.id, reviewOnly]);
+    let result = reviewOnly ? ordered.filter((w) => w.review) : ordered;
+    if (unitGroupAppliedIds.length > 0 && unitLemmaAllow.size > 0 && bankGroupsDoc?.bankId === activeBankId) {
+      result = result.filter((w) => unitLemmaAllow.has(String(w.word ?? "").trim().toLowerCase()));
+    }
+    return result;
+  }, [learnBaseDepsKey, learnOrderMode, shuffleSeed, selectedPack.id, reviewOnly, unitGroupAppliedIds, unitLemmaAllow, bankGroupsDoc?.bankId, activeBankId]);
 
   const learnDisplayWordsRef = useRef(learnDisplayWords);
   learnDisplayWordsRef.current = learnDisplayWords;
@@ -925,9 +1072,18 @@ export default function WordRealmCleanPreview() {
     setRecentLearning(next);
   }, []);
 
-  const uniqueFavoriteWordCount = useMemo(() => uniqueWordIdCount(favorites.wordFavorites), [favorites.wordFavorites]);
+  const allocChatMessageId = useCallback(() => {
+    chatMessageIdRef.current = Math.max(chatMessageIdRef.current + 1, Date.now());
+    return chatMessageIdRef.current;
+  }, []);
 
-  useEffect(() => {
+  const uniqueFavoriteWordCount = useMemo(() => uniqueWordIdCount(favorites.wordFavorites), [favorites.wordFavorites]);
+  const favoritesSyncSig = useMemo(() => JSON.stringify(favorites), [favorites]);
+  const mistakesSyncSig = useMemo(() => JSON.stringify(mistakesState), [mistakesState]);
+  const recentLearningSyncSig = useMemo(() => JSON.stringify(recentLearning), [recentLearning]);
+  const chatMessagesSyncSig = useMemo(() => JSON.stringify(chatMessages), [chatMessages]);
+
+  const hydrateFromLocalState = useCallback(() => {
     try {
       const wl = loadWordLearning();
       const favRaw = loadFavorites();
@@ -940,6 +1096,11 @@ export default function WordRealmCleanPreview() {
       setMistakesState(mistakes);
       setRecentLearning(recent);
       setHasPersonalPack(ui.hasPersonalPack);
+      const chatStore = loadChatSessions(freeChatInitialMessages);
+      setChatSessions(chatStore.sessions);
+      setCurrentChatSessionId(chatStore.currentSessionId);
+      const currentSession = chatStore.sessions.find((item) => item.id === chatStore.currentSessionId) ?? chatStore.sessions[0];
+      setChatMessages(currentSession?.messages ?? loadChatMessages(freeChatInitialMessages));
       if (wl?.learnOrderMode === "sequential" || wl?.learnOrderMode === "shuffle" || wl?.learnOrderMode === "coreFirst") {
         setLearnOrderMode(wl.learnOrderMode);
       }
@@ -960,10 +1121,30 @@ export default function WordRealmCleanPreview() {
         }
       }
     } catch {
-      /* 本地数据异常时保持默认状态 */
+      /* keep defaults on malformed local state */
     }
-    setV2Hydrated(true);
   }, [findPackById, pickWordResume]);
+
+  useEffect(() => {
+    hydrateFromLocalState();
+    setV2Hydrated(true);
+  }, [hydrateFromLocalState]);
+
+  useEffect(() => {
+    void (async () => {
+      try {
+        setCloudSyncBusy(true);
+        const boot = await bootstrapCloudSync(freeChatInitialMessages);
+        setCloudSyncProfile(boot.profile);
+        hydrateFromLocalState();
+        setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云同步已连接" : "云端已初始化");
+      } catch {
+        setCloudSyncNotice("当前使用本地模式");
+      } finally {
+        setCloudSyncBusy(false);
+      }
+    })();
+  }, [hydrateFromLocalState]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
@@ -1043,6 +1224,52 @@ export default function WordRealmCleanPreview() {
       /* ignore */
     }
   }, [v2Hydrated, favorites]);
+
+  useEffect(() => {
+    if (!v2Hydrated) return;
+    saveChatMessages(chatMessages);
+    const current = chatMessages.find((msg) => msg.role === "user" && msg.text.trim());
+    const title = current ? (current.text.length > 20 ? `${current.text.slice(0, 20)}...` : current.text) : "新对话";
+    setChatSessions((prev) => {
+      const next = prev.map((item) => (
+        item.id === currentChatSessionId
+          ? { ...item, title, updatedAt: Date.now(), messages: chatMessages }
+          : item
+      ));
+      saveChatSessions(next, currentChatSessionId);
+      return next;
+    });
+  }, [chatMessages, currentChatSessionId, v2Hydrated]);
+
+  useEffect(() => {
+    if (!v2Hydrated || !cloudSyncProfile?.enabled) return;
+    const timer = setTimeout(() => {
+      void syncLearningState(cloudSyncProfile);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [
+    cloudSyncProfile,
+    v2Hydrated,
+    masteredKeysSig,
+    favoritesSyncSig,
+    mistakesSyncSig,
+    recentLearningSyncSig,
+    hasPersonalPack,
+    selectedPack?.id,
+    wordPage,
+    wordIndex,
+    reviewOnly,
+    learnOrderMode,
+    shuffleSeed,
+  ]);
+
+  useEffect(() => {
+    if (!cloudSyncProfile?.enabled) return;
+    const timer = setTimeout(() => {
+      void syncChatState(cloudSyncProfile, freeChatInitialMessages);
+    }, 900);
+    return () => clearTimeout(timer);
+  }, [cloudSyncProfile, chatMessagesSyncSig]);
 
   /** 已 hydrate 后，按「续学」目标预加载对应真实词库，让首页/单词库续学位显示真实词条而非 seed */
   useEffect(() => {
@@ -1160,117 +1387,383 @@ export default function WordRealmCleanPreview() {
 
   const latestChatMessage = chatMessages[chatMessages.length - 1];
 
-  const getVoiceDraft = useCallback(() => {
-    if (scene === "自由聊天") return "Today I feel a little tired, but I still want to practice speaking English.";
-    if (scene === "校园学习") return "I want to practice introducing myself in class and talk about my favorite subject.";
-    if (scene === "生活出行") return "I need help asking for directions and checking my ticket in English.";
-    if (scene === "求职面试") return "I want to practice speaking about my strengths in an interview.";
-    if (scene === "考试口语") return "I want to speak more clearly and relax before the speaking test.";
-    if (scene === "自定义角色") return "Can we practice a custom role-play and keep the conversation natural?";
-    return "I want to speak more naturally and keep practicing every day.";
-  }, [scene]);
+  const playChatMessage = useCallback(async (msg) => {
+    if (!msg?.text?.trim()) return false;
+    const msgId = Number(msg.id ?? Date.now());
+    setChatAudioLoadingId(msgId);
+    try {
+      const ok = await playQwenAiChat(msg.text, voice);
+      if (!ok) showToast("浏览器英文语音不可用，请检查系统英语语音");
+      return ok;
+    } finally {
+      setChatAudioLoadingId((current) => (current === msgId ? null : current));
+    }
+  }, [showToast, voice]);
 
-  const buildAiReply = useCallback((userText) => {
-    const lowerText = userText.toLowerCase();
-    if (lowerText.includes("tired")) {
-      return {
-        text: "That is okay. If you feel tired, we can relax and keep the chat light. What made you tired today?",
-        cn: "没关系。如果你觉得累，我们就轻松一点聊。今天是什么让你觉得累呢？",
-      };
-    }
-    if (lowerText.includes("favorite")) {
-      return {
-        text: "Nice. Why is it your favorite? I want to hear one more detail from you.",
-        cn: "不错。为什么它是你的最爱？我想再听你多说一个细节。",
-      };
-    }
-    if (scene === "校园学习") {
-      return {
-        text: "That sounds useful for campus life. Who do you usually practice speaking English with?",
-        cn: "这很适合校园场景。你平时会和谁一起练英语口语？",
-      };
-    }
-    if (scene === "生活出行") {
-      return {
-        text: "Great. In a travel situation, what would you like to ask first, the route or the ticket details?",
-        cn: "很好。如果是在出行情景里，你最想先问路线，还是票务细节？",
-      };
-    }
-    if (scene === "求职面试") {
-      return {
-        text: "Good start. Tell me about one strength you want to describe in a simple and confident way.",
-        cn: "开头不错。试着告诉我一个你想用简单自信方式表达的优点。",
-      };
-    }
-    if (scene === "考试口语") {
-      return {
-        text: "Let us keep it simple. Give me one short answer first, and I will help you practice speaking step by step.",
-        cn: "我们先从简单的开始。你先给我一个简短回答，我会一步一步陪你练口语。",
-      };
-    }
-    if (scene === "自定义角色") {
-      return {
-        text: "Sure. We can stay flexible. Describe the role you want to play, and I will follow your pace.",
-        cn: "当然可以。我们可以保持灵活。你先描述想扮演的角色，我会跟着你的节奏聊。",
-      };
-    }
-    return {
-      text: "That is already a good start. What happened next? Just keep talking and do not worry about perfect grammar.",
-      cn: "这已经是个不错的开始了。接下来发生了什么？继续说就好，不用担心语法必须完美。",
-    };
-  }, [scene]);
+  useEffect(() => {
+    if (trainingPage !== "aiVoice") return;
+    const el = chatScrollRef.current;
+    if (!el) return;
+    const id = window.setTimeout(() => {
+      try {
+        el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+      } catch {
+        el.scrollTop = el.scrollHeight;
+      }
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, [chatMessages, trainingPage]);
 
-  const pushFreeChatMessage = useCallback((userText, source = "text") => {
-    const content = userText.trim();
-    if (!content) return;
-    const now = new Date();
-    const time = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-    setChatMessages((prev) => [
-      ...prev,
-      {
-        id: Date.now(),
+  useEffect(() => {
+    const maxId = chatMessages.reduce((max, msg) => {
+      const n = Number(msg?.id ?? 0);
+      return Number.isFinite(n) ? Math.max(max, n) : max;
+    }, 0);
+    chatMessageIdRef.current = Math.max(chatMessageIdRef.current, maxId);
+  }, [chatMessages]);
+
+  const openChatSession = useCallback((sessionId) => {
+    const target = chatSessions.find((item) => item.id === sessionId);
+    if (!target) return;
+    setCurrentChatSessionId(target.id);
+    setChatMessages(target.messages);
+    setHistoryOpen(false);
+  }, [chatSessions]);
+
+  const startNewChatSession = useCallback(() => {
+    const session = createChatSession(freeChatInitialMessages);
+    setChatAiBusy(false);
+    setChatTranscribing(false);
+    setChatAudioLoadingId(null);
+    setCurrentChatSessionId(session.id);
+    setChatMessages(session.messages);
+    setChatSessions((prev) => {
+      const next = [session, ...prev].slice(0, 16);
+      saveChatSessions(next, session.id);
+      return next;
+    });
+    setHistoryOpen(false);
+    showToast("已开始新对话");
+  }, [showToast]);
+
+  const clearCurrentChatSession = useCallback(() => {
+    const seed = createChatSession(freeChatInitialMessages);
+    setChatAiBusy(false);
+    setChatTranscribing(false);
+    setChatAudioLoadingId(null);
+    setChatMessages(seed.messages);
+    setChatSessions((prev) => {
+      const next = prev.map((item) => item.id === currentChatSessionId ? { ...item, title: "新对话", updatedAt: Date.now(), messages: seed.messages } : item);
+      saveChatSessions(next, currentChatSessionId);
+      return next;
+    });
+    showToast("已清空当前会话");
+  }, [currentChatSessionId, showToast]);
+
+  const cleanupChatRecorder = useCallback(() => {
+    const recorder = mediaRecorderRef.current;
+    if (recorder) {
+      recorder.ondataavailable = null;
+      recorder.onstop = null;
+      recorder.onerror = null;
+    }
+    mediaRecorderRef.current = null;
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach((track) => track.stop());
+    }
+    mediaStreamRef.current = null;
+    mediaChunksRef.current = [];
+  }, []);
+
+  const pickChatRecorderMimeType = useCallback(() => {
+    if (typeof MediaRecorder === "undefined" || typeof MediaRecorder.isTypeSupported !== "function") {
+      return "";
+    }
+    const candidates = [
+      "audio/webm;codecs=opus",
+      "audio/webm",
+      "audio/mp4",
+      "audio/ogg;codecs=opus",
+      "audio/ogg",
+    ];
+    return candidates.find((type) => MediaRecorder.isTypeSupported(type)) || "";
+  }, []);
+
+  const blobToDataUrl = useCallback((blob) => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(String(reader.result || ""));
+    reader.onerror = () => reject(new Error("FileReader failed"));
+    reader.readAsDataURL(blob);
+  }), []);
+
+  useEffect(() => () => {
+    cleanupChatRecorder();
+  }, [cleanupChatRecorder]);
+
+  useEffect(() => {
+    if (!callOpen) return;
+    micStopReasonRef.current = "message";
+    cleanupChatRecorder();
+    setCallRecording(false);
+    setRecording(false);
+    setCallPhoneMicPhase("idle");
+  }, [callOpen, cleanupChatRecorder]);
+
+  const pushFreeChatMessage = useCallback(
+    (userText, source = "text") => {
+      const content = userText.trim();
+      if (!content) return;
+      if (chatAiBusy) {
+        showToast("请等待上一条回复完成");
+        return;
+      }
+      const now = new Date();
+      const time = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+      const userId = allocChatMessageId();
+      const userMsg = {
+        id: userId,
         role: "user",
         text: content,
-        cn: source === "voice" ? "你刚刚通过语音发送了这句英文。" : "你刚刚通过文字发送了这句英文。",
+        cn: "翻译生成中…",
         time,
-      },
-    ]);
-    setRecording(false);
-    setCallMicPaused(false);
-    window.setTimeout(() => {
-      const reply = buildAiReply(content);
-      setChatMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now() + 1,
-          role: "ai",
-          text: reply.text,
-          cn: reply.cn,
-          time,
-        },
-      ].slice(-24));
-    }, 700);
-  }, [buildAiReply]);
+      };
+
+      setRecording(false);
+      setCallRecording(false);
+      setChatAiBusy(true);
+
+      const next = [...chatMessages, userMsg].slice(-24);
+      setChatMessages(next);
+      const apiMessages = chatUiToApiMessages(next);
+
+      void (async () => {
+        try {
+          const reply = await requestQwenFreeChat({ scene, messages: apiMessages });
+          const replyNow = new Date();
+          const replyTime = `${String(replyNow.getHours()).padStart(2, "0")}:${String(replyNow.getMinutes()).padStart(2, "0")}`;
+          const userSubtitle = reply.userCn.trim();
+          const aiSubtitle = reply.cn.trim();
+          if (reply.mode === "local") {
+            showToast("本地模式：已使用离线回复");
+          }
+          setChatMessages((p) => {
+            const patched = p.map((m) => (m.id === userId ? { ...m, cn: userSubtitle } : m));
+              return [
+                ...patched,
+                {
+                  id: allocChatMessageId(),
+                  role: "ai",
+                  text: reply.text,
+                  cn: aiSubtitle,
+                time: replyTime,
+              },
+            ].slice(-24);
+          });
+        } catch {
+          showToast("AI 回复失败：在线与本地回复均不可用");
+          setChatMessages((p) => p.map((m) => (m.id === userId ? { ...m, cn: "翻译暂不可用，请重试" } : m)));
+        } finally {
+          setChatAiBusy(false);
+        }
+      })();
+    },
+    [allocChatMessageId, chatAiBusy, chatMessages, scene, showToast],
+  );
+
+  const beginPressHoldStyleRecorder = useCallback(
+    async (mode) => {
+      if (typeof window === "undefined" || !navigator?.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
+        showToast("当前设备不支持录音");
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          },
+        });
+        const mimeType = pickChatRecorderMimeType();
+        const recorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+        mediaStreamRef.current = stream;
+        mediaRecorderRef.current = recorder;
+        mediaChunksRef.current = [];
+
+        recorder.ondataavailable = (event) => {
+          if (event.data && event.data.size > 0) {
+            mediaChunksRef.current.push(event.data);
+          }
+        };
+
+        recorder.onerror = () => {
+          cleanupChatRecorder();
+          setRecording(false);
+          setCallRecording(false);
+          if (mode === "call") setCallPhoneMicPhase("paused");
+          showToast("录音失败，请重试");
+        };
+
+        recorder.onstop = () => {
+          const reason = micStopReasonRef.current;
+          micStopReasonRef.current = "message";
+          const chunks = [...mediaChunksRef.current];
+          const finalMimeType = recorder.mimeType || mimeType || "audio/webm";
+          cleanupChatRecorder();
+          setRecording(false);
+          setCallRecording(false);
+
+          if (reason === "hangup") {
+            return;
+          }
+
+          if (reason === "callPause") {
+            setCallPhoneMicPhase("paused");
+          }
+
+          if (!chunks.length) {
+            if (reason === "callPause" || reason === "message") {
+              showToast("没有录到声音");
+            }
+            return;
+          }
+
+          const audioBlob = new Blob(chunks, { type: finalMimeType });
+          if (audioBlob.size < 1024) {
+            showToast("录音太短，请重试");
+            return;
+          }
+
+          void (async () => {
+            setChatTranscribing(true);
+            try {
+              const audioDataUrl = await blobToDataUrl(audioBlob);
+              const transcript = await requestQwenSpeechToText({ audioDataUrl, mimeType: finalMimeType });
+              if (!transcript.trim()) {
+                throw new Error("Empty transcript");
+              }
+              pushFreeChatMessage(transcript, "voice");
+            } catch {
+              showToast("语音识别失败，请重试");
+            } finally {
+              setChatTranscribing(false);
+            }
+          })();
+        };
+
+        recorder.start();
+        if (mode === "call") {
+          setCallRecording(true);
+          setCallPhoneMicPhase("listening");
+        } else {
+          setRecording(true);
+        }
+      } catch {
+        cleanupChatRecorder();
+        setRecording(false);
+        setCallRecording(false);
+        if (mode === "call") setCallPhoneMicPhase("paused");
+        showToast("麦克风不可用，请检查权限");
+      }
+    },
+    [blobToDataUrl, cleanupChatRecorder, pickChatRecorderMimeType, pushFreeChatMessage, showToast],
+  );
+
+  useEffect(() => {
+    if (trainingPage !== "aiVoice") return;
+    if (!latestChatMessage || latestChatMessage.role !== "ai") return;
+    const msgId = Number(latestChatMessage.id ?? 0);
+    if (!msgId || autoPlayedChatIdsRef.current.has(msgId)) return;
+    autoPlayedChatIdsRef.current.add(msgId);
+    void playChatMessage(latestChatMessage);
+  }, [latestChatMessage, playChatMessage, trainingPage]);
 
   const submitTextChat = useCallback(() => {
     const content = customText.trim();
-    if (!content) return;
+    if (!content || chatAiBusy || chatTranscribing) return;
     pushFreeChatMessage(content, "text");
     setCustomText("");
-  }, [customText, pushFreeChatMessage]);
+  }, [customText, chatAiBusy, chatTranscribing, pushFreeChatMessage]);
 
-  const handlePressToTalkStart = useCallback(() => {
-    if (callMicPaused) {
-      showToast("已暂停收音");
+  const handlePressToTalkStart = useCallback(async () => {
+    if (callOpen) return;
+    if (chatAiBusy || chatTranscribing) {
+      showToast("请等待当前处理完成");
       return;
     }
-    setRecording(true);
-  }, [callMicPaused]);
+    if (recording) return;
+    await beginPressHoldStyleRecorder("message");
+  }, [beginPressHoldStyleRecorder, callOpen, chatAiBusy, chatTranscribing, recording, showToast]);
 
   const handlePressToTalkEnd = useCallback(() => {
-    if (!recording || callMicPaused) return;
-    pushFreeChatMessage(getVoiceDraft(), "voice");
-  }, [callMicPaused, getVoiceDraft, pushFreeChatMessage, recording]);
+    if (!recording) return;
+    micStopReasonRef.current = "message";
+    const recorder = mediaRecorderRef.current;
+    if (recorder && recorder.state !== "inactive") {
+      recorder.stop();
+      return;
+    }
+    cleanupChatRecorder();
+    setRecording(false);
+  }, [cleanupChatRecorder, recording]);
+
+  const handleCallStartListening = useCallback(async () => {
+    if (!callOpen) return;
+    if (chatAiBusy || chatTranscribing) {
+      showToast("请等待当前处理完成");
+      return;
+    }
+    if (callRecording) return;
+    await beginPressHoldStyleRecorder("call");
+  }, [beginPressHoldStyleRecorder, callOpen, chatAiBusy, chatTranscribing, callRecording, showToast]);
+
+  const handleCallPauseListening = useCallback(() => {
+    if (!callOpen) return;
+    if (chatAiBusy || chatTranscribing) return;
+    if (!callRecording) return;
+    micStopReasonRef.current = "callPause";
+    const recorder = mediaRecorderRef.current;
+    if (recorder && recorder.state !== "inactive") {
+      recorder.stop();
+      return;
+    }
+    cleanupChatRecorder();
+    setCallRecording(false);
+    setCallPhoneMicPhase("paused");
+  }, [callOpen, callRecording, chatAiBusy, chatTranscribing, cleanupChatRecorder]);
+
+  const handleCallHangUp = useCallback(() => {
+    micStopReasonRef.current = "hangup";
+    const recorder = mediaRecorderRef.current;
+    if (recorder && recorder.state !== "inactive") {
+      recorder.stop();
+    } else {
+      cleanupChatRecorder();
+    }
+    setRecording(false);
+    setCallRecording(false);
+    setCallPhoneMicPhase("idle");
+    setCallOpen(false);
+    setChatMode("消息模式");
+  }, [cleanupChatRecorder]);
+
+  const handleEnableCloudSync = useCallback(() => {
+    void (async () => {
+      try {
+        setCloudSyncBusy(true);
+        const boot = await bootstrapCloudSync(freeChatInitialMessages);
+        setCloudSyncProfile(boot.profile);
+        hydrateFromLocalState();
+        setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云端数据已同步到当前设备" : "云同步已开启");
+        showToast("云同步已开启");
+      } catch {
+        setCloudSyncNotice("云同步开启失败，请稍后重试");
+        showToast("云同步开启失败");
+      } finally {
+        setCloudSyncBusy(false);
+      }
+    })();
+  }, [hydrateFromLocalState]);
 
   /** 进入收藏复习；startIndex 缺省则用单独持久化的收藏进度 */
   const enterFavoriteLearn = (startIndex) => {
@@ -1370,7 +1863,7 @@ export default function WordRealmCleanPreview() {
           <div className="mt-5 text-[12px] font-bold text-[#8A6324]">继续上次学习</div>
           <h2 className="mt-2 text-[22px] font-bold leading-tight text-[#2C241C]">{resumeTitleLine}</h2>
           <div className="mt-3"><Progress value={resumeProgressVal} /></div>
-          <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">今天建议：复习 8 个词 → 跟读 5 句 → 完成 1 轮生活出行对话。</p>
+          <p className="mt-2 text-[13px] leading-6 text-[#6B5B49]">今天建议：复习 8 个词 → 完成 1 轮 AI 语音对话。</p>
           <button type="button" onClick={continueWordFromSaved} className="mt-4 w-full rounded-[16px] border border-[#E6D8BF] bg-[#FFF8EA] py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">继续上次学习</button>
           <button type="button" onClick={startTodayLearning} className="mt-2 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">开始今日学习</button>
         </Surface>
@@ -1384,14 +1877,6 @@ export default function WordRealmCleanPreview() {
               </div>
               <div className="text-[#8A6324]">›</div>
             </button>
-          ))}
-        </div>
-        <div className="mt-4 grid grid-cols-2 gap-3">
-          {[ ["连续学习", "6天"], ["待复习", "8"] ].map(([a, b]) => (
-            <Surface key={a} className="p-4 text-center">
-              <div className="text-[20px] font-bold text-[#2C241C]">{b}</div>
-              <div className="mt-1 text-[12px] text-[#8A6324]">{a}</div>
-            </Surface>
           ))}
         </div>
       </>
@@ -1465,6 +1950,48 @@ export default function WordRealmCleanPreview() {
       else exitLearnToWordLibrary();
     };
 
+    if (wordPage === "unitFilter" && activeBankId && bankGroupsDoc?.groups?.length && bankGroupsDoc.bankId === activeBankId) {
+      const applyUnitFilterAndLearn = (ids: string[]) => {
+        if (ids.length === 0) return;
+        patchUnitGroupForBank(activeBankId, { applied: ids, pick: ids });
+        setWordIndex(0);
+        setWordPage("learn");
+        showToast(`已筛选 ${countWordsInGroups(bankGroupsDoc, ids)} 词`);
+      };
+
+      return (
+        <div className="flex min-h-0 flex-1 flex-col">
+          <WordUnitFilterPanel
+            groups={bankGroupsDoc.groups}
+            bankLabel={bankDisplayLabel(activeBankId)}
+            selectedIds={unitGroupPickIds}
+            onCheckboxToggle={(id) => {
+              const next = unitGroupPickIds.includes(id)
+                ? unitGroupPickIds.filter((x) => x !== id)
+                : [...unitGroupPickIds, id];
+              patchUnitGroupForBank(activeBankId, { pick: next });
+            }}
+            onCardClick={(id) => {
+              const pickCount = unitGroupPickIds.length;
+              const onlyThis = pickCount === 1 && unitGroupPickIds[0] === id;
+              if (pickCount >= 2) {
+                patchUnitGroupForBank(activeBankId, { pick: [id] });
+                return;
+              }
+              if (pickCount === 0 || !onlyThis) {
+                patchUnitGroupForBank(activeBankId, { pick: [id] });
+              }
+              applyUnitFilterAndLearn([id]);
+            }}
+            onSelectAll={() => patchUnitGroupForBank(activeBankId, { pick: bankGroupsDoc.groups.map((g) => g.id) })}
+            onClearAll={() => patchUnitGroupForBank(activeBankId, { pick: [] })}
+            onBack={() => setWordPage("learn")}
+            onConfirm={() => applyUnitFilterAndLearn(unitGroupPickIds)}
+          />
+        </div>
+      );
+    }
+
     if (wordPage === "learn") {
       // 加载真实词库中
       if (!favoriteMode && !mistakeMode && selectedPack.id !== "personal-language-parse" && isRealBank && !realBankWords) {
@@ -1532,6 +2059,18 @@ export default function WordRealmCleanPreview() {
           </>
         );
       }
+      if (!favoriteMode && !mistakeMode && unitGroupAppliedIds.length > 0 && learnDisplayWords.length === 0) {
+        return (
+          <>
+            <PageHeader title={selectedPack.name} desc="当前单元筛选无匹配词条。" back onBack={learnReviewBack} />
+            <Surface className="p-6 text-center">
+              <div className="text-[20px] font-bold text-[#2C241C]">所选单元暂无词条</div>
+              <p className="mt-3 text-[13px] leading-6 text-[#6B5B49]">请调整单元选择，或清除筛选继续学习全库。</p>
+              <button type="button" onClick={() => { patchUnitGroupForBank(activeBankId, { pick: [], applied: [] }); setWordIndex(0); }} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">清除单元筛选</button>
+            </Surface>
+          </>
+        );
+      }
       const safeIdx = Math.min(Math.max(0, wordIndex), Math.max(0, learnDisplayWords.length - 1));
       const w = learnDisplayWords[safeIdx];
       if (!w) return null;
@@ -1563,22 +2102,15 @@ export default function WordRealmCleanPreview() {
       const misCount = mistakeOccurrenceCount(lemmaKey);
 
       return (
-        <div className="-mx-1 flex min-h-0 flex-col pb-1">
+        <div className="-mx-1 flex min-h-0 flex-col pb-[88px]">
           <button type="button" onClick={learnReviewBack} className="mb-3 text-left text-[14px] font-bold text-[#8A6324] active:opacity-80">
             ‹ 返回{learnBackLabel}
           </button>
 
-          <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
-            {VOICE_GENDERS.map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => setLearnSpeechGender(item)}
-                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${learnSpeechGender === item ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
-              >
-                {item}
-              </button>
-            ))}
+          <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
+            <span className="shrink-0 rounded-full bg-[#3A2A1A] px-4 py-2 text-[12px] font-bold whitespace-nowrap text-white">
+              标准发音
+            </span>
             {(
               [
                 ["sequential", "正序"],
@@ -1609,38 +2141,67 @@ export default function WordRealmCleanPreview() {
             >
               {reviewOnly ? "复习模式" : "全部词条"}
             </button>
+            {!favoriteMode && !mistakeMode && activeBankId && bankGroupsDoc?.groups?.length && bankGroupsDoc.bankId === activeBankId ? (
+              <button
+                type="button"
+                onClick={() => {
+                  patchUnitGroupForBank(activeBankId, {
+                    pick: unitGroupAppliedIds.length ? unitGroupAppliedIds : unitGroupPickIds,
+                  });
+                  setWordPage("unitFilter");
+                }}
+                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${
+                  unitGroupAppliedIds.length
+                    ? "bg-[#3A2A1A] text-white"
+                    : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"
+                }`}
+              >
+                {unitGroupAppliedIds.length ? `单元·${countWordsInGroups(bankGroupsDoc, unitGroupAppliedIds)}词` : "分类学习"}
+              </button>
+            ) : null}
           </div>
 
-          <section className="flex min-h-0 flex-1 flex-col rounded-[28px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 shadow-sm">
-            <div className="flex shrink-0 items-center justify-between gap-2">
-              <span className="max-w-[65%] truncate rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]" title={scopeChip}>
-                {scopeChip}
-              </span>
-              <span className="shrink-0 rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]">
-                {numer}/{denom}
-              </span>
-            </div>
-
-            <div className="mt-4 shrink-0 text-center">
-              <h2 className="break-words text-[36px] font-bold leading-tight text-[#2C241C] sm:text-[40px]">{w.word}</h2>
-              <p className="mt-2 text-[15px] font-medium text-[#8A6324]">{w.phonetic}</p>
-              <div className="mt-3 flex flex-wrap justify-center gap-2">
-                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">词性：{w.pos}</span>
-                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">
+          <section className="flex min-h-0 flex-1 flex-col rounded-[30px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 shadow-sm">
+            <div className="rounded-[22px] border border-[#E6D8BF] bg-white/90 p-3 shadow-[0_4px_16px_rgba(58,42,26,0.05)]">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <p className="text-[11px] font-bold tracking-[0.08em] text-[#8A6324]">当前词库</p>
+                  <h3 className="mt-1 truncate text-[18px] font-bold text-[#2C241C]" title={selectedPack.name}>{selectedPack.name}</h3>
+                </div>
+                <span className="shrink-0 rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]">
+                  {numer}/{denom}
+                </span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="rounded-full bg-[#FBF2DA] px-3 py-1 text-[11px] font-bold text-[#8A6324]">{reviewOnly ? "复习模式" : orderLabel}</span>
+                <span className="max-w-full truncate rounded-full bg-[#FFF8EA] px-3 py-1 text-[11px] font-bold text-[#6B5B49] ring-1 ring-[#E6D8BF]" title={`${sourceLineLabel}：${sourceLineValue}`}>
                   {sourceLineLabel}：{sourceLineValue}
                 </span>
               </div>
             </div>
 
-            <div className="mt-4 grid shrink-0 grid-cols-3 gap-2">
+            <div className="mt-4 shrink-0 rounded-[24px] bg-white/95 p-4 text-center shadow-[0_6px_18px_rgba(58,42,26,0.06)]">
+              <p className="text-[11px] font-bold tracking-[0.08em] text-[#998B78]">当前单词</p>
+              <h2 className="mt-2 break-words text-[38px] font-bold leading-tight tracking-[-0.03em] text-[#2C241C] sm:text-[42px]">{w.word}</h2>
+              <div className="mt-3 rounded-[18px] bg-[#FFF8EA] px-3 py-3">
+                <p className="text-[11px] font-bold tracking-[0.08em] text-[#998B78]">音标与发音</p>
+                <p className="mt-1 text-[16px] font-medium tracking-[0.02em] text-[#8A6324]">{w.phonetic}</p>
+              </div>
+              <div className="mt-3 flex flex-wrap justify-center gap-2">
+                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">词性：{w.pos || "待补"}</span>
+                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">学习来源：{selectedPack.name}</span>
+              </div>
+            </div>
+
+            <div className="mt-4 grid shrink-0 grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => {
-                  if (!speakText(w.word, { gender: learnSpeechGender })) showToast("当前环境不支持朗读");
+                  if (!speakText(w.word, { scope: "learnWord" })) showToast("当前环境不支持朗读");
                 }}
-                className="rounded-full bg-white py-2.5 text-[11px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95 sm:text-[12px]"
+                className="rounded-[18px] bg-white px-3 py-3 text-[12px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95"
               >
-                🔊 播放
+                🔊 播放发音
               </button>
               {favoriteMode ? (
                 <button
@@ -1653,7 +2214,7 @@ export default function WordRealmCleanPreview() {
                     }));
                     showToast("已取消收藏");
                   }}
-                  className="rounded-full bg-[#3A2A1A] py-2.5 text-[11px] font-bold text-white active:scale-95 sm:text-[12px]"
+                  className="rounded-[18px] bg-[#3A2A1A] px-3 py-3 text-[12px] font-bold text-white active:scale-95"
                 >
                   ★ 已收藏
                 </button>
@@ -1661,7 +2222,7 @@ export default function WordRealmCleanPreview() {
                 <button
                   type="button"
                   onClick={() => setWordLearnDetailOpen(true)}
-                  className="rounded-full bg-[#3A2A1A] py-2.5 text-[11px] font-bold text-white active:scale-95 sm:text-[12px]"
+                  className="rounded-[18px] bg-[#3A2A1A] px-3 py-3 text-[12px] font-bold text-white active:scale-95"
                 >
                   错题 {misCount} 次
                 </button>
@@ -1701,59 +2262,139 @@ export default function WordRealmCleanPreview() {
                     });
                     showToast(h ? "已取消收藏" : "已收藏单词");
                   }}
-                  className={`rounded-full py-2.5 text-[11px] font-bold active:scale-95 sm:text-[12px] ${favWord ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
+                  className={`rounded-[18px] px-3 py-3 text-[12px] font-bold active:scale-95 ${favWord ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
                 >
                   {favWord ? "★ 已收藏" : "☆ 收藏"}
                 </button>
               )}
-              <button
-                type="button"
-                onClick={() => {
-                  setLoopPlay(!loopPlay);
-                  showToast(loopPlay ? "已关闭循环播放" : "已开启循环播放");
-                }}
-                className={`rounded-full py-2.5 text-[11px] font-bold active:scale-95 sm:text-[12px] ${loopPlay ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
-              >
-                ↻ 循环
-              </button>
             </div>
 
-            <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-hidden">
-              <div className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain pr-0.5">
-                <div className="rounded-[20px] bg-white/90 p-3">
+            <button
+              type="button"
+              onClick={() => {
+                setLoopPlay(!loopPlay);
+                showToast(loopPlay ? "已关闭循环播放" : "已开启循环播放");
+              }}
+              className={`mt-2 inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full px-3 py-1.5 text-[11px] font-bold active:scale-95 ${
+                loopPlay ? "bg-[#F7EEDB] text-[#3A2A1A] ring-1 ring-[#D8B65E]" : "bg-transparent text-[#8A6324]"
+              }`}
+            >
+              <span>{loopPlay ? "●" : "○"}</span>
+              <span>循环播放</span>
+            </button>
+
+            <div className="mt-4 flex min-h-0 flex-1 flex-col overflow-hidden">
+              <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain pr-0.5 pb-3">
+                <div className="rounded-[22px] border border-[#EBDCC2] bg-white/95 p-4 shadow-[0_6px_18px_rgba(58,42,26,0.05)]">
                   <div className="flex items-center justify-between gap-2">
-                    <p className="text-[12px] font-bold text-[#998B78]">核心释义</p>
+                    <p className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">核心释义</p>
                     <span className="rounded-full bg-[#F7EEDB] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">{w.pos}</span>
                   </div>
                   <p className="mt-2 text-[17px] font-bold leading-snug text-[#2C241C]">{w.cn}</p>
                 </div>
 
-                <div className="rounded-[20px] bg-white/90 p-3">
-                  <div className="mb-2 text-[12px] font-bold text-[#998B78]">例句</div>
-                  <div className="flex items-start gap-2">
+                <div className="rounded-[24px] border border-[#EBDCC2] bg-[#FFFDF8] p-4 shadow-[0_6px_18px_rgba(58,42,26,0.05)]">
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">英文例句</div>
+                      <div className="mt-1 text-[11px] text-[#B09A7C]">目标词会自动高亮</div>
+                    </div>
                     {w.example?.trim() ? (
                       <button
                         type="button"
                         onClick={() => {
-                          if (!speakText(w.example, { gender: learnSpeechGender })) showToast("当前环境不支持朗读");
+                          learnExampleGenRef.current += 1;
+                          const gen = learnExampleGenRef.current;
+                          setLearnExamplePhase("preparing");
+                          void (async () => {
+                            const r = await queueLearnExampleQwenSpeech(w.example, voice, {
+                              onPlaybackStarted() {
+                                if (learnExampleGenRef.current === gen) setLearnExamplePhase("playing");
+                              },
+                              onPlaybackEnded() {
+                                if (learnExampleGenRef.current === gen) setLearnExamplePhase("idle");
+                              },
+                            });
+                            if (learnExampleGenRef.current !== gen) return;
+                            if (!r.ok) {
+                              setLearnExamplePhase("idle");
+                              showToast("例句播放失败，请重试");
+                            }
+                          })();
                         }}
-                        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] text-[13px] text-[#8A6324] active:scale-95"
+                        className={`flex shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] font-bold leading-none text-[#8A6324] active:scale-95 ${
+                          learnExamplePhase === "idle"
+                            ? "h-9 min-w-[3.25rem] px-3 text-[12px]"
+                            : "h-9 min-w-[5.75rem] px-3 text-[10px]"
+                        }`}
                       >
-                        🔊
+                        {learnExamplePhase === "idle"
+                          ? "🔊 播放"
+                          : learnExamplePhase === "preparing"
+                            ? "准备中..."
+                            : "播放中..."}
                       </button>
                     ) : null}
-                    <div className="min-w-0 flex-1">
-                      <div className="text-[14px] leading-relaxed text-[#2C241C]">
+                  </div>
+                  <div className="min-w-0">
+                    <div className="rounded-[18px] bg-[#FFF8EA] px-4 py-3 text-[16px] font-semibold leading-8 text-[#2C241C]">
+                      <div className="min-w-0 break-words">
                         <HighlightedExample sentence={w.example} word={w.word} />
                       </div>
+                    </div>
+                    <div className="mt-3">
+                      <div className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">中文翻译</div>
                       {w.exampleCn?.trim() ? (
-                        <p className="mt-2 text-[12px] leading-relaxed text-[#998B78]">{w.exampleCn}</p>
+                        <p className="mt-2 rounded-[18px] border border-[#F1E7D5] bg-white px-4 py-3 text-[14px] leading-7 text-[#7E6C57]">{w.exampleCn}</p>
                       ) : (
-                        <p className="mt-2 text-[12px] leading-relaxed text-[#8a765f]">例句翻译待补</p>
+                        <p className="mt-2 rounded-[18px] border border-dashed border-[#E6D8BF] bg-white/80 px-4 py-3 text-[12px] leading-relaxed text-[#8a765f]">例句翻译待补</p>
                       )}
                     </div>
                   </div>
                 </div>
+
+                {w.collocations && w.collocations.length > 0 ? (
+                  <div className="rounded-[20px] bg-white/90 p-3">
+                    <div className="mb-2 text-[12px] font-bold text-[#998B78]">常见搭配</div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {w.collocations.map((c) => (
+                        <span key={c} className="rounded-full bg-[#FBF2DA] px-3 py-1 text-[12px] font-bold text-[#8A6324]">
+                          {c}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {w.confusables && w.confusables.length > 0 ? (
+                  <div className="rounded-[20px] bg-white/90 p-3">
+                    <div className="mb-2 text-[12px] font-bold text-[#998B78]">易混词</div>
+                    <div className="space-y-2">
+                      {w.confusables.map((c) => (
+                        <div key={c.word} className="flex items-start gap-2">
+                          <span className="shrink-0 rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[12px] font-bold text-[#8A6324]">
+                            {c.word}
+                          </span>
+                          <p className="min-w-0 flex-1 text-[12px] leading-relaxed text-[#6B5B49]">{c.note}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {w.pitfalls && w.pitfalls.length > 0 ? (
+                  <div className="rounded-[20px] bg-white/90 p-3">
+                    <div className="mb-2 text-[12px] font-bold text-[#998B78]">常错点</div>
+                    <ul className="space-y-1.5">
+                      {w.pitfalls.map((p) => (
+                        <li key={p} className="flex gap-2 text-[12px] leading-relaxed text-[#6B5B49]">
+                          <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#D8B65E]" />
+                          <span className="min-w-0 flex-1">{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
 
                 <button
                   type="button"
@@ -1796,7 +2437,10 @@ export default function WordRealmCleanPreview() {
             </div>
           </section>
 
-          <div className="sticky bottom-0 z-10 mt-3 grid shrink-0 grid-cols-3 gap-2 border-t border-transparent bg-[#F1E3CF]/90 py-2 pt-3 backdrop-blur-sm">
+          <div
+            className="sticky bottom-0 z-10 mt-4 -mx-4 -mb-4 grid shrink-0 grid-cols-3 gap-2 border-t border-[#E6D8BF]/50 bg-[#F1E3CF]/98 px-4 pt-3 shadow-[0_-8px_20px_rgba(58,42,26,0.08)] backdrop-blur-sm"
+            style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 10px)" }}
+          >
             <button
               type="button"
               onClick={() => {
@@ -1814,7 +2458,7 @@ export default function WordRealmCleanPreview() {
               }}
               className="min-h-[48px] rounded-[18px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]"
             >
-              掌握
+              认识了
             </button>
             <button
               type="button"
@@ -2168,7 +2812,7 @@ export default function WordRealmCleanPreview() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-[18px] font-bold text-[#2C241C]">{personalPackMeta.name}</h3>
-                  <p className="mt-1 text-[12px] text-[#8A6324]">由文本解析生成 · 可继续扩充</p>
+                  <p className="mt-1 text-[12px] text-[#8A6324]">个人词包 · 可继续扩充</p>
                 </div>
                 <div className="text-right shrink-0">
                   <div className="text-[20px] font-bold text-[#2C241C]">{wordCountForPack(personalPackMeta)}</div>
@@ -2182,13 +2826,12 @@ export default function WordRealmCleanPreview() {
         <div className="space-y-5">
           {wordGroups.map((group) => {
             const open = openWordGroups[group.title];
-            const visibleItems = group.items.filter((pack) => !(pack.current && group.title === "升学备考组"));
             return (
               <section key={group.title}>
                 <GroupHeader title={group.title} count={group.items.length} open={open} onClick={() => setOpenWordGroups((prev) => ({ ...prev, [group.title]: !prev[group.title] }))} />
                 {open ? (
                   <div className="space-y-3">
-                    {visibleItems.map((pack) => {
+                    {group.items.map((pack) => {
                       const n = wordCountForPack(pack);
                       const learnedLocal = masteredWordKeys.filter((k) => k.startsWith(`${pack.id}:`)).length;
                       const progressValue = n > 0 && learnedLocal > 0 ? Math.min(100, Math.max(3, (learnedLocal / n) * 100)) : 0;
@@ -2300,118 +2943,228 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderAIVoice() {
+    /** 底部输入条状态：主次分明（含朗读中），与气泡内容解耦 */
+    const composerStatus =
+      chatTranscribing
+        ? { label: "语音识别中…", dot: "bg-[#D8B65E] animate-pulse" }
+        : chatAiBusy
+          ? { label: "AI 正在回复…", dot: "bg-[#D8B65E] animate-pulse" }
+          : chatAudioLoadingId != null
+            ? { label: "正在朗读本条英文…", dot: "bg-[#8A6324]/80 animate-pulse" }
+            : recording
+              ? { label: "正在收音，松开即可发送", dot: "bg-[#c45c3e] animate-pulse" }
+              : { label: "先写英文点「发送」，或按住说话。", dot: "bg-[#B0A18D]" };
+    const composerSafeBottom = "calc(env(safe-area-inset-bottom, 0px) + 12px)";
+    const currentChatSession = chatSessions.find((item) => item.id === currentChatSessionId) ?? null;
+
+    const handleAiWheelCapture = (event) => {
+      if (typeof window === "undefined") return;
+      if (!window.matchMedia("(pointer:fine) and (min-width: 768px)").matches) return;
+      const el = chatScrollRef.current;
+      if (!el) return;
+      const delta = event.deltaY;
+      const canScrollUp = delta < 0 && el.scrollTop > 0;
+      const canScrollDown = delta > 0 && el.scrollTop + el.clientHeight < el.scrollHeight - 1;
+      if (!canScrollUp && !canScrollDown) return;
+      event.preventDefault();
+      el.scrollTop += delta * 1.1;
+    };
+
     return (
-      <div className="relative flex h-full min-h-full flex-col">
-        <div className="min-h-0 flex-1 overflow-y-auto pb-4">
-          <PageHeader title="AI 英语自由闲聊" desc="默认自由聊天，想说什么就说什么。" back onBack={() => setTrainingPage("overview")} />
-
-          <section className="mx-4 mt-4 rounded-[32px] bg-[#3b2818] px-5 py-6 text-white shadow-xl">
-            <div className="text-xs font-black tracking-wide text-[#f5d88a]">
-              <span>{scene}</span>
-              <span className="mx-1.5 text-[#f5d88a]/50">·</span>
-              <span>{voice}</span>
-              <span className="mx-1.5 text-[#f5d88a]/50">·</span>
-              <span>{speed}</span>
-            </div>
-
-            <h2 className="mt-4 whitespace-nowrap text-[24px] font-black leading-none tracking-[-0.03em] text-white md:text-[26px]">
-              自由英语闲聊
-            </h2>
-
-            <p className="mt-4 text-[15px] font-bold leading-7 text-[#e8d8bd]">
-              不用做任务，想说什么就说什么。
-            </p>
-
-            <div className="mt-5 grid grid-cols-4 gap-2">
-              <button
-                type="button"
-                onClick={() => setCallOpen(true)}
-                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
-                aria-label="电话模式"
-              >
-                电话
-              </button>
-              <button
-                type="button"
-                onClick={() => setHistoryOpen(true)}
-                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
-                aria-label="历史记录"
-              >
-                历史
-              </button>
-              <button
-                type="button"
-                onClick={() => setSubtitlesOn((v) => !v)}
-                className={cx(
-                  "flex h-11 items-center justify-center rounded-full border text-[11px] font-black active:scale-95",
-                  subtitlesOn
-                    ? "border-[#d1a53d] bg-[#d1a53d] text-[#2f2418]"
-                    : "border-white/15 bg-white/10 text-[#f5d88a]",
-                )}
-                aria-label="字幕开关"
-              >
-                字幕
-              </button>
-              <button
-                type="button"
-                onClick={() => setSettingsOpen(true)}
-                className="flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-[11px] font-black text-[#f5d88a] active:scale-95"
-                aria-label="设置"
-              >
-                设置
-              </button>
-            </div>
-          </section>
-
-          <div className="mt-[18px] space-y-3 pb-4">
-            {chatMessages.map((msg) => (
-              <div key={msg.id} className={cx("flex", msg.role === "user" ? "justify-end" : "justify-start")}>
-                <div className="max-w-[86%]">
-                  <div className={cx("rounded-[24px] px-4 py-3 shadow-[0_6px_20px_rgba(58,42,26,0.06)]", msg.role === "user" ? "rounded-br-[8px] bg-[#3A2A1A] text-white" : "rounded-bl-[8px] bg-[#FFF8EA] text-[#2C241C] ring-1 ring-[#E6D8BF]")}>
-                    <div className="text-[14px] font-bold leading-7">
-                      <BubbleText text={msg.text} onWordClick={setSelectedWordTip} />
-                    </div>
-                    {subtitlesOn && msg.cn ? (
-                      <p className={cx("mt-2 text-[12px] leading-6", msg.role === "user" ? "text-white/68" : "text-[#6B5B49]")}>{msg.cn}</p>
-                    ) : null}
-                  </div>
-                  <div className={cx("mt-1 px-2 text-[11px]", msg.role === "user" ? "text-right text-[#8F7F6C]" : "text-left text-[#8F7F6C]")}>{msg.time}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div ref={aiPageRef} onWheelCapture={handleAiWheelCapture} className="relative flex h-full min-h-0 flex-col overflow-hidden">
+        <div className="shrink-0 px-4 pt-4 md:px-5">
+          <PageHeader title="AI 英语自由闲聊" desc="不设题目，点词可查，轻松英文聊天。" back onBack={() => setTrainingPage("overview")} />
         </div>
 
-        <div className="z-20 mt-4 shrink-0 rounded-[26px] border border-[#E6D8BF] bg-[#FFF8EA]/96 p-3 backdrop-blur">
-          <div className="mb-2 text-[12px] font-bold text-[#8A6324]">
-            {recording ? "正在收音，松开发送" : latestChatMessage?.role === "ai" ? "继续接着聊就行" : "可以继续说，也可以直接打字"}
+        <section className="relative mx-4 shrink-0 overflow-hidden rounded-[22px] bg-gradient-to-br from-[#3b2818] to-[#2a1c12] px-4 py-3 text-white shadow-lg ring-1 ring-black/15 md:mx-5">
+          <div className="text-[11px] font-bold tracking-wide text-[#f5d88a]/90">
+            <span>{scene}</span>
+            <span className="mx-1.5 text-[#f5d88a]/40">·</span>
+            <span>{voice}</span>
+            <span className="mx-1.5 text-[#f5d88a]/40">·</span>
+            <span>{speed}</span>
+            {subtitlesOn ? <span className="text-[#f5d88a]/55"> · 中英对照</span> : null}
           </div>
-          <div className="flex items-end gap-3">
-            <input
-              value={customText}
-              onChange={(e) => setCustomText(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  submitTextChat();
-                }
-              }}
-              placeholder="文字输入，回车发送"
-              className="min-w-0 flex-1 rounded-[18px] border border-[#E6D8BF] bg-white px-4 py-3 text-[13px] text-[#2C241C] outline-none placeholder:text-[#B0A18D]"
-            />
+
+          <p className="mt-2 text-[15px] font-bold leading-snug text-white md:text-[16px]">
+            开始一段随意英文会话
+          </p>
+
+          <p className="mt-1.5 max-w-[280px] text-[12px] font-medium leading-5 text-white/74 sm:max-w-none">
+            随便发一句英文，AI 会自然接话；字幕打开时可对照中文。
+          </p>
+
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             <button
               type="button"
-              onPointerDown={handlePressToTalkStart}
-              onPointerUp={handlePressToTalkEnd}
-              onPointerCancel={() => setRecording(false)}
-              className={cx("shrink-0 rounded-[18px] px-5 py-3 text-[13px] font-bold shadow-[0_6px_18px_rgba(58,42,26,0.10)] active:scale-95", recording ? "bg-[#D8B65E] text-[#2B2118]" : "bg-[#3A2A1A] text-white")}
+              onClick={() => setCallOpen(true)}
+              className="rounded-full border border-white/14 bg-white/8 px-3 py-2 text-[10px] font-bold text-[#f5e6c8] active:scale-95"
+              aria-label="电话模式"
             >
-              {recording ? "松开发送" : "按住说话"}
+              📞 电话
             </button>
+            <button
+              type="button"
+              onClick={() => startNewChatSession()}
+              className="rounded-full border border-white/14 bg-white/8 px-3 py-2 text-[10px] font-bold text-[#f5e6c8] active:scale-95"
+              aria-label="新对话"
+            >
+              新对话
+            </button>
+            <button
+              type="button"
+              onClick={() => setSubtitlesOn((v) => !v)}
+              className={cx(
+                "rounded-full border px-3 py-2 text-[10px] font-bold active:scale-95",
+                subtitlesOn
+                  ? "border-[#d1a53d]/60 bg-[#d1a53d]/25 text-[#ffe8ad]"
+                  : "border-white/14 bg-white/8 text-[#f5e6c8]",
+              )}
+              aria-label="字幕开关"
+            >
+              字幕
+            </button>
+            <button
+              type="button"
+              onClick={() => setSettingsOpen(true)}
+              className="ml-auto rounded-full border border-white/12 bg-transparent px-3 py-2 text-[10px] font-bold text-white/60 active:scale-95"
+              aria-label="更多设置"
+            >
+              设置
+            </button>
+          </div>
+          <div className="mt-2 flex items-center gap-2 text-[10px] text-white/60">
+            <button type="button" onClick={() => setHistoryOpen(true)} className="rounded-full border border-white/12 px-2.5 py-1 active:scale-95">
+              历史记录
+            </button>
+            <button type="button" onClick={() => clearCurrentChatSession()} className="rounded-full border border-white/12 px-2.5 py-1 active:scale-95">
+              清空当前会话
+            </button>
+            <span className="truncate">{currentChatSession?.title ?? "新对话"}</span>
+          </div>
+        </section>
+
+        <div ref={chatScrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-3 pt-3 md:px-5">
+          <div className="space-y-[14px]">
+            {chatMessages.map((msg) => {
+              const isUser = msg.role === "user";
+              const playBusy = chatAudioLoadingId === Number(msg.id);
+              return (
+                <div key={msg.id} className={cx("flex", isUser ? "justify-end" : "justify-start")}>
+                  <div className="min-w-0 max-w-[92%] sm:max-w-[88%]">
+                    <div
+                      className={cx(
+                        "overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(58,42,26,0.07)] ring-1",
+                        isUser ? "rounded-br-md bg-[#3A2A1A] text-white ring-black/15" : "rounded-bl-md bg-[#FFF8EA] ring-[#E6D8BF]",
+                      )}
+                    >
+                      <div className={cx("flex items-center justify-between gap-2 border-b px-3 py-2", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
+                        <div className="flex min-w-0 flex-1 items-center gap-2">
+                          <span
+                            className={cx(
+                              "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-black tracking-wide",
+                              isUser ? "bg-white/12 text-white/95" : "bg-[#F7EEDB] text-[#8A6324]",
+                            )}
+                          >
+                            {isUser ? "我" : "AI"}
+                          </span>
+                          <span className={cx("text-[10px] font-bold tabular-nums", isUser ? "text-white/45" : "text-[#998B78]")}>{msg.time}</span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            void playChatMessage(msg);
+                          }}
+                          disabled={playBusy}
+                          aria-busy={playBusy}
+                          aria-label={playBusy ? "朗读进行中" : "播放本条英文"}
+                          className={cx(
+                            "relative flex h-8 shrink-0 items-center justify-center rounded-full px-2.5 text-[12px] font-bold transition active:scale-95 disabled:opacity-55",
+                            isUser ? "bg-white/12 text-white ring-1 ring-white/14" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]",
+                          )}
+                        >
+                          {playBusy ? <span className="text-[10px] tracking-tight">···</span> : <>🔊</>}
+                        </button>
+                      </div>
+                      <div className="px-3.5 pb-3.5 pt-3">
+                        <div className={cx("text-[15px] font-semibold leading-relaxed tracking-[-0.01em]", isUser ? "text-white" : "text-[#2C241C]")}>
+                          <BubbleText text={msg.text} onWordClick={setSelectedWordTip} />
+                        </div>
+                        {subtitlesOn ? (
+                          <div className={cx("mt-2.5 border-t pt-2.5", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
+                            <p className={cx("text-[12px] font-medium leading-relaxed", isUser ? "text-white/72" : "text-[#6B5B49]")}>
+                              <span className={cx("mr-1.5 text-[10px] font-black uppercase opacity-70", isUser ? "text-white/45" : "text-[#B0A18D]")}>
+                                译
+                              </span>
+                              {getFreeChatSubtitle(msg)}
+                            </p>
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <FreeChatSheet open={settingsOpen} onClose={() => setSettingsOpen(false)} title="设置" subtitle="只保留自由聊天需要的选项">
+        <div
+          className="relative z-10 shrink-0 border-t border-[#E6D8BF]/85 bg-[#F6EAD6]/96 px-4 pb-0 pt-3 backdrop-blur md:px-5"
+          style={{ paddingBottom: composerSafeBottom }}
+        >
+          <div className="rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA]/98 p-4 shadow-[0_-8px_26px_rgba(58,42,26,0.05)]">
+            <div className="mb-3 flex items-center gap-2">
+              <span className={cx("h-2 w-2 shrink-0 rounded-full", composerStatus.dot)} />
+              <span className="text-[11px] font-bold leading-snug text-[#6B5B49]">{composerStatus.label}</span>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              <div className="flex items-stretch gap-2">
+                <input
+                  value={customText}
+                  disabled={chatAiBusy || chatTranscribing}
+                  onChange={(e) => setCustomText(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      submitTextChat();
+                    }
+                  }}
+                  placeholder="先用英文写下来… Enter 发送"
+                  className="min-h-[48px] min-w-0 flex-1 rounded-[18px] border border-[#E6D8BF] bg-white px-4 py-3 text-[14px] font-medium leading-snug text-[#2C241C] outline-none placeholder:text-[#AD9F8C] placeholder:font-normal disabled:bg-[#faf5ec]"
+                />
+                <button
+                  type="button"
+                  disabled={chatAiBusy || chatTranscribing || !customText.trim()}
+                  onClick={() => submitTextChat()}
+                  className="shrink-0 rounded-[18px] bg-[#3A2A1A] px-4 py-3 text-[13px] font-bold text-white shadow-[0_4px_14px_rgba(58,42,26,0.16)] active:scale-[0.98] disabled:bg-[#C7B8A5] disabled:text-white/70 disabled:shadow-none"
+                >
+                  发送
+                </button>
+              </div>
+              <button
+                type="button"
+                disabled={chatAiBusy || chatTranscribing}
+                onPointerDown={handlePressToTalkStart}
+                onPointerUp={handlePressToTalkEnd}
+                onPointerCancel={handlePressToTalkEnd}
+                className={cx(
+                  "flex h-11 w-full items-center justify-center rounded-[16px] text-[13px] font-bold transition active:scale-[0.99]",
+                  chatAiBusy || chatTranscribing
+                    ? "border border-transparent bg-[#E8DDD0] text-[#998B78]"
+                    : recording
+                      ? "border border-[#D8B65E] bg-[#FBF2DA] text-[#6B4918]"
+                      : "border-2 border-dashed border-[#D8C4A8] bg-white/98 text-[#8A6324]",
+                )}
+              >
+                {chatTranscribing ? "识别中…请稍候" : recording ? "松开结束本条语音" : "按住说话（语音输入）"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <FreeChatSheet open={settingsOpen} onClose={() => setSettingsOpen(false)} title="会话设置" subtitle="调音色语速与情景，返回后即时生效">
+          <p className="mb-4 text-[11px] leading-5 text-[#998B78]">主聊天始终在下方列表与输入框；此处为附加选项。</p>
           <div className="space-y-5">
             <div>
               <div className="mb-2 text-[12px] font-bold text-[#8A6324]">对话形式</div>
@@ -2426,7 +3179,7 @@ export default function WordRealmCleanPreview() {
             <div>
               <div className="mb-2 text-[12px] font-bold text-[#8A6324]">音色</div>
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {freeChatVoiceLabels.map((item) => (
+                {VOICE_GENDERS.map((item) => (
                   <FreeChatPill key={item} active={voice === item} onClick={() => setVoice(item)}>
                     {item}
                   </FreeChatPill>
@@ -2456,35 +3209,57 @@ export default function WordRealmCleanPreview() {
           </div>
         </FreeChatSheet>
 
-        <FreeChatSheet open={historyOpen} onClose={() => setHistoryOpen(false)} title="历史记录" subtitle="当前自由聊天内容都保存在这里">
-          <div className="max-h-[58dvh] space-y-3 overflow-y-auto pr-1">
-            {chatMessages.map((msg) => (
-              <div key={msg.id} className={cx("rounded-[22px] p-3", msg.role === "ai" ? "bg-[#3A2A1A] text-white" : "bg-white text-[#2C241C] ring-1 ring-[#E6D8BF]")}>
-                <div className="mb-1 flex items-center justify-between text-[11px] font-bold opacity-80">
-                  <span>{msg.role === "ai" ? "AI" : "我"}</span>
-                  <span>{msg.time}</span>
+        <FreeChatSheet open={historyOpen} onClose={() => setHistoryOpen(false)} title="历史记录" subtitle="最近会话保存在当前设备，可恢复、继续或新建。">
+          <div className="mb-3 flex gap-2">
+            <button type="button" onClick={() => startNewChatSession()} className="rounded-[14px] bg-[#3A2A1A] px-4 py-2 text-[12px] font-bold text-white active:scale-95">新对话</button>
+            <button type="button" onClick={() => clearCurrentChatSession()} className="rounded-[14px] bg-white px-4 py-2 text-[12px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95">清空当前会话</button>
+          </div>
+          <div className="max-h-[58dvh] space-y-[10px] overflow-y-auto pr-1">
+            {chatSessions.map((session) => (
+              <button
+                key={session.id}
+                type="button"
+                onClick={() => openChatSession(session.id)}
+                className={cx(
+                  "w-full rounded-[18px] border p-3.5 text-left shadow-sm active:scale-[0.99]",
+                  session.id === currentChatSessionId
+                    ? "border-[#D8B65E] bg-[#FBF2DA]"
+                    : "border-[#E6D8BF] bg-white",
+                )}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate text-[14px] font-bold text-[#2C241C]">{session.title || "新对话"}</div>
+                    <p className="mt-1 line-clamp-2 text-[12px] leading-5 text-[#6B5B49]">
+                      {(session.messages.find((msg) => msg.role === "user" && msg.text.trim())?.text || session.messages[session.messages.length - 1]?.text || "还没有消息").trim()}
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-[11px] font-bold text-[#998B78]">{formatFavoriteSavedAt(session.updatedAt)}</span>
                 </div>
-                <div className="text-[13px] font-bold leading-6">{msg.text}</div>
-                {subtitlesOn && msg.cn ? (
-                  <p className={cx("mt-1 text-[12px] leading-5", msg.role === "ai" ? "text-white/68" : "text-[#6B5B49]")}>{msg.cn}</p>
-                ) : null}
-              </div>
+              </button>
             ))}
           </div>
         </FreeChatSheet>
 
         <PhoneCallOverlay
           open={callOpen}
-          onClose={() => { setCallOpen(false); setCallMicPaused(false); setChatMode("消息模式"); }}
-          scene={scene}
-          voice={voice}
           voiceModel={getFreeChatVoiceModel(voice)}
-          speed={speed}
           subtitlesOn={subtitlesOn}
           onToggleSubtitles={() => setSubtitlesOn((v) => !v)}
-          paused={callMicPaused}
-          onTogglePaused={() => setCallMicPaused((v) => !v)}
+          micPhase={callPhoneMicPhase}
+          recording={callRecording}
+          transcribing={chatTranscribing}
+          busy={chatAiBusy}
+          audioPlaying={chatAudioLoadingId != null}
+          onStartListening={handleCallStartListening}
+          onPauseListening={handleCallPauseListening}
+          onHangUp={handleCallHangUp}
           latestMessage={latestChatMessage}
+          soloSeedWelcome={
+            chatMessages.length === 1 &&
+            chatMessages[0]?.role === "ai" &&
+            chatMessages[0]?.id === freeChatInitialMessages[0]?.id
+          }
         />
 
         <WordHintCard tip={selectedWordTip} onClose={() => setSelectedWordTip(null)} />
@@ -2924,7 +3699,7 @@ export default function WordRealmCleanPreview() {
           <Surface className="mt-4 p-5">
             <div className="text-[13px] font-bold text-[#2C241C]">本周学习概览</div>
             <div className="mt-4 space-y-3">
-              {[["单词学习", 72], ["口语跟读", 56], ["AI对话", 38], ["写作训练", 24]].map(([label, value]) => (
+              {[["单词学习", 72], ["AI对话", 94], ["巩固复盘", 24]].map(([label, value]) => (
                 <div key={label}>
                   <div className="mb-2 flex justify-between text-[12px] text-[#6B5B49]"><span>{label}</span><span>{value}%</span></div>
                   <Progress value={value} />
@@ -2993,7 +3768,7 @@ export default function WordRealmCleanPreview() {
     }
 
     if (minePage === "records") {
-      const filters = ["全部", "单词", "跟读", "AI对话", "写作"];
+      const filters = ["全部", "单词", "跟读", "AI对话"];
       const visibleRecords = studyRecords.filter((item) => recordFilter === "全部" || item.type === recordFilter);
       const grouped = visibleRecords.reduce((acc, item) => {
         acc[item.date] = acc[item.date] || [];
@@ -3057,18 +3832,18 @@ export default function WordRealmCleanPreview() {
             <Surface className="p-4">
               <div className="text-[13px] font-bold text-[#2C241C]">学习目标偏好</div>
               <div className="mt-3 flex flex-wrap gap-2">
-                {["考试提分", "口语提升", "写作提升", "综合学习"].map((item, index) => (
+                {["考试提分", "口语提升", "词汇夯实", "综合学习"].map((item, index) => (
                   <button key={item} onClick={() => showToast("已切换为" + item)} className={`rounded-full px-4 py-2 text-[12px] font-bold ${index === 0 ? "bg-[#3A2A1A] text-white" : "bg-white text-[#6B5B49]"}`}>{item}</button>
                 ))}
               </div>
             </Surface>
             <Surface className="p-4">
               <div className="text-[13px] font-bold text-[#2C241C]">默认语音偏好</div>
-              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">朗读：女声或男声 · 浏览器语音（en-US）</p>
+              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">单词与例句：统一使用标准词典发音；AI 对话：支持女声与男声。</p>
             </Surface>
             <Surface className="p-4">
               <div className="text-[13px] font-bold text-[#2C241C]">每日学习量</div>
-              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">每天 8 个待复习词 + 1 轮输出训练</p>
+              <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">每天 8 个待复习词 + 1 轮口语练习</p>
             </Surface>
           </div>
         </>
@@ -3078,21 +3853,42 @@ export default function WordRealmCleanPreview() {
     if (minePage === "login") {
       return (
         <>
-          <PageHeader title="账号与同步" desc="当前阶段仅做登录入口占位，后续用于云同步、跨设备备份和AI额度管理。" back onBack={() => setMinePage("overview")} />
+          <PageHeader title="账号与同步" desc="已接入云同步底座，可将学习记录、收藏、错题和 AI 对话历史同步到云端。" back onBack={() => setMinePage("overview")} />
           <Surface className="p-5">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[22px] font-bold text-white">词</div>
-            <h2 className="mt-4 text-center text-[20px] font-bold text-[#2C241C]">登录词境账号</h2>
-            <p className="mx-auto mt-2 max-w-xs text-center text-[13px] leading-6 text-[#6B5B49]">登录后可同步学习记录、个人素材库和AI对话记录。当前预览版暂不接入真实账号系统。</p>
-            <div className="mt-5 space-y-3">
-              <input disabled value="手机号 / 邮箱" className="w-full rounded-[16px] border border-[#E6D8BF] bg-white/70 px-4 py-3 text-[13px] text-[#998B78] outline-none" />
-              <input disabled value="验证码 / 密码" className="w-full rounded-[16px] border border-[#E6D8BF] bg-white/70 px-4 py-3 text-[13px] text-[#998B78] outline-none" />
+            <h2 className="mt-4 text-center text-[20px] font-bold text-[#2C241C]">开启云同步</h2>
+            <p className="mx-auto mt-2 max-w-xs text-center text-[13px] leading-6 text-[#6B5B49]">
+              当前阶段先使用 CloudBase 匿名身份同步学习数据，后续再扩展正式账号体系。
+            </p>
+            <div className="mt-5 rounded-[18px] border border-[#E6D8BF] bg-white/80 p-4">
+              <div className="text-[12px] font-bold text-[#8A6324]">同步状态</div>
+              <div className="mt-2 text-[14px] font-bold text-[#2C241C]">
+                {cloudSyncBusy ? "正在连接云端..." : cloudSyncNotice}
+              </div>
+              {cloudSyncProfile?.enabled ? (
+                <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">
+                  UID：{cloudSyncProfile.uid.slice(0, 8)}… · {cloudSyncProfile.isAnonymous ? "匿名同步" : cloudSyncProfile.loginType}
+                </p>
+              ) : (
+                <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">
+                  当前仍以本地学习为主，开启后会把学习进度、收藏、错题与 AI 对话历史同步到云端。
+                </p>
+              )}
             </div>
-            <button onClick={() => showToast("登录功能后续开放")} className="mt-5 w-full rounded-[16px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]">登录 / 开启同步</button>
+            <button
+              onClick={handleEnableCloudSync}
+              disabled={cloudSyncBusy}
+              className={`mt-5 w-full rounded-[16px] py-3 text-[14px] font-bold text-white active:scale-[0.98] ${
+                cloudSyncBusy ? "bg-[#C7B8A5]" : "bg-[#3A2A1A]"
+              }`}
+            >
+              {cloudSyncBusy ? "连接中..." : cloudSyncProfile?.enabled ? "重新同步数据" : "登录 / 开启同步"}
+            </button>
             <button onClick={() => setMinePage("overview")} className="mt-3 w-full rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">暂不登录，继续本地使用</button>
           </Surface>
           <Surface className="mt-4 p-4">
             <div className="text-[13px] font-bold text-[#2C241C]">本地模式说明</div>
-            <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">不登录也可使用单词库、跟读、工作台和本地学习记录；数据保存在当前设备。</p>
+            <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">不登录也可使用单词库、跟读和本地学习记录；开启云同步后，可跨设备保留学习进度、收藏、错题和 AI 对话历史。</p>
           </Surface>
         </>
       );
@@ -3104,10 +3900,10 @@ export default function WordRealmCleanPreview() {
         <button onClick={() => setMinePage("login")} className="mb-5 flex w-full items-center gap-4 rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.06)] active:scale-[0.98]">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[16px] font-bold text-white">词</div>
           <div className="min-w-0 flex-1">
-            <div className="text-[16px] font-bold text-[#2C241C]">本地学习档案</div>
-            <div className="mt-1 text-[12px] text-[#6B5B49]">数据保存在当前设备 · 可登录后同步</div>
+            <div className="text-[16px] font-bold text-[#2C241C]">{cloudSyncProfile?.enabled ? "云同步已开启" : "本地学习档案"}</div>
+            <div className="mt-1 text-[12px] text-[#6B5B49]">{cloudSyncProfile?.enabled ? cloudSyncNotice : "数据保存在当前设备 · 可登录后同步"}</div>
           </div>
-          <div className="text-[12px] font-bold text-[#8A6324]">登录</div>
+          <div className="text-[12px] font-bold text-[#8A6324]">{cloudSyncProfile?.enabled ? "已连接" : "登录"}</div>
         </button>
         <div className="space-y-6">
           {mineGroups.map((group) => (
@@ -3145,9 +3941,21 @@ export default function WordRealmCleanPreview() {
   };
 
   return (
-    <PhoneShell tabs={tabs} activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "words") { setSelectedPack((p) => (p?.id === V2_FAVORITE_LEARN_PACK_ID || p?.id === V2_MISTAKE_LEARN_PACK_ID ? lastRealPackBeforeFavoriteRef.current : p)); setWordPage("list"); setFavoriteWordPackFilter("all"); setFavoriteWordSearch(""); setMistakeLibPackFilter("all"); setMistakeWordSearch(""); } if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
+    <DeviceShell
+      immersiveCall={callOpen}
+      tabs={tabs} activeTab={activeTab} onTab={(tab) => { setActiveTab(tab); if (tab !== "words") { setSelectedPack((p) => (p?.id === V2_FAVORITE_LEARN_PACK_ID || p?.id === V2_MISTAKE_LEARN_PACK_ID ? lastRealPackBeforeFavoriteRef.current : p)); setWordPage("list"); setFavoriteWordPackFilter("all"); setFavoriteWordSearch(""); setMistakeLibPackFilter("all"); setMistakeWordSearch(""); } if (tab !== "training") { setTrainingPage("overview"); setWritingPage("overview"); setShadowPage("overview"); } if (tab !== "mine") setMinePage("overview"); if (tab !== "workbench") setWorkbenchPage("overview"); }}>
       {renderActive()}
-      {toast ? <div className="fixed bottom-[92px] left-1/2 z-50 -translate-x-1/2 rounded-full bg-[#3A2A1A] px-5 py-3 text-[13px] font-bold text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">{toast}</div> : null}
-    </PhoneShell>
+      {toast ? (
+        <div
+          className={
+            callOpen
+              ? "fixed bottom-[max(22px,calc(env(safe-area-inset-bottom,0px)+16px))] left-1/2 z-[70] max-w-[min(92vw,480px)] -translate-x-1/2 px-4"
+              : "fixed bottom-[92px] left-1/2 z-50 max-w-[min(92vw,480px)] -translate-x-1/2 px-4"
+          }
+        >
+          <div className="rounded-full bg-[#3A2A1A] px-5 py-3 text-[13px] font-bold leading-snug text-white text-center shadow-[0_10px_30px_rgba(0,0,0,0.18)]">{toast}</div>
+        </div>
+      ) : null}
+    </DeviceShell>
   );
 }

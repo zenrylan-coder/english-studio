@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">English Studio Apple touch icon</title>
+  <desc id="desc">Warm beige rounded-square icon with the Chinese character �.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6EAD6" />
+      <stop offset="100%" stop-color="#E6D0B3" />
+    </linearGradient>
+    <linearGradient id="tile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A3623" />
+      <stop offset="100%" stop-color="#2B1F14" />
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="40" fill="url(#bg)" />
+  <rect x="30" y="30" width="120" height="120" rx="32" fill="url(#tile)" />
+  <text x="90" y="110" text-anchor="middle" font-family="'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="700" fill="#F6EAD6">�</text>
+  <text x="90" y="141" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5" fill="#D8B65E">ES</text>
+</svg>
