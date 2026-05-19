@@ -2102,13 +2102,14 @@ export default function WordRealmCleanPreview() {
       const misCount = mistakeOccurrenceCount(lemmaKey);
 
       return (
-        <div className="-mx-1 flex min-h-0 flex-col pb-[88px]">
+        <div className="-mx-1 flex min-h-0 flex-col pb-[72px] md:pb-[88px]">
           <button type="button" onClick={learnReviewBack} className="mb-3 text-left text-[14px] font-bold text-[#8A6324] active:opacity-80">
             ‹ 返回{learnBackLabel}
           </button>
 
-          <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
-            <span className="shrink-0 rounded-full bg-[#3A2A1A] px-4 py-2 text-[12px] font-bold whitespace-nowrap text-white">
+          <div className="-mx-1 mb-3 overflow-x-auto px-1 pb-1 md:mb-4">
+            <div className="flex min-w-0 gap-1.5 md:gap-2">
+            <span className="shrink-0 rounded-full bg-[#3A2A1A] px-3 py-2 text-[11px] font-bold whitespace-nowrap text-white md:px-4 md:text-[12px]">
               标准发音
             </span>
             {(
@@ -2126,7 +2127,7 @@ export default function WordRealmCleanPreview() {
                   setWordIndex(0);
                   if (mode === "shuffle") setShuffleSeed((Date.now() >>> 0) || 1);
                 }}
-                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${learnOrderMode === mode ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+                className={`shrink-0 rounded-full px-3 py-2 text-[11px] font-bold whitespace-nowrap active:scale-95 md:px-4 md:text-[12px] ${learnOrderMode === mode ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
               >
                 {label}
               </button>
@@ -2137,7 +2138,7 @@ export default function WordRealmCleanPreview() {
                 setReviewOnly((v) => !v);
                 setWordIndex(0);
               }}
-              className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${reviewOnly ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
+              className={`shrink-0 rounded-full px-3 py-2 text-[11px] font-bold whitespace-nowrap active:scale-95 md:px-4 md:text-[12px] ${reviewOnly ? "bg-[#3A2A1A] text-white" : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"}`}
             >
               {reviewOnly ? "复习模式" : "全部词条"}
             </button>
@@ -2150,7 +2151,7 @@ export default function WordRealmCleanPreview() {
                   });
                   setWordPage("unitFilter");
                 }}
-                className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-bold whitespace-nowrap active:scale-95 ${
+                className={`shrink-0 rounded-full px-3 py-2 text-[11px] font-bold whitespace-nowrap active:scale-95 md:px-4 md:text-[12px] ${
                   unitGroupAppliedIds.length
                     ? "bg-[#3A2A1A] text-white"
                     : "bg-[#FFF8EA] text-[#6B5B49] ring-1 ring-[#E6D8BF]"
@@ -2159,47 +2160,48 @@ export default function WordRealmCleanPreview() {
                 {unitGroupAppliedIds.length ? `单元·${countWordsInGroups(bankGroupsDoc, unitGroupAppliedIds)}词` : "分类学习"}
               </button>
             ) : null}
+            </div>
           </div>
 
-          <section className="flex min-h-0 flex-1 flex-col rounded-[30px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 shadow-sm">
-            <div className="rounded-[22px] border border-[#E6D8BF] bg-white/90 p-3 shadow-[0_4px_16px_rgba(58,42,26,0.05)]">
+          <section className="flex min-h-0 flex-1 flex-col rounded-[24px] border border-[#E6D8BF] bg-[#FFF8EA] p-3 shadow-sm md:rounded-[30px] md:p-4">
+            <div className="rounded-[18px] border border-[#E6D8BF] bg-white/90 p-3 shadow-[0_4px_16px_rgba(58,42,26,0.05)] md:rounded-[22px]">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
                   <p className="text-[11px] font-bold tracking-[0.08em] text-[#8A6324]">当前词库</p>
-                  <h3 className="mt-1 truncate text-[18px] font-bold text-[#2C241C]" title={selectedPack.name}>{selectedPack.name}</h3>
+                  <h3 className="mt-1 truncate text-[16px] font-bold text-[#2C241C] md:text-[18px]" title={selectedPack.name}>{selectedPack.name}</h3>
                 </div>
-                <span className="shrink-0 rounded-full bg-[#F7EEDB] px-3 py-1.5 text-[11px] font-bold text-[#8A6324]">
+                <span className="shrink-0 rounded-full bg-[#F7EEDB] px-2.5 py-1 text-[10px] font-bold text-[#8A6324] md:px-3 md:py-1.5 md:text-[11px]">
                   {numer}/{denom}
                 </span>
               </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="rounded-full bg-[#FBF2DA] px-3 py-1 text-[11px] font-bold text-[#8A6324]">{reviewOnly ? "复习模式" : orderLabel}</span>
-                <span className="max-w-full truncate rounded-full bg-[#FFF8EA] px-3 py-1 text-[11px] font-bold text-[#6B5B49] ring-1 ring-[#E6D8BF]" title={`${sourceLineLabel}：${sourceLineValue}`}>
+              <div className="mt-2.5 flex flex-wrap gap-1.5 md:mt-3 md:gap-2">
+                <span className="rounded-full bg-[#FBF2DA] px-2.5 py-1 text-[10px] font-bold text-[#8A6324] md:px-3 md:text-[11px]">{reviewOnly ? "复习模式" : orderLabel}</span>
+                <span className="max-w-full truncate rounded-full bg-[#FFF8EA] px-2.5 py-1 text-[10px] font-bold text-[#6B5B49] ring-1 ring-[#E6D8BF] md:px-3 md:text-[11px]" title={`${sourceLineLabel}：${sourceLineValue}`}>
                   {sourceLineLabel}：{sourceLineValue}
                 </span>
               </div>
             </div>
 
-            <div className="mt-4 shrink-0 rounded-[24px] bg-white/95 p-4 text-center shadow-[0_6px_18px_rgba(58,42,26,0.06)]">
+            <div className="mt-3 shrink-0 rounded-[20px] bg-white/95 p-3 text-center shadow-[0_6px_18px_rgba(58,42,26,0.06)] md:mt-4 md:rounded-[24px] md:p-4">
               <p className="text-[11px] font-bold tracking-[0.08em] text-[#998B78]">当前单词</p>
-              <h2 className="mt-2 break-words text-[38px] font-bold leading-tight tracking-[-0.03em] text-[#2C241C] sm:text-[42px]">{w.word}</h2>
-              <div className="mt-3 rounded-[18px] bg-[#FFF8EA] px-3 py-3">
+              <h2 className="mt-1.5 break-words text-[44px] font-bold leading-none tracking-[-0.03em] text-[#2C241C] sm:text-[44px] md:mt-2 md:text-[42px] md:leading-tight">{w.word}</h2>
+              <div className="mt-2.5 rounded-[16px] bg-[#FFF8EA] px-3 py-2.5 md:mt-3 md:rounded-[18px] md:py-3">
                 <p className="text-[11px] font-bold tracking-[0.08em] text-[#998B78]">音标与发音</p>
-                <p className="mt-1 text-[16px] font-medium tracking-[0.02em] text-[#8A6324]">{w.phonetic}</p>
+                <p className="mt-1 text-[15px] font-medium tracking-[0.02em] text-[#8A6324] md:text-[16px]">{w.phonetic}</p>
               </div>
-              <div className="mt-3 flex flex-wrap justify-center gap-2">
-                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">词性：{w.pos || "待补"}</span>
-                <span className="rounded-full bg-[#F7EEDB] px-3 py-1 text-[11px] font-bold text-[#8A6324]">学习来源：{selectedPack.name}</span>
+              <div className="mt-2.5 flex flex-wrap justify-center gap-1.5 md:mt-3 md:gap-2">
+                <span className="rounded-full bg-[#F7EEDB] px-2.5 py-1 text-[10px] font-bold text-[#8A6324] md:px-3 md:text-[11px]">词性：{w.pos || "待补"}</span>
+                <span className="rounded-full bg-[#F7EEDB] px-2.5 py-1 text-[10px] font-bold text-[#8A6324] md:px-3 md:text-[11px]">学习来源：{selectedPack.name}</span>
               </div>
             </div>
 
-            <div className="mt-4 grid shrink-0 grid-cols-2 gap-2">
+            <div className="mt-3 grid shrink-0 grid-cols-2 gap-2 md:mt-4">
               <button
                 type="button"
                 onClick={() => {
                   if (!speakText(w.word, { scope: "learnWord" })) showToast("当前环境不支持朗读");
                 }}
-                className="rounded-[18px] bg-white px-3 py-3 text-[12px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95"
+                className="rounded-[16px] bg-white px-3 py-2.5 text-[12px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-95 md:rounded-[18px] md:py-3"
               >
                 🔊 播放发音
               </button>
@@ -2214,7 +2216,7 @@ export default function WordRealmCleanPreview() {
                     }));
                     showToast("已取消收藏");
                   }}
-                  className="rounded-[18px] bg-[#3A2A1A] px-3 py-3 text-[12px] font-bold text-white active:scale-95"
+                  className="rounded-[16px] bg-[#3A2A1A] px-3 py-2.5 text-[12px] font-bold text-white active:scale-95 md:rounded-[18px] md:py-3"
                 >
                   ★ 已收藏
                 </button>
@@ -2222,7 +2224,7 @@ export default function WordRealmCleanPreview() {
                 <button
                   type="button"
                   onClick={() => setWordLearnDetailOpen(true)}
-                  className="rounded-[18px] bg-[#3A2A1A] px-3 py-3 text-[12px] font-bold text-white active:scale-95"
+                  className="rounded-[16px] bg-[#3A2A1A] px-3 py-2.5 text-[12px] font-bold text-white active:scale-95 md:rounded-[18px] md:py-3"
                 >
                   错题 {misCount} 次
                 </button>
@@ -2262,7 +2264,7 @@ export default function WordRealmCleanPreview() {
                     });
                     showToast(h ? "已取消收藏" : "已收藏单词");
                   }}
-                  className={`rounded-[18px] px-3 py-3 text-[12px] font-bold active:scale-95 ${favWord ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
+                  className={`rounded-[16px] px-3 py-2.5 text-[12px] font-bold active:scale-95 md:rounded-[18px] md:py-3 ${favWord ? "bg-[#3A2A1A] text-white" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]"}`}
                 >
                   {favWord ? "★ 已收藏" : "☆ 收藏"}
                 </button>
@@ -2275,7 +2277,7 @@ export default function WordRealmCleanPreview() {
                 setLoopPlay(!loopPlay);
                 showToast(loopPlay ? "已关闭循环播放" : "已开启循环播放");
               }}
-              className={`mt-2 inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full px-3 py-1.5 text-[11px] font-bold active:scale-95 ${
+              className={`mt-2 inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-full px-3 py-1.5 text-[10px] font-bold active:scale-95 md:text-[11px] ${
                 loopPlay ? "bg-[#F7EEDB] text-[#3A2A1A] ring-1 ring-[#D8B65E]" : "bg-transparent text-[#8A6324]"
               }`}
             >
@@ -2283,21 +2285,21 @@ export default function WordRealmCleanPreview() {
               <span>循环播放</span>
             </button>
 
-            <div className="mt-4 flex min-h-0 flex-1 flex-col overflow-hidden">
-              <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain pr-0.5 pb-3">
-                <div className="rounded-[22px] border border-[#EBDCC2] bg-white/95 p-4 shadow-[0_6px_18px_rgba(58,42,26,0.05)]">
+            <div className="mt-3 flex min-h-0 flex-1 flex-col overflow-hidden md:mt-4">
+              <div className="min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain pr-0.5 pb-3 md:space-y-3">
+                <div className="rounded-[18px] border border-[#EBDCC2] bg-white/95 p-3 shadow-[0_6px_18px_rgba(58,42,26,0.05)] md:rounded-[22px] md:p-4">
                   <div className="flex items-center justify-between gap-2">
                     <p className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">核心释义</p>
                     <span className="rounded-full bg-[#F7EEDB] px-2 py-0.5 text-[11px] font-bold text-[#8A6324]">{w.pos}</span>
                   </div>
-                  <p className="mt-2 text-[17px] font-bold leading-snug text-[#2C241C]">{w.cn}</p>
+                  <p className="mt-1.5 text-[16px] font-bold leading-snug text-[#2C241C] md:mt-2 md:text-[17px]">{w.cn}</p>
                 </div>
 
-                <div className="rounded-[24px] border border-[#EBDCC2] bg-[#FFFDF8] p-4 shadow-[0_6px_18px_rgba(58,42,26,0.05)]">
-                  <div className="mb-3 flex items-center justify-between gap-3">
+                <div className="rounded-[20px] border border-[#EBDCC2] bg-[#FFFDF8] p-3 shadow-[0_6px_18px_rgba(58,42,26,0.05)] md:rounded-[24px] md:p-4">
+                  <div className="mb-2.5 flex items-center justify-between gap-3 md:mb-3">
                     <div>
                       <div className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">英文例句</div>
-                      <div className="mt-1 text-[11px] text-[#B09A7C]">目标词会自动高亮</div>
+                      <div className="mt-1 text-[10px] text-[#B09A7C] md:text-[11px]">目标词会自动高亮</div>
                     </div>
                     {w.example?.trim() ? (
                       <button
@@ -2324,8 +2326,8 @@ export default function WordRealmCleanPreview() {
                         }}
                         className={`flex shrink-0 items-center justify-center rounded-full border border-[#E6D8BF] bg-[#FFF8EA] font-bold leading-none text-[#8A6324] active:scale-95 ${
                           learnExamplePhase === "idle"
-                            ? "h-9 min-w-[3.25rem] px-3 text-[12px]"
-                            : "h-9 min-w-[5.75rem] px-3 text-[10px]"
+                            ? "h-8 min-w-[3rem] px-3 text-[11px] md:h-9 md:min-w-[3.25rem] md:text-[12px]"
+                            : "h-8 min-w-[5rem] px-3 text-[10px] md:h-9 md:min-w-[5.75rem]"
                         }`}
                       >
                         {learnExamplePhase === "idle"
@@ -2337,7 +2339,7 @@ export default function WordRealmCleanPreview() {
                     ) : null}
                   </div>
                   <div className="min-w-0">
-                    <div className="rounded-[18px] bg-[#FFF8EA] px-4 py-3 text-[16px] font-semibold leading-8 text-[#2C241C]">
+                    <div className="rounded-[16px] bg-[#FFF8EA] px-3 py-2.5 text-[15px] font-semibold leading-7 text-[#2C241C] md:rounded-[18px] md:px-4 md:py-3 md:text-[16px] md:leading-8">
                       <div className="min-w-0 break-words">
                         <HighlightedExample sentence={w.example} word={w.word} />
                       </div>
@@ -2345,20 +2347,20 @@ export default function WordRealmCleanPreview() {
                     <div className="mt-3">
                       <div className="text-[12px] font-bold tracking-[0.08em] text-[#998B78]">中文翻译</div>
                       {w.exampleCn?.trim() ? (
-                        <p className="mt-2 rounded-[18px] border border-[#F1E7D5] bg-white px-4 py-3 text-[14px] leading-7 text-[#7E6C57]">{w.exampleCn}</p>
+                        <p className="mt-1.5 rounded-[16px] border border-[#F1E7D5] bg-white px-3 py-2.5 text-[13px] leading-6 text-[#7E6C57] md:mt-2 md:rounded-[18px] md:px-4 md:py-3 md:text-[14px] md:leading-7">{w.exampleCn}</p>
                       ) : (
-                        <p className="mt-2 rounded-[18px] border border-dashed border-[#E6D8BF] bg-white/80 px-4 py-3 text-[12px] leading-relaxed text-[#8a765f]">例句翻译待补</p>
+                        <p className="mt-1.5 rounded-[16px] border border-dashed border-[#E6D8BF] bg-white/80 px-3 py-2.5 text-[12px] leading-relaxed text-[#8a765f] md:mt-2 md:rounded-[18px] md:px-4 md:py-3">例句翻译待补</p>
                       )}
                     </div>
                   </div>
                 </div>
 
                 {w.collocations && w.collocations.length > 0 ? (
-                  <div className="rounded-[20px] bg-white/90 p-3">
+                  <div className="rounded-[18px] bg-white/90 p-3 md:rounded-[20px]">
                     <div className="mb-2 text-[12px] font-bold text-[#998B78]">常见搭配</div>
                     <div className="flex flex-wrap gap-1.5">
                       {w.collocations.map((c) => (
-                        <span key={c} className="rounded-full bg-[#FBF2DA] px-3 py-1 text-[12px] font-bold text-[#8A6324]">
+                        <span key={c} className="rounded-full bg-[#FBF2DA] px-2.5 py-1 text-[11px] font-bold text-[#8A6324] md:px-3 md:text-[12px]">
                           {c}
                         </span>
                       ))}
@@ -2367,15 +2369,15 @@ export default function WordRealmCleanPreview() {
                 ) : null}
 
                 {w.confusables && w.confusables.length > 0 ? (
-                  <div className="rounded-[20px] bg-white/90 p-3">
+                  <div className="rounded-[18px] bg-white/90 p-3 md:rounded-[20px]">
                     <div className="mb-2 text-[12px] font-bold text-[#998B78]">易混词</div>
                     <div className="space-y-2">
                       {w.confusables.map((c) => (
                         <div key={c.word} className="flex items-start gap-2">
-                          <span className="shrink-0 rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[12px] font-bold text-[#8A6324]">
+                          <span className="shrink-0 rounded-full bg-[#FBF2DA] px-2 py-0.5 text-[11px] font-bold text-[#8A6324] md:text-[12px]">
                             {c.word}
                           </span>
-                          <p className="min-w-0 flex-1 text-[12px] leading-relaxed text-[#6B5B49]">{c.note}</p>
+                          <p className="min-w-0 flex-1 text-[11px] leading-5 text-[#6B5B49] md:text-[12px] md:leading-relaxed">{c.note}</p>
                         </div>
                       ))}
                     </div>
@@ -2383,11 +2385,11 @@ export default function WordRealmCleanPreview() {
                 ) : null}
 
                 {w.pitfalls && w.pitfalls.length > 0 ? (
-                  <div className="rounded-[20px] bg-white/90 p-3">
+                  <div className="rounded-[18px] bg-white/90 p-3 md:rounded-[20px]">
                     <div className="mb-2 text-[12px] font-bold text-[#998B78]">常错点</div>
                     <ul className="space-y-1.5">
                       {w.pitfalls.map((p) => (
-                        <li key={p} className="flex gap-2 text-[12px] leading-relaxed text-[#6B5B49]">
+                        <li key={p} className="flex gap-2 text-[11px] leading-5 text-[#6B5B49] md:text-[12px] md:leading-relaxed">
                           <span className="mt-1 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#D8B65E]" />
                           <span className="min-w-0 flex-1">{p}</span>
                         </li>
@@ -2399,13 +2401,13 @@ export default function WordRealmCleanPreview() {
                 <button
                   type="button"
                   onClick={() => setWordLearnDetailOpen((v) => !v)}
-                  className="w-full rounded-[18px] bg-[#F7EEDB] px-3 py-2.5 text-left text-[12px] font-bold text-[#6B5B49] active:scale-[0.99]"
+                  className="w-full rounded-[16px] bg-[#F7EEDB] px-3 py-2.5 text-left text-[12px] font-bold text-[#6B5B49] active:scale-[0.99] md:rounded-[18px]"
                 >
                   {wordLearnDetailOpen ? "收起详情" : mistakeMode ? "展开来源详情" : "展开来源 / 错误原因"}
                 </button>
 
                 {wordLearnDetailOpen ? (
-                  <div className="rounded-[20px] bg-white/90 p-3 text-[13px] leading-relaxed">
+                  <div className="rounded-[18px] bg-white/90 p-3 text-[12px] leading-6 md:rounded-[20px] md:text-[13px] md:leading-relaxed">
                     <p className="font-bold text-[#2C241C]">{mistakeMode ? "错题备注" : favoriteMode ? "复习备注" : "学习来源"}</p>
                     <p className="mt-1 text-[#6B5B49]">
                       {mistakeMode ? (
@@ -2438,15 +2440,15 @@ export default function WordRealmCleanPreview() {
           </section>
 
           <div
-            className="sticky bottom-0 z-10 mt-4 -mx-4 -mb-4 grid shrink-0 grid-cols-3 gap-2 border-t border-[#E6D8BF]/50 bg-[#F1E3CF]/98 px-4 pt-3 shadow-[0_-8px_20px_rgba(58,42,26,0.08)] backdrop-blur-sm"
-            style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 10px)" }}
+            className="sticky bottom-0 z-10 mt-3 -mx-3 -mb-3 grid shrink-0 grid-cols-3 gap-2 border-t border-[#E6D8BF]/50 bg-[#F1E3CF]/98 px-3 pt-2.5 shadow-[0_-8px_20px_rgba(58,42,26,0.08)] backdrop-blur-sm md:mt-4 md:-mx-4 md:-mb-4 md:px-4 md:pt-3"
+            style={{ paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 8px)" }}
           >
             <button
               type="button"
               onClick={() => {
                 setWordIndex((i) => Math.max(0, i - 1));
               }}
-              className="min-h-[48px] rounded-[18px] bg-white py-3 text-[14px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98]"
+              className="min-h-[42px] rounded-[16px] bg-white py-2.5 text-[13px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98] md:min-h-[48px] md:rounded-[18px] md:py-3 md:text-[14px]"
             >
               上一词
             </button>
@@ -2456,16 +2458,16 @@ export default function WordRealmCleanPreview() {
                 setMasteredWordKeys((prev) => (prev.includes(wkey) ? prev : [...prev, wkey]));
                 showToast("已标记掌握");
               }}
-              className="min-h-[48px] rounded-[18px] bg-[#3A2A1A] py-3 text-[14px] font-bold text-white active:scale-[0.98]"
+              className="min-h-[42px] rounded-[16px] bg-[#3A2A1A] py-2.5 text-[13px] font-bold text-white active:scale-[0.98] md:min-h-[48px] md:rounded-[18px] md:py-3 md:text-[14px]"
             >
-              认识了
+              掌握
             </button>
             <button
               type="button"
               onClick={() => {
                 setWordIndex((i) => Math.min(Math.max(0, learnDisplayWords.length - 1), i + 1));
               }}
-              className="min-h-[48px] rounded-[18px] bg-white py-3 text-[14px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98]"
+              className="min-h-[42px] rounded-[16px] bg-white py-2.5 text-[13px] font-bold text-[#8A6324] ring-1 ring-[#E6D8BF] active:scale-[0.98] md:min-h-[48px] md:rounded-[18px] md:py-3 md:text-[14px]"
             >
               下一词
             </button>
@@ -2971,13 +2973,13 @@ export default function WordRealmCleanPreview() {
     };
 
     return (
-      <div ref={aiPageRef} onWheelCapture={handleAiWheelCapture} className="relative flex h-full min-h-0 flex-col overflow-hidden">
-        <div className="shrink-0 px-4 pt-4 md:px-5">
+        <div ref={aiPageRef} onWheelCapture={handleAiWheelCapture} className="relative flex h-full min-h-0 flex-col overflow-hidden">
+        <div className="shrink-0 px-1 pt-1 md:px-5 md:pt-4">
           <PageHeader title="AI 英语自由闲聊" desc="不设题目，点词可查，轻松英文聊天。" back onBack={() => setTrainingPage("overview")} />
         </div>
 
-        <section className="relative mx-4 shrink-0 overflow-hidden rounded-[22px] bg-gradient-to-br from-[#3b2818] to-[#2a1c12] px-4 py-3 text-white shadow-lg ring-1 ring-black/15 md:mx-5">
-          <div className="text-[11px] font-bold tracking-wide text-[#f5d88a]/90">
+        <section className="relative mx-1 shrink-0 overflow-hidden rounded-[18px] bg-gradient-to-br from-[#3b2818] to-[#2a1c12] px-3 py-2.5 text-white shadow-lg ring-1 ring-black/15 md:mx-5 md:rounded-[22px] md:px-4 md:py-3">
+          <div className="text-[10px] font-bold tracking-wide text-[#f5d88a]/90 md:text-[11px]">
             <span>{scene}</span>
             <span className="mx-1.5 text-[#f5d88a]/40">·</span>
             <span>{voice}</span>
@@ -2986,19 +2988,19 @@ export default function WordRealmCleanPreview() {
             {subtitlesOn ? <span className="text-[#f5d88a]/55"> · 中英对照</span> : null}
           </div>
 
-          <p className="mt-2 text-[15px] font-bold leading-snug text-white md:text-[16px]">
+          <p className="mt-1.5 text-[13px] font-bold leading-snug text-white md:mt-2 md:text-[16px]">
             开始一段随意英文会话
           </p>
 
-          <p className="mt-1.5 max-w-[280px] text-[12px] font-medium leading-5 text-white/74 sm:max-w-none">
-            随便发一句英文，AI 会自然接话；字幕打开时可对照中文。
+          <p className="mt-1 max-w-[280px] text-[11px] font-medium leading-5 text-white/74 sm:max-w-none md:mt-1.5 md:text-[12px]">
+            发一句英文，AI 会自然接话，可随时开字幕对照。
           </p>
 
-          <div className="mt-3 flex flex-wrap items-center gap-2">
+          <div className="mt-2.5 flex flex-wrap items-center gap-1.5 md:mt-3 md:gap-2">
             <button
               type="button"
               onClick={() => setCallOpen(true)}
-              className="rounded-full border border-white/14 bg-white/8 px-3 py-2 text-[10px] font-bold text-[#f5e6c8] active:scale-95"
+              className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1.5 text-[10px] font-bold text-[#f5e6c8] active:scale-95 md:px-3 md:py-2"
               aria-label="电话模式"
             >
               📞 电话
@@ -3006,7 +3008,7 @@ export default function WordRealmCleanPreview() {
             <button
               type="button"
               onClick={() => startNewChatSession()}
-              className="rounded-full border border-white/14 bg-white/8 px-3 py-2 text-[10px] font-bold text-[#f5e6c8] active:scale-95"
+              className="rounded-full border border-white/14 bg-white/8 px-2.5 py-1.5 text-[10px] font-bold text-[#f5e6c8] active:scale-95 md:px-3 md:py-2"
               aria-label="新对话"
             >
               新对话
@@ -3015,7 +3017,7 @@ export default function WordRealmCleanPreview() {
               type="button"
               onClick={() => setSubtitlesOn((v) => !v)}
               className={cx(
-                "rounded-full border px-3 py-2 text-[10px] font-bold active:scale-95",
+                "rounded-full border px-2.5 py-1.5 text-[10px] font-bold active:scale-95 md:px-3 md:py-2",
                 subtitlesOn
                   ? "border-[#d1a53d]/60 bg-[#d1a53d]/25 text-[#ffe8ad]"
                   : "border-white/14 bg-white/8 text-[#f5e6c8]",
@@ -3027,38 +3029,38 @@ export default function WordRealmCleanPreview() {
             <button
               type="button"
               onClick={() => setSettingsOpen(true)}
-              className="ml-auto rounded-full border border-white/12 bg-transparent px-3 py-2 text-[10px] font-bold text-white/60 active:scale-95"
+              className="rounded-full border border-white/12 bg-transparent px-2.5 py-1.5 text-[10px] font-bold text-white/60 active:scale-95 md:ml-auto md:px-3 md:py-2"
               aria-label="更多设置"
             >
               设置
             </button>
           </div>
-          <div className="mt-2 flex items-center gap-2 text-[10px] text-white/60">
+          <div className="mt-2 flex flex-wrap items-center gap-1.5 text-[10px] text-white/60 md:gap-2">
             <button type="button" onClick={() => setHistoryOpen(true)} className="rounded-full border border-white/12 px-2.5 py-1 active:scale-95">
               历史记录
             </button>
             <button type="button" onClick={() => clearCurrentChatSession()} className="rounded-full border border-white/12 px-2.5 py-1 active:scale-95">
               清空当前会话
             </button>
-            <span className="truncate">{currentChatSession?.title ?? "新对话"}</span>
+            <span className="min-w-0 flex-1 truncate text-white/52">{currentChatSession?.title ?? "新对话"}</span>
           </div>
         </section>
 
-        <div ref={chatScrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 pb-3 pt-3 md:px-5">
-          <div className="space-y-[14px]">
+        <div ref={chatScrollRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-1 pb-2 pt-2 md:px-5 md:pb-3 md:pt-3">
+          <div className="space-y-3 md:space-y-[14px]">
             {chatMessages.map((msg) => {
               const isUser = msg.role === "user";
               const playBusy = chatAudioLoadingId === Number(msg.id);
               return (
                 <div key={msg.id} className={cx("flex", isUser ? "justify-end" : "justify-start")}>
-                  <div className="min-w-0 max-w-[92%] sm:max-w-[88%]">
+                  <div className="min-w-0 max-w-[94%] sm:max-w-[88%]">
                     <div
                       className={cx(
                         "overflow-hidden rounded-[22px] shadow-[0_8px_22px_rgba(58,42,26,0.07)] ring-1",
                         isUser ? "rounded-br-md bg-[#3A2A1A] text-white ring-black/15" : "rounded-bl-md bg-[#FFF8EA] ring-[#E6D8BF]",
                       )}
                     >
-                      <div className={cx("flex items-center justify-between gap-2 border-b px-3 py-2", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
+                      <div className={cx("flex items-center justify-between gap-2 border-b px-3 py-1.5 md:py-2", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
                         <div className="flex min-w-0 flex-1 items-center gap-2">
                           <span
                             className={cx(
@@ -3079,20 +3081,20 @@ export default function WordRealmCleanPreview() {
                           aria-busy={playBusy}
                           aria-label={playBusy ? "朗读进行中" : "播放本条英文"}
                           className={cx(
-                            "relative flex h-8 shrink-0 items-center justify-center rounded-full px-2.5 text-[12px] font-bold transition active:scale-95 disabled:opacity-55",
+                            "relative flex h-7 shrink-0 items-center justify-center rounded-full px-2.5 text-[11px] font-bold transition active:scale-95 disabled:opacity-55 md:h-8 md:text-[12px]",
                             isUser ? "bg-white/12 text-white ring-1 ring-white/14" : "bg-white text-[#8A6324] ring-1 ring-[#E6D8BF]",
                           )}
                         >
                           {playBusy ? <span className="text-[10px] tracking-tight">···</span> : <>🔊</>}
                         </button>
                       </div>
-                      <div className="px-3.5 pb-3.5 pt-3">
-                        <div className={cx("text-[15px] font-semibold leading-relaxed tracking-[-0.01em]", isUser ? "text-white" : "text-[#2C241C]")}>
+                      <div className="px-3 pb-3 pt-2.5 md:px-3.5 md:pb-3.5 md:pt-3">
+                        <div className={cx("text-[14px] font-semibold leading-6 tracking-[-0.01em] md:text-[15px] md:leading-relaxed", isUser ? "text-white" : "text-[#2C241C]")}>
                           <BubbleText text={msg.text} onWordClick={setSelectedWordTip} />
                         </div>
                         {subtitlesOn ? (
-                          <div className={cx("mt-2.5 border-t pt-2.5", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
-                            <p className={cx("text-[12px] font-medium leading-relaxed", isUser ? "text-white/72" : "text-[#6B5B49]")}>
+                          <div className={cx("mt-2 border-t pt-2 md:mt-2.5 md:pt-2.5", isUser ? "border-white/10" : "border-[#E6D8BF]/55")}>
+                            <p className={cx("text-[11px] font-medium leading-5 md:text-[12px] md:leading-relaxed", isUser ? "text-white/72" : "text-[#6B5B49]")}>
                               <span className={cx("mr-1.5 text-[10px] font-black uppercase opacity-70", isUser ? "text-white/45" : "text-[#B0A18D]")}>
                                 译
                               </span>
@@ -3110,15 +3112,15 @@ export default function WordRealmCleanPreview() {
         </div>
 
         <div
-          className="relative z-10 shrink-0 border-t border-[#E6D8BF]/85 bg-[#F6EAD6]/96 px-4 pb-0 pt-3 backdrop-blur md:px-5"
+          className="relative z-10 shrink-0 border-t border-[#E6D8BF]/85 bg-[#F6EAD6]/96 px-1 pb-0 pt-2 backdrop-blur md:px-5 md:pt-3"
           style={{ paddingBottom: composerSafeBottom }}
         >
-          <div className="rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA]/98 p-4 shadow-[0_-8px_26px_rgba(58,42,26,0.05)]">
-            <div className="mb-3 flex items-center gap-2">
+          <div className="rounded-[18px] border border-[#E6D8BF] bg-[#FFF8EA]/98 p-3 shadow-[0_-8px_26px_rgba(58,42,26,0.05)] md:rounded-[22px] md:p-4">
+            <div className="mb-2 flex items-center gap-2 md:mb-3">
               <span className={cx("h-2 w-2 shrink-0 rounded-full", composerStatus.dot)} />
               <span className="text-[11px] font-bold leading-snug text-[#6B5B49]">{composerStatus.label}</span>
             </div>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2 md:gap-2.5">
               <div className="flex items-stretch gap-2">
                 <input
                   value={customText}
@@ -3131,13 +3133,13 @@ export default function WordRealmCleanPreview() {
                     }
                   }}
                   placeholder="先用英文写下来… Enter 发送"
-                  className="min-h-[48px] min-w-0 flex-1 rounded-[18px] border border-[#E6D8BF] bg-white px-4 py-3 text-[14px] font-medium leading-snug text-[#2C241C] outline-none placeholder:text-[#AD9F8C] placeholder:font-normal disabled:bg-[#faf5ec]"
+                  className="min-h-[42px] min-w-0 flex-1 rounded-[16px] border border-[#E6D8BF] bg-white px-3 py-2.5 text-[13px] font-medium leading-snug text-[#2C241C] outline-none placeholder:text-[#AD9F8C] placeholder:font-normal disabled:bg-[#faf5ec] md:min-h-[48px] md:rounded-[18px] md:px-4 md:py-3 md:text-[14px]"
                 />
                 <button
                   type="button"
                   disabled={chatAiBusy || chatTranscribing || !customText.trim()}
                   onClick={() => submitTextChat()}
-                  className="shrink-0 rounded-[18px] bg-[#3A2A1A] px-4 py-3 text-[13px] font-bold text-white shadow-[0_4px_14px_rgba(58,42,26,0.16)] active:scale-[0.98] disabled:bg-[#C7B8A5] disabled:text-white/70 disabled:shadow-none"
+                  className="shrink-0 rounded-[16px] bg-[#3A2A1A] px-3.5 py-2.5 text-[12px] font-bold text-white shadow-[0_4px_14px_rgba(58,42,26,0.16)] active:scale-[0.98] disabled:bg-[#C7B8A5] disabled:text-white/70 disabled:shadow-none md:rounded-[18px] md:px-4 md:py-3 md:text-[13px]"
                 >
                   发送
                 </button>
@@ -3149,7 +3151,7 @@ export default function WordRealmCleanPreview() {
                 onPointerUp={handlePressToTalkEnd}
                 onPointerCancel={handlePressToTalkEnd}
                 className={cx(
-                  "flex h-11 w-full items-center justify-center rounded-[16px] text-[13px] font-bold transition active:scale-[0.99]",
+                  "flex h-10 w-full items-center justify-center rounded-[14px] text-[12px] font-bold transition active:scale-[0.99] md:h-11 md:rounded-[16px] md:text-[13px]",
                   chatAiBusy || chatTranscribing
                     ? "border border-transparent bg-[#E8DDD0] text-[#998B78]"
                     : recording

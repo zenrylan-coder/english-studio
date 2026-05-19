@@ -29,21 +29,21 @@ export function PhoneShell({
         {!immersiveCall ? (
           <header className="z-30 shrink-0 border-b border-[#E6D8BF] bg-[#FFF8EA]/95 px-3.5 py-1.5 backdrop-blur">
             <div className="flex items-center gap-2">
-              <div className="flex h-6 w-6 items-center justify-center rounded-[8px] bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[12px] font-bold text-white">词</div>
+              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[8px] bg-gradient-to-br from-[#E8C878] via-[#D8B65E] to-[#7A5525] text-[13px] font-black leading-none text-[#FFF8E6] shadow-[inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_3px_rgba(60,40,18,0.2),0_4px_10px_rgba(58,42,26,0.28)] ring-1 ring-[#F0DCA0]/50 [text-shadow:0_1px_0_rgba(255,255,255,0.48),0_1px_5px_rgba(58,42,26,0.38)]">词</div>
               <div className="flex items-baseline gap-1.5 leading-none">
-                <span className="text-[14px] font-bold text-[#1a1a1a]">词境</span>
-                <span className="text-[10px] text-[#7A6B57]">从词汇到表达，从输入到开口</span>
+                <span className="text-[14px] font-bold text-[#1a1a1a]">词源</span>
+                <span className="text-[10px] text-[#7A6B57]">从词汇到开口的学习工作台</span>
               </div>
             </div>
           </header>
         ) : null}
-        <main className={`relative z-0 min-h-0 flex-1 ${immersiveCall ? "overflow-hidden p-0" : "overflow-y-auto px-5 pt-5 pb-5"}`}>{children}</main>
+        <main className={`relative z-0 min-h-0 flex-1 ${immersiveCall ? "overflow-hidden p-0" : "overflow-y-auto px-4 pt-3 pb-3 md:px-5 md:pt-5 md:pb-5"}`}>{children}</main>
         {!immersiveCall ? (
-          <nav className="relative z-[100] grid w-full shrink-0 grid-cols-4 border-t border-[#E6D8BF] bg-[#FFF8EA]/96 px-2 py-2 pointer-events-auto backdrop-blur md:rounded-b-[36px]">
+          <nav className="relative z-[100] grid w-full shrink-0 grid-cols-4 border-t border-[#E6D8BF] bg-[#FFF8EA]/96 px-2 py-1.5 pointer-events-auto backdrop-blur md:rounded-b-[36px] md:py-2">
             {tabs.map((tab) => (
-              <button key={tab.key} onClick={() => onTab(tab.key)} className={`rounded-[16px] px-1 py-2 text-center transition-colors duration-200 active:scale-95 ${activeTab === tab.key ? "bg-[#3A2A1A] text-white shadow-[0_2px_8px_rgba(58,42,26,0.18)]" : "text-[#6B5B49] hover:bg-[#3A2A1A]/6"}`}>
-                <div className="mx-auto flex h-5 w-5 items-center justify-center [&>svg]:h-5 [&>svg]:w-5">{tab.icon}</div>
-                <div className={`mt-1 text-[11px] font-bold ${activeTab === tab.key ? "opacity-100" : "opacity-80"}`}>{tab.label}</div>
+              <button key={tab.key} onClick={() => onTab(tab.key)} className={`rounded-[14px] px-1 py-1.5 text-center transition-colors duration-200 active:scale-95 md:rounded-[16px] md:py-2 ${activeTab === tab.key ? "bg-[#3A2A1A] text-white shadow-[0_2px_8px_rgba(58,42,26,0.18)]" : "text-[#6B5B49] hover:bg-[#3A2A1A]/6"}`}>
+                <div className="mx-auto flex h-5 w-5 items-center justify-center [&>svg]:h-[18px] [&>svg]:w-[18px] md:[&>svg]:h-5 md:[&>svg]:w-5">{tab.icon}</div>
+                <div className={`mt-0.5 text-[10px] font-bold md:mt-1 md:text-[11px] ${activeTab === tab.key ? "opacity-100" : "opacity-80"}`}>{tab.label}</div>
               </button>
             ))}
           </nav>
