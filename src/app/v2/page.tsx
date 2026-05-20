@@ -16,6 +16,7 @@ import { aiScenes, shadowDrillByType, shadowStages, shadowTypes, speeds, trainin
 import { personalPackMeta, personalPackWords, sampleWords, wordGroups } from "@/data/v2/wordData";
 import {
   bootstrapCloudSync,
+  signOutCloudSync,
   syncChatState,
   syncLearningState,
   type CloudSyncProfile,
@@ -61,6 +62,15 @@ import {
   saveUiFlags,
   saveWordLearning,
 } from "@/lib/v2/storage";
+import {
+  buildMockCloudSession,
+  clearPhoneAuth,
+  loadSavedPhoneAuth,
+  maskPhone,
+  sendPhoneCode,
+  verifyPhoneCode,
+  type SavedPhoneAuthState,
+} from "@/lib/v2/cloudUserAuth";
 
 /** 收藏复习专用虚拟词包 id，不与 wordGroups 混用 */
 const V2_FAVORITE_LEARN_PACK_ID = "__v2_favorite_words__";
@@ -784,6 +794,12 @@ export default function WordRealmCleanPreview() {
   const [cloudSyncProfile, setCloudSyncProfile] = useState<CloudSyncProfile | null>(null);
   const [cloudSyncBusy, setCloudSyncBusy] = useState(false);
   const [cloudSyncNotice, setCloudSyncNotice] = useState("本地模式");
+  const [phoneAuthState, setPhoneAuthState] = useState<SavedPhoneAuthState | null>(null);
+  const [phoneAuthHydrated, setPhoneAuthHydrated] = useState(false);
+  const [phoneInput, setPhoneInput] = useState("");
+  const [phoneCodeInput, setPhoneCodeInput] = useState("");
+  const [phoneNicknameInput, setPhoneNicknameInput] = useState("");
+  const [phoneAuthMode, setPhoneAuthMode] = useState<"mock" | "sms">("mock");
   const [selectedWordTip, setSelectedWordTip] = useState(null);
   const [toast, setToast] = useState("");
   const [minePage, setMinePage] = useState("overview");
@@ -1131,20 +1147,59 @@ export default function WordRealmCleanPreview() {
   }, [hydrateFromLocalState]);
 
   useEffect(() => {
+    const saved = loadSavedPhoneAuth();
+    setPhoneAuthState(saved);
+    if (saved) {
+      setPhoneInput(saved.phone);
+      setPhoneNicknameInput(saved.nickname || "");
+      setPhoneAuthMode(saved.authMode === "sms" ? "sms" : "mock");
+    }
+    setPhoneAuthHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!phoneAuthHydrated || !phoneAuthState) return;
+    if (phoneAuthState.mockMode) {
+      const mockSession = buildMockCloudSession(phoneAuthState);
+      void (async () => {
+        try {
+          setCloudSyncBusy(true);
+          const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: false });
+          setCloudSyncProfile(boot.profile);
+          setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "云端同步已连接，本地记录已同步到云端");
+        } catch {
+          setCloudSyncProfile({
+            uid: mockSession.uid,
+            isAnonymous: false,
+            loginType: mockSession.loginType,
+            enabled: false,
+            phone: mockSession.phone,
+            phoneMasked: mockSession.phoneMasked,
+            nickname: mockSession.nickname,
+            avatar: mockSession.avatar,
+            authMode: "mock",
+            lastSyncedAt: mockSession.lastLoginAt,
+          });
+          setCloudSyncNotice("云端暂时不可用，当前使用本地模式");
+        } finally {
+          setCloudSyncBusy(false);
+        }
+      })();
+      return;
+    }
     void (async () => {
       try {
         setCloudSyncBusy(true);
-        const boot = await bootstrapCloudSync(freeChatInitialMessages);
+        const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: false });
         setCloudSyncProfile(boot.profile);
-        hydrateFromLocalState();
-        setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云同步已连接" : "云端已初始化");
+        setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云端学习数据已载入" : "云同步已连接");
       } catch {
         setCloudSyncNotice("当前使用本地模式");
       } finally {
         setCloudSyncBusy(false);
       }
     })();
-  }, [hydrateFromLocalState]);
+  }, [phoneAuthHydrated, phoneAuthState]);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return;
@@ -1748,14 +1803,24 @@ export default function WordRealmCleanPreview() {
   }, [cleanupChatRecorder]);
 
   const handleEnableCloudSync = useCallback(() => {
+    if (!phoneAuthState) {
+      setMinePage("login");
+      return;
+    }
     void (async () => {
       try {
         setCloudSyncBusy(true);
-        const boot = await bootstrapCloudSync(freeChatInitialMessages);
+        if (phoneAuthState.mockMode) {
+          const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: true });
+          setCloudSyncProfile(boot.profile);
+          setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "本地学习记录已同步到云端");
+          showToast("云端同步完成");
+          return;
+        }
+        const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: true });
         setCloudSyncProfile(boot.profile);
-        hydrateFromLocalState();
-        setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云端数据已同步到当前设备" : "云同步已开启");
-        showToast("云同步已开启");
+        setCloudSyncNotice("本地学习记录已同步到云端");
+        showToast("云端同步完成");
       } catch {
         setCloudSyncNotice("云同步开启失败，请稍后重试");
         showToast("云同步开启失败");
@@ -1763,7 +1828,97 @@ export default function WordRealmCleanPreview() {
         setCloudSyncBusy(false);
       }
     })();
-  }, [hydrateFromLocalState]);
+  }, [phoneAuthState, showToast]);
+
+  const handleSendPhoneCode = useCallback(() => {
+    void (async () => {
+      try {
+        setCloudSyncBusy(true);
+        const result = await sendPhoneCode(phoneInput);
+        setPhoneAuthMode(result.mockMode ? "mock" : "sms");
+        setCloudSyncNotice(result.message);
+        showToast(result.mockMode ? "测试验证码已准备好" : "验证码已发送");
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "验证码发送失败";
+        setCloudSyncNotice(message);
+        showToast(message);
+      } finally {
+        setCloudSyncBusy(false);
+      }
+    })();
+  }, [phoneInput, showToast]);
+
+  const handlePhoneLogin = useCallback(() => {
+    void (async () => {
+      try {
+        setCloudSyncBusy(true);
+        const authState = await verifyPhoneCode({
+          phone: phoneInput,
+          code: phoneCodeInput,
+          nickname: phoneNicknameInput,
+        });
+        setPhoneAuthState(authState);
+        setPhoneInput(authState.phone);
+        setPhoneNicknameInput(authState.nickname);
+        setPhoneAuthMode(authState.authMode);
+        if (authState.mockMode) {
+          const mockSession = buildMockCloudSession(authState);
+          try {
+            const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: authState, preferLocal: true });
+            setCloudSyncProfile(boot.profile);
+            setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "本地学习记录已同步到云端");
+            showToast("手机号登录成功（mock），数据已同步");
+          } catch {
+            setCloudSyncProfile({
+              uid: mockSession.uid,
+              isAnonymous: false,
+              loginType: mockSession.loginType,
+              enabled: false,
+              phone: mockSession.phone,
+              phoneMasked: mockSession.phoneMasked,
+              nickname: mockSession.nickname,
+              avatar: mockSession.avatar,
+              authMode: "mock",
+              lastSyncedAt: mockSession.lastLoginAt,
+            });
+            setCloudSyncNotice("云端暂时不可用，当前使用本地模式");
+            showToast("手机号登录成功（mock），使用本地兜底");
+          }
+          return;
+        }
+        const preferLocal = typeof window !== "undefined"
+          ? window.confirm("检测到当前设备可能已有本地学习记录。是否优先把本地记录同步到云端？")
+          : true;
+        const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: authState, preferLocal });
+        setCloudSyncProfile(boot.profile);
+        setCloudSyncNotice(preferLocal ? "本地学习记录已同步到云端" : boot.pulledLearning || boot.pulledChats ? "已载入云端学习记录" : "云同步已开启");
+        showToast(authState.mockMode ? "手机号登录成功（mock）" : "手机号登录成功");
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "手机号登录失败";
+        setCloudSyncNotice(message);
+        showToast(message);
+      } finally {
+        setCloudSyncBusy(false);
+      }
+    })();
+  }, [freeChatInitialMessages, phoneCodeInput, phoneInput, phoneNicknameInput, showToast]);
+
+  const handleLogoutCloudUser = useCallback(() => {
+    void (async () => {
+      try {
+        setCloudSyncBusy(true);
+        clearPhoneAuth();
+        setPhoneAuthState(null);
+        setPhoneCodeInput("");
+        setCloudSyncProfile(null);
+        setCloudSyncNotice("当前使用本地模式");
+        await signOutCloudSync().catch(() => undefined);
+        showToast("已退出登录，继续使用本地学习");
+      } finally {
+        setCloudSyncBusy(false);
+      }
+    })();
+  }, [showToast]);
 
   /** 进入收藏复习；startIndex 缺省则用单独持久化的收藏进度 */
   const enterFavoriteLearn = (startIndex) => {
@@ -3686,6 +3841,9 @@ export default function WordRealmCleanPreview() {
   }
 
   function renderMine() {
+    const maskedPhone = phoneAuthState?.phoneMasked || (cloudSyncProfile?.phone ? maskPhone(cloudSyncProfile.phone) : "");
+    const loggedIn = !!phoneAuthState && !!cloudSyncProfile?.enabled;
+
     if (minePage === "stats") {
       return (
         <>
@@ -3855,42 +4013,84 @@ export default function WordRealmCleanPreview() {
     if (minePage === "login") {
       return (
         <>
-          <PageHeader title="账号与同步" desc="已接入云同步底座，可将学习记录、收藏、错题和 AI 对话历史同步到云端。" back onBack={() => setMinePage("overview")} />
+          <PageHeader title="手机号登录" desc="登录后可同步学习进度、收藏与错题；未登录也能继续本地学习。" back onBack={() => setMinePage("overview")} />
           <Surface className="p-5">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[22px] font-bold text-white">词</div>
-            <h2 className="mt-4 text-center text-[20px] font-bold text-[#2C241C]">开启云同步</h2>
+            <h2 className="mt-4 text-center text-[20px] font-bold text-[#2C241C]">登录词源账号</h2>
             <p className="mx-auto mt-2 max-w-xs text-center text-[13px] leading-6 text-[#6B5B49]">
-              当前阶段先使用 CloudBase 匿名身份同步学习数据，后续再扩展正式账号体系。
+              {phoneAuthMode === "mock"
+                ? "当前为 mock 验证模式，不发送真实短信。"
+                : "已接入真实短信登录，请输入手机收到的验证码。"}
             </p>
+            <div className="mt-4 rounded-[18px] border border-[#E6D8BF] bg-[#FBF2DA] px-4 py-3 text-[12px] leading-5 text-[#8A6324]">
+              {phoneAuthMode === "mock"
+                ? "当前模式：mock 验证码，测试验证码固定为 123456。"
+                : "当前模式：真实短信验证码，请输入手机收到的验证码。"}
+            </div>
+            <div className="mt-4 space-y-3">
+              <input
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                value={phoneInput}
+                onChange={(e) => setPhoneInput(e.target.value.replace(/\D+/g, "").slice(0, 11))}
+                placeholder="请输入手机号"
+                className="w-full rounded-[16px] border border-[#E6D8BF] bg-white px-4 py-3 text-[14px] font-medium text-[#2C241C] outline-none placeholder:text-[#998B78]"
+              />
+              <input
+                type="text"
+                value={phoneNicknameInput}
+                onChange={(e) => setPhoneNicknameInput(e.target.value.slice(0, 20))}
+                placeholder="昵称（可选）"
+                className="w-full rounded-[16px] border border-[#E6D8BF] bg-white px-4 py-3 text-[14px] font-medium text-[#2C241C] outline-none placeholder:text-[#998B78]"
+              />
+              <div className="flex gap-2">
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  value={phoneCodeInput}
+                  onChange={(e) => setPhoneCodeInput(e.target.value.replace(/\D+/g, "").slice(0, 6))}
+                  placeholder="验证码"
+                  className="min-w-0 flex-1 rounded-[16px] border border-[#E6D8BF] bg-white px-4 py-3 text-[14px] font-medium text-[#2C241C] outline-none placeholder:text-[#998B78]"
+                />
+                <button onClick={handleSendPhoneCode} disabled={cloudSyncBusy} className={`shrink-0 rounded-[16px] px-4 py-3 text-[13px] font-bold text-white active:scale-[0.98] ${cloudSyncBusy ? "bg-[#C7B8A5]" : "bg-[#8A6324]"}`}>
+                  发验证码
+                </button>
+              </div>
+            </div>
             <div className="mt-5 rounded-[18px] border border-[#E6D8BF] bg-white/80 p-4">
-              <div className="text-[12px] font-bold text-[#8A6324]">同步状态</div>
+              <div className="text-[12px] font-bold text-[#8A6324]">登录 / 同步状态</div>
               <div className="mt-2 text-[14px] font-bold text-[#2C241C]">
                 {cloudSyncBusy ? "正在连接云端..." : cloudSyncNotice}
               </div>
-              {cloudSyncProfile?.enabled ? (
+              {loggedIn ? (
                 <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">
-                  UID：{cloudSyncProfile.uid.slice(0, 8)}… · {cloudSyncProfile.isAnonymous ? "匿名同步" : cloudSyncProfile.loginType}
+                  已登录：{maskedPhone} · {phoneAuthState?.nickname || "词源用户"} · {phoneAuthState?.mockMode ? "mock 模式" : "短信模式"}
                 </p>
               ) : (
                 <p className="mt-2 text-[12px] leading-5 text-[#6B5B49]">
-                  当前仍以本地学习为主，开启后会把学习进度、收藏、错题与 AI 对话历史同步到云端。
+                  当前仍以本地学习为主。登录后可选择把本地学习进度同步到云端，云端异常时会自动降级到本地。
                 </p>
               )}
             </div>
             <button
-              onClick={handleEnableCloudSync}
+              onClick={loggedIn ? handleEnableCloudSync : handlePhoneLogin}
               disabled={cloudSyncBusy}
               className={`mt-5 w-full rounded-[16px] py-3 text-[14px] font-bold text-white active:scale-[0.98] ${
                 cloudSyncBusy ? "bg-[#C7B8A5]" : "bg-[#3A2A1A]"
               }`}
             >
-              {cloudSyncBusy ? "连接中..." : cloudSyncProfile?.enabled ? "重新同步数据" : "登录 / 开启同步"}
+              {cloudSyncBusy ? "连接中..." : loggedIn ? "将本地记录重新同步到云端" : "手机号登录"}
             </button>
-            <button onClick={() => setMinePage("overview")} className="mt-3 w-full rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">暂不登录，继续本地使用</button>
+            {loggedIn ? (
+              <button onClick={handleLogoutCloudUser} className="mt-3 w-full rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">退出登录</button>
+            ) : (
+              <button onClick={() => setMinePage("overview")} className="mt-3 w-full rounded-[16px] bg-white py-3 text-[14px] font-bold text-[#8A6324] active:scale-[0.98]">暂不登录，继续本地使用</button>
+            )}
           </Surface>
           <Surface className="mt-4 p-4">
             <div className="text-[13px] font-bold text-[#2C241C]">本地模式说明</div>
-            <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">不登录也可使用单词库、跟读和本地学习记录；开启云同步后，可跨设备保留学习进度、收藏、错题和 AI 对话历史。</p>
+            <p className="mt-1 text-[12px] leading-5 text-[#6B5B49]">未登录：继续使用 localStorage。本阶段登录成功后，学习进度、收藏、错题优先写云端，同时保留本地缓存作为兜底。</p>
           </Surface>
         </>
       );
@@ -3902,10 +4102,10 @@ export default function WordRealmCleanPreview() {
         <button onClick={() => setMinePage("login")} className="mb-5 flex w-full items-center gap-4 rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.06)] active:scale-[0.98]">
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[16px] font-bold text-white">词</div>
           <div className="min-w-0 flex-1">
-            <div className="text-[16px] font-bold text-[#2C241C]">{cloudSyncProfile?.enabled ? "云同步已开启" : "本地学习档案"}</div>
-            <div className="mt-1 text-[12px] text-[#6B5B49]">{cloudSyncProfile?.enabled ? cloudSyncNotice : "数据保存在当前设备 · 可登录后同步"}</div>
+            <div className="text-[16px] font-bold text-[#2C241C]">{loggedIn ? (phoneAuthState?.nickname || "词源用户") : "本地学习档案"}</div>
+            <div className="mt-1 text-[12px] text-[#6B5B49]">{loggedIn ? `${maskedPhone} · ${cloudSyncNotice}` : "手机号登录后可同步学习进度"}</div>
           </div>
-          <div className="text-[12px] font-bold text-[#8A6324]">{cloudSyncProfile?.enabled ? "已连接" : "登录"}</div>
+          <div className="text-[12px] font-bold text-[#8A6324]">{loggedIn ? "已登录" : "登录"}</div>
         </button>
         <div className="space-y-6">
           {mineGroups.map((group) => (

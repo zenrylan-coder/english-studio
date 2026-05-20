@@ -1,0 +1,6 @@
+{
+  "name": "phone-auth-send-code",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js"
+}
