@@ -37,14 +37,14 @@ export function DesktopLayout({
           <aside className="z-40 flex w-[240px] shrink-0 flex-col border-r border-[#4A3928]/80 bg-gradient-to-b from-[#1F1710] via-[#2A1D14] to-[#201910] text-[#F2EADE] backdrop-blur-xl">
             <div className="shrink-0 border-b border-[#4A3928]/90 px-5 py-5">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-gradient-to-br from-[#C9A24A] via-[#B88A3A] to-[#714F24] text-[15px] font-bold text-[#FFFEF8] shadow-[0_8px_20px_rgba(20,14,10,0.45)] ring-1 ring-[#DCC07A]/50">
-                  ES
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-gradient-to-br from-[#E8C878] via-[#C9A24A] to-[#714F24] text-[19px] font-black leading-none text-[#FFF8E6] shadow-[inset_0_1px_0_rgba(255,255,255,0.42),inset_0_-2px_4px_rgba(60,40,18,0.22),0_8px_20px_rgba(20,14,10,0.45)] ring-1 ring-[#F0DCA0]/55 [text-shadow:0_1px_0_rgba(255,255,255,0.5),0_2px_8px_rgba(58,42,26,0.42)]">
+                  词
                 </div>
                 <div className="min-w-0">
                   <div className="text-[15px] font-bold leading-none text-[#FFFEFC] drop-shadow-[0_1px_0_rgba(0,0,0,0.22)]">
-                    English Studio
+                    词源
                   </div>
-                  <div className="mt-1 text-[11px] leading-5 text-[#CBB69D]">V2 study workspace</div>
+                  <div className="mt-1 text-[11px] leading-5 text-[#CBB69D]">从词汇到开口的学习工作台</div>
                 </div>
               </div>
             </div>

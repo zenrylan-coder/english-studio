@@ -20,7 +20,7 @@ export function PortalPage({
 
           <div className="mt-5 rounded-3xl bg-[#175dc5] p-5 text-white shadow-[0_18px_36px_rgba(23,93,197,0.22)]">
             <div className="text-sm text-[#d9e9ff]">{meta.title}</div>
-            <div className="mt-2 text-2xl font-semibold">English Studio</div>
+            <div className="mt-2 text-2xl font-semibold">词源</div>
             <div className="mt-2 text-sm leading-6 text-[#dce9ff]">{meta.subtitle}</div>
           </div>
 

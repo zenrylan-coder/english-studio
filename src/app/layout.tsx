@@ -2,13 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "English Studio",
-  description: "English Studio",
-  applicationName: "English Studio",
+  title: "词源 · 英语学习工作台",
+  description: "从词汇到开口的学习工作台",
+  applicationName: "词源",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "English Studio",
+    title: "词源",
     statusBarStyle: "default",
   },
   icons: {

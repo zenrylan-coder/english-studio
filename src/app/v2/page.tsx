@@ -422,8 +422,20 @@ function buildAllFavoriteRows(wordFavorites, findPackById) {
     const resolved = resolvePackMetaForFavoriteEntry(primary, findPackById);
     const sourceUnknown = resolved.unknown;
     const displaySource = sourceUnknown ? "未记录来源" : resolved.packName;
-    const item = resolveWordItemByLemma(wid);
-    if (!item) continue;
+    let item = resolveWordItemByLemma(wid);
+    if (!item) {
+      item = {
+        word: primary.word || wid,
+        phonetic: '',
+        pos: '',
+        cn: '',
+        example: '',
+        exampleCn: '',
+        review: false,
+        mistakeSources: [],
+        alsoIn: sourceUnknown ? [] : [displaySource],
+      };
+    }
     const also = sourceUnknown ? allPackNamesContainingLemma(wid) : alsoPackNamesForLemma(wid, resolved.packId);
     const maxAt = Math.max(...ents.map((x) => x.savedAt || 0), 0);
     rows.push({
@@ -1167,6 +1179,8 @@ export default function WordRealmCleanPreview() {
           const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: false });
           setCloudSyncProfile(boot.profile);
           setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "云端同步已连接，本地记录已同步到云端");
+          setFavorites(loadFavorites());
+          setMistakesState(loadMistakes());
         } catch {
           setCloudSyncProfile({
             uid: mockSession.uid,
@@ -1193,6 +1207,8 @@ export default function WordRealmCleanPreview() {
         const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: false });
         setCloudSyncProfile(boot.profile);
         setCloudSyncNotice(boot.pulledLearning || boot.pulledChats ? "云端学习数据已载入" : "云同步已连接");
+        setFavorites(loadFavorites());
+        setMistakesState(loadMistakes());
       } catch {
         setCloudSyncNotice("当前使用本地模式");
       } finally {
@@ -1814,12 +1830,16 @@ export default function WordRealmCleanPreview() {
           const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: true });
           setCloudSyncProfile(boot.profile);
           setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "本地学习记录已同步到云端");
+          setFavorites(loadFavorites());
+          setMistakesState(loadMistakes());
           showToast("云端同步完成");
           return;
         }
         const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: phoneAuthState, preferLocal: true });
         setCloudSyncProfile(boot.profile);
         setCloudSyncNotice("本地学习记录已同步到云端");
+        setFavorites(loadFavorites());
+        setMistakesState(loadMistakes());
         showToast("云端同步完成");
       } catch {
         setCloudSyncNotice("云同步开启失败，请稍后重试");
@@ -1867,6 +1887,8 @@ export default function WordRealmCleanPreview() {
             const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: authState, preferLocal: true });
             setCloudSyncProfile(boot.profile);
             setCloudSyncNotice(boot.pulledLearning ? "已从云端恢复学习进度" : "本地学习记录已同步到云端");
+            setFavorites(loadFavorites());
+            setMistakesState(loadMistakes());
             showToast("手机号登录成功（mock），数据已同步");
           } catch {
             setCloudSyncProfile({
@@ -1892,6 +1914,8 @@ export default function WordRealmCleanPreview() {
         const boot = await bootstrapCloudSync(freeChatInitialMessages, { phoneAuth: authState, preferLocal });
         setCloudSyncProfile(boot.profile);
         setCloudSyncNotice(preferLocal ? "本地学习记录已同步到云端" : boot.pulledLearning || boot.pulledChats ? "已载入云端学习记录" : "云同步已开启");
+        setFavorites(loadFavorites());
+        setMistakesState(loadMistakes());
         showToast(authState.mockMode ? "手机号登录成功（mock）" : "手机号登录成功");
       } catch (error) {
         const message = error instanceof Error ? error.message : "手机号登录失败";
@@ -4108,6 +4132,35 @@ export default function WordRealmCleanPreview() {
           <div className="text-[12px] font-bold text-[#8A6324]">{loggedIn ? "已登录" : "登录"}</div>
         </button>
         <div className="space-y-6">
+          <section>
+            <SectionTitle title="收藏与错题" />
+            <div className="space-y-3">
+              <button
+                onClick={() => { setActiveTab("words"); setTimeout(() => { setWordPage("favorites"); setFavoriteWordPackFilter("all"); setFavoriteWordSearch(""); }, 0); }}
+                className="w-full rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] active:scale-[0.98]"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-[16px] font-bold text-[#2C241C]">我的收藏单词</div>
+                    <p className="mt-1 text-[13px] leading-6 text-[#6B5B49]">已收藏 {favorites.wordFavorites.length} 个单词，支持按词库筛选与搜索。</p>
+                  </div>
+                  <div className="shrink-0 text-[#8A6324]">›</div>
+                </div>
+              </button>
+              <button
+                onClick={() => setMinePage("mistakes")}
+                className="w-full rounded-[22px] border border-[#E6D8BF] bg-[#FFF8EA] p-4 text-left shadow-[0_4px_16px_rgba(58,42,26,0.05)] active:scale-[0.98]"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-[16px] font-bold text-[#2C241C]">错题库</div>
+                    <p className="mt-1 text-[13px] leading-6 text-[#6B5B49]">标记的发音/释义/拼写错词在这里复盘。</p>
+                  </div>
+                  <div className="shrink-0 text-[#8A6324]">›</div>
+                </div>
+              </button>
+            </div>
+          </section>
           {mineGroups.map((group) => (
             <section key={group.title}>
               <SectionTitle title={group.title} />

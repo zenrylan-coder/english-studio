@@ -14,6 +14,7 @@ import {
   saveUiFlags,
   saveWordLearning,
   type V2FavoritesState,
+  type V2MistakeEntry,
   type V2MistakesState,
   type V2RecentItem,
   type V2UiFlags,
@@ -250,6 +251,130 @@ function buildWrongWordDocs(uid: string, mistakes: V2MistakesState): CloudUserWr
     }
   }
   return rows;
+}
+
+// ─── Pull structured collections from CloudBase ──────────────────────
+
+async function sdkPullUserCollections(uid: string): Promise<V2WordFavoriteEntry[]> {
+  const db = await getDbLike();
+  try {
+    const res = await db.collection(USER_COLLECTIONS_COLLECTION).where({ uid }).get();
+    const rows = (res?.data ?? []) as CloudUserCollectionDoc[];
+    console.log('[cloud-sync] sdk pulled user_collections count:', rows.length);
+    return rows
+      .filter((r) => r.word && r.bankId)
+      .map((r) => ({
+        wordId: String(r.word).trim().toLowerCase(),
+        word: String(r.word).trim(),
+        savedFromGroupId: '',
+        savedFromGroupName: '',
+        savedFromPackId: r.bankId,
+        savedFromPackName: '',
+        savedAt: r.createdAt || 0,
+      }));
+  } catch (err) {
+    console.warn('[cloud-sync] sdk pull user_collections failed', String(err));
+    return [];
+  }
+}
+
+async function sdkPullUserWrongWords(uid: string): Promise<V2MistakesState> {
+  const db = await getDbLike();
+  try {
+    const res = await db.collection(USER_WRONG_WORDS_COLLECTION).where({ uid }).get();
+    const rows = (res?.data ?? []) as CloudUserWrongWordDoc[];
+    console.log('[cloud-sync] sdk pulled user_wrong_words count:', rows.length);
+    return {
+      v: 1,
+      items: rows
+        .filter((r) => r.word && r.bankId)
+        .map((r) => ({
+          wordId: String(r.word).trim().toLowerCase(),
+          word: String(r.word).trim(),
+          category: '',
+          reason: r.reason || '',
+          action: '',
+          packs: [r.bankId],
+          addedAt: r.createdAt || 0,
+        })),
+    };
+  } catch (err) {
+    console.warn('[cloud-sync] sdk pull user_wrong_words failed', String(err));
+    return { v: 1, items: [] };
+  }
+}
+
+async function cfLoadUserCollections(uid: string): Promise<V2WordFavoriteEntry[]> {
+  try {
+    const result = await callCloudbaseHttpFunction<CfResult<CloudUserCollectionDoc[]>>('/api/load-user-collections', { uid });
+    if (result?.ok && Array.isArray(result.data)) {
+      return result.data
+        .filter((r) => r.word && r.bankId)
+        .map((r) => ({
+          wordId: String(r.word).trim().toLowerCase(),
+          word: String(r.word).trim(),
+          savedFromGroupId: '',
+          savedFromGroupName: '',
+          savedFromPackId: r.bankId,
+          savedFromPackName: '',
+          savedAt: r.createdAt || 0,
+        }));
+    }
+    return [];
+  } catch {
+    return [];
+  }
+}
+
+async function pullUserCollections(uid: string): Promise<V2WordFavoriteEntry[]> {
+  // Primary: cloud function (no SDK fallback — SDK gateway returns 404/CORS)
+  try {
+    const cfData = await cfLoadUserCollections(uid);
+    if (cfData.length > 0) {
+      console.log('[collection-page] cloud collections loaded count:', cfData.length);
+      return cfData;
+    }
+    console.log('[collection-page] cloud collections returned empty');
+  } catch (err) {
+    console.warn('[collection-page] cloud collections load FAILED, using local', String(err));
+  }
+  // Fallback: local storage only
+  const local = loadFavorites() ?? defaultFavorites();
+  console.log('[collection-page] fallback local collections count:', local.wordFavorites.length);
+  return local.wordFavorites;
+}
+
+function mergeCollectionsIntoFavorites(cloudEntries: V2WordFavoriteEntry[], localFavorites: V2FavoritesState): V2FavoritesState {
+  const existing = new Map<string, V2WordFavoriteEntry>();
+  for (const entry of localFavorites.wordFavorites) {
+    if (entry.wordId) existing.set(entry.wordId, entry);
+  }
+  for (const entry of cloudEntries) {
+    if (entry.wordId && !existing.has(entry.wordId)) {
+      existing.set(entry.wordId, entry);
+      console.log('[cloud-sync] merged cloud-only favorite:', entry.word);
+    }
+  }
+  return {
+    v: localFavorites.v,
+    wordFavorites: [...existing.values()],
+    writing: localFavorites.writing,
+    workbench: localFavorites.workbench,
+  };
+}
+
+function mergeWrongWordsFromCloud(cloudWrongs: V2MistakesState, localMistakes: V2MistakesState): V2MistakesState {
+  const existing = new Map<string, V2MistakeEntry>();
+  for (const entry of localMistakes.items) {
+    if (entry.wordId) existing.set(entry.wordId, entry);
+  }
+  for (const entry of cloudWrongs.items) {
+    if (entry.wordId && !existing.has(entry.wordId)) {
+      existing.set(entry.wordId, entry);
+      console.log('[cloud-sync] merged cloud-only wrong word:', entry.word);
+    }
+  }
+  return { v: 1, items: [...existing.values()] };
 }
 
 function applyLearningSnapshot(snapshot: LearningSnapshot) {
@@ -591,29 +716,25 @@ export async function bootstrapCloudSync(defaultMessages: V2ChatMessage[], optio
     if (remoteLearning) {
       applyLearningSnapshot(remoteLearning);
       try { await pushProfileViaCloudFunction(profile, phoneAuth); } catch { /* ignore */ }
-      return {
-        profile: { ...profile, lastSyncedAt: Date.now() },
-        pulledLearning: true,
-        pulledChats: false,
-      };
+    } else {
+      try {
+        await pushProfileViaCloudFunction(profile, phoneAuth);
+        await pushLearningViaCloudFunctions(uid);
+      } catch { /* ignore */ }
     }
 
-    // No remote data — push local to cloud
+    // Pull and merge cloud collections (favorites + wrong words)
     try {
-      await pushProfileViaCloudFunction(profile, phoneAuth);
-      await pushLearningViaCloudFunctions(uid);
-    } catch {
-      /* cloud push failed, localStorage is the fallback */
-      return {
-        profile: { ...profile, enabled: false, lastSyncedAt: Date.now() },
-        pulledLearning: false,
-        pulledChats: false,
-      };
-    }
+      const cloudCollections = await cfLoadUserCollections(uid);
+      if (cloudCollections.length > 0) {
+        const merged = mergeCollectionsIntoFavorites(cloudCollections, loadFavorites() ?? defaultFavorites());
+        saveFavorites(merged);
+      }
+    } catch { /* ignore */ }
 
     return {
       profile: { ...profile, lastSyncedAt: Date.now() },
-      pulledLearning: false,
+      pulledLearning: !!remoteLearning,
       pulledChats: false,
     };
   }
@@ -685,6 +806,24 @@ export async function bootstrapCloudSync(defaultMessages: V2ChatMessage[], optio
     } catch {
       /* ignore */
     }
+  }
+
+  // Pull and merge cloud collections (favorites + wrong words)
+  try {
+    const cloudCollections = await pullUserCollections(profile.uid);
+    if (cloudCollections.length > 0) {
+      const mergedFav = mergeCollectionsIntoFavorites(cloudCollections, loadFavorites() ?? defaultFavorites());
+      saveFavorites(mergedFav);
+      console.log('[cloud-sync] merged cloud collections, total favorites:', mergedFav.wordFavorites.length);
+    }
+    const cloudWrongs = await sdkPullUserWrongWords(profile.uid);
+    if (cloudWrongs.items.length > 0) {
+      const mergedMistakes = mergeWrongWordsFromCloud(cloudWrongs, loadMistakes() ?? defaultMistakes());
+      saveMistakes(mergedMistakes);
+      console.log('[cloud-sync] merged cloud wrong words, total:', mergedMistakes.items.length);
+    }
+  } catch {
+    /* cloud read failed, keep local data */
   }
 
   return {

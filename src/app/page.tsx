@@ -25,7 +25,7 @@ export default function Home() {
       <div className="mx-auto grid min-h-[calc(100vh-5rem)] max-w-7xl gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <section className="rounded-[28px] border border-[#dbe7f3] bg-gradient-to-br from-[#0f4aa1] via-[#175dc5] to-[#3f85e8] p-8 text-white shadow-[0_24px_60px_rgba(15,74,161,0.22)] lg:p-12">
           <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-medium">
-            English Studio 前端原型
+            词源 前端原型
           </div>
           <h1 className="mt-6 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
             学生综合素质测评与成长档案系统

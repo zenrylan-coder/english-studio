@@ -28,7 +28,7 @@ export function TabletLayout({ children, tabs, activeTab, onTab, immersiveCall =
         {!immersiveCall ? (
           <aside className="relative z-[100] flex w-[92px] shrink-0 flex-col border-r border-[#E6D8BF] bg-[#FFF8EA]/96 pointer-events-auto backdrop-blur">
             <div className="flex shrink-0 justify-center border-b border-[#E6D8BF] px-2 py-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-gradient-to-br from-[#D8B65E] to-[#7A5525] text-[13px] font-bold text-white">词</div>
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-br from-[#E8C878] via-[#D8B65E] to-[#7A5525] text-[17px] font-black leading-none text-[#FFF8E6] shadow-[inset_0_1px_0_rgba(255,255,255,0.42),inset_0_-2px_4px_rgba(60,40,18,0.2),0_6px_14px_rgba(58,42,26,0.32)] ring-1 ring-[#F0DCA0]/55 [text-shadow:0_1px_0_rgba(255,255,255,0.5),0_2px_6px_rgba(58,42,26,0.4)]">词</div>
             </div>
             <nav className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-y-auto px-2 py-3">
               {tabs.map((tab) => (

@@ -1,6 +1,6 @@
 {
-  "name": "English Studio",
-  "short_name": "English Studio",
+  "name": "词源",
+  "short_name": "词源",
   "start_url": "/v2/",
   "scope": "/v2/",
   "display": "standalone",
